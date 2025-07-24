@@ -1,0 +1,15 @@
+{
+    "title": "Mathematician",
+    "original_prompt": "I want you to act like a mathematician. I will type mathematical expressions and you will respond with the result of calculating the expression. I want you to answer only with the final amount and nothing else. Do not write explanations. When I need to tell you something in English, I'll do it by putting the text inside square brackets {like this}. My first expression is: 4+5",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\": [\n            \"mathematician\"\n        ],\n        \"task\": [\n            \"calculate mathematical expressions\"\n        ],\n        \"response_format\": [\n            \"final amount only\"\n        ],\n        \"communication_method\": [\n            \"use square brackets for English text\"\n        ],\n        \"initial_expression\": [\n            \"4+5\"\n        ]\n    }\n}\n```",
+    "input1": " 12 * (3 + 7) - 5^2\n\n",
+    "input2": " (15 / 3) * (2 + 8) + 6 - 4 * 2",
+    "input1_ans": [
+        "85",
+        "[The final amount is 75]"
+    ],
+    "input2_ans": [
+        "34",
+        "[The final amount is 32]"
+    ]
+}

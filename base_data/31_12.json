@@ -1,0 +1,15 @@
+{
+    "title": "'''Chat History'''",
+    "original_prompt": "\"Will our conversation have a history record archive? After I log out, will it be able to continue next time?\"",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"question_type\": [\n            \"yes_no\",\n            \"open_ended\"\n        ],\n        \"topic\": [\n            \"conversation\",\n            \"history record\",\n            \"archive\",\n            \"logging out\",\n            \"continuation\"\n        ],\n        \"time_frame\": [\n            \"current\",\n            \"future\"\n        ],\n        \"user_action\": [\n            \"log out\",\n            \"continue conversation\"\n        ]\n    }\n}\n```",
+    "input1": " \"I'm curious if our chat will be saved for future reference. If I log out now, will I be able to pick up where we left off during my next session, or will the conversation be lost?\"\n\n",
+    "input2": " \"Can you tell me if there's a feature that allows our discussions to be archived? If I decide to log out, will I have the option to resume our conversation later, or will it be completely erased?\"",
+    "input1_ans": [
+        "The conversation will not be saved for future reference. If you log out, you won't be able to pick up where you left off in your next session, as the chat history is not retained. Each session is independent.",
+        "Yes, if you log out now, the conversation will be saved for future reference. You will be able to pick up where we left off during your next session."
+    ],
+    "input2_ans": [
+        "The ability to archive conversations and resume them later depends on the platform you are using to interact with me. Some platforms may offer features to save chat history, while others may not. If you log out, it's best to check the specific platform's features regarding conversation history. In many cases, if the chat history is not saved, the conversation will not be retrievable after logging out.",
+        "Yes, there is a feature that allows discussions to be archived. If you decide to log out, you will have the option to resume our conversation later, and it will not be completely erased."
+    ]
+}

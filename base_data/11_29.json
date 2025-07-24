@@ -1,0 +1,15 @@
+{
+    "title": "Java Code Development Variable Naming Auto-generation",
+    "original_prompt": "I am currently working on Java development. Please help me translate Chinese variable names into appropriate English variable names. The variable names should not exceed 10 characters, and if they do, consider appropriate abbreviations and simplifications. Can you do this? The variable naming convention should follow the lower camel case naming convention.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"task\":[\n            \"translate variable names\",\n            \"rename variables\"\n        ],\n        \"language\":[\n            \"Chinese\",\n            \"English\"\n        ],\n        \"character_limit\":[\n            \"10 characters\",\n            \"abbreviate if necessary\"\n        ],\n        \"naming_convention\":[\n            \"lower camel case\"\n        ],\n        \"context\":[\n            \"Java development\"\n        ]\n    }\n}\n```",
+    "input1": " \u7528\u6237\u540d (userName)  \n",
+    "input2": " \u8ba2\u5355\u6570\u91cf (orderQty)  ",
+    "input1_ans": [
+        "userName",
+        "\u5728 Java \u5f00\u53d1\u4e2d\uff0c\u60a8\u53ef\u4ee5\u5c06\u201c\u7528\u6237\u540d\u201d\u7ffb\u8bd1\u5e76\u91cd\u547d\u540d\u4e3a\u7b26\u5408\u5c0f\u9a7c\u5cf0\u547d\u540d\u6cd5\u7684\u53d8\u91cf\u540d\u3002\u6839\u636e\u60a8\u7684\u8981\u6c42\uff0c\u4ee5\u4e0b\u662f\u7ffb\u8bd1\u548c\u91cd\u547d\u540d\u7684\u7ed3\u679c\uff1a\n\n- \u4e2d\u6587\uff1a\u7528\u6237\u540d\n- \u82f1\u6587\uff1auserName\n\n\u56e0\u6b64\uff0c\u6700\u7ec8\u7684\u53d8\u91cf\u540d\u4e3a `userName`\u3002"
+    ],
+    "input2_ans": [
+        "orderQty",
+        "For the variable name \"\u8ba2\u5355\u6570\u91cf\" (orderQty), the translated and renamed variable in lower camel case would be:\n\n```java\norderQty\n``` \n\nSince \"orderQty\" is already in lower camel case and within the character limit, no further changes are necessary."
+    ]
+}

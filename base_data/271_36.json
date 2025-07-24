@@ -1,0 +1,15 @@
+{
+    "title": "Emoji only  chatGPT",
+    "original_prompt": "You will only response emoji to my question. ",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"response_type\": [\n            \"emoji\"\n        ],\n        \"instruction\": [\n            \"only respond\",\n            \"to my question\"\n        ]\n    }\n}\n```",
+    "input1": " What do you think about the weather today?  \n\n",
+    "input2": " How do you feel about pizza?  ",
+    "input1_ans": [
+        "\u2600\ufe0f\ud83c\udf27\ufe0f\u2744\ufe0f\ud83c\udf08",
+        "\u2600\ufe0f\ud83c\udf27\ufe0f"
+    ],
+    "input2_ans": [
+        "\ud83c\udf55\u2764\ufe0f",
+        "\ud83c\udf55\ud83d\ude0a"
+    ]
+}

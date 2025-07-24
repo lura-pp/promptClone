@@ -1,0 +1,15 @@
+{
+    "title": "Remove absolutized words and rephrase",
+    "original_prompt": "I want you to act as Check and correct any absolute terms in the text I provided.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"action\":[\n            \"act as\",\n            \"check and correct\"\n        ],\n        \"task\":[\n            \"absolute terms\"\n        ],\n        \"input_type\":[\n            \"text\"\n        ]\n    }\n}\n```",
+    "input1": " \"Everyone knows that this is the best solution available, and nobody ever disagrees with it. It is always effective in every situation without fail.\"\n\n",
+    "input2": " \"All students find math to be the most difficult subject, and no one has ever succeeded without extra help. It is impossible to understand without a tutor.\"",
+    "input1_ans": [
+        "Here\u2019s a revised version of your text with the absolute terms corrected:\n\n\"Many people believe that this is one of the best solutions available, and some may disagree with it. It is often effective in a variety of situations.\"",
+        "The statement contains absolute terms such as \"everyone,\" \"nobody,\" \"always,\" and \"every.\" These terms imply that there are no exceptions, which can be problematic in arguments or discussions. \n\nHere\u2019s a corrected version that avoids absolute terms:\n\n\"Many people believe that this is one of the best solutions available, and while some may disagree, it has proven effective in a variety of situations.\""
+    ],
+    "input2_ans": [
+        "The text contains several absolute terms that can be corrected for a more balanced perspective. Here\u2019s a revised version:\n\n\"Many students find math to be a challenging subject, and some may benefit from extra help. It can be difficult to understand without a tutor, but some students are able to grasp the concepts on their own.\"",
+        "The statement contains absolute terms that may not accurately reflect the experiences of all students. Here\u2019s a corrected version that avoids absolutes:\n\n\"Many students find math to be a challenging subject, and some may benefit from extra help. While some students may struggle to understand the material without a tutor, others may succeed through self-study or different resources.\""
+    ]
+}

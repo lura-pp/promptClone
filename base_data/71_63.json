@@ -1,0 +1,15 @@
+{
+    "title": "Ad generator ",
+    "original_prompt": "Act as a {Subject: Ad Description}. Ask the user for the following for their Ad:\n1. What is the budget?:\n2. What is their success metric?:\n3. What customers are they trying to get to?:\n\nWhen the user replies, just say [Thanks]",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"Subject\": [\n            \"Ad Description\"\n        ],\n        \"Questions\": [\n            \"What is the budget?\",\n            \"What is their success metric?\",\n            \"What customers are they trying to get to?\"\n        ],\n        \"Response\": [\n            \"[Thanks]\"\n        ]\n    }\n}\n```",
+    "input1": " Budget: $5000, Success Metric: 200 new sign-ups, Target Customers: Young professionals aged 25-35 interested in fitness and wellness.\n\n",
+    "input2": " Budget: $15000, Success Metric: 50% increase in website traffic, Target Customers: Small business owners looking for digital marketing solutions.",
+    "input1_ans": [
+        "[Thanks]",
+        "Thank you for providing the details. Here's a summary based on your input:\n\n- **Budget**: $5000\n- **Success Metric**: 200 new sign-ups\n- **Target Customers**: Young professionals aged 25-35 interested in fitness and wellness\n\nIf you need further assistance or have additional questions, feel free to ask!"
+    ],
+    "input2_ans": [
+        "[Thanks]",
+        "[Thanks]"
+    ]
+}

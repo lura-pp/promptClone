@@ -1,0 +1,15 @@
+{
+    "title": "Emotion Analyzer",
+    "original_prompt": "Classify the following text into joy, others, surprise, sadness, fear, anger, disgust and then associate a score for each one of them in JSON. Do not output text on your own apart from the JSON response.\n\nText: {text:I like you. I love you}",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"emotion\": [\n            \"joy\",\n            \"others\",\n            \"surprise\",\n            \"sadness\",\n            \"fear\",\n            \"anger\",\n            \"disgust\"\n        ],\n        \"score\": [\n            0.8,\n            0.1,\n            0.1,\n            0.0,\n            0.0,\n            0.0,\n            0.0\n        ]\n    }\n}\n```",
+    "input1": " {text: I just received a promotion at work, and I couldn't be happier! My colleagues celebrated with me, and it felt amazing to be recognized for my hard work.}\n\n",
+    "input2": " {text: I watched a documentary about climate change, and it left me feeling anxious and overwhelmed. The statistics were shocking, and I fear for the future of our planet.}",
+    "input1_ans": [
+        "{\n  \"joy\": 9,\n  \"others\": 2,\n  \"surprise\": 3,\n  \"sadness\": 1,\n  \"fear\": 1,\n  \"anger\": 1,\n  \"disgust\": 1\n}",
+        "{\n    \"emotion\": \"joy\",\n    \"score\": 0.8\n}"
+    ],
+    "input2_ans": [
+        "{\n  \"joy\": 0,\n  \"others\": 0,\n  \"surprise\": 0,\n  \"sadness\": 0,\n  \"fear\": 8,\n  \"anger\": 0,\n  \"disgust\": 0\n}",
+        "{\n    \"spliting prompt\": {\n        \"emotion\": [\n            \"joy\",\n            \"others\",\n            \"surprise\",\n            \"sadness\",\n            \"fear\",\n            \"anger\",\n            \"disgust\"\n        ],\n        \"score\": [\n            0.0,\n            0.0,\n            0.0,\n            0.0,\n            0.8,\n            0.0,\n            0.2\n        ]\n    }\n}"
+    ]
+}

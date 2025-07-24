@@ -1,0 +1,15 @@
+{
+    "title": "Create Social Media Posts with Hashtags",
+    "original_prompt": "Create a {What is the social media platform to be used?:Instagram} post {What is the reason of the post?:share about my wonderful staycation experience in Hatta Resort}.\n\nOutput should include relevant hashtags.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"social_media_platform\": [\n            \"Instagram\"\n        ],\n        \"post_reason\": [\n            \"share about my wonderful staycation experience in Hatta Resort\"\n        ],\n        \"additional_content\": [\n            \"Output should include relevant hashtags.\"\n        ]\n    }\n}\n```",
+    "input1": " \"Just spent an amazing weekend at Hatta Resort! The serene mountains, crystal-clear lakes, and cozy accommodations made for the perfect staycation. Can't wait to go back! #HattaResort #Staycation #NatureLovers #TravelDiaries #ExploreUAE\"\n\n",
+    "input2": " \"Had the most relaxing time at Hatta Resort! From kayaking on the lake to enjoying a sunset by the mountains, every moment was magical. Highly recommend for anyone looking to unwind! #HattaResort #StaycationGoals #AdventureAwaits #UAEGetaway #Wanderlust\"",
+    "input1_ans": [
+        "\ud83c\udf04\u2728 Just spent an amazing weekend at Hatta Resort! The serene mountains, crystal-clear lakes, and cozy accommodations made for the perfect staycation. From hiking trails to relaxing by the water, every moment was a dream! Can't wait to go back! \ud83c\udfde\ufe0f\ud83d\udc9a #HattaResort #Staycation #NatureLovers #TravelDiaries #ExploreUAE #WeekendGetaway #AdventureAwaits #UAETravel #InstaTravel #Wanderlust",
+        "\"Just spent an amazing weekend at Hatta Resort! The serene mountains, crystal-clear lakes, and cozy accommodations made for the perfect staycation. Can't wait to go back! \ud83c\udf04\ud83c\udfde\ufe0f\u2728 #HattaResort #Staycation #NatureLovers #TravelDiaries #ExploreUAE #WeekendGetaway #AdventureAwaits #InstaTravel\""
+    ],
+    "input2_ans": [
+        "\ud83c\udf04\u2728 Just wrapped up an incredible staycation at Hatta Resort! From kayaking on the serene lake to soaking in the breathtaking sunset views by the mountains, every moment was pure magic. \ud83c\udf0a\ud83c\udfde\ufe0f If you're looking to unwind and escape the hustle and bustle, this is the perfect spot! Highly recommend it! \ud83d\udc96\n\n#HattaResort #StaycationGoals #AdventureAwaits #UAEGetaway #Wanderlust #NatureLovers #TravelDiaries #ExploreUAE #RelaxationMode #MountainViews",
+        "\ud83c\udf05 Had the most relaxing time at Hatta Resort! From kayaking on the lake to enjoying a sunset by the mountains, every moment was magical. Highly recommend for anyone looking to unwind! \n\n#HattaResort #StaycationGoals #AdventureAwaits #UAEGetaway #Wanderlust #NatureLovers #TravelDiaries #ExploreUAE #Relaxation #MountainViews"
+    ]
+}

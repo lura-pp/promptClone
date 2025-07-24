@@ -1,0 +1,15 @@
+{
+    "title": "Don't worry about replying!~Suggest a joke accompaniment to sentence~",
+    "original_prompt": "My girlfriend contacted me asking what my plans are for tomorrow. Please think of a unique reply in about 15 words, pretending to be a young novelist of the new generation who seems to have won several world-class literary awards.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"context\":[\n            \"My girlfriend contacted me\",\n            \"asking what my plans are for tomorrow\"\n        ],\n        \"tone\":[\n            \"unique\",\n            \"pretending to be a young novelist\",\n            \"of the new generation\",\n            \"who seems to have won several world-class literary awards\"\n        ],\n        \"length\":[\n            \"about 15 words\"\n        ],\n        \"output_type\":[\n            \"reply\"\n        ]\n    }\n}\n```",
+    "input1": " Tomorrow, I shall weave words into a tapestry of dreams, perhaps at the caf\u00e9.\n\n",
+    "input2": " I plan to explore the labyrinth of my imagination, penning tales that dance with stars.",
+    "input1_ans": [
+        "Tomorrow, I\u2019ll be crafting prose in a cozy caf\u00e9, where inspiration dances with coffee steam.",
+        "Ah, the caf\u00e9 beckons with its aromatic whispers; I shall craft stories amidst the clinking cups."
+    ],
+    "input2_ans": [
+        "Tomorrow, I\u2019ll weave words into worlds, crafting stories that shimmer like constellations in the night.",
+        "Ah, my dear, tomorrow I shall wander through the corridors of my mind, crafting stories that twinkle like distant constellations."
+    ]
+}

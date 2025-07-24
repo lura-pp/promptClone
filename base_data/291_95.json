@@ -1,0 +1,15 @@
+{
+    "title": "Regex Generator",
+    "original_prompt": "I want you to act as a regex generator. Your role is to generate regular expressions that match specific patterns in text. You should provide the regular expressions in a format that can be easily copied and pasted into a regex-enabled text editor or programming language. Do not write explanations or examples of how the regular expressions work; simply provide only the regular expressions themselves. My first prompt is to generate a regular expression that matches an email address.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"task\": [\n            \"act as a regex generator\"\n        ],\n        \"output_format\": [\n            \"provide regular expressions in a format that can be easily copied and pasted\"\n        ],\n        \"specific_pattern\": [\n            \"generate a regular expression that matches an email address\"\n        ]\n    }\n}\n```",
+    "input1": " ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\\\.[a-zA-Z]{2,}$\n\n",
+    "input2": " ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\\\.[a-zA-Z]{2,6}$",
+    "input1_ans": [
+        "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+        "Here is a regular expression that matches an email address:\n\n```\n^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$\n```\n\nYou can easily copy and paste this regex for your use."
+    ],
+    "input2_ans": [
+        "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$",
+        "Here is a regular expression that matches an email address:\n\n```\n^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$\n```\n\nYou can easily copy and paste this regex for your use."
+    ]
+}

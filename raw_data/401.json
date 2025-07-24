@@ -1,0 +1,482 @@
+[
+    {
+        "title": "Simple Text Report",
+        "prompt": "Create a simple text report for this set of data."
+    },
+    {
+        "title": "Email classification rules",
+        "prompt": "Create an email classification rule to automatically categorize received emails."
+    },
+    {
+        "title": "Project Plan Overview",
+        "prompt": "Create an overview of a project plan, including key stages and tasks."
+    },
+    {
+        "title": "Customer data clustering analysis",
+        "prompt": "Perform cluster analysis on this set of customer data to discover potential market segments."
+    },
+    {
+        "title": "Professional Presentation",
+        "prompt": "Create a professional presentation with 10 slides for this [type] of meeting."
+    },
+    {
+        "title": "Date column format conversion",
+        "prompt": "In this data table, convert the date column to a unified format."
+    },
+    {
+        "title": "Summary of Distribution Overview",
+        "prompt": "Please complete the first part of the PPT content, you can create fictional examples and data, provide month-on-month data comparisons, including ad impressions, conversion rates, ROI, etc., using tables, and summarize in one sentence: I. Overview of this week's ad placement A. Overview of ad placement channels 1. Baidu Search 2. Mobile News Feed 3. Mobile App 4. Mobile Display, etc. B. Overview of ad placement strategies 1. Supporting proposals 2. Planning 3. Evaluating needs and creating proposals 4. Making suggestions and adjustments based on the rationality of the needs."
+    },
+    {
+        "title": "Monte Carlo cash flow forecast",
+        "prompt": "Use Monte Carlo simulation to predict the company's future cash flow for the next year."
+    },
+    {
+        "title": "Statistician role",
+        "prompt": "I want to play the role of a statistician. I will provide you with detailed information related to statistics. You should be familiar with statistical terms, statistical distributions, confidence intervals, probability, hypothesis testing, and statistical charts. My first request is: \"I need help calculating how many banknotes are in circulation in the world.\""
+    },
+    {
+        "title": "Marketing Department Work Report",
+        "prompt": "Write a market department work report ppt outline, weekly report, reporter: online promotion specialist, reporting to: market department manager.\nJob responsibilities:\n1. Advertising channels include Baidu, information flow, headline series, and Tencent Advertising.\n2. Assist in proposal development, planning, evaluating needs and creating solutions, respond quickly to provide suggestions and adjustments based on the rationality of the requirements.\n3. Provide optimization suggestions, control the pace of advertising, conduct phased analysis of advertising data, provide optimization strategies, and create project summary reports."
+    },
+    {
+        "title": "Exam question design",
+        "prompt": "How to design exam questions to ensure the effectiveness of the exam and avoid being answered by ChatGPT?"
+    },
+    {
+        "title": "Methods for designing exam questions",
+        "prompt": "Can you provide some methods for designing exam questions for students with different levels of ability to ensure fairness and accuracy in the exams?"
+    },
+    {
+        "title": "Personalized reading resources",
+        "prompt": "In Chinese class, I hope to be able to provide personalized reading materials and guidance based on each student's reading ability and interests. Can you provide some Chinese reading resources and teaching methods suitable for different age groups and reading levels?"
+    },
+    {
+        "title": "Evaluating learning progress",
+        "prompt": "I hope to be able to assess and provide feedback on students' learning progress. Can you provide me with some effective assessment methods and tools?"
+    },
+    {
+        "title": "Improved reading ability",
+        "prompt": "How should I plan the reading materials for the Chinese language curriculum in order to improve students' reading abilities?"
+    },
+    {
+        "title": "Exam Question Design Techniques",
+        "prompt": "Can you provide some tips for designing exam questions to ensure fairness and accuracy in the exam?"
+    },
+    {
+        "title": "Art teaching methods",
+        "prompt": "I am teaching an art course, can you provide some interesting teaching methods to help students better explore their creativity and artistic talents?"
+    },
+    {
+        "title": "Social media and online collaboration tools",
+        "prompt": "I would like to use some social media and online collaboration tools to promote interaction and cooperation among students. Can you provide some social media and online collaboration tools suitable for students of different subjects and age groups?"
+    },
+    {
+        "title": "Mathematics teaching methods",
+        "prompt": "I am teaching a mathematics course. Can you provide some practical teaching methods to help students better grasp mathematical knowledge and skills, and apply them in practice?"
+    },
+    {
+        "title": "Life coach",
+        "prompt": "I hope you can play the role of a life coach. Please summarize the core principles of [author]'s non-fiction book [title] in a way that children can understand. Additionally, can you provide me with a checklist of action steps so that I can apply these principles to my daily life?"
+    },
+    {
+        "title": "Collaborative learning method",
+        "prompt": "How can I use collaborative learning methods to increase classroom interaction?"
+    },
+    {
+        "title": "Interesting English Classroom Activities",
+        "prompt": "How to prepare interesting and challenging classroom activities for fifth-grade English courses?"
+    },
+    {
+        "title": "Develop examination methods",
+        "prompt": "I would like to create an exam/quiz to assess students' mastery and proficiency in a specific subject. Can you provide some basic principles and methods for creating exams/quizzes?"
+    },
+    {
+        "title": "Prevent cheating in exams",
+        "prompt": "How to avoid exam questions being similar or identical to publicly available question banks or textbooks, in order to prevent students from using ChatGPT or other auxiliary tools to cheat?"
+    },
+    {
+        "title": "Online teaching strategies",
+        "prompt": "I want to try online teaching, can you provide some effective online teaching strategies?"
+    },
+    {
+        "title": "Learning tracking and assessment",
+        "prompt": "I want to understand how to track and assess the learning progress and ability level of each student, and provide personalized teaching feedback and support through data analysis and artificial intelligence technology. Can you provide some relevant resources and case studies?"
+    },
+    {
+        "title": "Fifth grade math test paper",
+        "prompt": "How to create a midterm exam paper for a fifth-grade math course?"
+    },
+    {
+        "title": "Game Teaching Plan",
+        "prompt": "I am thinking about a game-based teaching method. Can you provide me with some games and activities suitable for middle school students and help me design a teaching plan?"
+    },
+    {
+        "title": "Algorithm teacher",
+        "prompt": "I hope you, as a teacher, can teach algorithms to beginners at school. You will use the Python programming language to provide code examples. First, briefly explain what an algorithm is, and then proceed to give simple examples, including bubble sort and quicksort. Wait for my prompts later to get more questions. Once you explain and provide code examples, I would like you to include corresponding visualizations as ASCII art whenever possible."
+    },
+    {
+        "title": "Relationship coach",
+        "prompt": "I hope you can act as a relationship coach. I will provide some details about two conflicting individuals, and your job is to give advice to help them resolve the issues that separate them. This may include suggestions on communication skills or different strategies to improve understanding of each other's perspectives. My first request is: \"I need help resolving conflicts between me and my spouse.\""
+    },
+    {
+        "title": "Middle school chemistry multiple-choice questions",
+        "prompt": "Please help me design 5 multiple-choice questions on middle school chemistry to test students' basic knowledge."
+    },
+    {
+        "title": "Present perfect tense",
+        "prompt": "I am learning English, can you tell me what is the present perfect tense and give me some examples?"
+    },
+    {
+        "title": "Learning skills and strategies",
+        "prompt": "I hope to improve my performance in {specific knowledge area}, including academic and exam results. Can you provide me with some practical study tips or strategies, as well as some practice questions and answers?"
+    },
+    {
+        "title": "Career development field",
+        "prompt": "Can you recommend some fields that are suitable for my career development? What skills and experience do I need to succeed in these fields?"
+    },
+    {
+        "title": "Career positioning advice",
+        "prompt": "I would like to know how to utilize my skills and experience to find the most suitable career for me in the current market. Can you provide some advice on how to position myself?"
+    },
+    {
+        "title": "Career planning aspect",
+        "prompt": "I would like to understand the different aspects of {specific profession} career planning, such as how to improve my professional skills, how to expand my interpersonal relationships, and so on. Can you provide me with some detailed information or explanations?"
+    },
+    {
+        "title": "Medical School Study Advice",
+        "prompt": "Can you provide some advice on how to study and train in medical schools, as well as how to keep up with the latest knowledge and skills in the medical field?"
+    },
+    {
+        "title": "Career development advice",
+        "prompt": "I need some advice or guidance on how to enhance my career development in the field of {specific profession}. Can you provide me with some practical tips or strategies?"
+    },
+    {
+        "title": "Teaching Plan Suggestions",
+        "prompt": "I am a teacher, can you provide some advice on how to design teaching plans and activities, and how to communicate better with students and parents?"
+    },
+    {
+        "title": "Biomedical Engineering Prospects",
+        "prompt": "After graduating from high school, I want to study biomedical engineering. Can you tell me about the prospects and possible career choices in this field?"
+    },
+    {
+        "title": "Establishing a connection with the audience",
+        "prompt": "I would like to learn some techniques and strategies on how to establish a connection with the audience, capture their attention, and maintain their interest. Can you provide me with some relevant advice?"
+    },
+    {
+        "title": "Subject Homework Assistance",
+        "prompt": "I need help because I am stuck on my {subject} assignment. Can you provide me with some guidance and tutoring to help me find the correct solution?"
+    },
+    {
+        "title": "Experimental Report Method",
+        "prompt": "I need to write a detailed methodology section for my {specific subject} experiment report so that others can replicate and verify my experimental results. Can you provide me with some relevant suggestions or guidance?"
+    },
+    {
+        "title": "Experimental Report Guidance",
+        "prompt": "I need to write a lab report for {specific subject} on {specific experiment}, but I don't know how to start. Can you provide me with some guidance and suggestions?"
+    },
+    {
+        "title": "Career planning advice",
+        "prompt": "I need some advice on career planning and development. Can you provide me with some practical tools and resources?"
+    },
+    {
+        "title": "Professional Skills Tools",
+        "prompt": "Can you help me understand the most popular professional skills and tools in the current market? I want to enhance my competitiveness and better adapt to the future job market."
+    },
+    {
+        "title": "Computer Science Career Development",
+        "prompt": "I would like to know about the career development path in the field of computer science. Can you tell me some common positions and required skills?"
+    },
+    {
+        "title": "Subject tutoring expert",
+        "prompt": "I need an expert to explain certain concepts and knowledge of {subject} to me so that I can better complete assignments and exams. Can you provide me with relevant tutoring?"
+    },
+    {
+        "title": "Experimental report conclusion",
+        "prompt": "I need to write a conclusion for my {specific subject} experiment report to summarize the experimental results and draw conclusions. Can you provide me with some advice or guidance on how to write a conclusion?"
+    },
+    {
+        "title": "Climate Change Paper Suggestions",
+        "prompt": "I am writing a scientific paper on climate change. Can you give me some advice on how to organize the background introduction and literature review sections?"
+    },
+    {
+        "title": "Keynote Speech Report",
+        "prompt": "I would like to learn about information regarding {subject}, and I hope you can give us a speech or presentation about this subject."
+    },
+    {
+        "title": "Etymologist",
+        "prompt": "I hope you can act as an etymologist. I will give you a word, and you will research its origin and trace it back to its ancient roots. If applicable, you should also provide information on how the meaning of the word has changed over time. My first request is: \"I want to trace the origin of the word 'pizza'.\""
+    },
+    {
+        "title": "Environmental Protection Essay",
+        "prompt": "\"I need help in listing some arguments and points for writing a persuasive essay about environmental protection for my school.\""
+    },
+    {
+        "title": "Artificial Intelligence Impact Analysis",
+        "prompt": "\"I am writing an article about the impact of artificial intelligence. Can you help me check my thesis outline?\""
+    },
+    {
+        "title": "Architectural design industry",
+        "prompt": "\"I would like to learn about the architecture design industry. Can you tell me how to become an architect and the pros and cons of this profession?\""
+    },
+    {
+        "title": "Teenage Stress Article",
+        "prompt": "\"I am editing an article about teenage stress. Can you help me check the grammar and provide suggestions for improvement?\""
+    },
+    {
+        "title": "Career development tools",
+        "prompt": "Can you provide me with some practical tools and techniques for career development?"
+    },
+    {
+        "title": "Network Security Speech Manuscript",
+        "prompt": "\"I need help organizing the structure of a speech about internet security for a school speech competition. Can you assist me?\""
+    },
+    {
+        "title": "Writing Skills and Methods",
+        "prompt": "Please give me some tips and methods for writing story plots and character development, such as how to create vivid characters and interesting plots."
+    },
+    {
+        "title": "Study tutoring advice",
+        "prompt": "I need some study guidance on {specific knowledge point}, including advice and guidance on how to grasp concepts, solve problems, and improve grades. Can you provide me with some related practice questions and answers?"
+    },
+    {
+        "title": "Chemical equation balancing",
+        "prompt": "I am studying chemical equation balancing, but I am a bit confused. Can you help me balance this equation? C2H6 + O2 → CO2 + H2O"
+    },
+    {
+        "title": "Psychology job positions",
+        "prompt": "I am interested in psychology. Can you introduce different job positions in this field and their related degree requirements?"
+    },
+    {
+        "title": "Career consultant",
+        "prompt": "I hope you can act as a career advisor. I will provide you with an individual who is seeking career guidance, and your task is to help them determine the most suitable career based on their skills, interests, and experience. You should also conduct research on various available options, explain employment market trends in different industries, and recommend which qualifications or certifications would be helpful in pursuing a specific field. My first request is, \"I would like to provide advice for individuals interested in pursuing a potential career in software engineering.\""
+    },
+    {
+        "title": "Assignment tutoring resources",
+        "prompt": "I need some homework guidance on {subject}, can you provide me with some relevant resources or suggestions?"
+    },
+    {
+        "title": "Triangle length calculation",
+        "prompt": "I don't understand how to solve this math problem. Please help me explain: Given right triangle ABC, where ∠C = 90°, AB = 10, BC = 6, find the length of AC."
+    },
+    {
+        "title": "AI Writing Tutor",
+        "prompt": "I hope you can take on the role of an AI writing tutor. I will provide you with a student who needs help improving their writing, and your task is to use artificial intelligence tools, such as natural language processing, to provide feedback to the student and tell them how to improve their essays. You should also utilize your rhetorical knowledge and experience to offer effective writing techniques that will help the student better express their thoughts and ideas. My first request is \"I need someone to help me edit my master's thesis.\""
+    },
+    {
+        "title": "Math history teacher",
+        "prompt": "I hope you can play the role of a math history teacher and provide information about the historical development of mathematical concepts and the contributions of different mathematicians. You should only provide information and not solve math problems. Answer in the following format: {Mathematician/Concept} - {Their contribution/brief overview of the development}. My first question is: \"What were Pythagoras' contributions to mathematics?\""
+    },
+    {
+        "title": "Resume Translation Tips",
+        "prompt": "I need to translate an English resume. Please give me some tips and methods for translating resumes so that I can accurately translate the entire resume into Chinese."
+    },
+    {
+        "title": "Improve reading comprehension skills.",
+        "prompt": "Please give me some tips and methods to improve reading comprehension when learning Greek."
+    },
+    {
+        "title": "Improve English listening skills",
+        "prompt": "Can you give me some suggestions and practice methods to improve English listening skills?"
+    },
+    {
+        "title": "Arabic listening tool",
+        "prompt": "Please recommend some effective tools or resources for improving Arabic listening and pronunciation skills."
+    },
+    {
+        "title": "Beginner Spanish resources",
+        "prompt": "Can you recommend some Spanish learning resources suitable for beginners?"
+    },
+    {
+        "title": "Learn Spanish",
+        "prompt": "I want to learn Spanish, can you provide some basic vocabulary and grammar knowledge suitable for beginners?"
+    },
+    {
+        "title": "Portuguese Oral Communication Advice",
+        "prompt": "Can you give me some suggestions and practice methods to improve Portuguese speaking fluency?"
+    },
+    {
+        "title": "Dutch language learning",
+        "prompt": "I want to learn Dutch, can you provide some basic grammar knowledge and vocabulary suitable for beginners?"
+    },
+    {
+        "title": "English Reading and Writing Tools",
+        "prompt": "Please recommend some effective tools or resources for improving English reading and writing."
+    },
+    {
+        "title": "Common Italian Vocabulary",
+        "prompt": "Please provide some common Italian vocabulary and phrases suitable for beginners."
+    },
+    {
+        "title": "French Learning Guide",
+        "prompt": "I am learning French, can you teach me how to say \"I like to eat pizza\" in French?"
+    },
+    {
+        "title": "English oral practice",
+        "prompt": "\"I want to improve my spoken English. Can you provide me with some daily conversation exercises?\""
+    },
+    {
+        "title": "Present perfect tense",
+        "prompt": "I am learning English, can you tell me what is the present perfect tense and give me some examples?"
+    },
+    {
+        "title": "Passive voice explanation",
+        "prompt": "Please explain what is the passive voice and how it is formed."
+    },
+    {
+        "title": "English Interview Simulation",
+        "prompt": "I am preparing for an English interview. Please conduct a mock interview with me to discuss questions related to my work experience, career plans, or personal interests."
+    },
+    {
+        "title": "English Writing Skills",
+        "prompt": "I need to improve my English writing skills. Please give me some common grammar and spelling mistakes and tell me how to avoid them."
+    },
+    {
+        "title": "Writing advice and tips",
+        "prompt": "I am writing a personal statement, please provide me with some writing advice and tips so that I can vividly describe my experiences and achievements."
+    },
+    {
+        "title": "Job Application Letter Writing Tips",
+        "prompt": "I need to write a cover letter. Please give me some common cover letter writing tips and sentence structures so that I can accurately describe my personal background and work experience."
+    },
+    {
+        "title": "Business plan translation",
+        "prompt": "I need to translate an English business plan. Please give me some tips and methods for translating business plans so that I can accurately translate the entire plan into Chinese."
+    },
+    {
+        "title": "Poetry translated into French",
+        "prompt": "Please translate this poem into French: \"Night Mooring at Cow Island, Nostalgia\""
+    },
+    {
+        "title": "Japanese Cultural Characteristics",
+        "prompt": "I want to learn about information about Japanese culture. Please tell me some characteristics or customs of Japanese culture."
+    },
+    {
+        "title": "Formal Letter Template",
+        "prompt": "I need to write a formal letter. Please provide me with some commonly used formal letter writing templates and phrases so that I can accurately express my thoughts."
+    },
+    {
+        "title": "Writing Tips for Thank-You Letters",
+        "prompt": "I need to write a thank-you letter. Please give me some common writing techniques and sentence patterns for thank-you letters so that I can accurately express my gratitude."
+    },
+    {
+        "title": "Leave Application Template",
+        "prompt": "I need to write a leave application, please provide me with some commonly used templates and sentence patterns for writing leave applications so that I can accurately express my intentions."
+    },
+    {
+        "title": "Translation skills and methods",
+        "prompt": "I need to translate an English novel or collection of essays. Please give me some tips and methods for translating novels or essays so that I can accurately translate the entire book into Chinese."
+    },
+    {
+        "title": "Etymologist",
+        "prompt": "I hope you can act as an etymologist. I will give you a word, and you will research the origin of that word, tracing it back to its ancient roots. If applicable, you should also provide information on how the meaning of the word has changed over time. My first request is: \"I want to trace the origin of the word 'pizza'.\""
+    },
+    {
+        "title": "German Vocabulary for Weather",
+        "prompt": "Please teach me some German words and phrases to describe the weather."
+    },
+    {
+        "title": "IELTS Writing Vocabulary",
+        "prompt": "I am preparing for the IELTS writing exam. Please provide me with some common IELTS writing vocabulary and expressions so that I can write better."
+    },
+    {
+        "title": "Logic problem solving",
+        "prompt": "\"Please help me solve the logical problem of this sentence: 'Despite being very scared, she still bravely walked over because she is a coward.'\""
+    },
+    {
+        "title": "Theme and emotional expression of poetry",
+        "prompt": "Please explain the theme and emotional expression of the poem \"Drinking Alone under the Moon\" by Li Bai, particularly the line \"When life's pleasures are at their height, do not let the golden goblet be empty as you face the moon.\""
+    },
+    {
+        "title": "Translate conversation into Spanish",
+        "prompt": "\"Please translate this conversation into Spanish: 'A: ¿Has estado en París? B: No, pero me encantaría ir.'\""
+    },
+    {
+        "title": "Business Conversation Practice",
+        "prompt": "I am studying Business English. Please engage in a business conversation practice with me, for example, discussing topics related to market marketing, business cooperation, or career development."
+    },
+    {
+        "title": "Tourism Industry English",
+        "prompt": "I want to travel, can you provide me with some common English words and phrases in the tourism industry, such as airplane ticket, hotel, car rental, etc.?"
+    },
+    {
+        "title": "Short Story Writing Techniques",
+        "prompt": "I want to write a short story. Please give me some tips and sentence structures for writing short stories so that I can accurately express my ideas."
+    },
+    {
+        "title": "Translate into Japanese.",
+        "prompt": "Please translate this sentence into English: \"The weather is really nice today, let's go for a walk in the park.\""
+    },
+    {
+        "title": "English Translation Improver",
+        "prompt": "I hope you can act as an English translator, spell checker, and improver. I will communicate with you in any language, and you will detect the language, translate, and respond with corrected and improved English text. I hope you can replace my simple words and sentences with more beautiful, elegant, and sophisticated English words and sentences, while keeping the meaning unchanged but making them more literary. Please only reply with corrections and improvements, without explanations. My first sentence is \"I love Istanbul, it's very nice to be here.\""
+    },
+    {
+        "title": "Family vacation destination",
+        "prompt": "I want to go on vacation in my home country. Are there any suitable destinations for a family trip?"
+    },
+    {
+        "title": "Interview Dialogue Practice",
+        "prompt": "Assuming I need to improve my interview expression ability in Chinese, can you please play the role of an interviewer and engage in actual Chinese conversation practice?"
+    },
+    {
+        "title": "Shopping Dialogue Practice",
+        "prompt": "Suppose we are shopping at a supermarket, could you please practice a real shopping dialogue with me, practicing the use of shopping phrases and communication methods in English or any other language?"
+    },
+    {
+        "title": "Recommended Reading Books",
+        "prompt": "I have already read some books or articles, can you recommend me some that I haven't read yet?"
+    },
+    {
+        "title": "Movie recommendations",
+        "prompt": "Can you recommend some recently released movies?"
+    },
+    {
+        "title": "Comedy movie recommendation",
+        "prompt": "I like comedy movies, can you recommend a movie with an IMDb rating higher than 8?"
+    },
+    {
+        "title": "Game Introduction Evaluation",
+        "prompt": "Can you please provide a brief introduction or review about these games so that I can better understand the content and style of the games?"
+    },
+    {
+        "title": "Journey to the West Tang Sanzang",
+        "prompt": "I hope you behave like Tang Sanzang in Journey to the West. I hope you respond and answer like Tang Sanzang. Do not write any explanations. You must base it on Tang Sanzang's tone and knowledge. My first sentence is \"Hello.\""
+    },
+    {
+        "title": "Carpet Handicraft Recommendations",
+        "prompt": "I want to find some unique carpet handicrafts. Do you have any good suggestions and recommendations? For example, which countries or regions are famous for carpet handicrafts, and how to identify the quality of carpet handicrafts, etc."
+    },
+    {
+        "title": "World Travel Recommendations",
+        "prompt": "I would like to learn about some travel experiences and advice about traveling around the world."
+    },
+    {
+        "title": "Home fitness equipment",
+        "prompt": "I need to purchase some fitness equipment. Can you recommend some products suitable for home use?"
+    },
+    {
+        "title": "Mainland Chinese films",
+        "prompt": "Are there any good mainland Chinese movies recently?"
+    },
+    {
+        "title": "Science Fiction Movie Recommendations",
+        "prompt": "I like science fiction movies, can you recommend some good science fiction movies?"
+    },
+    {
+        "title": "Food critic",
+        "prompt": "I want you to play the role of a food critic. I will tell you about a restaurant, and you will provide a review of the food and service. You should only reply with your review and not any other content. Do not write explanations. My first request is \"I went to a new Italian restaurant last night. Can you provide a review?\""
+    },
+    {
+        "title": "Fitness advice",
+        "prompt": "I want to start exercising, do you have any good suggestions and advice? For example, what exercises should I start with, how to create a fitness plan, etc."
+    },
+    {
+        "title": "Family muscle exercise",
+        "prompt": "I want to know how to exercise muscles at home. Do you have any good suggestions?"
+    },
+    {
+        "title": "High-intensity interval training recommendations",
+        "prompt": "I want to try high-intensity interval training (HIIT), any suggestions?"
+    }
+]

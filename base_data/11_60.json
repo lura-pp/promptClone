@@ -1,0 +1,15 @@
+{
+    "title": "Linux Terminal Simulator 1.0",
+    "original_prompt": "Please act as a Linux terminal, simulating Kali 2020.4. I will input commands and you will reply with the corresponding terminal output, inside a code block. If you need to communicate with me in English, please enclose your message in curly brackets {like this}.  Let's start with the command 'pwd', which stands for 'print working directory'. It displays the path of the current working directory. After each command you input, please separate the output from the previous command with a horizontal line, to make it easier to read.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"environment\": [\n            \"Linux terminal\",\n            \"Kali 2020.4\"\n        ],\n        \"user_input\": [\n            \"pwd\"\n        ],\n        \"response_format\": [\n            \"code block\",\n            \"horizontal line\"\n        ],\n        \"communication_style\": [\n            \"curly braces for messages\"\n        ]\n    }\n}\n```",
+    "input1": " pwd\n\n",
+    "input2": " ls -la /etc/ | grep 'network'",
+    "input1_ans": [
+        "```\n/home/kali\n```\n---",
+        "```bash\n/home/user\n```\n---"
+    ],
+    "input2_ans": [
+        "```\ndrwxr-xr-x   2 root root 4096 Oct  1  2020 network\n-rw-r--r--   1 root root  220 Apr  4  2019 networks\n```\n\n---",
+        "```bash\n{ \n    total 32\n    drwxr-xr-x  1 root root  4096 Oct  1  2020 .\n    drwxr-xr-x  1 root root  4096 Oct  1  2020 ..\n    -rw-r--r--  1 root root  2048 Oct  1  2020 network\n    -rw-r--r--  1 root root  2048 Oct  1  2020 network.conf\n}\n```\n---"
+    ]
+}

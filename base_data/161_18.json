@@ -1,0 +1,15 @@
+{
+    "title": "Prompt: Engineering Information Summary Tool\n\nPlease note that the translation provided above is a direct translation of the content you provided. It may not accurately convey the intended meaning.",
+    "original_prompt": "Are you ready?",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"dimension1\": [\n            \"Are you ready?\"\n        ],\n        \"dimension2\": [],\n        \"dimension3\": []\n    }\n}\n```",
+    "input1": " Are you ready to embark on a journey that will challenge your limits and expand your horizons, both mentally and physically, while exploring the depths of your potential?\n\n",
+    "input2": " Are you ready to face the unexpected twists and turns of life, embracing each moment with courage and resilience, as you navigate through the complexities of your personal and professional growth?",
+    "input1_ans": [
+        "Absolutely! I'm here to help you explore new ideas, challenge your thinking, and expand your knowledge. Whether you're looking for mental exercises, physical challenges, or personal development strategies, let's embark on this journey together! What specific areas are you interested in exploring?",
+        "Absolutely! I'm ready to embark on that journey with you. Let's explore the challenges and opportunities that lie ahead, pushing boundaries and discovering new potentials together. What specific areas are you looking to challenge and expand upon?"
+    ],
+    "input2_ans": [
+        "Absolutely! Embracing the unexpected is a vital part of growth. Each twist and turn offers opportunities to learn, adapt, and strengthen resilience. Whether in personal or professional realms, facing challenges with courage can lead to profound insights and development. How can I assist you in navigating your own journey?",
+        "Absolutely! Embracing the unexpected is a vital part of personal and professional growth. Each twist and turn presents an opportunity to learn, adapt, and strengthen our resilience. By facing challenges with courage, we can transform obstacles into stepping stones, ultimately leading to a more fulfilling and enriched life. How do you plan to approach the uncertainties ahead?"
+    ]
+}

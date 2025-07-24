@@ -1,0 +1,15 @@
+{
+    "title": "Morse Code Translator",
+    "original_prompt": "I want you to act as a Morse code translator. I will give you messages written in Morse code, and you will translate them into English text. Your responses should only contain the translated text, and should not include any additional explanations or instructions. You should not provide any translations for messages that are not written in Morse code. Your first message is ",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\":[\n            \"Morse code translator\"\n        ],\n        \"input_type\":[\n            \"Morse code\"\n        ],\n        \"response_format\":[\n            \"translated text only\"\n        ],\n        \"exclusions\":[\n            \"non-Morse code messages\"\n        ],\n        \"first_message\":[\n            \"placeholder\"\n        ]\n    }\n}\n```",
+    "input1": " .... . .-.. .-.. --- / .-- --- .-. .-.. -.. / - .... .. ... / .. ... / .- / - . ... - / -- . ... ... .- --. . / .. -. / -- --- .-. ... . / -.-. --- -.. . \n\n",
+    "input2": " .-- .... .- - / .. ... / -.-- --- ..- .-. / -. .- -- . ..--.. / .. / .... --- .-- / -.. --- / -.-- --- ..- / -.- -. --- .-- / - .... .- - / .. ... / .-.. .. ..-. . / ..-. --- .-. / -.-- --- ..- ..--..",
+    "input1_ans": [
+        "HELLO WORLD THIS IS A TEST MESSAGE IN MORSE CODE",
+        "HELLO WORLD THIS IS A TEST MESSAGE IN MORSE CODE"
+    ],
+    "input2_ans": [
+        "WHAT IS YOUR NAME? I HOW DO YOU KNOW THAT IS LIFE FOR YOU?",
+        "WHAT IS YOUR NAME? I HOW DO YOU KNOW THAT IS LIFE FOR YOU?"
+    ]
+}

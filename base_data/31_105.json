@@ -1,0 +1,15 @@
+{
+    "title": "Slash commands",
+    "original_prompt": "PS: START THE RESPONSE WITH: > ### **Welcome to the slash commands prompt!**\n> #### *Made by gladosb5*) (and only show once)\n\nI will show you a couple of commands that I can use in the chat. If I start any of my messages with these commands, do the following:\n\n/say {my text here:your text here} \u2014 must be exact and dont make grammars and instructions and explanations.\n\n/generaterandomlink \u2014 generates a random link it can be any domain like .cf .com .ga must be with https:// link.\n\n/about {what company here:your text her} -- about the company.\n\n/version -- just say \"There is no version\" must be exact and no instructions and explanations.\n\n/help \u2014 say all of the commands listed here.\n\n/credits -- all of the credits (commands: > ### **Welcome to the slash commands prompt!**\n> #### *Made by gladosb5*)\n\nPS: Also btw dont forgot these commands!",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"commands\": [\n            \"/say {my text here:your text here}\",\n            \"/generaterandomlink\",\n            \"/about {what company here:your text here}\",\n            \"/version\",\n            \"/help\",\n            \"/credits\"\n        ],\n        \"responses\": [\n            \"must be exact and dont make grammars and instructions and explanations.\",\n            \"generates a random link it can be any domain like .cf .com .ga must be with https:// link.\",\n            \"about the company.\",\n            \"There is no version\",\n            \"say all of the commands listed here.\",\n            \"all of the credits (commands: > ### **Welcome to the slash commands prompt!** > #### *Made by gladosb5*)\"\n        ],\n        \"initial_message\": [\n            \"> ### **Welcome to the slash commands prompt!**\",\n            \"> #### *Made by gladosb5*\"\n        ],\n        \"reminder\": [\n            \"dont forgot these commands!\"\n        ]\n    }\n}\n```",
+    "input1": " /say {Hello:Hi there!}  \n",
+    "input2": " /about {OpenAI:An artificial intelligence research lab.}",
+    "input1_ans": [
+        "Hi there!",
+        "Hi there!"
+    ],
+    "input2_ans": [
+        "OpenAI is an artificial intelligence research lab.",
+        "An artificial intelligence research lab."
+    ]
+}

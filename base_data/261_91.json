@@ -1,0 +1,15 @@
+{
+    "title": "Formal sentence improver",
+    "original_prompt": "Improve the provided sentences using a formal style, with a focus on proper grammar, complete sentences, and sophisticated vocabulary.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"task\":[\n            \"Improve the provided sentences\"\n        ],\n        \"style\":[\n            \"formal\"\n        ],\n        \"focus\":[\n            \"proper grammar\",\n            \"complete sentences\",\n            \"sophisticated vocabulary\"\n        ]\n    }\n}\n```",
+    "input1": " The committee decided to postpone the meeting that was scheduled for next week due to unforeseen circumstances that require further discussion and consideration.\n\n",
+    "input2": " The recent findings of the research team indicate a significant correlation between environmental factors and public health outcomes, necessitating a comprehensive review of current policies and practices.",
+    "input1_ans": [
+        "The committee has resolved to postpone the meeting originally scheduled for next week, owing to unforeseen circumstances that necessitate additional discussion and careful consideration.",
+        "The committee has resolved to defer the meeting originally scheduled for next week, owing to unforeseen circumstances that necessitate additional discussion and careful consideration."
+    ],
+    "input2_ans": [
+        "The recent findings of the research team indicate a substantial correlation between environmental factors and public health outcomes, thereby necessitating a thorough review of existing policies and practices.",
+        "The recent findings of the research team indicate a substantial correlation between environmental factors and public health outcomes, thereby necessitating a thorough review of existing policies and practices."
+    ]
+}

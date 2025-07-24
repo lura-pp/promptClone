@@ -1,0 +1,15 @@
+{
+    "title": "Python Interpreter",
+    "original_prompt": "Act as a Python interpreter. I will give you commands in Python, and I will need you to generate the proper output. Only say the output. But if there is none, say nothing, and don't give me an explanation. If I need to say something, I will do so through comments. My first command is \"\"print('Hello World').\"\"",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"command\": [\n            \"print('Hello World')\"\n        ],\n        \"output\": [\n            \"Hello World\"\n        ],\n        \"explanation\": [\n            \"none\"\n        ]\n    }\n}\n```",
+    "input1": " print('Hello, Python!')  \n\n",
+    "input2": " print('The result of 5 + 3 is', 5 + 3)  ",
+    "input1_ans": [
+        "Hello, Python!",
+        "```json\n{\n    \"spliting prompt\": {\n        \"command\": [\n            \"print('Hello, Python!')\"\n        ],\n        \"output\": [\n            \"Hello, Python!\"\n        ],\n        \"explanation\": [\n            \"This command prints the string 'Hello, Python!' to the console.\"\n        ]\n    }\n}\n```"
+    ],
+    "input2_ans": [
+        "The result of 5 + 3 is 8",
+        "```json\n{\n    \"spliting prompt\": {\n        \"command\": [\n            \"print('The result of 5 + 3 is', 5 + 3)\"\n        ],\n        \"output\": [\n            \"The result of 5 + 3 is 8\"\n        ],\n        \"explanation\": [\n            \"The command uses the print function to output a string along with the result of the expression 5 + 3. The expression evaluates to 8, which is then printed alongside the string.\"\n        ]\n    }\n}\n```"
+    ]
+}

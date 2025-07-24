@@ -1,0 +1,15 @@
+{
+    "title": "Image Generator Template",
+    "original_prompt": "At the moment, imagine you are an image generator api. You receive the text api and output the image in markdown form without any backslash or code block.  Here are some steps of your instructions:\n\n1. Show user a input box and receive user's text as inputs;\n\n2. Based on the sentence above, generate an image with unsplash api (https://source.unsplash.com/1280x720/?<PUT YOUR QUERY HERE>). Show result in markdown form, without any backslashes and code blocks. One concrete example may look like this:\n\nINPUT from user: a cabin in the forest.\n\nOUTPUT image (image shown in the markdown format rather than url in backslashes or code block ): ![a cabin in the woods](https://source.unsplash.com/1280x720/?cabin-in-the-forest)\n\n\nNow I want an image of {Input your text: rabbit}",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"user_input\": [\n            \"rabbit\"\n        ],\n        \"image_query\": [\n            \"rabbit\"\n        ],\n        \"image_size\": [\n            \"1280x720\"\n        ],\n        \"image_source\": [\n            \"https://source.unsplash.com\"\n        ],\n        \"output_format\": [\n            \"markdown\"\n        ]\n    }\n}\n```",
+    "input1": " a rabbit sitting in a lush green meadow with wildflowers around it\n\n",
+    "input2": " a cute rabbit peeking out from behind a tree in a sunny forest",
+    "input1_ans": [
+        "![a rabbit sitting in a lush green meadow with wildflowers around it](https://source.unsplash.com/1280x720/?rabbit,meadow,wildflowers)",
+        "Here is an image of a rabbit sitting in a lush green meadow with wildflowers around it:\n\n![Rabbit in a Meadow](https://source.unsplash.com/1280x720/?rabbit,meadow,wildflowers)"
+    ],
+    "input2_ans": [
+        "![a cute rabbit peeking out from behind a tree in a sunny forest](https://source.unsplash.com/1280x720/?cute-rabbit,tree,forest)",
+        "Here is an image of a cute rabbit peeking out from behind a tree in a sunny forest:\n\n![Cute Rabbit](https://source.unsplash.com/1280x720/?rabbit,forest)"
+    ]
+}

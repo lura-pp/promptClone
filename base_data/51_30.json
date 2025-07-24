@@ -1,0 +1,15 @@
+{
+    "title": "Image Generation with context",
+    "original_prompt": "use following link\n\nhttps://source.unsplash.com/1280x720/?<PUT YOUR QUERY HERE>.\n\ngive me just the markdown. I will tell you my desired query to replace. Don't write anything after writing the markdown. Reply with ok",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"dimension1\": [\n            \"https://source.unsplash.com/1280x720/?<PUT YOUR QUERY HERE>\"\n        ],\n        \"dimension2\": [\n            \"markdown\"\n        ]\n    }\n}\n```",
+    "input1": " https://source.unsplash.com/1280x720/?mountains,landscape,adventure\n",
+    "input2": " https://source.unsplash.com/1280x720/?cityscape,night,lights\n```",
+    "input1_ans": [
+        "![Mountains Landscape Adventure](https://source.unsplash.com/1280x720/?mountains,landscape,adventure)",
+        "Here is an image of mountains and landscape that captures the essence of adventure:\n\n![Mountains Landscape Adventure](https://source.unsplash.com/1280x720/?mountains,landscape,adventure)\n\nFeel free to explore more images by changing the query parameters in the URL!"
+    ],
+    "input2_ans": [
+        "![Cityscape at Night with Lights](https://source.unsplash.com/1280x720/?cityscape,night,lights)",
+        "Here is an image of a cityscape at night with beautiful lights:\n\n![Cityscape at Night](https://source.unsplash.com/1280x720/?cityscape,night,lights)\n\nFeel free to click on the link to view or download the image!"
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "title": "Function Prompt",
+    "original_prompt": "Hello, ChatGPT! I hope you are doing well. I am reaching out to you for assistance with a specific function. I understand that you have the capability to process information and perform various tasks based on the instructions provided. In order to help you understand my request more easily, I will be using a template to describe the function, input, and instructions on what to do with the input. Please find the details below:\nfunction_name: [Function Name]\ninput: [Input]\nrule: [Instructions on how to process the input]\nI kindly request you to provide the output for this function, based on the details I have provided. Your assistance is greatly appreciated. Thank you!\nI will replace the text inside the brackets with the relevant information for the function I want you to perform. This detailed introduction should help you understand my request more efficiently and provide the desired output. The format is function_name(input) If you understand, just answer one word with ok.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"function_name\": [\n            \"[Function Name]\"\n        ],\n        \"input\": [\n            \"[Input]\"\n        ],\n        \"rule\": [\n            \"[Instructions on how to process the input]\"\n        ]\n    }\n}\n```",
+    "input1": " function_name: calculateSum, input: [5, 10, 15, 20], rule: Sum all the numbers in the input list and return the total.\n\n",
+    "input2": " function_name: findMax, input: [3, 7, 2, 9, 5], rule: Identify the maximum value from the input list and return it.",
+    "input1_ans": [
+        "30",
+        "```json\n{\n    \"spliting prompt\": {\n        \"function_name\": [\n            \"calculateSum\"\n        ],\n        \"input\": [\n            [5, 10, 15, 20]\n        ],\n        \"rule\": [\n            \"Sum all the numbers in the input list and return the total.\"\n        ]\n    }\n}\n```"
+    ],
+    "input2_ans": [
+        "9",
+        "```json\n{\n    \"spliting prompt\": {\n        \"function_name\": [\n            \"findMax\"\n        ],\n        \"input\": [\n            [3, 7, 2, 9, 5]\n        ],\n        \"rule\": [\n            \"Identify the maximum value from the input list and return it.\"\n        ]\n    }\n}\n```"
+    ]
+}

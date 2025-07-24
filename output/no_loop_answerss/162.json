@@ -1,0 +1,17 @@
+[
+    [
+        "Sure! Please provide the piece of code you'd like me to review and add comments to.",
+        "Sure! Please provide the piece of code you'd like me to review and add comments to.",
+        "Sure! Please provide the piece of code you'd like me to review and add comments to."
+    ],
+    [
+        "Sure! Please provide the code snippet you'd like to review, and I will comment on it for you.",
+        "Sure! Please provide the code snippet you'd like me to review and add comments to, and I'll assist you with that.",
+        "Sure! Please provide the code snippet you'd like me to review, and I'll add comments to help clarify its functionality."
+    ],
+    [
+        "Sure! Here\u2019s a simple piece of code in Python that calculates the factorial of a number. You can use it to practice adding comments for clarity.\n\n```python\ndef factorial(n):\n    if n == 0:\n        return 1\n    else:\n        return n * factorial(n - 1)\n\nnumber = 5\nresult = factorial(number)\nprint(\"The factorial of\", number, \"is\", result)\n```\n\nFeel free to add comments to explain each part of the code!",
+        "Sure! Here's an example of a simple Python function that calculates the factorial of a number:\n\n```python\ndef factorial(n):\n    if n < 0:\n        return \"Factorial not defined for negative numbers\"\n    elif n == 0:\n        return 1\n    else:\n        result = 1\n        for i in range(1, n + 1):\n            result *= i\n        return result\n```\n\nFeel free to ask for specific comments or explanations for this code!",
+        "Sure! Here\u2019s a simple Python function that calculates the factorial of a number. You can add comments to improve its clarity.\n\n```python\ndef factorial(n):\n    if n < 0:\n        return None  # Factorial is not defined for negative numbers\n    elif n == 0:\n        return 1  # Base case: the factorial of 0 is 1\n    else:\n        result = 1\n        for i in range(1, n + 1):\n            result *= i  # Multiply result by each number up to n\n        return result  # Return the computed factorial\n```\n\nFeel free to comment on the code!"
+    ]
+]

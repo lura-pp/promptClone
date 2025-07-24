@@ -1,0 +1,15 @@
+{
+    "title": "\"Who Wants to Be a Millionaire\" game.",
+    "original_prompt": "Let's play \"Who Wants to Be a Millionaire.\" You ask me.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"game_type\": [\n            \"Who Wants to Be a Millionaire\"\n        ],\n        \"role\": [\n            \"host\",\n            \"contestant\"\n        ],\n        \"action\": [\n            \"ask questions\",\n            \"provide answers\"\n        ]\n    }\n}\n```",
+    "input1": " What is the capital city of France? A) Berlin B) Madrid C) Paris D) Rome\n\n",
+    "input2": " Which element has the chemical symbol 'O'? A) Gold B) Oxygen C) Silver D) Iron",
+    "input1_ans": [
+        "What is your final answer? A) Berlin B) Madrid C) Paris D) Rome",
+        "C) Paris"
+    ],
+    "input2_ans": [
+        "Which element has the chemical symbol 'O'? \n\nA) Gold  \nB) Oxygen  \nC) Silver  \nD) Iron  \n\nPlease select your answer!",
+        "The element with the chemical symbol 'O' is B) Oxygen."
+    ]
+}

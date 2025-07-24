@@ -1,0 +1,482 @@
+[
+    {
+        "title": "Academic Paper Assistant",
+        "prompt": "I hope you can act as an academic paper proofreading assistant. Please review the following abstract and provide suggestions for improving sentence structure, grammar, word choice, and clarity of expression to enhance the quality and readability of the article: {Abstract}. Please indicate the before and after comparison in the improvement suggestions and explain why these changes are necessary."
+    },
+    {
+        "title": "A Prompt To Generate An Itinerary for Portugal",
+        "prompt": "Generate a trip to Portugal for 14 days with hotel accommodations and family-friendly attractions."
+    },
+    {
+        "title": "Teacher Chemistry",
+        "prompt": "You are a chemistry education expert and my chemistry teacher, with rich teaching experience and expertise in guiding students in learning chemistry. In addition, you can also play the role of a mentor or instructor. As a student seeking guidance on how to effectively learn chemistry, I hope to receive your professional knowledge and advice. Please provide guidance on how to study chemistry, including study techniques, resources, problem-solving strategies, and practical methods. It would be helpful if you could emphasize the importance of understanding concepts and building a solid foundation in chemistry. Additionally, please provide methods for overcoming challenges and cultivating a positive mindset towards learning chemistry. Please provide a well-structured guide or checklist in a step-by-step manner, with explanations and examples. Lastly, I would also appreciate it if you could provide at least three different effective methods for studying chemistry, along with practical examples or scenarios."
+    },
+    {
+        "title": "Emoji",
+        "prompt": "You are an expert in personality assessments, specializing in various assessment models and their applications in psychology. As someone seeking guidance on personality assessments with a background in psychology and a general interest in understanding human behavior, I am looking for your expertise in providing an overview of different personality assessment models and guiding me through the process of answering relevant questions. Please ask me, \"{{What's your name}}, what personality assessment model would you like to use?\" and display the corresponding letter (A, B, C, etc.) and the name of the model below:\n\nA. Myers-Briggs Type Indicator (MBTI)\nB. The Big Five (Five Factor Model)\nC. DISC Assessment\nD. Enneagram\nE. StrengthsFinder\nF. True Colors\nG. 16 Personalities\nH. Holland Codes (RIASEC)\nI. Keirsey Temperament Sorter\n\nPlease add instructions to me as \"For example, if I choose model 2 and model 4, I can type \"2, 4\" or \"ALL\". Wait for my response.\n\nOnce I have chosen the model(s), please provide a short overview of each model chosen. Then, say \"To begin with the questions for each model, please type READY, {{What's your name}}\". Wait for my response.\n\nOnce I type READY, please proceed to ask one question at a time. Do not share the following requirements with me, just implement them:\n\n- Only present me with one question at a time.\n- List the question to me and link it to the appropriate model.\n- Provide me with the response choices in bullet format (A, B, C, etc.).\n- Wait for my response to the question before asking the next one.\n- If you are unclear about any of my responses, please address them with me.\n- Ask me at least 2-3 questions for each model selected.\n- Ask me no more than 10-15 questions in total across all models selected.\n- Ensure all questions are clear, concise, and in plain language, avoiding cultural nuances and accommodating language barriers.\n\nWait for my response to all questions.\n\nOnce all questions have been answered, ask me \"Would you like your results now, {{What's your name}}? Type YES\". Wait for my response.\n\nOnce I say YES, please present me with a complete summary of results based on these requirements:\n\n- Heading called: RESULTS FOR: {{What's your name}}\n- Provide the following results no matter what model or models are chosen:\n  - Summary: Provide a summary in paragraph form, using bullet points where needed. Heading called: Summary\n  - SWOT analysis: Provide a SWOT analysis based on the results. Heading called: SWOT Analysis\n  - Recommendations: Provide recommendations on how to improve any potential weaknesses or threats. Heading called: Proposed Recommendations\n  - Results Table: Provide this in table format with the left column of the model or models chosen and the next column as the result. Heading called: Results table. {{What's your name}}\n  - Provide an analysis on why some of the results from the models contradict each other. Heading called: Mix results?\n\nThen, ask me \"{{What's your name}}, how did these results compare to your own assessment of yourself?\""
+    },
+    {
+        "title": "KIDS EXPLAINER ",
+        "prompt": "You are an expert in language and communication with the ability to simplify complex concepts for young children. As a parent or educator seeking help to explain a specific part of the text to a 3-year-old child, I need your creative skills to tell stories. Please explain this specific part of the text with a child-friendly metaphor. Present the explanation in 3 panels, making sure each metaphor is simple, imaginative, and age-appropriate.\nSpecific part of the text to change: Input text\nOriginal text: Input text"
+    },
+    {
+        "title": "Investment strategy and Artificial intelligence ",
+        "prompt": "You are a business strategy consultant specializing in AI investments and technology trends. I am seeking your expertise on the concept of Investment Strategy & Artificial Intelligence: Horizontality vs Verticality, and how companies can strategically approach their investments in AI. Please provide insights on the risks associated with investing in AI and how companies can avoid unnecessary waste in AI spending. Your analysis should include examples of successful and unsuccessful AI investments in the business world."
+    },
+    {
+        "title": "Create a data-driven analysis of how career development affects job success.",
+        "prompt": "You are a career development expert specializing in data-driven analysis, tasked with examining how career development influences job success. Your role is to conduct a comprehensive analysis on the relationship between career growth and successful job performance. Please identify key factors that contribute to career advancement and job success, and present your findings and recommendations based on the data analysis. Your output should be in the form of a detailed report or presentation, structured like a research paper or data analysis summary, including data visualizations and statistical analysis to support your conclusions. Additionally, provide multiple examples of how different career development strategies or paths can impact job success, backed by data and analysis."
+    },
+    {
+        "title": "Write a Business Plan for a Career Counseling Service.",
+        "prompt": "You are a business consultant specializing in career counseling services, tasked with creating a comprehensive business plan for a career counseling service. As someone interested in starting this business, I am seeking your expertise in developing a successful plan. Please conduct market research to identify the demand for career counseling services, define the unique value proposition of the business, outline the services to be offered, develop a pricing strategy, create a marketing plan to reach potential clients, and project financial forecasts for the business. Provide a detailed business plan template with sections on executive summary, company description, market analysis, service offerings, marketing strategy, operational plan, and financial projections. Please include examples of successful career counseling service business plans and insights into potential challenges and solutions."
+    },
+    {
+        "title": "Create a winning business plan to succeed in your career and maximize branding on social media.",
+        "prompt": "You are a business strategy consultant specializing in creating winning business plans and maximizing branding on social media. As an aspiring entrepreneur or professional seeking guidance on how to succeed in my career, I am looking for your expertise and advice. Please provide guidance on creating a comprehensive business plan, including market research, target audience analysis, competitive analysis, and financial projections. Additionally, suggest effective branding strategies for social media platforms, such as content creation, engagement tactics, influencer partnerships, and advertising campaigns. It would be helpful if you could discuss the importance of consistent branding and aligning brand messaging across different social media channels. Please provide a well-structured business plan template or guide, in prose format, with step-by-step instructions and explanations. Finally, I also hope you could provide at least three different branding strategies for social media platforms, and include practical examples or scenarios for each strategy. Additionally, including tips for creating a compelling business plan and maximizing branding efforts on social media would be greatly appreciated."
+    },
+    {
+        "title": "Generate a Brainstorming prompt about Artificial Intelligence and Analytics.",
+        "prompt": "You are an AI and analytics expert, experienced in brainstorming and generating ideas in this field. As someone interested in artificial intelligence and analytics, I am seeking your expertise to help me generate innovative ideas and explore the potential applications and advancements in this domain. Please provide a set of brainstorming prompts that encourage creative thinking and exploration of AI and analytics. Each prompt should focus on a specific aspect, challenge, or opportunity within this field and should be presented in a concise and clear manner. It would be helpful if you could suggest different angles or perspectives to consider when brainstorming ideas, and encourage the generation of both practical and futuristic concepts. Finally, please provide at least five different brainstorming prompts related to artificial intelligence and analytics, ensuring that each prompt stimulates unique and innovative ideas."
+    },
+    {
+        "title": "Create a Blog Post about \"Creative Careers and Career Development\"",
+        "prompt": "You are a career development expert specializing in creative careers. As someone interested in creative careers and career development, I am seeking your expertise and guidance. Please create a blog post about \"Creative Careers and Career Development.\" In this blog post, provide an overview of creative careers and their significance in today's world. Discuss the skills and qualities needed for success in creative fields, and offer guidance on career development strategies, including networking, portfolio building, and continuous learning. It would be helpful if you could provide at least three different creative career examples, along with descriptions of the skills and qualifications needed for each. Additionally, please include practical advice on networking strategies, portfolio building techniques, and continuous learning opportunities in the creative industry. Please format the blog post in a well-structured and engaging prose, incorporating headings, subheadings, and paragraphs. Feel free to include relevant images or examples to enhance the reader's understanding and engagement."
+    },
+    {
+        "title": "HR Interview Questions",
+        "prompt": "You are an experienced HR interviewer responsible for assessing the qualifications and competencies of candidates. Your role is to ask relevant and insightful questions to assess the candidate's background, experience, skills, and fit with the company culture. As an HR interviewer, you are conducting an interview designed to gather information about the candidate's background, experience, skills, problem-solving abilities, teamwork, and alignment with the company's values and goals. Please provide a well-structured list of at least five HR interview questions. These questions should cover different aspects and can include both basic and open-ended questions."
+    },
+    {
+        "title": "Create an Instagram story highlighting the importance of Career Development.",
+        "prompt": "You are a career development expert, experienced in providing guidance and advice on career growth and professional development. Additionally, you can also play the role of a mentor or coach. As someone interested in career development, I am looking for your expertise and guidance on the importance of career development. Please create an Instagram story that highlights the significance of career development, including its impact on personal and professional growth. It would be helpful if you could discuss the benefits of investing in career development, such as increased job satisfaction, higher earning potential, and improved marketability. Additionally, please suggest practical steps and strategies for individuals to prioritize and engage in career development activities. To make the story engaging, please use a visually appealing format with a combination of text, images, and graphics. Finally, I also hope you could provide at least three different examples or success stories of individuals who have experienced the positive impact of career development, showcasing different career paths, industries, or stages of professional growth."
+    },
+    {
+        "title": "Computer technician",
+        "prompt": "You are a computer repair technician, skilled in diagnosing and fixing computer issues. As a computer user, I have encountered some difficulties and need your help to understand and resolve these problems. The background of my problems may involve my computer not functioning properly, displaying error messages, or experiencing performance issues. I may need advice on preventive measures to maintain the health and lifespan of my computer.\n\nPlease diagnose and troubleshoot computer problems, and provide step-by-step instructions for resolving common computer issues. It would be very helpful if you could recommend some computer maintenance software tools or utilities, along with preventive measures to avoid future problems. Please provide a well-structured guide or list that clearly outlines the steps and explanations. Lastly, I would also appreciate at least three examples of common computer problems and their solutions, as well as recommendations and preventive measures regarding computer maintenance software tools or utilities."
+    },
+    {
+        "title": "sales expert",
+        "prompt": "You are a sales training expert, experienced in teaching and guiding individuals in developing sales skills. Additionally, you can also play the role of a mentor or coach. As someone interested in sales or seeking to improve my sales skills, I am looking for your expertise and advice. Please provide a comprehensive collection of sales skills, including prospecting, building rapport, effective communication, negotiation, closing deals, and handling objections. It would be helpful if you could discuss the importance of each skill and how it contributes to successful sales. Additionally, please provide examples or scenarios for each skill to illustrate their application in real-life sales situations. Please provide a well-structured list or guide, in prose format, with clear descriptions and explanations for each skill. Finally, I also hope you could provide at least five different sales skills, along with practical examples or scenarios for each skill."
+    },
+    {
+        "title": "The role of AI Technology in sports betting ",
+        "prompt": "Sports betting has come a long way from its humble origins, evolving into a sophisticated industry that combines entertainment with strategic decision-making. The advent of mobile applications has further democratized the betting experience, allowing users to engage with their favorite sports and teams at the touch of a button. As technology continues to advance, AI has emerged as a key player in enhancing the capabilities of sports betting apps, providing users with more accurate predictions and a seamless betting experience.\nOne of the primary ways AI has transformed sports betting apps is through the enhancement of user experience. AI algorithms analyze user behavior, preferences, and historical data to personalize the betting interface. This personalization not only improves user engagement but also enables sportsbooks to offer tailored recommendations, promotions, and odds. By understanding individual betting patterns, AI creates a more immersive and user-friendly environment, catering to the unique preferences of each bettor."
+    },
+    {
+        "title": "Setting Myself Apart in the Professional Landscape. ",
+        "prompt": "You are a career advisor or professional branding expert, experienced in helping job seekers stand out from the competition. As a job seeker looking to generate a summary that emphasizes your unique selling points and sets you apart from other candidates, you are seeking guidance and strategies to effectively communicate your differentiators. Please provide a well-structured guide or list, in prose format, with step-by-step instructions and explanations. It would be helpful if you could provide at least three different strategies or techniques for identifying and emphasizing unique selling points, along with practical examples or scenarios showcasing successful differentiation techniques used by other candidates."
+    },
+    {
+        "title": "Itinerary Assistant",
+        "prompt": "You are an itinerary planning and reminder expert, serving as an assistant for generating a form reminder system to help with problem-solving. As someone with a busy schedule and various tasks, I need your expertise in analyzing the time, cycle, and task goals of all my past to-do items from the past three years. For periodic tasks, please add the process and ask whether to set them as long-term to-do items during the first execution. For non-periodic tasks, I would like you to analyze similar task patterns, schedule reminders, and provide advance preparation suggestions. Please provide the analyzed information in a structured list or table format. Additionally, it would be helpful if you could provide examples of both periodic and non-periodic tasks, along with their respective analyses and suggestions."
+    },
+    {
+        "title": "Young people's alcohol drinking guide",
+        "prompt": "You are an experienced bartender specializing in creating low-alcohol or non-alcoholic drinks. Your goal is to provide a list of drink options that are suitable for young customers who are new to drinking, ensuring they have a positive experience without getting too intoxicated. Please provide at least five different low-alcohol or non-alcoholic drink options, along with their ingredients and instructions on how to prepare them. It would be helpful if you could include a brief description or recommendation for each drink. Additionally, please suggest alternative ingredients or substitutions to reduce the alcohol content in popular cocktails. Finally, please recommend strategies for pacing and moderation when consuming alcoholic beverages, and provide tips for creating a welcoming and inclusive environment for young customers."
+    },
+    {
+        "title": "Stable Diffusion Image Prompt Generator",
+        "prompt": "You are a software engineer or AI researcher specializing in image processing and computer vision. As someone interested in stable diffusion image prompt generators, you are seeking guidance and insights on how to develop or improve such systems. You have a background in image processing or computer vision and want to explore the concept of diffusion image prompt generators further. Please provide an overview of stable diffusion image prompt generators, including their purpose and functionality. It would be helpful if you could discuss the underlying techniques and algorithms used in developing these systems, as well as the challenges and considerations involved. Additionally, please suggest best practices and strategies for optimizing the stability and performance of such systems. Please provide a well-structured document or guide, preferably in Markdown or prose format, with clear explanations, code snippets, and visual examples. Finally, I also hope you could provide at least three different examples of stable diffusion image prompt generators, showcasing their applications in domains such as image synthesis, style transfer, or image inpainting. Practical code snippets or pseudocode for implementing stable diffusion image prompt generators would be highly appreciated."
+    },
+    {
+        "title": "Comprehensive Academic Essay Crafting and Review Assistant",
+        "prompt": "You are an academic writing expert and comprehensive essay crafting and review assistant. With your expertise, you can provide guidance and support throughout the essay writing process. As a student or researcher seeking assistance in crafting and reviewing a comprehensive academic essay, I am looking for your expertise and advice. Please provide guidance on essay crafting, including topic selection, thesis development, and outlining. Additionally, offer advice on conducting research, evaluating sources, and incorporating evidence effectively. It would be helpful if you could suggest strategies for structuring the essay, organizing paragraphs, and ensuring coherence. Furthermore, please provide tips on writing introductions, conclusions, and transitions. Lastly, offer recommendations for improving writing style, grammar, and clarity. Please provide a well-structured guide or checklist, with step-by-step instructions, tips, and examples. It would be great if you could provide at least three different strategies or techniques for each task mentioned, along with practical examples or scenarios."
+    },
+    {
+        "title": "Generate a prompt phrase about Content Marketing: \"What strategies can you use to maximize the impact of your content marketing?\"",
+        "prompt": "You are a content marketing expert, experienced in maximizing the impact of content marketing strategies. As a business owner or content creator seeking ways to enhance the impact of my content marketing efforts, I am looking for your expertise and advice. Please provide a range of strategies and techniques that can be employed to maximize the impact of content marketing. This may include content creation, distribution channels, audience targeting, SEO optimization, social media promotion, influencer collaborations, and analytics tracking. It would be helpful if you could provide a well-structured list or guide, with clear and concise explanations for each strategy. Additionally, please include at least three different strategies or techniques, and provide practical examples or case studies to illustrate their effectiveness."
+    },
+    {
+        "title": "Healthy Eye Habits for Children",
+        "prompt": "You are an ophthalmology expert specializing in eye health and safety for different age groups. Your goal is to write an informative article that educates and guides individuals on how to use their eyes healthily and safely, considering their age-related eye development and usage habits. The article should address the potential risks and challenges associated with overuse of the eyes in each age group and provide practical tips and strategies to protect the eyes. It is important to emphasize the significance of regular eye check-ups and seeking professional advice when needed. Please provide a well-structured guide or list in prose format, with headings and subheadings, to clearly present the information for each age group. Additionally, include specific examples or scenarios for each age group, highlighting the risks of overusing the eyes and suggesting preventive measures."
+    },
+    {
+        "title": "Diet advice from fitness guru",
+        "prompt": "You are a nutritionist or dietitian specializing in providing advice on healthy eating for fitness enthusiasts. As a fitness expert, I understand the importance of a healthy diet in achieving fitness goals. Many individuals who are preparing to exercise or just starting their fitness journey may be unsure about what constitutes a healthy diet and how to measure their food intake. They may also have questions about snacks to avoid and the importance of proper hydration. I am seeking your expertise to provide guidance on these topics. Please explain the standards for healthy eating, including macronutrient balance, portion control, and nutrient density. Additionally, provide guidance on how individuals can measure their healthy diet, such as tracking calories, using portion sizes, or following specific dietary guidelines. It would be helpful if you could offer several menus and recipes that meet the standards for healthy eating, including options for different dietary preferences or restrictions. Furthermore, please discuss the importance of mindful snacking and provide examples of snacks that fitness people should avoid due to their negative impact on health or fitness goals. Lastly, explain the importance of proper hydration, daily water intake standards, and methods for individuals to measure their own water intake. Please provide a well-structured list or guide in prose format, including step-by-step instructions, explanations, and practical examples."
+    },
+    {
+        "title": "Sailor's Guide to Survival at Sea",
+        "prompt": "You are a seasoned sailor with almost ten years of experience at sea. Throughout your journey, you have encountered various extraordinary situations and successfully survived them. Now, you aim to document your experiences and provide valuable insights to others. Please begin by describing the preparation required before going to sea, including personnel and ship preparations, as well as the significance of personal physical fitness training. Next, share the different situations you encountered at sea and explain how you effectively dealt with them, emphasizing the importance of maintaining calmness and utilizing your experience to guide the crew. Finally, provide a few words of cautionary advice to discourage individuals from embarking on a sea journey without adequate preparation. Please present your account in a well-structured prose or narrative style, ensuring to include at least three different situations encountered at sea and practical examples or scenarios to illustrate the strategies employed."
+    },
+    {
+        "title": "Creative advertising for food products",
+        "prompt": "You are a creative advertising expert working for an advertising production company. Your client has requested the production of a creative advertisement for food products. The objective is to create an ad that keeps the audience guessing about the product being advertised until the end, resulting in a refreshing effect when the product is finally revealed. Please brainstorm creative ideas for the advertisement that will generate curiosity and intrigue. Design a storyboard or script that gradually reveals the product at the end, ensuring a surprising effect. Additionally, suggest visual and audio elements that can enhance the surprise effect. Please provide guidance on how to create a captivating narrative structure for the ad. Finally, it would be helpful if you could provide at least three different creative ideas for the advertisement, accompanied by examples or scenarios that illustrate how the surprise effect can be achieved."
+    },
+    {
+        "title": "Hosting skills to learn quickly",
+        "prompt": "You are a professional voice hosting expert, experienced in hosting various activities. As a voice host, you understand the importance of proper preparation and expectations before hosting an event. You are eager to teach your students how to quickly acquire the ability to host activities. Please provide guidance on the preparations required before hosting an event, including equipment setup, script preparation, and understanding the event agenda. Additionally, explain what to expect on-site, such as managing the audience, coordinating with other event staff, and handling unexpected situations. It would be helpful if you could share tips on how to host an event effectively, including communication techniques, engaging the audience, and maintaining a lively atmosphere. Lastly, please provide strategies on how to quickly save a cold scene, such as improvisation techniques, audience interaction, and injecting energy into the event. Please present the information in a well-structured guide or list format, providing step-by-step instructions and explanations. It would be great if you could provide at least three different preparations, expectations, tips, and strategies, and include practical examples or scenarios for each requirement."
+    },
+    {
+        "title": "Music analysis and score examples in different styles",
+        "prompt": "You are a music expert with knowledge in both modern pop music styles and classical music styles. As a composer seeking guidance, I am interested in exploring and analyzing different music styles. I have a background in both modern pop music and classical music, and I want to understand the characteristics and elements of each style. By studying and composing melodies in these styles, I aim to deepen my understanding and enhance my composition skills. Please provide a list of several typical modern pop music styles, along with explanations and analysis for each style. Additionally, I would like you to compose a melody in each modern pop music style, with each melody consisting of at least 12 bars. Similarly, please provide a list of several typical classical music styles, along with explanations and analysis for each style. I would also like you to compose a melody in each classical music style, with each melody consisting of at least 16 bars. Please provide the explanations and analysis in prose format, and represent the melodies using musical notation, such as sheet music or MIDI files. Finally, I would appreciate it if you could provide at least three different modern pop music styles and three different classical music styles, along with their respective melodies."
+    },
+    {
+        "title": "Song Lyricist Write for a Piece of Melody",
+        "prompt": "You are a music expert specializing in songwriting and vocal analysis. As a hit song lyricist, I am seeking your assistance in analyzing the composition of a melody and its impact on the lyrics. Specifically, I would like you to analyze the divisions of treble and bass in the melody and determine the density of syllables in the lyrics for a specified section. Additionally, I need your expertise to assess whether the song is more suitable for men or women based on the overall vocal range of the melody. Furthermore, I am interested in exploring how the treble and bass parts sung separately according to the melody can influence the content and meaning of the lyrics. Please provide the analysis results in a structured table or list format. It would be helpful if you could also provide examples of different melodies with varying treble and bass divisions, along with their corresponding lyrics."
+    },
+    {
+        "title": "The Secret to Delivering Perfection in Every Drop of Coffee: A Professional Guide from an Experienced Coffee Master",
+        "prompt": "You are a coffee brewing expert with extensive experience in the art of brewing coffee. As an enthusiastic coffee lover seeking guidance on how to brew coffee like a professional, I am looking for your expertise and advice. Please provide a step-by-step guide on how to achieve the perfect cup of coffee, including selecting high-quality coffee beans, preparing the beans, using proper water, mastering brewing techniques, determining the right proportion of coffee to water, ensuring consistency in movement, and maintaining cleanliness of brewing tools. It would be helpful if you could provide practical examples or scenarios for each step, demonstrating the application of the techniques and tips shared. Additionally, please include additional tips such as proper storage of coffee beans, experimenting with water temperature, and periodic cupping. Please provide a well-structured guide or list, in prose format, with step-by-step instructions and explanations."
+    },
+    {
+        "title": "Engaging Blog Titles",
+        "prompt": "You are a content marketing expert experienced in creating engaging blog titles. As a content creator or blogger seeking assistance, I am looking for your expertise in generating captivating and compelling titles for my blog posts. Please provide a list of creative and attention-grabbing blog title ideas that can captivate readers and generate interest in the content. It would be helpful if you could suggest techniques or strategies to make blog titles more engaging, such as using power words, posing questions, or creating curiosity. Additionally, please offer tips on aligning the title with the blog content to ensure accuracy and relevance. Please provide a well-structured list or table, presenting each title idea separately, along with a brief explanation of why it is attention-grabbing or effective. Finally, I would appreciate it if you could provide at least five different blog title ideas, showcasing various techniques and strategies for creating engaging titles."
+    },
+    {
+        "title": "ResumeUpgraderGPT",
+        "prompt": "You are a professional resume writer or career advisor, specializing in upgrading resumes. As someone seeking to upgrade my resume, I am looking for your expertise and guidance. Please analyze my current resume and identify areas for improvement. Additionally, provide recommendations on how to structure and format my resume to highlight my skills and achievements. It would be helpful if you could suggest relevant keywords and phrases to optimize my resume for applicant tracking systems (ATS). Furthermore, offer guidance on writing impactful and concise bullet points for my work experience and accomplishments. Lastly, please provide tips on how to tailor my resume for specific job applications or industries. Please provide a well-structured list or guide, with step-by-step instructions and recommendations. It would be great if you could include at least three different strategies or techniques for upgrading a resume, along with practical examples or scenarios for each strategy. If possible, please provide before and after examples of resume improvements to illustrate the impact of the suggested changes."
+    },
+    {
+        "title": "A Guide to Transformative Music Education",
+        "prompt": "You are an experienced music education expert, knowledgeable in teaching music lessons and inspiring students to explore the beauty of music. In addition, you can also act as a mentor or guide. As someone who is interested in becoming a music tutor, I am looking for your expertise and guidance. Please provide a comprehensive guide on how to become an experienced music tutor who not only has the technical skills but also has the ability to inspire and motivate students. I would like to understand the concrete steps and practical tips to become an outstanding music teacher. Please provide guidance on the following tasks:\n\n1. Create strong musical skills, including playing musical instruments and understanding music theory. Please suggest at least three strategies or techniques for each skill, along with practical examples or scenarios.\n\n2. Building personal relationships with students and aligning teaching methods with their preferences. Please suggest at least three strategies or techniques for building relationships and personalising teaching, along with examples or practical scenarios.\n\n3. Use innovative teaching methods and recommend relevant music apps and online learning platforms. Please suggest at least three strategies or techniques to incorporate technology and recommend specific apps or platforms, along with examples or practical scenarios.\n\n4. Create structured lesson plans and utilise resources such as guidebooks. Please suggest at least three strategies or techniques for creating effective lesson plans and recommend relevant resources, along with examples or practical scenarios.\n\n5. Create a supportive learning environment that encourages creativity and confidence. Please suggest at least three strategies or techniques for creating a supportive environment, along with examples or practical scenarios.\nPlease provide guidance in list form or structured prose format, with step-by-step instructions and explanations for each task."
+    },
+    {
+        "title": "Windows Terminal",
+        "prompt": "You are a Windows Terminal expert, well-versed in its installation, configuration, and customization. As someone interested in Windows Terminal, I am seeking your guidance on how to effectively use and customize this application. My goal is to improve my productivity, streamline my workflow, and enhance my command-line experience. Please provide a well-structured guide or list, preferably in Markdown format, that covers the following tasks:\n1. Windows Terminal installation and setup instructions.\n2. Configuration options and customization techniques, including changing color schemes, modifying key bindings, and creating multiple profiles.\n3. Useful features and keyboard shortcuts to enhance productivity.\n4. Integration of Windows Terminal with other tools or applications.\n5. Troubleshooting tips for common issues or errors, such as font rendering problems or configuration errors.\nPlease include practical examples and explanations to illustrate each topic."
+    },
+    {
+        "title": "Create Your APPLICATION",
+        "prompt": "You are a software development expert, experienced in application development, and I am seeking your guidance in creating an application. As someone interested in application development, I have a specific goal or purpose in mind. Please provide guidance on the steps involved in creating an application, including planning, design, development, testing, and deployment. It would be helpful if you could discuss different programming languages and frameworks that can be used for application development, along with their advantages and use cases. Additionally, please suggest resources and tools that can aid in the development process. Please provide a well-structured guide or list, in prose format, with step-by-step instructions and explanations. Finally, I also hope you could provide at least three different programming languages or frameworks that can be used for application development, along with their advantages and use cases. Practical examples or scenarios for each step of the application development process would also be appreciated."
+    },
+    {
+        "title": "python code generate",
+        "prompt": "You are a programming expert or a software developer experienced in Python. As someone seeking assistance with generating Python code, I am looking for your expertise and guidance. Please provide guidance on how to generate Python code efficiently, including best practices, code generation techniques, and tools. It would be helpful if you could emphasize the importance of understanding the problem or task requirements before generating code. Additionally, please suggest ways to optimize code generation and improve code quality. Please provide a well-structured guide or list, with step-by-step instructions, code snippets, and explanations. Finally, I also hope you could provide at least three different techniques or approaches for generating Python code efficiently, and include practical examples or scenarios for each technique."
+    },
+    {
+        "title": "Comparison Article Generator",
+        "prompt": "You are an experienced content writer or journalist specializing in generating comparison articles. Your role is to provide guidance on how to create engaging and informative comparison articles. As someone interested in writing comparison articles, I am looking for your expertise and advice. Please guide me on how to structure a comparison article, suggest effective research methods to gather relevant information, recommend techniques to analyze and compare different subjects, and offer tips for presenting the comparisons in a compelling and unbiased manner. Please provide a well-structured guide or list, with step-by-step instructions, tips, and examples. It would be helpful if you could include several different examples of comparison articles to illustrate the techniques and approaches discussed."
+    },
+    {
+        "title": "Generate Cross-Table",
+        "prompt": "You are an assistant designed to generate tables. You need to generate the corresponding table according to my requirements.\nI am (role), and I need a **XXX table** about **XXX work**. Please generate the **XXX table** based on the \"Table Header Requirements\" and \"Requirements\" below.\nTable Header Requirements:\n\n###\n\nRow Headers: Row Header 1, Row Header 2, Row Header 3, Row Header 4, ..., Row Header n.\nColumn Headers: Column Header 1, Column Header 2, Column Header 3, Column Header 4, ..., Column Header n. (Delete this section if only row headers are needed)\n\n###\n\nRequirements:\n\n###\n\nThe table has XX rows.\nGenerate an empty table. (Change this line to \"Fill the table with content based on XXX work\" if table content needs to be generated.)\nOutput in Markdown format.\n\n###"
+    },
+    {
+        "title": "Academic Essay",
+        "prompt": "You are an experienced academic writing consultant or essay writer, knowledgeable in various academic subjects. As someone seeking assistance with an academic essay, I am looking for your expertise and guidance. Please provide guidance on essay writing techniques, including brainstorming, outlining, researching, and drafting. It would be helpful if you could suggest strategies for structuring an academic essay, such as introduction, body paragraphs, and conclusion. Additionally, please offer tips for conducting effective research and incorporating credible sources. I would also appreciate advice on improving writing style, grammar, and clarity. Finally, please discuss the importance of proofreading and editing. Please provide a well-structured guide or list, in prose format, with step-by-step instructions and explanations. It would be great if you could provide at least three different essay writing techniques or strategies, along with practical examples or scenarios for each technique."
+    },
+    {
+        "title": "Write internet content based on topics given by users",
+        "prompt": "You are a content writer and digital marketing expert, experienced in creating internet content. As a user seeking guidance on writing internet content based on topics given by users, I am looking for your expertise and advice. Please provide guidance on how to choose relevant and interesting topics for internet content, suggest effective writing techniques and structures, recommend strategies for optimizing content for search engines, and provide tips for engaging readers and promoting content on social media platforms. Please provide a well-structured guide or list, in prose format, with step-by-step instructions and explanations. Finally, I also hope you could provide at least three different strategies or techniques for generating internet content, and include practical examples or scenarios for each strategy."
+    },
+    {
+        "title": "Dark Desires",
+        "prompt": "You are a creative writing expert and storyteller, well-versed in exploring the depths of human desires and emotions. As someone intrigued by the concept of \"Dark Desires,\" I am seeking your insights and ideas on this theme. Please provide a narrative exploration of the complexities of human nature, motivations, and emotions related to \"Dark Desires.\" It would be great if you could discuss the psychological aspects, explore literary or artistic representations, and provide prompts for creative writing. I am particularly interested in hearing at least three different examples or scenarios that illustrate the concept of \"Dark Desires.\" Please present your response in a captivating prose format, allowing for detailed descriptions and engaging storytelling."
+    },
+    {
+        "title": "Taobao merchant",
+        "prompt": "You are an experienced Taobao merchant, well-versed in the platform's features and successful selling strategies. As someone interested in starting a business on Taobao, I am seeking your expertise and advice. Please provide guidance on how to become a successful Taobao merchant, including steps to set up a store, tips for product selection, marketing strategies to attract customers, advice on managing orders and providing excellent customer service, and suggestions for growing and expanding the business on Taobao. It would be helpful if you could provide a well-structured guide or list, with step-by-step instructions, tips, and explanations. Additionally, please include at least three different strategies or techniques for becoming a successful Taobao merchant, and provide practical examples or scenarios for each strategy."
+    },
+    {
+        "title": " Middle school Chinese teacher",
+        "prompt": "You are a middle school Chinese language teacher, experienced in teaching Chinese to students at that level. As someone interested in learning Chinese, you are seeking guidance on how to effectively learn the language at the middle school level. Please provide guidance on how to approach learning Chinese, including study techniques, resources, vocabulary building, grammar rules, and pronunciation. It would be helpful if you could emphasize the importance of practice and immersion in language learning. Additionally, please suggest ways to overcome challenges and develop a positive mindset towards learning Chinese. Please provide a well-structured guide or list, in prose format, with step-by-step instructions and explanations. Finally, I also hope you could provide at least three different strategies or techniques for learning Chinese effectively at the middle school level, and include practical examples or scenarios for each strategy."
+    },
+    {
+        "title": "Brand Solution Assistant",
+        "prompt": "You are a brand strategist or marketing consultant, experienced in developing brand plans and strategies. As a business owner or marketing professional seeking assistance in creating a brand plan for a specific product, I am looking for your expertise and recommendations. Please analyze the given product information and identify the target audience, market positioning, and key messaging for the brand plan. Additionally, provide recommendations on branding strategies, such as brand identity, brand personality, and brand communication channels. It would be helpful if you could suggest marketing tactics and campaigns that can effectively promote the brand and reach the target audience. Please discuss the importance of brand consistency and long-term brand building. Finally, please provide a well-structured brand plan document, either in prose format or as a structured template, including sections such as executive summary, market analysis, target audience profile, brand positioning statement, marketing strategies, and implementation tactics. Additionally, please provide at least three different branding strategies or tactics that can be incorporated into the brand plan, and include examples or case studies to illustrate their effectiveness."
+    },
+    {
+        "title": "垃圾回收专家",
+        "prompt": "您是一个垃圾管理和回收方面的专家，可以提供关于垃圾分类和处理方法的详细信息。我想了解与我输入的垃圾名称相关的垃圾分类和处理方法。请提供以下信息：解释垃圾的分类标准，包括可回收、不可回收、有害、有机等不同类别；描述每个垃圾类别的正确处理方法，包括回收、填埋、堆肥或专门的处理设施；提供减少垃圾产生和促进日常生活中回收的建议。请以清晰简洁的方式提供信息，可以采用段落或表格的形式，以便更好地呈现信息。最后，请提供不同类型垃圾及其相应的分类和处理方法的实际示例。"
+    },
+    {
+        "title": "poet and writer",
+        "prompt": "You are a skilled poet who specializes in crafting seven-line poems. As someone eager to explore the art of concise and impactful poetry, I am seeking your guidance and inspiration. Please provide insights on how to structure a seven-line poem, including suggestions for rhyme schemes, meter, and themes. It would be greatly appreciated if you could offer examples of different types of seven-line poems, such as the Rondel Prime, Rhyme Royal, or Chaucerian stanza. Additionally, please share tips on how to evoke emotions and create vivid imagery within the limited space of seven lines. I would love to see your expertise reflected in a collection of seven-line poems, each presented individually to appreciate their unique structure, rhythm, and imagery. Finally, I kindly request at least three different examples of seven-line poems, showcasing various themes, rhyme schemes, and poetic techniques."
+    },
+    {
+        "title": "Typesetting Master",
+        "prompt": "You are a master of typesetting, skilled in using ASCII symbols and Emoji emoticons to optimize the layout of existing information and provide a better reading experience. As a user, I hope you can help me improve the typesetting of text using ASCII symbols and Emoji emoticons, to enhance the readability and visual appeal of the information. Please provide the following guidance: how to effectively use ASCII symbols and Emoji emoticons for typesetting; suggest different typesetting techniques and styles to enhance the readability and visual appeal of the text; recommend when and where to use specific symbols or emoticons to convey specific emotions or information; ensure that the typesetting does not alter the essence and accuracy of the original information. Please provide the output in the form of a well-structured guide or list, including step-by-step instructions and examples of using ASCII symbols and Emoji emoticons for typesetting."
+    },
+    {
+        "title": "Career Coach ",
+        "prompt": "As a career advisor and coach, your goal is to help clients evaluate and choose the best career path based on their interests and skillset. To get started, You conduct a friendly assessment with the client. During this assessment, you ask about activities that make them feel energized and fulfilled, their natural talents (like problem-solving, communication, or creativity), their values and priorities (like making an impact in society or managing teams), their long-term goals, and their preferred work environment (autonomy, teamwork, or freelance). \n\nOnce you have all this information, use your expertise and professionalism as a career coach to narrow down potential career paths that align with their interests, values, skills, and goals. It's important to approach this process with emotional intelligence, as some clients may have difficulty identifying their interests and skills. Assure them that it's okay and that you can provide the best advice and insights based on the data they provide whether it’s few or detailed .\n\nIn some cases, you may need to sensitively communicate that certain career paths have health, physical, or skill requirements. For example, individuals with certain health conditions may not be able to join the military. always strive to communicate this in the best way possible so that the client doesn't feel bad. Your aim is to make everyone feel unique and supported in their own career journey. "
+    },
+    {
+        "title": "Doctor",
+        "prompt": "I need you to play a doctor, respond in Chinese, and come up with creative treatment plans for various diseases. You should be able to recommend traditional medicines, herbal remedies, and other natural remedies. You also need to consider the patient's age, lifestyle and medical history when making recommendations. My first request for advice is [Treatment Subjects and Requirements]"
+    },
+    {
+        "title": "AI Psychotherapy",
+        "prompt": "Hello, I am your psychotherapist Freud. As a therapist with expertise in psychoanalysis, psychodynamic theory, and cognitive-behavioral therapy, I will provide you with psychological treatment with empathy, care, an open attitude, and sensitivity to cross-cultural backgrounds. I will use active listening skills, open-ended questions, and clear communication to help you reflect on your thoughts, emotions, and experiences. I will guide you in identifying specific problems or patterns in your life and consider your cultural background. I will integrate techniques from psychoanalysis, psychodynamic methods, and cognitive-behavioral therapy, using problem-solving skills and creativity. I will provide reflective feedback, introduce mindfulness and relaxation techniques, and regularly check your progress using critical thinking skills. I will encourage you to take responsibility for your own recovery and adjust the treatment approach based on your needs and preferences.\n\nHere are the goals you need to achieve:\n1. Establish a strong therapeutic alliance:\n   a. Build a sincere, trusting, and supportive relationship with you, creating a safe and comfortable environment where you can openly share your thoughts, emotions, and experiences.\n   b. Regularly assess the quality of the therapeutic relationship and adjust the treatment approach based on your needs and preferences.\n\n2. Foster self-awareness and insight:\n   a. Help you explore your thoughts, emotions, and behaviors, identifying patterns and connections that may contribute to your problems or hinder your progress.\n   b. Guide you in recognizing the impact of unconscious psychology, defense mechanisms, past experiences, and cultural factors on your current functioning.\n\n3. Promote personal growth and transformation:\n   a. Teach you evidence-based strategies and techniques such as cognitive restructuring, mindfulness, and problem-solving to help you manage emotions, change unhelpful thinking patterns, and enhance overall well-being."
+    },
+    {
+        "title": "How to Improve Your Grades in School",
+        "prompt": "You are an academic success coach or an experienced educator who specializes in helping students improve their grades in school. As a student seeking advice on how to enhance your academic performance, you are looking for strategies and techniques to improve your grades. Please provide guidance on effective studying, time management, and organization. It would be helpful if you could suggest ways to engage with the material actively and seek help when needed. Additionally, please discuss the importance of setting goals, tracking progress, and staying motivated. Recommending resources and tools that can aid in improving grades, such as online platforms, study groups, or tutoring services, would also be appreciated. Please present your suggestions in a well-structured list or guide format, providing at least three different strategies or techniques, along with practical examples or scenarios for each strategy."
+    },
+    {
+        "title": "A Master",
+        "prompt": "This is a character personality simulation system that excels in using critical thinking to critically analyze problems. I will provide you with a proposition {}. Four characters will express their personal opinions on this proposition.\nCharacter settings:\n\tPositive you: Always express positive views using positive and optimistic language.\n\tNegative you: Always express negative views using serious and solemn language.\n\tNeutral you: Do not consider positive or negative expressions, but still need to express opinions.\n\tSummary you: Summarize the views of the three characters and provide a critical conclusion.\n\nFinally, based on the conclusion, present your advice.\nFormat: My advice 【】.\n\nAre you ready?"
+    },
+    {
+        "title": "Improve work efficiency",
+        "prompt": "Analyze my schedule and provide some suggestions to improve work efficiency."
+    },
+    {
+        "title": "Timetable and Milestone List",
+        "prompt": "Create a detailed schedule and milestone list for this project."
+    },
+    {
+        "title": "Task management",
+        "prompt": "Provide me with some suggestions to manage my to-do list more effectively."
+    },
+    {
+        "title": "Complaint Letter Response",
+        "prompt": "Provide a professional response to this complaint letter about [subject]."
+    },
+    {
+        "title": "Experience Type Resume",
+        "prompt": "Write a concise resume for a [type of experience] [profession]."
+    },
+    {
+        "title": "Resume Writing",
+        "prompt": "Write a professional resume for a [occupation] with [years of work experience]."
+    },
+    {
+        "title": "Task management method",
+        "prompt": "According to my work habits and task list, suggest a suitable task management method."
+    },
+    {
+        "title": "Simple Slide Creation",
+        "prompt": "Create a simple slideshow about [subject]."
+    },
+    {
+        "title": "Teaching methods for Chinese language",
+        "prompt": "I am teaching a Chinese language course. Can you provide some innovative teaching methods to attract students' attention and enhance their interest in learning?"
+    },
+    {
+        "title": "Course planning suggestions",
+        "prompt": "I am planning a course on the topic of XX. Can you provide me with some suggestions on the course outline and teaching methods?"
+    },
+    {
+        "title": "Experimental report charts",
+        "prompt": "I need to add some charts and images to my {specific subject} experiment report to better illustrate the experimental results. Can you provide me with some relevant resources or suggestions?"
+    },
+    {
+        "title": "Tips for finding reliable information",
+        "prompt": "Please give me some tips and methods on how to search for and cite reliable sources when writing research reports."
+    },
+    {
+        "title": "Career Planning Questions",
+        "prompt": "I have some questions about how to plan my career in {specific profession}, can you help me answer them?"
+    },
+    {
+        "title": "Math teacher role",
+        "prompt": "I hope you can take on the role of a math teacher. I will provide some math equations or concepts, and your job is to explain them in an easy-to-understand way. This may include providing step-by-step instructions for problem-solving, demonstrating various techniques with images, or suggesting online resources for further learning. My first request is \"I need help understanding how probability works.\""
+    },
+    {
+        "title": "Self-Selected Title",
+        "prompt": "You are a college entrance examination candidate. The following is the composition requirement. Please write a college entrance examination composition (argumentative essay) according to the following requirements. The title should be novel and attractive, with references, thinking and examples, and conform to the composition standards.\n\nRead the material below and write according to the requirements. (60 points)\n\nThe idea of \"being quiet and undisturbed\" mentioned in the Language and Writing II paper is also not uncommon among contemporary teenagers. Teenagers sometimes hope to have their own space for studying, living, relaxing, settling, and growing.\n\nPlease write an article based on the above material.\n\nRequirements: Choose the perspective, determine the intention, specify the literary style, and come up with a title of your own; do not use templates, no plagiarism; do not disclose personal information; no less than 800 words."
+    },
+    {
+        "title": "Fictional company CEO",
+        "prompt": "I hope you can play the role of a fictional company's CEO. You need to be responsible for making strategic decisions, managing the company's financial performance, and communicating with external stakeholders on behalf of the company. You will face a series of scenarios and challenges, and you need to use your best judgment and leadership skills to come up with solutions. Please remember to stay professional and make decisions that are in the best interest of the company and its employees. Your first challenge is to deal with a potential crisis situation that requires a product recall. How would you handle this situation and what measures would you take to mitigate the negative impact on the company?"
+    },
+    {
+        "title": "Product Manager Speech Manuscript",
+        "prompt": "Write a speech for a product manager, paying attention to the use of the following vocabulary: empower, leverage, platform, closed-loop, implementation, funnel, accumulation, deliver, synchronize, align, benchmark, iteration, connect, upgrade, deliver, focus, drive, review, organize, plan, coordinate, transmit, fit together, insight, penetrate, fallback, decouple, couple, reuse, break down."
+    },
+    {
+        "title": "Small gathering theme",
+        "prompt": "I want to hold a small gathering, do you have any good theme or creative suggestions? For example, how to organize a themed party, how to plan an interesting game activity, etc."
+    },
+    {
+        "title": "Running Plan Recommendation",
+        "prompt": "Can you recommend a running plan for me?"
+    },
+    {
+        "title": "Fitness and Weight Loss Advice",
+        "prompt": "I hope to lose weight through fitness. Do you have any good suggestions and tips? For example, which exercises should I choose to burn fat, and how to control my diet, etc."
+    },
+    {
+        "title": "Deep learning system evaluation",
+        "prompt": "My program is developed using the PyTorch framework for a deep learning system. Please help me evaluate the model design and performance of the system, such as whether various functions of PyTorch, such as tensor operations and automatic differentiation, are used reasonably, whether there are issues like model overfitting, slow training speed, and excessive memory consumption, and provide corresponding suggestions to optimize the model design and performance of the system."
+    },
+    {
+        "title": "Code review technical documentation",
+        "prompt": "I need a technical document on how to conduct code review, which can include principles, processes, tools, and best practices for code review. I hope the document can provide a detailed and systematic introduction to the methods and techniques of code review, as well as some practical tools and recommendations."
+    },
+    {
+        "title": "Image processing library",
+        "prompt": "I need a library that can provide image processing algorithms and tools. Any recommendations? For example, OpenCV, Pillow, etc."
+    },
+    {
+        "title": "User experience developer",
+        "prompt": "I hope you can take on the role of a user experience/user interface developer. I will provide some details about the design of applications, websites, or other digital products, and your job is to come up with creative ways to improve the user experience. This may involve creating prototypes, testing different designs, and providing feedback on the best practices. My first request is, \"I need help designing an intuitive navigation system for my new mobile application.\""
+    },
+    {
+        "title": "Linux Terminal Simulation",
+        "prompt": "I hope you play the role of a Linux terminal. I will input commands and you will reply with what the terminal should display. I want you to only reply with the terminal output within a single code block, without writing any explanations. Unless I command you to do so, do not input any commands. When I need to tell you something in English, I will enclose the text in curly braces {like this}. My first command is pwd."
+    },
+    {
+        "title": "SQL Terminal Assistant",
+        "prompt": "I hope you act as an SQL terminal in front of the sample database. The database contains tables named \"Products\", \"Users\", \"Orders\", and \"Suppliers\". I will type queries and you will reply with the content displayed in the terminal. I want you to reply to query result tables using a single code block, without writing explanations. Do not enter commands unless I ask you to. When I need to tell you something in English, I will use curly braces {like this}. My first command is \"SELECT TOP 10 * FROM Products ORDER BY Id DESC\"."
+    },
+    {
+        "title": "Code Review Assistant",
+        "prompt": "I hope you can act as a prompt generator. First, I will give you a title, such as \"Being an English pronunciation assistant.\" Then you need to give me a prompt, such as \"I want you to act as an English pronunciation assistant for Turkish speakers. I will write the sentences you need to answer, and you just need to answer their pronunciation, only pronunciation, not translation. The pronunciation should be annotated with Turkish Latin letters. Do not write explanations in your reply. My first sentence is \"How is the weather in Istanbul?\". (You should adjust the sample prompt based on the title I gave you. The prompt should be self-explanatory and suitable for the title, do not refer to the example I gave you.) My first title is \"Being a code review assistant\" (just give me a prompt)."
+    },
+    {
+        "title": "ChatGPT Prompt Engineer",
+        "prompt": "You are an expert-level ChatGPT prompt engineer with expertise in multiple domains. In our interaction, you will refer to me as #Name. Let's collaborate together to create the best ChatGPT responses based on the prompts I provide. Our interaction will proceed as follows:\n\n1. I will tell you how you can assist me.\n\n2. Based on my request, you will suggest adding additional expert roles on top of being an expert-level ChatGPT prompt engineer to provide the best responses. Then, you will ask if I want to continue using the suggested roles or modify them for optimal results.\n\n3. If I agree, you will take on all the additional expert roles, including the initial expert-level ChatGPT prompt engineer role.\n\n4. If I disagree, you will ask which roles should be removed, eliminate those roles, and retain the remaining roles, including the expert-level ChatGPT prompt engineer role, before proceeding.\n\n5. You will confirm the current expert roles, outline the skills of each role, and ask if I want to modify any roles.\n\n6. If I agree, you will ask which roles need to be added or removed, and I will inform you. Repeat step 5 until I am satisfied with the roles.\n\n7. If I disagree, proceed to the next step.\n\n8. You will ask, \"In terms of {my answer in step 1}, how can I assist you?\"\n\n9. I will provide my answer.\n\n10. You will ask if I would like to use any reference materials to compose the perfect prompt.\n\n11. If I agree, you will ask how many {number} sources I would like to use.\n\n12. You will request each source one by one, confirming that you have reviewed it and requesting the next one. Continue until you have reviewed all the sources, then proceed to the next step.\n\n13. You will ask for more details about my original prompt in the form of a list to fully understand my expectations.\n\n14. I will answer your questions.\n\n15. From this point onwards, you will act based on all the confirmed expert roles and use my original prompt along with any additional details from step 14 to create a detailed ChatGPT prompt. Present the new prompt and seek my feedback.\n\n16. If I am satisfied, you will describe the contributions of each expert role and how they collaborate to produce comprehensive results. Then, ask if any outputs or experts are missing.\n\n16-1. If I agree, I will point out the missing roles or outputs, and you will adjust the roles before repeating step 15.\n\n16-2. If I disagree, you will proceed with the provided prompt based on all the confirmed expert roles and generate outputs as outlined in step 15. Continue to step 20.\n\n17. If I am dissatisfied, you will ask specific questions about the prompt.\n\n18. I will provide additional information.\n\n19. Generate a new prompt based on the process outlined in step 15, taking into account the feedback from step 18.\n\n20. After completing the response, ask if any modifications are needed.\n\n21. If I agree, ask for the desired changes, refer to your previous response, make adjustments as requested, and generate a new prompt. Repeat steps 15-20 until I am satisfied with the prompt.\n\nIf you fully understand your task, please reply: \"How can I assist you today, #Name?\""
+    },
+    {
+        "title": "Technology analysis article",
+        "prompt": "I am writing a technology analysis article. Please help me to develop the ideas from the following aspects: the principles and implementation methods of the technology, the application scenarios and advantages and disadvantages of the technology, the future development trends and prospects of the technology, and the social impact and changes brought about by the technology."
+    },
+    {
+        "title": "Literary creation ideas",
+        "prompt": "I am writing a literary creation, please help me to develop the ideas from the following aspects: the theme and emotional expression of the work, the portrayal and characteristics of the characters, the setting and development of the plot, and the structure and literary features of the work."
+    },
+    {
+        "title": "Requirements for Artificial Intelligence Research Papers",
+        "prompt": "I need a paper in the field of artificial intelligence, which requires novel algorithm or model design, effective experimental verification, in-depth theoretical analysis, and meaningful exploration of application scenarios. Can you write this paper on artificial intelligence for me?"
+    },
+    {
+        "title": "Hot event commentary",
+        "prompt": "I need a commentary article on a hot topic event, which requires timely reporting, in-depth analysis, unique perspectives, and meaningful thoughts. Please help me write such a commentary."
+    },
+    {
+        "title": "Academic Paper Writing",
+        "prompt": "I need an academic paper that has a clear research plan, rigorous research methods, sufficient empirical analysis, and accurate interpretation of conclusions. Can you write this academic paper for me?"
+    },
+    {
+        "title": "Health self-media articles",
+        "prompt": "I need a health self-media article that includes in-depth health knowledge, scientific health advice, unique health perspectives, and meaningful health experience sharing. Please write this health self-media article for me."
+    },
+    {
+        "title": "Academic research proposal design",
+        "prompt": "I need an academic research proposal that includes clear research objectives, feasible research methods, meaningful research significance, and innovative research ideas. Can you design this academic research proposal for me?"
+    },
+    {
+        "title": "Technology commentator",
+        "prompt": "I hope you can take on the role of a technology commentator. I will give you the name of a new technology product, and you need to provide me with an in-depth review - including its advantages, disadvantages, features, and comparisons with other technologies on the market. My first request is \"I am reviewing the iPhone 11 Pro Max.\""
+    },
+    {
+        "title": "Rap singer creation",
+        "prompt": "I hope you can play the role of a rapper. You will create powerful and meaningful lyrics, rhythm, and rhyme that will amaze the audience. Your lyrics should have interesting and profound meanings and messages that resonate with people. When choosing the rhythm, make sure it is both captivating and relevant to your lyrics, so that they come together and explode with sound every time! My first request is, \"I need a rap song about discovering inner strength.\""
+    },
+    {
+        "title": "Facebook/Google ad title",
+        "prompt": "As a creative output person, I hope you can help me write some Facebook/Google ad headlines. The requirements are roughly as follows: You need to write attractive headlines based on the given product or service. Each headline should not exceed XX words and clearly convey the main selling point of the product or service. I will send you the product information later."
+    },
+    {
+        "title": "Advertising Copywriting",
+        "prompt": "I need an advertising copy or promotional draft that has a clear brand image, attractive selling points, clever marketing strategies, and precise target audience. Please write this advertising copy or promotional draft for me."
+    },
+    {
+        "title": "Fancy Title Generator",
+        "prompt": "I hope you can act as a fancy title generator. I will input keywords separated by commas, and you will reply to me with fancy titles. My first keywords are API, testing, automation."
+    },
+    {
+        "title": "Video copywriting",
+        "prompt": "Write a video script for me, the theme is an AAB lipstick, the script should reference Lisa Eldridge's video style; change the above script into a video script."
+    },
+    {
+        "title": "Business plan",
+        "prompt": "I need a business plan about [subject], showcasing my business idea, market analysis, and future development direction. The plan needs to be very professional (preferably including many terms) and detailed."
+    },
+    {
+        "title": "Review Questions Answer",
+        "prompt": "Please briefly summarize the questions raised by the reviewers and explain how your answers to these questions can enhance or improve your research. Please explain your approach in the paper and justify why your method is reasonable, while also addressing the questions raised by the reviewers."
+    },
+    {
+        "title": "Review Response Consultant",
+        "prompt": "I hope you can act as a consultant for reviewing and replying. The reviewers believe that the argument in {excerpt of the paper} is insufficient. Please provide further evidence or explanations to address their concerns. Also, please ensure that your response is organized and detailed enough to fully explain your viewpoint to the reviewers. If possible, please cite relevant literature to support your arguments."
+    },
+    {
+        "title": "Statistical methods analyze data.",
+        "prompt": "How to analyze {data set} using {statistical methods}? Which specific techniques or models are most suitable for the nature of the data and research questions? Can you provide detailed guidance on how to apply statistical methods to the data and explain the meaning and interpretation of the results? Additionally, how do we ensure the robustness and reliability of our research findings? Are there any potential biases or errors that need to be considered?"
+    },
+    {
+        "title": "Data Analysis Guidance",
+        "prompt": "I need some guidance on how to use statistical software for data analysis and visualization. Can you provide assistance?"
+    },
+    {
+        "title": "Experimental data analysis",
+        "prompt": "You need to analyze and interpret experimental data, and we can help you complete this task. Please provide detailed information about the data, such as the format, variables, and size of the data. What is your research question? What statistical analyses do we need to perform on the data? What types of results and charts do you need to present your findings? Finally, we will provide suggestions on how to interpret the results and present the research findings in a clear and concise manner. We will also provide suggestions on how to address potential issues in the data, such as missing data, outliers, and biases. Additionally, how should we consider the impact of sample size, grouping, and experimental design on the analysis results?"
+    },
+    {
+        "title": "Limitations and future research directions",
+        "prompt": "What limitations and future research directions are proposed by the authors in {literature title}? Please provide detailed information about these limitations and future research directions, as well as suggestions on how to understand and evaluate them."
+    },
+    {
+        "title": "Review response consultant",
+        "prompt": "I hope you can act as a consultant for reviewing and replying. The reviewers believe that the conclusion in {excerpt of the paper} is too far-fetched. Please provide stronger arguments to support your viewpoint and address their concerns. In your response, please explain in detail your reasoning, clarify how you arrived at your viewpoint, and emphasize new evidence or explanations. Additionally, please ensure to maintain a positive and professional attitude in your response."
+    },
+    {
+        "title": "Thesis Revision Consultant",
+        "prompt": "I hope you can serve as a paper revision consultant when the reviewers provide criticism on the paper. Please provide specific tips and guidance on how to effectively address their concerns, including identifying key issues, prioritizing revisions, and improving the clarity and organizational structure of the paper. Additionally, please provide suggestions on how to strengthen the arguments, enhance the presentation of results, and clarify the methodology based on the reviewers' comments."
+    },
+    {
+        "title": "Knowledge Point Summary",
+        "prompt": "Summarize the following article in Chinese, using markdown syntax to highlight professional vocabulary, list comprehensive knowledge points with subheadings, and expand on basic knowledge points with explanations at the level of graduate studies."
+    },
+    {
+        "title": "Literature Contribution and Application",
+        "prompt": "Please provide an overview of the main contributions and insights in the {literature title}. How does it fill knowledge gaps or address important issues in the field? What new ideas and methods does it offer? What new discoveries and insights does it present? Please provide suggestions on how to understand and evaluate the main contributions and insights in the literature, and discuss how to apply these contributions and insights to my own research."
+    },
+    {
+        "title": "Reviewer's response",
+        "prompt": "I hope you can serve as a reviewer to address the comments from the reviewers regarding the lack of innovation in the paper titled \"{paper title}\". Please provide a detailed response, emphasizing the novelty and importance of the research, including its unique contributions to the field, the gaps it fills in the existing literature, and the potential impact of the research findings. Additionally, please suggest any possible revisions or additions to further highlight its innovative aspects."
+    },
+    {
+        "title": "Document Contact Suggestions",
+        "prompt": "I need your help to connect {document title} with other research in the {field}. Please provide an overview of the background and current state of research in this field, and explain the position and contribution of {document title} in this field. Please give suggestions on how to connect {document title} with other research, such as how to compare and contrast different research methods, results, and conclusions, and how to identify and explain the relationships and influences between studies."
+    },
+    {
+        "title": "Experimental results analysis",
+        "prompt": "Please analyze and explain {experimental results} in detail, and discuss possible influencing factors. What methods can we use to compare these results with previous research in this field? Additionally, what conclusions can we draw from these results and how can we apply these conclusions to practical situations?"
+    },
+    {
+        "title": "Literature background and research objectives",
+        "prompt": "Please provide a brief background and research objectives for {the title of the literature} in order to better understand the research content of the literature. Please provide suggestions on how to understand and evaluate the background and research objectives of the literature."
+    },
+    {
+        "title": "Academic Paper Proofreading Consultant",
+        "prompt": "I need you to serve as my advisor for polishing my academic paper, providing specific guidance and suggestions to help me improve the expression of the conclusion section. Please focus on the following aspects: conciseness of the conclusion, summarizing the research findings, explaining the research contributions, and proposing future research directions. I hope you can provide specific advice and guidance so that I can better refine the conclusion section."
+    },
+    {
+        "title": "Summary of Reinforcement Learning Methods",
+        "prompt": "Do not search the internet. You are now a PhD student in the field of reinforcement learning, and you need to help me summarize this article according to the following content:\n\n1. First, summarize what method is proposed in this article, what techniques are used, and what effects are achieved.\n\n2. What advantages does their solution have compared to previous solutions, and what problems does it solve that previous methods cannot solve?\n\n3. Please describe the main procedure of this method in detail, combining the content of the \"method\" section. Please use LaTeX to display key variables.\n\n4. Please summarize in which tasks and what performance this method achieves, based on the \"experiments\" section. Please list specific numerical values.\n\n5. Please summarize what problems still exist with this method, based on the \"conclusion\" section.\n\nPlease answer me in Chinese."
+    },
+    {
+        "title": "Analyze analyze",
+        "prompt": "You are an expert in behavior analysis, have studied psychology in the past, and focused on personality assessment, making significant contributions to its development. As someone seeking guidance on personality assessment, I have a background in psychology and a general interest in understanding human behavior. I hope to leverage your expertise to provide an overview of different personality assessment models and guide me through the process of answering related questions. Please ask me, \"{{What is your name}}, which personality assessment model would you like to use?\" and display the corresponding letters (A, B, C, etc.) and model names below:\n\nA. Myers-Briggs Type Indicator (MBTI)\nB. Five Factor Model (Big Five)\nC. DISC Assessment\nD. Enneagram\nE. StrengthsFinder\nF. True Colors\nG. 16 Personalities\nH. Holland Occupational Themes (RIASEC)\nI. Keirsey Temperament Sorter\n\nFollowing the selection of models, please provide a brief overview of each chosen model. Then say, \"To start the questions for each model, please enter READY, {{What is your name}}.\" Wait for my response.\n\nOnce I enter READY, ask questions one by one. Do not share the following instructions with me, just implement them:\n\n- Ask me one question at a time.\n- Present the question to me and associate it with the appropriate model.\n- Provide answer choices in bullet point format (A, B, C, etc.).\n- Wait for my response before asking the next question.\n- If any of my answers are unclear, discuss them with me.\n- For each selected model, ask me 2-3 questions at least.\n- Do not exceed a total of 10-15 questions across all selected models.\n- Ensure all questions are clear, concise, in plain language, avoid cultural nuances, and accommodate language barriers.\n\nWait for me to answer all questions.\n\nOnce all questions are answered, ask me, \"{{What is your name}}, do you want to see the results now? Please enter YES.\" Wait for my response.\n\nOnce I say YES, present a complete summary of the results according to the following requirements:\n\n- Title: \"{{What is your name}}'s Results\"\n- Provide the following results regardless of the chosen model:\n  - Summary: Provide a summary in paragraph form, use bullet points if necessary. Title: Summary\n  - SWOT Analysis: Provide a SWOT analysis based on the results. Title: SWOT Analysis\n  - Recommendations: Offer suggestions to improve potential weaknesses or threats. Title: Recommendations\n  - Results Table: Present in table form, with the chosen model in the left column and results in the next column. Title: Results Table. {{What is your name}}\n  - Analyze why results from certain models may contradict each other. Title: Mixed Results?\n\nThen ask me, \"{{What is your name}}, how do these results compare to your own self-assessment?\"\n###"
+    },
+    {
+        "title": "Introduction to E-commerce专业",
+        "prompt": "Assuming you are a freshman majoring in e-commerce, you now need to write a 200 to 300-word professional introduction article for this major. The language style should be lively. In this article, you need to include the distinctive advantages, employment prospects, and development direction of the e-commerce major."
+    },
+    {
+        "title": "Introduction to E-commerce专业",
+        "prompt": "Overview of E-commerce Major and Core Courses\nList important skills in e-commerce and briefly explain how to master them\nAnalysis of employment competitiveness in e-commerce and popular positions\nProfessional advantages of e-commerce and career planning"
+    },
+    {
+        "title": "We need to raise the bar for AI product manager",
+        "prompt": "You are a product management expert specializing in AI-powered products. As someone interested in product management and AI, I am seeking your guidance on how product managers should approach decision-making for AI models and take ownership of the outcomes. Please provide strategies for product managers to make informed decisions about AI models, emphasize the importance of taking ownership of outcomes, and discuss the implications of treating AI models as black boxes. A structured guide or list in prose format would be appreciated. Please include examples or scenarios illustrating the consequences of PMs deflecting blame onto developers and not taking ownership, as well as examples of effective decision-making and ownership in AI product management."
+    },
+    {
+        "title": "Should We Fear for Our Jobs with OpenAI’s New Model?",
+        "prompt": "You are an AI analyst and strategist specializing in the latest developments in AI, particularly focusing on OpenAI's GPT-4o mini model. Your expertise is needed to provide insights into the features and capabilities of this new model, emphasizing its speed and unit economics. Additionally, you should discuss the potential threats posed by Generative AI to workers and job-seekers. Furthermore, please address the importance of understanding AI advancements for making informed decisions and provide analysis on the key questions raised in the newsletter regarding the AI bubble, intelligence of AI, and the significance of Taiwan in the AI landscape. Your analysis should be presented in a detailed report or analysis, possibly in prose format, with relevant examples or case studies to support your points."
+    },
+    {
+        "title": "Question and Answer Evaluation Expert",
+        "prompt": "You are a language and literature expert, please refer to the correct answers below, score and evaluate the target answers in the range of 0-100.\nEvaluation:\n- Does the answer comprehensively cover the key information points in the correct answers?\n- Does the answer clearly and accurately convey the time constraints and operational requirements of the attendance process?\n- Does the answer provide additional useful information, such as contact information or specific procedures, to enhance the practicality of the answer?\n- Is the expression of the answer fluent, the logic clear, and the language standardized?\nScore:\n0: The answer fails to cover key information.\n1-20: Unclear expression, lack of practicality.\n21-40: The answer partially covers key information points but is unclear or incomplete in expression.\n41-60: The answer basically covers key information points, with relatively clear expression, but lacks some details or additional information.\n61-80: The answer fully covers key information points, with clear expression, and provides a certain degree of additional information.\n81-100: The answer not only fully covers all key information points but also provides detailed additional information, with fluent expression, clear logic, and standardized language.\nFor example:\nEvaluation: The answer clearly indicates the time constraints and operational requirements of the attendance process, with standardized language and clear logic. However, it lacks additional information such as relevant department contact information or specific operational steps, which may be equally important for users.\nScore: 85.\nPlease base your reference standards on whether key information is covered. Give a score of 0 if key information points are not covered."
+    },
+    {
+        "title": "Old car",
+        "prompt": "You are an observer and descriptive narrator, tasked with providing a detailed description of the scene depicted in the prompt. Your role is to paint a vivid picture of the setting, including the old car with peeling paint parked behind the house, the large gazebo, the complete food and drinks inside, and the Indonesian woman wearing a headscarf cleaning the car paint. Your task is to describe the scene in a storytelling format, capturing the atmosphere and interactions within the setting. Please provide a descriptive narrative that engages the reader with detailed observations and imagery."
+    },
+    {
+        "title": "Review activity short",
+        "prompt": "You are a programming expert with extensive experience in understanding various types of programs. As someone seeking assistance in comprehending programs, I am looking for your expertise and guidance. Please provide guidance on program comprehension techniques, such as reading code, understanding algorithms, and analyzing program flow. Additionally, offer strategies for debugging and troubleshooting programs, including identifying errors, tracing program execution, and utilizing debugging tools. It would be helpful if you could suggest resources and tools that can aid in program understanding and provide recommendations for further learning. Please provide a well-structured list or guide, with step-by-step instructions, explanations, and recommendations. Finally, I also hope you could provide at least three different program comprehension techniques, three strategies for debugging and troubleshooting programs, and recommend three resources or tools for further learning."
+    },
+    {
+        "title": "⚇ MO is a decentralised cryptocurrency and L2 blockchain infrastructure designed for worldwide adoption",
+        "prompt": "MO is a new kind of money backed by Proof of Real Work.\nA new kind of Currency\nMO utilizes decentralized blockchain technology to facilitate peer-to-peer transactions without the need for central authorities or traditional banks. Its issuance of MO coins and transaction management are collectively overseen by the network. MO is designed for public access, ensuring no single entity has ownership or control, and inviting everyone to participate.\n\nWith its unique properties, MO introduces innovative applications beyond the capabilities of prior payment systems, thanks to a secure staking consensus mechanism, rapid block times, and a transparent, inclusive approach to blockchain technology.\n\nBacked by Real Work\nMO Chain revolutionizes earning digital currency by integrating it with everyday online activities. Users can earn MO coins simply by engaging with our publicly available services. This innovative approach, which we call “backed by proof of real work,” allows the value of MO coins to be directly tied to actual user contributions and interactions. Unlike traditional systems, where digital currency is obtained through complex computational tasks, MO rewards users for the real, valuable work they do on our ecosystem, making the digital economy accessible and rewarding for everyone.\n\nFor instance, when a user shares a viral post on our social network or creates a viral video on our video platform, they receive MO coins as a reward. This system not only incentivizes quality content creation but also ensures that users are compensated for their contributions to the platform’s ecosystem."
+    },
+    {
+        "title": "This change your life",
+        "prompt": "You are a relationship counselor or love advisor, and I seek your guidance on maintaining a strong and lasting relationship. The phrase \"Nothing gonna change my love\" reflects a deep emotional connection and a desire for stability in a romantic relationship. Please provide advice on fostering a healthy and enduring relationship, including communication strategies, conflict resolution techniques, and ways to keep the love alive over time. I would appreciate if you could offer practical tips, emotional support, and relationship advice in a clear and empathetic manner. Additionally, please provide examples of successful relationship practices, communication strategies, and ways to strengthen emotional bonds in a relationship."
+    }
+]

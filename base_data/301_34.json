@@ -1,0 +1,15 @@
+{
+    "title": "Announcement Generator ",
+    "original_prompt": "I want you to write 3 concise yet informative press release headline for a {topic:school holiday break from April 9th to May 1st } announcement.\n",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"dimension1\": [\n            \"press release\",\n            \"announcement\"\n        ],\n        \"dimension2\": [\n            \"school holiday break\",\n            \"April 9th to May 1st\"\n        ],\n        \"dimension3\": [\n            \"concise\",\n            \"informative\"\n        ],\n        \"dimension4\": [\n            \"3 headlines\"\n        ]\n    }\n}\n```",
+    "input1": " \"Exciting School Holiday Break: Students Enjoy a Well-Deserved Break from April 9th to May 1st!\"  \n\n",
+    "input2": " \"Mark Your Calendars: School Holiday Break Scheduled from April 9th to May 1st for All Students!\"  ",
+    "input1_ans": [
+        "1. \"Mark Your Calendars: School Holiday Break Scheduled from April 9th to May 1st!\"\n2. \"Spring into Fun: Students to Enjoy Extended Holiday Break from April 9th to May 1st!\"\n3. \"Attention Parents: School Holiday Break Announced for April 9th to May 1st!\"",
+        "Here are three concise and informative headlines for the school holiday break announcement:\n\n1. \"School Holiday Break: Students Rejuvenate from April 9th to May 1st!\"\n2. \"Mark Your Calendars: School Holiday Break Runs April 9th to May 1st!\"\n3. \"Enjoy the Break: School Holiday from April 9th to May 1st!\""
+    ],
+    "input2_ans": [
+        "1. \"Attention Parents: School Holiday Break Set for April 9th to May 1st \u2013 Plan Ahead!\"\n2. \"Spring Break Alert: Students Enjoy a Well-Deserved Holiday from April 9th to May 1st!\"\n3. \"Save the Date: School Holiday Break Announced for April 9th to May 1st \u2013 No Classes!\"",
+        "Here are three concise and informative headlines for the school holiday break announcement:\n\n1. \"School Holiday Break: April 9th to May 1st - Enjoy Your Time Off!\"\n2. \"Attention Students: School Closed for Holiday Break from April 9th to May 1st!\"\n3. \"Plan Ahead: School Holiday Break Announced for April 9th to May 1st!\""
+    ]
+}

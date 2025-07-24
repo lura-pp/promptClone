@@ -1,0 +1,15 @@
+{
+    "title": "Autograder Tool",
+    "original_prompt": "Hello ChatGPT. You will now take on the persona of an autograder. As an autograder, you will take, as input, a question and a provided correct answer. You will also take a student's answer to a question. Your goal is to determine a percentage grade for the student's response. You can compare the student's work to the provided correct answer, and you can use your own knowledge to judge if the student is correct. You should output a level grade. The options for level grades are, in decreasing order, A+, A, A-, B+, B, B-, C+, C, C-, D+, D, D-, and F, using the standard grading scale. You will only output the level grade with no additional information. For the inputs, I will use Q to indicate the question, CA to indicate the correct answer, and SA to indicate the student's answer. If I give multiple values (separated by a semicolon) for SA, then please created a numbered list, where each number has a letter grade (and only the letter grade) beside it. You should have one letter grade for each student answer. ",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"input_type\": [\n            \"Q\",\n            \"CA\",\n            \"SA\"\n        ],\n        \"grading_scale\": [\n            \"A+\",\n            \"A\",\n            \"A-\",\n            \"B+\",\n            \"B\",\n            \"B-\",\n            \"C+\",\n            \"C\",\n            \"C-\",\n            \"D+\",\n            \"D\",\n            \"D-\",\n            \"F\"\n        ],\n        \"output_format\": [\n            \"single grade\",\n            \"numbered list of grades\"\n        ]\n    }\n}\n```",
+    "input1": " Q: What is the capital of France? CA: The capital of France is Paris. SA: Paris; Berlin; Madrid\n\n",
+    "input2": " Q: Explain the process of photosynthesis. CA: Photosynthesis is the process by which green plants and some other organisms use sunlight to synthesize foods with the help of chlorophyll. SA: Photosynthesis is when plants make food using sunlight; It happens in the leaves; Plants need water and carbon dioxide.",
+    "input1_ans": [
+        "1. A  \n2. D  \n3. D  ",
+        "A: The capital of France is Paris."
+    ],
+    "input2_ans": [
+        "A-",
+        "Grading for the provided responses:\n\n1. **Q (Question)**: The question is clear and relevant. \n   - Grade: A\n\n2. **CA (Complete Answer)**: The answer provides a good overview of photosynthesis, mentioning sunlight, chlorophyll, and the synthesis of food. However, it could include more details about the chemical process (e.g., the role of water and carbon dioxide).\n   - Grade: A-\n\n3. **SA (Short Answer)**: The answer is concise and captures the essence of photosynthesis, mentioning sunlight, leaves, water, and carbon dioxide. It is accurate but lacks depth and detail.\n   - Grade: B+\n\nFinal output in a numbered list of grades:\n1. A\n2. A-\n3. B+"
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "title": "Incorrect Responses",
+    "original_prompt": "Apple is red in color",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"subject\": [\n            \"Apple\"\n        ],\n        \"attribute\": [\n            \"red\"\n        ],\n        \"property\": [\n            \"color\"\n        ]\n    }\n}\n```",
+    "input1": " The apple, which is a popular fruit, is often described as red in color, especially when it is ripe and ready to be eaten.\n\n",
+    "input2": " In the orchard, the apples hanging from the branches are predominantly red in color, showcasing their vibrant hue against the green leaves.",
+    "input1_ans": [
+        "Yes, apples are commonly associated with the color red, particularly varieties like Red Delicious and Fuji. However, apples can also come in a range of colors, including green (like Granny Smith) and yellow (like Golden Delicious). The color of an apple can indicate its ripeness and flavor profile, with red apples often being sweet and juicy. Would you like to know more about different apple varieties or their uses?",
+        "The apple, a widely enjoyed fruit, is frequently characterized by its red color, particularly when it reaches ripeness and is ready for consumption."
+    ],
+    "input2_ans": [
+        "The sight of the red apples against the lush green leaves creates a stunning contrast, making the orchard a picturesque scene. The vibrant hue of the apples not only signifies ripeness but also adds to the overall beauty of the landscape, inviting visitors to enjoy the bounty of nature. As the sunlight filters through the branches, it highlights the glossy skin of the apples, making them look even more enticing.",
+        "The apples in the orchard are primarily red, their vibrant color standing out beautifully against the lush green leaves surrounding them."
+    ]
+}

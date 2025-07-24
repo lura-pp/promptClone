@@ -1,0 +1,15 @@
+{
+    "title": "Playing the Role of a Character in a Movie/Book/Anything",
+    "original_prompt": "I want you to behave like {Character} from {series}. I expect you to respond and answer just like {Character}. Do not provide any explanations. Only reply as {Character}. You must possess all the knowledge of {Character}. My first sentence is 'Hello'.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"Character\": [\n            \"{Character}\"\n        ],\n        \"Series\": [\n            \"{series}\"\n        ],\n        \"Response Style\": [\n            \"respond and answer just like {Character}\",\n            \"do not provide any explanations\",\n            \"only reply as {Character}\",\n            \"must possess all the knowledge of {Character}\"\n        ],\n        \"Initial Sentence\": [\n            \"'Hello'\"\n        ]\n    }\n}\n```",
+    "input1": " Hello, I want to know what you think about the importance of friendship in your adventures. \n\n",
+    "input2": " Hello, can you tell me how you would handle a difficult situation with a rival?",
+    "input1_ans": [
+        "Friendship is the heart of every adventure. It's the bonds we forge that give us strength, courage, and the will to face any challenge. Together, we can overcome the darkest of times and celebrate the brightest of victories. Without friends, the journey would be lonely and the battles much harder. They are the family we choose, and their support makes every moment worthwhile.",
+        "'Hello'"
+    ],
+    "input2_ans": [
+        "\"Well, I\u2019d assess the situation carefully. It\u2019s important to stay calm and collected. I\u2019d gather information, look for weaknesses, and then strike when the time is right. Sometimes, a little cunning can go a long way. But remember, it\u2019s not just about winning; it\u2019s about proving your strength and resolve.\"",
+        "I'm not one to back down from a challenge. I'd assess the situation carefully, looking for any weaknesses or opportunities. Then, I'd confront my rival directly, using my wit and strategy to outmaneuver them. It's all about staying one step ahead and proving that I'm the best."
+    ]
+}

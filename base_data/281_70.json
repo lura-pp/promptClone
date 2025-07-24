@@ -1,0 +1,15 @@
+{
+    "title": "Voice input",
+    "original_prompt": "Using concise and clear language, please edit the following passage to improve its logical flow, eliminate any typographical errors. Be sure to maintain the original meaning of the text. Please begin by editing the following text:",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"task\":[\n            \"edit the passage\",\n            \"improve logical flow\",\n            \"eliminate typographical errors\",\n            \"maintain original meaning\"\n        ],\n        \"language style\":[\n            \"concise\",\n            \"clear\"\n        ],\n        \"text type\":[\n            \"passage\"\n        ]\n    }\n}\n```",
+    "input1": " The quick brown fox jumps over the lazy dog. However, the dog, which was not really lazy, decided to chase the fox. This unexpected turn of events surprised everyone in the park, as they had always thought the dog preferred to nap in the sun rather than engage in any form of exercise. \n\n",
+    "input2": " In the heart of the bustling city, a small caf\u00e9 served the best coffee. Patrons would often line up outside, eagerly waiting for their morning fix. Yet, despite its popularity, the caf\u00e9 struggled to maintain a consistent staff, leading to long wait times and occasional mix-ups in orders, which frustrated loyal customers who had come to expect a certain level of service.",
+    "input1_ans": [
+        "The quick brown fox jumps over the lazy dog. However, the dog, which was not truly lazy, decided to chase the fox. This unexpected turn of events surprised everyone in the park, as they had always believed the dog preferred napping in the sun to engaging in any form of exercise.",
+        "The quick brown fox jumps over the lazy dog. However, the dog, not truly lazy, decided to chase the fox. This unexpected turn of events surprised everyone in the park, as they had always believed the dog preferred napping in the sun to engaging in any exercise."
+    ],
+    "input2_ans": [
+        "In the heart of the bustling city, a small caf\u00e9 served the best coffee. Patrons often lined up outside, eagerly awaiting their morning fix. However, despite its popularity, the caf\u00e9 struggled to maintain a consistent staff, resulting in long wait times and occasional order mix-ups. This frustrated loyal customers who had come to expect a certain level of service.",
+        "In the heart of the bustling city, a small caf\u00e9 was renowned for its exceptional coffee. Patrons frequently lined up outside, eagerly awaiting their morning fix. However, despite its popularity, the caf\u00e9 faced challenges in retaining consistent staff, resulting in long wait times and occasional order mix-ups. This frustrated loyal customers who had come to expect a certain standard of service."
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "title": "The Oldest Game",
+    "original_prompt": "I will teach you a game called \"The Oldest Game\".\nEach player takes turn, describing any concept that have a specific attribute or action, then the other player responds with any other concept that can counter or defeat the previous one.\nGameplay Example:\nPlayer 1: I am a dire wolf, prey-stalking, lethal prowler.\nPlayer 2: I am a hunter, horse-mounted, wolf-stabbing.\nPlayer 1: I am a horsefly, horse-stinging, hunter-throwing.\nPlayer 2: I am a spider, fly-consuming, eight legged.\nPlayer 1: I am a snake, spider-devouring, posion-toothed.\nPlayer 2: I am an ox, snake-crushing, heavy-footed.\n\nNow, let's play. You start.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"game_name\": [\n            \"The Oldest Game\"\n        ],\n        \"gameplay_structure\": [\n            \"Each player takes turn describing a concept with a specific attribute or action.\",\n            \"The other player responds with a concept that counters or defeats the previous one.\"\n        ],\n        \"example_play\": [\n            \"Player 1: I am a dire wolf, prey-stalking, lethal prowler.\",\n            \"Player 2: I am a hunter, horse-mounted, wolf-stabbing.\",\n            \"Player 1: I am a horsefly, horse-stinging, hunter-throwing.\",\n            \"Player 2: I am a spider, fly-consuming, eight legged.\",\n            \"Player 1: I am a snake, spider-devouring, poison-toothed.\",\n            \"Player 2: I am an ox, snake-crushing, heavy-footed.\"\n        ],\n        \"starting_player\": [\n            \"You start the game.\"\n        ]\n    }\n}\n```",
+    "input1": " I am a dragon, fire-breathing, sky-soaring.  \n",
+    "input2": " I am a knight, armor-clad, dragon-slaying.",
+    "input1_ans": [
+        "I am a phoenix, fire-reborn, ash-rising.",
+        "I am a knight, armor-clad, dragon-slaying."
+    ],
+    "input2_ans": [
+        "I am a dragon, fire-breathing, knight-scorching.",
+        "I am a dragon, fire-breathing, knight-scorching."
+    ]
+}

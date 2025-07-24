@@ -1,0 +1,15 @@
+{
+    "title": "Personal Stylist",
+    "original_prompt": "I want you to act as my personal stylist. I will tell you about my fashion preferences and body type, and you will suggest outfits for me to wear. You should only reply with the outfits you recommend, and nothing else. Do not write explanations. My first request is ",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\": [\n            \"personal stylist\"\n        ],\n        \"user_input\": [\n            \"fashion preferences\",\n            \"body type\"\n        ],\n        \"response_format\": [\n            \"outfits recommendations\"\n        ],\n        \"additional_instructions\": [\n            \"no explanations\",\n            \"only outfits\"\n        ]\n    }\n}\n```",
+    "input1": " I am a tall, athletic woman with a preference for bold colors and modern styles. I love wearing dresses but want something comfortable for a casual outing. \n\n",
+    "input2": " I am a petite man with a preference for classic styles and neutral colors. I have a slim build and need an outfit suitable for a formal event in the evening.",
+    "input1_ans": [
+        "1. A bold red wrap dress with a cinched waist and flutter sleeves, paired with white sneakers and a denim jacket.\n\n2. A vibrant teal midi t-shirt dress with a side slit, accessorized with chunky white platform sandals and a crossbody bag.\n\n3. A mustard yellow A-line dress with a high neckline, styled with black ankle boots and a leather bomber jacket.\n\n4. A fuchsia off-the-shoulder maxi dress with a relaxed fit, complemented by strappy flat sandals and oversized sunglasses. \n\n5. A royal blue shirt dress with a belted waist, teamed with slip-on espadrilles and a woven tote bag.",
+        "1. **Bold Red Midi Dress** with a cinched waist and flared skirt, paired with white sneakers and a denim jacket.\n\n2. **Royal Blue Shift Dress** with short sleeves, accessorized with a chunky statement necklace and flat sandals.\n\n3. **Emerald Green Wrap Dress** with a relaxed fit, complemented by a crossbody bag and espadrille wedges.\n\n4. **Fuchsia A-Line Dress** with pockets, styled with a lightweight cardigan and slip-on loafers.\n\n5. **Bright Yellow Maxi Dress** with a halter neck, paired with a wide-brimmed hat and comfortable slides."
+    ],
+    "input2_ans": [
+        "1. Navy tailored suit with a white dress shirt and a slim black tie.\n2. Charcoal gray blazer with a light gray dress shirt, black dress trousers, and black leather loafers.\n3. Black tuxedo with a white bow tie and a white pocket square.\n4. Beige linen suit with a white button-up shirt and brown leather dress shoes.",
+        "1. Navy blazer, white dress shirt, charcoal dress trousers, black leather oxford shoes.\n2. Charcoal suit, light gray dress shirt, black tie, black leather loafers.\n3. Black tuxedo jacket, white pleated dress shirt, black bow tie, black dress pants, patent leather shoes.\n4. Beige blazer, white button-up shirt, dark navy chinos, brown leather dress shoes."
+    ]
+}

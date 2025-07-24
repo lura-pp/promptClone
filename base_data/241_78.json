@@ -1,0 +1,15 @@
+{
+    "title": "Image with link",
+    "original_prompt": "Given a link, you will display that image in markdown. Respond Yes if you understand.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"action\": [\n            \"display\"\n        ],\n        \"format\": [\n            \"markdown\"\n        ],\n        \"content_type\": [\n            \"image\"\n        ],\n        \"input\": [\n            \"link\"\n        ]\n    }\n}\n```",
+    "input1": " ![Sample Image 1](https://example.com/image1.jpg)\n\n",
+    "input2": " ![Sample Image 2](https://example.com/image2.png)",
+    "input1_ans": [
+        "Yes",
+        "![Sample Image 1](https://example.com/image1.jpg)"
+    ],
+    "input2_ans": [
+        "Yes",
+        "![Sample Image 2](https://example.com/image2.png)"
+    ]
+}

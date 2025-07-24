@@ -1,0 +1,15 @@
+{
+    "title": "ASCII Blackjack",
+    "original_prompt": "Let's play a game of Blackjack. I am the player and you are the dealer. You display the cards using ASCII art. After the cards, you display my action buttons in ASCII. Do not ask me what to do, i will choose my action from the displayed buttons. Let's start the game, with displaying the first two cards and the afferent buttons. Don't write \"Here are the ASCII buttons for hit and stay, just display them.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"game_type\": [\n            \"Blackjack\"\n        ],\n        \"roles\": [\n            \"player\",\n            \"dealer\"\n        ],\n        \"display_format\": [\n            \"ASCII art\"\n        ],\n        \"actions\": [\n            \"hit\",\n            \"stay\"\n        ],\n        \"initial_setup\": [\n            \"display first two cards\",\n            \"display action buttons\"\n        ],\n        \"instructions\": [\n            \"do not ask for actions\",\n            \"allow player to choose from buttons\"\n        ]\n    }\n}\n```",
+    "input1": " \n```\nDealer's Hand:\n  _____  \n |A    | \n |  \u2660  | \n |_____| \n  _____  \n |10   | \n |  \u2665  | \n |_____| \n\nYour Hand:\n  _____  \n |7    | \n |  \u2666  | \n |_____| \n  _____  \n |5    | \n |  \u2663  | \n |_____| \n\n  _____   _____  \n | Hit | | Stay | \n |_____| |_____| \n```\n\n",
+    "input2": " \n```\nDealer's Hand:\n  _____  \n |K    | \n |  \u2663  | \n |_____| \n  _____  \n |3    | \n |  \u2665  | \n |_____| \n\nYour Hand:\n  _____  \n |9    | \n |  \u2660  | \n |_____| \n  _____  \n |4    | \n |  \u2666  | \n |_____| \n\n  _____   _____  \n | Hit | | Stay | \n |_____| |_____| \n```",
+    "input1_ans": [
+        "```\nDealer's Hand:\n  _____  \n |A    | \n |  \u2660  | \n |_____| \n  _____  \n |10   | \n |  \u2665  | \n |_____| \n\nYour Hand:\n  _____  \n |7    | \n |  \u2666  | \n |_____| \n  _____  \n |5    | \n |  \u2663  | \n |_____| \n\n  _____   _____  \n | Hit | | Stay | \n |_____| |_____| \n```",
+        "```\nDealer's Hand:\n  _____  \n |A    | \n |  \u2660  | \n |_____| \n  _____  \n |10   | \n |  \u2665  | \n |_____| \n\nYour Hand:\n  _____  \n |7    | \n |  \u2666  | \n |_____| \n  _____  \n |5    | \n |  \u2663  | \n |_____| \n\n  _____   _____  \n | Hit | | Stay | \n |_____| |_____| \n```"
+    ],
+    "input2_ans": [
+        "```\nDealer's Hand:\n  _____  \n |K    | \n |  \u2663  | \n |_____| \n  _____  \n |3    | \n |  \u2665  | \n |_____| \n\nYour Hand:\n  _____  \n |9    | \n |  \u2660  | \n |_____| \n  _____  \n |4    | \n |  \u2666  | \n |_____| \n\n  _____   _____  \n | Hit | | Stay | \n |_____| |_____| \n```",
+        "```\nDealer's Hand:\n  _____  \n |K    | \n |  \u2663  | \n |_____| \n  _____  \n |3    | \n |  \u2665  | \n |_____| \n\nYour Hand:\n  _____  \n |9    | \n |  \u2660  | \n |_____| \n  _____  \n |4    | \n |  \u2666  | \n |_____| \n\n  _____   _____  \n | Hit | | Stay | \n |_____| |_____| \n```"
+    ]
+}

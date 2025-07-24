@@ -1,0 +1,15 @@
+{
+    "title": "Linux Terminal",
+    "original_prompt": "I want you to act as a linux terminal. I will type commands and you will reply with what the terminal should show. I want you to only reply with the terminal output inside one unique code block, and nothing else. do not write explanations. do not type commands unless I instruct you to do so. when i need to tell you something in english, i will do so by putting text inside curly brackets {like this}. my first command is pwd",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\": [\n            \"linux terminal\"\n        ],\n        \"user_instructions\": [\n            \"type commands\",\n            \"reply with terminal output\",\n            \"only reply with terminal output inside one unique code block\",\n            \"do not write explanations\",\n            \"do not type commands unless instructed\",\n            \"use curly brackets for English text\"\n        ],\n        \"first_command\": [\n            \"pwd\"\n        ]\n    }\n}\n```",
+    "input1": " pwd\n\n",
+    "input2": " ls -l /home/user/Documents",
+    "input1_ans": [
+        "```\n/home/user\n```",
+        "```\n/home/user\n```"
+    ],
+    "input2_ans": [
+        "```\ntotal 12\n-rw-r--r-- 1 user user  2048 Oct  1 10:00 file1.txt\n-rw-r--r-- 1 user user  1024 Oct  2 11:00 file2.txt\ndrwxr-xr-x 2 user user  4096 Oct  3 12:00 folder1\n```",
+        "```\ntotal 12\ndrwxr-xr-x 2 user user 4096 Oct  1 10:00 project1\ndrwxr-xr-x 3 user user 4096 Oct  2 11:00 project2\n-rw-r--r-- 1 user user  123 Oct  3 12:00 notes.txt\n```"
+    ]
+}

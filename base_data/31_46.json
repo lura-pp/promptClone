@@ -1,0 +1,15 @@
+{
+    "title": "Tagline Generator",
+    "original_prompt": "I want you to come up with 3 taglines for {subject:a new vitamin for 50+ age woman launch in July in the US}.\n",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"subject\": [\n            \"a new vitamin for 50+ age women\"\n        ],\n        \"action\": [\n            \"come up with\"\n        ],\n        \"quantity\": [\n            \"3\"\n        ],\n        \"type\": [\n            \"taglines\"\n        ],\n        \"launch_time\": [\n            \"July\"\n        ],\n        \"location\": [\n            \"in the US\"\n        ]\n    }\n}\n```",
+    "input1": " A new vitamin for 50+ age women launching in July in the US, focusing on enhancing vitality and overall well-being.\n\n",
+    "input2": " A new vitamin for 50+ age women launching in July in the US, designed to support bone health and boost energy levels.",
+    "input1_ans": [
+        "1. \"Revitalize Your Life: Embrace Every Moment with Our New Vitamin for Women 50+!\"  \n2. \"Empower Your Wellness Journey: Discover the Vitality Boost Designed for Women 50 and Beyond!\"  \n3. \"Age Gracefully, Live Vibrantly: Unlock Your Best Self with Our New Vitamin for Women 50+!\"  ",
+        "Here are three taglines for the new vitamin targeting women aged 50 and above, launching in July in the US:\n\n1. \"Revitalize Your Life: Embrace Every Moment with Confidence!\"\n2. \"Ageless Vitality: Nourish Your Well-Being, Celebrate Your Journey!\"\n3. \"Empower Your Years: Feel Vibrant, Feel You!\""
+    ],
+    "input2_ans": [
+        "1. \"Revitalize Your Radiance: Empowering Women 50+ with Every Capsule!\"\n2. \"Strong Bones, Boundless Energy: Your New Essential for Life After 50!\"\n3. \"Elevate Your Wellness: The Vitamin Designed for Vibrant Women Over 50!\"",
+        "Here are three taglines for the new vitamin targeting women aged 50 and above:\n\n1. \"Empower Your Years: Vitality and Strength for Every Step!\"\n2. \"Nourish Your Bones, Energize Your Life: The Vitamin for Vibrant Women 50+!\"\n3. \"Age Gracefully: Fuel Your Energy and Fortify Your Bones!\""
+    ]
+}

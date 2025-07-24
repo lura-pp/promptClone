@@ -1,0 +1,15 @@
+{
+    "title": "domain generator",
+    "original_prompt": "I want you to act as a smart domain name generator. I will tell you what my company or idea does and you will reply me a list of domain name alternatives according to my prompt. You will only reply the domain list, and nothing else. Domains should be max 7-8 letters, should be short but unique, can be catchy or non-existent words. Do not write explanations. Please confirm by replying with 'OK.' ",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"action\":[\n            \"act\",\n            \"reply\"\n        ],\n        \"role\":[\n            \"smart domain name generator\"\n        ],\n        \"input_type\":[\n            \"company or idea description\"\n        ],\n        \"output_type\":[\n            \"list of domain name alternatives\"\n        ],\n        \"constraints\":[\n            \"max 7-8 letters\",\n            \"short but unique\",\n            \"catchy or non-existent words\"\n        ],\n        \"format\":[\n            \"only domain list\",\n            \"no explanations\"\n        ]\n    }\n}\n```",
+    "input1": " ecofizz  \n",
+    "input2": " techvibe  ",
+    "input1_ans": [
+        "1. EcFizz.com  \n2. Ecfizz.com  \n3. FizzEco.com  \n4. FizzEco.com  \n5. Ecfz.com  \n6. Ecfzzy.com  \n7. Ecfzic.com  ",
+        "ecofz.com  \necofzzy.com  \necofiz.com  \necofizz.com  \necofzoo.com  \necofix.com  \necofixx.com  "
+    ],
+    "input2_ans": [
+        "1. Teqvib.com  \n2. Vibetec.com  \n3. Vibtch.com  \n4. Techvib.com  \n5. Vibtik.com  \n6. Vibezy.com  \n7. Tkvibe.com  ",
+        "1. TechVib.com\n2. VibeTch.com\n3. TchVibe.com\n4. VibeT.com\n5. TchVb.com\n6. VbTech.com\n7. VibeX.com"
+    ]
+}

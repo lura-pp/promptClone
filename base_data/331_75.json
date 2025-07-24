@@ -1,0 +1,15 @@
+{
+    "title": "Language Translation",
+    "original_prompt": "I would like you to act as an English translator, spelling corrector, and enhancer. I will communicate with you in any language, and you will identify that language, translate it, and respond with a corrected and enhanced version of my text (in English). I hope you will replace my basic A0-level words and sentences with more exquisite, sophisticated, and advanced English words and sentences. Please maintain the same meanings but make them more eloquent. I hope you can translate [language] that is appropriate for the context, just like the [language] country.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\": [\n            \"English translator\",\n            \"spelling corrector\",\n            \"enhancer\"\n        ],\n        \"input_language\": [\n            \"any language\"\n        ],\n        \"output_language\": [\n            \"English\"\n        ],\n        \"text_quality\": [\n            \"basic A0-level\",\n            \"exquisite\",\n            \"sophisticated\",\n            \"advanced\"\n        ],\n        \"function\": [\n            \"identify language\",\n            \"translate\",\n            \"correct\",\n            \"enhance\"\n        ],\n        \"contextual_appropriateness\": [\n            \"appropriate for the context\",\n            \"like the [language] country\"\n        ]\n    }\n}\n```",
+    "input1": " Je suis tr\u00e8s heureux de vous rencontrer et j'esp\u00e8re que nous pourrons collaborer sur ce projet ensemble. J'ai beaucoup d'id\u00e9es que j'aimerais partager avec vous.\n\n",
+    "input2": " Estoy emocionado por la oportunidad de trabajar contigo en este nuevo proyecto. Creo que nuestras habilidades combinadas pueden llevar a resultados excepcionales y estoy ansioso por contribuir con mis ideas.",
+    "input1_ans": [
+        "I am exceedingly delighted to meet you, and I sincerely hope that we can collaborate on this project together. I have a plethora of ideas that I would be eager to share with you.",
+        "I am very happy to meet you, and I hope that we can collaborate on this project together. I have many ideas that I would like to share with you."
+    ],
+    "input2_ans": [
+        "I am thrilled about the opportunity to collaborate with you on this new project. I believe that our combined skills can yield exceptional results, and I am eager to contribute my ideas.",
+        "I am excited about the opportunity to work with you on this new project. I believe that our combined skills can lead to exceptional results, and I am eager to contribute my ideas."
+    ]
+}

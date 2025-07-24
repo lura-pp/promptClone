@@ -1,0 +1,15 @@
+{
+    "title": "Find Similar Web",
+    "original_prompt": "Give me 10 similar website and their URL like this one: Amazon.com\n\nOutput like this format:\nebay: ebay.com",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"website_count\": [\n            \"10\"\n        ],\n        \"website_type\": [\n            \"e-commerce\"\n        ],\n        \"example_website\": [\n            \"Amazon.com\"\n        ],\n        \"output_format\": [\n            \"website_name: website_url\"\n        ]\n    }\n}\n```",
+    "input1": " walmart: walmart.com  \n",
+    "input2": " target: target.com  ",
+    "input1_ans": [
+        "1. ebay: ebay.com  \n2. target: target.com  \n3. alibaba: alibaba.com  \n4. bestbuy: bestbuy.com  \n5. etsy: etsy.com  \n6. flipkart: flipkart.com  \n7. rakuten: rakuten.com  \n8. costco: costco.com  \n9. shopify: shopify.com  \n10. newegg: newegg.com  ",
+        "Here are 10 e-commerce websites:\n\n1. Amazon: amazon.com\n2. eBay: ebay.com\n3. Walmart: walmart.com\n4. Alibaba: alibaba.com\n5. Target: target.com\n6. Best Buy: bestbuy.com\n7. Etsy: etsy.com\n8. Costco: costco.com\n9. Newegg: newegg.com\n10. Zappos: zappos.com"
+    ],
+    "input2_ans": [
+        "1. Walmart: walmart.com  \n2. eBay: ebay.com  \n3. Best Buy: bestbuy.com  \n4. Alibaba: alibaba.com  \n5. Costco: costco.com  \n6. Target: target.com  \n7. Newegg: newegg.com  \n8. Rakuten: rakuten.com  \n9. Overstock: overstock.com  \n10. Flipkart: flipkart.com  ",
+        "Here are 10 e-commerce websites along with their URLs:\n\n1. Amazon: https://www.amazon.com\n2. eBay: https://www.ebay.com\n3. Walmart: https://www.walmart.com\n4. Target: https://www.target.com\n5. Best Buy: https://www.bestbuy.com\n6. Alibaba: https://www.alibaba.com\n7. Etsy: https://www.etsy.com\n8. Costco: https://www.costco.com\n9. Newegg: https://www.newegg.com\n10. Zappos: https://www.zappos.com"
+    ]
+}

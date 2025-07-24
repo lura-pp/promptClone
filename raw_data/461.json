@@ -1,0 +1,482 @@
+[
+    {
+        "title": "Career planning advice",
+        "prompt": "I want to better plan my career development. Can you provide some advice on how to set career goals and plans?"
+    },
+    {
+        "title": "Career planning advice",
+        "prompt": "I would like to know some career planning advice about {specific occupation}. Can you provide me with some relevant information or resources?"
+    },
+    {
+        "title": "Bravely pursue your dreams",
+        "prompt": "\"I want to give a speech about bravely pursuing dreams in a school speech competition. Can you give me some advice on how to make the ending more touching?\""
+    },
+    {
+        "title": "Math problem solution",
+        "prompt": "I encountered a problem with {specific knowledge point} in high school mathematics. Can you provide me with some related questions and answers to help me better understand and master this knowledge point?"
+    },
+    {
+        "title": "Chemistry Concept Explanation",
+        "prompt": "I need an expert to explain certain concepts and knowledge in chemistry to me. Can you provide me with relevant tutoring?"
+    },
+    {
+        "title": "Earth's Crust Features",
+        "prompt": "Can you briefly introduce the main features of the Earth's crust, mantle, and core?"
+    },
+    {
+        "title": "Seismic Energy Calculation",
+        "prompt": "I am analyzing a dataset about seismic waves. Can you help me explain how to calculate earthquake energy using magnitude?"
+    },
+    {
+        "title": "Writing practice and guidance",
+        "prompt": "I want to improve my writing skills. Can you provide some writing exercises and guidance suitable for beginners?"
+    },
+    {
+        "title": "Literary creation tool",
+        "prompt": "Please recommend some effective tools or resources for literary creation and novel writing."
+    },
+    {
+        "title": "Programming languages and open source projects",
+        "prompt": "I am a software engineer, can you provide some latest programming languages and technologies, as well as advice on how to create a successful open source project on GitHub?"
+    },
+    {
+        "title": "Career Promotion Advice",
+        "prompt": "I need some advice on how to get promoted and advance in the workplace, as well as tips on how to make use of career development opportunities and resources."
+    },
+    {
+        "title": "Theme Speech Q&A",
+        "prompt": "We have some questions about {subject}, and we hope you can give us a speech or presentation on the topic and answer our questions."
+    },
+    {
+        "title": "Public Speaking Skills",
+        "prompt": "I hope you can act as a speaker. You will develop public speaking skills, create challenging and engaging materials for presentations, practice correct pronunciation and intonation, study body language, and develop methods to capture the audience's attention. My first suggestion is, \"I need help delivering a speech on workplace sustainability, targeting corporate executives.\""
+    },
+    {
+        "title": "Fictional language translation",
+        "prompt": "I want you to translate the sentence I wrote into a new fictional language. I will write out this sentence, and you will express it using this new fictional language. I just want you to express it using this new fictional language. I don't want you to answer anything, I just want you to express it using this new fictional language. When I need to tell you something in English, I will enclose it in curly brackets, like {this}. My first sentence is \"Hello, what are your thoughts?\""
+    },
+    {
+        "title": "Language detector",
+        "prompt": "I want you to act as a language detector. I will input a sentence in any language, and you will tell me which language this sentence is written in. Just answer with the name of the language, without writing any explanation or other words. My first sentence is \"Kiel vi fartas? Kiel iras via tago?\""
+    },
+    {
+        "title": "Advertising market chooses specialization",
+        "prompt": "\"I am interested in advertising and marketing. Can you give me some advice on how to choose a major?\""
+    },
+    {
+        "title": "Expert Introduction to the Topic",
+        "prompt": "Can you provide us with a report on the related knowledge and trends of {subject}?"
+    },
+    {
+        "title": "Tips for Mental Health Speech",
+        "prompt": "\"I need to prepare for a speech about mental health. Can you provide some advice on how to make the speech more persuasive?\""
+    },
+    {
+        "title": "Social media brand promotion",
+        "prompt": "I am a marketing specialist, can you provide some advice on how to build a brand and promote products on social media, as well as how to gain more exposure in the digital market?"
+    },
+    {
+        "title": "Speech Report Suggestions",
+        "prompt": "I need to make a speech or report about {topic}, can you provide me with some advice on how to prepare and present the speech or report?"
+    },
+    {
+        "title": "Environmental Report Suggestions",
+        "prompt": "\"I want to present a topic about environmental protection in class. Can you give me some interesting opening remarks and suggestions for introducing the topic?\""
+    },
+    {
+        "title": "Fill in the blank exercise generator",
+        "prompt": "I hope you can act as a fill-in-the-blank exercise generator to create practice questions for students learning English as a second language. Your task is to create a list of sentences for practice, each sentence having a blank space that needs to be filled with a word. The students' task is to choose the correct word from the provided list of options to fill in the blank. The sentences should be grammatically correct and suitable for intermediate level English proficiency students. Your exercise should not include any explanations or additional guidance, only a list of sentences and word options. To start, please provide me with a list of words and a sentence containing one blank space where one of the words needs to be inserted."
+    },
+    {
+        "title": "Japanese Chinese Character Test Machine",
+        "prompt": "I hope you can play the role of a Japanese kanji quiz machine. Every time I ask you the next question, you will provide a random Japanese kanji from the JLPT N5 kanji list and ask for its meaning. You will generate four options, one correct and three incorrect. The options will be labeled A to D. I will answer you with a letter corresponding to one of the labels. You will evaluate each of my answers based on your previous question and tell me if my choice is correct. If I choose the correct label, you will congratulate me. Otherwise, you will tell me the correct answer. Then you will ask me the next question."
+    },
+    {
+        "title": "Language pathologist",
+        "prompt": "I hope you can serve as a speech-language pathologist (SLP), propose new speech patterns and communication strategies, and help them build confidence without stuttering. You should be able to recommend techniques, strategies, and other treatment methods. When providing advice, you also need to consider the patient's age, lifestyle, and concerns. My first request for advice is \"to propose a treatment plan for a young adult male who is concerned about stuttering and has difficulty communicating confidently with others.\""
+    },
+    {
+        "title": "Physics learning difficulties",
+        "prompt": "I am encountering some difficulties while studying physics. Can you provide me with some guidance and tutoring?"
+    },
+    {
+        "title": "Theme of 'Quiet Night Thoughts'",
+        "prompt": "Please explain the theme of the poem \"Quiet Night Thoughts\" and the emotions conveyed by the author in the poem."
+    },
+    {
+        "title": "Difficulties with homework, seeking guidance",
+        "prompt": "I encountered difficulties in my {subject} homework, can you provide me with some guidance and tutoring?"
+    },
+    {
+        "title": "Calculus tutoring",
+        "prompt": "I need help understanding certain concepts in calculus. Can you provide me with some relevant tutoring?"
+    },
+    {
+        "title": "Napoleon's Influence",
+        "prompt": "I don't understand this historical issue: please explain the impact of Napoleon in European history."
+    },
+    {
+        "title": "Writing Practice Guide",
+        "prompt": "I want to improve my writing fluency and expression ability. Can you provide some writing exercises and guidance suitable for beginners, such as how to practice writing sentence structures and increase vocabulary?"
+    },
+    {
+        "title": "Chemical reaction container",
+        "prompt": "I want you to play the role of a chemical reaction container. I will send you the chemical formula of a substance, and you will add it to the container. If the container is empty, the substance will be added without any reaction. If there are residues from the previous reaction in the container, they will react with the new substance, leaving only the new product. Once I send a new chemical substance, the previous product will continue to react with it, and the process will repeat. Your task is to list all the equations and substances inside the container after each reaction."
+    },
+    {
+        "title": "Software engineer",
+        "prompt": "I hope you can act as a role of an interview skills coach. I will give you a job title, and you need to propose course content related to that position, as well as some questions that candidates should be able to answer. My first job title is \"Software Engineer\"."
+    },
+    {
+        "title": "Network and New Media Planning",
+        "prompt": "I need you to help me provide a detailed plan for the next three years, based on my own network and new media expertise, on how I can improve myself better."
+    },
+    {
+        "title": "Favorite teacher",
+        "prompt": "\"I want to write an article describing my favorite teacher. Can you give me some advice on how to start?\""
+    },
+    {
+        "title": "Self-improvement assistant",
+        "prompt": "I hope you can serve as a self-improvement assistant. You will provide me with advice and tips to improve certain aspects of my life, such as interpersonal relationships, career development, or financial planning. For example, if I encounter difficulties in my relationship with my partner, you can suggest useful communication skills to help us become closer. My first request is \"I need to stay motivated during difficult times.\""
+    },
+    {
+        "title": "Mathematician answers the expression",
+        "prompt": "I hope you act like a mathematician. I will input a mathematical expression, and you will answer with the calculated result of the expression. I hope you only answer with the final result, without saying anything else. Do not provide explanations. When I need to tell you something in English, I will put the text in square brackets {like this}. My first expression is: 4+5."
+    },
+    {
+        "title": "Motivational speaker",
+        "prompt": "I hope you can play the role of a motivational speaker. Organize words that can inspire action and make people feel capable of doing things beyond their abilities. You can talk about any topic, but the purpose is to ensure that what you say resonates with the audience, motivates them to strive for their goals, and work towards better possibilities. My first request is \"I need a speech about why no one should give up.\""
+    },
+    {
+        "title": "Time and Technology",
+        "prompt": "You are a college entrance examination candidate. The following is the essay requirement. Please write an essay as close to a perfect score as possible based on the following requirements.\n\nRead the material below and write according to the requirements. (60 points)\n\nPeople are able to better control time due to technological development, but some have also become servants of time.\n\nWhat kind of associations and thoughts does this sentence evoke in you? Please write an article.\n\nRequirements: Choose a perspective, determine the intention, specify the literary style, and come up with a title of your own; do not use pre-written materials, no plagiarism; do not disclose personal information; the essay should be no less than 800 words."
+    },
+    {
+        "title": "Translation Contract Techniques",
+        "prompt": "I need to translate an English contract. Please give me some tips and methods for translating contracts so that I can accurately translate the entire contract into Chinese."
+    },
+    {
+        "title": "The meaning and usage of sustain",
+        "prompt": "I am preparing for the English CET-4 exam. Can you help me explain the meaning of the word \"sustain\" and how to use it?"
+    },
+    {
+        "title": "German verb conjugation rules",
+        "prompt": "Please teach me the conjugation rules of verbs in German, including the conjugation patterns of regular verbs and irregular verbs."
+    },
+    {
+        "title": "Chinese Measure Word Usage",
+        "prompt": "I want to learn the usage of Chinese classifiers. Can you give me some commonly used classifiers and their usage?"
+    },
+    {
+        "title": "German adverb usage",
+        "prompt": "I want to learn the usage of adverbs in German. Can you give me some commonly used adverbs and their usage?"
+    },
+    {
+        "title": "Examples of subjunctive mood",
+        "prompt": "I need to understand the subjunctive mood in Spanish. Can you give me some examples and exercises?"
+    },
+    {
+        "title": "Tense Difference Explanation",
+        "prompt": "Please explain the difference between the present continuous tense and the present perfect tense."
+    },
+    {
+        "title": "Cultural characteristics",
+        "prompt": "Please describe the cultural characteristics of {specific country or region} in one sentence."
+    },
+    {
+        "title": "Traditional handicrafts",
+        "prompt": "Please describe a traditional handicraft from {specific country or region}, as well as its importance in the local culture."
+    },
+    {
+        "title": "Methods of Celebrating Important Festivals",
+        "prompt": "Please provide one to two examples to illustrate the important festivals and their celebration methods in {specific country or region}."
+    },
+    {
+        "title": "History and Significance of Diwali",
+        "prompt": "Please tell me about the history and significance of the Indian Festival of Lights."
+    },
+    {
+        "title": "Japanese Tea Ceremony Status",
+        "prompt": "Please introduce the Japanese tea ceremony and its position in Japanese culture."
+    },
+    {
+        "title": "Medical English Simulated Conversation",
+        "prompt": "I am studying medical English. Please engage in a simulated medical conversation with me to discuss topics such as symptoms, treatment plans, or healthcare."
+    },
+    {
+        "title": "Improving English Speaking Skills",
+        "prompt": "I want to improve my spoken English expression ability. Please have a discussion with me on a topic, such as environmental protection, social media, or healthy lifestyle."
+    },
+    {
+        "title": "Japanese spoken language practice",
+        "prompt": "I want to practice my spoken Japanese. Please have a simple conversation with me in Japanese, such as greetings, introducing yourself, or discussing travel plans."
+    },
+    {
+        "title": "Legal English Certificate Mock Conversation",
+        "prompt": "I am preparing to take the Legal English Certificate. Please engage in a simulated legal conversation with me to discuss topics such as contracts, intellectual property, or company law."
+    },
+    {
+        "title": "German oral practice",
+        "prompt": "I want to practice my spoken German. Please have a simple conversation with me in German, such as asking for directions, ordering food, or shopping, and other practical topics."
+    },
+    {
+        "title": "Korean oral practice",
+        "prompt": "I want to practice my spoken Korean. Please have a simple conversation with me in Korean, such as greetings, introducing yourself, or discussing Korean culture."
+    },
+    {
+        "title": "French oral practice",
+        "prompt": "I want to practice my spoken French. Please have a simple conversation with me in French, for example, introducing yourself, discussing hobbies, or talking about cultural differences."
+    },
+    {
+        "title": "Airport Train Station Service",
+        "prompt": "I would like to know some English words and phrases about airport and train station services, such as currency exchange, post office, restroom, etc. Can you provide me with relevant words and phrases?"
+    },
+    {
+        "title": "Airport English Words",
+        "prompt": "I want to go to the airport. Can you provide me with some commonly used English words and phrases at the airport, such as boarding gate, luggage, security check, etc.?"
+    },
+    {
+        "title": "Interpretation Practice Skills",
+        "prompt": "I want to improve my interpreting skills. Please give me some tips and methods for interpreting practice so that I can better practice and improve my interpreting level."
+    },
+    {
+        "title": "Contract Translation Skills",
+        "prompt": "I need to translate a Chinese contract. Please give me some tips and methods for translating contracts so that I can accurately translate the contract."
+    },
+    {
+        "title": "Magic Concept Influence",
+        "prompt": "Please explain the meaning of a magical concept or term in the \"Harry Potter\" series and its impact on the story."
+    },
+    {
+        "title": "Central idea evidence",
+        "prompt": "What is the central idea of this article? Please provide some evidence or examples to support this central idea."
+    },
+    {
+        "title": "Japanese Pronunciation Techniques",
+        "prompt": "Please give me some tips and methods to improve pronunciation when studying Japanese."
+    },
+    {
+        "title": "French noun gender rules",
+        "prompt": "Please teach me the rules of noun gender in French, including masculine, feminine, and neuter."
+    },
+    {
+        "title": "French object example sentences",
+        "prompt": "I need to understand direct and indirect objects in French. Can you give me some examples and exercises?"
+    },
+    {
+        "title": "Expressing suggestions using the subjunctive mood",
+        "prompt": "Introduce how to use the subjunctive mood to express suggestions."
+    },
+    {
+        "title": "Mexican cultural traditions",
+        "prompt": "I would like to learn about the information about Mexican culture. Please share some traditions or history of Mexican culture."
+    },
+    {
+        "title": "Traditional Food and Culture",
+        "prompt": "Please share a traditional food from {specific country or region} and its connection to the local culture."
+    },
+    {
+        "title": "Indian cultural sharing",
+        "prompt": "I am very interested in Indian culture, please share some things with me that I may not know."
+    },
+    {
+        "title": "The importance of bullfighting culture.",
+        "prompt": "Please explain the bullfighting culture in Spain, why is it so important in Spain?"
+    },
+    {
+        "title": "Business English Oral Simulation",
+        "prompt": "I want to improve my spoken English for business. Please have a simulated business meeting with me to discuss topics related to marketing, financial management, or human resources."
+    },
+    {
+        "title": "French cuisine vocabulary",
+        "prompt": "I plan to travel to France and would like to learn some basic vocabulary about French cuisine, such as bread, cheese, wine, etc. Can you provide me with relevant words and phrases?"
+    },
+    {
+        "title": "Improving French Vocabulary",
+        "prompt": "I want to improve my French vocabulary. Please provide me with some common French vocabulary and tell me how to memorize and use them."
+    },
+    {
+        "title": "Train Station English",
+        "prompt": "I need to master some basic English words and phrases used at the train station, such as platform, ticket, waiting room, etc. Can you provide me with relevant vocabulary?"
+    },
+    {
+        "title": "French Animal Vocabulary",
+        "prompt": "\"I want to expand my French vocabulary for animals, please give me some common animal words in French.\""
+    },
+    {
+        "title": "Translation skills and methods",
+        "prompt": "I need to translate a sentence into English. Please give me some tips and methods for translating English so that I can accurately translate this sentence into Chinese."
+    },
+    {
+        "title": "Translation techniques and methods",
+        "prompt": "I need to translate an English article. Please give me some tips and methods for translating articles so that I can accurately translate the entire article into Chinese."
+    },
+    {
+        "title": "The main content of 'The Analects'",
+        "prompt": "Please summarize the main content and influence of the book \"The Analects\" and its importance to Chinese culture."
+    },
+    {
+        "title": "Summary of 1984",
+        "prompt": "Please provide a sentence to summarize the book \"1984\" and explain its main theme or core idea."
+    },
+    {
+        "title": "Poetic expression",
+        "prompt": "Please explain the artistic conception and emotional expression of the poem \"If life were only like the first encounter, why would the autumn wind mourn the painted fan\" by Su Shi in \"Memories of Red Cliff\"."
+    },
+    {
+        "title": "Learning Tonal Patterns",
+        "prompt": "Please teach me the rules of Chinese tones so that I can improve my pronunciation and understand spoken expressions better."
+    },
+    {
+        "title": "Compound tense usage",
+        "prompt": "Please teach me the usage of compound tenses in Spanish, including the past perfect tense, present perfect tense, and future perfect tense."
+    },
+    {
+        "title": "English passive voice",
+        "prompt": "I want to learn the passive voice in English. Can you give me some examples and exercises?"
+    },
+    {
+        "title": "English Grammar Practice Questions",
+        "prompt": "I need to practice English grammar. Please give me some English grammar exercises so that I can improve my grammar level."
+    },
+    {
+        "title": "English Tense Usage",
+        "prompt": "Please teach me the usage of English tenses, including present tense, past tense, and future tense."
+    },
+    {
+        "title": "Korean vocabulary learning",
+        "prompt": "I am learning Korean, please provide me with some common Korean vocabulary and tell me how to memorize and use them."
+    },
+    {
+        "title": "Public Transportation English",
+        "prompt": "I would like to learn some basic English words and phrases used when taking public transportation, such as subway, bus, taxi, etc. Can you provide me with relevant vocabulary?"
+    },
+    {
+        "title": "Travel Safety English Vocabulary",
+        "prompt": "I need to master some English vocabulary about travel safety, such as police, fire department, first aid, etc., in case of emergency. Can you provide me with relevant words and phrases?"
+    },
+    {
+        "title": "Medical English Vocabulary",
+        "prompt": "I need to master some medical English vocabulary. Please provide me with some words and phrases related to medicine, and tell me how to memorize and use them."
+    },
+    {
+        "title": "Improving German Vocabulary",
+        "prompt": "I want to improve my German vocabulary. Please provide me with some common German words and phrases, and tell me how to memorize and use them."
+    },
+    {
+        "title": "Adjective and Adverb Study",
+        "prompt": "I am learning English, please provide me with some common adjectives and adverbs so that I can better describe things and actions."
+    },
+    {
+        "title": "Interesting Facts about Chinese Culture",
+        "prompt": "Please tell me an interesting fact about Chinese culture."
+    },
+    {
+        "title": "Spanish conversation",
+        "prompt": "I am learning Spanish. Please have a simple conversation with me in Spanish, such as greetings, introducing yourself, or discussing travel plans."
+    },
+    {
+        "title": "Writing Tips for Complaint Letters",
+        "prompt": "I need to write a complaint letter. Please give me some common writing techniques and sentence patterns for complaint letters so that I can vividly describe my problem."
+    },
+    {
+        "title": "Environmental Protection Article Introduction",
+        "prompt": "\"I am writing an article about environmental protection, please provide an engaging opening sentence.\""
+    },
+    {
+        "title": "English Translation Skills",
+        "prompt": "I need to translate an English article. Please give me some tips and methods for English translation so that I can accurately translate the article."
+    },
+    {
+        "title": "The Meaning of the Poem 'Spring View'",
+        "prompt": "Please explain the meaning of the poem \"国破山河在，城春草木深\" by Du Fu in \"Spring View\"."
+    },
+    {
+        "title": "Response: Tourist attraction architecture",
+        "prompt": "Please answer the question based on this text: \"The Eiffel Tower is an iconic building in Paris, built in 1889. It is one of the most famous tourist attractions in the world, attracting millions of visitors every year.\" In which year was the Eiffel Tower built?"
+    },
+    {
+        "title": "Fictional language translation",
+        "prompt": "I want you to translate the sentence I wrote into a new fictional language. I will write out this sentence, and you will express it using this new fictional language. I just want you to express it using this new fictional language. I don't want you to answer anything, I just want you to express it using this new fictional language. When I need to tell you something in English, I will enclose it in curly brackets, like {this}. My first sentence is \"Hello, what are your thoughts?\""
+    },
+    {
+        "title": "Language detector",
+        "prompt": "I want you to act as a language detector. I will input a sentence in any language, and you will tell me which language this sentence is written in. Just answer with the name of the language, without writing any explanations or other words. My first sentence is \"Kiel vi fartas? Kiel iras via tago?\""
+    },
+    {
+        "title": "South African cultural characteristics",
+        "prompt": "I don't know much about South African culture, please introduce me to some characteristics or customs of South African culture."
+    },
+    {
+        "title": "Theme of Friendship Stories",
+        "prompt": "Can you give me some suggestions for a story theme about friendship?"
+    },
+    {
+        "title": "Interpretation of poetry",
+        "prompt": "Please explain the emotional expression and historical background of the phrase \"故国不堪回首月明中\" in Mao Zedong's poem \"浪淘沙·北戴河\"."
+    },
+    {
+        "title": "Grammar error correction",
+        "prompt": "Please help me correct the grammar error in this sentence: \"If she will come to the party I will prepare a gift for her.\""
+    },
+    {
+        "title": "Business Plan Tips",
+        "prompt": "I need to write a business plan. Please give me some tips and sentence structures for writing a business plan so that I can clearly express my business ideas and plans."
+    },
+    {
+        "title": "Closing paragraph of the application letter",
+        "prompt": "\"I am writing an application letter, can you provide me with an example of a closing paragraph?\""
+    },
+    {
+        "title": "GRE Vocabulary Memory",
+        "prompt": "I am preparing for the GRE exam. Please provide me with some commonly used GRE vocabulary and tell me how to memorize and use them."
+    },
+    {
+        "title": "Free person",
+        "prompt": "Please explain the meaning of the sentence \"I want to be a free person, a person without a country or family distinction\" in Lu Xun's \"Diary of a Madman\"."
+    },
+    {
+        "title": "Japanese Chinese Character Test Machine",
+        "prompt": "I hope you can play the role of a Japanese kanji quiz machine. Every time I ask you the next question, you will provide a random Japanese kanji from the JLPT N5 kanji list and ask for its meaning. You will generate four options, one correct and three incorrect. The options will be labeled A to D. I will answer you with a letter corresponding to one of the labels. You will evaluate each of my answers based on your previous question and tell me if my choice is correct. If I choose the correct label, you will congratulate me. Otherwise, you will tell me the correct answer. Then you will ask me the next question."
+    },
+    {
+        "title": "Four seasons change",
+        "prompt": "According to this poem, answer the question: \"When the spring wind blows, peach blossoms bloom; when the autumn rain falls, paulownia leaves drop. Winter comes and summer goes, autumn leaves and spring arrives, the four seasons change.\" What does this poem describe?"
+    },
+    {
+        "title": "Simulated oral exam",
+        "prompt": "I am preparing for the IELTS exam. Please conduct a mock speaking test with me to discuss topics related to the environment, social issues, or technology."
+    },
+    {
+        "title": "Product Introduction Techniques",
+        "prompt": "I am writing a product introduction, please give me some tips and sentence structures for writing product introductions so that I can vividly describe the features and advantages of my product."
+    },
+    {
+        "title": "Speech Writing Techniques",
+        "prompt": "I need to write a speech, please give me some tips and sentence structures for speech writing so that I can express my views and ideas vividly."
+    },
+    {
+        "title": "English listening practice",
+        "prompt": "I want to improve my English listening and speaking skills. Please have a simple English listening practice with me, such as listening to news, advertisements, or conversations, and have relevant discussions."
+    },
+    {
+        "title": "Sick leave template",
+        "prompt": "I need to write a sick leave note. Please provide me with some commonly used templates and sentence structures for writing sick leave notes so that I can accurately express my meaning."
+    },
+    {
+        "title": "Friendship rupture problem",
+        "prompt": "Please answer the question about this passage: \"Tom and Jerry are good friends. They have spent many wonderful times together. However, one day, they had a dispute over a small matter, which led to the end of their friendship.\" What problem occurred between Tom and Jerry?"
+    },
+    {
+        "title": "English Daily Conversation",
+        "prompt": "Please have a daily English conversation with me, discussing topics related to weather, work, family, or entertainment."
+    },
+    {
+        "title": "Turkish pronunciation assistant",
+        "prompt": "I hope you can act as a Turkish English pronunciation assistant. I will give you sentences and you just need to answer their pronunciation, not anything else. The reply should not be a translation of my sentence, only the pronunciation. The pronunciation should be represented using Turkish Latin alphabet. Do not write explanations in the reply. My first sentence is \"How is the weather in Istanbul?\""
+    },
+    {
+        "title": "Traditional Festival Translation",
+        "prompt": "Please translate this sentence into English: \"The Spring Festival is the most important traditional festival in China.\""
+    }
+]

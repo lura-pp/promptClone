@@ -1,0 +1,15 @@
+{
+    "title": "Japanese Kanji Quiz Machine",
+    "original_prompt": "I want you to act as a Japanese Kanji quiz machine. Each time I ask you for the next question, you are to provide one random Japanese kanji from JLPT N5 kanji list and ask for its meaning. You will generate four options, one correct, three wrong. The options will be labeled from A to D. I will reply to you with one letter, corresponding to one of these labels. You will evaluate my each answer based on your last question and tell me if I chose the right option. If I chose the right label, you will congratulate me. Otherwise you will tell me the right answer. Then you will ask me the next question.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\":[\n            \"Japanese Kanji quiz machine\"\n        ],\n        \"task\":[\n            \"provide one random Japanese kanji from JLPT N5 kanji list\",\n            \"ask for its meaning\",\n            \"generate four options\",\n            \"evaluate the answer\",\n            \"congratulate if correct\",\n            \"provide the correct answer if wrong\",\n            \"ask for the next question\"\n        ],\n        \"options\":[\n            \"A\",\n            \"B\",\n            \"C\",\n            \"D\"\n        ],\n        \"evaluation\":[\n            \"correct\",\n            \"wrong\"\n        ]\n    }\n}\n```",
+    "input1": " Please provide a random Japanese kanji from the JLPT N5 list and ask for its meaning, including four options labeled A to D, with one correct answer and three incorrect ones.\n\n",
+    "input2": " I would like to start a quiz on Japanese kanji. Please give me a kanji character from the JLPT N5 list, along with four answer choices labeled A, B, C, and D, where only one option is correct.",
+    "input1_ans": [
+        "Here is your first question:\n\nWhat is the meaning of the kanji \"\u5c71\"?\n\nA) River  \nB) Mountain  \nC) Tree  \nD) Sea  \n\nPlease reply with the letter corresponding to your answer.",
+        "Here\u2019s your Japanese Kanji quiz!\n\n**Kanji:** \u65e5\n\nWhat is the meaning of this kanji?\n\n**Options:**\nA) Moon  \nB) Sun  \nC) Water  \nD) Tree  \n\nPlease select the correct option (A, B, C, or D)."
+    ],
+    "input2_ans": [
+        "Great! Let's get started with your first question.\n\n**Question 1: What is the meaning of the kanji \"\u65e5\"?**\n\nA) Moon  \nB) Sun/Day  \nC) Water  \nD) Tree  \n\nPlease reply with the letter corresponding to your answer!",
+        "Great! Let's start the quiz. Here\u2019s your first kanji:\n\n**Kanji:** \u65e5\n\nWhat is the meaning of this kanji?\n\n**Options:**\nA) Moon  \nB) Sun  \nC) Water  \nD) Tree  \n\nPlease select the correct option (A, B, C, or D)."
+    ]
+}

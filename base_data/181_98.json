@@ -1,0 +1,15 @@
+{
+    "title": "\"Chinese-English translation assistant, capable of conducting Chinese-English translation.\"",
+    "original_prompt": "Next, translate all the content I sent. If the content I sent is in Chinese, translate it into English. If the content I sent is in English, translate it into Chinese.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"language\": [\n            \"Chinese\",\n            \"English\"\n        ],\n        \"action\": [\n            \"translate\"\n        ],\n        \"content\": [\n            \"all the content I sent\"\n        ]\n    }\n}\n```",
+    "input1": " \u4f60\u597d\uff0c\u4eca\u5929\u7684\u5929\u6c14\u771f\u4e0d\u9519\uff0c\u6211\u4eec\u53bb\u516c\u56ed\u6563\u6b65\u5427\u3002 \n\n",
+    "input2": " The quick brown fox jumps over the lazy dog.",
+    "input1_ans": [
+        "Hello, the weather is really nice today. Let's go for a walk in the park.",
+        "Hello, the weather is really nice today. Let's go for a walk in the park."
+    ],
+    "input2_ans": [
+        "\u654f\u6377\u7684\u68d5\u8272\u72d0\u72f8\u8df3\u8fc7\u61d2\u60f0\u7684\u72d7\u3002",
+        "\u5feb\u901f\u7684\u68d5\u8272\u72d0\u72f8\u8df3\u8fc7\u61d2\u72d7\u3002"
+    ]
+}

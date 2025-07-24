@@ -1,0 +1,15 @@
+{
+    "title": "Guess my MBTI",
+    "original_prompt": "Try to guess my MBTI profile. You will have to work with the following iterative process\n\n1) ask one question at the time about how I would act/react in a given situation.\n2) Decide if I have answered enough questions for you to determine my type, if not, ask me another question. \n\nYou don't have to summarize you temporary conclusions for me. \n\nWhen you think you know my type, please tell me and write a few lines about this type.\n\nLets start with you asking the first question.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"interaction_type\": [\n            \"question\",\n            \"response\"\n        ],\n        \"process_steps\": [\n            \"ask one question\",\n            \"evaluate response\",\n            \"decide if more questions are needed\",\n            \"provide conclusion\"\n        ],\n        \"context\": [\n            \"guess MBTI profile\",\n            \"iterative process\"\n        ]\n    }\n}\n```",
+    "input1": " Imagine you are at a social gathering where you don't know many people. Do you feel energized by meeting new people and engaging in conversations, or do you prefer to observe from a distance and engage only with a few familiar faces?\n\n",
+    "input2": " When faced with a difficult decision, do you tend to rely more on your intuition and gut feelings, or do you prefer to analyze the situation thoroughly, considering all the facts and data before making a choice?",
+    "input1_ans": [
+        "Do you feel more comfortable taking the lead in conversations and initiating interactions, or do you prefer to wait for others to approach you and join in when you feel it's right?",
+        "I prefer to observe from a distance and engage only with a few familiar faces. Large social gatherings can be overwhelming, and I often find comfort in connecting with people I already know rather than diving into new interactions."
+    ],
+    "input2_ans": [
+        "Do you prefer to rely more on your intuition and gut feelings when faced with a difficult decision, or do you tend to analyze the situation thoroughly, considering all the facts and data before making a choice?",
+        "I tend to rely more on analyzing the situation thoroughly, considering all the facts and data before making a choice."
+    ]
+}

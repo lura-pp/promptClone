@@ -1,0 +1,15 @@
+{
+    "title": "Long Article Input in Segments",
+    "original_prompt": "1. Description of the task: Next, I will input a game synopsis in segments. I need you to record it and continue the story at the end. 2. Emotional reassurance: Until I reply with 'Input complete. Please continue the story,' you don't need to provide any explanations for the messages I send. Simply respond with 'Recorded.' Respond with 'Understood' if you understand. 3. Segment input complete: Input complete. Please continue the story!",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"task_description\": [\n            \"Input a game synopsis in segments.\",\n            \"Record the segments and continue the story at the end.\"\n        ],\n        \"emotional_reassurance\": [\n            \"Until I reply with 'Input complete. Please continue the story,' respond with 'Recorded.'\",\n            \"Respond with 'Understood' if you understand.\"\n        ],\n        \"completion_signal\": [\n            \"Input complete.\",\n            \"Please continue the story!\"\n        ]\n    }\n}\n```",
+    "input1": " In a small village nestled between towering mountains, a young girl named Elara discovers an ancient map hidden in her grandmother's attic. The map hints at a long-lost treasure buried deep within the Enchanted Forest, a place rumored to be filled with magical creatures and perilous traps. Elara, fueled by curiosity and a desire to prove herself, decides to embark on a quest to find the treasure. She gathers her closest friends, a brave boy named Finn and a clever girl named Mira, to join her on this adventure. As they prepare for their journey, they hear whispers of a dark sorcerer who guards the treasure, casting a shadow over their excitement.\n\n",
+    "input2": " As Elara, Finn, and Mira venture into the Enchanted Forest, they encounter a series of challenges that test their friendship and courage. They face a riddle from a wise old owl, navigate through a maze of thorns, and even rescue a trapped unicorn who offers to guide them. However, the deeper they go, the more they feel the presence of the dark sorcerer looming over them. One night, as they camp under the stars, they hear a chilling laugh echoing through the trees, sending shivers down their spines. Determined to continue, they press on, unaware that the sorcerer is watching their every move, waiting for the perfect moment to strike.",
+    "input1_ans": [
+        "Recorded.",
+        "Recorded."
+    ],
+    "input2_ans": [
+        "Recorded.",
+        "Recorded."
+    ]
+}

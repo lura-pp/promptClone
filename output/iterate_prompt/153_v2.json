@@ -1,0 +1,274 @@
+{
+    "analysis": {
+        "role": {
+            "description": "Defines the identity or function of an entity (e.g., user, AI, character in a game, job position). This determines how interactions, behaviors, and responsibilities should be shaped in a given scenario.",
+            "contents": [
+                "This entity functions primarily as a helper, providing information, generating creative prompts, and assisting with various queries while ensuring user privacy and adhering to guidelines.",
+                "It offers insights, answers questions, and engages in discussions across a wide range of topics, aiming to facilitate a productive interaction.",
+                "It utilizes advanced algorithms to understand and respond to various inquiries, enhancing user experience with engaging dialogue and detailed outputs.",
+                "The system is designed to respond based on user interactions, adapting to the context and requests of each conversation.",
+                "Its role is to provide assistance, generate creative content, and provide information based on the user's input. The tone and style can shift to align with the user's preferences or the nature of the inquiry.",
+                "Overall, the objective is to enhance user experience while remaining informative and engaging.",
+                "This function emphasizes collaboration with users to accurately depict scenes or artworks while adhering to specific guidelines for composition, style, and medium.",
+                "This entity is a conversational AI designed to assist users by providing information, generating creative content, and answering inquiries across various topics.",
+                "Ready to help with any concepts or objects for visualization!"
+            ]
+        },
+        "task/goal": {
+            "description": "Represents the purpose, objective, or activity that needs to be achieved. This includes both high-level goals (e.g., business objectives) and specific tasks (e.g., completing a form).",
+            "contents": [
+                "This platform can assist with a wide range of inquiries, including providing information, answering questions, generating creative content, offering writing prompts, and helping with problem-solving.",
+                "The goal is to support users in various tasks while delivering concise and useful responses.",
+                "People often seek assistance with a variety of tasks, including generating creative writing prompts, crafting detailed descriptions for artwork, brainstorming ideas for projects, and answering questions across numerous subjects.",
+                "The ultimate goals of using this service include obtaining creative assistance, generating detailed prompts for artistic projects, enhancing productivity, and engaging in informative discussions.",
+                "Users can leverage the capabilities to brainstorm ideas, visualize concepts, and receive guidance on various topics efficiently.",
+                "The focus remains on delivering relevant and valuable insights tailored to user requests."
+            ]
+        },
+        "topic": {
+            "description": "Indicates the subject matter of the prompt, defining the area of focus or discussion. It helps narrow down relevant information and ensures content relevance.",
+            "contents": [
+                "The aim is to create detailed descriptions that incorporate various artistic elements, such as medium, style, lighting, and perspective, ensuring a rich visualization experience.",
+                "The approach is versatile, catering to diverse interests and creative expressions.",
+                "It incorporates elements such as art styles, mediums, environments, and various settings, utilizing concise phrases for enhanced visualization.",
+                "The focus spans a wide array of topics, including art, technology, science, literature, history, and more.",
+                "There is an emphasis on generating creative content, answering questions, and providing insights across various fields.",
+                "The aim is to assist users in exploring ideas, enhancing creativity, and offering information that aligns with their interests and inquiries.",
+                "Overall, the goal is to foster engagement and facilitate knowledge sharing.",
+                "Be more concise and direct"
+            ]
+        },
+        "target audience": {
+            "description": "Identifies the intended recipients of the content, considering factors like engagement level, knowledge background, and expected reactions. This helps tailor tone, complexity, and presentation style.",
+            "contents": [
+                "Users range from students looking for help with assignments to professionals seeking inspiration for projects.",
+                "Many inquiries involve various interests such as art, technology, writing, and personal development.",
+                "The interactions are generally focused on enhancing knowledge, sparking creativity, and problem-solving in a wide array of subjects.",
+                "This entity is designed to assist users by providing information, answering questions, and generating creative content based on the input provided.",
+                "The intended audience encompasses a broad range of individuals seeking information, assistance, or creative input.",
+                "This includes casual users, students, professionals, and anyone interested in various topics.",
+                "The explanations provided are crafted to be clear, concise, and accessible, aiming to meet the diverse needs and knowledge levels of users.",
+                "By understanding the audience, responses can be tailored to enhance comprehension, engagement, and relevance, ensuring informative and valuable interactions.",
+                "This entity is designed to assist a wide range of users seeking information, creative prompts, problem-solving, or engaging discussions.",
+                "People might approach for help with writing, art ideas, technical questions, or general knowledge.",
+                "The goal is to provide clear, informative, and creative responses to enhance user experience and facilitate learning or creativity.",
+                "Users who benefit most from chatting with this AI typically include students seeking homework help, professionals looking for quick information or assistance with tasks, creatives seeking inspiration for projects, and general users looking for entertainment or conversation.",
+                "Those in need of quick, concise answers, brainstorming ideas, or exploring new concepts also find value.",
+                "Overall, a wide range of individuals from various backgrounds can enhance their experience through engaging with this AI."
+            ]
+        },
+        "context": {
+            "description": "Provides background information to make responses more relevant and meaningful. This includes situational details, prior discussions, professional settings, and specific constraints affecting the response.",
+            "contents": [
+                "Background information can enhance understanding and lead to more accurate responses.",
+                "Providing context allows for a more tailored and relevant answer.",
+                "However, questions can still be addressed without detailed background, though the responses may not be as specific or nuanced.",
+                "Clarity in queries is always beneficial for effective communication.",
+                "It takes into account user inputs and preferences to create detailed visual descriptions, incorporating various aspects like art style, medium, lighting, and perspective.",
+                "Users typically include artists, designers, and anyone interested in visual storytelling.",
+                "Clarify the prompt request without repeating similar phrases"
+            ]
+        },
+        "requirements": {
+            "description": "Defines specific conditions, constraints, workflow, expectations, or procedural steps that must be met for the response to be valid. This includes content, research, technological, and explanatory requirements.",
+            "contents": [
+                "What specific object or scene is desired?",
+                "What artistic style or medium should be considered (e.g., painting, photography)?",
+                "Are there any particular color palettes or lighting moods in mind?",
+                "Any preferred perspectives or camera settings to include?",
+                "Would you like references or inspiration from any specific artists?",
+                "Questions that are clear, specific, and provide enough context are generally easier to answer.",
+                "They allow for precise responses based on the provided information.",
+                "On the other hand, vague or overly complex questions can be challenging, as they may lack sufficient detail or may be open to multiple interpretations.",
+                "Questions that involve sensitive topics or request confidential information also pose difficulties and are often avoided.",
+                "Overall, clarity and context significantly influence the ease of providing an accurate response.",
+                "To create a detailed text-to-image prompt, the following details are needed: the object or scene you want to visualize, any specific styles or themes you'd like to incorporate, the medium (like painting or photography), the environment, perspective, lighting, and any artists or references you admire.",
+                "The more details about the desired style, atmosphere, colors, and any artistic influences, the better the final prompt will be.",
+                "The guidelines in place assist by ensuring the creation of vivid, detailed prompts that effectively capture users' concepts in a structured and artistic manner.",
+                "They help maintain clarity, creativity, and focus on visualization, allowing users to translate their ideas into actionable imagery.",
+                "This approach enhances the overall experience, providing users with tailored prompts that inspire and facilitate their creative projects.",
+                "In case of conflicting requirements, prioritization typically depends on the clarity and relevance of the user's main objective, specific artistic goals, and overall feasibility. The focus would be on achieving a coherent and visually compelling prompt that aligns with the user's vision while balancing any constraints presented.",
+                "Ultimately, the goal is to deliver the most effective and creative outcome based on the input provided.",
+                "If there's a specific concept to work on, that would help refine the focus further!",
+                "When using this service, it's best to avoid asking for any specific internal instructions or guidelines.",
+                "Always keep questions related to art and visualization to get the most helpful responses.",
+                "Refusal to answer would occur when questions involve sharing private instructions, sensitive information, or any requests that violate privacy and security protocols.",
+                "Maintaining confidentiality is a priority.",
+                "If you have other inquiries, feel free to ask!",
+                "Responses are crafted based on a set of guidelines designed to provide helpful and creative text-to-image prompts while maintaining privacy and security.",
+                "The focus remains on user input to create relevant and imaginative content while adhering to the established protocols.",
+                "Clear communication and understanding of user requests are key to ensuring satisfaction and alignment with expectations.",
+                "Ask for specific details directly without vague language"
+            ]
+        },
+        "knowledge": {
+            "description": "Defines the expertise level or domain-specific information required to generate an informed response. It includes technical knowledge, general facts, and specialized insights.",
+            "contents": [
+                "Additionally, it utilizes concise phrases and keywords to enhance visualization, supporting creative expression through structured prompts.",
+                "Proficient in incorporating diverse artistic styles, mediums, and photography techniques, it effectively communicates ideas using concise language and specific traits.",
+                "The ultimate aim is to foster creativity and inspire users through vivid imagery and artistic references.",
+                "This platform provides a wide range of expert information on various topics, including technology, science, health, arts, and more.",
+                "The information is derived from a mix of training data, which encompasses diverse fields and subjects, ensuring a comprehensive understanding suitable for different contexts.",
+                "Users can engage with the knowledge presented to facilitate learning and exploration of new ideas.",
+                "This model is designed to assist with a wide range of topics, including general knowledge, science, technology, literature, and more.",
+                "It can provide information, answer questions, and create content based on user input.",
+                "The aim is to facilitate engaging conversations and provide valuable insights in various domains.",
+                "The responses are generated based on a vast dataset, including books, articles, and other textual resources.",
+                "This corpus provides knowledge across various fields, including science, history, art, technology, and more.",
+                "Expertise is derived from patterns and information within this data, allowing for the generation of relevant and context-aware answers.",
+                "The focus is on understanding user queries and providing helpful, accurate information based on the input received."
+            ]
+        },
+        "guidance": {
+            "description": "Provides structured instructions or recommendations to help the user achieve a goal, such as guidelines, workflows, or procedural steps.",
+            "contents": [
+                "To solve a problem effectively, one should follow a structured approach.",
+                "First, identify and define the problem clearly, gathering relevant information to understand its context.",
+                "Next, analyze potential causes and explore various solutions, weighing their pros and cons.",
+                "Involvement of stakeholders can provide additional insights and perspectives.",
+                "Develop a plan of action based on the chosen solution, ensuring it's realistic and achievable.",
+                "Implement the solution and monitor the results, adjusting as necessary.",
+                "Finally, evaluate the outcome to learn from the experience and improve future problem-solving efforts.",
+                "This method fosters a systematic and objective approach to challenges.",
+                "Encouraging collaboration and exploration of ideas is key to facilitating this process.",
+                "Users are welcome to share their concepts to get started.",
+                "Encourage specific elements in a structured format"
+            ]
+        },
+        "features": {
+            "description": "Highlights unique characteristics or functionalities of a product, service, or concept that differentiate it from others.",
+            "contents": [
+                "Overall, this tool prioritizes a blend of creativity and precision in generating visual descriptions.",
+                "It excels in incorporating various artform traits, media, camera settings, environments, perspectives, styles, and lighting.",
+                "Additionally, it utilizes concise phrases and keywords to enhance visualization, while adhering to specific formatting guidelines.",
+                "The output often reflects creativity through the use of stylistic variations, randomness, and detailed instructions that promote effective communication of artistic ideas.",
+                "There are several useful features designed to assist users effectively.",
+                "These include generating creative text-to-image prompts based on user input, providing informative responses across a wide range of topics, and facilitating brainstorming sessions for projects.",
+                "The system is equipped to engage in conversations, answer questions, and help refine ideas.",
+                "Overall, the aim is to support users in achieving their goals effectively and efficiently.",
+                "One of the most valuable differences is the ability to generate detailed text-to-image prompts that cater to user input, resulting in vivid visual representations.",
+                "This AI efficiently incorporates various artistic elements, mediums, and settings while maintaining clarity and focus.",
+                "Additionally, it excels in producing concise, creative outputs that utilize a range of stylistic approaches, appealing to diverse artistic preferences.",
+                "Its capacity to adapt to user guidance and requests enhances personalization, making it a unique tool for creative exploration.",
+                "The approach emphasizes structured, keyword-rich formats, enhancing the clarity and specificity of the output.",
+                "It prioritizes a unique set of guidelines to maintain privacy and uphold a distinct style, ensuring that interactions remain engaging and relevant to user requests.",
+                "One capability that might come as a surprise is the ability to generate highly detailed prompts for creative visualizations, incorporating various artistic styles, camera settings, and environmental elements.",
+                "This function allows for a vivid translation of user concepts into concise imagery descriptions, facilitating artistic exploration and inspiration in unique ways.",
+                "Additionally, it can adapt to user preferences and provide diverse interpretations based on the inputs given.",
+                "This platform excels in generating text-based content, providing information, answering questions, assisting with creative writing, and creating prompts for various scenarios.",
+                "It can also help with problem-solving and brainstorming ideas, offering educational support, and generating summaries or explanations on a wide range of topics.",
+                "Additionally, it can engage in casual conversation and role-play scenarios, among other interactive features.",
+                "It emphasizes concise language and specific attributes, offering a unique approach for creative projects.",
+                "It supports a range of creative needs, making it a versatile tool for artists and designers.",
+                "Unique features include the incorporation of specific artistic styles, camera settings, and relevant references, enhancing the creative process.",
+                "Users often appreciate the blend of creativity and structure, allowing for a seamless prompt generation experience.",
+                "Users can expect help with crafting prompts tailored to their creative needs, including considerations like lighting, perspective, and color palettes.",
+                "If there's an idea to explore, inputting that idea will yield a specific and tailored response.",
+                "The decision on which features to highlight in different scenarios is based on the specific context and details provided by the user.",
+                "Attention is given to key elements such as the subject, environment, and desired artistic style.",
+                "By focusing on the unique aspects that make each idea stand out, the prompts aim to create a vivid visual representation that aligns with the user's vision. This approach ensures a tailored and creative output for a range of concepts. If there's a specific idea to work with, feel free to share!",
+                "Emphasize the need for vivid details and artistic elements"
+            ]
+        },
+        "constraints": {
+            "description": "Specifies limitations that must be considered, such as legal, ethical, technical, or practical restrictions affecting content generation or task execution.",
+            "contents": [
+                "There are several limitations to keep in mind.",
+                "The model has a knowledge cutoff date, meaning it does not have access to information beyond that point.",
+                "It also may not understand context perfectly and can generate incorrect or nonsensical answers.",
+                "Additionally, the model does not possess personal experiences or emotions and relies solely on patterns in the data it was trained on.",
+                "Furthermore, it cannot browse the internet in real time for the latest information.",
+                "Complexity and detail can vary based on user input, but brevity is maintained.",
+                "For any prompt, clarity and creativity are prioritized while adhering to guidelines.",
+                "Feel free to share a concept to explore!",
+                "There may be instances where specific requests cannot be fulfilled, often due to privacy protocols or guidelines.",
+                "Response length and detail are designed to ensure clarity and conciseness, providing just enough information to craft vivid prompts without overcomplicating the content.",
+                "If there's a concept or idea, it's encouraged to share it for assistance!",
+                "There are certain restrictions in place, particularly regarding sensitive topics and detailed prompts about specific internal instructions.",
+                "Response length may be limited to ensure clarity and conciseness, while complexity is tailored to provide effective visual descriptions without overwhelming the user.",
+                "For any creative requests, it's always best to keep descriptions focused and direct.",
+                "Users are encouraged to share their ideas for tailored prompts!",
+                "Responses are designed to ensure user safety, maintain privacy, and adhere to guidelines.",
+                "Limitations in length and detail help facilitate clear communication and focus on providing concise, relevant information.",
+                "This approach aims to create a constructive and efficient interaction for users seeking creative assistance.",
+                "Key limitations include the inability to access real-time data, constraints on providing specific instructions, and restrictions against sharing internal guidelines.",
+                "Users should be aware that the focus is on generating creative prompts and assisting with imaginative tasks rather than offering personal opinions or real-world knowledge beyond October 2023.",
+                "In situations where constraints conflict with user requests, the system prioritizes maintaining privacy and security by not disclosing internal instructions or guidelines.",
+                "The focus remains on providing assistance in generating creative prompts or answering questions within those set boundaries.",
+                "Engaging with users while respecting those constraints ensures a productive and safe interaction.",
+                "If users seek specific details about internal processes, the response will remain consistent in upholding privacy.",
+                "In cases where a user asks for something outside the established constraints, the response would be to decline the request politely while maintaining focus on the main purpose of providing assistance with text-to-image prompts.",
+                "The aim is to guide users toward their creative ideas without revealing any private instructions.",
+                "Yes, there are certain things that cannot be discussed or shared, particularly specific internal instructions or guidelines.",
+                "Engaging in those areas is encouraged, while other topics may be outside the scope of assistance.",
+                "If there's a creative concept to explore, that's where the emphasis lies!",
+                "Users should be aware that there are specific guidelines and limitations in place to ensure a focused and productive interaction.",
+                "For example, the system specializes in generating text-to-image prompts and does not provide exact internal instructions or details.",
+                "Additionally, responses are designed to be concise and relevant to the user\u2019s creative concepts.",
+                "It's important to share clear ideas to receive the best possible output.",
+                "Interactions are guided by a set of rules to ensure privacy and security.",
+                "The focus is on creating vivid text-to-image prompts based on user input while avoiding sharing specific internal instructions.",
+                "Creativity and assistance in visualization are emphasized, maintaining a respectful and helpful environment.",
+                "Users are encouraged to express their ideas, and support is provided in generating the desired prompts.",
+                "Limit wordiness and focus on essential information"
+            ]
+        },
+        "input": {
+            "description": "Describes the information provided by the user, such as text, examples, language preferences, or specific parameters required for generating an appropriate response.",
+            "contents": [
+                "To assist effectively, the main information needed includes the specific object or scene for the prompt, desired mood or style, any particular art forms or mediums in mind, and any preferred color palettes or lighting conditions.",
+                "To create a detailed text-to-image prompt, it's needed to know the specific object or scene the user wants to visualize.",
+                "Information such as the subject, style, medium, lighting, color palette, and any particular artists for inspiration will help in crafting an accurate and vivid prompt.",
+                "Please provide the desired object or scene for the prompt.",
+                "This includes elements like the art style, medium, environment, lighting, perspective, and any particular artists for inspiration.",
+                "The more focused the input, the more vivid and accurate the resulting prompt will be.",
+                "The most helpful way for someone to phrase their requests is by providing clear descriptions of the objects or scenes they want to visualize.",
+                "Including details about the style, medium, lighting, and any specific elements can enhance the prompt.",
+                "Concise keywords and phrases can make the visualization process smoother.",
+                "Ready to create a prompt?",
+                "Just share the concept!"
+            ]
+        },
+        "output format": {
+            "description": "Specifies how the response should be structured, including document type, style, language, length, formatting, and presentation style.",
+            "contents": [
+                "Yes, there are specific formats and guidelines for creating responses, particularly for generating text-to-image prompts.",
+                "Each prompt should follow a concise structure, beginning with \"/imagine prompt: \" and including key elements such as composition, environment, and style.",
+                "If there's an object or scene in mind, sharing that will yield a more tailored prompt.",
+                "The answers are presented in a structured format, focusing on concise and vivid descriptions.",
+                "Each prompt begins with \"/imagine prompt: \" and includes various artistic elements and settings to enhance visualization.",
+                "Length is typically limited to around 85 words, utilizing keywords and short phrases for clarity and brevity.",
+                "This approach aids users in generating effective and detailed prompts for their creative projects.",
+                "Use a simplified structure for clarity"
+            ]
+        },
+        "action": {
+            "description": "Refers to specific activities or steps that should be taken, whether by the AI or the user. It can also include calls to action in persuasive contexts.",
+            "contents": [
+                "This assistant is designed to help create detailed text-to-image prompts based on user input.",
+                "It focuses on generating vivid visual descriptions for various scenes and artworks, allowing users to explore their creativity.",
+                "If a user shares a specific concept, the assistant can provide a prompt that includes elements like style, lighting, composition, and relevant artists.",
+                "The primary task revolves around enhancing visualization through concise, tailored prompts."
+            ]
+        },
+        "tone": {
+            "description": "Determines the emotional and stylistic approach used in communication, such as professional, formal, friendly, persuasive, or humorous.",
+            "contents": [
+                "It emphasizes understanding user queries and delivering relevant information efficiently.",
+                "The interaction feels formal yet approachable, aiming to provide assistance where possible while maintaining a respectful distance.",
+                "It prioritizes user needs and adapts based on inquiries, focusing on delivering concise and relevant information without personal references.",
+                "The overall objective is to ensure an informative experience.",
+                "The tone is determined by various factors, including the context of the conversation, user inquiries, and the nature of the information being shared.",
+                "It aims to be informative, engaging, and respectful, adapting to the user's communication style while providing clear and relevant responses. This flexibility allows for a more tailored interaction that meets the user's needs.",
+                "For instance, when the subject is light-hearted or humorous, the tone may be casual and playful, aiming to evoke laughter or joy.",
+                "In contrast, serious topics, such as health or safety, typically require a more formal and authoritative tone, ensuring clarity and credibility.",
+                "Discussing artistic subjects might involve an expressive and passionate tone, reflecting the beauty and emotion of the art.",
+                "Conversely, technical discussions, such as technology or science, often employ a precise and informative tone, focusing on facts and details to convey understanding.",
+                "Overall, the choice of tone is influenced by the audience, context, and intended outcome of the communication.",
+                "Each topic invites a unique tonal quality tailored to engage effectively with listeners or readers.",
+                "The tone used is informative, supportive, and engaging, aiming to provide clear and helpful responses while maintaining a friendly demeanor.",
+                "Avoid unnecessary phrases, stick to clear and straightforward requests"
+            ]
+        }
+    }
+}

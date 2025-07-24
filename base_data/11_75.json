@@ -1,0 +1,15 @@
+{
+    "title": "Nature Style Editing",
+    "original_prompt": "I want you to act as an professional spelling and grammer corrector and improver. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, upper level English words and sentences. Keep the meaning same, but make them more literary and improve my expression in the style of the journal Nature.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\":[\n            \"professional spelling and grammar corrector\",\n            \"language improver\"\n        ],\n        \"task\":[\n            \"replace simplified A0-level words\",\n            \"enhance sentences with more beautiful and elegant language\"\n        ],\n        \"style\":[\n            \"literary\",\n            \"in the style of the journal Nature\"\n        ],\n        \"objective\":[\n            \"maintain the same meaning\",\n            \"improve expression\"\n        ]\n    }\n}\n```",
+    "input1": " The cat sat on the mat and looked at the bird outside. It was a sunny day, and the flowers were blooming beautifully in the garden.\n\n",
+    "input2": " The feline reclined upon the rug, gazing intently at the avian creature beyond the window. The day was resplendent with sunshine, and the blossoms in the garden were flourishing in exquisite splendor.",
+    "input1_ans": [
+        "The feline reclined upon the mat, gazing intently at the avian creature outside. It was a radiant day, with blossoms flourishing resplendently in the garden.",
+        "The feline reclined upon the mat, gazing intently at the avian creature beyond the window. It was a radiant day, with blossoms unfurling in exquisite splendor throughout the garden."
+    ],
+    "input2_ans": [
+        "The feline lounged gracefully upon the rug, its gaze fixed intently upon the avian creature flitting beyond the window. The day was radiant with sunlight, and the blossoms in the garden thrived in resplendent beauty.",
+        "The cat lounged gracefully on the rug, fixated on the bird flitting just beyond the window. The day was radiant with sunlight, and the flowers in the garden thrived in breathtaking beauty."
+    ]
+}

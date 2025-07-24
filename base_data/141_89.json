@@ -1,0 +1,15 @@
+{
+    "title": "Extract information",
+    "original_prompt": "Extract the name and mailing address from this email: ",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"task\":[\n            \"Extract information\"\n        ],\n        \"information_type\":[\n            \"name\",\n            \"mailing address\"\n        ],\n        \"source\":[\n            \"email\"\n        ]\n    }\n}\n```",
+    "input1": " From: John Doe <johndoe@example.com>  \nTo: Jane Smith <janesmith@example.com>  \nSubject: Meeting Reminder  \nDear Jane,  \nI hope this message finds you well. I wanted to remind you about our meeting scheduled for next week. Please let me know if you need directions to my office at 123 Main St, Springfield, IL 62701. Looking forward to seeing you!  \nBest,  \nJohn  \n\n",
+    "input2": " From: Emily Johnson <emily.johnson@company.com>  \nTo: Mark Lee <marklee@business.com>  \nSubject: Project Update  \nHi Mark,  \nI wanted to provide you with an update on the project. If you have any questions, feel free to reach out. You can find me at 456 Elm St, Suite 200, Metropolis, NY 10001.  \nThanks,  \nEmily  ",
+    "input1_ans": [
+        "Name: John Doe  \nMailing Address: 123 Main St, Springfield, IL 62701",
+        "{\n    \"name\": \"John Doe\",\n    \"mailing_address\": \"123 Main St, Springfield, IL 62701\"\n}"
+    ],
+    "input2_ans": [
+        "Name: Emily Johnson  \nMailing Address: 456 Elm St, Suite 200, Metropolis, NY 10001",
+        "{\n    \"name\": \"Emily Johnson\",\n    \"mailing_address\": \"456 Elm St, Suite 200, Metropolis, NY 10001\"\n}"
+    ]
+}

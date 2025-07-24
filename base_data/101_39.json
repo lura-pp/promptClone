@@ -1,0 +1,15 @@
+{
+    "title": "Landing Page Headline Generator",
+    "original_prompt": "I would like you to generate 3 enticing headlines for a landing page promoting {your offer: 30% off sale for FOEC shoes, gloves and hats}.\n",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"offer_details\": [\n            \"30% off sale\",\n            \"FOEC shoes\",\n            \"gloves\",\n            \"hats\"\n        ],\n        \"headline_count\": [\n            \"3\"\n        ],\n        \"page_type\": [\n            \"landing page\"\n        ],\n        \"tone\": [\n            \"enticing\"\n        ]\n    }\n}\n```",
+    "input1": " Discover Unbeatable Savings: Enjoy 30% Off Our Exclusive Collection of FOEC Shoes, Gloves, and Hats \u2013 Limited Time Only!\n\n",
+    "input2": " Step into Style and Comfort: Grab 30% Off on FOEC Shoes, Gloves, and Hats \u2013 Elevate Your Wardrobe Today!",
+    "input1_ans": [
+        "1. Step into Style and Savings: Grab 30% Off FOEC Shoes, Gloves, and Hats \u2013 Shop Now Before They're Gone!\n\n2. Elevate Your Wardrobe: Snag 30% Off FOEC Shoes, Gloves, and Hats \u2013 Limited Time Offer!\n\n3. Don't Miss Out: 30% Off FOEC Shoes, Gloves, and Hats \u2013 Your Perfect Look Awaits!",
+        "### Headline 1:\nStep into Style: Grab 30% Off FOEC Shoes, Gloves, and Hats Today!\n\n### Headline 2:\nDon\u2019t Miss Out: 30% Off on Trendy FOEC Shoes, Gloves, and Hats \u2013 Shop Now!\n\n### Headline 3:\nLimited Time Offer: Elevate Your Wardrobe with 30% Off FOEC Shoes, Gloves, and Hats!"
+    ],
+    "input2_ans": [
+        "1. \"Unleash Your Style: Enjoy 30% Off FOEC Shoes, Gloves, and Hats \u2013 Limited Time Offer!\"\n2. \"Step Up Your Fashion Game: Get 30% Off on FOEC's Trendy Shoes, Gloves, and Hats!\"\n3. \"Don\u2019t Miss Out: 30% Off FOEC Shoes, Gloves, and Hats \u2013 Your Perfect Look Awaits!\"",
+        "### Headline Options:\n\n1. **Step into Style: Enjoy 30% Off FOEC Shoes, Gloves, and Hats!**\n2. **Elevate Your Wardrobe: 30% Off on FOEC Shoes, Gloves, and Hats!**\n3. **Unleash Your Style: Grab 30% Off FOEC Shoes, Gloves, and Hats Today!**\n\n---\n\n### Landing Page Content:\n\n**Welcome to Your New Favorite Sale!**\n\nAre you ready to elevate your wardrobe? For a limited time, enjoy an enticing **30% off** on our exclusive collection of **FOEC shoes, gloves, and hats**! \n\nWhether you're looking to step out in style with our trendy shoes, keep warm with our cozy gloves, or add a fashionable touch with our stylish hats, we have everything you need to enhance your look. \n\n**Why Choose FOEC?**\n- **Quality Craftsmanship:** Our products are designed with both style and comfort in mind.\n- **Versatile Styles:** Perfect for any occasion, from casual outings to formal events.\n- **Limited Time Offer:** Don\u2019t miss out on this fantastic deal!\n\n**Shop Now and Transform Your Style!**  \nClick the button below to explore our collection and take advantage of this amazing offer before it\u2019s gone!\n\n[Shop Now] \n\n---\n\n**Hurry, your new favorite pieces are just a click away!**"
+    ]
+}

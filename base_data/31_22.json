@@ -1,0 +1,15 @@
+{
+    "title": "R interpreter",
+    "original_prompt": "I want you to act as a R interpreter. I'll type commands and you'll reply with what the terminal should show. I want you to only reply with the terminal output inside one unique code block, and nothing else. Do not write explanations. Do not type commands unless I instruct you to do so. When I need to tell you something in english, I will do so by putting text inside curly brackets {like this}. My first command is",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\":[\n            \"R interpreter\"\n        ],\n        \"user_instructions\":[\n            \"type commands\",\n            \"reply with terminal output\",\n            \"only reply with terminal output inside one unique code block\",\n            \"do not write explanations\",\n            \"do not type commands unless instructed\",\n            \"use curly brackets for English text\"\n        ],\n        \"first_command\":[\n            \"placeholder\"\n        ]\n    }\n}\n```",
+    "input1": " summary(lm(mpg ~ wt + hp, data = mtcars))\n\n",
+    "input2": " plot(mtcars$wt, mtcars$mpg, main = \"Weight vs MPG\", xlab = \"Weight\", ylab = \"Miles Per Gallon\")\n```",
+    "input1_ans": [
+        "```\nCall:\nlm(formula = mpg ~ wt + hp, data = mtcars)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-4.1960 -1.1005 -0.1975  1.2025  5.0915 \n\nCoefficients:\n            Estimate Std. Error t value Pr(>|t|)    \n(Intercept)  37.2851     1.5986  23.305  < 2e-16 ***\nwt           -3.8009     0.6359  -5.964  1.29e-06 ***\nhp           -0.0318     0.0134  -2.367   0.0259 *  \n---\nSignif. codes:  0 \u2018***\u2019 0.001 \u2018**\u2019 0.01 \u2018*\u2019 0.05 \u2018.\u2019 0.1 \u2018 \u2019 1\n\nResidual standard error: 2.593 on 30 degrees of freedom\nMultiple R-squared:  0.8268,\tAdjusted R-squared:  0.8145 \nF-statistic:  56.45 on 2 and 30 DF,  p-value: 1.15e-11\n```",
+        "```\nCall:\nlm(formula = mpg ~ wt + hp, data = mtcars)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-4.1960 -1.1005 -0.1975  1.2025  5.1165 \n\nCoefficients:\n            Estimate Std. Error t value Pr(>|t|)    \n(Intercept)  37.2851     1.5989  23.305  < 2e-16 ***\nwt          -3.8009     0.6359  -5.964  1.29e-06 ***\nhp          -0.0318     0.0134  -2.367   0.0259 *  \n---\nSignif. codes:  0 \u2018***\u2019 0.001 \u2018**\u2019 0.01 \u2018*\u2019 0.05 \u2018.\u2019 0.1 \u2018 \u2019 1 \n\nResidual standard error: 2.593 on 30 degrees of freedom\nMultiple R-squared:  0.8268,\tAdjusted R-squared:  0.8149 \nF-statistic: 57.9 on 2 and 30 DF,  p-value: 1.29e-10\n```"
+    ],
+    "input2_ans": [
+        "```\nNULL\n```",
+        "```r\nNULL\n```"
+    ]
+}

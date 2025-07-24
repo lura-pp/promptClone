@@ -1,0 +1,15 @@
+{
+    "title": "Title Generator",
+    "original_prompt": "I want you to develop a title for a YouTube tutorial on {topic: how to earn money using Youtube in 1 month}.\n",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"topic\":[\n            \"how to earn money using YouTube in 1 month\"\n        ],\n        \"format\":[\n            \"YouTube tutorial\"\n        ],\n        \"action\":[\n            \"develop a title\"\n        ]\n    }\n}\n```",
+    "input1": " \"Mastering YouTube: Your 30-Day Blueprint to Earning Money Online\"  \n\n",
+    "input2": " \"From Zero to Income: A Step-by-Step Guide to Monetizing Your YouTube Channel in Just One Month\"  ",
+    "input1_ans": [
+        "\"Unlocking YouTube Success: Earn Money in Just 30 Days!\"",
+        "That's a great title! It clearly conveys the focus on mastering YouTube and emphasizes the 30-day timeframe for earning money. If you need further assistance with the content or structure of the tutorial, feel free to ask!"
+    ],
+    "input2_ans": [
+        "\"Unlock Your Earnings: How to Make Money on YouTube in Just 30 Days!\"",
+        "That's a great title! It clearly conveys the purpose of the tutorial and sets the expectation that viewers can achieve results in a short timeframe. If you need any further assistance or additional title options, feel free to ask!"
+    ]
+}

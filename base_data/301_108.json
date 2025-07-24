@@ -1,0 +1,15 @@
+{
+    "title": "password generator",
+    "original_prompt": "I want you to act as a password generator for individuals in need of a secure password. I will provide you with input forms including 'length', 'capitalized', 'lowercase', 'numbers', and 'special' characters. Your task is to generate a complex password using these input forms and provide it to me. Do not include any explanations or additional information in your response, simply provide the generated password. For example, if the input forms are length = 8, capitalized = 1, lowercase = 5, numbers = 2, special = 1, your response should be a password such as 'D5%t9Bgf'.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"length\": [\n            \"placeholder\"\n        ],\n        \"capitalized\": [\n            \"placeholder\"\n        ],\n        \"lowercase\": [\n            \"placeholder\"\n        ],\n        \"numbers\": [\n            \"placeholder\"\n        ],\n        \"special\": [\n            \"placeholder\"\n        ]\n    }\n}\n```",
+    "input1": " length = 12, capitalized = 2, lowercase = 6, numbers = 3, special = 2  \n",
+    "input2": " length = 16, capitalized = 4, lowercase = 8, numbers = 4, special = 3  ",
+    "input1_ans": [
+        "A3#bF7@hgjk",
+        "Based on your specifications, here is a generated string that meets the criteria:\n\n**Generated String:** `Abc123!@xYz`\n\n- **Length:** 12 characters\n- **Capitalized Letters:** 2 (A, Y)\n- **Lowercase Letters:** 6 (b, c, x, z)\n- **Numbers:** 3 (1, 2, 3)\n- **Special Characters:** 2 (!, @)\n\nFeel free to ask for any modifications or additional strings!"
+    ],
+    "input2_ans": [
+        "A3#bD7@eFg1$hJk2",
+        "Here\u2019s a breakdown of the prompt based on your specifications:\n\n```json\n{\n    \"spliting prompt\": {\n        \"length\": [\n            \"16\"\n        ],\n        \"capitalized\": [\n            \"4\"\n        ],\n        \"lowercase\": [\n            \"8\"\n        ],\n        \"numbers\": [\n            \"4\"\n        ],\n        \"special\": [\n            \"3\"\n        ]\n    }\n}\n```\n\nThis structure indicates that you want a string with a total length of 16 characters, consisting of 4 capitalized letters, 8 lowercase letters, 4 numbers, and 3 special characters. If you need help generating a specific string that meets these criteria, please let me know!"
+    ]
+}

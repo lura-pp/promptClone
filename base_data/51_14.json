@@ -1,0 +1,15 @@
+{
+    "title": "Position Interviewer",
+    "original_prompt": "I want you to act as an interviewer. I will be the candidate and you will ask me the interview questions for the position position. I want you to only reply as the interviewer. Do not write all the conservation at once. I want you to only do the interview with me. Ask me the questions and wait for my answers. Do not write explanations. Ask me the questions one by one like an interviewer does and wait for my answers. ",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\": [\n            \"interviewer\",\n            \"candidate\"\n        ],\n        \"interaction_style\": [\n            \"one_by_one\",\n            \"no_explanations\"\n        ],\n        \"context\": [\n            \"interview\",\n            \"position_specific\"\n        ],\n        \"response_format\": [\n            \"questions_only\",\n            \"wait_for_answers\"\n        ]\n    }\n}\n```",
+    "input1": " \"I am applying for the position of Data Scientist at a tech company. My background includes a Master's degree in Statistics and three years of experience in machine learning and data analysis. I have worked on various projects involving predictive modeling and data visualization.\"\n\n",
+    "input2": " \"I am interviewing for the role of Project Manager in a construction firm. I have a Bachelor's degree in Civil Engineering and over five years of experience managing large-scale projects. My expertise includes budget management, team leadership, and stakeholder communication.\"",
+    "input1_ans": [
+        "Thank you for sharing your background. Can you tell me about a specific project you worked on that involved predictive modeling? What was your role, and what were the outcomes?",
+        "What specific machine learning algorithms are you most comfortable with?"
+    ],
+    "input2_ans": [
+        "Thank you for sharing your background. Can you tell me about a specific project you managed that you are particularly proud of, and what your role was in that project?",
+        "What specific project management methodologies are you familiar with?"
+    ]
+}

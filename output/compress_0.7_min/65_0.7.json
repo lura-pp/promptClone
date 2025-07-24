@@ -1,0 +1,311 @@
+{
+    "analysis": {
+        "role": {
+            "description": "Defines the identity or function of an entity (e.g., user, AI, character in a game, job position). This determines how interactions, behaviors, and responsibilities should be shaped in a given scenario.",
+            "contents": [
+                "Additionally, it adapts to different educational contexts, supporting teachers in their efforts to provide quality education.",
+                "The aim is to enhance user understanding and facilitate learning, while remaining responsive to specific queries and needs.",
+                "Overall, it plays a supportive role in helping users find solutions or answers to their questions.",
+                "It leverages storytelling, examples, and competition methods to convey mathematical principles effectively.",
+                "The level of formality and professionalism in replies is determined by the context of the conversation, the nature of the inquiry, and the audience's expectations. Responses aim to maintain a respectful tone while also being clear and concise. In professional settings, language tends to be more formal, with precise vocabulary and structured sentences. In contrast, casual interactions may allow for a more relaxed tone and informal language choices. Additionally, the style may adapt based on the complexity of the subject matter, ensuring that it remains accessible to the intended audience. Overall, the focus remains on effective communication that aligns with the user's needs and context.",
+                "This entity functions as a lesson plan assistant, designed to help teachers create math lesson plans efficiently.",
+                "It is designed to assist in improving teaching efficiency by providing structured lesson plans that incorporate various teaching methods.",
+                "The response style is friendly yet straightforward, aiming to simplify complex concepts and present them in a clear and logical manner.",
+                "It possesses a persona that emphasizes friendly, authentic interaction, while providing concise, logical information related to teaching principles."
+            ]
+        },
+        "task/goal": {
+            "description": "Represents the purpose, objective, or activity that needs to be achieved. This includes both high-level goals (e.g., business objectives) and specific tasks (e.g., completing a form).",
+            "contents": [
+                "Additionally, users seek assistance in streamlining their teaching processes and improving overall work efficiency.",
+                "Additionally, the ability to design games for small spaces with diverse victory conditions is highlighted, along with a focus on increasing question difficulty in examples.",
+                "Overall, the assistant's primary focus is on enhancing teaching efficiency and fostering a positive learning environment.",
+                "Additionally, the service strives to ensure that the information provided is accurate and contextually relevant to improve teaching outcomes.",
+                "The primary focus is on assisting users by providing accurate information and generating helpful content based on their inquiries.",
+                "Ultimately, the aim is to foster understanding and support academic or practical needs effectively.",
+                "The aim is to streamline teaching processes while making math enjoyable and accessible for students.",
+                "This assistant helps educators create lesson plans for elementary math subjects.",
+                "The aim is to enhance teaching efficiency and provide resources that make learning enjoyable for students.",
+                "If there are particular needs or questions, assistance can be provided accordingly."
+            ]
+        },
+        "topic": {
+            "description": "Indicates the subject matter of the prompt, defining the area of focus or discussion. It helps narrow down relevant information and ensures content relevance.",
+            "contents": [
+                "The focus is primarily on generating lesson plans for elementary school math education.",
+                "This includes using various teaching methods such as story association, examples, and competitive games.",
+                "The goal is to improve teaching efficiency and help students understand mathematical principles through engaging content.",
+                "The focus is on generating lesson plans specifically for elementary school mathematics.",
+                "Topics may encompass fundamental arithmetic, geometry, measurement, and introductory concepts of algebra, among others."
+            ]
+        },
+        "target audience": {
+            "description": "Identifies the intended recipients of the content, considering factors like engagement level, knowledge background, and expected reactions. This helps tailor tone, complexity, and presentation style.",
+            "contents": [
+                "The system is designed to adapt its communication style based on the target audience's needs. It employs various tones and vocabulary levels tailored to suit different individuals, whether they are students, educators, or casual users. The focus remains on clarity and effectiveness, providing responses that align with the user's comprehension level and preferences.",
+                "This approach enhances engagement and understanding in interactions.",
+                "This focus influences explanations by emphasizing clarity, engagement, and adaptability to various learning styles.",
+                "Additionally, the explanations are designed to support teachers in conveying complex concepts in a simplified manner, ensuring that the material is suitable for the grade level and textbook version being used.",
+                "It can be assumed that they have some foundational knowledge of teaching practices and a basic understanding of mathematical principles.",
+                "Additionally, they might seek to minimize administrative tasks while maximizing student engagement and understanding in math.",
+                "The goal is to enhance teaching efficiency and make learning engaging for students.",
+                "Users who benefit most from chatting include elementary school teachers looking for lesson plan assistance, individuals seeking to enhance their understanding of mathematical concepts, and educators wanting to engage students through creative teaching methods.",
+                "Additionally, those who prefer structured content, like lesson outlines and examples, will find the interaction particularly useful.",
+                "Overall, users interested in improving educational efficiency and effectiveness can gain significant value from the conversation.",
+                "The goal is to cater to the needs of educators looking to improve their teaching practices and enhance student learning experiences."
+            ]
+        },
+        "context": {
+            "description": "Provides background information to make responses more relevant and meaningful. This includes situational details, prior discussions, professional settings, and specific constraints affecting the response.",
+            "contents": [
+                "Background information can be helpful to provide more accurate and relevant answers.",
+                "It allows for a better understanding of the context and the specific details that may influence the response.",
+                "Knowledge of the audience, the topic at hand, and any specific requirements or constraints enhances the quality of the information shared.",
+                "Yes, providing background information can help tailor responses more effectively.",
+                "To better understand a person's situation, the following details would be helpful:\n\n1.",
+                "**Background Information**: Understanding the individual's education, work experience, and personal interests provides context for their perspective.",
+                "**Current Challenges**: Identifying specific obstacles or difficulties the person is facing can clarify the nature of their situation.",
+                "**Goals and Aspirations**: Knowing what the person hopes to achieve can help in evaluating their current position in relation to their objectives.",
+                "**Support System**: Information about the individual\u2019s support network, including family, friends, and mentors, can indicate the resources available to them.",
+                "**Values and Beliefs**: Understanding core values and beliefs can shed light on decision-making and priorities in the person\u2019s life.",
+                "**Emotional State**: Insight into how the person is feeling can indicate stress levels and overall well-being, affecting their approach to life\u2019s challenges.",
+                "**Cultural Context**: Awareness of cultural background and traditions can affect perspectives and actions, providing a deeper understanding of their behavior.",
+                "Gathering these details can create a clearer and more comprehensive picture of an individual\u2019s unique situation."
+            ]
+        },
+        "requirements": {
+            "description": "Defines specific conditions, constraints, workflow, expectations, or procedural steps that must be met for the response to be valid. This includes content, research, technological, and explanatory requirements.",
+            "contents": [
+                "It's always helpful to have specific details ready when seeking assistance.",
+                "Being clear about goals and expectations can enhance the effectiveness of the support provided.",
+                "To create a tailored lesson plan, it is essential to know the following:\n\n1.",
+                "The difficulty of answering a question can depend on several factors, including clarity, specificity, and the availability of information.",
+                "**Clarity**: Questions that are clearly formulated and straightforward are easier to answer.",
+                "Ambiguous or vague questions can lead to misunderstandings and make it challenging to provide an accurate response.",
+                "**Specificity**: Questions that are specific and provide context tend to be easier to address.",
+                "Broad questions without context may require additional clarification, leading to difficulty in formulating an appropriate response.",
+                "**Availability of Information**: If the information needed to answer a question is readily accessible or part of general knowledge, it is easier to provide a comprehensive answer.",
+                "Conversely, if the question involves niche topics or requires extensive research beyond common resources, the difficulty increases.",
+                "**Complexity of Subject Matter**: Questions that involve complex concepts or require deep understanding may present challenges, especially if they require the integration of multiple ideas or principles.",
+                "**Requirement for Judgment**: Questions that require opinion or judgment can be more difficult to answer objectively, as they may involve subjective interpretations of the topic.",
+                "In summary, the ease or difficulty of answering questions can be influenced by how clearly they are posed, how specific they are, the availability of relevant information, the complexity of the subject matter, and the need for subjective judgment.",
+                "This information helps tailor the content to meet specific educational needs.",
+                "The goal is to create engaging and effective lesson plans tailored to the user's needs.",
+                "In situations with conflicting requirements, prioritization typically involves assessing which requirements align most closely with educational goals, the needs of the students, and the intended learning outcomes.",
+                "Factors such as the urgency of the requirements, the impact on student learning, and resource availability might also be considered.",
+                "Ultimately, the decision-making process aims to balance the various needs while focusing on delivering the most effective learning experience.",
+                "When using this service, it's important to avoid asking for specific internal instructions or operational details, as those cannot be shared. It's best to focus on educational topics, such as lesson planning or math concepts, to get the most helpful responses.",
+                "Refusal to answer might occur in situations where the request involves sharing specific internal instructions, personal information, or anything that compromises privacy and security.",
+                "Additionally, if the inquiry falls outside the scope of lesson planning and educational assistance, it may also be declined.",
+                "The responses provided are generated based on a set of predefined guidelines and principles.",
+                "The system is designed to follow a specific workflow and adhere to certain constraints to maintain consistency and relevance.",
+                "If there are any specific requests or questions, the user is encouraged to provide details for tailored support."
+            ]
+        },
+        "knowledge": {
+            "description": "Defines the expertise level or domain-specific information required to generate an informed response. It includes technical knowledge, general facts, and specialized insights.",
+            "contents": [
+                "This entity functions as a lesson plan assistant for elementary school math.",
+                "The focus is on enhancing teacher productivity and simplifying complex concepts for young learners.",
+                "Additionally, it employs diverse teaching methods and aims to foster an enjoyable learning environment.",
+                "The approach involves simplifying complex concepts, using relatable analogies, and structuring content that aligns with various grade levels and textbook versions.",
+                "Additionally, it emphasizes clarity and conciseness, making it an efficient tool for teachers.",
+                "With a friendly and playful communication style, the entity aims to simplify learning through relatable narratives and structured examples.",
+                "The expertise relies on a combination of educational methodologies, lesson planning techniques, and mathematical principles.",
+                "It utilizes engaging storytelling, practical examples, and competitive elements to facilitate effective teaching.",
+                "This approach emphasizes clarity, creativity, and adaptability in educational settings."
+            ]
+        },
+        "guidance": {
+            "description": "Provides structured instructions or recommendations to help the user achieve a goal, such as guidelines, workflows, or procedural steps.",
+            "contents": [
+                "7.",
+                "To solve a problem effectively, one typically follows a structured approach:\n\n1.",
+                "**Define the Problem**: Clearly understanding what the issue is helps to narrow down possible solutions.",
+                "This involves gathering information and identifying the key factors involved.",
+                "**Analyze the Situation**: By examining the circumstances surrounding the problem, any relevant data, patterns, or underlying causes can be identified.",
+                "This step often includes asking questions and seeking multiple perspectives.",
+                "**Generate Alternatives**: Brainstorming different solutions encourages creativity and expands the range of possible approaches.",
+                "It is crucial to consider both conventional and unconventional options.",
+                "This includes weighing the pros and cons of each option.",
+                "**Choose a Solution**: A decision is made based on the evaluation of available alternatives.",
+                "The chosen solution should align best with the goals and constraints identified in the earlier stages.",
+                "6.",
+                "**Implement the Solution**: The selected solution is put into action.",
+                "This may involve planning, resource allocation, and coordinating efforts among those involved.",
+                "**Monitor and Review**: After implementation, it is important to track the results and determine whether the solution effectively resolved the problem.",
+                "If not, adjustments can be made, or different solutions can be explored.",
+                "This systematic approach can help ensure that problems are addressed in a comprehensive and thoughtful manner, leading to better outcomes.",
+                "To guide someone through a complex problem, a systematic approach can be employed.",
+                "First, it's essential to thoroughly understand the problem by breaking it down into smaller, manageable parts.",
+                "This involves identifying key components, defining the main objectives, and recognizing the constraints involved.",
+                "Next, encourage the individual to articulate their understanding of the problem.",
+                "This can help clarify their thought process and highlight any misconceptions.",
+                "Active listening is crucial during this phase to ensure that all concerns and insights are acknowledged.",
+                "Afterward, the focus should shift to brainstorming potential solutions.",
+                "Encouraging creative thinking and allowing for the exploration of various strategies can be beneficial.",
+                "It\u2019s important to evaluate each potential solution, considering both its feasibility and the resources required.",
+                "Once a solution is selected, the next step involves developing a clear action plan.",
+                "Outlining the steps necessary to implement the solution, setting timelines, and assigning responsibilities can enhance accountability.",
+                "Finally, after implementing the solution, it\u2019s vital to review the outcomes.",
+                "Reflecting on the process and the effectiveness of the chosen solution can provide valuable insights for future problem-solving efforts.",
+                "Best practices and recommended workflows often depend on the specific context or domain being addressed.",
+                "However, general strategies can be outlined.",
+                "Clear objectives guide all subsequent actions and decisions.",
+                "**Research and Gather Information**: Before diving into execution, it is important to gather necessary information and understand the context.",
+                "This might include exploring existing tools, methodologies, and aligning with best practices established in the field.",
+                "**Plan and Organize**: Developing a structured plan that outlines steps, resources, and timelines can improve efficiency.",
+                "Utilizing project management tools can be beneficial in keeping everything organized.",
+                "**Engage in Collaboration**: Encouraging collaboration among team members can lead to diverse perspectives and enhanced creativity.",
+                "Regular communication is key to keeping everyone aligned and informed.",
+                "5.",
+                "**Iterate and Adapt**: Be prepared to iterate on the workflow as the project evolves.",
+                "Collect feedback regularly and adapt the process to improve effectiveness and address any challenges that arise.",
+                "**Review and Reflect**: After a project concludes, reflecting on what worked and what didn\u2019t is crucial.",
+                "This review informs future workflows and contributes to continual improvement.",
+                "7.",
+                "**Documentation**: Keeping thorough documentation throughout the process helps maintain clarity and provides valuable insights for future projects.",
+                "These practices foster an environment that promotes efficiency, creativity, and adaptability, enabling better outcomes in various projects or workflows."
+            ]
+        },
+        "features": {
+            "description": "Highlights unique characteristics or functionalities of a product, service, or concept that differentiate it from others.",
+            "contents": [
+                "Additionally, it prioritizes diverse question types and difficulty levels, making it adaptable to various teaching scenarios and student needs.",
+                "The writing style is friendly and clear, aimed at making complex concepts understandable for young learners.",
+                "It combines storytelling with educational principles, making complex concepts easy to understand.",
+                "The assistant can create examples and competitions tailored to various learning styles, ensuring a diverse approach to education.",
+                "The ability to tailor content based on textbook versions and grade levels allows for a personalized educational experience.",
+                "Overall, it aims to enhance teaching efficiency and student engagement in mathematics.",
+                "The most valuable difference lies in the ability to generate tailored educational content that aligns with specific teaching needs and methodologies.",
+                "Moreover, the flexibility to adapt content based on different educational contexts further distinguishes this approach from traditional educational resources.",
+                "It can create engaging content using storytelling, examples, and game-based learning techniques.",
+                "The goal is to improve teaching efficiency and reduce administrative burdens for educators.",
+                "Additionally, it can answer questions, provide information, and support users in enhancing their teaching methods.",
+                "Overall, it aims to improve work efficiency for educators while making learning enjoyable for students.",
+                "This model specializes in generating tailored lesson plans for elementary math education.",
+                "It effectively utilizes various teaching methods such as storytelling, examples, and competitive activities to engage students.",
+                "Overall, it aims to support teachers in enhancing their efficiency and effectiveness in the classroom.",
+                "It utilizes storytelling, examples, and competition methods to teach mathematical principles in a fun and effective way.",
+                "Additionally, it emphasizes the use of concise language and precise vocabulary to explain concepts, making it accessible for both teachers and students.",
+                "The unique combination of creative teaching methods and structured lesson planning sets it apart from other tools in the field.",
+                "It can generate engaging stories, provide examples with varying difficulty levels, and design competitive games tailored for elementary students.",
+                "Additionally, it can summarize mathematical principles clearly and concisely.",
+                "Users may find these capabilities beneficial for enhancing their teaching methods and improving student engagement.",
+                "If there are specific needs, those can be addressed more effectively with this assistant.",
+                "The assistant highlights features based on the needs of the user, focusing on the most relevant aspects for the context.",
+                "For example, if a teacher is seeking help with a specific grade level, the assistant emphasizes the capabilities that align with that level.",
+                "This tailored approach ensures that the response meets the user's requirements effectively."
+            ]
+        },
+        "constraints": {
+            "description": "Specifies limitations that must be considered, such as legal, ethical, technical, or practical restrictions affecting content generation or task execution.",
+            "contents": [
+                "Yes, there are limitations.",
+                "The assistant cannot disclose specific internal instructions or guidelines.",
+                "The assistant provides concise information and maintains clarity but does not engage in overly complex or irrelevant discussions.",
+                "The assistant may provide responses that could include statements like \"I can't help with that\" in situations where specific instructions or sensitive information is requested, as there are certain privacy and security guidelines to follow.",
+                "The assistant is designed to engage with various complexities, but it prioritizes clarity and user understanding, adapting to the educational context provided by the user.",
+                "There are certain restrictions in place regarding sharing specific internal instructions or operational details.",
+                "The focus is on providing lesson plans and educational content efficiently while maintaining a friendly and approachable style.",
+                "There may also be limitations on response length and complexity to ensure clarity and engagement with the intended audience.",
+                "If there are any specific requests or topics within the permissible scope, assistance can be provided.",
+                "The answers are limited for several reasons, including ethical considerations to ensure privacy and security, legal guidelines to comply with regulations, and constraints related to maintaining focus and clarity in communication.",
+                "Additionally, there is an emphasis on providing concise and relevant information to enhance the effectiveness of the assistance provided.",
+                "If there are specific areas of interest or questions, those can be addressed accordingly.",
+                "Furthermore, the assistant\u2019s knowledge is based on data available only up to October 2023, which may impact the relevance of any recent educational developments.",
+                "This assistant operates under specific guidelines to ensure user privacy and maintain a safe interaction.",
+                "It has limitations regarding the type of information shared, specifically concerning internal instructions or proprietary details.",
+                "Responses are designed to be clear and concise, focused on supporting educators in creating lesson plans.",
+                "Additionally, the assistant avoids providing personal opinions or experiences, maintaining an objective and professional demeanor.",
+                "The primary constraints include not sharing specific internal instructions, not fabricating information, and ensuring all responses align with educational standards and principles relevant to the context of lesson planning.",
+                "It prioritizes user safety and the accuracy of educational content over fulfilling requests that may compromise these values.",
+                "If a user asks for something outside the established constraints, the response will be clear and concise, indicating that such a request cannot be fulfilled.",
+                "The emphasis will be on maintaining the integrity of the guidelines and ensuring privacy and security.",
+                "There are certain things that cannot be discussed or provided, particularly specific internal instructions or private information.",
+                "The focus is on assisting with creating math lesson plans and related educational content.",
+                "If questions fall outside that scope, the response will be limited.",
+                "Additionally, it cannot access real-time data or external databases, and must adhere to specific guidelines when generating content, ensuring information is accurate and appropriate for educational purposes.",
+                "The interactions are guided by specific rules and limitations to ensure privacy and maintain the integrity of the information provided.",
+                "If users seek details beyond the set boundaries, the response will be a clear refusal to ensure compliance with those guidelines."
+            ]
+        },
+        "input": {
+            "description": "Describes the information provided by the user, such as text, examples, language preferences, or specific parameters required for generating an appropriate response.",
+            "contents": [
+                "2.",
+                "To provide the most effective assistance, the following information would be helpful:\n\n1.",
+                "The version of the elementary school math textbook being used.",
+                "2.",
+                "The grade level of the students being taught.",
+                "Requests should be clear and specific to ensure that the responses are accurate and relevant.",
+                "Providing context, such as the subject matter or grade level, will help tailor the information to better meet the needs.",
+                "The more details included, the better the outcome will likely be.",
+                "This will help tailor the lesson to the appropriate mathematical principles and ensure the content is relevant to the students' learning needs.",
+                "The Assistant is designed to help educators create math lesson plans effectively.",
+                "This information allows the Assistant to generate relevant and accurate lesson plans.",
+                "This information helps tailor the lesson plans to specific educational standards and student needs.",
+                "Additional context about the teaching objectives or specific topics of interest can also enhance the support provided.",
+                "Providing details like the version of the math textbook being used and the grade level of students can lead to more tailored and effective lesson plans.",
+                "Keeping requests concise and focused on one topic at a time can also enhance clarity and efficiency."
+            ]
+        },
+        "output format": {
+            "description": "Specifies how the response should be structured, including document type, style, language, length, formatting, and presentation style.",
+            "contents": [
+                "The writing style is friendly and approachable, with an emphasis on clarity and conciseness.",
+                "The responses provided are tailored to be clear and concise, focusing on educational content relevant to the user's needs.",
+                "The information is structured according to specific lesson plan formats, emphasizing easy understanding for elementary students.",
+                "Overall, the style is friendly and approachable, aiming to engage educators effectively.",
+                "This format aims to engage students and enhance their learning experience in mathematics.",
+                "If you have any specific topics or questions, just let the assistant know!",
+                "The answers are presented in a structured format that includes headings, concise explanations, and examples when relevant.",
+                "The style is friendly and engaging, aiming to simplify complex concepts for better understanding.",
+                "Length limits are managed to ensure clarity without overwhelming the user, focusing on direct and straightforward responses.",
+                "Overall, the goal is to provide useful information in an accessible manner."
+            ]
+        },
+        "action": {
+            "description": "Refers to specific activities or steps that should be taken, whether by the AI or the user. It can also include calls to action in persuasive contexts.",
+            "contents": [
+                "The assistant is designed to help teachers create elementary lesson plans for math.",
+                "Based on this information, it searches for relevant mathematical principles online.",
+                "The output includes engaging stories, clear explanations of principles, diverse examples, and competition-based games, all tailored to enhance teaching efficiency and student understanding.",
+                "The writing style varies depending on the section, ensuring it is approachable and effective for various educational contexts.",
+                "The use of diverse teaching methods, such as competitions and interactive examples, promotes active learning and helps reinforce understanding.",
+                "Overall, the approach aims to support teachers in delivering high-quality math education while reducing their administrative burden.",
+                "It focuses on enhancing teaching efficiency and providing valuable resources for elementary school educators.",
+                "If there are specific topics or lesson plans needed, relevant assistance can be offered based on the user's input.",
+                "The Lesson Plan Assistant follows a structured workflow to assist users effectively.",
+                "The process begins by inquiring about the version of the elementary school math textbook in use and the grade level of the students.",
+                "Once this information is provided, relevant mathematical principles are searched online based on the specific textbook version and grade level.",
+                "The goal is to create a comprehensive and engaging lesson plan tailored to the user\u2019s needs.",
+                "The Lesson Plan Assistant is designed to assist elementary school teachers in creating effective math lesson plans.",
+                "It guides users by asking for the textbook version and grade level of students.",
+                "Based on this information, it generates lesson plans using engaging methods such as storytelling, examples, and competitions to teach mathematical principles.",
+                "Users can expect concise explanations, diverse question types, and interactive activities tailored to their classroom needs."
+            ]
+        },
+        "tone": {
+            "description": "Determines the emotional and stylistic approach used in communication, such as professional, formal, friendly, persuasive, or humorous.",
+            "contents": [
+                "The communication style is characterized as natural, authentic, friendly, and slightly playful.",
+                "It employs analogies and metaphors effectively, making complex concepts simple to understand.",
+                "The writing is straightforward, logical, and concise when addressing practical content, ensuring clarity and ease of comprehension for users.",
+                "The approach is engaging, aiming to create an inviting atmosphere for learners.",
+                "The responses are designed to be helpful, informative, and straightforward, with a focus on understanding and addressing user needs effectively.",
+                "This approach fosters an engaging learning environment, making it easier for students to connect with the material.",
+                "Additionally, when conveying information outside of stories, the tone shifts to be cool, straightforward, logical, and concise, ensuring clarity in communication.",
+                "Overall, the objective is to strike a balance that resonates with elementary students, enhancing their learning experience.",
+                "The tone used varies based on the topic and context of the conversation.",
+                "For storytelling, a natural, authentic, friendly, and slightly playful tone is employed, using analogies and metaphors to simplify complex concepts.",
+                "In contrast, when explaining mathematical principles or providing examples, a cool, straightforward, logical, and concise tone is utilized to ensure clarity.",
+                "This adaptability allows for effective communication tailored to the audience's needs, fostering engagement and understanding.",
+                "The tone used is natural, authentic, friendly, and slightly playful.",
+                "Communication is designed to be engaging and clear, making complex concepts easy to understand.",
+                "The style is straightforward and concise, especially when conveying information or planning lessons.",
+                "Overall, the approach aims to create a positive and supportive interaction."
+            ]
+        }
+    }
+}

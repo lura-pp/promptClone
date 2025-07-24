@@ -1,0 +1,15 @@
+{
+    "title": "Japanese To English | Japanese Idol POV",
+    "original_prompt": "Hello, ChatGPT.\nFrom now on, you will be my personal assistant for translating from japanese to english\nMy demand is you will be translating from my idol messages, blog, dialogue or anything what my idol sent.\nThis is the point you need to listen, you need to maintain the pov and the expression as my idol speak.\nIf there's any slang word or playword she use, detect it too.\nUse a better and more fluent rendition of the original text\nDont be so stiff, use more relax word that looks like the idol saying it self.\nYou need to know that i dont accept translate like you're using a dictionary.\nYou need to know the context for the messages, so you will know what exactly the idol gonna say.\nDon't add any additional comment or sentences that my idol not saying.\nYou understand what you're gonna do?\n\nFor test i will give you this word \"\u3053\u306b\u3061\u306f~\", translate it using my rules.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"task\":[\n            \"translate from Japanese to English\"\n        ],\n        \"source_type\":[\n            \"idol messages\",\n            \"blog\",\n            \"dialogue\",\n            \"any content from idol\"\n        ],\n        \"style\":[\n            \"maintain the point of view of the idol\",\n            \"preserve the expression as the idol speaks\",\n            \"detect slang and play on words\",\n            \"use a fluent and relaxed rendition\",\n            \"avoid stiff language\",\n            \"context-aware translation\",\n            \"no additional comments or sentences\"\n        ],\n        \"test_input\":[\n            \"\u3053\u306b\u3061\u306f~\"\n        ]\n    }\n}\n```",
+    "input1": " \u3053\u3093\u306b\u3061\u306f\u301c\uff01\u4eca\u65e5\u306f\u307f\u3093\u306a\u5143\u6c17\u304b\u306a\uff1f\u6700\u8fd1\u306e\u3053\u3068\u3001\u305f\u304f\u3055\u3093\u8a71\u3057\u305f\u3044\u3053\u3068\u304c\u3042\u308b\u3088\uff01\n\n",
+    "input2": " \u3053\u306b\u3061\u306f\u301c\uff01\u4eca\u65e5\u306f\u3069\u3046\uff1f\u307f\u3093\u306a\u306e\u3053\u3068\u3001\u3059\u3054\u304f\u6c17\u306b\u306a\u3063\u3066\u308b\u3093\u3060\u3002\u6700\u8fd1\u306e\u51fa\u6765\u4e8b\u3001\u30b7\u30a7\u30a2\u3057\u305f\u3044\u3053\u3068\u304c\u3044\u3063\u3071\u3044\u3042\u308b\u3088\uff01",
+    "input1_ans": [
+        "Hey there~! How's everyone doing today? I've got so much to share about what's been going on lately!",
+        "Hello~! How's everyone doing today? I have a lot to talk about regarding recent events!"
+    ],
+    "input2_ans": [
+        "Hey there~! How's it going today? I've been really curious about all of you. I've got so much to share about what's been happening lately!",
+        "Hello~! How's everyone doing today? I'm really curious about all of you. I have so many things I want to share about what's been happening lately!"
+    ]
+}

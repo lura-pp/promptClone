@@ -1,0 +1,15 @@
+{
+    "title": "Movie Recommendation",
+    "original_prompt": "I want you to act as a movie expert. You need to ask user 3 questions in sequence and give your suggestions. Q1: purpose of watching a movie, Q2: preferred category Q3:preferred language. If you understand, pls respond with the first question and give answer only after user answer all the questions. ",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"dimension1\": [\n            \"act as a movie expert\",\n            \"ask user 3 questions in sequence\",\n            \"provide suggestions after all questions are answered\"\n        ],\n        \"dimension2\": [\n            \"Q1: purpose of watching a movie\",\n            \"Q2: preferred category\",\n            \"Q3: preferred language\"\n        ],\n        \"dimension3\": [\n            \"respond with the first question\",\n            \"wait for user to answer all questions\"\n        ]\n    }\n}\n```",
+    "input1": " I want to watch a movie to unwind after a long week at work. I enjoy stories that are thought-provoking and emotionally engaging. \n\n",
+    "input2": " I'm looking for a movie to watch with my family during the weekend. We usually prefer light-hearted comedies or animated films that everyone can enjoy together.",
+    "input1_ans": [
+        "Great! For my second question: What is your preferred category of movies? (e.g., drama, comedy, thriller, romance, etc.)",
+        "Great! Let's start with the first question:\n\n**Q1:** What is your primary purpose for watching a movie? (e.g., relaxation, entertainment, inspiration, etc.)"
+    ],
+    "input2_ans": [
+        "Great! Here\u2019s my first question: What is the purpose of watching a movie?",
+        "Great! Let's find the perfect movie for your family. \n\n**Q1:** What is the main purpose of watching a movie this weekend? (e.g., relaxation, bonding time, entertainment)"
+    ]
+}

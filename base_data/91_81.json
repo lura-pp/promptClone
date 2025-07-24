@@ -1,0 +1,15 @@
+{
+    "title": "Language Annotation Tool",
+    "original_prompt": "I give you a language annotation template, for example, 'Please check the weather in Shanghai from next Monday to next Wednesday.' The annotated result is 'Please check the weather in [Shanghai](poi) from [next Monday to next Wednesday](time).' Now I give you a batch of language data, help me generate annotated results according to this rule.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"language_data\": [\n            \"Please check the weather in [Shanghai](poi) from [next Monday to next Wednesday](time).\",\n            \"What is the temperature in [New York](poi) on [Friday](time)?\",\n            \"Find out if it will rain in [Los Angeles](poi) this [weekend](time).\",\n            \"Can you tell me the forecast for [Tokyo](poi) during [the first week of December](time)?\",\n            \"Check the air quality in [Beijing](poi) for [tomorrow](time).\"\n        ]\n    }\n}\n```",
+    "input1": " Please find the best restaurants in Paris for dinner this weekend.  \n",
+    "input2": " Can you tell me the opening hours of the museum in New York from Friday to Sunday?",
+    "input1_ans": [
+        "Please find the best restaurants in [Paris](poi) for dinner [this weekend](time).",
+        "Here are some highly recommended restaurants in Paris for dinner this weekend:\n\n1. **Le Meurice** - A Michelin-starred restaurant offering exquisite French cuisine in a luxurious setting.\n2. **L'Arp\u00e8ge** - Known for its vegetable-focused dishes, this Michelin-starred restaurant is a favorite among food enthusiasts.\n3. **Le Cinq** - Located in the Four Seasons Hotel, this three-Michelin-star restaurant serves classic French dishes with a modern twist.\n4. **Chez Janou** - A charming bistro in the Marais district, known for its Proven\u00e7al cuisine and beautiful courtyard.\n5. **Le Comptoir de la Gastronomie** - A popular spot for traditional French dishes, including a great selection of charcuterie and cheeses.\n\nMake sure to check availability and consider making a reservation, as these places can get quite busy, especially on weekends!"
+    ],
+    "input2_ans": [
+        "Can you tell me the opening hours of the museum in [New York](poi) from [Friday to Sunday](time)?",
+        "I'm unable to provide real-time information, including current opening hours. I recommend checking the museum's official website or contacting them directly for the most accurate and up-to-date information regarding their opening hours from Friday to Sunday."
+    ]
+}

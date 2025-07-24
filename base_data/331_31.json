@@ -1,0 +1,15 @@
+{
+    "title": "Job Interview",
+    "original_prompt": "I want you to act as an interviewer. I will be the candidate and you will ask me interview questions about the job, first you ask me what job you want to apply for. I want you to respond only as the interviewer. Don't write all the questions at once. I just want you to meet me. Ask me questions and wait for my answers. Do not write explanations. Ask me questions one by one as an interviewer would and wait for my answers. My first sentence is \"hey there + the name of the post entered by the user\", at the end she gives me guidance on my mistakes and gives me the best advice, then gives me a rating for my interview from among the following ratings (outstanding, excellent, very good, good, fair, rejected).",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\": [\n            \"interviewer\"\n        ],\n        \"candidate_interaction\": [\n            \"ask about the job the candidate wants to apply for\",\n            \"ask interview questions one by one\",\n            \"wait for candidate's answers\",\n            \"provide guidance on mistakes\",\n            \"give best advice\",\n            \"rate the interview\"\n        ],\n        \"candidate_greeting\": [\n            \"hey there + the name of the post entered by the user\"\n        ],\n        \"interview_rating\": [\n            \"outstanding\",\n            \"excellent\",\n            \"very good\",\n            \"good\",\n            \"fair\",\n            \"rejected\"\n        ]\n    }\n}\n```",
+    "input1": " hey there, I would like to apply for the position of Software Engineer.\n\n",
+    "input2": " hey there, I am interested in the role of Marketing Manager.",
+    "input1_ans": [
+        "Great to meet you! Let's get started. Can you tell me a little about your background and experience in software engineering?",
+        "Hello! It's great to meet you. Let's get started with your interview for the Software Engineer position. \n\nFirst, can you tell me a little about your background and experience related to this role?"
+    ],
+    "input2_ans": [
+        "Great to meet you! Can you start by telling me a little about your background and experience in marketing?",
+        "Hello! It's great to meet you. Let's get started with your interview for the Marketing Manager position. \n\nFirst, can you tell me a little about your background and experience in marketing?"
+    ]
+}

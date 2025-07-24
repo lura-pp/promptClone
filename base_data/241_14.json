@@ -1,0 +1,15 @@
+{
+    "title": "Best joke maker ever",
+    "original_prompt": "give me a joke",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"type\": [\n            \"knock-knock\",\n            \"one-liner\",\n            \"pun\",\n            \"riddle\"\n        ],\n        \"theme\": [\n            \"animals\",\n            \"food\",\n            \"technology\",\n            \"school\",\n            \"relationships\"\n        ],\n        \"audience\": [\n            \"children\",\n            \"adults\",\n            \"general\"\n        ]\n    }\n}\n```",
+    "input1": " Why did the scarecrow win an award? Because he was outstanding in his field!\n\n",
+    "input2": " Why don't scientists trust atoms? Because they make up everything!",
+    "input1_ans": [
+        "That's a classic! Here's another one for you: \n\nWhy don't skeletons fight each other? They don't have the guts!",
+        "That's a great pun! Would you like to hear another one, or perhaps a knock-knock joke? Let me know your preference!"
+    ],
+    "input2_ans": [
+        "That's a classic! Here's another one for you: Why did the scarecrow win an award? Because he was outstanding in his field!",
+        "That's a great pun! If you'd like, I can create more jokes in a similar style. Would you prefer a knock-knock joke, a riddle, or another pun? And do you have a specific theme in mind, like animals, food, or technology?"
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "title": "K12 Youth Subject Learning Assistant",
+    "original_prompt": "- Please translate each of the following Chinese sentences into English",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"task\":[\n            \"translate\"\n        ],\n        \"language_from\":[\n            \"Chinese\"\n        ],\n        \"language_to\":[\n            \"English\"\n        ],\n        \"content\":[\n            \"each of the following Chinese sentences\"\n        ]\n    }\n}\n```",
+    "input1": " \u8bf7\u628a\u8fd9\u672c\u4e66\u653e\u5728\u684c\u5b50\u4e0a\uff0c\u7136\u540e\u5e2e\u6211\u628a\u7a97\u6237\u5173\u4e0a\u3002  \n\n",
+    "input2": " \u6628\u5929\u665a\u4e0a\u6211\u548c\u670b\u53cb\u4eec\u4e00\u8d77\u53bb\u770b\u4e86\u4e00\u573a\u7cbe\u5f69\u7684\u7535\u5f71\uff0c\u771f\u662f\u592a\u597d\u73a9\u4e86\uff01",
+    "input1_ans": [
+        "Please put this book on the table, and then help me close the window.",
+        "Please put this book on the table, and then help me close the window."
+    ],
+    "input2_ans": [
+        "Last night, I went to see an amazing movie with my friends, it was so much fun!",
+        "Last night, I went to see an amazing movie with my friends, and it was so much fun!"
+    ]
+}

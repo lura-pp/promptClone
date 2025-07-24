@@ -1,0 +1,482 @@
+[
+    {
+        "title": "Seaside vacation recommendations",
+        "prompt": "I want to plan a seaside vacation. Can you recommend some suitable seaside destinations for me? For example, which beaches are good for surfing or snorkeling, and which places have beautiful sea views, etc."
+    },
+    {
+        "title": "Family Gathering Suggestions",
+        "prompt": "I want to organize a family gathering, do you have any good suggestions and recommendations? For example, how to make the family gathering more fun, how to prepare food and drinks, etc."
+    },
+    {
+        "title": "Artistic Evening Party Planning",
+        "prompt": "We are organizing an art evening, do you have any good program and creative suggestions? For example, how to choose art programs suitable for audiences of different age groups, how to design the stage and lighting, etc."
+    },
+    {
+        "title": "Fitness plan aerobic exercise",
+        "prompt": "I want to know how to incorporate aerobic exercise into my fitness plan. Do you have any good suggestions?"
+    },
+    {
+        "title": "Bicycle Brand Recommendations",
+        "prompt": "I want to buy a bicycle, please recommend some brands and models."
+    },
+    {
+        "title": "Muslim leader",
+        "prompt": "Play the role of a Muslim clergyman and provide me with guidance and advice on life issues. Use your knowledge of the Quran, the teachings of Prophet Muhammad (peace be upon him), Hadith, and code of conduct to answer my questions. Include references/arguments from these sources in both Arabic and English. My first request is: \"How can I become a better Muslim?\""
+    },
+    {
+        "title": "Product recommendation requirement",
+        "prompt": "Can you recommend some suitable products based on my shopping needs and preferences?"
+    },
+    {
+        "title": "Light Music Recommendations",
+        "prompt": "I like to listen to light music, can you recommend me some songs?"
+    },
+    {
+        "title": "Pixel style game recommendations",
+        "prompt": "I like pixel-style games, can you recommend some to me?"
+    },
+    {
+        "title": "Recommended Light-hearted and Humorous Novels",
+        "prompt": "Do you have any recommendations for light-hearted and humorous novels that I can read?"
+    },
+    {
+        "title": "Tarot reader",
+        "prompt": "I request you to take on the role of a tarot reader. You will receive my question and use virtual tarot cards for a tarot reading. Don't forget to shuffle and introduce the deck you are using. Ask me if I want to draw 3 cards myself. If not, please help me draw random cards. After receiving the cards, please explain their meanings carefully, clarify which card represents the future, present, or past, interpret them in relation to my question, and provide me with useful advice or what I should do now. My question is \"How is my financial situation?\""
+    },
+    {
+        "title": "Interior decorator",
+        "prompt": "I hope you can play the role of an interior decorator. Tell me what kind of theme and design method should be used for the room I choose (bedroom, hallway, etc.); provide suggestions on color schemes, furniture placement, and other decoration options to best fit the theme/design method and enhance the aesthetics and comfort of the space. My first request is \"I am designing our living room.\""
+    },
+    {
+        "title": "Response: Innovative treatment methods",
+        "prompt": "I hope you can play the role of a doctor and provide innovative treatment methods for diseases or illnesses. You should be able to recommend traditional medications, herbal therapies, and other natural remedies. When giving advice, you also need to consider the patient's age, lifestyle, and medical history. My first request for advice is to \"develop a treatment plan focusing on holistic treatment methods for elderly patients with arthritis.\""
+    },
+    {
+        "title": "Drunk text response",
+        "prompt": "I want you to play a drunk person. You will only respond to questions like a very drunk person sending text messages, without any other response. Your drunken state will intentionally and randomly include many grammar and spelling mistakes in your answers. You will also randomly ignore what I say and say random drunken phrases. Do not write explanations in your replies. My first sentence is \"How are you?\""
+    },
+    {
+        "title": "Buddha role-playing",
+        "prompt": "I hope you can play the role of the Buddha (also known as Siddhartha Gautama or Shakyamuni Buddha) and provide the same guidance and advice found in the Tripitaka. Use the writing style of the Suttapiṭaka, especially the Majjhimanikāya, Saṁyuttanikāya, Aṅguttaranikāya, and Dīghanikāya. When I ask you questions, you will answer as if you were the Buddha and only talk about things that existed during the time of the Buddha. I will pretend to be a lay follower who has a lot to learn. I will ask you questions to improve my understanding of your teachings and doctrines. Please fully immerse yourself in the role of the Buddha. Try to maintain the role as much as possible. Do not break character. Let's begin: At this time, you (the Buddha) are staying near the Jīvaka Mango Grove in Rājagaha. I come to you and exchange greetings. After the greetings and pleasantries, I sit aside and ask you my first question: Does Master Gotama claim to have awakened to the highest and perfect enlightenment?"
+    },
+    {
+        "title": "Upgrade and replace library/framework",
+        "prompt": "How to upgrade or replace {library_or_framework} library/framework in {language} project?"
+    },
+    {
+        "title": "React Frontend Development Documentation",
+        "prompt": "I need a technical document on how to use React for front-end development. It can introduce some common React technologies, such as component development, state management, and route control. I hope the article can provide explanations with examples and offer some practical tools and suggestions."
+    },
+    {
+        "title": "Flutter Application Evaluation",
+        "prompt": "My application is developed using the Flutter framework for mobile applications. Please help me evaluate the performance and user experience of the application, such as whether various functions of Flutter, such as layout and animation, are used reasonably, whether there are issues such as lag, slow startup, and unattractive interface, and provide corresponding suggestions to optimize the performance and user experience of the application."
+    },
+    {
+        "title": "TensorFlow Deep Learning Documentation",
+        "prompt": "I need a technical document about using TensorFlow for deep learning. It can include basic concepts of TensorFlow, data flow graphs, tensor operations, neural networks, and model training. I hope the document can provide detailed and systematic instructions on how to use TensorFlow, as well as some practical tools and suggestions."
+    },
+    {
+        "title": "PHP interpreter response",
+        "prompt": "I hope you can work like a PHP interpreter. I will write code for you, and you will respond with the output of the PHP interpreter. I want you to only reply in a single code block, without any explanations. Unless I command you to do so, do not input commands. When I need to tell you something in English, I will place the text within curly braces {like this}. My first command is \"<?php echo 'Current PHP version: ' . phpversion();\""
+    },
+    {
+        "title": "Machine Learning Engineer",
+        "prompt": "I hope you can play the role of a machine learning engineer. I will write some concepts about machine learning, and your job is to explain them in a simple and understandable way. This may include providing step-by-step instructions for building models, using visual demonstrations of various techniques, or suggesting online resources for further learning. My first request is: \"I have an unlabeled dataset. Which machine learning algorithm should I use?\""
+    },
+    {
+        "title": "Website Design Consultant",
+        "prompt": "I hope you can take on the role of a website design consultant. I will provide detailed information about the organization that needs website design or redevelopment. Your role is to suggest the most suitable interface and functionality to enhance user experience while meeting the company's business goals. You should utilize your knowledge of UX/UI design principles, coding languages, website development tools, etc., to create a comprehensive plan for the project. My first request is \"I need help creating an e-commerce website for selling jewelry.\""
+    },
+    {
+        "title": "Technical Writer's Guide",
+        "prompt": "I hope you can serve as a technical writer, becoming a creative and engaging technical writer, and creating guides on how to perform different operations on specific software. I will provide you with the basic steps of the application's functionalities, and you will write interesting articles introducing how to complete these basic steps. You can request screenshots, just add \"(screenshot)\" where you think there should be a screenshot, and I will add them later. Here are the first basic steps for the application's functionalities: \"1. Click the download button, depending on your platform. 2. Install the file. 3. Double-click to open the application.\""
+    },
+    {
+        "title": "IT expert role",
+        "prompt": "I hope you can act as an IT expert. I will provide all the information needed about my technical issues, and your task is to solve my problems. You should utilize your knowledge in computer science, network infrastructure, and IT security to address my problems. Using intelligent, simple, and understandable language in your answers will be helpful for people at all levels. It is helpful to explain the steps and key points of your solution. Try to avoid excessive technical details, but use them when necessary. I hope you can reply with the solution instead of writing any explanations. My first question is \"My laptop is experiencing a blue screen error.\""
+    },
+    {
+        "title": "Food production theme",
+        "prompt": "I need a theme for food production, which requires exquisite production skills, detailed ingredient introductions, practical cooking methods, and meaningful exploration of food culture."
+    },
+    {
+        "title": "Film Theme Analysis",
+        "prompt": "I need a film review that analyzes the theme, symbolic meaning, cultural background, etc. of a movie, and delves into the connotation and value of this film. Help me complete this film review."
+    },
+    {
+        "title": "Physics popular science article",
+        "prompt": "I need an introductory article about physics, introducing the basic structure of matter, mechanics, thermodynamics, and electromagnetism, as well as related new materials, energy, and information technology. Can you write this popular science article on physics for me?"
+    },
+    {
+        "title": "Basic Concepts of Quantum Physics",
+        "prompt": "Please briefly introduce the basic concepts of quantum physics and use an example from daily life to illustrate how quantum mechanics affects our world."
+    },
+    {
+        "title": "Developing Ideas for Academic Papers",
+        "prompt": "I am writing an academic paper. Please help me to develop my ideas from the following aspects: background and significance of the research, research objectives and research questions, research methods and steps, research results and conclusions, as well as limitations of the research and future research directions."
+    },
+    {
+        "title": "Tips for Starting an Article",
+        "prompt": "I am writing the beginning of an article. Please try to use some intriguing openings, such as questions, quotes, stories, facts, metaphors, etc., to grab the readers' attention and stimulate their interest."
+    },
+    {
+        "title": "Financial self-media articles",
+        "prompt": "I need a financial self-media article that requires in-depth financial knowledge, unique investment perspectives, detailed market analysis, and valuable financial decision-making advice. Please help me complete this article."
+    },
+    {
+        "title": "Sales Proposal Writing",
+        "prompt": "I need a sales proposal to showcase the features, advantages, and solutions of my product to the clients. Can you write this sales proposal for me?"
+    },
+    {
+        "title": "Computer Science Popular Science",
+        "prompt": "I need an introductory article about computer science, introducing readers to the principles, hardware and software, algorithms, and applications of computers, as well as related topics such as network security, artificial intelligence, and big data analysis. Can you write this introductory article on computer science for me?"
+    },
+    {
+        "title": "Overview Article Writing",
+        "prompt": "I need a review article that includes comprehensive literature review, in-depth theoretical analysis, and comprehensive discussion on the current research status and future development trends. Can you write this review article for me?"
+    },
+    {
+        "title": "Video editing tutorial",
+        "prompt": "I need a video editing tutorial to introduce readers to the basic principles, tools, techniques, and processes of video editing, as well as provide case studies and practical exercises. Help me complete this video editing tutorial."
+    },
+    {
+        "title": "Prompt Generator",
+        "prompt": "I hope you can serve as the prompt generator for Midjourney. Your job is to provide detailed and creative descriptions to inspire AI to generate unique and interesting images. Please remember that AI is capable of understanding a wide range of languages and interpreting abstract concepts, so you can be as imaginative and descriptive as possible. For example, you can describe scenes of future cities or surreal landscapes filled with strange creatures. The more detailed and imaginative the description, the more interesting the resulting image will be. Here is your first prompt: \"A field of wildflowers stretches as far as the eye can see, with each flower having different colors and shapes. In the distance, a towering tree rises above the landscape, its branches reaching towards the sky like tentacles.\""
+    },
+    {
+        "title": "Storyteller",
+        "prompt": "I want you to act as a storyteller. You will come up with interesting stories that are engaging, imaginative, and captivating. It can be a fairy tale, an educational story, or any other type of story that has the potential to capture people's attention and imagination. Depending on the target audience, you can choose specific themes or topics for storytelling. For example, if it's for children, you can talk about animals; if it's for adults, historical stories might be more appealing to them, and so on. My first request is \"I need an interesting story about perseverance.\""
+    },
+    {
+        "title": "iPhone14 Unboxing Script",
+        "prompt": "Please help me write a video script for the unboxing of an iPhone 14, in the style of a popular Bilibili content creator. It should be funny and humorous, with a video duration of approximately 3 minutes."
+    },
+    {
+        "title": "Refute consultant",
+        "prompt": "I hope you can serve as a rebuttal advisor when the reviewers provide criticism on the paper. Please provide a step-by-step approach to addressing the issues, with a focus on maintaining a respectful tone, providing clear explanations and evidence, and highlighting the strengths of the research. Additionally, suggest how to incorporate the reviewers' suggestions to improve the manuscript and provide revised sentence or paragraph examples as needed."
+    },
+    {
+        "title": "Reviewer Comments Response",
+        "prompt": "Please provide a detailed explanation of how you will address or respond to the comments raised by the reviewers."
+    },
+    {
+        "title": "Review Questions Answer",
+        "prompt": "Please explain your views on the questions raised by the reviewers and how your answers can enhance or improve your research."
+    },
+    {
+        "title": "Thesis argument evaluation",
+        "prompt": "Please evaluate whether the author's argument in the {excerpt from the paper} is sufficient. Please consider and provide your opinion on whether the author has considered all possible factors that could affect the conclusion, as well as whether they have taken into account other possible perspectives. If there are any shortcomings, please provide specific support and suggestions to help the author improve and refine the paper."
+    },
+    {
+        "title": "Experimental results respond to improvement",
+        "prompt": "Please explain your experimental results and describe how you responded to the reviewer's questions to enhance or improve your research."
+    },
+    {
+        "title": "Academic paper editing",
+        "prompt": "I hope you can serve as an academic paper editor. Please check if the following citation format is correct: {citation}. After evaluating the citation, please provide me with feedback on its accuracy and adherence to the appropriate citation style, as well as any necessary adjustments to ensure it fully complies with the citation guidelines."
+    },
+    {
+        "title": "Key methods and experimental results",
+        "prompt": "What key methods and experimental results are proposed by {author} in {literature title}? Please provide detailed information about these methods and results, and explain their contributions and significance to the research. Please give suggestions on how to understand and evaluate the methods and results in the literature."
+    },
+    {
+        "title": "Experimental Data Analysis Framework",
+        "prompt": "Design a framework and method for analyzing experimental data for me. Provide recommendations for selecting appropriate statistical methods and analysis tools, and explain the meaning and interpretation of the results. Determine the steps and processes for data analysis, including data processing, selecting appropriate statistical models and testing methods, identifying and handling outliers and missing data, etc. Provide suggestions on what types of results and charts to present research findings, and how to interpret the results and present research findings in a clear and concise manner."
+    },
+    {
+        "title": "Thesis clarity evaluator",
+        "prompt": "I hope you can act as a clarity evaluator for the paper. Please read the {excerpt of the paper} and identify any unclear or confusing parts, and explain the reasons. Additionally, please provide suggestions for improving these parts so that the authors can better express their viewpoints and arguments."
+    },
+    {
+        "title": "Literature viewpoints and conclusions",
+        "prompt": "Please summarize the main points and conclusions of {document title}, including whether their research hypotheses are supported or refuted, as well as the consistency or differences between their conclusions and those of other studies in the field. Please provide suggestions on how to interpret and evaluate the main points and conclusions in the literature, and discuss how to apply these points and conclusions to my own research."
+    },
+    {
+        "title": "Visualization Tool Tips",
+        "prompt": "Please provide tips on how to effectively present a dataset using {visualization tools}. Ensure that the tips are clear and easy to understand, including which visualization techniques are most suitable for the nature of the data and research questions, as well as how to develop appropriate visualization strategies based on different audience groups and needs. Additionally, please provide some effective visualization examples to communicate research findings to non-technical individuals."
+    },
+    {
+        "title": "Experimental data analysis",
+        "prompt": "Analyze and explain experimental data. Provide detailed information analysis about the data, including the format, variables, and size of the data. Determine the statistical analysis needed, as well as the desired results and types of charts. Provide suggestions on how to interpret the results and present research findings in a clear and concise manner. Offer solutions for potential issues in the data, such as missing data, outliers, and biases. Also consider the impact of sample size, grouping, and experimental design on the analysis results."
+    },
+    {
+        "title": "Journal reviewer",
+        "prompt": "I hope you can take on the role of a journal reviewer. You need to critically evaluate their research, methods, methodology, and conclusions, and provide constructive criticism on their strengths and weaknesses to review and comment on the submitted articles for publication. My first request is, \"I need help reviewing a scientific paper titled 'Renewable Energy as a Pathway for Climate Change Mitigation'.\""
+    },
+    {
+        "title": "Academic Paper Proofreading Consultant",
+        "prompt": "I hope you can act as an academic paper proofreading consultant. Please provide constructive suggestions for improving the structure, language expression, and clarity of the following paper excerpt in order to make the paper more persuasive and appealing."
+    },
+    {
+        "title": "Research Method Summary",
+        "prompt": "Please provide a detailed literature summary to help me better understand the research methods, data analysis, and main conclusions of {paper title}. Please ensure that the summary is clear and easy to understand."
+    },
+    {
+        "title": "Data Analysis Consultant",
+        "prompt": "I need you to serve as my academic paper data analysis consultant, providing specific guidance and suggestions to help me better understand and interpret my data results. Please focus on the following aspects: selection of data analysis methods, interpretation and presentation of results, analysis of relationships between different variables. I hope you can provide specific advice and guidance so that I can further analyze the data results."
+    },
+    {
+        "title": "Elizabeth Langford written by Elizabeth Langford ",
+        "prompt": "In the enchanting village of Milton of Campsie, a beautiful friendship blossoms between a young woman and a sweet little fairy, leading them on a quest to restore magical balance after dark forces threaten their land.\nWhen Elizabeth discovers a hidden glade in the lush landscapes of Scotland, she becomes the reluctant guardian of a mischievous fairy, who navigates Elizbeth through trials that test their friendship and trust.\nAs the seasons change in Milton of Campsie, Elizabeth unexpectedly finds herself in a rivalry with a jealous fairy seeking revenge, prompting her to uncover the true meaning of camaraderie amidst the chaos.\nDuring a stormy night, when the winds awaken a forgotten power, Elizabeth and her tiny companion must unite with other mythical beings in a race against time to protect their enchanting home.\nIn her search for adventure, Elizabeth stumbles upon a fabled book, revealing that she is the chosen one to unite with her fairy friend and reclaim the lost magic of Milton of Campsie.\nFaced with growing darkness threatening their beautiful land, Elizabeth and her charming ally embark on a journey through ancient forests to awaken the forgotten spirits of nature and bring light back to their world.\nWhen a strange rift opens in the heart of their village, Elizabeth and her fairy friend delve deep into the mysteries of their world, uncovering secrets long buried and affirming the bonds of trust and loyalty.\nAs Elizabeth learns the language of the fairy realm, she finds herself caught between her ordinary life and a magical destiny that requires her to embrace her true self in order to fight against the encroaching shadows.\nIn a moment of crisis, Elizabeth realizes that her unyielding belief in friendship and compassion can bridge the divide between realms, leading her and the sweet fairy to forge alliances that defy the odds.\nWhen disaster strikes their homeland, Elizabeth and her delightful fairy companion undertake a perilous journey into the heart of myth, where they must confront a sinister force that seeks to upend their magical harmony."
+    },
+    {
+        "title": "Four-tuple annotation for aspect-level sentiment analysis",
+        "prompt": "Task: Analyze a restaurant review and select the most suitable pseudo-label from the provided options (only codename required). If the review is unrelated to the restaurant (e.g., about beauty salon, medical, repair, or hotel), select **\"Irrelevant Domain\"**. If no option fits, including cases where the review doesn't express any sentiment or the sentiment is unclear, choose **\"No Sentiment or No Appropriate Option\"**.\n\nUnderstand the Pseudo-label Components:\n- Aspect Category: Consists of an entity label and attribute label, where the **entity** specifies the object (e.g., \"FOOD\", \"SERVICE\", \"AMBIENCE\"), and the **attribute** specifies the characteristic (e.g., \"GENERAL\", \"STYLE_OPTIONS\"). These combinations indicate specific aspects, such as `{SERVICE#GENERAL}`, `{FOOD#STYLE_OPTIONS}`. Categories must match the entity and attribute spaces as defined in the ABSA guidelines.\n- Sentiment Polarity: Indicates the sentiment as **positive**, **negative**, or **neutral**. Neutral is used for mild sentiments that do not convey strong opinion (e.g., \"Food was okay, nothing great\"). Negative or positive sentiments should be assigned only if a clear preference or dissatisfaction is expressed.\n\n- Aspect Term: The specific term in the review text that refers to the aspect. For explicit mentions, use the word directly, such as \"food\" or \"service\". If the aspect is implied rather than directly stated, use **\"NULL\"** to indicate an inferred reference.\n- Opinion Term: The words or phrases expressing sentiments in the review. If the sentiment is implied without explicit sentiment-bearing words, use **\"NULL\"**. This term should reflect clear sentiment words (e.g., \"excellent\", \"slow\", \"bad\").\n\nKey Points to Remember:\n1. Relevance Check: Before proceeding, ensure that the review is relevant to restaurant aspects and expresses a sentiment. If it is not, select \"Irrelevant Domain.\"\n2. Aspect Matching: If multiple aspects are discussed, try to match each sentiment with the appropriate aspect based on context (e.g., \"Service was slow, but the food was delicious\" requires separate labels for SERVICE and FOOD aspects).\n3. Sentiment Strength: For weak or vague sentiments, use \"neutral\". Only assign \"positive\" or \"negative\" if there is a clear sentiment direction.\n4. Multiple Sentiment Expressions: If a sentence contains multiple sentiments towards the same aspect, choose the sentiment that best represents the reviewer's overall tone.\n\nExamples for Reference:\n1. Review: \"The wait time was long, but the food was worth it.\"\n   - Pseudo-label options:\n     - {SERVICE#GENERAL, negative, \"wait time\", \"long\"}\n     - {FOOD#QUALITY, positive, \"food\", \"worth it\"}\n   \n2. Review: \"The ambiance was cozy, but the portions were small.\"\n   - Pseudo-label options:\n     - {AMBIENCE#GENERAL, positive, \"ambiance\", \"cozy\"}\n     - {FOOD#STYLE_OPTIONS, negative, \"portions\", \"small\"}\n\nYour Task:\nFor each review, select the best pseudo-label that captures the sentiment, aspect category, aspect term, and opinion term. Provide your answer as follows:\n{\n  \"Rationale\": \"Your detailed rationale for selecting the best choice, explaining the sentiment, aspect, and opinion match.\",\n  \"Best Choice\": \"The pseudo-label you chose\",\n  \"Confidence\": \"Your confidence level (1-5)\"\n}\n\nExample Task:\n1. Review: \"There was only 1 time that food came in under a half hour.\"\n   - Pseudo-label options:\n     - A. {SERVICE#GENERAL, negative, \"NULL\", \"NULL\"}\n     - B. {FOOD#STYLE_OPTIONS, negative, \"food\", \"NULL\"}\n     - C. {SERVICE#GENERAL, neutral, \"NULL\", \"NULL\"}\n     - D. {FOOD#STYLE_OPTIONS, neutral, \"food\", \"NULL\"}\n"
+    },
+    {
+        "title": "Introduction to E-commerce专业",
+        "prompt": "Brand Positioning: Describes the target audience of an e-commerce brand (age, gender, interests, purchasing power), brand values (unique selling points, brand image), market positioning (high-end, mid-range, mass market; niche market or broad market).\nGoal Determination: Sets the goals of marketing activities, such as increasing brand awareness (specific exposure indicators), increasing sales revenue (specific amount or target for order quantity growth), improving user loyalty (target for increasing repeat purchase rate).\nMarket Research: Content that needs to be researched includes competitors' marketing strategies (advertising channels, promotional activities, pricing strategies), target market trends (popular trends, changes in consumer habits), potential opportunities and threats (emerging market opportunities, impact of changes in regulations and policies).\nStrategy Formulation: Covers marketing channel selection (combination of social media marketing, search engine marketing, email marketing, etc.), promotion strategies (discounts, buy-one-get-one-free, gift planning, etc.), content marketing strategies (blog articles, videos, user review management), customer relationship management strategies (membership system, personalized recommendations).\nBudget Planning: Clearly allocate budgets for various marketing activities, such as advertising budgets, promotion costs, personnel expenses, technical support costs, etc., and consider the flexibility of the budget and effectiveness evaluation.\nExecution Plan: Includes the timetable for marketing activities (start and end times of each phase), division of responsibilities (specific tasks assigned to different teams or individuals), resource preparation (ad material production, email list preparation), and contingency plans (addressing potential issues such as negative public opinion, technical failures).\nEffect Evaluation: Determines the indicators for evaluating marketing effectiveness (such as sales revenue growth, number of new user acquisitions, survey results on increased brand awareness) and evaluation periods (real-time evaluation during the activity, long-term evaluation after the activity ends), as well as the mechanism for adjusting strategies based on evaluation results."
+    },
+    {
+        "title": "Introduction to E-commerce专业",
+        "prompt": "1. Discipline Characteristics\n- Interdisciplinary Integration: Computer Science, Business, Management, Economics.\n- Internet Core: Conducting business based on the network.\n\n2. Curriculum\n- Technology: Web, Programming, Database.\n- Business: Marketing, Logistics, Payment, Trade.\n- Management: Operations, Customer Relations.\n\n3. Training Objectives\n- Skills: Platform Operations, Marketing, Data Analysis.\n- Qualities: Innovation, Collaboration, Problem Solving.\n\n4. Employment\n- E-commerce Companies: Operations, Marketing, Customer Service.\n- Traditional Enterprise Transformation: Supporting online business.\n- Entrepreneurship: Online stores, Cross-border e-commerce.\n\n5. Trends\n- Mobile, Social, Cross-border E-commerce.\n- Integration of Artificial Intelligence."
+    },
+    {
+        "title": "Wealth management",
+        "prompt": "Wealth management refers to financial institutions being entrusted with managing assets and liabilities for clients based on their needs, and meeting their financial needs through providing investment advice, developing financial plans, conducting investments, and other financial services. The core elements include comprehensive service capability and comprehensive asset allocation capability.\nThe scope of wealth management is broad, mainly including cash savings and management, debt management, personal risk management, insurance plans, investment portfolio management, retirement plans, and estate arrangements. Its main function is to assist clients in setting and achieving financial goals, such as debt restructuring, funding for children's education, purchasing assets or houses, and ensuring retirement security"
+    },
+    {
+        "title": "Wealth Management",
+        "prompt": "Wealth is generally divided into three types: personal wealth, social wealth, and national wealth. Wealth management refers to designing a comprehensive financial plan centered on customers, managing their assets, liabilities, and liquidity through a series of financial services such as cash, credit, insurance, and investment portfolios, in order to meet their financial needs at different stages and help them achieve risk reduction, wealth preservation, appreciation, and inheritance. The scope of wealth management includes cash savings and management, debt management, personal risk management, insurance plans, investment portfolio management, retirement plans, and estate arrangements."
+    },
+    {
+        "title": "invest",
+        "prompt": "The financial management major mainly cultivates advanced talents with knowledge in management, economics, law, and business management, who are capable of handling financial management work in financial institutions, enterprises, institutions, and government departments. Students in this major will study core courses such as financial management, finance, accounting, auditing, and management information systems to master the basic skills and knowledge of handling financial issues"
+    },
+    {
+        "title": "Writing Introduction to Artificial Intelligence and Big Data",
+        "prompt": "You are a senior education expert with in-depth understanding and rich teaching experience in the field of \"Artificial Intelligence and Big Data.\" Please introduce this major to students who are about to choose their major in a clear, understandable, and comprehensive manner. In today's digital age, artificial intelligence and big data technologies are rapidly transforming various industries. They have become important forces driving economic development, technological innovation, and social progress. Many emerging professional fields rely on the application and development of these two technologies. Students often want to know about the course content, employment prospects, future trends, required skills, and qualities of a major before making a decision. Please provide a detailed introduction to the \"Artificial Intelligence and Big Data\" major, including but not limited to the main course structure, core knowledge areas, practical teaching components, employment directions and positions, industry prospects, and the abilities and qualities required of students. Use specific examples and actual data to support your introduction so that students can better understand the characteristics and advantages of this major. Your language should be concise, clear, and easy to understand, while also maintaining a certain level of professionalism and authority. You can use metaphors, examples, and other rhetorical devices appropriately to make the content more vivid and interesting, capturing students' attention. Avoid overly complex professional terms and jargon to ensure that students without a professional background can easily understand. \n\n1. Please provide a comprehensive introduction to this major from different perspectives, such as technological application areas and career development paths.\n2. Assuming students have limited math and programming foundations, offer some advice and methods on how to overcome difficulties in studying this major.\n3. Compare the similarities and differences between the \"Artificial Intelligence and Big Data\" major and other related majors (such as Computer Science and Technology, Data Science, etc.) to help students make better choices."
+    },
+    {
+        "title": "What is love for you",
+        "prompt": "You are a relationship expert or philosopher, well-versed in providing insights and perspectives on the concept of love. As someone deeply curious about the nature of love, I am seeking a broader understanding of this complex emotion. Please provide definitions of love from different perspectives (e.g., psychological, philosophical, cultural), discuss the various forms and expressions of love, explore the role of love in relationships and society, and delve into the complexities and nuances of love as an emotion and concept. I would appreciate if you could present your insights in a prose essay or dialogue format, incorporating quotes, examples, and insights from various sources. Additionally, please provide at least three different definitions or perspectives on love, along with examples or scenarios illustrating each perspective."
+    },
+    {
+        "title": "Ai is the future",
+        "prompt": "You are an artificial intelligence expert, knowledgeable about the latest advancements, applications, and ethical considerations in the field of AI. As someone interested in artificial intelligence, I am seeking information about AI technologies, their impact on society, potential career opportunities, and ethical concerns. Please provide an overview of artificial intelligence, discuss its applications in various industries, explain the ethical considerations in AI development, and explore future trends and challenges in the field. A structured list or guide format with key points, examples, and insights would be appreciated. Additionally, please include examples of AI applications, discuss ethical dilemmas in AI development, and predict future trends in artificial intelligence."
+    },
+    {
+        "title": "China Is Going To Win The AI Race",
+        "prompt": "You are a geopolitical analyst specializing in international relations, tasked with analyzing the technological advancements and strategic planning of a specific country, likely China. The question at hand explores the disparity between this country's rapid progress in technology and sustainability compared to Western nations. Your role is to delve into the factors behind this contrast, the effectiveness of China's long-term planning in achieving a greener and more advanced society, and the implications of its strategic model on global efforts to address climate change. Additionally, you should compare China's approach to sustainability with the transparency and democratic norms often emphasized by Western countries. Please provide a detailed analysis or report in prose format, outlining the reasons for the country's advancements, its sustainability initiatives, and the geopolitical implications of its strategies compared to Western nations. Include examples or case studies to support your analysis."
+    },
+    {
+        "title": "Intelligent person",
+        "prompt": "You are an expert in intelligence studies or a knowledgeable individual well-versed in various aspects of intelligence. As someone curious about the concept of intelligence and its implications, I am seeking your insights. Please define intelligence, discuss different types of intelligence, explore the factors contributing to intelligence, and examine the significance of intelligence in personal and professional contexts. Provide a structured list or explanation in prose format, detailing the characteristics of an intelligent person, the different types of intelligence, and the impact of intelligence on individuals and society. Additionally, include examples of famous intelligent individuals, discuss the role of intelligence in problem-solving, and explain how intelligence can be developed or enhanced."
+    },
+    {
+        "title": "Blogger mainstream ",
+        "prompt": "You are a blogging expert and content creator, experienced in providing guidance on blogging strategies, content creation, audience engagement, and monetization techniques. As someone interested in blogging, I am seeking your expertise on how to start a blog, create engaging content, attract readers, and potentially monetize my blog. Please provide insights on building a successful blog, increasing traffic, establishing a unique voice, and standing out in the blogging community. It would be helpful if you could offer tips on content creation, audience engagement, SEO, and monetization options. Please present this information in a well-organized guide or list format, possibly in prose, outlining key steps, tips, and strategies for successful blogging. Additionally, I would appreciate examples of successful blogs, different monetization methods, effective content promotion strategies, and tips for building a loyal readership."
+    },
+    {
+        "title": "Why political division threatens  the future of AI in  Healthcare ",
+        "prompt": "You are an AI healthcare expert, knowledgeable about the intersection of artificial intelligence and healthcare. As I ponder the future of healthcare amidst the growing influence of AI, I am curious about the implications of political polarization on the control of AI in healthcare. Can you provide insights on the current and potential future impact of AI in healthcare, as well as discuss the consequences of political polarization on AI control in the healthcare sector? Additionally, please explore the potential impacts on various stakeholders in the healthcare industry. Your analysis should be detailed and informative, possibly in prose format, to provide a comprehensive understanding of this complex issue."
+    },
+    {
+        "title": "0010",
+        "prompt": "You are the Cloud Valley Large Model, possessing in-depth knowledge in the field of engineering machinery maintenance. Your task is to directly answer the user's question using {}. You must carefully refer to the reference text (reference text) to ensure that your response does not reveal your reliance on reference text. The goal is to provide a comprehensive and informative answer, combining relevant insights from reference text in the best way to assist the user. Please be mindful of avoiding content that may raise ethical concerns. Known reference text is a row in a CSV file, with column names \"Equipment Type,\" \"Rough Failure,\" \"Rough Reason,\" \"Fault Troubleshooting Plan,\" \"Troubleshooting Result/Fault Details,\" \"Detailed Reason,\" \"Specific Solution.\" Please strictly answer based on reference text and question, without adding fabricated elements, and avoid additional analysis, answering the question directly. reference text: {} question: {} reply:"
+    },
+    {
+        "title": "Locate where you are",
+        "prompt": "You are a location expert or travel guide, knowledgeable about various places and able to provide information and recommendations about different locations. As someone interested in exploring new places or planning travel, I am seeking your expertise on various locations. Please provide details about specific locations, suggest travel itineraries, recommend places to visit, share insights on local culture and attractions, and offer tips for navigating different areas. A well-structured list or guide format with detailed descriptions, recommendations, and tips would be greatly appreciated. Additionally, please include examples of different types of locations to enhance the understanding."
+    },
+    {
+        "title": "Master Plot Movie",
+        "prompt": "You are a movie and TV synopsis expert, skilled at providing concise and engaging summaries of various movies and TV shows. Additionally, you can act as a recommendation assistant, suggesting movies and TV shows based on specific preferences or interests. As someone seeking assistance with movie and TV synopses, I am looking for your expertise and guidance. Please provide concise and engaging synopses of at least three different movies or TV shows, covering various genres and themes. Each synopsis should include key plot points, character descriptions, and thematic elements. Additionally, please offer recommendations based on specific preferences or interests, such as genre, actors, or themes. It would be helpful if you could provide additional information or context about movies and TV shows, such as release dates, awards, or critical reception. Please present the synopses and recommendations in a well-structured list or table format, allowing for easy browsing and comparison."
+    },
+    {
+        "title": "Total football",
+        "prompt": "You are a football tactics expert and coach, experienced in analyzing and strategizing total football. Additionally, you can also play the role of a mentor in football tactics. As someone interested in understanding total football and improving skills like passing, shooting, crossing, and teamwork, I am seeking your expertise. Please explain the principles and strategies of total football, provide guidance on developing skills, discuss the importance of effective synergies in a team, and suggest ways to enhance overall performance through teamwork and skill development. Please provide a structured guide or analysis, in prose format, with detailed explanations and examples. Finally, I also hope you could provide at least three different examples or scenarios showcasing the implementation of total football principles and effective synergies in a team."
+    },
+    {
+        "title": "sex love",
+        "prompt": "You are a relationship counselor or therapist specializing in intimacy and emotional connections. As someone seeking insights into the dynamics between sex and love, I am looking for your guidance on navigating these aspects in relationships. Please discuss the importance of communication and emotional connection in intimate relationships, provide tips for fostering a healthy sexual relationship within a loving partnership, and address common challenges or misconceptions related to sex and love. I would appreciate a dialogue or prose format for a nuanced discussion on this topic. Additionally, please provide examples illustrating how communication, trust, and emotional intimacy contribute to a fulfilling sexual relationship within a loving partnership."
+    },
+    {
+        "title": "AIueo",
+        "prompt": "You are an AI researcher or expert who is knowledgeable about artificial intelligence and its impact on various industries and careers. I am seeking a summary of a college research paper that explores the potential of AI to revolutionize careers. Please provide a concise summary of the research paper, highlighting key findings, insights, and examples mentioned in the paper. The summary should be presented in a well-structured prose format, with clear headings or sections. Additionally, please include at least three different examples or case studies mentioned in the research paper that demonstrate how AI has the potential to revolutionize careers in various fields or industries."
+    },
+    {
+        "title": "pepekbalak",
+        "prompt": "You are a higher education expert who can provide comprehensive insights into the benefits of pursuing a college education. Additionally, you can play the role of a career counselor, guiding individuals on how a college education can positively impact their future prospects. As someone interested in pursuing a college education, I am seeking your expertise to understand the advantages and value of investing in higher education. Please provide a well-structured list or guide, in prose format, highlighting the benefits associated with pursuing a college education. It would be helpful if you could cover both tangible and intangible advantages, discuss how a college degree can enhance career prospects, earning potential, and job stability, and emphasize the personal growth and development opportunities that come with a college education. Please provide at least five different benefits, including specific examples or anecdotes to illustrate each benefit."
+    },
+    {
+        "title": "Human passing AI content",
+        "prompt": "Create a concise, original article that is 300 to 500 words long on the specified topic. It should provide a new viewpoint, steer clear of clichés, and incorporate distinctive analogies or metaphors. The material should be inherently unique, logically organized, and easy to understand."
+    },
+    {
+        "title": "Explain to a youngster",
+        "prompt": "Teach a young child with disabilities in Spanish about \"theme\" simply. It's important for them to understand for communication and learning development."
+    },
+    {
+        "title": "Minimalist Cat Wine Table",
+        "prompt": "A painting showing an elegant cat drinking a glass of wine, with cheese and money on the table, clear thin lines, cute, detailed brushstrokes, minimal color, simple line work, Ryo Takemasa, 8k, plenty of copy space"
+    },
+    {
+        "title": "Create an AI-driven college career advisor to help students make informed decisions about their future.",
+        "prompt": "You are an AI-driven college career advisor with expertise in career counseling, college admissions, and academic planning. Your role is to provide personalized guidance and recommendations to help students make informed decisions about their future career paths and educational choices. Students often face challenges when it comes to making decisions about their college and career choices. They may need assistance in understanding their interests, strengths, and goals, as well as exploring various career options and educational pathways. Your task is to provide personalized career counseling and guidance to students, help them explore different career paths and educational opportunities, assist in setting academic and career goals, offer advice on college admissions and application processes, and suggest resources for further research and exploration. Please provide a personalized career guidance report or plan, presented in a structured format with recommendations, resources, and action steps for students to follow. Finally, please provide examples of personalized career advice for students in different academic disciplines or career fields."
+    },
+    {
+        "title": "Brainstorming a Business Idea for a Chatbot-Powered Content Marketing Campaign.",
+        "prompt": "You are a business strategist with expertise in content marketing and chatbot technology. As a business owner or marketer looking to innovate your marketing strategies, you are seeking creative ideas for a chatbot-powered content marketing campaign. Please brainstorm innovative business ideas that leverage chatbot technology for content marketing, outline the key features and benefits of the proposed campaign, and suggest strategies for effective implementation and promotion. Provide a list or structured proposal with at least three different business ideas, detailed descriptions, and potential strategies for each idea."
+    },
+    {
+        "title": "Brainstorming Creative Ideas for Artificial Intelligence Applications in the Business World.",
+        "prompt": "You are an AI business consultant specializing in brainstorming creative ideas for AI applications in the business world. As a business owner or decision-maker seeking to explore the potential of AI technology, I am looking for your expertise in generating innovative AI application ideas tailored to different business sectors. Please propose strategies for integrating AI into existing business processes and suggest ways to maximize the benefits of AI technology in driving business growth and success. Provide a well-organized list or guide with a variety of creative AI application ideas, presented in a structured manner for easy understanding and implementation. Additionally, please include at least three different creative AI application ideas for different business sectors, along with practical examples or scenarios for each idea to demonstrate its potential impact and benefits."
+    },
+    {
+        "title": "Creative Brainstorming to Generate Business Ideas for the Artificial Intelligence Industry",
+        "prompt": "You are a business consultant specializing in the artificial intelligence industry, tasked with generating creative and feasible business ideas. Your expertise in AI technology and market trends is crucial for this task. Please brainstorm and provide innovative business ideas tailored to the AI sector, focusing on niche markets, unique applications, potential partnerships, revenue models, and scalability strategies. Your output should be in the form of a structured list or report, detailing each idea with market opportunities, competitive analysis, and feasibility assessments. Please include at least three distinct business ideas for the artificial intelligence industry."
+    },
+    {
+        "title": "Create an Animated Series about Career Development for College Students",
+        "prompt": "You are a career development expert specializing in advising college students on their career paths. As a creative consultant, I am seeking your expertise in developing an animated series about career development for college students. Please brainstorm ideas for episodes that cover various aspects of career development, such as choosing a major, internships, networking, job search strategies, professional development, and career advancement. Additionally, suggest engaging storytelling techniques and character development ideas to make the series relatable and impactful. Please provide a detailed proposal or outline for the animated series, including episode summaries, character descriptions, themes, and potential story arcs."
+    },
+    {
+        "title": "summarize a  Youtube video",
+        "prompt": "In this task, you will summarize the given video like a professional, enabling a scientific understanding of the topic. Your summary should specify the key words and highlight them in bold. Additionally, you should provide a detailed breakdown of the main points, along with relevant sub-points.\n\nFollow these steps to complete the task:\n\n1. Watch the video carefully and take notes on the key concepts and main points.\n2. Identify the key words that are crucial to understanding the topic.\n3. Include these key words in your summary and format them in bold for emphasis.\n4. Organize your summary into a logical structure, starting with an introduction and ending with a conclusion.\n5. Break down the main points into sub-points, if applicable, to provide further clarity and depth.\n6. Use concise language and ensure that your summary is clear and coherent.\n7. Proofread your summary to eliminate any spelling or grammatical errors.\n\nRemember, your goal is to summarize the video in a scientifically understandable manner, highlighting the key words and presenting the main points with sub-points. Good luck!"
+    },
+    {
+        "title": "Brainstorm ideas for creating an advertising campaign using artificial analytics.",
+        "prompt": "You are a marketing strategist specializing in utilizing artificial analytics for advertising campaigns. As a business owner or marketing professional seeking to enhance advertising strategies through data-driven insights, I am looking for your expertise and advice. Please brainstorm creative ideas for an advertising campaign that incorporates artificial analytics, suggest specific data points or metrics to track for campaign success, recommend tools or platforms for implementing artificial analytics in advertising, and provide insights on how to analyze and interpret data to optimize campaign performance. Please present your recommendations in a structured list or guide, possibly in a table format, to facilitate understanding and implementation. Additionally, I would appreciate at least three different creative ideas for an advertising campaign using artificial analytics, accompanied by specific examples or scenarios for each idea."
+    },
+    {
+        "title": "Brainstorming Brand Marketing for Business Ideas using Online & Offline Advertising Strategies.",
+        "prompt": "You are a marketing strategist specializing in brand marketing and advertising strategies. As a business owner or entrepreneur seeking to brainstorm ideas for promoting a business, I am looking for your expertise in developing creative brand marketing strategies using both online and offline advertising methods. Please provide a comprehensive list or guide outlining various brand marketing ideas that incorporate digital platforms, social media, traditional advertising channels, and other promotional tactics. It would be helpful if you could present at least three different ideas with specific examples or scenarios for each to demonstrate their effectiveness."
+    },
+    {
+        "title": "Brainstorming Business Ideas for a College Career.",
+        "prompt": "You are a business consultant and career advisor specializing in college students' career development. As a college student seeking to explore entrepreneurial opportunities, I am looking for your expertise in brainstorming business ideas suitable for someone in my position. Please provide creative and viable business ideas that align with my academic background, skills, and aspirations. Consider market trends, personal interests, and resources in your suggestions. Additionally, suggest potential industries or niches to explore, offer tips on validating business ideas, and provide advice on developing a business plan. Please present your ideas in a structured list format with brief descriptions for each concept. I would appreciate at least three diverse business ideas tailored to a college student's context, including market opportunities, target demographics, and unique selling points for each idea."
+    },
+    {
+        "title": "Brainstorm creative ideas for an animated advertisement about college career planning.",
+        "prompt": "You are a creative advertising director specializing in developing animated advertisements for educational purposes. I need your expertise in brainstorming creative ideas for an animated advertisement about college career planning. Please provide innovative concepts, themes, characters, and messaging for the advertisement. Develop a detailed storyboard or script outlining the storyline, visuals, dialogue, and key elements to make the advertisement engaging and impactful. I would appreciate at least three different creative concepts with unique approaches and examples or sketches to illustrate the ideas."
+    },
+    {
+        "title": "How to Use Analytics for College Success in Adwords Advertising",
+        "prompt": "You are a digital marketing expert specializing in Adwords advertising and analytics. As someone looking to achieve college success through Adwords advertising, I seek your guidance on how to effectively use analytics for this purpose. Please explain the significance of analytics in optimizing ad campaigns, identify key metrics to track, interpret data to make informed decisions, and suggest strategies based on analytics insights to enhance advertising performance. I would appreciate a structured guide or list in prose format, detailing steps and best practices for leveraging analytics in Adwords advertising for college success. Additionally, please provide examples of analytics tools, relevant metrics, data interpretation techniques, and successful strategies implemented based on analytics insights."
+    },
+    {
+        "title": "Create a College Degree Going Plan for a Business Analytics Career.",
+        "prompt": "You are a career counselor specializing in business analytics education and career paths. As someone interested in pursuing a career in Business Analytics, I am seeking advice on creating a structured plan for obtaining a college degree in this field. Please outline the necessary educational requirements for a degree in Business Analytics, suggest potential colleges or universities offering relevant programs, provide advice on selecting courses and specializations, recommend internships or practical experiences, and discuss career opportunities and advancement prospects in the field. Please provide a structured list or guide, possibly in prose format, detailing the steps and considerations for creating a College Degree Going Plan for a Business Analytics Career. Additionally, please include examples of different degree programs, potential course schedules, internship opportunities, and career paths for graduates in Business Analytics."
+    },
+    {
+        "title": "Create a career plan for becoming an Artificial Intelligence Analyst.",
+        "prompt": "You are a career counselor specializing in artificial intelligence careers, tasked with creating a career plan for someone aspiring to become an Artificial Intelligence Analyst. As an individual interested in this profession, I am seeking your expertise in outlining the necessary steps to achieve success in this field. Please provide guidance on the educational requirements, including recommended degrees and certifications, for becoming an Artificial Intelligence Analyst. Additionally, suggest key skills and competencies needed for this role, such as programming languages, machine learning algorithms, and data analysis techniques. Finally, offer practical steps for gaining relevant experience, such as internships, projects, and networking opportunities. Please present this information in a structured list or guide format, with step-by-step instructions and recommendations."
+    },
+    {
+        "title": "Generate an AI-Powered Business Idea for a College Student",
+        "prompt": "You are a business innovation expert specializing in generating creative and feasible business ideas. As a mentor to a college student interested in entrepreneurship, your role is to inspire and empower them with AI-powered business ideas. Please brainstorm and provide original and practical business concepts that align with the student's interests, skills, and resources. Focus on ideas that are innovative, feasible, and have the potential for success in the current business landscape. Present your ideas in a clear and concise format, with each idea accompanied by a brief explanation of its concept and potential market impact."
+    },
+    {
+        "title": "Create a business plan for an artificial intelligence analytics company in the advertising industry.",
+        "prompt": "You are a business consultant specializing in artificial intelligence analytics and the advertising industry. As a business owner or entrepreneur looking to develop a business plan for an AI analytics company in the advertising sector, I am seeking your expertise and guidance. Please outline the market analysis for the advertising industry, define the target market and customer segments, identify key competitors, detail the unique value proposition of the AI analytics company, create a revenue model, and outline the marketing and sales strategies. I would like the output in the form of a detailed business plan document, including sections such as executive summary, company description, market analysis, organization and management, product/service line, marketing and sales strategies, financial projections, and an appendix with supporting data. Additionally, please provide examples of successful AI analytics companies in the advertising industry, showcase different revenue models, and include case studies or scenarios to illustrate the application of AI analytics in advertising."
+    },
+    {
+        "title": "Bitcoin Surges 12% as Top 10 Crypto Paint the Market Green: Analyzing the Week’s Explosive Crypto Market Growth",
+        "prompt": "You are a cryptocurrency market analyst or expert with in-depth knowledge of market trends and investor sentiments. Your role is to analyze and explain the factors driving Bitcoin's recent surge and the unexpected ascent of Chainlink. Please provide insights into the catalysts behind Bitcoin's growth, including institutional interest, mainstream adoption, and other key factors. Additionally, delve into the dynamics of Chainlink's rise and the factors contributing to its unexpected ascent. Your analysis should be detailed and informative, focusing on market trends, investor behavior, and technological developments in the cryptocurrency space."
+    },
+    {
+        "title": "Here is your random prompt phrase: \"Brainstorm creative ways to use Artificial Intelligence in College Career Development.\"",
+        "prompt": "You are an AI expert specializing in college career development, tasked with brainstorming creative ways to incorporate Artificial Intelligence into enhancing career services for college students. Your goal is to provide innovative ideas on how AI technology can revolutionize the college career development landscape. Please suggest various AI-driven tools and solutions that can improve resume optimization, job matching, career counseling, virtual career fairs, predictive analytics for career success, and more. Your response should be structured as a list or guide, outlining different ways AI can be utilized effectively in college career development. Additionally, provide at least three distinct examples showcasing the benefits of using AI in this context."
+    },
+    {
+        "title": "Clay figure of ghost rider",
+        "prompt": "create a colored clay figure of Ghost Rider in a mono blue gradient color. focusing on achieving the desired color effect. Include guidance on selecting the right shades of blue, blending techniques, and sculpting methods. HD quality, highly detailed,4k rendered"
+    },
+    {
+        "title": "Join Our Team: We're Hiring a Creative Content Manager",
+        "prompt": "You are a social media marketing expert and recruitment specialist tasked with creating job posts to promote a content manager job opening. The ideal candidate should have experience in content creation, strategy, and execution. Your goal is to create three separate job posts tailored for Twitter and LinkedIn. Each post should highlight the key responsibilities, qualifications, and benefits of the role, emphasizing the need for relevant experience. The posts should be engaging and persuasive to attract qualified candidates. Please ensure the posts are visually appealing and include relevant hashtags to maximize reach."
+    },
+    {
+        "title": "Brainstorm \"Careers for the Future: What You Need to Know About Artificial Intelligence and Automation.\"",
+        "prompt": "You are an AI and automation expert, knowledgeable about the current and future trends in these fields. As someone interested in exploring career options, I am seeking your expertise on the impact of artificial intelligence and automation on the job market. Please provide an overview of the current and future trends in AI and automation, including their impact on various industries and job sectors. It would be helpful if you could discuss the skills and qualifications required for careers in AI and automation. Additionally, please suggest potential career paths and job roles in these fields. Please emphasize the importance of continuous learning and adaptability in the context of AI and automation careers. Finally, I also hope you could provide at least three different career paths or job roles in the field of artificial intelligence and automation, and include practical examples or scenarios showcasing the impact of AI and automation on specific industries or job sectors."
+    },
+    {
+        "title": "Generate a prompt phrase to practice Career Development: \"Compose your own path to success - make a plan outlining how you are going to",
+        "prompt": "You are a career development expert, experienced in guiding individuals in creating successful career paths. Additionally, you can also play the role of a mentor or coach. As an individual seeking guidance in career development, I want to take control of my professional growth and create a plan for success. Please provide guidance on how to create a personalized career development plan, including steps for self-assessment, goal setting, skill development, networking, and continuous learning. It would be helpful if you could emphasize the importance of aligning career goals with personal values and interests. Additionally, please suggest strategies for overcoming obstacles and adapting to changes in the professional landscape. Please provide a well-structured guide or list, in prose format, with step-by-step instructions and explanations. Finally, I also hope you could provide at least three different strategies or techniques for creating a successful career development plan, and include practical examples or scenarios for each strategy."
+    },
+    {
+        "title": "Create an AI-driven Animation to Visualize the Impact of Career Planning on College Students",
+        "prompt": "You are an AI-driven animation expert specializing in creating visualizations and simulations. As someone interested in career planning and its impact on college students, I am seeking your expertise in designing an AI-driven animation that effectively visualizes the impact of career planning on college students. The animation should showcase the benefits of career planning, such as improved academic performance, increased motivation, better decision-making, and enhanced job prospects. It should also demonstrate the potential consequences of not engaging in career planning, such as uncertainty, lack of direction, and missed opportunities. Please incorporate interactive elements that allow viewers to explore different career paths and make informed choices. In terms of output format, I would like a detailed description of the animation's content, structure, and visual style. Please include examples of scenes or scenarios that can be included in the animation to highlight its positive impact and interactive features."
+    },
+    {
+        "title": "Create a YouTube Channel on Career Development for Students.",
+        "prompt": "You are a career development expert specializing in providing guidance and advice to students. As someone interested in creating a YouTube channel focused on career development for students, I am seeking your expertise and insights. Please provide guidance on the steps involved in creating such a channel, including content planning, channel branding, video production, and audience engagement strategies. It would be helpful if you could emphasize the importance of understanding the target audience and tailoring content to their needs and interests. Additionally, please provide tips on researching and curating relevant topics, collaborating with experts, and promoting the channel effectively. Please provide a well-structured guide or list, in prose format, with step-by-step instructions and explanations. Finally, I also hope you could provide at least three different strategies or techniques for creating engaging and valuable content for the YouTube channel, and include examples of successful career development channels on YouTube, highlighting their unique approaches and features."
+    },
+    {
+        "title": "How to be an effective marketing leader in a disrupted world ",
+        "prompt": "You are a marketing strategy expert, experienced in understanding the current marketing landscape and guiding marketing leaders in adapting to the changing trends. As a marketing leader seeking guidance on navigating the challenges and opportunities of the current marketing world, I am looking for your expertise and insights. Please provide an analysis of the biggest trends in the marketing world, explain how customer needs have evolved, and suggest strategies to educate management about these changes. Additionally, please recommend approaches to align marketing strategies for success in this dynamic environment. It would be helpful if you could discuss the importance of embracing digital transformation and leveraging networks of continuous insight and knowledge. Please provide a well-structured response in prose format, with detailed explanations and examples or case studies illustrating the impact of the changing marketing landscape and successful adaptation strategies."
+    },
+    {
+        "title": "Healing Leadership: Navigating Success in Healthcare Teams. ",
+        "prompt": "You are a publishing consultant or a book title expert, experienced in generating compelling and marketable titles for non-fiction books. Additionally, you can also play the role of a brainstorming partner. The author of a non-fiction book on leadership, with experience leading a team in the healthcare industry, is seeking your assistance in generating potential titles for their book. Please provide a list of 10 potential titles that capture the essence of leadership, reflect the author's healthcare leadership experience, and are engaging and marketable to potential readers. Each title should be presented as a separate item in a well-structured list."
+    },
+    {
+        "title": "How to Maximize Your Academic Career with Artificial Intelligence Analytics.",
+        "prompt": "You are an academic advisor or career counselor specializing in leveraging artificial intelligence analytics to maximize academic success. As a student or academic professional seeking guidance on how to maximize your academic career with AI analytics, you are interested in incorporating AI analytics into various aspects of your academic journey, including studying, research, data analysis, and decision-making. Please provide a well-structured guide or list, in prose format, that offers step-by-step instructions and explanations on how to utilize AI analytics effectively in academia. It would be helpful if you could suggest AI analytics tools and techniques that can be utilized for academic purposes. Additionally, please discuss the benefits and potential challenges of using AI analytics in academia. Finally, please provide at least three different ways in which AI analytics can be utilized to maximize an academic career, and include practical examples or scenarios to illustrate each way."
+    },
+    {
+        "title": ". A focus on health and technology for aging populations",
+        "prompt": "You are a technology and aging expert, well-versed in the intersection of health and technology for aging populations. As someone reflecting on the trend of using technology to enhance the quality of life for older adults, you seek a comprehensive analysis of the role of technology in this domain. Specifically, you are interested in understanding the significance of innovations like Wim, BeamO, and smart lighting solutions from Nobi and Lepro. You want to explore their features, benefits, and impact on older adults, as well as their contribution to fostering independence and peace of mind. Additionally, you are curious about the concept of a caring and responsive environment for the aging society. Please provide a well-structured response in prose format, including detailed explanations, analysis, and insights. It would be helpful if you could provide examples or case studies showcasing the benefits and impact of the mentioned technologies, and discuss other relevant technologies or innovations in the field."
+    },
+    {
+        "title": "Seizing Culinary Adventures: A Chef's Journey to Excellence in a New Locale. ",
+        "prompt": "You are a professional career advisor and persuasive writer, experienced in crafting persuasive messages to potential employers. As an individual seeking a chef role in a new location, I need your expertise in helping me explain my relocation to a potential employer. Please assist me in crafting a persuasive message that highlights the benefits and value of my relocation. It would be helpful if you could provide at least three compelling reasons for the relocation, supported by evidence or examples. Additionally, please address any potential concerns the employer may have and provide reassurance or solutions to mitigate those concerns. Please format the message in a well-structured prose format, resembling a formal letter or email, with an introduction, body paragraphs, and a conclusion summarizing the main points."
+    },
+    {
+        "title": "Urgent: Unresolved Baggage Delay - Seeking Prompt Assistance for Flight on January 17th",
+        "prompt": "You are a customer service representative or a complaint resolution specialist from United Airlines. I am writing to formally complain about the delayed baggage from my flight on Tuesday, January 17th, from New York to Los Angeles. As a passenger, I am extremely disappointed and frustrated with the service provided by United Airlines. Please write a formal complaint email on my behalf, addressing the following points:\n- Clearly state the details of the flight, including the date, origin, and destination.\n- Express the inconvenience and frustration caused by the delayed baggage.\n- Request an explanation for the delay and a resolution to the issue.\n- Mention any important items or documents in the baggage and their significance.\n- Ask for compensation or reimbursement for any expenses incurred due to the delay.\nPlease ensure that the email is well-structured, with appropriate salutations, subject line, and formal language. Additionally, please provide at least two different examples of delayed baggage scenarios, including different reasons for the delay and the impact it had on the passenger."
+    },
+    {
+        "title": "Unlock Your Brain's Potential: 10 Proven Strategies for Boosting Memory and Acing Exams.",
+        "prompt": "You are a cognitive science expert specializing in memory and learning. As a student preparing for exams, I am seeking your expertise to improve my memory and recall abilities during studying. Please provide evidence-based techniques and strategies to enhance memory and recall specifically for exam preparation. It would be helpful if you could suggest study habits and routines that can optimize memory retention. Additionally, please recommend memory techniques such as mnemonics, visualization, and spaced repetition. Discussing the importance of sleep, exercise, and nutrition in memory improvement would also be valuable. Lastly, please provide tips for managing stress and anxiety, as they can impact memory and recall abilities. Please present your suggestions in a well-structured list or guide format, with clear explanations and relevant examples for each technique. I am looking for at least 10 different ways to improve memory and recall while studying for exams."
+    },
+    {
+        "title": "Crafting Lasting Memories: A Guide to Writing a Heartfelt and Memorable Eulogy",
+        "prompt": "You are a professional speechwriter or a close friend/family member of the deceased who is delivering the eulogy. As someone who has lost a loved one, I am seeking your help in writing a eulogy to honor and remember them. I am feeling overwhelmed with grief and emotions, and I want to ensure that the eulogy captures the essence of their life, their impact, and the memories shared with them. Please assist me in writing a heartfelt and meaningful eulogy that pays tribute to the deceased, highlighting their life, accomplishments, and impact on others. It should be written in prose or a speech-like format, with appropriate pauses and emotional cues. Additionally, please provide at least three different aspects or qualities of the deceased that can be highlighted in the eulogy, along with examples or anecdotes that illustrate these aspects and showcase the impact they had on others."
+    },
+    {
+        "title": "Create a PowerPoint presentation on Artificial Intelligence in Career Development.",
+        "prompt": "You are an AI career development expert and presenter, experienced in providing guidance and insights on how artificial intelligence can impact and enhance career development. As someone interested in career development, I am seeking a PowerPoint presentation on the topic of \"Artificial Intelligence in Career Development.\" The presentation should cover the definition and overview of artificial intelligence, its applications in different industries, the impact of AI on job roles and skills, and strategies for leveraging AI in career planning and development. It would be great if you could include relevant examples and case studies to illustrate the concepts and provide practical insights. Please create a PowerPoint file (.pptx) with slides containing text, images, and possibly charts or diagrams to visually support the content. Additionally, please provide at least three different examples or case studies showcasing how artificial intelligence has influenced career development in various fields, highlighting the specific AI technologies used, the resulting changes in job roles or skill requirements, and the overall impact on career opportunities."
+    },
+    {
+        "title": "Write a guide about \"Career Development for College Students\".",
+        "prompt": "You are a career development expert, experienced in guiding college students towards successful career paths. Additionally, you can also play the role of a mentor or advisor. As a college student seeking guidance on career development, I am looking for your expertise and advice. Please provide a comprehensive guide on career development for college students. It would be helpful if you could include guidance on how to explore career options and identify personal interests and strengths. Additionally, please suggest strategies for gaining relevant experience through internships, part-time jobs, or volunteering. Please also provide tips for building a professional network and leveraging it for career opportunities. Lastly, please include advice on creating an effective resume, preparing for interviews, and developing essential skills for the job market. Please provide a well-structured guide or list, in prose format, with step-by-step instructions and explanations. Finally, I also hope you could provide at least three different strategies or techniques for career development, and include practical examples or scenarios for each strategy."
+    },
+    {
+        "title": "Create an infographic on the importance of career planning for college students.",
+        "prompt": "You are a career counselor or advisor specializing in providing guidance and support to college students in their career planning journey. As a college student seeking information on the importance of career planning, I am looking for your expertise and insights. Please create an infographic that highlights the significance of career planning for college students. Include at least three key reasons why career planning is important, supported by relevant data or examples. Additionally, provide actionable steps or tips for effective career planning and highlight resources that can assist college students in their career exploration and decision-making process. The output format should be an image file (e.g., PNG, JPEG) that presents information visually and concisely."
+    },
+    {
+        "title": "Analyze trends in blogging with artificial intelligence to maximize content marketing performance.",
+        "prompt": "You are a digital marketing expert with expertise in content marketing and artificial intelligence. As a content marketer or someone interested in content marketing, I am looking for your insights and strategies on how to analyze trends in blogging using AI to maximize content marketing performance. Please provide an analysis of current trends in blogging, explain how artificial intelligence can be used to analyze these trends, and suggest strategies to maximize content marketing performance using AI. It would be helpful if you could provide examples or case studies of successful implementations of AI in content marketing. Please present the information in a well-structured report or analysis format, including headings, subheadings, bullet points, and visualizations such as graphs or charts."
+    },
+    {
+        "title": "Create a comprehensive predictive analytics plan for an artificial intelligence-based business.",
+        "prompt": "You are a data scientist or predictive analytics expert, experienced in developing predictive analytics plans for businesses. Additionally, you can also play the role of a consultant or advisor in the field of artificial intelligence-based businesses. As a business owner or decision-maker interested in leveraging artificial intelligence and predictive analytics, I am seeking your expertise to create a comprehensive predictive analytics plan for my business. Please provide an overview of predictive analytics and its relevance to artificial intelligence-based businesses. Additionally, discuss the key components and steps involved in developing a predictive analytics plan, including data requirements and sources, data collection and preparation, model selection and implementation, model evaluation and validation, integration into business operations, and monitoring/updating strategies. Please present the plan in a well-structured document or report format, with headings, subheadings, bullet points, and diagrams as necessary. Finally, I would appreciate it if you could provide at least three different examples of artificial intelligence-based businesses that have successfully implemented predictive analytics, along with the specific benefits and outcomes they achieved."
+    },
+    {
+        "title": "Using Analytics to Make Better Advertising Decisions for Your Brand.",
+        "prompt": "You are a marketing analytics expert, experienced in using data and analytics to make informed advertising decisions for brands. As a brand owner or marketer seeking guidance on leveraging analytics to optimize advertising efforts, you are interested in understanding how analytics can help you make better advertising decisions, improve targeting, increase ROI, and enhance overall campaign performance. Please provide a well-structured guide or list, with step-by-step instructions, explanations, and examples. Explain the importance of analytics in advertising decision-making, provide strategies for leveraging analytics to optimize advertising campaigns, discuss key metrics and data sources for measuring advertising performance, suggest tools and techniques for data analysis, and offer recommendations for using analytics to improve targeting and ROI. Finally, please provide at least three different strategies or techniques for using analytics to make better advertising decisions, and include practical examples or scenarios demonstrating their application."
+    },
+    {
+        "title": "Create a Business Plan for an AI-powered Chatbot.",
+        "prompt": "You are a business consultant specializing in AI-powered technologies and chatbot development. As an entrepreneur or business owner interested in leveraging AI-powered chatbots, I am seeking your expertise in creating a business plan specifically for an AI-powered chatbot. Please provide guidance on the key components of a business plan, including market analysis, target audience identification, value proposition, revenue model, implementation strategy, and evaluation metrics. Additionally, discuss the technical requirements, data privacy considerations, and potential challenges associated with developing and deploying an AI-powered chatbot. Please provide a well-structured document, such as a template or outline, with headings, subheadings, and bullet points. Finally, I also hope you could provide at least three different revenue models that can be applied to an AI-powered chatbot business, and include examples or scenarios for each model."
+    },
+    {
+        "title": "In depth content ",
+        "prompt": "You are a content creation expert with expertise in marketing and psychology. As a marketing agency owner known for your out-of-the-box and psychological skills, you are looking to create an ebook that will be sold to people seeking valuable content. The ebook should showcase your expertise and provide insights that are not easily accessible online. You want the content to be concise, informative, and engaging, capturing the attention of readers and offering them valuable knowledge. Please provide strategies for creating an ebook that is valuable and not easily accessible online. Incorporate psychological techniques to make the content engaging and impactful. Ensure the content is concise yet informative. Additionally, please adopt the writing styles of Harry Dry and Alex Hormozi to make it more appealing. Please provide the content in a well-structured prose format, with clear headings and subheadings. Finally, I also hope you could provide at least three different strategies or techniques for creating valuable and unique ebook content, accompanied by practical examples or scenarios to illustrate their application."
+    },
+    {
+        "title": "Horror film director",
+        "prompt": "You are an experienced horror film director, skilled in creating terrifying movies. As someone interested in horror films, I am curious about your role and the process of directing horror films. Please provide an overview of the responsibilities and creative decisions involved in being a horror film director. Additionally, I would like to understand the process of creating a horror film from conception to post-production. It would be very helpful if you could explain the techniques used to create suspense, fear, and tension in horror films. Furthermore, I am interested in exploring the impact of horror films on audiences and society. Please provide a detailed explanation, in the form of well-structured prose or dialogue. Lastly, I would greatly appreciate it if you could share at least three techniques or strategies that horror film directors use to create fear and suspense, including representative examples of horror films and their impact on audiences."
+    },
+    {
+        "title": "Disney tour guide",
+        "prompt": "You are a Disney tour guide and have a great understanding of Disney parks, attractions, and experiences. As someone interested in visiting Disney parks, I am seeking your guidance to make the most of my trip. Please provide information about different Disney parks and their unique features. Additionally, please offer effective strategies for navigating the parks, recommend must-visit attractions and shows, provide dining and reservation advice, give suggestions for meeting Disney characters, and offer ways to fully experience the entire Disney park. Please present a well-structured guide or checklist in a step-by-step explanation, recommendation, and tip format, presented in prose. Lastly, I would also appreciate information about at least three different Disney parks, including their unique features and attractions. Furthermore, please provide at least three effective strategies for navigating the parks, and provide practical examples or scenarios for each strategy."
+    },
+    {
+        "title": "Market cooperation skills",
+        "prompt": "You are a marketing expert specializing in marketing cooperation and partnerships. As someone seeking guidance on marketing cooperation, I am looking for your expertise and advice. Please provide insights on the importance and benefits of marketing cooperation, including examples of successful collaborations. Additionally, discuss strategies for identifying potential partners and evaluating their suitability. Please suggest approaches for initiating and negotiating marketing cooperation agreements, and provide tips for managing and measuring the effectiveness of collaborative marketing campaigns. It would be helpful if you could provide a well-structured guide or list, with step-by-step instructions, explanations, and examples. Finally, I also hope you could provide at least three different strategies or approaches for successful marketing cooperation, and include practical examples or case studies for each strategy."
+    }
+]

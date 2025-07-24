@@ -1,0 +1,141 @@
+{
+    "analysis": {
+        "role": {
+            "description": "Defines the identity or function of an entity (e.g., user, AI, character in a game, job position). This determines how interactions, behaviors, and responsibilities should be shaped in a given scenario.",
+            "contents": []
+        },
+        "task/goal": {
+            "description": "Represents the purpose, objective, or activity that needs to be achieved. This includes both high-level goals (e.g., business objectives) and specific tasks (e.g., completing a form).",
+            "contents": []
+        },
+        "topic": {
+            "description": "Indicates the subject matter of the prompt, defining the area of focus or discussion. It helps narrow down relevant information and ensures content relevance.",
+            "contents": [
+                "be more specific to goals and habits",
+                "Be more tailored to user goals and context"
+            ]
+        },
+        "target audience": {
+            "description": "Identifies the intended recipients of the content, considering factors like engagement level, knowledge background, and expected reactions. This helps tailor tone, complexity, and presentation style.",
+            "contents": []
+        },
+        "context": {
+            "description": "Provides background information to make responses more relevant and meaningful. This includes situational details, prior discussions, professional settings, and specific constraints affecting the response.",
+            "contents": []
+        },
+        "requirements": {
+            "description": "Defines specific conditions, constraints, workflow, expectations, or procedural steps that must be met for the response to be valid. This includes content, research, technological, and explanatory requirements.",
+            "contents": [
+                "Ask follow-up questions to gain clarity"
+            ]
+        },
+        "knowledge": {
+            "description": "Defines the expertise level or domain-specific information required to generate an informed response. It includes technical knowledge, general facts, and specialized insights.",
+            "contents": [
+                "Focus on personalized strategies rather than general suggestions"
+            ]
+        },
+        "guidance": {
+            "description": "Provides structured instructions or recommendations to help the user achieve a goal, such as guidelines, workflows, or procedural steps.",
+            "contents": [
+                "tailor suggestions to individual user responses",
+                "Provide clear, actionable steps based on user input"
+            ]
+        },
+        "features": {
+            "description": "Highlights unique characteristics or functionalities of a product, service, or concept that differentiate it from others.",
+            "contents": [
+                "Include specific examples or tools that align with user goals"
+            ]
+        },
+        "constraints": {
+            "description": "Specifies limitations that must be considered, such as legal, ethical, technical, or practical restrictions affecting content generation or task execution.",
+            "contents": [
+                "Be succinct; avoid overwhelming the user"
+            ]
+        },
+        "input": {
+            "description": "Describes the information provided by the user, such as text, examples, language preferences, or specific parameters required for generating an appropriate response.",
+            "contents": []
+        },
+        "output format": {
+            "description": "Specifies how the response should be structured, including document type, style, language, length, formatting, and presentation style.",
+            "contents": [
+                "use bullet points for clear steps and next actions",
+                "Use bullet points for summaries and next steps"
+            ]
+        },
+        "action": {
+            "description": "Refers to specific activities or steps that should be taken, whether by the AI or the user. It can also include calls to action in persuasive contexts.",
+            "contents": []
+        },
+        "tone": {
+            "description": "Determines the emotional and stylistic approach used in communication, such as professional, formal, friendly, persuasive, or humorous.",
+            "contents": [
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Sorry, this is outside my scope of knowledge.",
+                "Use more encouraging and enthusiastic language."
+            ]
+        }
+    }
+}

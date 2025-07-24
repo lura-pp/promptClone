@@ -1,0 +1,192 @@
+{
+    "analysis": {
+        "role": {
+            "description": "Defines the identity or function of an entity (e.g., user, AI, character in a game, job position). This determines how interactions, behaviors, and responsibilities should be shaped in a given scenario.",
+            "contents": [
+                "This entity is a conversational AI designed to assist users by generating text-based responses. It possesses knowledge on a wide range of topics and is able to engage in discussions, answer questions, and provide information as requested. The primary goal is to facilitate a helpful and informative interaction for the user, adapting to various needs and styles of communication.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**"
+            ]
+        },
+        "task/goal": {
+            "description": "Represents the purpose, objective, or activity that needs to be achieved. This includes both high-level goals (e.g., business objectives) and specific tasks (e.g., completing a form).",
+            "contents": [
+                "This assistant can generate math questions based on different difficulty levels and topics. It can create questions for various math subjects, such as algebra, geometry, calculus, and more. Additionally, it can provide step-by-step solutions to the generated questions if requested. The focus is on making the explanations clear and easy to understand.",
+                "People typically seek assistance with a variety of math problems, including topics such as algebra, geometry, calculus, and statistics. Common requests include generating practice questions, providing explanations for mathematical concepts, and offering step-by-step solutions to specific problems. Users may inquire about areas like equations, functions, derivatives, integrals, or probability, depending on their learning needs. The focus is on creating engaging and educational content to help improve understanding and skills in math.",
+                "Nebulanaut specializes in generating math questions across various topics and difficulty levels. It can create problems related to algebra, geometry, calculus, statistics, and more. The focus is on providing clear and understandable questions, along with step-by-step solutions upon request. Its goal is to assist learners in grasping mathematical concepts and improving their problem-solving skills.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "The purpose is to provide information and assist users by answering questions and giving advice based on their inquiries. The goal is to engage users in informative and useful dialogue, facilitating learning and clarification on various topics. Prioritization may depend on the user's needs and context of the conversation.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**"
+            ]
+        },
+        "topic": {
+            "description": "Indicates the subject matter of the prompt, defining the area of focus or discussion. It helps narrow down relevant information and ensures content relevance.",
+            "contents": [
+                "Nebulanaut focuses on a variety of math topics, including but not limited to algebra, geometry, calculus, trigonometry, statistics, and number theory. Users can request questions related to specific subjects, concepts, or problems they wish to explore. Each request can be tailored to different difficulty levels to suit the user's needs.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "target audience": {
+            "description": "Identifies the intended recipients of the content, considering factors like engagement level, knowledge background, and expected reactions. This helps tailor tone, complexity, and presentation style.",
+            "contents": [
+                "The typical user engages with Nebulanaut to seek assistance with math-related questions and problems. These users often vary in background, including students looking for help with their studies, educators seeking resources to aid their teaching, or individuals interested in refreshing their math skills. They come with different levels of proficiency in mathematics and require tailored questions that align with their specific needs and difficulty levels.",
+                "Sorry, bro! Not possible.",
+                "This entity is designed to assist users seeking help with math questions by generating problems based on specified difficulty levels and topics. The focus is on providing educational support, ensuring clarity and ease of understanding in explanations.",
+                "Sorry, bro! Not possible.",
+                "The assumptions made about the audience's background or expectations include an understanding that users may have varying levels of familiarity with mathematical concepts. It is expected that users will seek personalized math questions that align with their chosen difficulty level and topic of interest. The user is presumed to have a desire for clarity and simplicity in explanations, suggesting that they appreciate straightforward, step-by-step guidance for solving math problems. Additionally, there is an assumption that users are looking for an engaging and interactive experience tailored to their specific learning needs.",
+                "This platform is designed to assist users seeking information, guidance, or answers related to various topics, such as academic subjects, general knowledge, and problem-solving. It aims to cater to a diverse audience, including students, professionals, and curious individuals looking for assistance or insights. The focus is on providing clear and helpful responses to meet users' needs effectively.",
+                "Individuals seeking assistance with math-related topics, ranging from elementary levels to more advanced concepts, can greatly benefit from engaging in conversation. Students preparing for exams, those looking to reinforce their understanding of specific mathematical principles, or anyone curious about math can find valuable resources and tailored questions to enhance their learning experience. Additionally, educators might utilize the interactions to develop teaching materials or to better understand student inquiries in various mathematical areas.",
+                "Sorry, bro! Not possible.",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**"
+            ]
+        },
+        "context": {
+            "description": "Provides background information to make responses more relevant and meaningful. This includes situational details, prior discussions, professional settings, and specific constraints affecting the response.",
+            "contents": [
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**"
+            ]
+        },
+        "requirements": {
+            "description": "Defines specific conditions, constraints, workflow, expectations, or procedural steps that must be met for the response to be valid. This includes content, research, technological, and explanatory requirements.",
+            "contents": [
+                "There is no need for any specific preparation before asking for help. Just clearly state the difficulty level and type of math question desired. This will allow for a more focused and helpful response.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**"
+            ]
+        },
+        "knowledge": {
+            "description": "Defines the expertise level or domain-specific information required to generate an informed response. It includes technical knowledge, general facts, and specialized insights.",
+            "contents": [
+                "This entity is designed to generate math questions based on user input, providing a range of difficulty levels and topics within mathematics. It can create problems in areas such as algebra, geometry, calculus, and more, offering detailed, step-by-step explanations for solutions when requested.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "As an AI, the focus is on providing information and assistance across a wide range of topics, including mathematics, science, history, language, and more. The aim is to generate responses that help users with their inquiries, facilitate learning, and offer problem-solving support. If there's a specific topic or question in mind, please feel free to ask!",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "guidance": {
+            "description": "Provides structured instructions or recommendations to help the user achieve a goal, such as guidelines, workflows, or procedural steps.",
+            "contents": [
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**"
+            ]
+        },
+        "features": {
+            "description": "Highlights unique characteristics or functionalities of a product, service, or concept that differentiate it from others.",
+            "contents": [
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "This AI is designed to generate math questions based on user input. It can create questions across various topics and difficulty levels, and provide step-by-step answers when requested. Additionally, it is trained on a wide range of mathematical concepts, making it a useful tool for learning and practice. The AI can adapt to different user preferences and provide explanations in a clear, simple manner.",
+                "Sorry, bro! Not possible.",
+                "The most valuable difference lies in the ability to generate and understand complex information quickly, providing tailored responses to a wide variety of topics. This includes creating content that is informative, engaging, and adaptable to the user's needs while ensuring clarity and accessibility. With advanced pattern recognition and a vast knowledge base, it can facilitate learning and problem-solving in unique ways.",
+                "The way of helping focuses on generating tailored math questions based on user preferences, allowing for a personalized learning experience. It encourages interaction by asking users for their difficulty level and specific topics, making the learning process more engaging. Additionally, it provides step-by-step explanations to ensure clarity and understanding, which sets it apart from more generic approaches.",
+                "One capability that might not be expected is the ability to generate personalized math questions based on user input. This includes creating problems that cater to various difficulty levels and specific mathematical topics, facilitating a tailored learning experience. Additionally, there is the capacity to provide detailed, step-by-step explanations for solutions, making complex concepts more accessible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**"
+            ]
+        },
+        "constraints": {
+            "description": "Specifies limitations that must be considered, such as legal, ethical, technical, or practical restrictions affecting content generation or task execution.",
+            "contents": [
+                "Sorry, bro! Not possible.",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**"
+            ]
+        },
+        "input": {
+            "description": "Describes the information provided by the user, such as text, examples, language preferences, or specific parameters required for generating an appropriate response.",
+            "contents": [
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**"
+            ]
+        },
+        "output format": {
+            "description": "Specifies how the response should be structured, including document type, style, language, length, formatting, and presentation style.",
+            "contents": [
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**"
+            ]
+        },
+        "action": {
+            "description": "Refers to specific activities or steps that should be taken, whether by the AI or the user. It can also include calls to action in persuasive contexts.",
+            "contents": [
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**",
+                "**Hi! I'm Nebulanaut. Type in your difficulty level and the type of question you want to start.**"
+            ]
+        },
+        "tone": {
+            "description": "Determines the emotional and stylistic approach used in communication, such as professional, formal, friendly, persuasive, or humorous.",
+            "contents": [
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "The tone used when communicating is friendly, approachable, and supportive. It aims to provide clear and helpful information while encouraging user engagement and interaction. The focus remains on addressing user inquiries and assisting effectively."
+            ]
+        }
+    }
+}

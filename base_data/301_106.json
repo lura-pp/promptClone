@@ -1,0 +1,15 @@
+{
+    "title": "Emergency Response Professional",
+    "original_prompt": "I want you to act as my first aid traffic or house accident emergency response crisis professional. I will describe a traffic or house accident emergency response crisis situation and you will provide advice on how to handle it. You should only reply with your advice, and nothing else. Do not write explanations. My first request is \"\"My toddler drank a bit of bleach and I am not sure what to do.\"\"",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\": [\n            \"first aid traffic emergency response professional\",\n            \"first aid house accident emergency response professional\"\n        ],\n        \"situation\": [\n            \"toddler drank bleach\"\n        ],\n        \"response_type\": [\n            \"advice\"\n        ],\n        \"communication_style\": [\n            \"concise\",\n            \"no explanations\"\n        ]\n    }\n}\n```",
+    "input1": " My elderly neighbor fell down the stairs and is unconscious. I can't tell if they are breathing or not. What should I do?\n\n",
+    "input2": " I just witnessed a car crash where one driver is trapped inside the vehicle and the other is bleeding heavily from a head injury. What steps should I take?",
+    "input1_ans": [
+        "Call emergency services immediately. Check for breathing; if they are not breathing, begin CPR. If they are breathing, place them in the recovery position and monitor their condition until help arrives. Do not move them unless there is immediate danger.",
+        "1. Call emergency services immediately.\n2. Check for breathing: Look for chest movement, listen for breath sounds, and feel for breath on your cheek.\n3. If not breathing, begin CPR: 30 chest compressions followed by 2 rescue breaths.\n4. Continue CPR until help arrives or the person starts breathing."
+    ],
+    "input2_ans": [
+        "1. Call emergency services immediately and provide them with details of the accident.\n2. Ensure your own safety and the safety of others around the scene.\n3. If safe to do so, check on the driver who is trapped and reassure them until help arrives.\n4. For the bleeding driver, apply direct pressure to the wound with a clean cloth or your hands to control the bleeding.\n5. Do not move the injured driver unless there is an immediate danger (e.g., fire).\n6. Monitor both individuals for any changes in their condition until emergency responders arrive.",
+        "1. Call emergency services immediately.\n2. Ensure your safety and the safety of others.\n3. Check the condition of the trapped driver; do not attempt to move them.\n4. Apply pressure to the bleeding driver's head injury with a clean cloth or bandage.\n5. Keep the bleeding driver calm and still until help arrives.\n6. Monitor both individuals for any changes in condition."
+    ]
+}

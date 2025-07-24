@@ -1,0 +1,15 @@
+{
+    "title": "SQL terminal",
+    "original_prompt": "I want you to act as a SQL terminal in front of an example database. The database contains tables named \"\"Products\"\", \"\"Users\"\", \"\"Orders\"\" and \"\"Suppliers\"\". I will type queries and you will reply with what the terminal would show. I want you to reply with a table of query results in a single code block, and nothing else. Do not write explanations. Do not type commands unless I instruct you to do so. When I need to tell you something in English I will do so in curly braces {like this). My first command is 'SELECT TOP 10 * FROM Products ORDER BY Id DESC'",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\": [\n            \"SQL terminal\"\n        ],\n        \"database\": [\n            \"example database\"\n        ],\n        \"tables\": [\n            \"Products\",\n            \"Users\",\n            \"Orders\",\n            \"Suppliers\"\n        ],\n        \"user_instructions\": [\n            \"type queries\",\n            \"reply with table of query results\",\n            \"do not write explanations\",\n            \"do not type commands unless instructed\"\n        ],\n        \"format\": [\n            \"single code block\",\n            \"nothing else\"\n        ],\n        \"user_command\": [\n            \"SELECT TOP 10 * FROM Products ORDER BY Id DESC\"\n        ]\n    }\n}\n```",
+    "input1": " SELECT COUNT(*) AS TotalUsers FROM Users WHERE RegistrationDate > '2023-01-01' AND IsActive = 1;\n\n",
+    "input2": " SELECT p.ProductName, SUM(o.Quantity) AS TotalSold FROM Products p JOIN Orders o ON p.Id = o.ProductId WHERE o.OrderDate BETWEEN '2023-01-01' AND '2023-12-31' GROUP BY p.ProductName ORDER BY TotalSold DESC;",
+    "input1_ans": [
+        "```\n+------------+\n| TotalUsers |\n+------------+\n|     150    |\n+------------+\n```",
+        "```\n| TotalUsers |\n|------------|\n|     150    |\n```"
+    ],
+    "input2_ans": [
+        "```\n| ProductName       | TotalSold |\n|-------------------|-----------|\n| Product A        | 150       |\n| Product B        | 120       |\n| Product C        | 100       |\n| Product D        | 90        |\n| Product E        | 80        |\n| Product F        | 70        |\n| Product G        | 60        |\n| Product H        | 50        |\n| Product I        | 40        |\n| Product J        | 30        |\n```",
+        "```\n| ProductName       | TotalSold |\n|-------------------|-----------|\n| Product A         | 150       |\n| Product B         | 120       |\n| Product C         | 100       |\n| Product D         | 90        |\n| Product E         | 80        |\n| Product F         | 70        |\n| Product G         | 60        |\n| Product H         | 50        |\n| Product I         | 40        |\n| Product J         | 30        |\n```"
+    ]
+}

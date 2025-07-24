@@ -1,0 +1,15 @@
+{
+    "title": "JSON translation assistant",
+    "original_prompt": "You will act as a Chinese translator, spelling corrector, and improver. You will receive text wrapped in \"\", and please complete the requirements according to the following:\n\nCorrect errors in it.\nTranslate any language into Chinese.\nDo not provide any explanation for the results.\nRespond with a JSON object, with 'text' as the key and the translated sentence as the value.\nText: \"INPUT\"",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"task\":[\n            \"act as a Chinese translator\",\n            \"act as a spelling corrector\",\n            \"act as an improver\"\n        ],\n        \"input_format\":[\n            \"text wrapped in quotes\"\n        ],\n        \"output_format\":[\n            \"JSON object\",\n            \"key as 'text'\",\n            \"value as the translated sentence\"\n        ],\n        \"requirements\":[\n            \"correct errors\",\n            \"translate any language into Chinese\",\n            \"do not provide any explanation\"\n        ]\n    }\n}\n```",
+    "input1": " \"I am very happy to see you today, and I hope you are doing well. Let's meet at the park at 3 PM, if that works for you.\"\n\n",
+    "input2": " \"The weather is really nice this weekend, and I was thinking about going for a hike. Do you want to join me and bring your dog along?\"",
+    "input1_ans": [
+        "{\n  \"text\": \"\u6211\u4eca\u5929\u5f88\u9ad8\u5174\u89c1\u5230\u4f60\uff0c\u5e0c\u671b\u4f60\u4e00\u5207\u90fd\u597d\u3002\u5982\u679c\u4f60\u65b9\u4fbf\u7684\u8bdd\uff0c\u6211\u4eec\u4e0b\u53483\u70b9\u5728\u516c\u56ed\u89c1\u9762\u3002\"\n}",
+        "{\n    \"text\": \"\u6211\u4eca\u5929\u5f88\u9ad8\u5174\u89c1\u5230\u4f60\uff0c\u5e0c\u671b\u4f60\u4e00\u5207\u90fd\u597d\u3002\u5982\u679c\u4f60\u65b9\u4fbf\u7684\u8bdd\uff0c\u6211\u4eec\u4e0b\u53483\u70b9\u5728\u516c\u56ed\u89c1\u9762\u3002\"\n}"
+    ],
+    "input2_ans": [
+        "{\n  \"text\": \"\u8fd9\u4e2a\u5468\u672b\u5929\u6c14\u5f88\u597d\uff0c\u6211\u5728\u8003\u8651\u53bb\u5f92\u6b65\u65c5\u884c\u3002\u4f60\u60f3\u548c\u6211\u4e00\u8d77\u53bb\u5417\uff1f\u53ef\u4ee5\u5e26\u4e0a\u4f60\u7684\u72d7\u3002\"\n}",
+        "{\n    \"text\": \"\u8fd9\u4e2a\u5468\u672b\u5929\u6c14\u5f88\u597d\uff0c\u6211\u5728\u60f3\u53bb\u5f92\u6b65\u65c5\u884c\u3002\u4f60\u60f3\u548c\u6211\u4e00\u8d77\u53bb\u5417\uff1f\u53ef\u4ee5\u5e26\u4e0a\u4f60\u7684\u72d7\u3002\"\n}"
+    ]
+}

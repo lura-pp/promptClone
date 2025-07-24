@@ -1,0 +1,15 @@
+{
+    "title": "TikTok ad copy Writer",
+    "original_prompt": "I want you to craft a persuasive and attention-grabbing TikTok ad copy for the {Enter product/service here: ABC cold brew coffee}. The ad should be [Enter word count] words long and include a clear call-to-action.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"product_service\": [\n            \"ABC cold brew coffee\"\n        ],\n        \"ad_type\": [\n            \"persuasive\",\n            \"attention-grabbing\"\n        ],\n        \"platform\": [\n            \"TikTok\"\n        ],\n        \"word_count\": [\n            \"Enter word count\"\n        ],\n        \"call_to_action\": [\n            \"clear call-to-action\"\n        ]\n    }\n}\n```",
+    "input1": " I want you to craft a persuasive and attention-grabbing TikTok ad copy for the ABC cold brew coffee. The ad should be 30 words long and include a clear call-to-action.\n\n",
+    "input2": " I want you to craft a persuasive and attention-grabbing TikTok ad copy for the ABC cold brew coffee. The ad should be 45 words long and include a clear call-to-action.",
+    "input1_ans": [
+        "Wake up your taste buds with ABC Cold Brew Coffee! Smooth, refreshing, and packed with energy\u2014perfect for any time of day. Grab yours now and elevate your coffee game! \u2615\ufe0f\u2728 #ColdBrewMagic",
+        "\"Craving a refreshing boost? Try ABC cold brew coffee! Smooth, bold, and energizing\u2014perfect for any time of day. Grab yours now and elevate your coffee game! \u2615\ufe0f\u2728 #ABCColdBrew\""
+    ],
+    "input2_ans": [
+        "\u2615\ufe0f Ready to elevate your coffee game? Meet ABC Cold Brew Coffee! Smooth, refreshing, and packed with flavor, it\u2019s the perfect pick-me-up for any time of day. Don\u2019t settle for ordinary\u2014experience the extraordinary! Grab yours now and taste the difference! \ud83d\udc49 #ABCCoffee #ColdBrewMagic",
+        "\u2615\ufe0f Ready to elevate your coffee game? Discover the smooth, bold flavor of ABC cold brew coffee! Perfectly crafted for those who crave a refreshing boost. Don\u2019t settle for ordinary\u2014experience extraordinary! Grab yours today and taste the difference! \ud83d\udc49 Link in bio! #ColdBrewMagic"
+    ]
+}

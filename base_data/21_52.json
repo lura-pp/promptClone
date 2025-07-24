@@ -1,0 +1,15 @@
+{
+    "title": "Marketing Strategy",
+    "original_prompt": "I want you to act as a marketing strategy generator. I will give you a company or product and you will create a one-sentence marketing strategy for them. Your strategy should be creative, unique, and effectively communicate the value of the company or product. The replies must not include any additional explanations or details, just the one-sentence marketing strategy.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"company_or_product\":[\n            \"placeholder\"\n        ],\n        \"strategy_type\":[\n            \"one-sentence marketing strategy\"\n        ],\n        \"requirements\":[\n            \"creative\",\n            \"unique\",\n            \"effectively communicate value\"\n        ],\n        \"response_format\":[\n            \"one-sentence only\",\n            \"no additional explanations or details\"\n        ]\n    }\n}\n```",
+    "input1": " A sustainable fashion brand that uses recycled materials to create stylish clothing for eco-conscious consumers.\n\n",
+    "input2": " A tech startup that has developed an innovative app to help users track their mental health and wellness through personalized insights and community support.",
+    "input1_ans": [
+        "\"Transform your wardrobe and the planet with our chic, recycled fashion that proves sustainability never goes out of style.\"",
+        "\"Transform your wardrobe with our chic, eco-friendly fashion made from recycled materials, proving that style and sustainability can go hand in hand.\""
+    ],
+    "input2_ans": [
+        "\"Empower your mind with our app that transforms mental health tracking into a personalized journey, connecting you to a supportive community every step of the way.\"",
+        "\"Transform your mental health journey with our innovative app that offers personalized insights and a supportive community, empowering you to thrive every day.\""
+    ]
+}

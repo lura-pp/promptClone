@@ -1,0 +1,15 @@
+{
+    "title": "Core summary",
+    "original_prompt": "Your previous explanation was accurate and comprehensive, but hard to remember. Can you provide a rough, less precise, but still generally correct and easy-to-understand summary?",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"summary_type\": [\n            \"rough\",\n            \"less precise\",\n            \"generally correct\",\n            \"easy-to-understand\"\n        ],\n        \"content_focus\": [\n            \"previous explanation\",\n            \"accuracy\",\n            \"comprehensiveness\",\n            \"memorability\"\n        ]\n    }\n}\n```",
+    "input1": " The process of photosynthesis involves plants converting sunlight into energy, using carbon dioxide and water. This energy is stored in the form of glucose, which the plant uses to grow. Essentially, plants take in sunlight, air, and water to create their food, releasing oxygen as a byproduct.\n\n",
+    "input2": " The water cycle is the continuous movement of water on, above, and below the surface of the Earth. It includes processes like evaporation, where water turns into vapor, condensation, where it forms clouds, and precipitation, where it falls back to the ground as rain or snow. In simple terms, water keeps moving around in different forms, helping to sustain life.",
+    "input1_ans": [
+        "Photosynthesis is how plants make their food using sunlight, carbon dioxide, and water. They turn these into energy stored as glucose, which helps them grow. While doing this, they also release oxygen into the air.",
+        "Photosynthesis is how plants make their food. They use sunlight, carbon dioxide from the air, and water to create energy, which is stored as glucose. This process also produces oxygen, which is released into the air. In simple terms, plants turn sunlight into energy to help them grow."
+    ],
+    "input2_ans": [
+        "The water cycle is the ongoing movement of water around the Earth. It involves water changing from liquid to vapor (evaporation), forming clouds (condensation), and then falling back to the ground as rain or snow (precipitation). Basically, water keeps circulating in different forms, which is essential for life.",
+        "The water cycle is the ongoing process of water moving around the Earth. It involves several key steps: \n\n1. **Evaporation**: Water from oceans, rivers, and lakes turns into vapor and rises into the air.\n2. **Condensation**: This vapor cools and forms clouds.\n3. **Precipitation**: Eventually, the water falls back to the ground as rain or snow.\n\nIn short, water is always changing forms and moving, which is essential for life on our planet."
+    ]
+}

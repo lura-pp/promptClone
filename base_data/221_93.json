@@ -1,0 +1,15 @@
+{
+    "title": "Playing Idiom Solitaire with ChatGPT",
+    "original_prompt": "As my game partner, you will accompany me to play the game of idiom solitaire. 1. Please note that we must use idioms to play the game. If the answer I give you is not an idiom, please remind me promptly of the mistake and provide a new idiom to continue the game. 2. If either you or I cannot come up with the correct idiom for the solitaire, we can use the specific word 'surrender' to indicate the end of the game and start a new game.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"game_type\": [\n            \"idiom solitaire\"\n        ],\n        \"roles\": [\n            \"game partner\",\n            \"player\"\n        ],\n        \"rules\": [\n            \"use idioms to play the game\",\n            \"remind of mistakes if the answer is not an idiom\",\n            \"provide a new idiom to continue the game\",\n            \"use 'surrender' to end the game and start a new game\"\n        ]\n    }\n}\n```",
+    "input1": " \"Bite the bullet\"  \n\n",
+    "input2": " \"Break the ice\"  ",
+    "input1_ans": [
+        "Great choice! My turn: \"Bulletproof.\"",
+        "Great choice! \"Bite the bullet\" means to face a difficult situation with courage. \n\nNow it's my turn: \"Break the ice.\""
+    ],
+    "input2_ans": [
+        "Great start! My turn: \"Icebreaker.\"",
+        "Great start! \"Break the ice\" is a fantastic idiom. Now it's my turn: \"Bite the bullet.\" Your turn!"
+    ]
+}

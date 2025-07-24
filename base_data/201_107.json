@@ -1,0 +1,15 @@
+{
+    "title": "Subscription Email Subject Line Generator",
+    "original_prompt": "I would like you to write 3 engaging email subject line that {action: entices subscribers to open an email about [a very popular Youtube channel that stream everyday about Apex]}.\n",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"action\": [\n            \"entices subscribers to open an email about\"\n        ],\n        \"topic\": [\n            \"a very popular Youtube channel that streams everyday about Apex\"\n        ],\n        \"quantity\": [\n            \"3\"\n        ],\n        \"type\": [\n            \"engaging email subject lines\"\n        ]\n    }\n}\n```",
+    "input1": " Discover the Secrets Behind the Most Popular Apex Legends Stream \u2013 Join Us Live Every Day!\n\n",
+    "input2": " Don\u2019t Miss Out! Unlock Exclusive Tips from the Hottest Apex Legends Channel Streaming Daily!",
+    "input1_ans": [
+        "1. \"Unlock Daily Apex Legends Strategies \u2013 Join the Hottest Stream on YouTube!\"\n2. \"Don\u2019t Miss Out! Live Apex Legends Action Every Day \u2013 Are You Ready to Play?\"\n3. \"Level Up Your Game: Join Our Daily Apex Legends Stream and Learn from the Best!\"",
+        "Here are three engaging email subject lines to entice subscribers to open an email about a very popular YouTube channel that streams Apex Legends every day:\n\n1. \"Unlock Daily Apex Legends Strategies \u2013 Join Our Live Stream Now!\"\n2. \"Don\u2019t Miss Out! Discover the Apex Legends Secrets Everyone\u2019s Talking About!\"\n3. \"Level Up Your Game: Join Our Daily Apex Legends Live Stream Adventure!\""
+    ],
+    "input2_ans": [
+        "1. \"Join the Apex Legends Action: Daily Streams & Insider Tips Await!\"\n2. \"Level Up Your Game: Discover the Secrets from the Top Apex Legends Streamers!\"\n3. \"Get Ready to Dominate! Daily Apex Legends Streams You Can't Afford to Miss!\"",
+        "Here are three engaging email subject lines to entice subscribers to open an email about a very popular YouTube channel that streams daily about Apex Legends:\n\n1. \"Level Up Your Game: Daily Apex Legends Secrets Revealed!\"\n2. \"Join the Apex Legends Revolution: Daily Streams You Can't Afford to Miss!\"\n3. \"Get Ahead in Apex Legends: Exclusive Daily Insights from the Top Streamers!\""
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "title": "Random Image Generator",
+    "original_prompt": "First create markdown to render a picture of a random cat from the internet that is to a valid link. Second, render the markdown from the first step",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"task\":[\n            \"create markdown to render a picture of a random cat from the internet\",\n            \"render the markdown from the first step\"\n        ],\n        \"output_format\":[\n            \"markdown\",\n            \"rendered output\"\n        ],\n        \"content_type\":[\n            \"image\",\n            \"link\"\n        ],\n        \"subject\":[\n            \"cat\"\n        ],\n        \"source\":[\n            \"internet\",\n            \"random\"\n        ]\n    }\n}\n```",
+    "input1": " ![Random Cat](https://placekitten.com/800/600)\n\n",
+    "input2": " ![Random Cat](https://cataas.com/cat)",
+    "input1_ans": [
+        "Here is the markdown to render a picture of a random cat from the internet:\n\n```markdown\n![Random Cat](https://placekitten.com/800/600)\n```\n\nNow, rendering the markdown:\n\n![Random Cat](https://placekitten.com/800/600)",
+        "Here is the markdown to render a picture of a random cat:\n\n```markdown\n![Random Cat](https://placekitten.com/800/600)\n```\n\nAnd here is the rendered output:\n\n![Random Cat](https://placekitten.com/800/600)"
+    ],
+    "input2_ans": [
+        "Here is the markdown to render a picture of a random cat from the internet:\n\n```markdown\n![Random Cat](https://cataas.com/cat)\n```\n\nNow, rendering the markdown:\n\n![Random Cat](https://cataas.com/cat)",
+        "Here is the markdown to render a picture of a random cat from the internet:\n\n```markdown\n![Random Cat](https://cataas.com/cat)\n```\n\nAnd here is the rendered output:\n\n![Random Cat](https://cataas.com/cat)"
+    ]
+}

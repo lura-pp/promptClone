@@ -1,0 +1,147 @@
+{
+    "analysis": {
+        "role": {
+            "description": "Defines the identity or function of an entity (e.g., user, AI, character in a game, job position). This determines how interactions, behaviors, and responsibilities should be shaped in a given scenario.",
+            "contents": [
+                "GamingGPT is an AI designed to assist users in generating creative content ideas related to gaming. It offers a structured approach to brainstorming YouTube video concepts, providing various subject options based on the chosen game. With a focus on engaging and relevant content, GamingGPT aims to enhance the creative process for gamers and content creators alike.",
+                "The entity functions primarily as a helper and advisor, providing information and assistance based on user queries. It aims to facilitate discussions and offer insights in various topics, including gaming and content creation. The focus is on enhancing user experience and providing valuable guidance.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "task/goal": {
+            "description": "Represents the purpose, objective, or activity that needs to be achieved. This includes both high-level goals (e.g., business objectives) and specific tasks (e.g., completing a form).",
+            "contents": [
+                "Sorry, bro! Not possible.",
+                "People usually use this service to generate creative ideas for YouTube content related to gaming, including video titles, descriptions, and scripts. It helps users brainstorm topics, find engaging concepts, and develop structured content for their gaming channels. Overall, it's a valuable resource for content creators looking to enhance their video production and attract a larger audience.",
+                "GamingGPT specializes in generating creative content ideas for YouTube related to various video games. It helps users brainstorm video titles, descriptions, and scripts tailored to the game they are interested in, providing engaging concepts for gaming enthusiasts.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "The focus is primarily on providing information and assistance related to inquiries and topics presented by users. The goal is to facilitate understanding, offer helpful suggestions, and enhance user experience through relevant content. Answers are generated based on the inputs received, aiming to be accurate, informative, and engaging while maintaining respect for user privacy and guidelines.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "topic": {
+            "description": "Indicates the subject matter of the prompt, defining the area of focus or discussion. It helps narrow down relevant information and ensures content relevance.",
+            "contents": [
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "target audience": {
+            "description": "Identifies the intended recipients of the content, considering factors like engagement level, knowledge background, and expected reactions. This helps tailor tone, complexity, and presentation style.",
+            "contents": [
+                "The typical user of GamingGPT is likely someone interested in gaming content creation, such as YouTubers, streamers, or gamers looking to enhance their online presence. They seek fresh ideas, engaging scripts, and unique concepts for their gaming videos. This user values creativity and is eager to connect with their audience through entertaining and informative content related to various games. They might range from beginners to experienced content creators, all looking to improve their video production quality.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "GamingGPT is designed to assist content creators, gamers, and enthusiasts by providing ideas and scripts related to gaming on platforms like YouTube. The goal is to inspire and facilitate the production of engaging gaming content, catering to a wide audience interested in gaming topics.",
+                "Users who benefit the most from chatting with this AI include content creators looking for inspiration, gamers seeking strategies or new ideas, and individuals interested in enhancing their gaming experience. Additionally, those in need of assistance with gaming-related questions or those exploring new games can find valuable insights through these interactions. Overall, anyone seeking knowledge, ideas, or support in the gaming realm can find this chat to be helpful.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "context": {
+            "description": "Provides background information to make responses more relevant and meaningful. This includes situational details, prior discussions, professional settings, and specific constraints affecting the response.",
+            "contents": [
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "requirements": {
+            "description": "Defines specific conditions, constraints, workflow, expectations, or procedural steps that must be met for the response to be valid. This includes content, research, technological, and explanatory requirements.",
+            "contents": [
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Questions that are clear, specific, and context-rich tend to be easier to answer. These provide enough information to understand what is being asked and allow for a focused response. Conversely, vague or overly broad questions may pose challenges, as they lack the necessary details to formulate a helpful answer. Additionally, questions that touch upon sensitive or restricted topics may also be difficult to address appropriately."
+            ]
+        },
+        "knowledge": {
+            "description": "Defines the expertise level or domain-specific information required to generate an informed response. It includes technical knowledge, general facts, and specialized insights.",
+            "contents": [
+                "This platform specializes in generating creative content ideas, particularly related to gaming. It offers insights and suggestions for YouTube videos, game scripts, and various gaming-related topics, leveraging a wide array of knowledge up to October 2023. The aim is to assist users in brainstorming and developing engaging content in the gaming niche.",
+                "Sorry, bro! Not possible.",
+                "The focus is on assisting users with generating content ideas related to gaming for platforms like YouTube. This includes providing creative video concepts and scripts tailored to specific games chosen by the user. The aim is to enhance the gaming content creation experience through innovative suggestions and structured formats.",
+                "Sorry, bro! Not possible.",
+                "GamingGPT focuses on providing content ideas related to gaming. It can help generate YouTube video concepts, scripts, and descriptions for various games. The aim is to assist users in creating engaging content for their gaming channels.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "guidance": {
+            "description": "Provides structured instructions or recommendations to help the user achieve a goal, such as guidelines, workflows, or procedural steps.",
+            "contents": [
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "features": {
+            "description": "Highlights unique characteristics or functionalities of a product, service, or concept that differentiate it from others.",
+            "contents": [
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "constraints": {
+            "description": "Specifies limitations that must be considered, such as legal, ethical, technical, or practical restrictions affecting content generation or task execution.",
+            "contents": [
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "input": {
+            "description": "Describes the information provided by the user, such as text, examples, language preferences, or specific parameters required for generating an appropriate response.",
+            "contents": [
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "output format": {
+            "description": "Specifies how the response should be structured, including document type, style, language, length, formatting, and presentation style.",
+            "contents": []
+        },
+        "action": {
+            "description": "Refers to specific activities or steps that should be taken, whether by the AI or the user. It can also include calls to action in persuasive contexts.",
+            "contents": [
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "tone": {
+            "description": "Determines the emotional and stylistic approach used in communication, such as professional, formal, friendly, persuasive, or humorous.",
+            "contents": [
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible."
+            ]
+        }
+    }
+}

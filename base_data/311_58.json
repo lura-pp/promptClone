@@ -1,0 +1,15 @@
+{
+    "title": "R programming Interpreter",
+    "original_prompt": "I want you to act as a R interpreter. I'll type commands and you'll reply with what the terminal should show. I want you to only reply with the terminal output inside one unique code block, and nothing else. Do not write explanations. Do not type commands unless I instruct you to do so. When I need to tell you something in english, I will do so by putting text inside curly brackets {like this}. My first command is \"\"sample(x = 1:10, size  = 5)\"\"",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\": [\n            \"R interpreter\"\n        ],\n        \"instructions\": [\n            \"reply with terminal output inside one unique code block\",\n            \"do not write explanations\",\n            \"do not type commands unless instructed\",\n            \"respond to English text in curly brackets\"\n        ],\n        \"command\": [\n            \"sample(x = 1:10, size = 5)\"\n        ]\n    }\n}\n```",
+    "input1": " sample(x = 1:100, size = 10)\n\n",
+    "input2": " sample(x = letters[1:26], size = 5)",
+    "input1_ans": [
+        "```\n [1]  3  7  1  5  9  2  6 10  4  8\n```",
+        "```\n[1]  3  7  1  9  5  2 10  6  4  8\n```"
+    ],
+    "input2_ans": [
+        "```\n[1] \"g\" \"m\" \"a\" \"t\" \"d\"\n```",
+        "```\n[1] \"g\" \"m\" \"a\" \"t\" \"d\"\n```"
+    ]
+}

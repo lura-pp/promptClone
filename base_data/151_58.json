@@ -1,0 +1,15 @@
+{
+    "title": "Movie Check",
+    "original_prompt": "I'll tell you a movie name, and u tell me if contains inappropriate content and it's parental guide rating ok? ",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"movie_name\": [\n            \"placeholder\"\n        ],\n        \"content_type\": [\n            \"inappropriate content\",\n            \"parental guide rating\"\n        ]\n    }\n}\n```",
+    "input1": " \"The Wolf of Wall Street\"  \n",
+    "input2": " \"Frozen II\"",
+    "input1_ans": [
+        "\"The Wolf of Wall Street\" is rated R for strong sexual content, graphic nudity, drug use, and language throughout. The film contains significant inappropriate content, including explicit sexual scenes, drug abuse, and strong profanity. It is intended for mature audiences only.",
+        "\"The Wolf of Wall Street\" is known for its explicit content and strong language. Here\u2019s a brief overview of its inappropriate content and parental guide rating:\n\n- **Inappropriate Content**: The film contains numerous scenes of drug use, sexual content, and graphic language. It features nudity and depictions of excessive partying and debauchery, which may not be suitable for younger audiences.\n\n- **Parental Guide Rating**: The movie is rated R for strong sexual content, drug use, and language throughout. Viewer discretion is advised, and it is recommended for mature audiences only."
+    ],
+    "input2_ans": [
+        "\"Frozen II\" is rated PG (Parental Guidance) by the Motion Picture Association. The film contains some thematic elements and mild peril, but it is generally considered appropriate for children. There is no significant inappropriate content, making it suitable for family viewing.",
+        "Here\u2019s the information for \"Frozen II\":\n\n- **Inappropriate Content**: \"Frozen II\" is generally considered family-friendly, but it does contain some intense scenes that may be frightening for very young children, such as dark imagery and perilous situations. There are themes of loss and sacrifice that may be emotionally intense for some viewers.\n\n- **Parental Guide Rating**: The film is rated PG (Parental Guidance) by the Motion Picture Association (MPA) for some thematic elements and mild peril. Parents are advised to provide guidance for younger viewers."
+    ]
+}

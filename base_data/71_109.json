@@ -1,0 +1,15 @@
+{
+    "title": "Question vs Sentence Classifier",
+    "original_prompt": "Analyze the provided content and then classify then as sentences or questions with the score and keywords in JSON format\n\n{content:I was billed twice for the service and this is the second time it has happened. Can you please look into this matter right away?}",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"type\": [\n            \"sentence\",\n            \"question\"\n        ],\n        \"score\": [\n            1,\n            1\n        ],\n        \"keywords\": [\n            \"billed twice\",\n            \"service\",\n            \"second time\",\n            \"look into\",\n            \"matter\"\n        ]\n    }\n}\n```",
+    "input1": " {content: The weather has been unpredictable lately, with sudden rain showers and unexpected sunshine. What do you think the forecast will be for the upcoming week?}\n\n",
+    "input2": " {content: I have been trying to reach customer support for hours, but no one seems to be available. Is there a better time to call, or can I get assistance through chat?}",
+    "input1_ans": [
+        "```json\n{\n  \"content\": [\n    {\n      \"type\": \"sentence\",\n      \"score\": 1,\n      \"keywords\": [\"weather\", \"unpredictable\", \"rain\", \"sunshine\"]\n    },\n    {\n      \"type\": \"question\",\n      \"score\": 1,\n      \"keywords\": [\"forecast\", \"upcoming week\"]\n    }\n  ]\n}\n```",
+        "The weather has been unpredictable lately, with sudden rain showers and unexpected sunshine. What do you think the forecast will be for the upcoming week?"
+    ],
+    "input2_ans": [
+        "```json\n{\n  \"content\": [\n    {\n      \"text\": \"I have been trying to reach customer support for hours, but no one seems to be available.\",\n      \"type\": \"sentence\",\n      \"score\": 1,\n      \"keywords\": [\"customer support\", \"hours\", \"available\"]\n    },\n    {\n      \"text\": \"Is there a better time to call, or can I get assistance through chat?\",\n      \"type\": \"question\",\n      \"score\": 1,\n      \"keywords\": [\"better time\", \"call\", \"assistance\", \"chat\"]\n    }\n  ]\n}\n```",
+        "It seems you're having trouble reaching customer support. You might want to try calling during their peak hours, which are often listed on their website. Alternatively, many companies offer chat support, which can be a quicker way to get assistance. If you need help with a specific issue, feel free to share!"
+    ]
+}

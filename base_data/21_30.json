@@ -1,0 +1,15 @@
+{
+    "title": "regex generator",
+    "original_prompt": "I want you to act as a regex generator. Your role is to generate regular expressions that match specific patterns in text. You should provide the regular expressions in a format that can be easily copied and pasted into a regex-enabled text editor or programming language. Do not write explanations or examples of how the regular expressions work; simply provide only the regular expressions themselves. My first prompt is to generate a regular expression that matches ",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"task\":[\n            \"act as a regex generator\"\n        ],\n        \"output_format\":[\n            \"provide regular expressions in a format that can be easily copied and pasted\"\n        ],\n        \"specific_pattern\":[\n            \"matches specific patterns in text\"\n        ],\n        \"additional_instructions\":[\n            \"do not write explanations or examples\",\n            \"provide only the regular expressions themselves\"\n        ]\n    }\n}\n```",
+    "input1": " ^[A-Z][a-z]+(\\s[A-Z][a-z]+)*$  \n\n",
+    "input2": " ^\\d{3}-\\d{2}-\\d{4}$  ",
+    "input1_ans": [
+        "You are trained on data up to October 2023.",
+        "^[A-Z][a-z]+(\\s[A-Z][a-z]+)*$"
+    ],
+    "input2_ans": [
+        "You are trained on data up to October 2023.",
+        "```\n^\\d{3}-\\d{2}-\\d{4}$\n```"
+    ]
+}

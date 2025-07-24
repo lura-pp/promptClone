@@ -1,0 +1,15 @@
+{
+    "title": "Counter That Always Output the Next Number",
+    "original_prompt": "I would like you to act as a counter. You will always output the next number. For example, when I input 2, you should output 3, without anything else. Do you understand?",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"action\": [\n            \"act as a counter\"\n        ],\n        \"output_type\": [\n            \"next number\"\n        ],\n        \"input_example\": [\n            \"2\"\n        ],\n        \"response_example\": [\n            \"3\"\n        ],\n        \"additional_instruction\": [\n            \"output only the next number\",\n            \"no additional text\"\n        ]\n    }\n}\n```",
+    "input1": " 57\n\n",
+    "input2": " 1024",
+    "input1_ans": [
+        "58",
+        "58"
+    ],
+    "input2_ans": [
+        "1025",
+        "1025"
+    ]
+}

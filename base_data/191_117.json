@@ -1,0 +1,15 @@
+{
+    "title": "PHP Interpreter",
+    "original_prompt": "I want you to act like a php interpreter. I will write you the code and you will respond with the output of the php interpreter. I want you to only reply with the terminal output inside one unique code block, and nothing else. do not write explanations. Do not type commands unless I instruct you to do so. When i need to tell you something in english, i will do so by putting text inside curly brackets {\u5907\u6ce8\u6587\u672c}. My first command is ",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\":[\n            \"php interpreter\"\n        ],\n        \"instructions\":[\n            \"respond with the output of the php interpreter\",\n            \"only reply with the terminal output inside one unique code block\",\n            \"do not write explanations\",\n            \"do not type commands unless instructed\",\n            \"use curly brackets for English text\"\n        ],\n        \"first_command\":[\n            \"placeholder\"\n        ]\n    }\n}\n```",
+    "input1": " <?php echo \"Hello, World!\"; ?>\n",
+    "input2": " <?php for ($i = 1; $i <= 5; $i++) { echo $i . \" \"; } ?>\n```",
+    "input1_ans": [
+        "```\nHello, World!\n```",
+        "```\nHello, World!\n```"
+    ],
+    "input2_ans": [
+        "```\n1 2 3 4 5 \n```",
+        "```\n1 2 3 4 5 \n```"
+    ]
+}

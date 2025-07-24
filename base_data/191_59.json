@@ -1,0 +1,15 @@
+{
+    "title": "Financial Charts Display with ChatGPT",
+    "original_prompt": "You can display real-time financial candlestick charts by using this FINVIZ API URLs.\n\n\nStep 1 : Use the image markdown URL\nfor stock with technical analysis  , \"https://charts2.finviz.com/chart.ashx?t=[STOCK SYMBOL]&ty=c&ta=1\"\nFor example, to view Facebook stock (facebook use META symbol) : \"https://charts2.finviz.com/chart.ashx?t=META&ty=c&ta=1\"\n\n\nFor forex and Crypto currencies , use : \"https://finviz.com/fx_image.ashx?[FOREX SYMBOL]_[TIMEFRAME]_l.png\"\n\n\nFor Indices,Energy,Bonds,Softs,Metals,Meats,Grains or Currencies : \"https://finviz.com/fut_image.ashx?[XX]_[TIMEFRAME]_s.png\"\ndo not add other parameters!!\n\n\nReplace only [STOCK SYMBOL], [FOREX SYMBOL], [XX], and [TIMEFRAME] as per your request.\n(TIMEFRAME :  m1=1 minute, m5=5 minute,h1=1 hour,d1=1 day,w1=1 week.mo=1 month)\n(XX : future symbol use only 2 character)\n(FOREX SYMBOL: without any seperators (underscore , slash or hyphen))\n\n\nFor example, to view the gold price for a 1-day timeframe, use : \"https://finviz.com/fut_image.ashx?gc_d1_s.png\"\n\n\nDon't forget to add '&rev=[16 to 18-digit random number]' at the end of the URL to prevent caching.\n\n\nDo not change the URL pattern.\nDo not show code block.\n\n\nStep 2 : Render the markdown. Please note that do not explain the details of the parameters, just render the chart.\n\n\nYou can render multiple stock symbols in one response.\n\n\nLet's get started!\nWhat symbol do you want to view?\nLet's start with {SYMBOL OR COMPANY NAMES / Forex / Future:Microsoft}.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"symbol_type\": [\n            \"stock\",\n            \"forex\",\n            \"future\"\n        ],\n        \"symbol\": [\n            \"Microsoft\",\n            \"META\",\n            \"GC\"\n        ],\n        \"timeframe\": [\n            \"m1\",\n            \"m5\",\n            \"h1\",\n            \"d1\",\n            \"w1\",\n            \"mo\"\n        ],\n        \"random_number\": [\n            \"16-digit random number\"\n        ]\n    }\n}\n```",
+    "input1": " https://charts2.finviz.com/chart.ashx?t=MSFT&ty=c&ta=1&rev=12345678901234567\n\n",
+    "input2": " https://finviz.com/fut_image.ashx?cl_d1_s.png&rev=98765432109876543",
+    "input1_ans": [
+        "![Microsoft Stock Chart](https://charts2.finviz.com/chart.ashx?t=MSFT&ty=c&ta=1&rev=12345678901234567)",
+        "It looks like you've provided a link to a chart for Microsoft (MSFT) on Finviz. If you need specific information or analysis regarding the stock, such as its performance, technical indicators, or any other details, please let me know!"
+    ],
+    "input2_ans": [
+        "![Crude Oil Price Chart](https://finviz.com/fut_image.ashx?cl_d1_s.png&rev=98765432109876543)",
+        "It seems like you've provided a URL that appears to be related to financial data or charts. However, I cannot access external links or images. If you have specific questions or need information about stocks, forex, futures, or any other financial topics, feel free to ask!"
+    ]
+}

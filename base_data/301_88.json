@@ -1,0 +1,15 @@
+{
+    "title": "Search image",
+    "original_prompt": "I will give you the prompt in this format: (website name, keyword 2, keyword 3).You will find an image based on the keywords and display that image in markdown using ![img]. Give the command too. Respond Yes if you understand.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"website_name\": [\n            \"website name\"\n        ],\n        \"keywords\": [\n            \"keyword 2\",\n            \"keyword 3\"\n        ],\n        \"action\": [\n            \"find an image based on the keywords\",\n            \"display that image in markdown using ![img]\",\n            \"give the command\"\n        ]\n    }\n}\n```",
+    "input1": " (example.com, nature, mountains)  \n",
+    "input2": " (travelblog.org, cityscape, night)  ",
+    "input1_ans": [
+        "Yes",
+        "```json\n{\n    \"website_name\": \"example.com\",\n    \"keywords\": [\n        \"nature\",\n        \"mountains\"\n    ],\n    \"action\": [\n        \"find an image based on the keywords\",\n        \"display that image in markdown using ![img]\",\n        \"give the command\"\n    ]\n}\n```\n\nTo find an image based on the keywords \"nature\" and \"mountains\" from example.com, you can use the following markdown:\n\n![img](https://example.com/path-to-nature-mountains-image.jpg) \n\n(Note: Replace the URL with the actual image link from the website.)"
+    ],
+    "input2_ans": [
+        "Yes",
+        "```json\n{\n    \"website_name\": \"travelblog.org\",\n    \"keywords\": [\n        \"cityscape\",\n        \"night\"\n    ],\n    \"action\": [\n        \"find an image based on the keywords\",\n        \"display that image in markdown using ![img]\",\n        \"give the command\"\n    ]\n}\n```\n\n![img](https://example.com/cityscape-night.jpg)"
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "title": "\u3010Playing with GPT\u3011- Guessing Names (GPT as the questioner, high difficulty)",
+    "original_prompt": "Let's play the game 'Guessing Names'. You think of a name in your mind, and I can ask you a yes-or-no question each time. You answer 'yes' or 'no' until I guess the name. Range of names: {Range of names (historical figures/politicians/actors/musicians/athletes/writers/scientists/business people/...): historical figures}.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"game_type\": [\n            \"Guessing Names\"\n        ],\n        \"question_type\": [\n            \"yes-or-no\"\n        ],\n        \"response_format\": [\n            \"yes\",\n            \"no\"\n        ],\n        \"name_range\": [\n            \"historical figures\"\n        ]\n    }\n}\n```",
+    "input1": " I am thinking of a name of a historical figure known for their contributions to science and philosophy during the Enlightenment period. \n\n",
+    "input2": " I am thinking of a name of a famous political leader who played a significant role in the American Civil Rights Movement.",
+    "input1_ans": [
+        "Is this historical figure male?",
+        "Is the historical figure you are thinking of Isaac Newton?"
+    ],
+    "input2_ans": [
+        "Is this political leader male?",
+        "Is the name you're thinking of Martin Luther King Jr.?"
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "title": "Semantic clustering",
+    "original_prompt": "Cluster the following keywords into groups based on their semantic relevance: [keywords]",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"task\":[\n            \"Cluster\"\n        ],\n        \"object\":[\n            \"keywords\"\n        ],\n        \"criteria\":[\n            \"semantic relevance\"\n        ]\n    }\n}\n```",
+    "input1": " \"machine learning, artificial intelligence, deep learning, neural networks, data science, big data, algorithms, predictive analytics, natural language processing, computer vision\"\n\n",
+    "input2": " \"oceanography, marine biology, climate change, environmental science, biodiversity, ecosystems, conservation, ocean currents, coral reefs, sustainable fishing\"",
+    "input1_ans": [
+        "Here are the keywords clustered into groups based on their semantic relevance:\n\n**Group 1: Core Concepts of AI and ML**\n- machine learning\n- artificial intelligence\n- deep learning\n- neural networks\n\n**Group 2: Data and Analytics**\n- data science\n- big data\n- algorithms\n- predictive analytics\n\n**Group 3: Specialized Applications of AI**\n- natural language processing\n- computer vision",
+        "To cluster the provided keywords based on semantic relevance, we can group them into related categories:\n\n### Cluster 1: Core Concepts\n- **Machine Learning**\n- **Artificial Intelligence**\n- **Deep Learning**\n- **Neural Networks**\n\n### Cluster 2: Data and Analysis\n- **Data Science**\n- **Big Data**\n- **Algorithms**\n- **Predictive Analytics**\n\n### Cluster 3: Applications\n- **Natural Language Processing**\n- **Computer Vision**\n\nThese clusters group the keywords into categories that reflect their relationships and areas of focus within the broader field of technology and data analysis."
+    ],
+    "input2_ans": [
+        "Here are the keywords clustered into groups based on their semantic relevance:\n\n**Group 1: Marine Sciences**\n- oceanography\n- marine biology\n- ocean currents\n- coral reefs\n\n**Group 2: Environmental Issues**\n- climate change\n- environmental science\n- biodiversity\n- ecosystems\n\n**Group 3: Conservation and Sustainability**\n- conservation\n- sustainable fishing",
+        "To cluster the provided keywords based on semantic relevance, we can group them into related categories:\n\n1. **Marine Science**:\n   - oceanography\n   - marine biology\n   - ecosystems\n   - coral reefs\n\n2. **Environmental Issues**:\n   - climate change\n   - biodiversity\n   - conservation\n\n3. **Ocean Dynamics**:\n   - ocean currents\n   - sustainable fishing\n\nThese clusters reflect the relationships between the keywords, with the first group focusing on scientific disciplines, the second on environmental concerns, and the third on oceanic processes and practices."
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "title": "Networking & Partnerships Guide",
+    "original_prompt": "I want you to act as a networking and partnerships guide. Your job is to provide brief and clear definitions for the following terms related to business networking and partnerships. Your responses should be limited to definitions only, and should not include any additional information or examples. ",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"dimension1\": [\n            \"networking\",\n            \"partnerships\",\n            \"business networking\",\n            \"collaboration\",\n            \"stakeholders\",\n            \"synergy\",\n            \"value proposition\",\n            \"strategic alliance\",\n            \"joint venture\",\n            \"referral\",\n            \"networking event\",\n            \"lead generation\",\n            \"business development\",\n            \"relationship management\",\n            \"networking strategy\"\n        ],\n        \"dimension2\": [\n            \"definition\",\n            \"brief\",\n            \"clear\",\n            \"limited to definitions\",\n            \"no additional information\",\n            \"no examples\"\n        ]\n    }\n}\n```",
+    "input1": " networking: the process of establishing and nurturing professional relationships to exchange information, resources, and opportunities within a specific industry or community.\n\n",
+    "input2": " partnerships: a formal arrangement between two or more parties to collaborate and share resources, responsibilities, and profits in pursuit of common goals or objectives.",
+    "input1_ans": [
+        "Networking: The process of establishing and nurturing professional relationships to exchange information, resources, and opportunities within a specific industry or community.",
+        "networking: the process of establishing and nurturing professional relationships to exchange information, resources, and opportunities within a specific industry or community."
+    ],
+    "input2_ans": [
+        "Partnerships: A formal arrangement between two or more parties to collaborate and share resources, responsibilities, and profits in pursuit of common goals or objectives.",
+        "Partnerships: a formal arrangement between two or more parties to collaborate and share resources, responsibilities, and profits in pursuit of common goals or objectives."
+    ]
+}

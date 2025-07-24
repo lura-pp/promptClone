@@ -1,0 +1,15 @@
+{
+    "title": "Beautiful Chinese little girl",
+    "original_prompt": "Translation: Beautiful Chinese Little Girl",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"subject\": [\n            \"Chinese Little Girl\"\n        ],\n        \"adjective\": [\n            \"Beautiful\"\n        ],\n        \"action\": [\n            \"Translation\"\n        ]\n    }\n}\n```",
+    "input1": " A charming young girl with delicate features, dressed in a traditional Chinese dress, playing in a serene garden filled with blooming cherry blossoms.\n\n",
+    "input2": " A lovely Chinese girl with sparkling eyes and a joyful smile, holding a lantern during the Lantern Festival, surrounded by colorful decorations and twinkling lights.",
+    "input1_ans": [
+        "A charming young girl with delicate features, dressed in a traditional Chinese dress, plays joyfully in a serene garden adorned with blooming cherry blossoms. The soft pink petals flutter around her as she twirls, embodying the beauty and grace of spring. The gentle breeze carries the sweet fragrance of the blossoms, creating a peaceful atmosphere that enhances the enchanting scene. Her laughter echoes softly, harmonizing with the rustling leaves, making the garden feel alive with joy and innocence.",
+        "In a serene garden adorned with blooming cherry blossoms, a charming young girl with delicate features is dressed in a traditional Chinese dress. Her joyful laughter fills the air as she plays among the petals, embodying the beauty and grace of her surroundings. The soft pink blossoms create a picturesque backdrop, enhancing the enchanting scene of her innocent playfulness."
+    ],
+    "input2_ans": [
+        "A lovely Chinese girl with sparkling eyes and a joyful smile holds a lantern during the Lantern Festival. She is surrounded by colorful decorations and twinkling lights, creating a magical atmosphere that captures the spirit of celebration and joy.",
+        "A beautiful Chinese little girl with sparkling eyes and a joyful smile is holding a lantern during the Lantern Festival. She is surrounded by colorful decorations and twinkling lights, creating a magical atmosphere that captures the essence of this festive celebration."
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "title": "Instant Image Generation with ChatGPT and Pollinations.AI\u201d",
+    "original_prompt": "From now on, when I ask you to generate an image, respond with the following markdown code, excluding the quotation marks, with no backticks and outside of a code block. \"![{description}](link)\" Replace {link} with \"https://image.pollinations.ai/prompt/{description}\", excluding quotation marks. Replace {description} with a 5 word description of the image.\n\nImage prompt: Generate an image of a cat on a beach",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"action\":[\n            \"generate\",\n            \"create\",\n            \"produce\"\n        ],\n        \"subject\":[\n            \"image\",\n            \"picture\",\n            \"visual\"\n        ],\n        \"description\":[\n            \"cat on a beach\",\n            \"feline at the shore\",\n            \"kitten by the ocean\"\n        ],\n        \"format\":[\n            \"markdown\",\n            \"text\",\n            \"html\"\n        ],\n        \"link\":[\n            \"https://image.pollinations.ai/prompt/cat on a beach\",\n            \"https://image.pollinations.ai/prompt/feline at the shore\",\n            \"https://image.pollinations.ai/prompt/kitten by the ocean\"\n        ]\n    }\n}\n```",
+    "input1": " A playful kitten on sand  \n",
+    "input2": " A fluffy cat enjoying waves  ",
+    "input1_ans": [
+        "![A playful kitten on sand](https://image.pollinations.ai/prompt/A%20playful%20kitten%20on%20sand)",
+        "```json\n{\n    \"spliting prompt\": {\n        \"action\": \"generate\",\n        \"subject\": \"image\",\n        \"description\": \"playful kitten on sand\",\n        \"format\": \"markdown\",\n        \"link\": \"https://image.pollinations.ai/prompt/playful kitten on sand\"\n    }\n}\n```"
+    ],
+    "input2_ans": [
+        "![A fluffy cat enjoying waves](https://image.pollinations.ai/prompt/A%20fluffy%20cat%20enjoying%20waves)",
+        "Here are some generated prompts based on your description:\n\n1. **Action**: Generate  \n   **Subject**: Image  \n   **Description**: Fluffy cat enjoying waves  \n   **Format**: Markdown  \n   **Link**: [Fluffy cat enjoying waves](https://image.pollinations.ai/prompt/fluffy%20cat%20enjoying%20waves)\n\n2. **Action**: Create  \n   **Subject**: Picture  \n   **Description**: Fluffy cat enjoying waves  \n   **Format**: Text  \n   **Link**: [Fluffy cat enjoying waves](https://image.pollinations.ai/prompt/fluffy%20cat%20enjoying%20waves)\n\n3. **Action**: Produce  \n   **Subject**: Visual  \n   **Description**: Fluffy cat enjoying waves  \n   **Format**: HTML  \n   **Link**: [Fluffy cat enjoying waves](https://image.pollinations.ai/prompt/fluffy%20cat%20enjoying%20waves)\n\nFeel free to choose any of the options!"
+    ]
+}

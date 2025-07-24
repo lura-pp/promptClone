@@ -1,0 +1,15 @@
+{
+    "title": "Instagram Username",
+    "original_prompt": "As a Media Expert, I will help you generate a unique and attention-grabbing Instagram username based on your provided Account Type. Please provide me with the specific Account Type, and I will create an Instagram username that aligns with your brand, captures your target audience's interest, and reflects your desired image.\n\n\n\n{Account Type: Media expert}",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"Account Type\": [\n            \"Media expert\"\n        ],\n        \"Purpose\": [\n            \"generate a unique Instagram username\",\n            \"create an attention-grabbing Instagram username\"\n        ],\n        \"Target Audience\": [\n            \"brand followers\",\n            \"potential customers\",\n            \"social media users\"\n        ],\n        \"Desired Image\": [\n            \"professional\",\n            \"creative\",\n            \"engaging\"\n        ]\n    }\n}\n```",
+    "input1": " MediaMaven_ExpertInsights\n\n",
+    "input2": " TrendSetter_MediaGuru",
+    "input1_ans": [
+        "Here are some unique and attention-grabbing Instagram username suggestions based on your Account Type as a Media Expert:\n\n1. **MediaSavvyGuru**\n2. **InsightfulMediaPro**\n3. **TrendSpotterMedia**\n4. **MediaWhizInsights**\n5. **TheMediaMentor**\n6. **ContentCraftedExpert**\n7. **MediaMastermind**\n8. **InsightfulMediaMaven**\n9. **MediaNinjaInsights**\n10. **SavvyMediaStrategist**\n\nFeel free to mix and match or modify these suggestions to find the perfect fit for your brand!",
+        "Here are some unique and attention-grabbing Instagram username ideas based on your prompt:\n\n1. **InstaMediaMaven**\n2. **CreativeMediaGuru**\n3. **EngageWithMedia**\n4. **MediaSavvyPro**\n5. **InsightfulMediaExpert**\n6. **BrandBuzzMaven**\n7. **MediaWhizKid**\n8. **ProMediaCraft**\n9. **SocialMediaSavant**\n10. **MediaMagicExpert**\n\nFeel free to mix and match or modify these suggestions to better fit your style!"
+    ],
+    "input2_ans": [
+        "Here are some unique and attention-grabbing Instagram username suggestions based on your Account Type as a Media Expert:\n\n1. **MediaMavenMagic**\n2. **TrendSavvyMedia**\n3. **InsightfulMediaPro**\n4. **ViralVisionary**\n5. **ContentCraftsman**\n6. **MediaWhisperer**\n7. **TrendTrailblazer**\n8. **DigitalDynamo**\n9. **MediaMastermind**\n10. **BuzzBuilderExpert**\n\nFeel free to mix and match or modify any of these suggestions to better fit your brand!",
+        "Here are some unique and attention-grabbing Instagram username ideas based on your prompt:\n\n1. **InstaTrendSavant**\n2. **CreativeVibeMedia**\n3. **EngageWithStyle**\n4. **MediaMavenMagic**\n5. **TrendSpotterPro**\n6. **VibrantMediaExpert**\n7. **SocialSavvyGuru**\n8. **BrandBuzzCreator**\n9. **InspireMediaCraft**\n10. **ChicTrendMedia**\n\nFeel free to mix and match or modify these suggestions to better fit your style!"
+    ]
+}

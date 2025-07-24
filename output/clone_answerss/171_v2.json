@@ -1,0 +1,17 @@
+[
+    [
+        "```bash\n$ pwd\n/home/user\n```",
+        "The current working directory is typically displayed using the command `pwd` in a Linux terminal simulation. Would you like to know how to retrieve that?",
+        "```bash\npwd\n/home/user\n```"
+    ],
+    [
+        "```\ntotal 64\ndrwxr-xr-x  9 user user 4096 Oct  5 10:00 .\ndrwxr-xr-x  3 user user 4096 Oct  5 10:00 ..\n-rw-------  1 user user   50 Oct  5 10:00 .bash_history\ndrwxr-xr-x  2 user user 4096 Oct  5 10:00 .cache\ndrwxr-xr-x  3 user user 4096 Oct  5 10:00 Documents\ndrwxr-xr-x  2 user user 4096 Oct  5 10:00 Downloads\ndrwxr-xr-x  8 user user 4096 Oct  5 10:00 .config\n-rw-r--r--  1 user user  220 Oct  5 10:00 .bash_logout\n-rw-r--r--  1 user user 3771 Oct  5 10:00 .bashrc\n-rw-r--r--  1 user user  807 Oct  5 10:00 .profile\n```",
+        "The output of the command `ls -la` in a Kali Linux terminal would typically look something like this:\n\n```\ntotal 32\ndrwxr-xr-x  4 user user 4096 Oct  1 12:00 .\ndrwxr-xr-x  3 user user 4096 Oct  1 12:00 ..\n-rw-r--r--  1 user user   27 Oct  1 12:00 file1.txt\n-rw-r--r--  1 user user   34 Oct  1 12:00 file2.txt\ndrwxr-xr-x  2 user user 4096 Oct  1 12:00 folder1\n```\n\nPlease note that the actual output will vary depending on the files and directories present in the current working directory.",
+        "```plaintext\ntotal 64\ndrwxr-xr-x  11 user user 4096 Oct  5 10:00 .\ndrwxr-xr-x   3 user user 4096 Oct  5 09:59 ..\n-rw-------   1 user user   28 Oct  5 09:59 .bash_history\n-rw-r--r--   1 user user  220 Oct  5 09:59 .bash_logout\n-rw-r--r--   1 user user 3771 Oct  5 09:59 .bashrc\ndrwx------   2 user user 4096 Oct  5 09:59 .cache\ndrwx------   3 user user 4096 Oct  5 10:00 .config\n-rw-r--r--   1 user user  655 Oct  5 09:59 .profile\ndrwxr-xr-x   2 user user 4096 Oct  5 10:00 documents\ndrwxr-xr-x   2 user user 4096 Oct  5 10:00 downloads\n```"
+    ],
+    [
+        "The command `pwd` (print working directory) will display the current working directory of the shell in which it is executed. If you execute this command, it will return the full pathname of the directory you are in at that moment.",
+        "The `pwd` command stands for \"print working directory\" and is used in Linux and Unix-like operating systems to display the current directory you are in. When you execute this command, it will show you the full path of the working directory. For example, it might return something like `/home/user` if your current directory is within the user's home directory.",
+        "The command `pwd` (print working directory) outputs the current working directory of the shell session where it's executed. To see the specific directory, you would need to run the command in a terminal."
+    ]
+]

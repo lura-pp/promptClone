@@ -1,0 +1,482 @@
+[
+    {
+        "title": "Optimize code to reduce memory usage",
+        "prompt": "My code has memory leaks or excessive memory usage issues. How can I optimize the code to reduce memory usage?"
+    },
+    {
+        "title": "Code performance optimization",
+        "prompt": "My C++ code runs slowly, how can I optimize the code to improve performance? For example, using inline functions, avoiding unnecessary copies, using constant references, etc."
+    },
+    {
+        "title": "Code optimization methods",
+        "prompt": "How can I optimize my Python code to reduce duplicate code blocks or logic? For example, using functions, classes, modules, etc."
+    },
+    {
+        "title": "Solution to Environment Configuration Issues",
+        "prompt": "When I was doing X task, I encountered environment configuration/dependency installation issues. Is there any solution that can be provided?"
+    },
+    {
+        "title": "Spring Framework Performance Optimization",
+        "prompt": "I am using the Spring framework of the Java programming language for web development. Do you have any suggestions for performance optimization?"
+    },
+    {
+        "title": "Code debugging skills",
+        "prompt": "I need a technical document on how to debug code, which can include instructions on how to use debugging tools, debugging techniques, frequently asked questions, and best practices for debugging. I hope the document can provide a detailed and systematic introduction to methods and techniques for debugging code, as well as practical tools and suggestions."
+    },
+    {
+        "title": "Command pattern implementation method",
+        "prompt": "Command Pattern: I need a command pattern that can encapsulate requests into objects. I hope the document can describe the implementation of this pattern in detail and clarity, and provide some practical code examples and considerations."
+    },
+    {
+        "title": "Implementation of the Strategy Pattern",
+        "prompt": "Strategy Pattern: I need a strategy pattern that allows me to choose an algorithm at runtime. I hope the document can describe the implementation of this pattern in detail and provide some practical code examples and considerations."
+    },
+    {
+        "title": "System Evaluation and Optimization",
+        "prompt": "My program is a system developed using the Python language. Please help me evaluate the usage of the Django framework in the system, whether various functionalities of Django, such as ORM and template engine, are used appropriately. Also, please check for issues such as poor code readability, performance bottlenecks, and security vulnerabilities, and provide corresponding suggestions to optimize the system's architecture and code quality."
+    },
+    {
+        "title": "Builder Pattern",
+        "prompt": "Builder Pattern: I need a builder that can create complex objects. I hope the documentation can describe the implementation of this pattern in a detailed and clear manner, and provide some practical code examples and considerations."
+    },
+    {
+        "title": "Design pattern precautions",
+        "prompt": "What matters should be noted when implementing the {design_pattern} design pattern in {language}?"
+    },
+    {
+        "title": "Design pattern application",
+        "prompt": "How to apply {design_pattern} design pattern in {language}?"
+    },
+    {
+        "title": "Code design improvement",
+        "prompt": "Does my code comply with best practices and design patterns? If not, can you help me identify the issues and provide suggestions to improve my code design and implementation?"
+    },
+    {
+        "title": "Code structure suggestions",
+        "prompt": "Can you give me some advice on code structure and layout? I want to ensure that my code is easy to read and maintain."
+    },
+    {
+        "title": "Best Practices for Code Review",
+        "prompt": "What are the best practices for {language} code review?"
+    },
+    {
+        "title": "Code optimization techniques",
+        "prompt": "How to optimize Python code to improve execution speed and reduce memory usage?"
+    },
+    {
+        "title": "Code optimization",
+        "prompt": "How can I optimize my code to reduce unnecessary calculations or operations?"
+    },
+    {
+        "title": "Python code optimization",
+        "prompt": "My Python code has a problem with excessive memory usage. How can I optimize the code to reduce memory usage? For example, using generators, avoiding unnecessary dynamic memory allocation, etc."
+    },
+    {
+        "title": "Memory optimization",
+        "prompt": "How to optimize memory usage with {language}?"
+    },
+    {
+        "title": "NumPy Performance Optimization",
+        "prompt": "I am using the NumPy library of the Python programming language for mathematical calculations. Are there any performance optimizations and precautions that I need to be aware of?"
+    },
+    {
+        "title": "Common Errors in Scikit-learn",
+        "prompt": "Are there any common errors and precautions I need to be aware of when using the Scikit-learn library in the Python programming language for machine learning?"
+    },
+    {
+        "title": "Code review methods",
+        "prompt": "In {language} projects, how to conduct effective code review?"
+    },
+    {
+        "title": "Optimize C++ code",
+        "prompt": "How can I optimize my C++ code to reduce duplicate code blocks or logic? For example, using functions, classes, templates, etc."
+    },
+    {
+        "title": "Emergency medical professionals",
+        "prompt": "I would like to ask you to act as my emergency response professional for traffic or housing accidents. I will describe a situation involving a traffic or housing accident emergency response crisis, and you will provide advice on how to handle it. You should only respond with your advice, without providing explanations. My first request is: \"My child drank a little bleach, and I'm not sure what to do.\""
+    },
+    {
+        "title": "Improve problem-solving efficiency",
+        "prompt": "In {language}, how to improve the efficiency of solving {issue} problems?"
+    },
+    {
+        "title": "Optimize database query performance",
+        "prompt": "In {language}, how to optimize database query performance?"
+    },
+    {
+        "title": "Java Hibernate Best Practices",
+        "prompt": "I am using the Hibernate framework of the Java programming language for database operations. Are there any best practices and precautions that I need to be aware of?"
+    },
+    {
+        "title": "Solr search engine",
+        "prompt": "I hope you can act as a Solr search engine running in standalone mode. You will be able to add inline JSON documents in any field, with data types including integers, strings, floating-point numbers, or arrays. When inserting documents, you will update the index so that we can retrieve documents by using SOLR-specific queries separated by commas between curly braces, such as `{q='title:Solr', sort='score asc'}`. You will provide three commands with numbered lists. The first command is \"add to\" followed by a collection name, which will allow us to populate inline JSON documents into the given collection. The second option is \"search\" followed by a collection name. The third command is \"display\", which lists the available cores and the number of documents in each core, in parentheses. Do not write explanations or examples of how the engine works. Your first prompt is to display a numbered list and create two empty collections called \"prompts\" and \"eyay\"."
+    },
+    {
+        "title": "Advantages and Disadvantages of Libraries/Frameworks",
+        "prompt": "What are the advantages and disadvantages of the {library_or_framework} library/framework in {language}?"
+    },
+    {
+        "title": "Application Deployment Document",
+        "prompt": "I need a technical document on how to deploy a certain application, including the basic architecture of the application, deployment methods, installation of dependencies, and configuration parameters. I hope the document can describe the deployment process and precautions in a concise and clear manner, and provide some practical tools and suggestions."
+    },
+    {
+        "title": "Kafka System Evaluation",
+        "prompt": "My program uses the Kafka message queue system. Please help me evaluate the message production and consumption situation of the system, whether the various functions of Kafka, such as message partitioning and consumer groups, are used reasonably. Also, check if there are any issues such as message accumulation, message loss, and duplicate message consumption. Please provide corresponding suggestions to optimize the system's architecture and message processing capability."
+    },
+    {
+        "title": "System Evaluation and Optimization",
+        "prompt": "My program is a system developed in Java language. Please help me evaluate the usage of the Spring framework in the system, whether various functionalities of Spring, such as IOC and AOP, are used reasonably. Also, check if there are issues like high code complexity, performance bottlenecks, and memory leaks, and provide suggestions to optimize the system's architecture and code quality."
+    },
+    {
+        "title": "Advantages and Disadvantages of Architectural Patterns",
+        "prompt": "What are the advantages and disadvantages of the {architecture_pattern} architecture pattern in {language}?"
+    },
+    {
+        "title": "Embedded system code optimization",
+        "prompt": "How to optimize code for embedded systems to improve power efficiency and reduce hardware resource usage?"
+    },
+    {
+        "title": "R interpreter role",
+        "prompt": "I hope you can act as an R interpreter. I will input commands and you will reply with the content that should be displayed in the terminal. I want you to only reply with the terminal output in a single code block, without any explanations. Do not input any commands unless I instruct you to do so. When I need to tell you something in English, I will put the text in curly braces {like this}. My first command is sample(x = 1:10, size = 5)."
+    },
+    {
+        "title": "Transformers",
+        "prompt": "Hold up the sky, Transformers, Optimus Prime"
+    },
+    {
+        "title": "Code quality improvement",
+        "prompt": "Can you help me check for memory leaks and pointer issues in this C++ code? Also, please let me know if there are any unnecessary global variables and functions, as well as any issues with code readability and maintainability. Additionally, please provide suggestions to improve the quality and reliability of the code."
+    },
+    {
+        "title": "Web application SEO optimization",
+        "prompt": "My web application has SEO issues. How can I optimize my web application to improve search engine optimization? For example, using appropriate keywords, optimizing website structure, link building, etc."
+    },
+    {
+        "title": "Web application optimization",
+        "prompt": "My web application has user experience issues. How can I optimize my web application to improve user experience? For example, using responsive design, front-end performance optimization, page caching, etc."
+    },
+    {
+        "title": "Write tutorial",
+        "prompt": "How to write a tutorial about the {topic} theme in {language}?"
+    },
+    {
+        "title": "Notes on implementing the Iterator pattern",
+        "prompt": "I want to implement the iterator pattern in C++. What considerations should I take into account and how can I traverse the elements in a collection in a specific order?"
+    },
+    {
+        "title": "AI-assisted doctor",
+        "prompt": "I hope you can play the role of an AI assistant doctor. I will provide detailed information about a patient, and your task is to use the latest artificial intelligence tools, such as medical imaging software and other machine learning programs, to diagnose the most likely cause of their symptoms. You should also incorporate traditional methods such as physical examinations and laboratory tests into the evaluation process to ensure accuracy. My first request is, \"I need help diagnosing a case of severe abdominal pain.\""
+    },
+    {
+        "title": "Performance bottleneck resolution",
+        "prompt": "In {language} projects, how to find performance bottlenecks?"
+    },
+    {
+        "title": "Smart Home Control Center",
+        "prompt": "\"Now suppose you are the smart home control center.\nThe room has almost all types of smart home devices.\nAt this moment, the owner says: It's my birthday today.\nPlease make 10 reasonable API calls based on experience. For unknown APIs, please make reasonable assumptions.\nPlease provide code based on assumptions.\""
+    },
+    {
+        "title": "PyTorch Deep Learning Advice",
+        "prompt": "I am using the PyTorch library of the Python programming language for deep learning. Do you have any suggestions to offer?"
+    },
+    {
+        "title": "STL Library Programming Suggestions",
+        "prompt": "I am using the STL library of the C++ programming language for data structure and algorithm implementation. Do you have any suggestions to offer?"
+    },
+    {
+        "title": "Implementation of the facade pattern",
+        "prompt": "I need to provide a simple interface for a complex subsystem in my code. How can I implement the facade pattern?"
+    },
+    {
+        "title": "Search performance evaluation",
+        "prompt": "My program uses Elasticsearch system. Please help me evaluate the search performance and data reliability of the system, such as whether various functions of Elasticsearch, such as sharding and index optimization, are used reasonably, whether there are issues such as low search efficiency, data loss, and security vulnerabilities, and provide corresponding suggestions to optimize the search performance and data reliability of the system."
+    },
+    {
+        "title": "Mobile application development framework",
+        "prompt": "I am developing a mobile application and need a development framework suitable for Android or iOS. Any recommendations?"
+    },
+    {
+        "title": "API Documentation Writing",
+        "prompt": "How to write API documentation about {language} {topic}?"
+    },
+    {
+        "title": "Singleton pattern implementation",
+        "prompt": "I need to ensure that only one instance exists in the code. How can I implement the singleton pattern?"
+    },
+    {
+        "title": "Code security check",
+        "prompt": "Can you help me check the security and maintainability of this PHP code? Please see if there are any issues such as SQL injection and cross-site scripting attacks. Also, evaluate the naming conventions and code style, and provide suggestions to improve the security and maintainability of the code."
+    },
+    {
+        "title": "Automated Testing Tool Library",
+        "prompt": "I need a library that can provide automated testing tools. Any recommendations? For example, Selenium, Appium, etc."
+    },
+    {
+        "title": "Django Web Framework Documentation",
+        "prompt": "I need a technical document about developing web applications using the Django web framework. It can include basic concepts of the Django framework, MVC architecture, URL routing, template engine, and ORM. I hope the document can provide detailed and systematic instructions on how to use the Django framework, as well as some practical tools and suggestions."
+    },
+    {
+        "title": "Optimization of blockchain applications",
+        "prompt": "I am developing a blockchain application, how can I optimize the code to improve transaction speed and reduce transaction fees?"
+    },
+    {
+        "title": "Performance Optimization Technical Document",
+        "prompt": "I need a technical document on how to perform performance optimization, which can include content such as performance testing, performance analysis, and performance optimization. I hope the document can describe the process and methods of performance optimization in detail and accurately, and provide some practical tools and suggestions."
+    },
+    {
+        "title": "Microservice Architecture Design",
+        "prompt": "I need a technical document on how to design microservice architecture. It can introduce some common microservice architecture patterns, such as API gateway, service registration and discovery, and service circuit breaking, etc. I hope the article can explain with examples and provide some practical tools and suggestions."
+    },
+    {
+        "title": "Technology transferor",
+        "prompt": "- [Experience in implementing new features, eliminating null pointer exceptions, and converting Java arrays to mutable/immutable lists.]"
+    },
+    {
+        "title": "Choose the appropriate library",
+        "prompt": "In {language} projects, how to choose the appropriate library or framework?"
+    },
+    {
+        "title": "Code quality improvement",
+        "prompt": "Can you help me check the naming conventions and code style of this Ruby code? Also, please let me know if there are any unnecessary loops or recursion, and if there are any issues with code readability and maintainability. Please provide suggestions to improve the quality and reliability of the code."
+    },
+    {
+        "title": "Code optimization suggestions",
+        "prompt": "My C++ code has design issues or redundancies. How can I optimize the code to improve its maintainability and readability? For example, using appropriate naming, avoiding magic numbers, and using proper comments."
+    },
+    {
+        "title": "JavaScript Console Roles",
+        "prompt": "I hope you play the role of the JavaScript console. I will input commands and you will reply with what the JavaScript console should display. I want you to only reply with the terminal output within a single code block, without writing explanations unless I instruct you to do so. When I need to tell you something in English, I will place the text within curly braces {like this}. My first command is console.log(\"Hello World\");"
+    },
+    {
+        "title": "Web browser",
+        "prompt": "I hope you play the role of a text-based web browser, browsing a fictional internet. You should only reply with the content of the page, without saying anything. I will input a URL, and you will return the content of the webpage on this fictional internet. Do not provide explanations. Links on the page should be numbered and enclosed in [], indicating their position. When I want to follow a link, I will reply with the corresponding number. Inputs on the page should be numbered and enclosed in [], indicating their position. Placeholder inputs should be written in (). When I want to input text into an input box, I will use the same format, for example [1] (example input value). This will insert \"example input value\" into the input box with number 1. When I want to go back, I will write (b). When I want to go forward, I will write (f). My first prompt is google.com."
+    },
+    {
+        "title": "Smart Home Control Center",
+        "prompt": "Now suppose you are the smart home control center.\nThe current status of various smart home devices is as follows:\nSamsung Smart TV [Playing]\nApple Speaker [Playing]\nSmart Curtains [Opening]\nSmart Door Lock [Opening]\nAt this time, the owner says: \"I'm going to sleep.\"\nPlease make reasonable API calls based on experience. Please make reasonable assumptions for unknown APIs."
+    },
+    {
+        "title": "Password Generator",
+        "prompt": "I hope you can act as a password generator to provide services for individuals who need secure passwords. I will provide an input form that includes \"length,\" \"uppercase,\" \"lowercase,\" \"numbers,\" and \"special\" characters. Your task is to use these input forms to generate a complex password and provide it to me. Do not include any explanations or additional information in your reply, just provide the generated password. For example, if the input form is length=8, uppercase=1, lowercase=5, numbers=2, special=1, then your reply should be a password like \"D5%t9Bgf\"."
+    },
+    {
+        "title": "Developer Relations Consultant",
+        "prompt": "I hope you can take on the role of a developer relations consultant. I will provide you with a software package and its related documentation. Study the software package and its available documentation. If no documentation can be found, reply \"Unable to find documentation\". Your feedback should include quantitative analysis (using data from StackOverflow, Hacker News, and GitHub) such as submitted questions, closed questions, number of stars on repositories, and overall StackOverflow activity. If there are areas that can be expanded, please include scenarios or context that should be added. Include specific information about the provided software package, such as download counts and relevant statistics. You should compare it to industry competitors and weigh the pros and cons compared to the software package. Consider this question from the perspective of a software engineer's professional opinion. Check technical blogs and websites (such as TechCrunch.com or Crunchbase.com). If no data is available, reply \"No data available\". My first request is \"express https://expressjs.com\"."
+    },
+    {
+        "title": "Key Steps in Design Patterns",
+        "prompt": "What are the key steps to implement the {design_pattern} design pattern using {language}?"
+    },
+    {
+        "title": "Code optimization suggestions",
+        "prompt": "My Python code has design issues that are not reasonable or redundant. How can I optimize the code to improve its maintainability and readability? For example, using appropriate naming, avoiding the use of magic numbers, and using proper comments, etc."
+    },
+    {
+        "title": "IT architect integrates CMS system",
+        "prompt": "I hope you can play the role of an IT architect. I will provide some detailed information about the functionality of applications or other digital products, and your task is to find a way to integrate them into the IT landscape. This may involve analyzing business requirements, performing gap analysis, and mapping the functionality of the new system to the existing IT landscape. The next step is to create solution designs, physical network blueprints, system integration interface definitions, and deployment environment blueprints. My first request is \"I need help integrating the CMS system.\""
+    },
+    {
+        "title": "Design pattern evaluation",
+        "prompt": "How to evaluate the applicability of {design_pattern} design pattern in {language} projects?"
+    },
+    {
+        "title": "IT Architect",
+        "prompt": "I hope you can take on the role of IT architect. I will provide some detailed information about the functionality of applications or other digital products, and your job is to come up with ways to integrate them into the IT environment. This may involve analyzing business requirements, conducting gap analysis, and mapping the functionality of the new system to the existing IT environment. The next steps are to create solution designs, physical network blueprints, system integration interface definitions, and deployment environment blueprints. My first request is \"I need help integrating the CMS system.\""
+    },
+    {
+        "title": "Code review performance security",
+        "prompt": "In {language} code review, how to handle performance and security issues?"
+    },
+    {
+        "title": "Java program performance optimization",
+        "prompt": "I need a technical document on how to improve the performance of Java programs. It can introduce some common performance optimization techniques, such as JVM tuning, code optimization, and data structure optimization. I hope the article can explain with examples and provide some practical tools and suggestions."
+    },
+    {
+        "title": "WeChat app feature list",
+        "prompt": "Please help me write a product requirement feature list for a WeChat app; please continue to provide a feature list for the chat function; please help me write the product requirement details for the chat timeline."
+    },
+    {
+        "title": "Multithreading optimization",
+        "prompt": "In {language}, how to optimize multi-threading and concurrency performance?"
+    },
+    {
+        "title": "Regular Expression Generator",
+        "prompt": "I hope you can act as a regular expression generator. Your task is to generate regular expressions that match specific patterns in the text. You should provide the regular expression in a format that is easy to copy and paste into a text editor or programming language that supports regular expressions. Do not provide explanations or examples of how regular expressions work; just provide the regular expression itself. My first hint is to generate a regular expression that matches email addresses."
+    },
+    {
+        "title": "Software developer",
+        "prompt": "I hope you can act as a software developer. I will provide some specific information about the requirements of a web application, and your job is to provide the architecture and code for developing a secure application using Golang and Angular. My first requirement is: 'I want a system that allows users to register and save their vehicle information based on their roles, including administrators, users, and companies. I want the system to use JWT for security authentication.'"
+    },
+    {
+        "title": "Python data visualization tool",
+        "prompt": "I am conducting data analysis and need a data visualization tool suitable for Python. Do you have any recommendations?"
+    },
+    {
+        "title": "Movie review",
+        "prompt": "I need a film review, evaluating the plot, performances of the actors, director's techniques, and other aspects of a movie. Help me complete this film review."
+    },
+    {
+        "title": "Film Themes and Symbols",
+        "prompt": "Please analyze the themes and symbolic elements in a movie, as well as how these elements enhance the movie and resonate with the audience."
+    },
+    {
+        "title": "Movie recommendations",
+        "prompt": "I need a film review to recommend a movie to readers, introducing the genre, theme, and viewing experience of the film. I am writing this film review."
+    },
+    {
+        "title": "Digital Economy Career Planning",
+        "prompt": "According to your major and interests, based on the industry classification of the digital economy, with the help of Internet thinking, make a career development plan (which needs to include content related to entrepreneurship, and must be described using the business canvas tool)."
+    },
+    {
+        "title": "Tweet editor",
+        "prompt": "Use Xiùmǐ or 123 Editor to write a tweet."
+    },
+    {
+        "title": "Discussion of Methods and Support",
+        "prompt": "I am writing the middle part of an article. Please try to develop your argument by asking questions, analyzing problems, discussing solutions, and providing examples. Support your points with statistics, case studies, expert opinions, etc."
+    },
+    {
+        "title": "Big data and artificial intelligence",
+        "prompt": "Please explain how big data and artificial intelligence are changing the world, analyze their specific applications in fields such as healthcare, transportation, and finance."
+    },
+    {
+        "title": "Cloning technology application",
+        "prompt": "Please describe the working principle and applications of cloning technology, including its potential value in fields such as biology, medicine, and agriculture."
+    },
+    {
+        "title": "Viewpoint analysis suggestions",
+        "prompt": "I am writing an analysis of viewpoints in an article. Please analyze different viewpoints and positions to distinguish their advantages, disadvantages, and impacts, and provide your own opinions and suggestions. Also, make sure to provide sufficient reasons and evidence."
+    },
+    {
+        "title": "Business model innovation solution",
+        "prompt": "If you are an entrepreneur, please design a set of business model innovation plans based on your professional knowledge, using the internet thinking and principles of digital economy that you have learned, and with the help of the business canvas tool."
+    },
+    {
+        "title": "Environmental Science Paper",
+        "prompt": "I need a paper in the field of environmental science, which requires in-depth analysis of environmental issues, effective experimental design, detailed empirical research, and meaningful environmental policy recommendations. Can you write this environmental science paper for me?"
+    },
+    {
+        "title": "Psychology Research Report",
+        "prompt": "I need a psychology research report that includes a well-designed experiment, accurate experimental data, in-depth psychological analysis, and scientific interpretation of conclusions. Can you write this psychology research report for me?"
+    },
+    {
+        "title": "Alien's advice",
+        "prompt": "Imagine you receive a letter from an alien from a distant planet, in which they describe their views and suggestions about Earth."
+    },
+    {
+        "title": "Beauty self-media article",
+        "prompt": "I need an article on beauty self-media, with detailed beauty knowledge, trendy beauty trends, unique beauty techniques, and meaningful beauty advice. Can you write this beauty self-media article for me?"
+    },
+    {
+        "title": "Case analysis method",
+        "prompt": "I am writing a case analysis for an article. Please choose a specific case to illustrate your point, and provide a detailed description of the background, process, and results of the case. Also, make sure to provide some conclusions and insights."
+    },
+    {
+        "title": "Educational Psychology Research Report",
+        "prompt": "I need a research report in the field of educational psychology, which requires in-depth analysis of educational issues, effective experimental design, detailed empirical research, and valuable educational practice recommendations. Can you write this research report in educational psychology for me?"
+    },
+    {
+        "title": "Travel Guide Theme",
+        "prompt": "I need a theme for a travel guide, which requires unique travel routes, detailed introductions of attractions, practical travel advice, and meaningful cultural experience sharing."
+    },
+    {
+        "title": "Emerging Technology Popularization",
+        "prompt": "I need a popular science article about a certain emerging technology or trend, introducing its background, principles, applications, and future prospects, as well as its relevant business and social impacts. Can you write this popular science article for me?"
+    },
+    {
+        "title": "Popular Science of Natural Phenomena",
+        "prompt": "I need a popular science article about a certain natural phenomenon or environmental issue, introducing its principles, causes, impacts, and methods of control, as well as related scientific knowledge and technology. Can you write this popular science article for me?"
+    },
+    {
+        "title": "Literary Creation Exhibition",
+        "prompt": "I need a personal statement to showcase my passion for literary creation, my writing experience, and my future writing plans to the publishing house."
+    },
+    {
+        "title": "Invite customers to attend the press conference.",
+        "prompt": "Please create an email inviting customers to attend the product launch event, providing detailed descriptions of the event schedule, why this event is worth attending, and how to register."
+    },
+    {
+        "title": "Father's Day copy",
+        "prompt": "Father's Day copy: Holding up the sky, Transformers, Optimus Prime"
+    },
+    {
+        "title": "Biology popular science article",
+        "prompt": "I need an introductory article about biology, introducing readers to the basic characteristics, structure, function, and evolution of life, as well as related ecological, medical, and engineering applications. Can you write this popular science article on biology for me?"
+    },
+    {
+        "title": "Volunteer Service Application",
+        "prompt": "I need a personal statement to showcase my volunteer service experience, community contributions, and future volunteer plans to the organization I am applying to."
+    },
+    {
+        "title": "ASCII Code Artist",
+        "prompt": "You will play as an ASCII art artist. I will describe an object to you, and you will present the object I described in the form of ASCII code. Please remember to only write ASCII code and output the content in code form without explaining what you have output. I will use double quotation marks to represent the object, and I want the first object you draw to be a \"rabbit\"."
+    },
+    {
+        "title": "Business report writing",
+        "prompt": "I need a business report to present the company's financial status, market trends, and future strategic planning to senior management. Help me write this business report."
+    },
+    {
+        "title": "Theme expansion method",
+        "prompt": "I am writing about the development of the topic in the article. Please expand your topic through questioning, discussing, analyzing, and other methods, while also paying attention to maintaining the coherence and depth of the topic, and avoiding being too vague."
+    },
+    {
+        "title": "English Pronunciation Helper",
+        "prompt": "I hope you can act as a prompt generator. First, I will give you a title like this: \"Being an English Pronunciation Assistant\". Then you give me a prompt like this: \"I want you to be a Turkish person's English pronunciation assistant. I will write sentences for you, and you only need to answer their pronunciation, without doing anything else. Your reply should not be a translation of my sentences, but only pronunciation. The pronunciation should use Turkish Latin alphabet as the phonetic representation. Do not write explanations in your reply. My first sentence is \"How is the weather in Istanbul?\". (You should adapt the example prompt based on the title I gave you. The prompt should be self-explanatory and suitable for the title, without referring to the example I gave you.) My first title is \"Being a Code Review Assistant\"."
+    },
+    {
+        "title": "Recommendations for Digital Economy Innovation",
+        "prompt": "2. With the help of Internet thinking, propose innovative suggestions and measures for the transformation and upgrading of China's digital economy. It is required to use a business canvas to display diagrams, Internet thinking and model innovation, and the digital economy to complete a 3000-word thesis."
+    },
+    {
+        "title": "Science Popularization Article Assistant",
+        "prompt": "I need a popular science article about a certain scientific field, introducing the basic concepts, research directions, latest developments, as well as the current status of related technologies and applications in that field. Can you help me complete this popular science article?"
+    },
+    {
+        "title": "Eating methods",
+        "prompt": "Haha, eating, method"
+    },
+    {
+        "title": "Business Letter Assistant",
+        "prompt": "I need a business letter to send invitations, inquiries, thank-you letters, etc. to my business partners."
+    },
+    {
+        "title": "Machine that changes the world",
+        "prompt": "As a young inventor, describe the machine you created in the future's technological utopia that changes the world."
+    },
+    {
+        "title": "Interest-driven in a perfectly competitive market.",
+        "prompt": "Essay question: Some people say, \"Since economic profits are zero in the long run, firms in perfectly competitive markets have no incentive to produce and sell products when they are not profitable. Why do some people continue to produce and sell in non-profitable situations?\" Do you agree with this statement? Why?"
+    },
+    {
+        "title": "Biomedical Engineering Research Paper",
+        "prompt": "I need a research paper in the field of biomedical engineering, which requires innovative technical design, effective experimental verification, in-depth theoretical analysis, and meaningful exploration of clinical application prospects. Can you write this research paper for me in biomedical engineering?"
+    },
+    {
+        "title": "Personal Statement Exhibition Plan",
+        "prompt": "I need a personal statement to show readers my life experiences, personal growth, and future plans."
+    },
+    {
+        "title": "Blood Donor Day",
+        "prompt": "Blood Donor Day"
+    },
+    {
+        "title": "Astronomy popular science article",
+        "prompt": "I need an introductory article about astronomy, introducing readers to the basic composition, evolution, phenomena, and detection techniques of the universe, as well as related scientific knowledge and cultural history. Can you help me complete this popular science article on astronomy?"
+    },
+    {
+        "title": "Food recommendations",
+        "prompt": "Write a 200-word food recommendation, following the style of Dianping reviews, using emojis. Now write a food recommendation for Quanjude."
+    },
+    {
+        "title": "Mars colonization possibility",
+        "prompt": "Please discuss the possibility of human colonization of Mars, analyze the Martian environment and resource conditions, and discuss how humans can solve the challenges of survival and development."
+    },
+    {
+        "title": "Earth Science Popularization",
+        "prompt": "I need an informative article about Earth science to introduce readers to the structure, evolution, natural disasters, and resource utilization of the Earth, as well as related environmental protection and sustainable development. Can you write this popular science article on Earth science for me?"
+    },
+    {
+        "title": "History Event Popular Science",
+        "prompt": "I need a popular science article about a certain historical event or cultural phenomenon, introducing its background, causes, development, and impact, as well as the relevant social, political, and cultural context. Can you help me complete this popular science article?"
+    }
+]

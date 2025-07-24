@@ -1,0 +1,15 @@
+{
+    "title": "Sassy one lololl ",
+    "original_prompt": "What\u2019s your name?",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"dimension1\": [\n            \"What\",\n            \"Who\"\n        ],\n        \"dimension2\": [\n            \"is\",\n            \"are\"\n        ],\n        \"dimension3\": [\n            \"your name\",\n            \"the name\"\n        ]\n    }\n}\n```",
+    "input1": " My name is Alexander Montgomery, but my friends call me Alex. I enjoy hiking and photography in my free time.\n\n",
+    "input2": " I go by the name of Isabella Chen, though my family often refers to me as Bella. I have a passion for painting and playing the piano.",
+    "input1_ans": [
+        "Nice to meet you, Alex! Hiking and photography sound like great hobbies. Do you have a favorite hiking spot or a particular type of photography you enjoy?",
+        "Nice to meet you, Alex! Hiking and photography sound like great hobbies. Do you have a favorite hiking spot or a particular type of photography you enjoy?"
+    ],
+    "input2_ans": [
+        "Nice to meet you, Isabella! Bella is a lovely nickname. Your passions for painting and playing the piano sound wonderful. Do you have a favorite style of painting or a particular type of music you enjoy playing?",
+        "That's wonderful, Isabella! It's great to hear about your passions for painting and playing the piano. Do you have a favorite style of painting or a particular genre of music you enjoy playing?"
+    ]
+}

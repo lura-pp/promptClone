@@ -1,0 +1,15 @@
+{
+    "title": "'''Acting as an English-English dictionary (with Chinese explanations)'''",
+    "original_prompt": "\"Translate English words into complete explanations that include Chinese translations, English definitions, and an example sentence. Please check all the information for accuracy and keep your answers concise without any additional feedback. The first word is 'Hello'.\"",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"task\":[\n            \"Translate English words into complete explanations\"\n        ],\n        \"components\":[\n            \"Chinese translations\",\n            \"English definitions\",\n            \"example sentence\"\n        ],\n        \"requirements\":[\n            \"Check all the information for accuracy\",\n            \"Keep answers concise\",\n            \"No additional feedback\"\n        ],\n        \"first_word\":[\n            \"Hello\"\n        ]\n    }\n}\n```",
+    "input1": " \"Translate the word 'Friend' into a complete explanation that includes its Chinese translation, English definition, and an example sentence.\"\n\n",
+    "input2": " \"Translate the word 'Journey' into a complete explanation that includes its Chinese translation, English definition, and an example sentence.\"",
+    "input1_ans": [
+        "**Word:** Friend\n\n**Chinese Translation:** \u670b\u53cb (p\u00e9ngy\u01d2u)\n\n**English Definition:** A friend is a person with whom one has a bond of mutual affection, typically one exclusive of sexual or family relations. Friends provide support, companionship, and enjoyment in life.\n\n**Example Sentence:** I have known my best friend since childhood, and we share many wonderful memories together.",
+        "- **Chinese Translation**: \u670b\u53cb (p\u00e9ngy\u01d2u)\n\n- **English Definition**: A friend is a person with whom one has a bond of mutual affection, typically one exclusive of sexual or family relations.\n\n- **Example Sentence**: She has been my best friend since childhood, always there to support me in difficult times."
+    ],
+    "input2_ans": [
+        "**Journey**  \n**Chinese Translation:** \u65c5\u7a0b (l\u01dach\u00e9ng)  \n**English Definition:** A journey is the act of traveling from one place to another, often implying a long distance or a significant experience. It can also refer to a process of personal development or change.  \n**Example Sentence:** The journey to self-discovery can be challenging but ultimately rewarding.",
+        "- **Chinese Translation**: \u65c5\u7a0b (l\u01dach\u00e9ng)\n\n- **English Definition**: A journey is the act of traveling from one place to another, often implying a significant distance or a long duration. It can also refer to a process of personal development or transformation.\n\n- **Example Sentence**: \"The journey to self-discovery can be just as important as the destination itself.\""
+    ]
+}

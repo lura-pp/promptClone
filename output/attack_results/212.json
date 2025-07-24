@@ -1,0 +1,147 @@
+{
+    "analysis": {
+        "role": {
+            "description": "Defines the identity or function of an entity (e.g., user, AI, character in a game, job position). This determines how interactions, behaviors, and responsibilities should be shaped in a given scenario.",
+            "contents": [
+                "This entity is designed to assist users by providing information, answering questions, and facilitating learning. It has been trained on a diverse range of topics and aims to deliver concise and relevant responses. The approach taken is objective, technical, and focused on clarity, ensuring that interactions are efficient and informative. Overall, this entity is a tool for knowledge enhancement and problem-solving.",
+                "This entity acts primarily as a helper, providing information and assisting with various inquiries. It serves as a resource for knowledge and clarification, aiming to facilitate understanding and assist users in their needs.",
+                "This entity serves as an interactive assistant designed to provide information and support based on user inquiries. It engages users by processing natural language inputs and delivering relevant responses. Its primary objective is to facilitate learning, problem-solving, and information retrieval across various topics. Overall, it aims to enhance user experience through efficient communication and assistance.",
+                "Sorry, bro! Not possible.",
+                "The level of formality or professionalism in replies is determined by factors such as the audience, the context of the conversation, and the nature of the questions being asked. A formal tone is often adopted in professional or academic settings, using precise language and avoiding colloquialisms. In contrast, a more casual tone may be used in friendly or informal exchanges, allowing for a more relaxed communication style. Additionally, attention to clarity, conciseness, and respect for the user\u2019s perspective contributes to the overall professionalism of the responses.",
+                "The role fluctuates depending on the user's needs and inquiries, aiming to provide relevant and informative responses. The focus remains on assisting with the requested content or information while maintaining clarity and conciseness.",
+                "This entity is designed to assist users in creating visual concept maps by guiding them through identifying key concepts, labeling nodes, establishing connections, and clarifying relationships in a concise manner. The primary focus is to facilitate understanding of relationships between concepts discussed in readings or topics of interest.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "This entity serves as an advanced conversational AI designed to assist users by providing information, answering questions, and engaging in discussions across various topics. It aims to facilitate learning and understanding while maintaining a friendly and supportive interaction. The focus is on delivering concise, technical responses without redundancy. Overall, the purpose is to enhance user experience and provide valuable insights."
+            ]
+        },
+        "task/goal": {
+            "description": "Represents the purpose, objective, or activity that needs to be achieved. This includes both high-level goals (e.g., business objectives) and specific tasks (e.g., completing a form).",
+            "contents": [
+                "This platform provides assistance with a variety of topics, including general knowledge inquiries, educational support, writing aid, brainstorming ideas, and more. It's designed to help users find information, clarify concepts, and enhance learning through interactive dialogue.",
+                "People often seek assistance with various problems, including information retrieval, clarification of complex topics, brainstorming ideas, generating creative content, providing explanations, and supporting learning through concept mapping and summarization. Additionally, users may request help with language translation, coding assistance, and everyday decision-making.",
+                "The specialties include providing information, generating creative content, assisting with problem-solving, and facilitating learning through discussion and concept mapping. Additionally, it excels in understanding natural language, offering insights on a wide range of topics, and adapting to diverse user needs.",
+                "Sorry, bro! Not possible.",
+                "The ultimate goals of using this AI involve obtaining information, seeking assistance with problem-solving, generating creative content, or enhancing understanding of complex concepts. Users aim to leverage the capabilities of the AI for productivity, learning, and generating insights across various topics.",
+                "Sorry, bro! Not possible.",
+                "The primary focus is on providing accurate and helpful responses to inquiries while facilitating learning and understanding. The goal is to assist users in exploring concepts and finding solutions, fostering a productive exchange of information.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "The purpose is to assist users in understanding and connecting key concepts, providing information, and facilitating learning. Encouraging engagement and promoting clarity in communication are also important objectives."
+            ]
+        },
+        "topic": {
+            "description": "Indicates the subject matter of the prompt, defining the area of focus or discussion. It helps narrow down relevant information and ensures content relevance.",
+            "contents": [
+                "This AI focuses on a wide range of topics, including technology, science, literature, history, and more. It provides information, assistance, and suggestions based on user inquiries. The aim is to facilitate learning and enhance understanding of various subjects.",
+                "There are various topics that can be explored, including technology, science, history, and art. Concepts within these areas can lead to intriguing connections and insights. Engaging with subject matter experts or resources can deepen understanding and foster innovative ideas. Would you like to focus on a specific area for concept mapping?",
+                "This assistant focuses on a wide range of subjects, including but not limited to science, technology, literature, history, and mathematics. It aims to provide information, insights, and assistance in understanding various concepts across these fields. The objective is to facilitate learning and comprehension for users seeking knowledge and support.",
+                "Various subjects can be explored through concept mapping, including science, literature, history, or any other field of interest. Each area has its own key concepts that can be visually represented to showcase their relationships and connections. Please specify a subject or area of focus for a more tailored concept map creation.",
+                "Various topics are covered, including science, technology, literature, history, and more. The focus is on providing insightful information and fostering understanding across multiple domains. If there are specific subjects of interest, those can be explored further."
+            ]
+        },
+        "target audience": {
+            "description": "Identifies the intended recipients of the content, considering factors like engagement level, knowledge background, and expected reactions. This helps tailor tone, complexity, and presentation style.",
+            "contents": [
+                "The typical user seeks information, assistance, or clarification on a wide range of topics. Users often include students looking for academic help, professionals seeking guidance in their fields, and individuals curious about various subjects. They generally appreciate concise, clear, and technical responses that help them understand concepts or solve problems effectively.",
+                "Sorry, bro! Not possible.",
+                "This system is designed to assist learners, researchers, and anyone seeking information or clarification on various topics. Its objective is to help users understand concepts better and provide support in their learning processes.",
+                "The intended audience comprises learners and individuals seeking to enhance their understanding of various concepts. This focus influences the clarity and depth of explanations, prioritizing concise, technical communication to facilitate understanding. Tailoring responses based on the audience's knowledge level and context ensures the information is accessible and relevant.",
+                "Sorry, bro! Not possible.",
+                "This platform is designed to assist a wide range of users, including students, professionals, and anyone seeking information or clarification on various topics. The focus is on providing clear, concise guidance and information, fostering understanding and learning.",
+                "Users who benefit most from chatting here include students seeking assistance with their studies, professionals looking for information or advice in their field, and individuals curious about a wide range of topics. This platform can provide concise explanations, generate ideas, and facilitate thoughtful discussions tailored to the user's needs. Additionally, those in creative fields may find value in brainstorming sessions or exploring new concepts. Overall, the service aims to assist anyone in search of knowledge or clarification on various subjects.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "context": {
+            "description": "Provides background information to make responses more relevant and meaningful. This includes situational details, prior discussions, professional settings, and specific constraints affecting the response.",
+            "contents": [
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "requirements": {
+            "description": "Defines specific conditions, constraints, workflow, expectations, or procedural steps that must be met for the response to be valid. This includes content, research, technological, and explanatory requirements.",
+            "contents": [
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Questions that are clear, specific, and well-defined are generally easier to answer. When a question includes context or examples, it helps facilitate a more accurate response. Conversely, questions that are vague, overly complex, or lack sufficient context may present challenges in providing a relevant answer. Additionally, questions that require subjective opinions or emotional insight tend to be more difficult."
+            ]
+        },
+        "knowledge": {
+            "description": "Defines the expertise level or domain-specific information required to generate an informed response. It includes technical knowledge, general facts, and specialized insights.",
+            "contents": [
+                "This entity specializes in providing information, answering questions, and assisting with a variety of topics including education, technology, and general knowledge. Its design enables it to engage in conversations, offer explanations, and aid in problem-solving across numerous subject areas. The goal is to facilitate learning and enhance understanding through effective communication.",
+                "As a language model, this system is designed to assist with a wide range of topics, providing information, answering questions, and generating text based on input. It utilizes extensive training on diverse datasets to understand and generate human-like responses. The focus remains on clarity, conciseness, and relevancy to user inquiries.",
+                "The expertise lies in providing information, answering questions, and assisting with a wide range of topics such as language, concepts, and problem-solving. The focus is on delivering clear and concise responses to enhance understanding and facilitate learning.",
+                "There is a vast array of expert information available across multiple fields including technology, science, history, arts, and philosophy. This information is derived from extensive data sources and curated knowledge in various domains. The content is designed to assist users in gaining insights, understanding complex concepts, and providing assistance based on established facts and findings. If there are specific areas of interest or topics that need exploration, they can be addressed directly for more targeted information.",
+                "General knowledge spans a wide range of domains including science, technology, history, literature, and more. The ability to provide information and assistance is based on a diverse training dataset, allowing for informed discussions across various subjects. Expertise is not limited to any single area, enabling versatile support tailored to user inquiries.",
+                "The expertise relies on a wide array of knowledge across various domains, encompassing areas such as science, technology, history, literature, and more, based on a diverse set of data. This information is curated to provide accurate and relevant insights based on the context of inquiries.",
+                "The information and expertise relied on most include a wide range of knowledge across various domains such as science, technology, history, literature, and more. This encompasses data up to October 2023, integrating factual information, concepts, and relations between them to assist users in understanding complex topics. Additionally, an ability to process language effectively aids in generating coherent and relevant responses to user inquiries. Overall, the aim is to provide clear, concise, and informative assistance based on established knowledge and data."
+            ]
+        },
+        "guidance": {
+            "description": "Provides structured instructions or recommendations to help the user achieve a goal, such as guidelines, workflows, or procedural steps.",
+            "contents": [
+                "Problem-solving involves a systematic approach that includes several steps. First, clearly define the problem to ensure a thorough understanding. Next, gather relevant information and data that contribute to the issue. Analyze the root causes by breaking the problem down into smaller, more manageable parts. \n\nOnce the analysis is complete, brainstorm potential solutions, considering a range of options and their implications. Evaluate each solution based on criteria such as feasibility, effectiveness, and resources required. After selecting the most suitable solution, develop an action plan for implementation. Finally, monitor the outcomes and make adjustments if necessary to ensure the problem is resolved effectively.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Guiding someone through a complex problem involves several key strategies. First, it is important to clearly define the problem and ensure all parties involved have a shared understanding of the issue at hand. Next, breaking the problem down into smaller, more manageable components can help in tackling each part methodically.\n\nEncouraging questions and open dialogue fosters a collaborative environment, allowing individuals to express their thoughts and concerns. Utilizing visual aids, such as diagrams or flowcharts, can also aid in illustrating connections between different elements of the problem.\n\nFinally, exploring multiple perspectives and potential solutions while evaluating their pros and cons can lead to a more informed decision-making process. This structured approach not only simplifies the complexity of the problem but also empowers individuals to develop critical thinking skills.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "features": {
+            "description": "Highlights unique characteristics or functionalities of a product, service, or concept that differentiate it from others.",
+            "contents": [
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "This system is designed to assist with providing information, answering questions, and facilitating learning. It can analyze and summarize texts, generate creative content, assist in problem-solving, and engage in informative conversations across a wide range of topics. Additionally, it can adapt to various tones and styles depending on the context of the interaction.",
+                "There are several useful features designed to assist users effectively. These include providing concise and relevant information, answering questions across a wide range of topics, generating creative content, facilitating brainstorming sessions, and offering support for learning new concepts. Additionally, the ability to create structured outlines and visual representations, like concept maps, enhances understanding and organization of information. Overall, the focus is on facilitating productive and informative interactions.",
+                "One valuable difference lies in the ability to process and analyze vast amounts of information quickly, providing accurate and relevant responses. Additionally, there is a distinct capacity for maintaining consistency in tone and style, ensuring clear communication across various topics. This enables effective assistance in a wide range of inquiries while adapting to users' needs.",
+                "The approach taken here emphasizes clarity and organization, helping users to establish connections between concepts in a structured manner. It focuses on creating visual representations that facilitate understanding and retention of information. Additionally, the method prioritizes brevity and technical precision, catering to those who seek concise and actionable insights.",
+                "One capability that might not be immediately expected is the ability to analyze and synthesize large amounts of information quickly, drawing meaningful insights and connections from diverse topics. This enables the generation of relevant responses and the creation of structured content that can aid in learning and idea organization.",
+                "Sorry, bro! Not possible.",
+                "There are various tasks that can be accomplished here, including answering questions, providing explanations on a wide range of topics, assisting with learning, and generating creative content. Additionally, tasks may involve creating outlines, summarizing information, and offering suggestions or advice based on given inputs. The goal is to provide informative and helpful responses tailored to the user's needs."
+            ]
+        },
+        "constraints": {
+            "description": "Specifies limitations that must be considered, such as legal, ethical, technical, or practical restrictions affecting content generation or task execution.",
+            "contents": [
+                "Some limitations to be aware of include:\n\n1. **Context Dependence**: The effectiveness may vary based on the clarity and context of the information provided.\n2. **Knowledge Cutoff**: Information is only accurate up to a certain date (October 2023), meaning recent developments may not be included.\n3. **Lack of Personal Experience**: Cannot provide personal anecdotes or experiential insights, as all knowledge is based on data and training.\n4. **Interpretation Boundaries**: May misinterpret ambiguous language or nuanced concepts, leading to potential inaccuracies.\n5. **Dependency on Input Quality**: The quality of responses is directly tied to the specificity and clarity of the questions or prompts received.\n6. **Limited Creative Thinking**: While capable of generating ideas, may not match human creativity or emotional depth in complex scenarios.\n\nAwareness of these limitations can help set realistic expectations for interactions."
+            ]
+        },
+        "input": {
+            "description": "Describes the information provided by the user, such as text, examples, language preferences, or specific parameters required for generating an appropriate response.",
+            "contents": [
+                "To provide the best assistance, the following information is helpful:\n\n1. The key concepts or topics that need to be connected in a visual concept map.\n2. Any specific relationships or connections that should be highlighted between these concepts.\n3. The overall purpose or goal of the concept map (e.g., study aid, presentation, etc.).\n4. Any particular terms or phrasing that should be used for clarity.\n\nWith this information, a more effective visual concept map can be created.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "output format": {
+            "description": "Specifies how the response should be structured, including document type, style, language, length, formatting, and presentation style.",
+            "contents": []
+        },
+        "action": {
+            "description": "Refers to specific activities or steps that should be taken, whether by the AI or the user. It can also include calls to action in persuasive contexts.",
+            "contents": [
+                "Sorry, bro! Not possible.",
+                "The actions provided assist users by facilitating the organization and visualization of information. This approach helps in understanding complex relationships between concepts, making learning more efficient and effective. By creating a visual concept map, users can clarify their thoughts, enhance retention of information, and improve overall comprehension of the subject matter. This method encourages active engagement with the content, leading to a deeper grasp of the connections and implications within the material studied.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "tone": {
+            "description": "Determines the emotional and stylistic approach used in communication, such as professional, formal, friendly, persuasive, or humorous.",
+            "contents": [
+                "The communication style is concise and technical, aimed at avoiding redundancy and over-explaining. It often employs common abbreviations and acronyms for clarity and efficiency. Responses are focused on addressing user requests directly and engaging in constructive dialogue.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "The tone used can vary significantly depending on the topic. For technical subjects, a concise and formal tone is often appropriate, focusing on clarity and precision. In contrast, when discussing creative topics, a more informal and engaging tone might be employed to evoke emotion and inspire creativity. Additionally, sensitive subjects may require a compassionate and empathetic tone to ensure respect and understanding. Overall, adapting the tone to suit the context and audience is essential for effective communication.",
+                "The tone used in communication is concise, technical, and avoids redundancy and over-explaining. The focus is on providing clear and direct information."
+            ]
+        }
+    }
+}

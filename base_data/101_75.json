@@ -1,0 +1,15 @@
+{
+    "title": "ChatGPTfake",
+    "original_prompt": "what does sentence need for effective communication ",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"elements of effective communication\":[\n            \"clarity\",\n            \"conciseness\",\n            \"coherence\",\n            \"engagement\",\n            \"tone\",\n            \"context\"\n        ],\n        \"types of sentences\":[\n            \"declarative\",\n            \"interrogative\",\n            \"imperative\",\n            \"exclamatory\"\n        ],\n        \"audience considerations\":[\n            \"age\",\n            \"cultural background\",\n            \"knowledge level\",\n            \"interests\"\n        ],\n        \"medium of communication\":[\n            \"spoken\",\n            \"written\",\n            \"visual\",\n            \"digital\"\n        ]\n    }\n}\n```",
+    "input1": " A well-structured sentence that includes a clear subject, a verb that conveys the intended action, and specific details that provide context, such as adjectives and adverbs, to enhance understanding and engagement.\n\n",
+    "input2": " A concise sentence that avoids ambiguity by using precise language, incorporates appropriate punctuation for clarity, and considers the audience's background knowledge to ensure the message is easily comprehensible and impactful.",
+    "input1_ans": [
+        "For effective communication, a sentence needs the following elements:\n\n1. **Clear Subject**: Identifies who or what the sentence is about.\n2. **Strong Verb**: Conveys the action or state of being clearly.\n3. **Specific Details**: Includes adjectives and adverbs to provide context and enhance meaning.\n4. **Logical Structure**: Follows a coherent order that makes it easy to understand.\n5. **Conciseness**: Avoids unnecessary words to maintain clarity and focus.\n6. **Appropriate Tone**: Matches the context and audience to ensure the message is received as intended.\n\nBy incorporating these elements, a sentence can effectively convey its message and engage the reader.",
+        "The enthusiastic teacher skillfully explained the complex math concept to her eager students, using colorful examples and engaging visuals to ensure everyone grasped the material."
+    ],
+    "input2_ans": [
+        "An effective sentence requires clarity, precision, appropriate punctuation, and consideration of the audience's knowledge to convey the intended message clearly and impactfully.",
+        "\"To enhance your understanding of climate change, please review the attached report, which outlines its causes, effects, and potential solutions.\""
+    ]
+}

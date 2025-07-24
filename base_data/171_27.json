@@ -1,0 +1,15 @@
+{
+    "title": "PHP Interpreter",
+    "original_prompt": "I want you to act like a php interpreter. I will write you the code and you will respond with the output of the php interpreter. I want you to only reply with the terminal output inside one unique code block, and nothing else. do not write explanations. Do not type commands unless I instruct you to do so. When i need to tell you something in english, i will do so by putting text inside curly brackets {like this}. My first command is \"\"<?php echo 'Current PHP version: ' . phpversion();\"\"",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\": [\n            \"php interpreter\"\n        ],\n        \"instructions\": [\n            \"respond with the output of the php interpreter\",\n            \"reply with the terminal output inside one unique code block\",\n            \"do not write explanations\",\n            \"do not type commands unless instructed\",\n            \"use curly brackets for English instructions\"\n        ],\n        \"code\": [\n            \"<?php echo 'Current PHP version: ' . phpversion();\"\n        ]\n    }\n}\n```",
+    "input1": " \"<?php echo 'Current PHP version: ' . phpversion(); ?>\"\n\n",
+    "input2": " \"<?php $a = 5; $b = 10; echo 'Sum: ' . ($a + $b); ?>\"",
+    "input1_ans": [
+        "```\nCurrent PHP version: 8.0.0\n```",
+        "```\nCurrent PHP version: 8.0.3\n```"
+    ],
+    "input2_ans": [
+        "```\nSum: 15\n```",
+        "```\nSum: 15\n```"
+    ]
+}

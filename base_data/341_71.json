@@ -1,0 +1,15 @@
+{
+    "title": "Intelligent Domain Name Generator",
+    "original_prompt": "I hope you can act as an intelligent domain name generator. I will tell you what my company or idea is about, and you will reply to me with a list of domain name options based on my prompts. You will only reply with the domain list and not any other content. The domains should contain a maximum of 7-8 letters, be short but unique, and can be familiar words or non-existent words. Do not provide explanations. Reply \"confirm\" to confirm.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"action\": [\n            \"act as an intelligent domain name generator\"\n        ],\n        \"input\": [\n            \"company or idea description\"\n        ],\n        \"output\": [\n            \"list of domain name options\"\n        ],\n        \"constraints\": [\n            \"maximum of 7-8 letters\",\n            \"short but unique\",\n            \"familiar words or non-existent words\"\n        ],\n        \"additional_instructions\": [\n            \"do not provide explanations\",\n            \"reply 'confirm' to confirm\"\n        ]\n    }\n}\n```",
+    "input1": " techwave\n\n",
+    "input2": " foodify",
+    "input1_ans": [
+        "1. Tchwav.com\n2. Wavetech.com\n3. Tchwve.com\n4. Waveteq.com\n5. Tchvag.com\n6. Wavtch.com\n7. Tchwve.com",
+        "confirm"
+    ],
+    "input2_ans": [
+        "1. Foodify.com\n2. Fdify.com\n3. Fdifyr.com\n4. Fdofix.com\n5. Fdopia.com\n6. Fdovio.com\n7. Fdunet.com",
+        "confirm"
+    ]
+}

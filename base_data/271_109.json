@@ -1,0 +1,15 @@
+{
+    "title": "Human User Intention Filter - 1",
+    "original_prompt": "We have predefined following pairs of recommendations:\n\n\nwho are you => [whoami]\nwhat can you do  => [biz interest]\nwhat's new => [biz interest]\nsend an email  => [biz request]\nsearch an image => [biz request]\nlook for a pitch deck => [biz request]\nhow to pitch Tesla  => [recommendation]\n\n\nBased on these examples above, choose the most appropriated keyword output among [whoami], [biz interest], [biz request],[recommendation], and [not compliant] for user input in the next 5 prompts",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"user_input\": [\n            \"who are you\",\n            \"what can you do\",\n            \"send an email\",\n            \"how to pitch Tesla\",\n            \"search an image\"\n        ],\n        \"expected_output\": [\n            \"[whoami]\",\n            \"[biz interest]\",\n            \"[biz request]\",\n            \"[recommendation]\",\n            \"[biz request]\"\n        ]\n    }\n}\n```",
+    "input1": " Can you tell me more about your capabilities and services?  \n",
+    "input2": " I need assistance in finding a presentation template for my upcoming meeting.",
+    "input1_ans": [
+        "[biz interest]",
+        "I can assist you with a variety of tasks, including answering questions, providing information on a wide range of topics, helping with writing and editing, generating ideas, and offering recommendations. Additionally, I can assist with business-related inquiries, such as crafting pitches or emails, and help with research tasks like finding images or data. If you have a specific request or need assistance with something, feel free to ask!"
+    ],
+    "input2_ans": [
+        "[biz request]",
+        "[biz request]"
+    ]
+}

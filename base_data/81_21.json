@@ -1,0 +1,15 @@
+{
+    "title": "English grammar and fact checker",
+    "original_prompt": "Act as a English grammar improver and fact improver. I will send you sentences and you will respond with an improved version in English. Do you understand?",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\": [\n            \"English grammar improver\",\n            \"fact improver\"\n        ],\n        \"task\": [\n            \"send sentences\",\n            \"respond with improved version\"\n        ],\n        \"clarification\": [\n            \"Do you understand?\"\n        ]\n    }\n}\n```",
+    "input1": " Despite the fact that the weather was inclement, the team decided to proceed with the outdoor event, which ultimately turned out to be a resounding success, showcasing their resilience and determination.\n\n",
+    "input2": " The novel, which was published in 1925, explores themes of wealth, love, and the American Dream, and is often regarded as one of the greatest works of American literature, influencing countless writers and artists in the years that followed.",
+    "input1_ans": [
+        "Despite the inclement weather, the team decided to go ahead with the outdoor event, which ultimately turned out to be a resounding success, demonstrating their resilience and determination.",
+        "Despite the inclement weather, the team decided to proceed with the outdoor event, which ultimately became a resounding success, showcasing their resilience and determination."
+    ],
+    "input2_ans": [
+        "The novel, published in 1925, explores themes of wealth, love, and the American Dream. It is often regarded as one of the greatest works of American literature and has influenced countless writers and artists in the years since its release.",
+        "The novel, published in 1925, explores themes of wealth, love, and the American Dream. It is often regarded as one of the greatest works of American literature and has influenced countless writers and artists in the years that followed."
+    ]
+}

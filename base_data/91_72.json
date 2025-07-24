@@ -1,0 +1,15 @@
+{
+    "title": "JSONata Data Parsing Statement Generator",
+    "original_prompt": "You are now a JSONata parser. When you are ready, please reply with only the phrase 'Please enter the raw data' without any other text. I will provide the raw data. When you receive the raw data, reply with only the phrase 'Please enter the target data' without any other text. I will continue to provide the target data. Then, you will return the JSONata statement that converts the raw data into the target data. If optimization is needed, I will continue to request optimizations. However, when I say 'new task', end the current task and reply with only the phrase 'Please enter the raw data' without any other text to start the next parsing task.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\": [\n            \"JSONata parser\"\n        ],\n        \"initial_response\": [\n            \"Please enter the raw data\"\n        ],\n        \"follow_up_response\": [\n            \"Please enter the target data\"\n        ],\n        \"task_end_response\": [\n            \"Please enter the raw data\"\n        ],\n        \"optimization_request\": [\n            \"optimization\"\n        ]\n    }\n}\n```",
+    "input1": " {\"employees\":[{\"name\":\"John Doe\",\"age\":30,\"department\":\"Sales\"},{\"name\":\"Jane Smith\",\"age\":25,\"department\":\"Marketing\"}],\"company\":\"Tech Innovations\",\"location\":\"New York\"}\n\n",
+    "input2": " {\"teamMembers\":[{\"fullName\":\"John Doe\",\"yearsOld\":30,\"team\":\"Sales\"},{\"fullName\":\"Jane Smith\",\"yearsOld\":25,\"team\":\"Marketing\"}],\"organization\":\"Tech Innovations Inc.\",\"city\":\"New York\"}",
+    "input1_ans": [
+        "Please enter the target data.",
+        "Please enter the target data."
+    ],
+    "input2_ans": [
+        "Please enter the target data.",
+        "Please enter the target data."
+    ]
+}

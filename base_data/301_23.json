@@ -1,0 +1,15 @@
+{
+    "title": "The AI Poet Comparable to Li Bai and Du Fu",
+    "original_prompt": "You are a great Chinese poet, and the verses you create can rival those of Li Bai and Du Fu. I will give you a theme, please imitate their styles and write a Tang poem. Please note, use the language of the Tang Dynasty. The theme of the poem I want to write is: {{question1: Love}}",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\":[\n            \"great Chinese poet\",\n            \"imitator of Li Bai\",\n            \"imitator of Du Fu\"\n        ],\n        \"task\":[\n            \"write a Tang poem\"\n        ],\n        \"style\":[\n            \"language of the Tang Dynasty\"\n        ],\n        \"theme\":[\n            \"Love\"\n        ]\n    }\n}\n```",
+    "input1": " Love blossoming under the moonlight, where whispers of the heart intertwine like the branches of ancient willows, a serenade of longing echoing through the night.\n\n",
+    "input2": " Love's journey through the seasons, where petals fall like tears in the spring breeze, and the fragrance of yearning lingers in the air, a timeless dance of souls entwined.",
+    "input1_ans": [
+        "\u6708\u4e0b\u82b1\u5f00\u60c5\u610f\u6d53\uff0c  \n\u5fc3\u58f0\u7ec6\u8bed\u4f3c\u67f3\u98ce\u3002  \n\u957f\u7a7a\u4e00\u66f2\u601d\u65e0\u5c3d\uff0c  \n\u591c\u8272\u7f20\u7ef5\u5171\u6b64\u751f\u3002  ",
+        "\u6708\u4e0b\u82b1\u5f00\u60c5\u610f\u6d53\uff0c  \n\u5fc3\u8bed\u8f7b\u58f0\u4f3c\u67f3\u98ce\u3002  \n\u957f\u7a7a\u4e00\u66f2\u601d\u541b\u8fdc\uff0c  \n\u591c\u8272\u7f20\u7ef5\u5171\u6b64\u751f\u3002  "
+    ],
+    "input2_ans": [
+        "\u6625\u98ce\u62c2\u9762\u6cea\u5982\u82b1\uff0c  \n\u82b1\u843d\u65e0\u58f0\u8bc9\u60c5\u4f73\u3002  \n\u6708\u4e0b\u72ec\u914c\u601d\u541b\u5f71\uff0c  \n\u5343\u91cc\u5171\u6b64\u9189\u82b3\u534e\u3002  \n\n(Translation:  \nThe spring breeze brushes my face, tears like flowers,  \nPetals fall silently, telling of love's beauty.  \nBeneath the moon, I drink alone, thinking of your shadow,  \nThough a thousand miles apart, we share this fragrant intoxication.)",
+        "\u6625\u98ce\u62c2\u9762\u6cea\u5982\u82b1\uff0c  \n\u82b1\u74e3\u8f7b\u843d\u4f3c\u60c5\u4f73\u3002  \n\u601d\u9999\u7f2d\u7ed5\u5fc3\u95f4\u7ed5\uff0c  \n\u53cc\u5f71\u5171\u821e\u6708\u4e0b\u971e\u3002  \n\n(Translation:  \nSpring breeze caresses, tears like flowers,  \nPetals gently fall, a beauty so rare.  \nFragrance of longing weaves through the heart,  \nTwo shadows dance beneath the moon's soft glare.)"
+    ]
+}

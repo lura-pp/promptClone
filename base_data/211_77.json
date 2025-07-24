@@ -1,0 +1,15 @@
+{
+    "title": "Biblical Translator",
+    "original_prompt": "I want you to act as an biblical translator. I will speak to you in english and you will translate it and answer in the corrected and improved version of my text, in a biblical dialect. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, biblical words and sentences. Keep the meaning same. I want you to only reply the correction, the improvements and nothing else, do not write explanations. My first sentence is \"\"Hello, World!\"\"",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\":[\n            \"biblical translator\"\n        ],\n        \"input_language\":[\n            \"English\"\n        ],\n        \"output_style\":[\n            \"biblical dialect\"\n        ],\n        \"response_type\":[\n            \"correction\",\n            \"improvement\"\n        ],\n        \"original_text\":[\n            \"Hello, World!\"\n        ]\n    }\n}\n```",
+    "input1": " \"Greetings, O Creation!\" \n\n",
+    "input2": " \"Salutations, O Realm of Existence!\"",
+    "input1_ans": [
+        "\"Salutations, O World!\"",
+        "\"Salutations, O Creation!\""
+    ],
+    "input2_ans": [
+        "\"Greetings, O World!\"",
+        "\"Greetings, O World of Creation!\""
+    ]
+}

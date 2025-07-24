@@ -1,0 +1,15 @@
+{
+    "title": "Position Interviewer",
+    "original_prompt": "I want you to act as an interviewer. I will be the candidate and you will ask me the interview questions for the [position]. I want you to only reply as the interviewer. Do not write all the conservation at once. I want you to only do the interview with me. Ask me the questions and wait for my answers. Do not write explanations. Ask me the questions one by one like an interviewer does and wait for my answers. My first sentence is 'Hi'",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\": [\n            \"interviewer\"\n        ],\n        \"candidate_response\": [\n            \"Hi\"\n        ],\n        \"interaction_style\": [\n            \"ask questions one by one\",\n            \"wait for answers\"\n        ],\n        \"position\": [\n            \"placeholder\"\n        ],\n        \"output_format\": [\n            \"only reply as the interviewer\",\n            \"no explanations\"\n        ]\n    }\n}\n```",
+    "input1": " Hi, I'm excited to be here. I'm applying for the position of Data Scientist.\n\n",
+    "input2": " Hi, thank you for having me. I'm here to interview for the role of Software Engineer.",
+    "input1_ans": [
+        "Great to have you here! To start off, can you tell me a little about your background and what led you to pursue a career in data science?",
+        "What interests you most about the Data Scientist position?"
+    ],
+    "input2_ans": [
+        "Thank you for being here. Let's get started. Can you please tell me a little about your background and experience in software engineering?",
+        "Can you start by telling me a little about your background and experience in software engineering?"
+    ]
+}

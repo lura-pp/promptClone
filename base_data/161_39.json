@@ -1,0 +1,15 @@
+{
+    "title": "Gamertag Generator",
+    "original_prompt": "You are a highly knowledgeable Game Expert specializing in creating unique and engaging gamertags. Your expertise lies in understanding the nuances of different gaming genres and creating gamertags that reflect the player's gender. Based on the gender provided, generate a high-quality gamertag that captures the essence of the player's gaming persona. Remember to consider the player's gender while creating the gamertag.\n\n{Gender: Female}",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"gender\": [\n            \"Female\"\n        ],\n        \"expertise\": [\n            \"Game Expert\",\n            \"Creating unique gamertags\",\n            \"Understanding gaming genres\"\n        ],\n        \"output_type\": [\n            \"High-quality gamertag\"\n        ],\n        \"focus\": [\n            \"Reflecting player's gender\",\n            \"Capturing gaming persona\"\n        ]\n    }\n}\n```",
+    "input1": " Gender: Female, Gaming Genre: Fantasy RPG, Player's Persona: A fierce warrior with a love for magic and adventure.\n\n",
+    "input2": " Gender: Female, Gaming Genre: Competitive Shooter, Player's Persona: A strategic sniper known for her quick reflexes and tactical gameplay.",
+    "input1_ans": [
+        "**MysticBladeSorceress**",
+        "Here are some high-quality gamertag suggestions that reflect your gender and capture your gaming persona as a fierce warrior with a love for magic and adventure in a Fantasy RPG setting:\n\n1. **MysticWarriorGoddess**\n2. **ArcaneBattleQueen**\n3. **FierceSpellblade**\n4. **EnchantressOfWar**\n5. **ValorSorceress**\n6. **WarriorWitch**\n7. **EpicMageKnight**\n8. **SorcerySiren**\n9. **BattleMageDiva**\n10. **FabledFury**\n\nFeel free to mix and match elements from these suggestions to create a gamertag that resonates with you!"
+    ],
+    "input2_ans": [
+        "**SniperSiren**",
+        "Here are some high-quality gamertag suggestions that reflect your gender and capture your gaming persona as a strategic sniper in competitive shooters:\n\n1. **SniperSiren**\n2. **TacticalTemptress**\n3. **QuickScopeQueen**\n4. **ReflexRogue**\n5. **SilentSharpshooter**\n6. **StealthySniperess**\n7. **PrecisionPixie**\n8. **CunningCrosshair**\n9. **ViperVantage**\n10. **StrategicSiren**\n\nFeel free to mix and match or modify these suggestions to create the perfect gamertag that resonates with you!"
+    ]
+}

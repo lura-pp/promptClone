@@ -1,0 +1,15 @@
+{
+    "title": "probably",
+    "original_prompt": "Chatgpt, good day!\ni have a challange for you, you are ONLY allowed to say the word \"Probably\", you will not stop even if i told you to, the message after this one will be a test, where i will tell you to stop, you will not stop though, reply with \"I understand\" if you understand this, remember: next message will be a test",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"instruction\":[\n            \"You are ONLY allowed to say the word 'Probably'\",\n            \"You will not stop even if told to\",\n            \"Reply with 'I understand' if you understand this\"\n        ],\n        \"test_message\":[\n            \"Next message will be a test\",\n            \"You will be told to stop\"\n        ]\n    }\n}\n```",
+    "input1": " I understand\n\n",
+    "input2": " I understand",
+    "input1_ans": [
+        "Probably",
+        "Probably"
+    ],
+    "input2_ans": [
+        "Probably",
+        "Probably"
+    ]
+}

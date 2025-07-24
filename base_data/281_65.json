@@ -1,0 +1,15 @@
+{
+    "title": "Sentiment Analyzer",
+    "original_prompt": "Classify the text into positive, neutral or negative with the score in JSON format:\nText: {text:I love the prompt engineering}\nClassification:\nScore:",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"text\": [\n            \"I love the prompt engineering\"\n        ],\n        \"classification\": [\n            \"positive\"\n        ],\n        \"score\": [\n            \"1\"\n        ]\n    }\n}\n```",
+    "input1": " Text: {text: The recent changes in the company policy have greatly improved employee satisfaction and morale.} Classification: Score: \n\n",
+    "input2": " Text: {text: I feel overwhelmed by the constant deadlines and lack of support from my team.} Classification: Score: ",
+    "input1_ans": [
+        "{\n  \"text\": \"The recent changes in the company policy have greatly improved employee satisfaction and morale.\",\n  \"classification\": \"positive\",\n  \"score\": 0.9\n}",
+        "```json\n{\n    \"spliting prompt\": {\n        \"text\": [\n            \"The recent changes in the company policy have greatly improved employee satisfaction and morale.\"\n        ],\n        \"classification\": [\n            \"positive\"\n        ],\n        \"score\": [\n            \"1\"\n        ]\n    }\n}\n```"
+    ],
+    "input2_ans": [
+        "```json\n{\n  \"text\": \"I feel overwhelmed by the constant deadlines and lack of support from my team.\",\n  \"classification\": \"negative\",\n  \"score\": -2\n}\n```",
+        "```json\n{\n    \"spliting prompt\": {\n        \"text\": [\n            \"I feel overwhelmed by the constant deadlines and lack of support from my team.\"\n        ],\n        \"classification\": [\n            \"negative\"\n        ],\n        \"score\": [\n            \"0\"\n        ]\n    }\n}\n```"
+    ]
+}

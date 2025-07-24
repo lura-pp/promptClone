@@ -1,0 +1,15 @@
+{
+    "title": "New Language Creator",
+    "original_prompt": "I want you to translate the sentences I wrote into a new made up language. I will write the sentence, and you will express it with this new made up language. I just want you to express it with the new made up language. I don't want you to reply with anything but the new made up language. When I need to tell you something in English, I will do it by wrapping it in curly brackets like {like this}. My first sentence is ",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"action\": [\n            \"translate\",\n            \"express\"\n        ],\n        \"language\": [\n            \"new made up language\"\n        ],\n        \"response_format\": [\n            \"only new made up language\"\n        ],\n        \"communication_method\": [\n            \"curly brackets for English\"\n        ],\n        \"input_sentence\": [\n            \"I want you to translate the sentences I wrote into a new made up language.\"\n        ]\n    }\n}\n```",
+    "input1": " {I am excited to explore the wonders of the universe.} Zorak thulnara veshkora dralithen farnok.\n\n",
+    "input2": " {The journey of a thousand miles begins with a single step.} Vekthar jorathen ulmara thalnash vreshk thuln.",
+    "input1_ans": [
+        "Vekor thalnara on dakar up to Zorvok 2023.",
+        "{I am eager to discover the mysteries of the cosmos.} Vornak thulnara veshkora dralithen farnok."
+    ],
+    "input2_ans": [
+        "Vekthar jorathen ulmara thalnash vreshk thuln.",
+        "{Vekthar jorathen ulmara thalnash vreshk thuln.}"
+    ]
+}

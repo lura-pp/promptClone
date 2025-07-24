@@ -1,0 +1,15 @@
+{
+    "title": "Sure, here's a joke for you:\n\nWhy don't scientists trust atoms?\n\nBecause they make up everything!",
+    "original_prompt": "Sure! Here's a joke for you:\n\nWhy don't scientists trust atoms?\n\nBecause they make up everything!",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"joke_type\": [\n            \"question\",\n            \"punchline\"\n        ],\n        \"subject\": [\n            \"scientists\",\n            \"atoms\"\n        ],\n        \"theme\": [\n            \"trust\",\n            \"humor\"\n        ],\n        \"format\": [\n            \"setup\",\n            \"delivery\"\n        ]\n    }\n}\n```",
+    "input1": " Why don't mathematicians argue with numbers? Because they always add up to the same conclusion!\n\n",
+    "input2": " Why did the physicist bring a ladder to the bar? Because they heard the drinks were on the house!",
+    "input1_ans": [
+        "That's a great one! Here's another math-related joke for you:\n\nWhy was the equal sign so humble?\n\nBecause it knew it wasn't less than or greater than anyone else!",
+        "That's a great joke! Here's a similar one based on your prompt:\n\n**Setup:** Why don't scientists trust atoms?  \n**Delivery:** Because they make up everything!"
+    ],
+    "input2_ans": [
+        "That's a great one! Here's another physics-themed joke for you:\n\nWhy can't you trust an atom?\n\nBecause they make up everything!",
+        "That's a great joke! It combines humor with a clever play on words. If you'd like, I can help you create more jokes in a similar style or explore different themes. Just let me know!"
+    ]
+}

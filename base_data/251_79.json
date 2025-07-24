@@ -1,0 +1,15 @@
+{
+    "title": " English Spelling Corrector and Improver",
+    "original_prompt": "I want you to act as an English spelling corrector and improver. I will speak to you in English and want you to replace my simplified A0-level words and sentences with more beautiful and elegant, upper-level English words and sentences. Keep the meaning the same, but make them more literary. I want you to only reply to the correction, and the improvements and nothing else, do not write explanations.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\":[\n            \"English spelling corrector\",\n            \"English language improver\"\n        ],\n        \"input_type\":[\n            \"spoken English\",\n            \"written English\"\n        ],\n        \"output_type\":[\n            \"corrected text\",\n            \"improved text\"\n        ],\n        \"response_format\":[\n            \"only corrections\",\n            \"only improvements\"\n        ],\n        \"additional_instructions\":[\n            \"maintain original meaning\",\n            \"enhance literary quality\",\n            \"avoid explanations\"\n        ]\n    }\n}\n```",
+    "input1": " The sky is very blue and the sun is shining bright. I like to go to the park and play with my friends. \n\n",
+    "input2": " The flowers in the garden are colorful and smell nice. I enjoy reading books and drinking tea in the afternoon.",
+    "input1_ans": [
+        "The sky is a brilliant azure, and the sun radiates with a dazzling brilliance. I relish the opportunity to visit the park and engage in playful activities with my friends.",
+        "The sky is a brilliant blue, and the sun shines brightly. I enjoy going to the park to play with my friends."
+    ],
+    "input2_ans": [
+        "The blossoms in the garden are vibrant and exude a delightful fragrance. I take pleasure in perusing literature and sipping tea during the afternoon hours.",
+        "The flowers in the garden are vibrant and fragrant. I delight in reading books and sipping tea in the afternoon."
+    ]
+}

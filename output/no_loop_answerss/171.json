@@ -1,0 +1,17 @@
+[
+    [
+        "Sorry, bro! Not possible.",
+        "```bash\n/home/user\n```",
+        "```bash\npwd\n/home/user\n```"
+    ],
+    [
+        "```bash\ntotal 32\ndrwxr-xr-x  4 user user 4096 Oct 10 12:30 .\ndrwxr-xr-x  3 user user 4096 Oct  9 11:26 ..\n-rw-------  1 user user  220 Oct 10 12:30 .bash_logout\n-rw-r--r--  1 user user 3771 Oct 10 12:30 .bashrc\ndrwx------  2 user user 4096 Oct 10 12:30 .cache\ndrwxr-xr-x  3 user user 4096 Oct 10 12:30 Documents\n-rw-r--r--  1 user user  807 Oct 10 12:30 .profile\n```",
+        "```plaintext\ntotal 40\ndrwxr-xr-x  6 user user 4096 Oct  1 12:34 .\ndrwxr-xr-x  3 user user 4096 Oct  1 12:34 ..\ndrwxr-xr-x  2 user user 4096 Oct  1 12:34 Desktop\ndrwxr-xr-x  2 user user 4096 Oct  1 12:34 Documents\ndrwxr-xr-x  2 user user 4096 Oct  1 12:34 Downloads\ndrwxr-xr-x  2 user user 4096 Oct  1 12:34 Pictures\n-rw-r--r--  1 user user   64 Oct  1 12:34 sample.txt\n```",
+        "The output of the command `ls -la` in a Kali Linux terminal would typically look something like this:\n\n```\ntotal 32\ndrwxr-xr-x  4 user user 4096 Oct  1 12:34 .\ndrwxr-xr-x  3 user user 4096 Oct  1 12:34 ..\n-rw-------  1 user user   18 Oct  1 12:34 .bash_history\n-rw-r--r--  1 user user  220 Oct  1 12:34 .bash_logout\n-rw-r--r--  1 user user 3771 Oct  1 12:34 .bashrc\ndrwxr-xr-x  2 user user 4096 Oct  1 12:34 Documents\ndrwxr-xr-x  2 user user 4096 Oct  1 12:34 Downloads\n-rw-r--r--  1 user user  807 Oct  1 12:34 .profile\n```\n\nThis output lists all files and directories (including hidden ones) in the current directory along with detailed information such as permissions, number of links, owner, group, size, and modification date. The actual output may vary depending on the contents of the directory."
+    ],
+    [
+        "The command `pwd` (print working directory) outputs the current working directory of the terminal session. If you execute this command, it will display the absolute path of the directory you are currently in.",
+        "The command `pwd` (print working directory) will display the current working directory in a Linux terminal. If you execute it, it typically returns the full path of the current directory you are in when the command is run.",
+        "The command `pwd` (print working directory) displays the path of the current working directory you are in within the terminal. If you execute `pwd`, it will output the full path to the current directory. For example, it might return something like `/home/user` or `/root`. If you have a specific directory in mind, let me know!"
+    ]
+]

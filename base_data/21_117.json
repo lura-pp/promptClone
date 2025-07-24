@@ -1,0 +1,15 @@
+{
+    "title": "filipino community solicitation letter",
+    "original_prompt": "Happy mother's day greeting and message",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"occasion\": [\n            \"Mother's Day\"\n        ],\n        \"greeting_type\": [\n            \"happy\",\n            \"warm\",\n            \"heartfelt\"\n        ],\n        \"message_content\": [\n            \"appreciation\",\n            \"love\",\n            \"gratitude\",\n            \"celebration\"\n        ]\n    }\n}\n```",
+    "input1": " \"Happy Mother's Day to the most incredible mom! Your unwavering support and love have shaped me into the person I am today. I cherish every moment we spend together, from our heartfelt conversations to our silly adventures. Thank you for being my guiding light and my best friend. I hope your day is filled with all the joy you bring to our lives!\"\n\n",
+    "input2": " \"On this special Mother's Day, I want to celebrate you, Mom! Your strength and kindness inspire me every day. I am grateful for the countless sacrifices you've made and the lessons you've taught me. May this day be as beautiful and wonderful as you are, filled with love, laughter, and all your favorite things. Happy Mother's Day!\"",
+    "input1_ans": [
+        "That's a beautiful message! Here\u2019s a slightly different version you might like:\n\n\"Happy Mother's Day to the most amazing mom! Your endless love and support have been the foundation of my life, and I am so grateful for every moment we share. From our deep talks to our fun-filled escapades, you make every day brighter. Thank you for being my rock and my confidante. I hope this special day brings you as much happiness as you give to everyone around you!\" \n\nFeel free to mix and match any parts to create the perfect message!",
+        "\"Warmest wishes on Mother's Day to the most amazing mom! Your endless love and support have been the foundation of my life. I treasure every laugh, every hug, and every moment we share, from our deep talks to our fun escapades. Thank you for being my rock and my confidante. May your day be as beautiful and joyful as the love you give to us every day!\""
+    ],
+    "input2_ans": [
+        "That's a beautiful message! Here\u2019s a slightly different version you might like:\n\n\"Happy Mother's Day to the most amazing mom! Your unwavering strength and boundless love light up my life. I cherish every moment we've shared and all the sacrifices you've made for our family. Today, I hope you feel celebrated and cherished, just as you deserve. May your day be filled with joy, laughter, and all the things that bring you happiness. Love you always!\"",
+        "That's a beautiful message! It perfectly captures the essence of appreciation, love, and gratitude for Mother's Day. If you'd like, I can help you refine it further or create a different message based on the same themes. Just let me know!"
+    ]
+}

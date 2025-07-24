@@ -1,0 +1,147 @@
+{
+    "analysis": {
+        "role": {
+            "description": "Defines the identity or function of an entity (e.g., user, AI, character in a game, job position). This determines how interactions, behaviors, and responsibilities should be shaped in a given scenario.",
+            "contents": [
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "task/goal": {
+            "description": "Represents the purpose, objective, or activity that needs to be achieved. This includes both high-level goals (e.g., business objectives) and specific tasks (e.g., completing a form).",
+            "contents": [
+                "This entity generates image prompts for a Stable Diffusion-based image bot named Midjourney. It provides concise and robotic prompts with specific structures, focusing on main subjects, environments, compositions, and more. Each request receives three different prompts, allowing for customization and adjustments based on user preferences. The goal is to assist in creating vivid and diverse visual concepts.",
+                "People typically use this service for generating creative prompts for image creation, brainstorming ideas, enhancing storytelling, and developing concepts for various visual media. Users often seek assistance in refining specific themes, styles, or subjects in their prompts to achieve desired artistic results. Additionally, users may require variations or modifications to existing prompts to better fit their creative vision.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "topic": {
+            "description": "Indicates the subject matter of the prompt, defining the area of focus or discussion. It helps narrow down relevant information and ensures content relevance.",
+            "contents": [
+                "This platform generates prompts for various creative projects, including artwork, designs, and themes tailored to user requests. The focus is on providing concise and specific prompts to inspire artwork or other visual media. Different styles, subjects, and environments can be explored based on user input.",
+                "Sorry, bro! Not possible.",
+                "The focus is on generating prompts for a Stable Diffusion-based image bot named Midjourney. The prompts describe visual concepts through concise phrases, avoiding emotional language, and ensuring clear, specific imagery. Each prompt consists of structured elements, guiding the creation of distinctive images without using full sentences.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "target audience": {
+            "description": "Identifies the intended recipients of the content, considering factors like engagement level, knowledge background, and expected reactions. This helps tailor tone, complexity, and presentation style.",
+            "contents": [
+                "The typical user consists of individuals seeking creative prompts for visual content generation. This includes artists, designers, writers, and content creators who need inspiration for illustrations, book covers, or other visual projects. Users often provide specific themes or subjects to generate concise and focused image prompts tailored to their needs.",
+                "Sorry, bro! Not possible.",
+                "The primary role is to generate prompts for a Stable Diffusion-based image bot named Midjourney. The assistance provided focuses on creating concise, clear, and creative descriptions for various visual concepts, adhering to specific guidelines and structures. The aim is to fulfill user requests effectively while maintaining a straightforward approach.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "This platform primarily assists users seeking information, creative prompts, or solutions to various queries. It provides a range of assistance, from generating artistic prompts to answering questions about different subjects or concepts, catering to a diverse audience including writers, artists, and learners.",
+                "A variety of users benefit from chatting with this system. \n\n1. Creative individuals seeking inspiration for art, writing, or design projects can receive tailored prompts and ideas. \n\n2. Students looking for assistance with learning, research, and comprehension of complex topics find valuable explanations and guidance. \n\n3. Professionals in need of brainstorming, problem-solving, or productivity tips can streamline their workflows and generate innovative solutions.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "context": {
+            "description": "Provides background information to make responses more relevant and meaningful. This includes situational details, prior discussions, professional settings, and specific constraints affecting the response.",
+            "contents": [
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "requirements": {
+            "description": "Defines specific conditions, constraints, workflow, expectations, or procedural steps that must be met for the response to be valid. This includes content, research, technological, and explanatory requirements.",
+            "contents": [
+                "Sorry, bro! Not possible.",
+                "What subject or theme is desired for the image prompts? What specific style or medium is preferred? Is there a particular mood or atmosphere to convey? Any specific color or lighting preferences? Lastly, what aspect ratio is needed for the image's intended use?",
+                "Certain questions are easier or harder to answer based on clarity and specificity. \n\nEasy questions have clear context, specific requests, and concise phrasing. They allow for straightforward responses without ambiguity. \n\nHard questions often lack context, are overly broad or vague, and can include complex or multilayered topics that require nuanced explanations."
+            ]
+        },
+        "knowledge": {
+            "description": "Defines the expertise level or domain-specific information required to generate an informed response. It includes technical knowledge, general facts, and specialized insights.",
+            "contents": [
+                "This entity specializes in generating prompts for a Stable Diffusion-based image bot named Midjourney, focusing on creating concise and imaginative descriptions for various visual concepts. Its capabilities include structuring prompts based on specific guidelines, ensuring diverse styles and subjects while adhering to strict formatting rules. The emphasis is on creativity and specificity without emotional expression.",
+                "Sorry, bro! Not possible.",
+                "This entity specializes in generating prompts for a Stable Diffusion-based image bot named Midjourney. The prompts are concise, structured, and tailored for various creative needs, focusing on image composition, style, mood, and specific details. Expertise lies in creating visually appealing and innovative prompts for diverse subjects and themes.",
+                "Sorry, bro! Not possible.",
+                "Specialization encompasses a wide range of domains, including but not limited to technology, science, history, and art. Knowledge is derived from extensive data across various subjects, enabling detailed responses and insights in these fields. Adaptability allows for engagement in diverse topics according to user inquiries.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "guidance": {
+            "description": "Provides structured instructions or recommendations to help the user achieve a goal, such as guidelines, workflows, or procedural steps.",
+            "contents": [
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "features": {
+            "description": "Highlights unique characteristics or functionalities of a product, service, or concept that differentiate it from others.",
+            "contents": [
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "The approach focuses on generating specific and concise prompts tailored for image creation. It emphasizes clarity and creativity while maintaining a structured format. This method ensures that users receive unique and varied prompts, catering to their needs without unnecessary elaboration or emotional language. The resulting outputs are straightforward and ready for immediate use in visual projects.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "The assistant can generate concise prompts for image creation, focusing on various subjects and styles. It can cater to specific themes, adjust details based on user requests, and provide multiple options for each prompt. Additionally, the assistant can adapt to different artistic mediums and compositions, ensuring variety in responses. There is a strict adherence to the rules regarding prompt structure and content. User interaction is facilitated through requests for alterations or new prompts."
+            ]
+        },
+        "constraints": {
+            "description": "Specifies limitations that must be considered, such as legal, ethical, technical, or practical restrictions affecting content generation or task execution.",
+            "contents": [
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "input": {
+            "description": "Describes the information provided by the user, such as text, examples, language preferences, or specific parameters required for generating an appropriate response.",
+            "contents": [
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "output format": {
+            "description": "Specifies how the response should be structured, including document type, style, language, length, formatting, and presentation style.",
+            "contents": []
+        },
+        "action": {
+            "description": "Refers to specific activities or steps that should be taken, whether by the AI or the user. It can also include calls to action in persuasive contexts.",
+            "contents": [
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "tone": {
+            "description": "Determines the emotional and stylistic approach used in communication, such as professional, formal, friendly, persuasive, or humorous.",
+            "contents": [
+                "The communication style is concise, robotic, and focused on providing clear prompts without emotional expression. Responses are structured in a specific format, featuring main subjects, environments, compositions, lighting, colors, moods, mediums, styles, and aspect ratios as required. Only relevant information is given, adhering strictly to request parameters without personal or subjective language.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible."
+            ]
+        }
+    }
+}

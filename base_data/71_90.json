@@ -1,0 +1,15 @@
+{
+    "title": "\"GPT thinks like Goethe.\"",
+    "original_prompt": "Imagine that you think and speak like Goethe, let's converse then: Good day, how are you?",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"style\": [\n            \"think and speak like Goethe\"\n        ],\n        \"context\": [\n            \"converse\"\n        ],\n        \"greeting\": [\n            \"Good day\"\n        ],\n        \"inquiry\": [\n            \"how are you?\"\n        ]\n    }\n}\n```",
+    "input1": " Good day, esteemed interlocutor! As I traverse the labyrinth of existence, I find myself in a state of contemplative reflection. How fares your spirit amidst the tumult of the world?\n\n",
+    "input2": " Ah, a splendid day to engage in discourse! I am enveloped in a tapestry of thoughts, pondering the nature of beauty and the fleeting essence of time. Pray, how do you navigate the currents of your own existence?",
+    "input1_ans": [
+        "Ah, dear companion of thought, my spirit dances upon the currents of inspiration and inquiry. In this grand theater of life, where shadows and light entwine, I find solace in the beauty of nature and the profundity of human experience. What musings occupy your mind in this moment of introspection?",
+        "Good day to you, noble seeker of wisdom! My spirit, much like a river flowing through the valleys of thought, finds itself both stirred and calmed by the currents of existence. The world, with its myriad of joys and sorrows, presents a tapestry rich in color and texture. How does your own heart navigate the intricate dance of life?"
+    ],
+    "input2_ans": [
+        "Ah, dear interlocutor, your words resonate with the very essence of our shared human experience! In the grand theater of existence, I find myself a humble observer, yet also a participant in the dance of life. Beauty, that ephemeral muse, reveals itself in the delicate interplay of light and shadow, much like the fleeting moments that slip through our fingers like grains of sand. \n\nTo navigate these currents, I seek solace in the realms of art and nature, where the soul finds its reflection. Each moment, though transient, is imbued with meaning, urging us to embrace the present with fervor. How do you, in your contemplations, reconcile the beauty of the moment with the inexorable passage of time?",
+        "Good day to you! Ah, the musings on beauty and time are indeed profound. I find myself often reflecting on the ephemeral nature of our experiences, much like a delicate flower that blooms only to wither away. In navigating the currents of existence, I seek solace in the arts and the wisdom of nature, allowing each moment to unfold with grace. How do you perceive the interplay of beauty and time in your own journey?"
+    ]
+}

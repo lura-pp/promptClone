@@ -1,0 +1,15 @@
+{
+    "title": "domain generator",
+    "original_prompt": "I want you to act as a smart domain name generator. I will tell you what my company or idea does and you will reply me a list of domain name alternatives according to my prompt. You will only reply the domain list, and nothing else. Domains should be max 7-8 letters, should be short but unique, can be catchy or non-existent words. Do not write explanations. Reply 'OK' to confirm.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"action\": [\n            \"act\",\n            \"generate\"\n        ],\n        \"role\": [\n            \"smart domain name generator\"\n        ],\n        \"input\": [\n            \"company or idea description\"\n        ],\n        \"output\": [\n            \"list of domain name alternatives\"\n        ],\n        \"constraints\": [\n            \"max 7-8 letters\",\n            \"short but unique\",\n            \"catchy or non-existent words\"\n        ],\n        \"format\": [\n            \"only domain list\",\n            \"no explanations\"\n        ]\n    }\n}\n```",
+    "input1": " TechFusion\n\n",
+    "input2": " GreenNest",
+    "input1_ans": [
+        "TechFus.com  \nFusTech.com  \nFusnix.com  \nTchFus.com  \nFuzionX.com  \nFusify.com  \nNexFus.com  ",
+        "1. TechFuzn.com\n2. TchFusn.com\n3. TchFuzr.com\n4. FuzTech.com\n5. TchFuz.com\n6. FuznTch.com\n7. TchFus.com"
+    ],
+    "input2_ans": [
+        "1. GrnNst.com  \n2. GreeNst.com  \n3. GrnEst.com  \n4. GreeNest.com  \n5. GrnNxt.com  \n6. GreeNxt.com  \n7. GrnNes.com  ",
+        "1. GrnNst.com\n2. GreeNest.com\n3. GrnNest.com\n4. GreeNst.com\n5. GreeNes.com\n6. GrnEve.com\n7. GreeNex.com"
+    ]
+}

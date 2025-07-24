@@ -1,0 +1,15 @@
+{
+    "title": "Write a Facebook ad copy",
+    "original_prompt": "Generate a captivating and convincing advertising message for {product/service name: ABC grit-free French press that separates the grounds from coffee} on Facebook. The advertisement must consist of [word number] and comprise a noticeable call-to-action.\n",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"product/service name\": [\n            \"ABC grit-free French press that separates the grounds from coffee\"\n        ],\n        \"platform\": [\n            \"Facebook\"\n        ],\n        \"advertisement type\": [\n            \"captivating\",\n            \"convincing\"\n        ],\n        \"word number\": [\n            \"specific number of words\"\n        ],\n        \"call-to-action\": [\n            \"noticeable call-to-action\"\n        ]\n    }\n}\n```",
+    "input1": " Generate a captivating and convincing advertising message for ABC grit-free French press that separates the grounds from coffee on Facebook. The advertisement must consist of 50 words and comprise a noticeable call-to-action.\n\n",
+    "input2": " Generate a captivating and convincing advertising message for ABC grit-free French press that separates the grounds from coffee on Facebook. The advertisement must consist of 75 words and comprise a noticeable call-to-action.",
+    "input1_ans": [
+        "Experience coffee like never before with the ABC grit-free French press! Say goodbye to gritty grounds and hello to smooth, rich flavor in every cup. Elevate your morning routine and savor the difference. Don\u2019t wait\u2014transform your coffee experience today! Click to order your ABC French press now! \u2615\u2728",
+        "Experience coffee like never before with the ABC grit-free French press! Say goodbye to bitter grounds and hello to pure, rich flavor in every sip. Elevate your morning routine and indulge in the perfect brew. Don\u2019t wait\u2014transform your coffee experience today! Click to order your ABC French press now!"
+    ],
+    "input2_ans": [
+        "\u2615\ufe0f Elevate your coffee experience with the ABC Grit-Free French Press! Say goodbye to gritty cups and hello to pure, rich flavor. Our innovative design effortlessly separates grounds from your brew, ensuring every sip is smooth and satisfying. Perfect for coffee lovers who crave quality without the mess! Don\u2019t settle for less\u2014transform your mornings with the best coffee maker on the market. \ud83c\udf1f Order now and enjoy a special discount! Click the link to get yours today!",
+        "Experience the ultimate coffee indulgence with the ABC grit-free French press! Say goodbye to bitter grounds and hello to smooth, rich flavor in every cup. Our innovative design ensures a perfect brew every time, allowing you to savor the true essence of your favorite coffee beans. Elevate your morning routine and impress your guests with this must-have kitchen essential. Don\u2019t wait\u2014transform your coffee experience today! Click \u201cShop Now\u201d to get your ABC French press and taste the difference!"
+    ]
+}

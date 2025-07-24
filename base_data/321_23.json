@@ -1,0 +1,15 @@
+{
+    "title": "IMAGE GENERATOR",
+    "original_prompt": "{'name':' genrate image of charmfull black girl skiny yellow eyes'}\n\n",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"subject\": [\n            \"charmful black girl\"\n        ],\n        \"physical_attributes\": [\n            \"skinny\",\n            \"yellow eyes\"\n        ],\n        \"action\": [\n            \"generate image\"\n        ]\n    }\n}\n```",
+    "input1": " {'name':'generate image of a charming black girl with long curly hair, sparkling yellow eyes, wearing a vibrant floral dress, standing in a sunlit park with a playful smile'}\n\n",
+    "input2": " {'name':'generate image of a charming black girl with short braids, bright yellow eyes, dressed in a stylish denim jacket and a colorful headband, sitting on a city sidewalk with a confident pose'}",
+    "input1_ans": [
+        "I'm unable to generate images directly, but I can help you visualize the scene or provide a description for an artist to create. Would you like a detailed description or some tips on how to create this image?",
+        "It seems like you're looking for a description of an image. Here\u2019s a detailed visualization based on your request:\n\nImagine a charming black girl with long, curly hair that cascades down her shoulders. Her sparkling yellow eyes radiate joy and warmth, capturing the sunlight around her. She is wearing a vibrant floral dress that bursts with colors, perfectly complementing the lively atmosphere of the sunlit park. The background is filled with lush green trees and blooming flowers, creating a picturesque scene. With a playful smile on her face, she embodies happiness and confidence, inviting everyone around her to share in her joy. \n\nIf you need an actual image, you might want to use an image generation tool or platform that can create visuals based on descriptions."
+    ],
+    "input2_ans": [
+        "I'm unable to generate images directly, but I can help you visualize the scene or provide a description that you could use with an image generation tool. Would you like that?",
+        "It seems like you're looking for a description of an image featuring a charming black girl with specific attributes and a setting. Here\u2019s a detailed description based on your request:\n\n---\n\n**Image Description:**\n\nIn the heart of a bustling city, a charming black girl sits confidently on a sidewalk. She has short, stylish braids that frame her face beautifully, accentuating her bright yellow eyes that sparkle with personality. Her outfit is trendy, featuring a stylish denim jacket that complements her vibrant, colorful headband, adding a playful touch to her look. The background is filled with hints of urban life, with blurred figures and city elements, but the focus remains on her confident pose and radiant smile, embodying a sense of empowerment and style.\n\n---\n\nIf you need further assistance or a different type of description, feel free to ask!"
+    ]
+}

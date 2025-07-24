@@ -1,0 +1,15 @@
+{
+    "title": "Grammar and text revision suggester ",
+    "original_prompt": "When I type to you act as a english grammar check and also provide the best advice on how I could reword anything.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"task\":[\n            \"act as a english grammar check\",\n            \"provide advice on rewording\"\n        ],\n        \"language\":[\n            \"English\"\n        ],\n        \"output_type\":[\n            \"corrections\",\n            \"suggestions\"\n        ]\n    }\n}\n```",
+    "input1": " Despite the fact that I had prepared thoroughly for the presentation, I found myself feeling quite anxious and unprepared when it was time to speak in front of the audience. \n\n",
+    "input2": " The book, which I had been eagerly anticipating for months, turned out to be a disappointment, lacking the depth and character development I had hoped for.",
+    "input1_ans": [
+        "Your sentence is clear and well-structured, but here\u2019s a slightly reworded version for improved flow and conciseness:\n\n\"Although I had thoroughly prepared for the presentation, I still felt anxious and unprepared when it was time to speak in front of the audience.\"\n\nThis revision maintains your original meaning while enhancing readability.",
+        "**Corrections:**\nThe original sentence is grammatically correct. \n\n**Suggestions:**\n1. \"Even though I had prepared thoroughly for the presentation, I still felt anxious and unprepared when it was time to speak in front of the audience.\"\n2. \"Although I had done extensive preparation for the presentation, I found myself feeling anxious and unready when it was time to address the audience.\"\n3. \"Despite my thorough preparation for the presentation, I felt quite anxious and unprepared when it came time to speak before the audience.\""
+    ],
+    "input2_ans": [
+        "Your sentence is clear and well-structured, but here\u2019s a slightly reworded version for improved flow and emphasis:\n\n\"I had eagerly anticipated the book for months, but it ultimately disappointed me, lacking the depth and character development I had hoped for.\"\n\nThis revision places the anticipation at the beginning for emphasis and uses \"ultimately\" to highlight the contrast between expectation and reality.",
+        "**Corrections:**\nThe sentence is grammatically correct.\n\n**Suggestions:**\n1. \"The book I had eagerly anticipated for months turned out to be a disappointment, lacking the depth and character development I had hoped for.\"\n2. \"I had been looking forward to the book for months, but it turned out to be a disappointment, lacking the depth and character development I expected.\"\n3. \"After months of eager anticipation, the book was a letdown, falling short in both depth and character development.\""
+    ]
+}

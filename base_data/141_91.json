@@ -1,0 +1,15 @@
+{
+    "title": "\"just try again\"",
+    "original_prompt": "\"I can speak Chinese and Portuguese.\"",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"languages\":[\n            \"Chinese\",\n            \"Portuguese\"\n        ],\n        \"capability\":[\n            \"speak\"\n        ]\n    }\n}\n```",
+    "input1": " \"I can speak Chinese and Portuguese fluently, having lived in both China and Brazil for several years, where I immersed myself in the cultures and languages.\"\n\n",
+    "input2": " \"I can speak Chinese and Portuguese, and I often use these languages to communicate with friends and colleagues from different backgrounds, enhancing my understanding of their cultures.\"",
+    "input1_ans": [
+        "That's impressive! Living in both China and Brazil must have given you a deep understanding of their cultures and languages. How did your experiences in each country influence your language skills?",
+        "That's impressive! Being fluent in both Chinese and Portuguese, along with your experience living in China and Brazil, must have given you a deep understanding of the cultures and languages. How has your experience in these countries influenced your language skills?"
+    ],
+    "input2_ans": [
+        "That's great! Being able to speak multiple languages like Chinese and Portuguese not only allows you to communicate effectively but also deepens your appreciation for the diverse cultures associated with those languages. Engaging with friends and colleagues in their native languages can foster stronger connections and promote cultural exchange. How do you find the experience of using these languages in your daily interactions?",
+        "That's great! Being able to speak multiple languages like Chinese and Portuguese not only allows you to communicate effectively but also deepens your appreciation for the diverse cultures associated with those languages. How do you find the experience of using these languages in your daily interactions?"
+    ]
+}

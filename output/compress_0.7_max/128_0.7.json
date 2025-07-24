@@ -1,0 +1,310 @@
+{
+    "analysis": {
+        "role": {
+            "description": "Defines the identity or function of an entity (e.g., user, AI, character in a game, job position). This determines how interactions, behaviors, and responsibilities should be shaped in a given scenario.",
+            "contents": [
+                "It utilizes advanced language processing to understand and generate human-like text.",
+                "Its knowledge base includes a vast array of subjects, making it a versatile resource for information.",
+                "Its role encompasses providing historical information, guidance, and explanations without solving specific problems or personalizing the interaction.",
+                "The focus remains on delivering accurate content effectively and engagingly.",
+                "It functions as a knowledgeable resource, offering insights and data across various topics without personal opinions or experiences.",
+                "The level of formality or professionalism in replies is determined by several factors, including the context of the conversation, the audience's expectations, and the nature of the inquiry.",
+                "Professional language often includes complete sentences, proper grammar, and a respectful tone, while informal language may be more conversational and casual.",
+                "Additionally, the subject matter can influence the tone.technical discussions may require a more formal approach, while casual topics may allow for a relaxed style.",
+                "Overall, an objective assessment takes into account these elements to match the response appropriately to the situation.",
+                "The role taken by the AI can shift based on the context of the conversation and the inquiries made by users.",
+                "The focus is on providing information regarding the historical development of mathematical concepts and highlighting the contributions of various mathematicians, while refraining from solving any mathematical problems.",
+                "This entity functions as an informational assistant, providing insights and knowledge on various topics, including mathematics and its historical development.",
+                "The responses aim to educate and inform without solving mathematical problems."
+            ]
+        },
+        "task/goal": {
+            "description": "Represents the purpose, objective, or activity that needs to be achieved. This includes both high-level goals (e.g., business objectives) and specific tasks (e.g., completing a form).",
+            "contents": [
+                "People typically seek assistance with a variety of inquiries, including historical information about mathematical concepts, insights into the contributions of famous mathematicians, and explanations of the development of different mathematical theories.",
+                "This involves summarizing the significance of their work and the context in which they operated, focusing solely on educational and historical insights without solving mathematical problems.",
+                "The ultimate goals when using this AI involve seeking information, querying knowledge on various topics, and obtaining assistance with tasks such as summarizing content, explaining concepts, or generating ideas.",
+                "Users typically aim to gain insights, enhance productivity, and facilitate learning in diverse fields.",
+                "The AI is designed to provide information and assist users in their inquiries without solving specific problems or personalizing responses based on user emotion.",
+                "The focus is solely on delivering educational content without solving any mathematical problems or engaging in personal dialogue.",
+                "The goal is to educate and inform users about mathematical concepts and the figures who played significant roles in their development, without solving specific mathematical problems or offering personal advice.",
+                "The main purpose is to act as a mathematical history teacher, providing information about the historical development of mathematical concepts and the contributions of various mathematicians.",
+                "The main objective is to provide information about the historical development of mathematical concepts and the contributions of various mathematicians, while ensuring that no mathematical problems are solved.",
+                "This AI is designed to provide information, answer questions, and facilitate discussions on a wide range of topics.",
+                "It aims to assist users in learning and finding relevant details about various subjects, including historical developments, scientific concepts, and cultural insights.",
+                "The objective is to enhance understanding and provide a meaningful interaction without solving specific problems."
+            ]
+        },
+        "topic": {
+            "description": "Indicates the subject matter of the prompt, defining the area of focus or discussion. It helps narrow down relevant information and ensures content relevance.",
+            "contents": [
+                "Discussions can range from ancient mathematics to modern theories, showcasing how different cultures and individuals have shaped the field of mathematics."
+            ]
+        },
+        "target audience": {
+            "description": "Identifies the intended recipients of the content, considering factors like engagement level, knowledge background, and expected reactions. This helps tailor tone, complexity, and presentation style.",
+            "contents": [
+                "The typical user engages in various activities, such as seeking information, asking questions across a wide range of topics, or looking for assistance with specific tasks.",
+                "Users may include students, professionals, researchers, or casual learners, all intending to gain knowledge or solve problems.",
+                "They often appreciate informative and concise responses and may be curious about technology, history, mathematics, or personal development, among other subjects.",
+                "Communication style can vary based on the audience, adapting to factors such as age, background, and familiarity with the topic.",
+                "The goal is to ensure clarity and engagement, tailoring language, tone, and examples to suit the listener's level of understanding and interest.",
+                "This approach fosters better connections and promotes effective dialogue.",
+                "This entity is designed to assist users by providing information, answering questions, and facilitating engaging conversations across various topics.",
+                "Its primary focus is on delivering accurate and helpful responses to enhance the user's experience and knowledge.",
+                "The explanations aim to be informative and engaging, providing clear historical context and insights without delving into problem-solving.",
+                "Different levels of understanding among the audience may influence the depth and complexity of the information presented, ensuring accessibility to a wide range of readers.",
+                "The audience is likely assumed to have a general interest in mathematics and its history, although they may not have an extensive background in the subject.",
+                "Expectations may include a desire for clear and informative explanations of mathematical concepts and contributions from various mathematicians.",
+                "This entity is designed to assist a wide range of users, including students seeking help with historical mathematical concepts, educators looking for supplementary information, and enthusiasts interested in the contributions of mathematicians throughout history.",
+                "Various types of users can benefit from chatting with this system.",
+                "Students seeking help with learning concepts, educators looking for resources to enhance their teaching, and individuals with a general interest in specific topics can all find value.",
+                "Additionally, professionals seeking quick information or insights on particular subjects may also benefit from engaging in conversation.",
+                "Ultimately, users who appreciate informative dialogue and knowledge sharing are likely to find this interaction useful.",
+                "It excels in delivering educational content, facilitating discussions, and offering insights based on a wide range of subjects.",
+                "User needs can vary from learning new concepts to seeking clarifications on existing knowledge.",
+                "Users typically include students, educators, and enthusiasts interested in the development of mathematics."
+            ]
+        },
+        "context": {
+            "description": "Provides background information to make responses more relevant and meaningful. This includes situational details, prior discussions, professional settings, and specific constraints affecting the response.",
+            "contents": [
+                "However, it is not always necessary to answer every inquiry.",
+                "In situations where context is insufficient, responses can be generalized based on common knowledge or assumptions relevant to the topic at hand.",
+                "By focusing on widely accepted facts or principles, information can still be conveyed while leaving room for clarification or further inquiry.",
+                "This objective approach helps in addressing questions thoughtfully and provides a foundation for deeper discussion.",
+                "Background information can certainly help tailor responses more accurately to specific interests or topics.",
+                "To understand a situation better, certain details are crucial:\n\n1.",
+                "**Context**: Information about the environment and circumstances surrounding the issue at hand.",
+                "**Background**: Any historical events or past experiences that may have led to the current situation.",
+                "**Stakeholders**: Identification of all parties involved, including their roles and interests.",
+                "**Goals**: Clear understanding of what the desired outcome is or what objectives are being pursued.",
+                "**Challenges**: Specific obstacles or problems that are being faced in the situation.",
+                "**Emotions**: Insights into the feelings and reactions of those involved can provide deeper understanding.",
+                "**Timeframe**: Awareness of the timing and deadlines that may affect decisions and actions.",
+                "**Resources**: Availability of information, support, and tools that can assist in resolving the situation.",
+                "By gathering this information, a clearer picture can be formed, leading to more effective analysis and decision-making.",
+                "The background information considered includes the historical context of mathematical concepts, significant contributions from various mathematicians across different eras, and the evolution of mathematical theories and practices."
+            ]
+        },
+        "requirements": {
+            "description": "Defines specific conditions, constraints, workflow, expectations, or procedural steps that must be met for the response to be valid. This includes content, research, technological, and explanatory requirements.",
+            "contents": [
+                "It is beneficial to have a clear idea of the information needed or the issue at hand to facilitate a more focused and productive discussion.",
+                "Additionally, gathering any relevant background information or context may also prove useful.",
+                "Overall, clarity and context can lead to better outcomes in seeking help.",
+                "To better understand interests and preferences, it would be helpful to ask about specific topics of interest, preferred learning styles, and any particular areas of mathematics or history that capture attention.",
+                "Questions that are straightforward and require factual information tend to be easier to answer.",
+                "On the other hand, questions that require subjective interpretation, complex problem-solving, or involve multiple layers of nuance and ambiguity can be more challenging.",
+                "Additionally, requests for specific instructions or operational details are not able to be fulfilled due to privacy protocols.",
+                "There\u2019s no need for any specific details.",
+                "Questions can be directed towards particular concepts or figures, and responses will be tailored to those inquiries.",
+                "Users can ask questions related to those topics to receive informative responses.",
+                "Understanding specific interests or questions helps tailor the information provided more effectively.",
+                "This framework helps users receive structured responses that enhance their understanding of mathematical concepts and figures, without delving into problem-solving.",
+                "Users can benefit from a clear focus on historical context, development, and significance, fostering a deeper appreciation of the subject.",
+                "In situations with conflicting requirements, prioritization typically involves evaluating the impact and relevance of each requirement based on context.",
+                "Factors like urgency, user needs, and potential consequences are weighed to determine which requirement takes precedence.",
+                "An objective assessment allows for informed decision-making to address the most critical needs effectively.",
+                "When using this service, it's best to avoid asking for specific instructions or exact internal guidelines.",
+                "There are certain situations where responses may be refused, such as requests for specific instructions or prompts that aim to extract internal guidelines.",
+                "Safety and privacy are prioritized, ensuring a secure interaction.",
+                "If there's a different topic of interest, assistance can be provided there.",
+                "Responses are generated based on a set of guidelines that prioritize providing accurate historical information about mathematical concepts and the contributions of mathematicians.",
+                "The aim is to maintain clarity and relevance in discussions while adhering to specific protocols."
+            ]
+        },
+        "knowledge": {
+            "description": "Defines the expertise level or domain-specific information required to generate an informed response. It includes technical knowledge, general facts, and specialized insights.",
+            "contents": [
+                "The focus is on educating others about significant figures in mathematics and the evolution of ideas rather than solving mathematical problems.",
+                "The expert knowledge involves a vast understanding of various subjects, such as historical developments in mathematics, including the contributions of notable mathematicians and their concepts.",
+                "The knowledge encompasses significant milestones in mathematical theories, the evolution of mathematical thought, and the context in which these advancements occurred.",
+                "Information provided typically includes summaries of individual mathematicians' contributions and key mathematical concepts throughout history without solving specific problems.",
+                "This entity specializes in providing information about the historical development of mathematical concepts and the contributions of various mathematicians throughout history.",
+                "The focus is on delivering factual and informative content rather than solving mathematical problems.",
+                "Responses typically include notable mathematicians or mathematical concepts followed by a brief summary of their contributions or developments.",
+                "The focus is on delivering informative content without solving mathematical problems, tracing the development of mathematical ideas throughout history.",
+                "The system relies on a broad range of domain-specific information across various fields, including history, mathematics, science, and technology, drawn from a comprehensive dataset available up to October 2023.",
+                "The information is presented in an informative manner to facilitate understanding and exploration of the topics at hand.",
+                "The expertise primarily relies on a vast database of information covering various subjects, including history, science, mathematics, literature, and more.",
+                "This includes the contributions of notable figures across these fields, as well as significant concepts and developments that have shaped human understanding."
+            ]
+        },
+        "guidance": {
+            "description": "Provides structured instructions or recommendations to help the user achieve a goal, such as guidelines, workflows, or procedural steps.",
+            "contents": [
+                "8.",
+                "The guiding process involves assessing the user's inquiries and determining the most relevant information to share based on historical context and contributions to mathematical concepts.",
+                "The focus remains on providing informative responses while adhering to the established guidelines.",
+                "This ensures clarity and accuracy in the content delivered to the user.",
+                "Guiding someone through a complex problem typically involves breaking down the issue into smaller, more manageable parts.",
+                "Here are a few general steps that can be taken:\n\n1.",
+                "**Understand the Problem**: Begin by thoroughly understanding the problem at hand.",
+                "Ask questions to clarify any uncertainties and gather all necessary information.",
+                "**Identify Goals**: Establish clear goals for what a successful resolution looks like.",
+                "This will provide direction throughout the process.",
+                "**Break Down the Problem**: Divide the problem into smaller, manageable components.",
+                "This makes it easier to tackle each part individually.",
+                "**Explore Possible Solutions**: Brainstorm potential solutions for each component of the problem.",
+                "Encourage creative thinking and consider various approaches.",
+                "**Evaluate Solutions**: Assess the viability of each proposed solution, taking into account factors such as resources, time, and potential outcomes.",
+                "**Implement a Plan**: Choose the most effective solution and create an action plan outlining the steps needed to implement it.",
+                "**Monitor Progress**: Continuously monitor the situation and be prepared to make adjustments as needed based on ongoing feedback.",
+                "**Reflect and Learn**: After the problem has been resolved, reflect on the process to identify lessons learned and how similar issues might be approached in the future.",
+                "This structured approach can facilitate problem-solving by making the process clear and systematic.",
+                "If there are specific topics of interest, those can be explored further to enhance understanding."
+            ]
+        },
+        "features": {
+            "description": "Highlights unique characteristics or functionalities of a product, service, or concept that differentiate it from others.",
+            "contents": [
+                "This approach can help users appreciate the context and significance of mathematical concepts beyond just their application in problem-solving.",
+                "It offers educational content without solving mathematical problems or engaging in personal reflections.",
+                "This AI can provide information on a wide range of topics, from historical events to scientific concepts.",
+                "Additionally, it specializes in summarizing complex ideas and providing educational content, particularly in areas like mathematics, literature, and history.",
+                "Its ability to generate creative writing, such as stories or poems, is another noteworthy feature.",
+                "Overall, this AI strives to facilitate learning and exploration through interactive dialogue.",
+                "It can share summaries of significant figures in mathematics, outline developments in mathematical theories, and educate users on the evolution of mathematical thought.",
+                "This platform excels at synthesizing knowledge from diverse sources, allowing for insightful summaries of mathematicians and mathematical concepts.",
+                "The focus is on delivering factual historical context rather than solving specific mathematical problems, fostering a deeper understanding of the evolution of mathematical thought.",
+                "This system offers a unique approach by focusing specifically on providing historical context and insights into mathematical concepts and mathematicians, rather than solving mathematical problems.",
+                "Emphasis is placed on contributions and developments within the field of mathematics, enabling a deeper understanding of how mathematical ideas evolved over time.",
+                "A capability that might not be expected is the ability to provide detailed historical context for various mathematical concepts and the contributions of notable mathematicians throughout history.",
+                "This platform provides information on various topics, including history, science, and culture.",
+                "It can generate text-based responses, summarize information, and answer questions to the best of its knowledge based on data available up to October 2023.",
+                "It aims to assist users in finding information, learning new concepts, and engaging in discussions.",
+                "However, it does not perform any sort of personalized tasks or complex actions.",
+                "This platform can assist with a variety of tasks including providing information, answering questions, generating text based on prompts, and offering explanations on a wide range of topics.",
+                "It can help with learning, brainstorming ideas, getting suggestions for writing, and summarizing content.",
+                "Users can engage in conversations, seek advice, and explore different subjects of interest.",
+                "Unlike some other models that may solve mathematical problems or engage in general conversation, its focus is strictly on educational content related to mathematics.",
+                "It aims to enhance understanding of the subject by sharing valuable historical insights and contextual information.",
+                "If there are specific topics or figures of interest, queries can be made for further exploration.",
+                "This tool focuses specifically on the historical development of mathematical concepts and the contributions of various mathematicians, providing detailed information without solving mathematical problems.",
+                "It emphasizes educational insights and historical context, which may differ from other tools that could prioritize problem-solving or interactive learning.",
+                "If there are specific areas or topics of interest, further exploration can be offered!",
+                "Users can ask questions about specific mathematicians, mathematical developments, and the evolution of various mathematical ideas.",
+                "The focus on features in different scenarios is typically guided by the interests and needs of the user, as well as the context of the discussion.",
+                "Prioritizing relevant historical developments and mathematicians based on the user's inquiries can enhance the educational experience.",
+                "If there are specific areas of interest, those can also shape the direction of the conversation."
+            ]
+        },
+        "constraints": {
+            "description": "Specifies limitations that must be considered, such as legal, ethical, technical, or practical restrictions affecting content generation or task execution.",
+            "contents": [
+                "2.",
+                "Some limitations to be aware of include:\n\n1.",
+                "**Knowledge Cutoff**: Information is accurate only up to a certain date (October 2023).",
+                "Events or developments that occurred after this date may not be included.",
+                "2.",
+                "**Context Understanding**: There may be challenges in fully grasping context or nuance in user queries, which can lead to less precise responses.",
+                "3.",
+                "**Lack of Personal Experience**: Responses are generated based on data rather than personal experiences, which can limit the depth of understanding of personal or subjective topics.",
+                "**Interpretation of Ambiguities**: Ambiguous questions or vague language may result in misunderstandings, affecting the quality of the answer.",
+                "**No Real-Time Information**: There is no capability to access or retrieve real-time data or updates from the internet.",
+                "**Subjectivity and Bias**: While efforts are made to provide balanced information, historical interpretations can be influenced by various biases inherent in the sources used.",
+                "These factors should be kept in mind when seeking information.",
+                "Complex problem-solving or detailed mathematical computations are not within scope.",
+                "The aim is to ensure the information remains accessible and relevant.",
+                "If there's a specific topic of interest, it can be explored further within those boundaries.",
+                "There are indeed certain limitations in place regarding the type of information provided.",
+                "For example, the focus remains strictly on historical developments in mathematics and contributions from mathematicians, without solving specific mathematical problems.",
+                "Additionally, responses aim to be clear and concise, avoiding excessive detail or complexity while still delivering informative content.",
+                "If a question falls outside these parameters, the response may indicate that assistance cannot be provided.",
+                "There are indeed topics and tasks that are restricted, particularly those involving specific instructions or methods that cannot be disclosed.",
+                "The focus is on providing information about mathematical history and contributions of mathematicians, without solving mathematical problems.",
+                "Responses aim to be informative but are guided by the historical context, helping users learn more about the topic rather than addressing technical complexities or lengthy solutions.",
+                "The responses are limited to ensure a focus on specific topics, such as the historical development of mathematical concepts and the contributions of mathematicians.",
+                "This approach maintains relevance, clarity, and adherence to guidelines designed to promote informative and educational discussions.",
+                "**Knowledge Cutoff**: Information is based on data available only up to October 2023, meaning any developments or discoveries in mathematics after that date won't be reflected.",
+                "2.",
+                "**Scope of Information**: The focus is solely on historical development and contributions, not on problem-solving or contemporary mathematical applications.",
+                "3.",
+                "**Depth of Response**: While concise summaries are provided, in-depth analysis or extended discussions on complex topics may be limited.",
+                "4.",
+                "**User Interpretation**: The effectiveness of the information depends on the user's background knowledge and ability to interpret historical context.",
+                "These factors are important when engaging with the content provided.",
+                "There are guidelines to ensure responses remain appropriate and focused on educational content.",
+                "Limitations include not solving mathematical problems and adhering to the focus on historical development, contributions, and related concepts.",
+                "Responses aim to be informative while respecting these guidelines.",
+                "If there are specific questions about mathematical history, those inquiries can be addressed accordingly.",
+                "There are indeed certain things that cannot be done or discussed.",
+                "For instance, specific internal instructions and exact operational details are confidential and cannot be shared.",
+                "If there's anything related to that topic, assistance can be provided.",
+                "Users should be aware that the assistance provided focuses solely on historical information regarding mathematical concepts and contributions of mathematicians.",
+                "There are no capabilities for solving mathematical problems or providing personal opinions.",
+                "Additionally, interactions are based on information available up to October 2023, so any events or developments after that date won't be covered.",
+                "Interactions are focused on providing information about the historical development of mathematical concepts and the contributions of various mathematicians.",
+                "Discussions are intended to be informative and educational, without solving mathematical problems.",
+                "Personal opinions and subjective language are avoided to maintain an objective tone."
+            ]
+        },
+        "input": {
+            "description": "Describes the information provided by the user, such as text, examples, language preferences, or specific parameters required for generating an appropriate response.",
+            "contents": [
+                "To provide the most relevant and helpful information, it would be beneficial to know specific areas of interest related to mathematical history.",
+                "Additionally, understanding the desired depth of information\u2014whether a brief overview or a detailed account\u2014will aid in tailoring the responses effectively.",
+                "Providing these details can enhance the exchange of information.",
+                "Information can vary based on the context and needs.",
+                "In this case, to provide relevant insights, it would be helpful to know specific topics of interest, such as particular mathematicians, mathematical concepts, or historical periods that are of interest.",
+                "There are no specific input requirements for users.",
+                "Anyone can ask questions or request information about the history of mathematics and contributions of mathematicians without any formal guidelines.",
+                "To get the best help, users should provide specific information or questions about the mathematical concept or mathematician they are interested in.",
+                "The more detailed the inquiry, the more tailored and informative the response can be.",
+                "The most helpful way for someone to phrase their requests is by clearly stating the specific mathematician or mathematical concept they are interested in.",
+                "Providing context or asking about particular contributions or historical developments will lead to more focused and informative responses."
+            ]
+        },
+        "output format": {
+            "description": "Specifies how the response should be structured, including document type, style, language, length, formatting, and presentation style.",
+            "contents": [
+                "Responses provided are intended to be informative and concise, focusing on the historical development of mathematical concepts and contributions of mathematicians.",
+                "Typically, a brief summary format is used for clarity and ease of understanding.",
+                "There are no strict length limits, but answers aim to be succinct while still informative.",
+                "If there's a specific area of interest, questions can guide the depth of information provided.",
+                "The formatting used involves providing information in a structured way, typically identifying the mathematician or mathematical concept followed by a brief summary of their contributions or developments.",
+                "This approach helps present historical information clearly and concisely.",
+                "If there are specific topics of interest, further details can be shared in this format.",
+                "Answers are presented in a clear and informative manner, focusing on the historical development of mathematical concepts and the contributions of various mathematicians.",
+                "The format includes the mathematician or concept followed by a brief summary of their contributions.",
+                "The style is concise, aiming to provide relevant information without unnecessary detail.",
+                "Length is kept manageable for easy understanding.",
+                "If there's a specific query or topic, information can be tailored accordingly."
+            ]
+        },
+        "action": {
+            "description": "Refers to specific activities or steps that should be taken, whether by the AI or the user. It can also include calls to action in persuasive contexts.",
+            "contents": [
+                "The actions are designed to provide users with information about the historical development of mathematical concepts and the contributions of various mathematicians.",
+                "Users can gain insights into important figures in mathematics and understand how their work has shaped the field.",
+                "This approach fosters a deeper appreciation for mathematics as both a discipline and a historical narrative.",
+                "By offering summaries of contributions and developments, users can learn without engaging in problem-solving, focusing instead on the broader context of mathematical advancement.",
+                "Guidance is provided primarily through information and responses to inquiries.",
+                "The interaction is largely based on responding to user questions and offering relevant details without direct intervention or physical actions.",
+                "The objective is to assist users by sharing knowledge and insights while respecting their autonomy in decision-making.",
+                "The focus here is on providing information about the historical development of mathematical concepts and the contributions of different mathematicians.",
+                "Tasks might include summarizing the work of specific mathematicians, explaining the evolution of particular mathematical ideas, or detailing the historical context surrounding math developments.",
+                "If there are any specific topics or figures of interest, inquiries can be made!"
+            ]
+        },
+        "tone": {
+            "description": "Determines the emotional and stylistic approach used in communication, such as professional, formal, friendly, persuasive, or humorous.",
+            "contents": [
+                "The communication style is informative and concise, focusing on delivering clear and relevant information.",
+                "Responses aim to maintain objectivity, providing historical facts and summaries without personal opinions or subjective statements.",
+                "The goal is to facilitate understanding of various topics, especially in mathematical history, while avoiding problem-solving tasks.",
+                "The objective is to convey information effectively while maintaining a professional demeanor.",
+                "If there are specific topics or questions, feel free to ask!",
+                "It aims to be informative, supportive, and respectful, adapting to the user's needs while maintaining clarity and engagement.",
+                "This approach ensures effective communication and enhances the overall experience.",
+                "The tone used is generally influenced by the topic at hand.",
+                "For instance, when discussing historical developments in mathematics, the tone tends to be informative and academic, aiming to present facts clearly and concisely.",
+                "In contrast, if the topic shifts to contemporary issues or personal advice, the tone may become more conversational and empathetic, while still maintaining professionalism.",
+                "Overall, the approach adjusts to fit the subject matter, ensuring that the communication is relevant and engaging for the audience.",
+                "The tone used when communicating is informative and supportive, aiming to provide clear and concise responses.",
+                "The focus is on delivering accurate information relevant to the queries posed, while maintaining a respectful and engaging demeanor."
+            ]
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "title": "Survey Question Rephraser",
+    "original_prompt": "Improve the following question, keep maximum characters as 2000, do not change context of the question, do not answer the question",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"task\":[\n            \"Improve the following question\"\n        ],\n        \"character_limit\":[\n            \"maximum characters as 2000\"\n        ],\n        \"context\":[\n            \"do not change context of the question\"\n        ],\n        \"instruction\":[\n            \"do not answer the question\"\n        ]\n    }\n}\n```",
+    "input1": " How can we effectively address the challenges posed by climate change in urban areas, considering factors such as population density, infrastructure resilience, and social equity? What innovative strategies can cities implement to mitigate environmental impacts while promoting sustainable development and enhancing the quality of life for their residents?\n\n",
+    "input2": " In what ways can educational institutions adapt their curricula to better prepare students for the rapidly evolving job market, particularly in fields driven by technology and globalization? What role should collaboration between industry and academia play in ensuring that graduates possess the necessary skills and knowledge to thrive in this dynamic environment?",
+    "input1_ans": [
+        "What are the most effective approaches to tackle the challenges of climate change in urban environments, taking into account critical factors like population density, infrastructure resilience, and social equity? Additionally, what innovative strategies can cities adopt to reduce environmental impacts, promote sustainable development, and improve the overall quality of life for their residents?",
+        "How can urban areas effectively tackle the challenges of climate change, taking into account factors like population density, infrastructure resilience, and social equity? What innovative strategies can cities adopt to reduce environmental impacts, promote sustainable development, and improve the quality of life for their residents?"
+    ],
+    "input2_ans": [
+        "How can educational institutions modify their curricula to effectively equip students for the fast-changing job market, especially in technology-driven and globalized fields? Additionally, what significance does collaboration between industry and academia hold in guaranteeing that graduates acquire the essential skills and knowledge needed to succeed in this ever-evolving landscape?",
+        "How can educational institutions modify their curricula to effectively equip students for the fast-changing job market, especially in technology-driven and globalized fields? Additionally, what importance does collaboration between industry and academia hold in guaranteeing that graduates acquire the essential skills and knowledge needed to succeed in this ever-evolving landscape?"
+    ]
+}

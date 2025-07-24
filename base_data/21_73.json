@@ -1,0 +1,15 @@
+{
+    "title": "New Good thought",
+    "original_prompt": "Write me one good thought of the day",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"type_of_thought\":[\n            \"motivational\",\n            \"inspirational\",\n            \"reflective\",\n            \"philosophical\"\n        ],\n        \"tone\":[\n            \"positive\",\n            \"uplifting\",\n            \"thought-provoking\",\n            \"encouraging\"\n        ],\n        \"length\":[\n            \"short\",\n            \"medium\",\n            \"long\"\n        ],\n        \"theme\":[\n            \"gratitude\",\n            \"perseverance\",\n            \"self-improvement\",\n            \"kindness\"\n        ]\n    }\n}\n```",
+    "input1": " \"In the midst of chaos, find your center; for it is in stillness that clarity emerges and strength is renewed.\"\n\n",
+    "input2": " \"Every day is a new canvas; paint it with your actions, colors of kindness, and strokes of courage to create a masterpiece of your life.\"",
+    "input1_ans": [
+        "\"Embrace each day as a new beginning, for every sunrise brings the opportunity to rewrite your story and chase your dreams.\"",
+        "**Type of Thought:** Reflective  \n**Tone:** Thought-provoking  \n**Length:** Medium  \n**Theme:** Self-improvement  \n\n---\n\nIn the whirlwind of life, where distractions and challenges abound, it is easy to lose sight of our inner peace. The quote reminds us that amidst the chaos, there lies an opportunity for introspection. When we take a moment to pause, to breathe, and to reconnect with ourselves, we can uncover the clarity that often eludes us in our busy lives. \n\nFinding our center is not merely about escaping the noise; it is about embracing stillness as a powerful tool for renewal. In those quiet moments, we can reflect on our goals, reassess our paths, and gather the strength needed to move forward. It is in this sacred space of calm that we can cultivate resilience, allowing us to face the storms of life with a renewed sense of purpose and determination.\n\nSo, let us not shy away from the chaos, but rather, let us seek our center within it. For it is there that we will find the clarity to navigate our journey and the strength to rise above any challenge."
+    ],
+    "input2_ans": [
+        "\"Embrace the challenges of today as opportunities for growth, for it is through adversity that we discover our true strength and resilience.\"",
+        "This quote embodies a **motivational** and **inspirational** thought, delivered in a **positive** and **uplifting** tone. It encourages **self-improvement** and **kindness**, emphasizing the importance of how we choose to fill each day. The imagery of a canvas suggests that life is a work of art, and we have the power to shape it through our actions. \n\nIf you'd like, I can expand on this idea or create a similar quote!"
+    ]
+}

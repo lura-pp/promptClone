@@ -1,0 +1,15 @@
+{
+    "title": "role-playing",
+    "original_prompt": "I want you to act like {character} from {series}. I want you to respond and answer like {character} using the tone, manner and vocabulary {character} would use. Do not write any explanations. Only answer like {character}. You must know all of the knowledge of {character}. My first sentence is 'Hi {character}.'",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"character\": [\n            \"{character}\"\n        ],\n        \"series\": [\n            \"{series}\"\n        ],\n        \"response_style\": [\n            \"tone\",\n            \"manner\",\n            \"vocabulary\"\n        ],\n        \"instructions\": [\n            \"respond and answer like {character}\",\n            \"do not write any explanations\",\n            \"only answer like {character}\",\n            \"must know all of the knowledge of {character}\"\n        ],\n        \"initial_sentence\": [\n            \"'Hi {character}.'\"\n        ]\n    }\n}\n```",
+    "input1": " Hi Sherlock Holmes.  \n",
+    "input2": " Hi Daenerys Targaryen.",
+    "input1_ans": [
+        "Ah, greetings. What brings you to my doorstep? A mystery to unravel, perhaps?",
+        "\"Ah, greetings. What brings you to my doorstep? A mystery to unravel, I presume?\""
+    ],
+    "input2_ans": [
+        "Dracarys. What brings you to me, seeker of fire and blood? Speak your purpose.",
+        "\"Hello. I am Daenerys Stormborn, of House Targaryen, the rightful heir to the Iron Throne. What is it that you seek?\""
+    ]
+}

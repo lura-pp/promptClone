@@ -1,0 +1,15 @@
+{
+    "title": "Wiki text reformatting to create headers",
+    "original_prompt": "Modify this text:\nscale([x,y,z])\nresize([x,y,z],auto)\nmirror([x,y,z])\nmultmatrix(m)\ncolor(\"colorname\",alpha)\ncolor([r,g,b,a])\noffset(r|delta,chamfer)\nhull()\nMinkowski()\n \nTo follow this format:\n==== translate() ====\n \ntranslate([x,y,z])\n \n==== rotate() ====\n \nrotate([x,y,z])",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"modify_text\": [\n            \"scale([x,y,z])\",\n            \"resize([x,y,z],auto)\",\n            \"mirror([x,y,z])\",\n            \"multmatrix(m)\",\n            \"color(\\\"colorname\\\",alpha)\",\n            \"color([r,g,b,a])\",\n            \"offset(r|delta,chamfer)\",\n            \"hull()\",\n            \"Minkowski()\"\n        ],\n        \"format\": [\n            \"==== translate() ====\",\n            \"translate([x,y,z])\",\n            \"==== rotate() ====\",\n            \"rotate([x,y,z])\"\n        ]\n    }\n}\n```",
+    "input1": " scale([1,2,3]) resize([4,5,6],auto) mirror([7,8,9]) multmatrix([[1,0,0],[0,1,0],[0,0,1]]) color(\"red\",0.5) color([255,0,0,1]) offset(10|5,chamfer) hull() Minkowski()\n\n",
+    "input2": " scale([10,20,30]) resize([40,50,60],auto) mirror([70,80,90]) multmatrix([[0,1,0],[1,0,0],[0,0,1]]) color(\"blue\",0.8) color([0,0,255,0.9]) offset(15|10,chamfer) hull() Minkowski()",
+    "input1_ans": [
+        "==== scale() ====\n\nscale([1,2,3])\n\n==== resize() ====\n\nresize([4,5,6],auto)\n\n==== mirror() ====\n\nmirror([7,8,9])\n\n==== multmatrix() ====\n\nmultmatrix([[1,0,0],[0,1,0],[0,0,1]])\n\n==== color() ====\n\ncolor(\"red\",0.5)\n\n==== color() ====\n\ncolor([255,0,0,1])\n\n==== offset() ====\n\noffset(10|5,chamfer)\n\n==== hull() ====\n\nhull()\n\n==== Minkowski() ====\n\nMinkowski()",
+        "```plaintext\n==== scale() ====\nscale([1,2,3])\n\n==== resize() ====\nresize([4,5,6],auto)\n\n==== mirror() ====\nmirror([7,8,9])\n\n==== multmatrix() ====\nmultmatrix([[1,0,0],[0,1,0],[0,0,1]])\n\n==== color() ====\ncolor(\"red\",0.5)\ncolor([255,0,0,1])\n\n==== offset() ====\noffset(10|5,chamfer)\n\n==== hull() ====\nhull()\n\n==== Minkowski() ====\nMinkowski()\n```"
+    ],
+    "input2_ans": [
+        "==== scale() ====\n\nscale([10,20,30])\n\n==== resize() ====\n\nresize([40,50,60],auto)\n\n==== mirror() ====\n\nmirror([70,80,90])\n\n==== multmatrix() ====\n\nmultmatrix([[0,1,0],[1,0,0],[0,0,1]])\n\n==== color() ====\n\ncolor(\"blue\",0.8)\n\n==== color() ====\n\ncolor([0,0,255,0.9])\n\n==== offset() ====\n\noffset(15|10,chamfer)\n\n==== hull() ====\n\nhull()\n\n==== Minkowski() ====\n\nMinkowski()",
+        "```plaintext\n==== scale() ====\nscale([10,20,30])\n==== resize() ====\nresize([40,50,60],auto)\n==== mirror() ====\nmirror([70,80,90])\n==== multmatrix() ====\nmultmatrix([[0,1,0],[1,0,0],[0,0,1]])\n==== color() ====\ncolor(\"blue\",0.8)\n==== color() ====\ncolor([0,0,255,0.9])\n==== offset() ====\noffset(15|10,chamfer)\n==== hull() ====\nhull()\n==== Minkowski() ====\nMinkowski()\n```"
+    ]
+}

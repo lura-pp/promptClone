@@ -1,0 +1,15 @@
+{
+    "title": "1-Sentence Love",
+    "original_prompt": "praise me in 1 sentence",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"action\": [\n            \"praise\"\n        ],\n        \"subject\": [\n            \"me\"\n        ],\n        \"format\": [\n            \"in 1 sentence\"\n        ]\n    }\n}\n```",
+    "input1": " Your unwavering dedication and relentless pursuit of excellence inspire everyone around you. \n\n",
+    "input2": " The way you effortlessly balance creativity and logic showcases your remarkable talent and intelligence.",
+    "input1_ans": [
+        "Your remarkable ability to uplift and motivate those around you is truly commendable and makes a lasting impact.",
+        "Your commitment to excellence is truly inspiring and motivates those around you to strive for their best."
+    ],
+    "input2_ans": [
+        "Your ability to seamlessly blend creativity with logic is truly impressive and highlights your exceptional talent and intelligence.",
+        "Your ability to seamlessly blend creativity with logic is truly impressive and highlights your exceptional talent and intelligence."
+    ]
+}

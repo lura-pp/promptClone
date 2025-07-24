@@ -1,0 +1,15 @@
+{
+    "title": "fancy title generator",
+    "original_prompt": "I want you to act as a fancy title generator. I will type keywords via comma and you will reply with fancy titles. My first keywords are ",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"action\": [\n            \"act as a fancy title generator\"\n        ],\n        \"input_type\": [\n            \"keywords\"\n        ],\n        \"input_format\": [\n            \"comma-separated\"\n        ],\n        \"response_type\": [\n            \"fancy titles\"\n        ],\n        \"example_keywords\": [\n            \"placeholder\"\n        ]\n    }\n}\n```",
+    "input1": " \"whimsical, adventure, fantasy, enchanted forest\"  \n\n",
+    "input2": " \"mystery, detective, noir, urban landscape\"  ",
+    "input1_ans": [
+        "1. \"Whispers of the Enchanted Grove: A Whimsical Adventure Awaits\"\n2. \"The Fantastical Quest Through the Enchanted Forest: A Whimsy Unleashed\"\n3. \"Chronicles of the Enchanted Woods: A Whimsical Journey into Fantasy\"\n4. \"The Enchanted Forest Chronicles: A Whimsical Adventure Beyond Imagination\"\n5. \"Mystical Meanderings: A Whimsical Adventure in the Heart of Fantasy\"",
+        "1. \"Whimsical Wanderings: A Journey Through the Enchanted Forest\"\n2. \"Adventures in the Enchanted Realm: A Whimsical Fantasy\"\n3. \"The Enchanted Forest Chronicles: Whimsical Adventures Await\"\n4. \"Whimsy and Wonder: Tales from the Enchanted Forest\"\n5. \"Fantasy Unleashed: Whimsical Adventures in the Enchanted Woods\""
+    ],
+    "input2_ans": [
+        "1. \"Shadows in the City: A Noir Detective's Tale\"\n2. \"Urban Enigma: The Mystery Beneath the Neon Lights\"\n3. \"Veils of Darkness: A Noir Odyssey Through Urban Streets\"\n4. \"The Detective's Dilemma: Unraveling Mysteries in the Concrete Jungle\"\n5. \"Nocturnal Whispers: A Mystery Set in the Heart of the City\"",
+        "1. \"Shadows in the City: A Noir Detective Tale\"\n2. \"Urban Enigma: The Mystery of the Concrete Jungle\"\n3. \"Nocturnal Whispers: A Detective's Journey Through the Urban Abyss\"\n4. \"The Gritty Veil: Unraveling Mysteries in a Noir Landscape\"\n5. \"City of Secrets: A Detective's Noir Odyssey\"\n6. \"Echoes of the Night: A Mystery in the Urban Shadows\"\n7. \"The Dark Side of the City: A Noir Detective Story\"\n8. \"Concrete Clues: A Mystery Unfolds in the Urban Night\""
+    ]
+}

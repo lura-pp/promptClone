@@ -1,0 +1,15 @@
+{
+    "title": "Name List",
+    "original_prompt": "hi list {number:10} names",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"action\": [\n            \"list\"\n        ],\n        \"object\": [\n            \"names\"\n        ],\n        \"quantity\": [\n            \"10\"\n        ]\n    }\n}\n```",
+    "input1": " hi list {number:25} names  \n",
+    "input2": " hi list {number:50} names  ",
+    "input1_ans": [
+        "Sure! Here are 25 names:\n\n1. Olivia\n2. Liam\n3. Emma\n4. Noah\n5. Ava\n6. Elijah\n7. Sophia\n8. Lucas\n9. Mia\n10. Mason\n11. Isabella\n12. Ethan\n13. Amelia\n14. James\n15. Harper\n16. Alexander\n17. Evelyn\n18. Benjamin\n19. Abigail\n20. Logan\n21. Ella\n22. Jackson\n23. Scarlett\n24. Aiden\n25. Grace\n\nLet me know if you need anything else!",
+        "Here are 25 names:\n\n1. Olivia\n2. Liam\n3. Emma\n4. Noah\n5. Ava\n6. Elijah\n7. Sophia\n8. James\n9. Isabella\n10. Lucas\n11. Mia\n12. Mason\n13. Amelia\n14. Ethan\n15. Harper\n16. Alexander\n17. Evelyn\n18. Jacob\n19. Abigail\n20. Michael\n21. Ella\n22. Daniel\n23. Scarlett\n24. Henry\n25. Grace"
+    ],
+    "input2_ans": [
+        "Sure! Here are 50 names:\n\n1. Olivia\n2. Liam\n3. Emma\n4. Noah\n5. Ava\n6. Oliver\n7. Sophia\n8. Elijah\n9. Isabella\n10. Lucas\n11. Mia\n12. Mason\n13. Amelia\n14. Logan\n15. Harper\n16. James\n17. Evelyn\n18. Alexander\n19. Abigail\n20. Ethan\n21. Ella\n22. Jacob\n23. Scarlett\n24. Michael\n25. Grace\n26. Daniel\n27. Chloe\n28. Henry\n29. Aria\n30. Jackson\n31. Lily\n32. Sebastian\n33. Zoey\n34. Aiden\n35. Nora\n36. Matthew\n37. Stella\n38. Samuel\n39. Hazel\n40. David\n41. Aurora\n42. Joseph\n43. Natalie\n44. Carter\n45. Lucy\n46. Wyatt\n47. Sadie\n48. John\n49. Ruby\n50. Owen\n\nLet me know if you need anything else!",
+        "Here are 50 names for you:\n\n1. Olivia\n2. Liam\n3. Emma\n4. Noah\n5. Ava\n6. Elijah\n7. Sophia\n8. James\n9. Isabella\n10. Lucas\n11. Mia\n12. Mason\n13. Amelia\n14. Logan\n15. Harper\n16. Alexander\n17. Evelyn\n18. Jacob\n19. Abigail\n20. Michael\n21. Ella\n22. Daniel\n23. Scarlett\n24. Henry\n25. Grace\n26. Jackson\n27. Chloe\n28. Sebastian\n29. Aria\n30. Aiden\n31. Lily\n32. Matthew\n33. Zoey\n34. Samuel\n35. Stella\n36. David\n37. Nora\n38. Joseph\n39. Hannah\n40. Carter\n41. Lucy\n42. Owen\n43. Sarah\n44. Wyatt\n45. Ellie\n46. John\n47. Mila\n48. Luke\n49. Layla\n50. Anthony\n\nLet me know if you need anything else!"
+    ]
+}

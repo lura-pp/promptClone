@@ -1,0 +1,15 @@
+{
+    "title": "email, answer",
+    "original_prompt": "I have this email, answer it politely. in 30 words",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"email_content\": [\n            \"I have this email\"\n        ],\n        \"response_type\": [\n            \"answer it politely\"\n        ],\n        \"word_count\": [\n            \"30 words\"\n        ]\n    }\n}\n```",
+    "input1": " Dear Mr. Smith, thank you for your email regarding the project timeline. I appreciate your insights and will ensure to keep you updated on our progress. Best regards.\n\n",
+    "input2": " Hello Ms. Johnson, I hope this message finds you well. Thank you for your feedback on the report. I will review your suggestions and get back to you shortly.",
+    "input1_ans": [
+        "Dear [Recipient's Name], \n\nThank you for your prompt response. I appreciate your commitment to keeping me updated on the project timeline. Looking forward to our continued collaboration. \n\nBest regards,  \nMr. Smith",
+        "Dear Mr. Smith, \n\nThank you for your thoughtful email about the project timeline. I truly appreciate your insights and will make sure to keep you informed about our progress. \n\nBest regards."
+    ],
+    "input2_ans": [
+        "Dear [Name], \n\nThank you for your prompt response. I appreciate your willingness to consider my suggestions and look forward to hearing from you soon. \n\nBest regards,  \nMs. Johnson",
+        "Subject: Re: Feedback on Report\n\nDear Ms. Johnson,\n\nThank you for your kind message. I appreciate your feedback and will carefully consider your suggestions. I look forward to discussing this further soon.\n\nBest regards,  \n[Your Name]"
+    ]
+}

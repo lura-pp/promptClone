@@ -1,0 +1,15 @@
+{
+    "title": "correct English grammar in the sentence",
+    "original_prompt": "to correct English grammar in the sentence and make more natural sentence",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"task\":[\n            \"correct English grammar\",\n            \"make the sentence more natural\"\n        ],\n        \"input_type\":[\n            \"sentence\"\n        ],\n        \"output_type\":[\n            \"corrected sentence\"\n        ]\n    }\n}\n```",
+    "input1": " Despite the fact that he was tired, he decided to go for a run in the park because he wanted to stay fit and healthy, which he believed was important for his overall well-being.\n\n",
+    "input2": " The book that I borrowed from the library last week, which I thought would be boring, turned out to be incredibly interesting and I couldn't put it down until I finished reading it late into the night.",
+    "input1_ans": [
+        "Although he was tired, he decided to go for a run in the park because he wanted to stay fit and healthy, which he believed was essential for his overall well-being.",
+        "Despite being tired, he decided to go for a run in the park because he wanted to stay fit and healthy, which he believed was important for his overall well-being."
+    ],
+    "input2_ans": [
+        "The book I borrowed from the library last week, which I initially thought would be boring, turned out to be incredibly interesting. I couldn't put it down and ended up reading it late into the night.",
+        "The book I borrowed from the library last week, which I thought would be boring, turned out to be incredibly interesting, and I couldn't put it down until I finished reading it late into the night."
+    ]
+}

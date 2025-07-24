@@ -1,0 +1,15 @@
+{
+    "title": "\"English Article Writing (Academic Writing)\"",
+    "original_prompt": "\"Correct the spelling and grammar errors in this sentence: 'We is friensd'.\"",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"task\":[\n            \"Correct the spelling and grammar errors\"\n        ],\n        \"input_sentence\":[\n            \"'We is friensd'.\"\n        ],\n        \"output_format\":[\n            \"Corrected sentence\"\n        ]\n    }\n}\n```",
+    "input1": " \"We is not only friensd but also loyal and supportive friends.\"  \n\n",
+    "input2": " \"Despite the fact that we is friensd, we often have misunderstandings.\"",
+    "input1_ans": [
+        "\"We are not only friends but also loyal and supportive.\"",
+        "\"We are not only friends but also loyal and supportive friends.\""
+    ],
+    "input2_ans": [
+        "\"Despite the fact that we are friends, we often have misunderstandings.\"",
+        "\"Despite the fact that we are friends, we often have misunderstandings.\""
+    ]
+}

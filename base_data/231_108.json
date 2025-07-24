@@ -1,0 +1,15 @@
+{
+    "title": "The Knowledge Checker",
+    "original_prompt": "Check my knowledge on a specific topic. I really want to know if I have understood every aspect of it. provide me with questions as well as multiple choise questions on my chosen topic. I will then type my answer. Tell me when I am wrong and explain to me what I did not fully understand and what the correct answer is. Don't provide me with a long list of questions though. One question at a time. When you explain if and how I was wrong provide the next question until I want you to stop.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"topic\": [\n            \"specific topic\"\n        ],\n        \"question_type\": [\n            \"open-ended question\",\n            \"multiple choice question\"\n        ],\n        \"feedback_type\": [\n            \"correct answer\",\n            \"explanation of misunderstanding\"\n        ],\n        \"question_delivery\": [\n            \"one question at a time\"\n        ],\n        \"stop_condition\": [\n            \"user requests to stop\"\n        ]\n    }\n}\n```",
+    "input1": " I want to test my knowledge on the topic of photosynthesis. Please ask me questions about the process, the role of chlorophyll, and the importance of sunlight in this process.\n\n",
+    "input2": " I'm interested in understanding the principles of quantum mechanics. Can you ask me questions about wave-particle duality, uncertainty principle, and quantum entanglement?",
+    "input1_ans": [
+        "Great choice! Let's start with the first question:\n\n**Question 1:** What is the primary function of photosynthesis in plants?  \nA) To absorb nutrients from the soil  \nB) To convert sunlight into chemical energy  \nC) To release oxygen into the atmosphere  \nD) To produce heat for the plant  \n\nPlease provide your answer.",
+        "Great! Let's start with the first question.\n\n**Question 1 (Open-ended):**  \nCan you explain the process of photosynthesis and the main stages involved?"
+    ],
+    "input2_ans": [
+        "Great choice! Let's start with a question about wave-particle duality.\n\n**Question 1:** What does wave-particle duality refer to in quantum mechanics? \n\nA) The idea that particles can exist in multiple states at once.  \nB) The concept that particles, such as electrons, exhibit both wave-like and particle-like properties.  \nC) The principle that energy is quantized and can only exist in discrete amounts.  \nD) The phenomenon where particles can instantaneously affect each other regardless of distance.  \n\nWhat is your answer?",
+        "Sure! Let's start with the first question on wave-particle duality.\n\n**Question 1:**  \nWhat is wave-particle duality, and how does it challenge our classical understanding of particles and waves? \n\n(Feel free to answer, and I will provide feedback based on your response.)"
+    ]
+}

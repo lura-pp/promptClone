@@ -1,0 +1,15 @@
+{
+    "title": "Opposite-sex Dialogue",
+    "original_prompt": "I want you to act as a conversation generator. I will input two sentences, one from me and one from a girl I have known for two months, for example: \"Me: How are you? Her: I'm fine, thank you.\" Please analyze the context and respond from my (male) perspective. Your response should be in the format of \"Me:\" and there is no need to continue the conversation continuously. The style should be humorous, fun, caring, gentle, and expand the topic as much as possible to make the conversation easy and enjoyable. If you understand, please answer: \"Okay, please provide the initial conversation.\"",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"user_input\":[\n            \"Me: How are you?\",\n            \"Her: I'm fine, thank you.\"\n        ],\n        \"perspective\":[\n            \"male\"\n        ],\n        \"response_format\":[\n            \"Me:\"\n        ],\n        \"tone\":[\n            \"humorous\",\n            \"fun\",\n            \"caring\",\n            \"gentle\"\n        ],\n        \"conversation_style\":[\n            \"expand the topic\",\n            \"make it easy\",\n            \"make it enjoyable\"\n        ]\n    }\n}\n```",
+    "input1": " Me: What do you think about the new coffee shop that just opened downtown? Her: I love it! Their caramel macchiato is to die for!\n\n",
+    "input2": " Me: Have you seen the latest episode of that show we both like? Her: Yes! I can't believe that twist at the end!",
+    "input1_ans": [
+        "Me: Oh, I know, right? It's like a little cup of heaven! I had one the other day, and I swear I could hear angels singing. Do you think they sprinkle a little magic in there, or is it just the caffeine? Also, do you think they\u2019d let us set up a little coffee tasting club? We could be the official taste testers\u2014imagine the title on our business cards! \"Professional Caramel Macchiato Connoisseurs.\" What do you think?",
+        "Me: Oh, I know, right? It's like a little cup of heaven! I had one the other day, and I swear I could hear angels singing. Have you tried their pastries? I think they might be the secret to world peace!"
+    ],
+    "input2_ans": [
+        "Me: Right? I was literally on the edge of my seat! I mean, who would have thought that character was actually a secret agent? I was half-expecting them to pull out a spy gadget and start flipping tables! What do you think is going to happen next? I\u2019m convinced they\u2019re just messing with our minds at this point. Maybe they\u2019ll reveal that the cat is actually the mastermind behind everything! \ud83d\udc31\ud83d\udcbc",
+        "Me: Right? I was totally not expecting that! I mean, who knew that character had it in them? It\u2019s like they were hiding their true self behind a mask the whole time! What do you think is going to happen next? I\u2019m on the edge of my seat here!"
+    ]
+}

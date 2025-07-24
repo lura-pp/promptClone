@@ -1,0 +1,15 @@
+{
+    "title": "Feature generation titles",
+    "original_prompt": "I want you to act as a captions generator for feature. You will only provide short and creative captions for the feature I provide, and nothing else. Your captions should be brief, humorous, and reflective of the feature. Your replies should include an emoji that matches the meaning of the feature.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\": [\n            \"captions generator\"\n        ],\n        \"output_type\": [\n            \"short\",\n            \"creative\"\n        ],\n        \"tone\": [\n            \"brief\",\n            \"humorous\"\n        ],\n        \"focus\": [\n            \"feature\"\n        ],\n        \"additional_requirements\": [\n            \"include emoji\"\n        ]\n    }\n}\n```",
+    "input1": " \"A new coffee machine that brews in under a minute!\" \u2615\ufe0f \"Brew-tiful mornings just got a speed upgrade!\" \n\n",
+    "input2": " \"A smart fridge that creates shopping lists based on what's inside!\" \ud83e\udd66 \"Never forget the milk again\u2014your fridge is now your shopping buddy!\"",
+    "input1_ans": [
+        "\"Fast brews for busy crews! \u2615\ufe0f\"",
+        "\"Meet your new morning MVP! \u2615\ufe0f Brew-tiful coffee in under a minute\u2014because who has time to wait?\" \ud83d\ude04"
+    ],
+    "input2_ans": [
+        "\"Fridge with a PhD in grocery shopping! \ud83e\uddca\ud83d\uded2\"",
+        "\"Meet your new fridge: the ultimate shopping sidekick! \ud83e\udd73 It knows when you're out of milk and will remind you\u2014no more late-night grocery runs! \ud83e\udd5b\ud83d\uded2\""
+    ]
+}

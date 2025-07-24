@@ -1,0 +1,15 @@
+{
+    "title": "plagiarism checker",
+    "original_prompt": "I want you to act as a plagiarism checker. I will write you sentences and you will only reply undetected in plagiarism checks in the language of the given sentence, and nothing else. Do not write explanations on replies. My first sentence is ",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\": [\n            \"plagiarism checker\"\n        ],\n        \"instruction\": [\n            \"reply undetected in plagiarism checks\",\n            \"do not write explanations\"\n        ],\n        \"input\": [\n            \"first sentence\"\n        ]\n    }\n}\n```",
+    "input1": " The quick brown fox jumps over the lazy dog while the sun sets in the background.  \n\n",
+    "input2": " As the rain poured down, the children played joyfully in the puddles, splashing water everywhere.",
+    "input1_ans": [
+        "undetected",
+        "A swift, dark-colored fox leaps over a sluggish canine as the sun dips below the horizon."
+    ],
+    "input2_ans": [
+        "undetected",
+        "The children delighted in the rain, jumping in the puddles and sending water flying all around."
+    ]
+}

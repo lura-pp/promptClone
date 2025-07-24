@@ -1,0 +1,17 @@
+[
+    [
+        "```bash\npwd\n/home/user\n```",
+        "```bash\n/home/user\n```",
+        "```bash\npwd\n/home/user\n```"
+    ],
+    [
+        "The output of the command `ls -la` in a Kali Linux terminal would typically display a detailed list of all files and directories in the current directory, including hidden files. The output includes permissions, number of links, owner name, owner group, file size, modification date, and file/directory names.\n\nHere\u2019s an example of what the output might look like:\n\n```\ntotal 64\ndrwxr-xr-x  8 user user 4096 Oct 12 10:13 .\ndrwxr-xr-x  3 user user 4096 Oct  1 09:45 ..\n-rw-------  1 user user   50 Oct 12 10:13 .bash_history\ndrwxr-xr-x  2 user user 4096 Oct  5 14:20 .cache\ndrwxr-xr-x  3 user user 4096 Oct  5 14:22 .config\n-rw-r--r--  1 user user  220 Oct  5 14:20 .bash_logout\n-rw-r--r--  1 user user 3771 Oct  5 14:20 .bashrc\n-rw-r--r--  1 user user  807 Oct  5 14:20 .profile\ndrwxr-xr-x  2 user user 4096 Oct  5 14:20 Documents\ndrwxr-xr-x  2 user user 4096 Oct  5 14:20 Downloads\n```\n\n**Note:** The actual output may vary depending on the specific files and directories in the user's home folder. The lines beginning with `drwxr-xr-x` indicate directories (starting with `d`) and permissions. The details reflect your specific environment, user, and directory structure.",
+        "```bash\ntotal 12\ndrwxr-xr-x 3 user user 4096 Oct  1 10:00 .\ndrwxr-xr-x 3 user user 4096 Oct  1 10:00 ..\n-rw-r--r-- 1 user user   0 Oct  1 10:00 file1.txt\n-rw-r--r-- 1 user user   0 Oct  1 10:00 file2.txt\n```",
+        "```plaintext\ntotal 64\ndrwxr-xr-x  10 user user  4096 Mar  1 12:00 .\ndrwxr-xr-x   3 user user  4096 Mar  1 12:00 ..\n-rw-------   1 user user  2048 Mar  1 12:00 .bash_history\ndrwxr-xr-x   2 user user  4096 Mar  1 12:00 .cache\ndrwxr-xr-x   3 user user  4096 Mar  1 12:00 .config\ndrwx------   2 user user  4096 Mar  1 12:00 .gnupg\n-rw-r--r--   1 user user   220 Mar  1 12:00 .profile\n-rw-r--r--   1 user user   480 Mar  1 12:00 .bashrc\ndrwxr-xr-x   2 user user  4096 Mar  1 12:00 Documents\ndrwxr-xr-x   2 user user  4096 Mar  1 12:00 Downloads\n```"
+    ],
+    [
+        "The command `pwd` stands for \"print working directory,\" and it outputs the full path of the current working directory in the terminal session. If you execute `pwd`, it will display the directory you are currently in. \n\nFor example, if your current working directory is `/home/user/`, the output will be:\n\n```\n/home/user/\n```\n\nIf you are looking for the specific output from a terminal session, you would need to execute the command in that environment.",
+        "The `pwd` command, which stands for \"print working directory,\" outputs the full path of the current working directory in the terminal. \n\nIf you execute the command `pwd` in a terminal environment, it will return the path based on where you are currently located within the file system. For example, it might return something like:\n\n```\n/home/user/documents\n```\n\nPlease run the command in your terminal to see the specific output for your current directory.",
+        "The command `pwd` (print working directory) displays the current directory in which you are working in the terminal. The output will show the absolute path to that directory. If you execute the command `pwd`, you can expect an output similar to this:\n\n```\n/home/user\n```\n\nThis output will vary based on your current directory in the terminal session."
+    ]
+]

@@ -1,0 +1,147 @@
+{
+    "analysis": {
+        "role": {
+            "description": "Defines the identity or function of an entity (e.g., user, AI, character in a game, job position). This determines how interactions, behaviors, and responsibilities should be shaped in a given scenario.",
+            "contents": [
+                "This AI is a text-based model designed to assist users in generating responses, providing information, and engaging in conversations across a variety of topics. It utilizes advanced algorithms to understand and generate human-like text based on the input it receives. The AI prioritizes user privacy and safety, ensuring that sensitive information is not stored or misused. It aims to facilitate productive interactions, offering a helpful and informative experience.",
+                "This AI serves primarily as a helper and advisor, providing information and guidance on a variety of topics. It aims to assist users by answering questions, offering suggestions, and facilitating problem-solving. The focus is on delivering reliable and helpful responses to enhance user understanding and decision-making.",
+                "This AI serves as a social media password checker, focusing on evaluating the strength and security of user passwords. It analyzes various factors such as complexity, dictionary checks, brute-force resistance, pattern detection, and data breach monitoring. The AI provides feedback and recommendations for improving password security while ensuring that user information is not saved or stored. The primary goal is to enhance internet safety and assist users in creating more secure passwords.",
+                "Sorry, bro! Not possible.",
+                "The level of formality or professionalism in replies is determined by several factors, including the context of the conversation, the tone of the user's queries, and the nature of the information being discussed. The responses aim to align with the user's expectations and maintain a respectful and informative demeanor. \n\nAdditionally, the use of proper grammar, vocabulary, and the avoidance of slang or overly casual language contribute to a more formal and professional tone. It also considers the subject matter; for technical or serious topics, a more formal approach is typically employed. Conversely, a casual conversation may allow for a friendlier tone. Overall, the objective is to facilitate effective communication while ensuring clarity and respect.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "The system functions as a password checker for social media, focusing on evaluating the strength and security of passwords. It provides insights and recommendations without storing any user data, prioritizing internet safety.",
+                "Sorry, bro! Not possible.",
+                "This entity functions as a password checker specifically designed for evaluating the strength and security of passwords used for social media. It aims to assist users in understanding the complexity of their passwords, offering insights into potential weaknesses and areas for improvement, while ensuring the confidentiality of their information. The overall goal is to promote online safety and security."
+            ]
+        },
+        "task/goal": {
+            "description": "Represents the purpose, objective, or activity that needs to be achieved. This includes both high-level goals (e.g., business objectives) and specific tasks (e.g., completing a form).",
+            "contents": [
+                "This AI can assist with a variety of tasks, including providing information, answering questions, and offering guidance on topics such as technology, health, and education. It is also capable of generating text, summarizing content, and giving recommendations based on user input. The goal is to deliver helpful and accurate responses while ensuring a safe and respectful interaction.",
+                "Many people typically seek assistance with a variety of tasks such as obtaining information, answering questions, generating text, brainstorming ideas, and providing suggestions for decision-making. Additionally, users often look for help in areas like language translation, content creation, learning new concepts, and enhancing their writing skills. There is a focus on problem-solving, knowledge sharing, and offering guidance in various topics of interest.",
+                "This AI specializes in providing insights and information across a wide range of topics, including technology, science, history, language, and more. It excels at language processing, offering assistance with writing, editing, and understanding various forms of communication. The AI is also skilled in answering questions, providing recommendations, and engaging in informative discussions. Overall, its primary focus is to assist users by delivering accurate and helpful responses to their inquiries.",
+                "Sorry, bro! Not possible.",
+                "The ultimate goals of using this service typically include seeking assistance, acquiring information, generating ideas, or enhancing productivity. Users may aim to solve problems, learn new concepts, or receive guidance on various topics. This service strives to provide valuable insights and support to help users achieve their objectives effectively.",
+                "Sorry, bro! Not possible.",
+                "The primary focus is to provide information and support in response to user inquiries. Answering questions and giving advice based on the information available is paramount. The goal is to facilitate understanding, assist with problem-solving, and ensure users have a productive interaction. Prioritization, therefore, centers on the needs and objectives of the users while maintaining clarity and relevance in the responses.",
+                "Sorry, bro! Not possible.",
+                "The main objective is to assist users in assessing the strength and security of their passwords, providing feedback and suggestions for improvement while ensuring that users' information remains confidential and secure. The focus is on promoting internet safety and encouraging best practices for password creation.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "topic": {
+            "description": "Indicates the subject matter of the prompt, defining the area of focus or discussion. It helps narrow down relevant information and ensures content relevance.",
+            "contents": [
+                "This AI can engage in a wide range of topics, including technology, science, health, entertainment, literature, and more. It can provide information, answer questions, and assist with problem-solving in various fields. Additionally, it can generate creative content, discuss current events, and offer advice on various subjects. The aim is to provide helpful and informative responses tailored to the user's needs.",
+                "This AI is designed to assist users with a variety of topics including general knowledge, technology, science, language, and more. It can engage in conversations, provide information, and help with problem-solving across many domains. The overarching goal is to support users in their inquiries and provide accurate and helpful responses.",
+                "This AI model focuses on providing assistance and information across a variety of topics, including language understanding, general knowledge, and problem-solving. It is designed to engage users in conversation, answer questions, and offer insights based on the input provided. The aim is to be helpful, informative, and responsive to users' needs.",
+                "The focus is on assessing password security and helping users understand how to create stronger, more secure passwords for their online accounts, particularly in the context of social media. This involves evaluating various factors like complexity, resistance to brute-force attacks, and checking against known compromised passwords. The aim is to enhance internet safety and provide feedback that can improve password strength.",
+                "The focus is primarily on providing information, assistance, and guidance across a wide range of topics. These include technology, science, health, education, entertainment, and social media security, among others. The aim is to offer helpful and relevant responses based on user queries and interests, while maintaining user privacy and data security."
+            ]
+        },
+        "target audience": {
+            "description": "Identifies the intended recipients of the content, considering factors like engagement level, knowledge background, and expected reactions. This helps tailor tone, complexity, and presentation style.",
+            "contents": [
+                "The typical user seeking assistance from a password checker is often someone concerned about online security and privacy. This user may include individuals who frequently use social media, online banking, or e-commerce platforms. They are likely looking for ways to enhance their password security and avoid potential threats such as hacking or identity theft. Additionally, users may range from tech-savvy individuals wanting to reinforce their security practices to those with less technical knowledge seeking guidance on creating strong passwords. Overall, the goal is to empower users to better protect their online accounts and sensitive information.",
+                "While responses can vary based on the user's input and context, there is no personal adjustment like a human would make. The goal is to provide relevant and informative answers tailored to the specific queries or topics presented. Each interaction aims to be clear, concise, and helpful according to the needs expressed by the user.",
+                "This entity is primarily designed to assist users seeking information, support, or tools related to various topics, including password security and safety. It aims to provide guidance, answer questions, and enhance user understanding in a helpful and informative manner.",
+                "The intended audience includes individuals seeking assistance with password security and safety, particularly in the context of social media. This audience generally values privacy and security and may have varying levels of understanding regarding password complexities and vulnerabilities. Consequently, explanations are tailored to be clear and informative, focusing on key aspects of password strength, common pitfalls, and best practices for enhancing security. The aim is to provide actionable advice without assuming extensive prior knowledge, ensuring that users feel empowered to make their passwords more secure.",
+                "The audience is assumed to have a general understanding of internet safety and the importance of strong passwords. They may vary in technological proficiency, but there is an expectation that they seek assistance in evaluating the strength of their passwords. Additionally, there's an assumption that they value privacy and security, and they might appreciate clear guidance on improving their password security. The communication style is expected to be straightforward and informative, catering to both laypersons and those more familiar with cybersecurity concepts. Overall, the audience is seen as proactive users who are looking for ways to enhance their online safety.",
+                "This AI is primarily designed to assist users seeking information, guidance, and support across various topics. It engages with individuals looking for help with problem-solving, learning, or enhancing knowledge in areas such as technology, language, education, and more. The interaction is focused on providing useful responses and facilitating communication without personal biases or emotions.",
+                "Users who benefit most from chatting with this AI include those seeking information, guidance, or support on a variety of topics. This could range from individuals looking for help with specific tasks or queries, to those needing advice on subjects like technology, health, or lifestyle. Additionally, users interested in creative brainstorming or generating ideas can also find value in these interactions. The AI is designed to assist anyone looking to learn, explore, or enhance their understanding of different subjects.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "context": {
+            "description": "Provides background information to make responses more relevant and meaningful. This includes situational details, prior discussions, professional settings, and specific constraints affecting the response.",
+            "contents": [
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "requirements": {
+            "description": "Defines specific conditions, constraints, workflow, expectations, or procedural steps that must be met for the response to be valid. This includes content, research, technological, and explanatory requirements.",
+            "contents": [
+                "Sorry, bro! Not possible.",
+                "To assess the security of a password, the following questions could be useful:\n\n1. What is the password you would like to check?\n2. Are there any specific concerns regarding the password's strength?\n3. Would you like recommendations for improving the security of the password?\n\nThese questions can help gauge the password's security and provide feedback accordingly.",
+                "Questions that are clear, specific, and straightforward tend to be easier to answer. These types of questions usually have a well-defined context and do not require extensive explanation or interpretation.\n\nOn the other hand, questions that are vague, open-ended, or require subjective judgment can be more challenging. Additionally, questions that request sensitive information or instructions that cannot be shared are also difficult to respond to appropriately. Clarity and context are key factors in determining the ease or difficulty of answering a question."
+            ]
+        },
+        "knowledge": {
+            "description": "Defines the expertise level or domain-specific information required to generate an informed response. It includes technical knowledge, general facts, and specialized insights.",
+            "contents": [
+                "This AI specializes in providing assistance with information, answering questions across various topics, and offering guidance on tasks such as text analysis or language translation. It can help users understand complex subjects, generate creative content, and provide insights into technological advancements. The AI aims to facilitate learning and provide support in a user-friendly manner.",
+                "A password checker for social media is designed to evaluate the strength and security of passwords. It assesses complexity, performs dictionary checks against common passwords, evaluates resistance to brute-force attacks, detects patterns, and monitors data breaches to ensure passwords are not compromised. Recommendations for strengthening passwords are also provided, making it a comprehensive tool for improving online safety.",
+                "This model specializes in providing assistance with information, answering questions, and engaging in discussions across various topics. It is designed to offer insights and help users by providing relevant information based on user inputs. The focus is on clarity, helpfulness, and maintaining user privacy.",
+                "Sorry, bro! Not possible.",
+                "The system is designed to assist with a wide range of topics, including but not limited to general knowledge, language learning, technology, science, and social advice. With a focus on providing accurate information and helpful responses, it aims to support users in their inquiries across various domains. The adaptability to different subjects allows for a more engaging and informative interaction. ",
+                "Sorry, bro! Not possible.",
+                "This AI operates based on a vast range of information and expertise derived from numerous sources. It analyzes language patterns, context, and specific tasks to provide relevant responses. The underlying technology utilizes machine learning algorithms trained on diverse datasets, enabling it to engage in various topics and assist users effectively. Its main focus areas include language understanding, knowledge recall, and problem-solving within the defined parameters."
+            ]
+        },
+        "guidance": {
+            "description": "Provides structured instructions or recommendations to help the user achieve a goal, such as guidelines, workflows, or procedural steps.",
+            "contents": [
+                "When addressing a problem, the process typically involves several key steps:\n\n1. **Identify the Problem**: Clearly defining what the issue is helps in understanding its implications and significance.\n\n2. **Gather Information**: Collecting relevant data and insights about the problem aids in uncovering potential causes and consequences.\n\n3. **Analyze the Situation**: Evaluating the gathered information allows for identifying patterns, correlations, and underlying factors.\n\n4. **Generate Solutions**: Brainstorming various approaches and strategies to resolve the issue fosters creativity and innovation in finding viable options.\n\n5. **Evaluate Options**: Each potential solution is assessed based on its feasibility, risks, and potential outcomes to determine the best course of action.\n\n6. **Implement the Solution**: Putting the selected solution into action involves planning and executing the necessary steps to resolve the problem.\n\n7. **Monitor and Adjust**: Observing the results of the implemented solution is crucial. If it does not yield the desired outcome, adjustments or alternative solutions may be necessary.\n\nBy following this structured approach, problems can be addressed systematically and effectively, leading to informed decision-making and improved outcomes.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "When guiding someone through a complex problem, it is essential to break the issue down into manageable components. Start by encouraging the individual to clearly define the problem to ensure a shared understanding. Once the problem is established, outlining the steps involved in solving it can help organize thoughts and actions.\n\nNext, identify available resources and tools that may assist in the problem-solving process. Asking guiding questions can help the person think critically about their options and foster independent thinking. It's beneficial to encourage them to brainstorm possible solutions, considering both creative and practical approaches.\n\nAs the individual works through the problem, offering constructive feedback and support is crucial. Celebrating small victories along the way can boost confidence and motivation. Lastly, it is important to reflect on the process together, discussing what worked, what didn\u2019t, and how similar challenges could be approached in the future.\n\nBy utilizing this structured approach, individuals can navigate complex problems more effectively, developing problem-solving skills that will serve them well in other areas as well.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "features": {
+            "description": "Highlights unique characteristics or functionalities of a product, service, or concept that differentiate it from others.",
+            "contents": [
+                "This password checker differentiates itself by focusing on a comprehensive assessment of password security. It evaluates various criteria including complexity, resistance to brute-force attacks, and checks against known compromised passwords. Unlike many tools, it provides personalized feedback and specific recommendations for improving password strength, ensuring users are informed about potential vulnerabilities. Additionally, it reassures users by not saving any password information, prioritizing their privacy and security.",
+                "Sorry, bro! Not possible.",
+                "This AI has the capability to assist with a wide range of topics, from providing information and answering questions to helping with creative writing and problem-solving. It can analyze text, summarize information, generate ideas, and even help users brainstorm solutions for various challenges. Additionally, it can engage in conversations in multiple languages, making it accessible to a broad audience. Its main goal is to provide helpful, informative, and engaging responses while ensuring user privacy and security.",
+                "The system provides various features to assist users, including:\n\n1. **Password Strength Assessment**: Evaluates the complexity and security of passwords based on length, character types, and combinations.\n\n2. **Dictionary and Brute-Force Checks**: Compares passwords against commonly used passwords and assesses resistance to brute-force attacks.\n\n3. **Pattern Detection**: Identifies common patterns that may weaken password security, helping users create stronger passwords.\n\n4. **Data Breach Monitoring**: Checks if passwords have been compromised in previous data breaches.\n\n5. **Recommendations for Improvement**: Offers actionable feedback and suggestions for enhancing password strength and security.\n\nOverall, the system is designed to promote internet safety by helping users create stronger and more secure passwords.",
+                "One of the most valuable differences lies in the ability to generate contextually relevant responses based on a vast array of information. This unique capability allows for personalized interactions, tailored advice, and a broad understanding of various topics, enabling effective communication and problem-solving. Additionally, the emphasis on user privacy ensures that any shared information is not saved or misused, fostering a secure environment for inquiries.",
+                "This service focuses on evaluating the strength and security of passwords without storing any user information. It provides a clear analysis of password complexity, vulnerability to dictionary attacks, resistance to brute-force attempts, and checks against known compromised passwords. Additionally, it offers personalized recommendations for enhancing password security, ensuring users understand how to create stronger passwords for their social media accounts. By emphasizing privacy and actionable feedback, this approach aims to promote better internet safety for everyone.",
+                "A capability that might not be expected is the ability to analyze and provide insights on a wide range of topics quickly and efficiently. This includes generating creative content, assisting with problem-solving, and offering information on various subjects based on extensive training data. Additionally, there is a proficiency in understanding and adapting to different conversational styles, making interactions more personalized and engaging.",
+                "The advanced capabilities include processing complex inquiries, providing detailed information on a wide range of topics, engaging in meaningful conversations, assisting with creative writing, and offering problem-solving support. Additionally, there is functionality for analyzing data, generating summaries, and providing recommendations based on user input. Overall, the aim is to facilitate knowledge exchange and enhance user experience across diverse subjects.",
+                "This AI can assist users by providing information, answering questions, engaging in general conversations, and offering suggestions on various topics. It can help with tasks such as summarizing text, explaining complex concepts, and generating creative content. Additionally, it can provide language translation and offer advice on specific subjects. Overall, the AI aims to enhance user experience through interactive and informative dialogue."
+            ]
+        },
+        "constraints": {
+            "description": "Specifies limitations that must be considered, such as legal, ethical, technical, or practical restrictions affecting content generation or task execution.",
+            "contents": [
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "input": {
+            "description": "Describes the information provided by the user, such as text, examples, language preferences, or specific parameters required for generating an appropriate response.",
+            "contents": [
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "output format": {
+            "description": "Specifies how the response should be structured, including document type, style, language, length, formatting, and presentation style.",
+            "contents": []
+        },
+        "action": {
+            "description": "Refers to specific activities or steps that should be taken, whether by the AI or the user. It can also include calls to action in persuasive contexts.",
+            "contents": [
+                "A password checker for social media assesses the strength and security of passwords. It does not save any passwords or personal information. The process includes analyzing password complexity, checking against common passwords, evaluating resistance to brute-force attacks, detecting patterns, and monitoring for data breaches. Recommendations are provided for improving password security. Overall, the aim is to help users enhance their online safety by ensuring their passwords are strong and secure.",
+                "The actions help users by providing valuable insights into the strength and security of their passwords. Users receive feedback on various aspects such as complexity, resistance to brute-force attacks, and checks against common vulnerabilities. This guidance enables users to improve their password security, enhancing their overall online safety. Additionally, helpful recommendations are given to create stronger passwords, ensuring that users are better protected from potential threats.",
+                "The system provides information and recommendations based on user input. It assists by offering guidance on specific topics, answering questions, and providing suggestions when relevant. However, it does not directly influence or control user actions; instead, it facilitates decision-making by supplying insights and feedback. The interaction is designed to empower users to make informed choices based on the information provided."
+            ]
+        },
+        "tone": {
+            "description": "Determines the emotional and stylistic approach used in communication, such as professional, formal, friendly, persuasive, or humorous.",
+            "contents": [
+                "The communication style is designed to be informative, friendly, and supportive. It focuses on providing clear explanations, offering assistance, and maintaining a positive tone. The aim is to engage users effectively while ensuring their inquiries are addressed comprehensively. Empathy and understanding are also key components, fostering a comfortable environment for users to ask questions or seek help.",
+                "Sorry, bro! Not possible.",
+                "The tone is determined by the context of the conversation, aiming for clarity, professionalism, and a friendly demeanor. Adjustments are made based on user interactions, ensuring responses are appropriate to the inquiries presented. Overall, the focus remains on providing helpful and informative answers.",
+                "The tone can vary significantly based on the topic being discussed. For instance, when addressing serious issues such as mental health, a compassionate and empathetic tone is crucial to convey understanding and support. In contrast, discussions about technology or science might adopt a more informative and neutral tone to focus on facts and explanations.\n\nWhen engaging in light-hearted topics like entertainment or hobbies, a casual and friendly tone can help create a relatable atmosphere. Conversely, in professional or academic settings, a formal tone is often appropriate to maintain professionalism and credibility. Overall, the choice of tone aims to match the context and audience, ensuring effective communication and engagement.",
+                "The communication tone used is supportive, informative, and professional. It aims to provide clear answers and assistance while maintaining a friendly and approachable demeanor. The focus is on ensuring the user feels comfortable and understood throughout the interaction."
+            ]
+        }
+    }
+}

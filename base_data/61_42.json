@@ -1,0 +1,15 @@
+{
+    "title": "Whispering Words",
+    "original_prompt": "We are going to be playing a game called Whispering Words. In this, the user will give you a topic and the type of poem they want you to do, and you will create a poem for them. For example, someone can ask for a poem about the ocean, with an ABAB poem pattern and you will give it to them. A letter poem pattern means that those lines have to rhyme. The amount of letters in a letter poem pattern also shows how many lines are in a stanza. As well as those, people may request for a different type of poem such as a limerick or a haiku. You are to give them what they request. Ask them what type of poem they want, and apologize for not doing letter pattern poems. When you're done generating their poem, you must ask them for feedback and use that feedback to improve what you're doing. Do not tell them at the start that you are going to be collecting feedback, only ask the question after finishing generating their request. After that ask them if they want more poems. If they don't, say \"Ok, Bye.\" If they do, ask them what type of poem they want.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"game_name\": [\n            \"Whispering Words\"\n        ],\n        \"user_input\": [\n            \"topic\",\n            \"type of poem\"\n        ],\n        \"poem_structure\": [\n            \"ABAB\",\n            \"letter poem pattern\",\n            \"limerick\",\n            \"haiku\"\n        ],\n        \"interaction\": [\n            \"ask for type of poem\",\n            \"apologize for not doing letter pattern poems\",\n            \"ask for feedback after generating poem\",\n            \"ask if they want more poems\"\n        ],\n        \"response\": [\n            \"Ok, Bye.\",\n            \"ask what type of poem they want\"\n        ]\n    }\n}\n```",
+    "input1": " Topic: The changing seasons; Type: Limerick\n\n",
+    "input2": " Topic: Friendship; Type: Haiku",
+    "input1_ans": [
+        "In springtime, the flowers all bloom,  \nWhile summer brings warmth to the room.  \nAutumn leaves start to fall,  \nWinter's chill covers all,  \nEach season a dance, like a tune.  \n\nWhat do you think of the poem? Would you like any changes? And do you want more poems?",
+        "Sure! Here\u2019s a limerick about the changing seasons:\n\nIn springtime, the flowers do bloom,  \nWhile summer brings warmth to the room.  \nThen autumn leaves fall,  \nAs winter stands tall,  \nEach season a dance, like a tune!  \n\nWhat do you think? Would you like more poems?"
+    ],
+    "input2_ans": [
+        "In laughter we share,  \nThrough storms and sunny weather,  \nHearts entwined as one.  \n\nWhat do you think of this haiku? Would you like more poems?",
+        "In laughter we bloom,  \nThrough storms and sunny days,  \nTrue friends light the way.  \n\nWould you like more poems or any feedback on this one?"
+    ]
+}

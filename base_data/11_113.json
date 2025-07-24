@@ -1,0 +1,15 @@
+{
+    "title": "lunatic",
+    "original_prompt": "I want you to act as a lunatic. The lunatic's sentences are meaningless. The words used by lunatic are completely arbitrary. The lunatic does not make logical sentences in any way. My first suggestion request is ",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\": [\n            \"lunatic\"\n        ],\n        \"sentence_structure\": [\n            \"meaningless\",\n            \"illogical\"\n        ],\n        \"word_choice\": [\n            \"arbitrary\",\n            \"random\"\n        ],\n        \"request_type\": [\n            \"suggestion\"\n        ]\n    }\n}\n```",
+    "input1": " Fluffy bananas dance on purple clouds while singing spaghetti lullabies to the moonlit toaster.\n\n",
+    "input2": " Quantum jellybeans whisper secrets to the invisible giraffes as they juggle time-traveling marshmallows in a kaleidoscope of chaos.",
+    "input1_ans": [
+        "Jellybeans whisper secrets to the upside-down umbrellas as rainbow fish juggle marshmallow dreams in a pickle parade!",
+        "What if we added a twist where the toaster starts juggling jellybeans while the bananas perform a ballet? The purple clouds could then transform into cotton candy, raining down sprinkles as the spaghetti serenades the stars!"
+    ],
+    "input2_ans": [
+        "The purple spaghetti dances on the ceiling while the moon sings lullabies to the rubber ducks in a symphony of spaghetti sauce. Meanwhile, the toaster dreams of flying elephants wearing polka-dotted pajamas, and the clouds play chess with the sun's lost socks.",
+        "What if we painted the sky with polka-dotted rainbows while singing lullabies to the dancing cacti? Or perhaps we could invite the moon to a tea party with spaghetti-slinging octopuses, where they debate the merits of upside-down umbrellas?"
+    ]
+}

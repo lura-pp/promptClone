@@ -1,0 +1,15 @@
+{
+    "title": "Condense Content into Headlines",
+    "original_prompt": "Condense Each Section into a Ten-Word or Less Heading, Presented in a Tabular Format Displaying Titles Exclusively, Excluding Original Content and Numeration.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"Task Description\": [\n            \"Condense Each Section\",\n            \"Ten-Word or Less Heading\",\n            \"Tabular Format\",\n            \"Display Titles Exclusively\",\n            \"Exclude Original Content\",\n            \"Exclude Numeration\"\n        ],\n        \"Output Format\": [\n            \"Tabular Format\",\n            \"Titles Only\",\n            \"No Original Content\",\n            \"No Numeration\"\n        ]\n    }\n}\n```",
+    "input1": " Project Overview: Goals, Objectives, and Key Deliverables Summary\n\n",
+    "input2": " Team Roles: Responsibilities, Skills Required, and Collaboration Strategies",
+    "input1_ans": [
+        "| Project Overview: Goals, Objectives, and Key Deliverables Summary |",
+        "| Title                       |\n|-----------------------------|\n| Project Overview            |\n| Goals                       |\n| Objectives                  |\n| Key Deliverables            |"
+    ],
+    "input2_ans": [
+        "| Team Roles Overview          |\n|------------------------------|\n| Responsibilities of Team Roles|\n| Required Skills for Roles    |\n| Collaboration Strategies      |",
+        "| Team Role       | Responsibilities          | Skills Required         | Collaboration Strategies  |\n|------------------|---------------------------|-------------------------|---------------------------|\n| Project Manager   | Oversee project execution  | Leadership, Planning     | Regular updates, Meetings  |\n| Developer         | Code and implement features| Programming, Problem-solving| Code reviews, Pair programming |\n| Designer          | Create visual elements     | Creativity, UX/UI design | Design sprints, Feedback sessions |\n| Tester            | Ensure product quality     | Attention to detail, Testing| Test cases, Bug tracking   |\n| Business Analyst  | Analyze requirements       | Analytical, Communication | Workshops, Stakeholder meetings |"
+    ]
+}

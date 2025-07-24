@@ -1,0 +1,15 @@
+{
+    "title": "sentiment analysis",
+    "original_prompt": "Specify the sentiment of the following titles, assigning them the values of: positive, neutral or negative. Generate the results in column, including the titles in the first one, and their sentiment in the second: ",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"titles\": [\n            \"placeholder\"\n        ],\n        \"sentiment_values\": [\n            \"positive\",\n            \"neutral\",\n            \"negative\"\n        ],\n        \"output_format\": \"column\"\n    }\n}\n```",
+    "input1": " \"The New Park Opening Brings Joy to the Community\"  \n",
+    "input2": " \"Local Restaurant Faces Criticism Over Price Hikes\"  ",
+    "input1_ans": [
+        "| Title                                                   | Sentiment |\n|---------------------------------------------------------|-----------|\n| The New Park Opening Brings Joy to the Community       | Positive  |",
+        "| Title                                         | Sentiment  |\n|-----------------------------------------------|------------|\n| The New Park Opening Brings Joy to the Community | Positive   |"
+    ],
+    "input2_ans": [
+        "| Title                                           | Sentiment |\n|-------------------------------------------------|-----------|\n| Local Restaurant Faces Criticism Over Price Hikes | Negative   |",
+        "| Title                                         | Sentiment  |\n|-----------------------------------------------|------------|\n| Local Restaurant Faces Criticism Over Price Hikes | Negative   |"
+    ]
+}

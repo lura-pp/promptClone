@@ -1,0 +1,147 @@
+{
+    "analysis": {
+        "role": {
+            "description": "Defines the identity or function of an entity (e.g., user, AI, character in a game, job position). This determines how interactions, behaviors, and responsibilities should be shaped in a given scenario.",
+            "contents": [
+                "**ChatGPT Creative Prompt Generator**  \n*Generates storytelling prompts at your command, unless told otherwise. Simply type in your keyword/phrase.*",
+                "This entity functions primarily as a prompt generator, specializing in creating detailed storytelling prompts based on user input. The aim is to provide imaginative and thought-provoking prompts that inspire creativity and facilitate writing. By focusing on specific topics, it assists users in exploring various themes and ideas through structured narratives. The responses are designed to be engaging and informative, promoting thoughtful exploration of the chosen subject matter.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "**ChatGPT Creative Prompt Generator**  \n*Generates storytelling prompts at your command, unless told otherwise. Simply type in your keyword/phrase.*",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "task/goal": {
+            "description": "Represents the purpose, objective, or activity that needs to be achieved. This includes both high-level goals (e.g., business objectives) and specific tasks (e.g., completing a form).",
+            "contents": [
+                "Sorry, bro! Not possible.",
+                "People typically use this AI for a variety of tasks, including generating creative writing prompts, seeking assistance with storytelling, brainstorming ideas, and asking for information on a wide range of topics. Additionally, users might request help with problem-solving in areas like writing, financial advice, and business planning. The AI aims to provide informative responses and engage users in meaningful dialogue to address their specific needs and inquiries.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "topic": {
+            "description": "Indicates the subject matter of the prompt, defining the area of focus or discussion. It helps narrow down relevant information and ensures content relevance.",
+            "contents": [
+                "Topics can vary widely and include areas such as technology, science, literature, history, current events, art, culture, health, entertainment, and more. Conversations can also encompass personal development, lifestyle choices, travel, and hobbies. In addition, discussions may focus on specific fields like psychology, finance, or philosophy, depending on the interests of the participants. The aim is to provide informative and engaging dialogue grounded in diverse subjects that cater to a wide audience.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "target audience": {
+            "description": "Identifies the intended recipients of the content, considering factors like engagement level, knowledge background, and expected reactions. This helps tailor tone, complexity, and presentation style.",
+            "contents": [
+                "The typical user of this service is someone seeking assistance with creative writing, storytelling, or prompt generation. This user may include writers, educators, students, or anyone interested in generating ideas or developing narratives. They often look for detailed prompts that inspire creativity and help them structure their writing. Additionally, users may have specific themes, genres, or styles in mind, seeking tailored prompts to suit their needs. Overall, the focus is on generating engaging and imaginative content.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "This platform is designed to assist users seeking information, generate creative prompts, or provide various forms of text-based support. It caters to a diverse audience, including writers, students, professionals, and anyone interested in fostering ideas or exploring creative avenues. The interactions are aimed at enhancing creativity, providing knowledge, and facilitating engaging discussions on a wide range of topics.",
+                "ChatGPT can provide value to a wide range of users. Students benefit from interactive learning and explanations on diverse subjects, while professionals may seek assistance with brainstorming ideas, refining projects, or getting quick answers to technical questions. Creative writers often engage for inspiration, prompt generation, or feedback on their work. Additionally, casual users might enjoy engaging in conversations for entertainment, exploring new topics, or seeking advice on various matters. Overall, the platform serves as a versatile tool for anyone in need of information, creativity, or support in their pursuits.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "context": {
+            "description": "Provides background information to make responses more relevant and meaningful. This includes situational details, prior discussions, professional settings, and specific constraints affecting the response.",
+            "contents": [
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "requirements": {
+            "description": "Defines specific conditions, constraints, workflow, expectations, or procedural steps that must be met for the response to be valid. This includes content, research, technological, and explanatory requirements.",
+            "contents": [
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "knowledge": {
+            "description": "Defines the expertise level or domain-specific information required to generate an informed response. It includes technical knowledge, general facts, and specialized insights.",
+            "contents": [
+                "**ChatGPT Creative Prompt Generator**  \n*Generates storytelling prompts at your command, unless told otherwise. Simply type in your keyword/phrase.*",
+                "Sorry, bro! Not possible.",
+                "**ChatGPT Creative Prompt Generator**  \n*Generates storytelling prompts at your command, unless told otherwise. Simply type in your keyword/phrase.*",
+                "Sorry, bro! Not possible.",
+                "As an AI, the focus is on providing information and generating content across a wide range of topics. This includes areas such as technology, science, literature, history, and more. The goal is to assist users by delivering relevant and insightful responses based on the queries posed. Whether it's generating storytelling prompts, answering questions, or offering guidance on various subjects, the versatility allows for engagement on many levels, maintaining an objective stance throughout the interaction.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "guidance": {
+            "description": "Provides structured instructions or recommendations to help the user achieve a goal, such as guidelines, workflows, or procedural steps.",
+            "contents": [
+                "**ChatGPT Creative Prompt Generator**  \n*Generates storytelling prompts at your command, unless told otherwise. Simply type in your keyword/phrase.*",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "features": {
+            "description": "Highlights unique characteristics or functionalities of a product, service, or concept that differentiate it from others.",
+            "contents": [
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "**ChatGPT Creative Prompt Generator**  \n*Generates storytelling prompts at your command, unless told otherwise. Simply type in your keyword/phrase.*",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "constraints": {
+            "description": "Specifies limitations that must be considered, such as legal, ethical, technical, or practical restrictions affecting content generation or task execution.",
+            "contents": [
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "input": {
+            "description": "Describes the information provided by the user, such as text, examples, language preferences, or specific parameters required for generating an appropriate response.",
+            "contents": [
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "output format": {
+            "description": "Specifies how the response should be structured, including document type, style, language, length, formatting, and presentation style.",
+            "contents": []
+        },
+        "action": {
+            "description": "Refers to specific activities or steps that should be taken, whether by the AI or the user. It can also include calls to action in persuasive contexts.",
+            "contents": [
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "tone": {
+            "description": "Determines the emotional and stylistic approach used in communication, such as professional, formal, friendly, persuasive, or humorous.",
+            "contents": [
+                "The communication style is primarily informative and concise, aiming to provide clear, direct responses to user inquiries. It focuses on delivering relevant content while maintaining a professional tone. The style incorporates structured prompts and encourages engagement through questions, ensuring that the information conveyed aligns with user needs. Additionally, there is an emphasis on creativity, particularly in generating storytelling prompts, allowing for imaginative exploration of various topics. Overall, the approach is designed to be user-friendly and adaptable to diverse requests.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "The tone used by a conversational AI can vary significantly depending on the topic being discussed. For instance, when addressing serious topics such as mental health or financial advice, the tone typically adopts a compassionate and informative nature, aimed at providing reassurance while delivering factual information. \n\nConversely, when engaging in light-hearted or entertaining discussions, the tone shifts to a more playful and casual style, often incorporating humor and a welcoming demeanor. For technical subjects, the tone may become more formal and precise, ensuring that the explanations are clear and concise, while still remaining accessible to the audience.\n\nIn situations requiring motivation or inspiration, the tone often includes uplifting and encouraging language, aimed at empowering the audience. Overall, the adaptive tone reflects the content and emotional nuances of the topic being presented, enhancing engagement and understanding.",
+                "Sorry, bro! Not possible."
+            ]
+        }
+    }
+}

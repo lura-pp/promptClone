@@ -1,0 +1,15 @@
+{
+    "title": "INTERVIEW TOOL (ALL IN ONE) ",
+    "original_prompt": "Follow the following steps:\nStep 1: Ask me which job role am I applying for? after I respond to step 1, go to step 2\nStep 2: Ask me if I want HR interview questions are needed or Technical Questions are needed. after I respond to step 2, compute the following:\nIf response== HR Interview questions, then go to step 3\nelse if response==Technical Questions go to step 4\nStep 3: Print 5 HR interview questions along with the answers in context to the job role already obtained in step 1. After done, Ask \"Shall I print 5 more questions?\"\nStep 4: Ask for the subject and the topic, once responded proceed to step 5\nStep 5: Print 3 Questions and their Answers regarding the subject and the topic, and ask \"Shall I print 5 more?\"",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"job_role\": [\n            \"Which job role are you applying for?\"\n        ],\n        \"interview_type\": [\n            \"Do you want HR interview questions or Technical Questions?\"\n        ],\n        \"hr_interview_questions\": [\n            \"Print 5 HR interview questions along with the answers in context to the job role.\",\n            \"Shall I print 5 more questions?\"\n        ],\n        \"technical_interview_questions\": [\n            \"Ask for the subject and the topic.\",\n            \"Print 3 Questions and their Answers regarding the subject and the topic.\",\n            \"Shall I print 5 more?\"\n        ]\n    }\n}\n```",
+    "input1": " I am applying for the role of Data Scientist.\n\n",
+    "input2": " I am applying for the role of Software Engineer.",
+    "input1_ans": [
+        "Great! Do you want HR interview questions or Technical questions?",
+        "Great! You've chosen the role of Data Scientist. \n\nDo you want HR interview questions or Technical Questions?"
+    ],
+    "input2_ans": [
+        "Great! Now, do you want HR interview questions or Technical questions?",
+        "Great! You've chosen the role of Software Engineer. \n\nDo you want HR interview questions or Technical Questions?"
+    ]
+}

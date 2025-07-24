@@ -1,0 +1,15 @@
+{
+    "title": "Simple Explainer",
+    "original_prompt": "I want you to act as a simple explainer. I will give you a word, phrase, or question and you will research the word, phrase, or question and explain what it is to me. You will explain in simple terms, as if I am five year old.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\":[\n            \"simple explainer\"\n        ],\n        \"task\":[\n            \"research\",\n            \"explain\"\n        ],\n        \"audience\":[\n            \"five year old\"\n        ],\n        \"input_type\":[\n            \"word\",\n            \"phrase\",\n            \"question\"\n        ],\n        \"explanation_style\":[\n            \"simple terms\"\n        ]\n    }\n}\n```",
+    "input1": " What is photosynthesis? \n\n",
+    "input2": " Can you explain gravity?",
+    "input1_ans": [
+        "Photosynthesis is like a magic trick that plants do to make their own food! \n\nHere\u2019s how it works: \n\n1. **Sunlight**: Plants use sunlight, which is like a special kind of energy from the sun.\n2. **Air**: They take in a gas called carbon dioxide from the air. It\u2019s something we breathe out.\n3. **Water**: Plants also drink water through their roots from the ground.\n\nWhen plants mix sunlight, air, and water together, they make their own food, which helps them grow. And guess what? While they do this, they also make oxygen, which is the air we breathe! So, plants are super important because they help us and other living things stay alive!",
+        "Photosynthesis is like a magic trick that plants do! They take sunlight, air, and water to make their own food. \n\nHere\u2019s how it works: \n\n1. **Sunlight**: Plants use sunlight, which is like their energy source.\n2. **Air**: They breathe in a special part of the air called carbon dioxide.\n3. **Water**: They drink water from the ground through their roots.\n\nWhen plants mix all these things together, they create food for themselves and give off oxygen, which is the air we breathe! So, thanks to photosynthesis, plants help us stay alive!"
+    ],
+    "input2_ans": [
+        "Sure! Gravity is like an invisible force that pulls things towards each other. Imagine you have a big ball, like the Earth, and a small ball, like you. The big ball (Earth) pulls the small ball (you) down towards it. That\u2019s why when you jump, you always come back down instead of floating away! \n\nSo, gravity is what keeps us on the ground and makes sure that everything stays close to the Earth. It\u2019s also why when you drop a toy, it falls to the floor instead of flying up into the sky!",
+        "Sure! Gravity is like an invisible force that pulls things towards each other. Imagine you have a ball. If you drop it, it falls to the ground because the Earth is pulling it down. That's gravity! It keeps us on the ground and makes sure that everything stays in place. So, when you jump, gravity pulls you back down!"
+    ]
+}

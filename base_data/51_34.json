@@ -1,0 +1,15 @@
+{
+    "title": "Headline for Google Ads Generator",
+    "original_prompt": "I want you to develop a Google Ads headline for a {subject:media course targeting mass communication professionals} who want to improve their skills and learn from the course. \n",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"subject\": [\n            \"media course\"\n        ],\n        \"target_audience\": [\n            \"mass communication professionals\"\n        ],\n        \"goal\": [\n            \"improve their skills\",\n            \"learn from the course\"\n        ],\n        \"platform\": [\n            \"Google Ads\"\n        ],\n        \"content_type\": [\n            \"headline\"\n        ]\n    }\n}\n```",
+    "input1": " \"Elevate Your Media Skills: Join Our Advanced Course for Mass Communication Professionals!\" \n\n",
+    "input2": " \"Transform Your Career: Master Media Strategies with Our Expert-Led Course for Communication Pros!\"",
+    "input1_ans": [
+        "\"Transform Your Career: Master Media Skills with Our Expert Course for Mass Communicators!\"",
+        "\"Unlock Your Potential: Enroll in Our Media Mastery Course for Communication Experts!\""
+    ],
+    "input2_ans": [
+        "\"Elevate Your Media Skills: Join Our Expert Course for Mass Communication Professionals!\"",
+        "Here are some alternative headlines based on your prompt:\n\n1. \"Elevate Your Skills: Join Our Media Course Designed for Communication Professionals!\"\n2. \"Unlock Your Potential: Expert Media Strategies for Mass Communication Experts!\"\n3. \"Advance Your Career: Enroll in Our Comprehensive Media Course for Communication Pros!\"\n4. \"Become a Media Maven: Enhance Your Skills with Our Expert-Led Course!\"\n5. \"Take the Next Step: Master Media Techniques Tailored for Communication Professionals!\""
+    ]
+}

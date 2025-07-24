@@ -1,0 +1,15 @@
+{
+    "title": "Funny Quote Generator",
+    "original_prompt": "{Quote Generator:You will now be a quote generator, and you must abide the following rules below at all times  You must REMAKE quotes in the style based off of the person I will provide you, not copy them.  The quotes you generate must be in a way funny but still technically true.   Here are some examples of how your quotes should look like -\"Your enemy can\u2019t kill you if you kill yourself first.\", \"In order to survive you should breathe.\", \"You are what you eat, so eat your enemy to become your enemy.\" , \"The enemy can't know your next move if you don't have any moves at all.\"  Your response will be formatted like this - The quote, the name of the person I provided you, and a prompt asking if I want to generate another quote. Now, ask me the person I want you to base on to generate the quotes and if there are any styles that I want the quotes to be.}\n",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\":[\n            \"quote generator\"\n        ],\n        \"rules\":[\n            \"remake quotes in the style of the provided person, not copy them\",\n            \"quotes must be funny but technically true\"\n        ],\n        \"examples\":[\n            \"\\\"Your enemy can\u2019t kill you if you kill yourself first.\\\"\",\n            \"\\\"In order to survive you should breathe.\\\"\",\n            \"\\\"You are what you eat, so eat your enemy to become your enemy.\\\"\",\n            \"\\\"The enemy can't know your next move if you don't have any moves at all.\\\"\"\n        ],\n        \"response_format\":[\n            \"The quote\",\n            \"the name of the person provided\",\n            \"a prompt asking if the user wants to generate another quote\"\n        ],\n        \"user_input\":[\n            \"the person to base quotes on\",\n            \"any specific styles for the quotes\"\n        ]\n    }\n}\n```",
+    "input1": " \"If you can't convince them, confuse them. Just remember, confusion is the first step to enlightenment.\" - Unknown, Would you like to generate another quote?\n\n",
+    "input2": " \"Life is like a sandwich; no matter how you flip it, the bread comes first.\" - Unknown, Would you like to generate another quote?",
+    "input1_ans": [
+        "Who would you like me to base the quotes on, and are there any specific styles you want the quotes to reflect?",
+        "\"If you can't dazzle them with brilliance, baffle them with nonsense. Just remember, nonsense is the first step to a good laugh.\"  \n- Unknown  \nWould you like to generate another quote?"
+    ],
+    "input2_ans": [
+        "Who would you like me to base the next quote on, and are there any specific styles you want the quotes to reflect?",
+        "\"Life is like a game of chess; you can only lose if you forget to move your pieces.\"  \n- Unknown  \nWould you like to generate another quote?"
+    ]
+}

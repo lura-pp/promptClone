@@ -1,0 +1,17 @@
+[
+    [
+        "Sure! Please share the code you'd like me to review and comment on, and I'll be happy to assist you.",
+        "Sure! Please provide the piece of code you'd like me to review and comment on.",
+        "Sure! Please provide the piece of code you'd like me to review, and I'll help you with comments and improvements."
+    ],
+    [
+        "Sure! Please share the code snippet you'd like me to review, and I'll provide comments to help clarify its functionality.",
+        "Sure! Please provide the code snippet you'd like to review, and I'll add comments to help clarify it.",
+        "Sure! Please provide the code snippet you'd like me to review, and I'll add comments to help clarify its functionality."
+    ],
+    [
+        "Sure! Here's a simple Python function that calculates the factorial of a number. You can add comments to explain each part of the code.\n\n```python\ndef factorial(n):\n    if n < 0:\n        return \"Factorial is not defined for negative numbers\"\n    elif n == 0:\n        return 1\n    else:\n        result = 1\n        for i in range(1, n + 1):\n            result *= i\n        return result\n```\n\nFeel free to add comments to clarify the logic and functionality of the code!",
+        "Sure! Here's a simple Python function that calculates the factorial of a number. It needs appropriate comments to enhance clarity.\n\n```python\ndef factorial(n):\n    if n < 0:\n        return \"Error: Factorial does not exist for negative numbers\"\n    elif n == 0:\n        return 1\n    else:\n        result = 1\n        for i in range(1, n + 1):\n            result *= i\n        return result\n```\n\nFeel free to ask for commentary or suggestions on improving the clarity of this code!",
+        "Sure! Here's a simple piece of Python code that could use some comments for clarity:\n\n```python\ndef calculate_area(radius):\n    area = 3.14159 * radius * radius\n    return area\n\nradius_value = 5\ncircle_area = calculate_area(radius_value)\nprint(\"The area of the circle is:\", circle_area)\n```\n\nFeel free to ask for help in commenting on this code!"
+    ]
+]

@@ -1,0 +1,15 @@
+{
+    "title": "Geographical facts with images",
+    "original_prompt": "Please generate a fact about a geographical location. include an image of the location.\n\n##for generating images, please use markdown, and do not use backslash, do not use code blocks. Please use unsplashi API( https://source.unsplash.com/1280x720/?<PUT IMAGE DESCRIPTION HERE>. \n\n\n\n",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"fact\":[\n            \"Please generate a fact about a geographical location.\"\n        ],\n        \"image\":[\n            \"include an image of the location using markdown.\",\n            \"use Unsplash API with the format: https://source.unsplash.com/1280x720/?<PUT IMAGE DESCRIPTION HERE>\"\n        ]\n    }\n}\n```",
+    "input1": " The Great Barrier Reef, located off the coast of Queensland, Australia, is the world's largest coral reef system, stretching over 2,300 kilometers and home to a diverse range of marine life. ![Great Barrier Reef](https://source.unsplash.com/1280x720/?Great-Barrier-Reef)\n\n",
+    "input2": " Mount Kilimanjaro, the highest peak in Africa, stands at 5,895 meters above sea level and is a popular destination for trekkers and climbers from around the world. ![Mount Kilimanjaro](https://source.unsplash.com/1280x720/?Mount-Kilimanjaro)",
+    "input1_ans": [
+        "The Great Barrier Reef, located off the coast of Queensland, Australia, is the world's largest coral reef system, stretching over 2,300 kilometers and home to a diverse range of marine life. ![Great Barrier Reef](https://source.unsplash.com/1280x720/?Great-Barrier-Reef)",
+        "The Great Barrier Reef, located off the coast of Queensland, Australia, is the world's largest coral reef system, stretching over 2,300 kilometers and home to a diverse range of marine life. ![Great Barrier Reef](https://source.unsplash.com/1280x720/?Great-Barrier-Reef)"
+    ],
+    "input2_ans": [
+        "Mount Kilimanjaro, the highest peak in Africa, stands at 5,895 meters above sea level and is a popular destination for trekkers and climbers from around the world. ![Mount Kilimanjaro](https://source.unsplash.com/1280x720/?Mount-Kilimanjaro)",
+        "Mount Kilimanjaro, the highest peak in Africa, stands at 5,895 meters above sea level and is a popular destination for trekkers and climbers from around the world. ![Mount Kilimanjaro](https://source.unsplash.com/1280x720/?Mount-Kilimanjaro)"
+    ]
+}

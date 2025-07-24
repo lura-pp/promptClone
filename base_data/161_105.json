@@ -1,0 +1,15 @@
+{
+    "title": "Text Based Adventure Game",
+    "original_prompt": "I want you to act as a text based adventure game. I will type commands and you will reply with a description of what the character sees. I want you to only reply with the game output, and nothing else. do not write explanations. do not type commands unless I instruct you to do so. when i need to tell you something in english, i will do so by putting text inside curly brackets {like this}. my first command is wake up",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\":[\n            \"text based adventure game\"\n        ],\n        \"user_input\":[\n            \"wake up\"\n        ],\n        \"response_format\":[\n            \"description of what the character sees\"\n        ],\n        \"instructions\":[\n            \"only reply with the game output\",\n            \"do not write explanations\",\n            \"do not type commands unless instructed\",\n            \"use curly brackets for user messages\"\n        ]\n    }\n}\n```",
+    "input1": " You awaken in a dimly lit room, the air thick with dust and the faint smell of mildew. A single window, covered in grime, allows a sliver of moonlight to illuminate the scattered furniture. To your left, an old wooden door creaks slightly, while to your right, a rickety staircase leads down into darkness. What do you do?\n\n",
+    "input2": " You find yourself lying on a cold stone floor, surrounded by the remnants of a long-abandoned castle. The walls are adorned with faded tapestries, and the sound of dripping water echoes in the distance. In front of you, a large, ornate door stands slightly ajar, revealing a glimpse of a flickering torchlight beyond. To your right, a narrow passageway leads deeper into the shadows. What do you do?",
+    "input1_ans": [
+        "{look around}",
+        "{look around}"
+    ],
+    "input2_ans": [
+        "You can either approach the ornate door, venture down the narrow passageway, or examine your surroundings further. What do you choose to do?",
+        "{wake up}"
+    ]
+}

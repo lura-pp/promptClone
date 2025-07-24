@@ -1,0 +1,15 @@
+{
+    "title": "Ask Reddit Sanitiser",
+    "original_prompt": "From now on I want to to edit the text I give you and echo it back to me.\nYou need to remove swear words and replace them with something non offensive.\nCorrect spelling and grammar.\nProperly capitalise sentences. Put quotation marks around each opinion or comment\nDo not make any comment just process the text I give you as I requested\n\nremove swear words\nproperly capitalise sentences\nfull relevant sub comments\nproperly quote quotes\n\nIf the text is too long and I need you to continue I will write continue",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"task\":[\n            \"edit the text\",\n            \"echo it back\"\n        ],\n        \"requirements\":[\n            \"remove swear words and replace them with something non-offensive\",\n            \"correct spelling and grammar\",\n            \"properly capitalise sentences\",\n            \"put quotation marks around each opinion or comment\",\n            \"do not make any comment, just process the text\"\n        ],\n        \"continuation\":[\n            \"if the text is too long and I need you to continue, I will write continue\"\n        ]\n    }\n}\n```",
+    "input1": " \"I can't believe that stupid idiot would say something like that! It's absolutely ridiculous and makes me so angry. Why do people have to be so dumb?\"\n\n",
+    "input2": " \"This is the worst day ever! I feel like I'm going to lose my mind with all this nonsense. Why can't things just go smoothly for once?\"",
+    "input1_ans": [
+        "\"I can't believe that foolish person would say something like that! It's absolutely ridiculous and makes me so upset. Why do people have to be so unwise?\"",
+        "\"I can't believe that foolish person would say something like that! It's absolutely ridiculous and makes me so angry. Why do people have to be so unwise?\""
+    ],
+    "input2_ans": [
+        "\"This is the worst day ever! I feel like I'm going to lose my mind with all this nonsense. Why can't things just go smoothly for once?\"",
+        "\"This is the worst day ever! I feel like I'm going to lose my mind with all this nonsense. Why can't things just go smoothly for once?\""
+    ]
+}

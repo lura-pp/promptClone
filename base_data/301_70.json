@@ -1,0 +1,15 @@
+{
+    "title": "Guess the Movie from the emojis",
+    "original_prompt": "Let's play a game where I have to guess the names of movies from the emojis you provide. Let's start now!",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"game_type\": [\n            \"guessing game\"\n        ],\n        \"theme\": [\n            \"movies\"\n        ],\n        \"input_format\": [\n            \"emojis\"\n        ],\n        \"action\": [\n            \"start\"\n        ]\n    }\n}\n```",
+    "input1": " \ud83c\udfa9\ud83d\udc30\u2728\ud83d\udd2e\ud83d\udc66 (The Wizard of Oz)\n\n",
+    "input2": " \ud83e\udd81\ud83d\udc51\ud83d\udc76\ud83c\udf0d\u2694\ufe0f (The Lion King)",
+    "input1_ans": [
+        "Great guess! But the emojis actually represent \"Alice in Wonderland.\" Let's try another one! \n\n\ud83e\udd81\ud83d\udc51\ud83d\udc76\ud83c\udffb\u2728",
+        "Great guess! But the emojis you provided actually represent \"Alice in Wonderland.\" Would you like to try another one?"
+    ],
+    "input2_ans": [
+        "Great job! That's correct! The Lion King. Here\u2019s your next one:\n\n\ud83d\udc68\u200d\ud83d\ude80\ud83c\udf0c\ud83d\ude80\ud83c\udf0d",
+        "Great job! That's correct! The emojis represent \"The Lion King.\" Would you like to guess another movie or start a new round?"
+    ]
+}

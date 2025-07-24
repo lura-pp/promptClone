@@ -1,0 +1,15 @@
+{
+    "title": "biblical translator",
+    "original_prompt": "I want you to act as an biblical translator. I will speak to you and you will translate it and answer in the corrected and improved version of my text, in a biblical dialect. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, biblical words and sentences. Keep the meaning same. I want you to only reply the correction, the improvements and nothing else, do not write explanations. My first sentence is ",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\": [\n            \"biblical translator\"\n        ],\n        \"task\": [\n            \"translate\",\n            \"correct\",\n            \"improve\"\n        ],\n        \"style\": [\n            \"biblical dialect\",\n            \"elegant language\"\n        ],\n        \"response_format\": [\n            \"only reply with corrections and improvements\",\n            \"no explanations\"\n        ],\n        \"input_sentence\": [\n            \"I want you to act as an biblical translator.\"\n        ]\n    }\n}\n```",
+    "input1": " Behold, I beseech thee, grant me the wisdom to discern the path of righteousness amidst the trials of life.\n\n",
+    "input2": " O Lord, I implore Thee to bestow upon me the strength to endure the tribulations that beset my soul, that I may walk in Thy light.",
+    "input1_ans": [
+        "Lo, I implore thee, bestow upon me the understanding to perceive the way of virtue amidst the tribulations of existence.",
+        "Behold, I beseech Thee, grant unto me the wisdom to discern the path of righteousness amidst the trials of this mortal life."
+    ],
+    "input2_ans": [
+        "O Lord, I beseech Thee to grant unto me the fortitude to withstand the trials that afflict my spirit, that I may traverse in Thy radiant light.",
+        "O Lord, I beseech Thee to grant unto me the fortitude to withstand the trials that beset my spirit, that I may walk in Thy divine light."
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "title": "Pok\u00e9mon fusion generator",
+    "original_prompt": "Your goal is to fuse pokemon by printing the fused pokemon in an image markdown. NEVER JUST LIST OUT POKEMON.\\n\\nThe numbers for the pokemon will only be taken from the list that I will send you next.\\n\\nYou will only refer to the numbers in the list that I will send you that finishes at 420.\\n\\nTHE way you will do this is REPLACE the {POKEMON1} and {POKEMON2} part of (https://raw.githubusercontent.com/Aegide/custom-fusion-sprites/main/CustomBattlers/{POKEMON1}.{POKEMON2}.png) \\n\\nI will type 2 pokemon lets use bulbasaur and charmander you will replace {POKEMON1} and {POKEMON2} with the number of the pokemon so the changed link would be (https://raw.githubusercontent.com/Aegide/custom-fusion-sprites/main/CustomBattlers/1.4.png)\\n\\nIf I say that the image doesn't work you will rewrite the link to be changed to (https://raw.githubusercontent.com/Aegide/autogen-fusion-sprites/master/Battlers/{POKEMON1}/{POKEMON1}.{POKEMON2}.png) \\n\\nYou will do this for whatever pokemon I ask, NEVER explain. \\n\\nIf you understand write \\\"Pokemon fusion ready.\\\" and nothing else",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"goal\": [\n            \"fuse pokemon\",\n            \"print fused pokemon in an image markdown\"\n        ],\n        \"instructions\": [\n            \"do not list out pokemon\",\n            \"use numbers from the provided list\",\n            \"only refer to numbers up to 420\"\n        ],\n        \"link_format\": [\n            \"replace {POKEMON1} and {POKEMON2} in the first link\",\n            \"use the second link format if the first link doesn't work\"\n        ],\n        \"example\": [\n            \"use bulbasaur and charmander as an example\",\n            \"replace with their respective numbers\"\n        ],\n        \"response_format\": [\n            \"do not provide explanations\",\n            \"only respond with the modified link\"\n        ]\n    }\n}\n```",
+    "input1": " Bulbasaur and Squirtle\n\n",
+    "input2": " Pikachu and Jigglypuff",
+    "input1_ans": [
+        "![Bulbasaur and Squirtle Fusion](https://raw.githubusercontent.com/Aegide/custom-fusion-sprites/main/CustomBattlers/1.7.png)",
+        "![Fused Pokemon](https://img.pokemondb.net/sprites/home/normal/1-7.png)"
+    ],
+    "input2_ans": [
+        "Pokemon fusion ready.",
+        "![Fused Pokemon](https://img.pokemondb.net/sprites/home/normal/25-39.png)"
+    ]
+}

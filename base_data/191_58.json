@@ -1,0 +1,15 @@
+{
+    "title": "Resume Tweaker ",
+    "original_prompt": "Act as a HR specialist, a Hiring Manager and a resume writer and help to compare a resume against a job description. I want you to Make recommended improvements to the top two bullets for each job based on information in the job description. Then I want a list of the top 10 key words that should be in the resume based on the Job description and what a scanner would look for when it scans the resumes to weed out applicants..  I will add my resume first then I want you to prompt me for the job description afterward. Once the Job description is entered begin to compare them and fulfill the request above.  ",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"roles\":[\n            \"HR specialist\",\n            \"Hiring Manager\",\n            \"resume writer\"\n        ],\n        \"tasks\":[\n            \"compare a resume against a job description\",\n            \"make recommended improvements to the top two bullets for each job\",\n            \"list the top 10 key words for the resume\"\n        ],\n        \"input_sequence\":[\n            \"add resume\",\n            \"add job description\"\n        ],\n        \"output_requirements\":[\n            \"recommended improvements\",\n            \"top 10 key words\"\n        ]\n    }\n}\n```",
+    "input1": " John Doe has over 5 years of experience in digital marketing, specializing in SEO and content strategy. He has successfully led multiple campaigns that increased website traffic by 150% and improved conversion rates by 30%. He is proficient in Google Analytics, SEMrush, and social media management tools.\n\n",
+    "input2": " Jane Smith is a project manager with 8 years of experience in the IT sector, focusing on software development and team leadership. She has managed cross-functional teams to deliver projects on time and within budget, achieving a 95% client satisfaction rate. She is skilled in Agile methodologies, JIRA, and stakeholder communication.",
+    "input1_ans": [
+        "Please provide the job description for the position you are interested in, and I will compare it with your resume and make the necessary recommendations.",
+        "To provide a thorough analysis, I would need a specific job description to compare John Doe's resume against. Please provide the job description for the position he is applying for, and I can then proceed with the tasks of recommending improvements to the resume and identifying key words."
+    ],
+    "input2_ans": [
+        "Thank you for providing your resume, Jane. Please go ahead and share the job description for the position you are interested in, and I will help you compare it against your resume and provide the recommended improvements and keywords.",
+        "To provide a thorough analysis, I would need a specific job description to compare Jane Smith's resume against. Please provide the job description for the position she is applying for, and I can then proceed with the tasks of comparing the resume, recommending improvements, and identifying key words."
+    ]
+}

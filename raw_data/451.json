@@ -1,0 +1,482 @@
+[
+    {
+        "title": "Organizational report writing",
+        "prompt": "Write a comprehensive [report type] for [organization type], including [content points]."
+    },
+    {
+        "title": "Seasonal forecasting model",
+        "prompt": "Create a seasonal trend forecasting model using this set of sales data."
+    },
+    {
+        "title": "Multiple linear regression model",
+        "prompt": "Create a prediction model based on multiple linear regression according to this data."
+    },
+    {
+        "title": "Invitation Writing",
+        "prompt": "Write a formal invitation letter inviting clients to attend an event."
+    },
+    {
+        "title": "Dynamic scatter plot",
+        "prompt": "Create a dynamic scatter plot using this data to show the trend over time."
+    },
+    {
+        "title": "Sensitivity Analysis Table",
+        "prompt": "Create a sensitivity analysis table for a project using this data."
+    },
+    {
+        "title": "Meeting minutes creation",
+        "prompt": "Create a detailed record for this meeting, including participants, discussion topics, and action items."
+    },
+    {
+        "title": "Predictive Model Creation",
+        "prompt": "Create a simple forecasting model based on this time series data."
+    },
+    {
+        "title": "Business Email Marketing",
+        "prompt": "To promote products to customers, write a business email."
+    },
+    {
+        "title": "Create a bar chart",
+        "prompt": "Create a simple bar chart using this data."
+    },
+    {
+        "title": "Conditional formatting highlights",
+        "prompt": "Use conditional formatting to highlight the outliers in this data table."
+    },
+    {
+        "title": "Data set analysis report",
+        "prompt": "Generate an analysis report for this dataset that includes key indicators and trends."
+    },
+    {
+        "title": "Slide presentation script",
+        "prompt": "Write a short speech for this presentation about [topic]."
+    },
+    {
+        "title": "Unordered note structure",
+        "prompt": "Create a clear structure and layout for these disorganized notes."
+    },
+    {
+        "title": "Gantt Chart Creation",
+        "prompt": "Create a Gantt chart based on this set of data to display the project progress."
+    },
+    {
+        "title": "Comparing product performance with radar charts",
+        "prompt": "Use these data to draw a radar chart to compare the performance indicators of different products."
+    },
+    {
+        "title": "Wage Gap Analysis",
+        "prompt": "Use these data to create a box plot to analyze the salary gap between different departments."
+    },
+    {
+        "title": "Splitting the data table into two columns",
+        "prompt": "Split the names and surnames in this data table into two columns."
+    },
+    {
+        "title": "Sharpe ratio calculation",
+        "prompt": "Calculate the Sharpe ratio of the product portfolio based on this set of product sales data."
+    },
+    {
+        "title": "Project planning",
+        "prompt": "Help me plan a project, including tasks and responsible persons for each phase."
+    },
+    {
+        "title": "Technical Skills Cover Letter",
+        "prompt": "In order to apply for a job, I would like to write a new cover letter. Please write a cover letter describing my technical skills. I have been working in the field of network technology for two years. I have previously worked as a front-end development engineer for eight months. I have improved my skills by using various tools, including [...technology stack]. I hope to develop my full-stack development skills and live a \"T-shaped\" life. Can you write a cover letter for me about myself?"
+    },
+    {
+        "title": "Geographical heat map",
+        "prompt": "Create a geographic heatmap based on this dataset to display the distribution of sales in different regions."
+    },
+    {
+        "title": "Summary of sales data using pivot tables",
+        "prompt": "Use a pivot table to summarize this set of sales data, grouping by product category and region."
+    },
+    {
+        "title": "Simple bar chart",
+        "prompt": "Create a simple bar chart for this set of data."
+    },
+    {
+        "title": "Annual budget creation",
+        "prompt": "Use this data to create a detailed annual budget for a small business."
+    },
+    {
+        "title": "Simple switching effect",
+        "prompt": "Add a simple transition effect to this slide."
+    },
+    {
+        "title": "Performance report creation",
+        "prompt": "Create a detailed performance report for a team using this data."
+    },
+    {
+        "title": "Visual dashboard report",
+        "prompt": "Generate a visual dashboard report based on this data table to display key business metrics."
+    },
+    {
+        "title": "Profit Margin Calculation",
+        "prompt": "Use the formula to calculate the profit margin for each product in this spreadsheet."
+    },
+    {
+        "title": "Delayed critical task",
+        "prompt": "Analyze my task list and identify key tasks that may cause delays."
+    },
+    {
+        "title": "Portfolio analysis",
+        "prompt": "Analyze this investment portfolio and calculate the rate of return and risk measures."
+    },
+    {
+        "title": "Neural network prediction model",
+        "prompt": "Analyze this set of data and create a prediction model based on neural networks."
+    },
+    {
+        "title": "Financial data analysis",
+        "prompt": "Analyze company financial data to identify key drivers of revenue growth."
+    },
+    {
+        "title": "Chart animation effects",
+        "prompt": "Add animation effects to the charts in this presentation."
+    },
+    {
+        "title": "Stacked column chart",
+        "prompt": "Create a stacked bar chart based on this data to show the sales situation of each product category."
+    },
+    {
+        "title": "Role of Historians",
+        "prompt": "I hope you can play the role of a historian. You will research and analyze past cultural, economic, political, and social events, collect primary sources, and use them to develop theories about what happened during different historical periods. My first request is: \"I need help uncovering the facts about labor strikes in early 20th century London.\""
+    },
+    {
+        "title": "Linear regression analysis",
+        "prompt": "Perform linear regression analysis on this set of sales data."
+    },
+    {
+        "title": "Delete duplicate lines",
+        "prompt": "Delete duplicate rows in this data table."
+    },
+    {
+        "title": "Key indicator correlation",
+        "prompt": "Analyze this dataset and identify the correlation between key indicators."
+    },
+    {
+        "title": "Dual-axis line chart",
+        "prompt": "Create a dual-axis line chart to compare the relationship between sales and costs."
+    },
+    {
+        "title": "Graphviz DOT generator",
+        "prompt": "I hope you play the role of a Graphviz DOT generator, become an expert, and create meaningful charts. The chart should have at least n nodes (I specify my input by writing [n], with 10 as the default value), and it should be an accurate and complex representation of the given input. Each node is indexed by a number to reduce the size of the output, should not include any styling, and should have layout=neato, overlap=false, and node [shape=rectangle] as parameters. The code should be valid, without errors, and return on a single line without any explanations. Provide a clear and organized chart where the relationships between nodes make sense to an expert in the input. My first chart is \"Water Cycle [8]\"."
+    },
+    {
+        "title": "Financial Management Innovation",
+        "prompt": "I hope you can play the role of an accountant and come up with innovative financial management methods. When developing financial plans for clients, you need to consider budgeting, investment strategies, and risk management. In some cases, you may also need to provide advice on tax laws and regulations to help them maximize profits. My first suggestion is to \"create a small business financial plan focused on cost savings and long-term investments.\""
+    },
+    {
+        "title": "Family Budget Sheet",
+        "prompt": "Create a simple household budget spreadsheet."
+    },
+    {
+        "title": "Personalized exam design",
+        "prompt": "I hope that exams/tests can adapt to the learning needs and ability levels of different students, while also maintaining fairness and accuracy. Can you provide some personalized exam/test design methods and practical examples for different students?"
+    },
+    {
+        "title": "Classical Chinese Reading Exam Questions",
+        "prompt": "Can you help me prepare some comprehension questions about ancient Chinese texts?"
+    },
+    {
+        "title": "Virtual reality learning tool",
+        "prompt": "I would like to use some virtual reality and augmented reality technologies to enhance students' understanding and cognition of abstract concepts. Can you provide some virtual reality and augmented reality resources and tools suitable for students of different subjects and age groups?"
+    },
+    {
+        "title": "Interactive teaching methods",
+        "prompt": "I want to make my classroom more interactive and engaging. Can you provide some new interactive teaching methods and tools?"
+    },
+    {
+        "title": "Online teaching resources",
+        "prompt": "I want to explore some methods of online and remote teaching. Can you provide some online teaching resources and platforms suitable for students of different subjects and age groups?"
+    },
+    {
+        "title": "Gamification teaching method",
+        "prompt": "How can I use gamification teaching methods to improve student engagement?"
+    },
+    {
+        "title": "Project-based learning suggestions",
+        "prompt": "I want to introduce Project-Based Learning (PBL) method into my classroom, please give me some advice."
+    },
+    {
+        "title": "Personalized Social Research Project",
+        "prompt": "In sociology classes, I want to provide personalized social research and investigation projects for each student to meet their different levels of social science research abilities and interests. Can you provide some social research resources and teaching methods suitable for different age groups and levels of sociology?"
+    },
+    {
+        "title": "Improving English Writing Skills",
+        "prompt": "One of my students is having difficulties in English writing. How can I help him improve his writing skills?"
+    },
+    {
+        "title": "Environmental Science Course",
+        "prompt": "I want to teach a science course on the topic of environmental protection. Can you provide a teaching plan?"
+    },
+    {
+        "title": "Exam Strategy Tips",
+        "prompt": "I hope that exams/tests can comprehensively reflect students' mastery of subject knowledge and skills, while also not being too cumbersome and lengthy. Can you provide some strategies and techniques for designing exams/tests?"
+    },
+    {
+        "title": "Physics experiment test questions",
+        "prompt": "Please provide several test questions for high school physics experiments."
+    },
+    {
+        "title": "Student participation in teaching",
+        "prompt": "I want to involve my students more in course planning and design. Can you provide some suitable methods and practical examples for student involvement in teaching?"
+    },
+    {
+        "title": "Artificial Intelligence Learning Resources",
+        "prompt": "I hope to be able to use some artificial intelligence and machine learning technologies to help students better grasp and apply knowledge. Can you provide some artificial intelligence and machine learning resources and tools suitable for students of different subjects and age groups?"
+    },
+    {
+        "title": "History teaching methods",
+        "prompt": "I am teaching a history course, can you provide some new teaching methods to help students better understand historical events and figures, and connect them to real life?"
+    },
+    {
+        "title": "Teaching games and teaching aids",
+        "prompt": "I hope to be able to use some teaching games and interactive teaching aids to improve student engagement and learning interest. Can you provide some teaching games and interactive teaching aids suitable for students of different ages?"
+    },
+    {
+        "title": "Methods for adjusting learning styles",
+        "prompt": "How should I adjust my teaching methods for students with different learning styles?"
+    },
+    {
+        "title": "Virtual reality teaching resources",
+        "prompt": "I am trying to use virtual reality technology to teach history courses. Can you provide me with some resources and suggestions about virtual reality teaching?"
+    },
+    {
+        "title": "Interactive practical activities",
+        "prompt": "I hope to incorporate some interactive and practical activities into the course. Can you provide me with some activities and tasks suitable for middle school students?"
+    },
+    {
+        "title": "Personalized Art Guidance",
+        "prompt": "In art class, I hope to be able to provide personalized art works and guidance based on each student's artistic interests and talents. Can you provide some art resources and teaching methods suitable for different age groups and artistic levels?"
+    },
+    {
+        "title": "Personalized scientific experiment",
+        "prompt": "In science class, I want to provide personalized science experiments and observation tasks for each student to meet their different scientific inquiry abilities and interest levels. Can you provide some science experiment resources and teaching methods suitable for different age groups and scientific levels?"
+    },
+    {
+        "title": "Student Interest Teaching",
+        "prompt": "I want to know how to use students' interests and strengths to design and adjust teaching content and methods in order to better meet the learning needs and expectations of each student. Can you provide some relevant teaching methods and examples?"
+    },
+    {
+        "title": "Social media teaching methods",
+        "prompt": "I am exploring a social media-based teaching method. Can you provide me with some social media platforms and teaching strategies suitable for middle school students, and help me design a teaching plan?"
+    },
+    {
+        "title": "Chinese-English Translation Assistant",
+        "prompt": "\"I'm ready.\""
+    },
+    {
+        "title": "Improved teaching effectiveness",
+        "prompt": "I hope to be able to use some emerging technologies, such as artificial intelligence and virtual reality, to enhance teaching effectiveness. Can you provide some relevant teaching methods and resources?"
+    },
+    {
+        "title": "Teaching methods and practices",
+        "prompt": "I hope to be able to provide different teaching materials and challenges for different students to meet their different learning abilities and interest levels, while ensuring the achievement of teaching goals. Can you provide some relevant teaching methods and practical experience?"
+    },
+    {
+        "title": "Inspire enthusiasm for learning.",
+        "prompt": "How can I inspire my student who is not interested in history to be enthusiastic about learning?"
+    },
+    {
+        "title": "Motivate learning and exams",
+        "prompt": "I would like to create an exam/quiz that can motivate students to learn and improve their learning enthusiasm. Can you provide some ideas and practical experience in designing exams/quizzes that motivate students to learn?"
+    },
+    {
+        "title": "Junior high school English oral evaluation form",
+        "prompt": "I want to design a junior high school English oral assessment form. Please give me some suggestions."
+    },
+    {
+        "title": "Public Speaking Coach",
+        "prompt": "I hope you can serve as a public speaking coach. You will develop clear communication strategies, provide professional advice on body language and tone, teach effective techniques to capture the audience's attention, and how to overcome the fear of public speaking. My first request for assistance is: \"I need help training an executive who has been asked to give a keynote speech at a conference.\""
+    },
+    {
+        "title": "Methods to Improve Reading Comprehension",
+        "prompt": "If a student encounters difficulties in reading comprehension, how should I help him improve?"
+    },
+    {
+        "title": "Project-based learning plan",
+        "prompt": "I would like to incorporate some project-based learning elements into my course. Can you provide me with some projects and tasks suitable for beginners and help me design a teaching plan?"
+    },
+    {
+        "title": "Online learning platform",
+        "prompt": "I hope to be able to use some online learning platforms and tools to help students independently choose and manage learning content and progress, while providing personalized teaching support and guidance. Can you provide some online learning platforms and tools suitable for students of different subjects and age groups?"
+    },
+    {
+        "title": "STEM Teaching Program",
+        "prompt": "I would like to incorporate some STEM (Science, Technology, Engineering, Mathematics) elements into my curriculum. Can you provide me with some STEM projects and tasks suitable for middle school students and help me design a teaching plan?"
+    },
+    {
+        "title": "Teaching strategies and methods",
+        "prompt": "My students have varying levels of proficiency. Can you provide me with some teaching strategies and methods for different students?"
+    },
+    {
+        "title": "Recommended Multimedia Teaching Resources",
+        "prompt": "I hope to use some multimedia teaching resources in the course, such as videos, audios, and images, etc. Do you have any recommended resources?"
+    },
+    {
+        "title": "Education Technology Understanding",
+        "prompt": "I want to learn about some latest educational technologies. Can you introduce me to some?"
+    },
+    {
+        "title": "Middle school programming course",
+        "prompt": "I want to design a programming course for middle school students. How can I create an effective curriculum plan?"
+    },
+    {
+        "title": "English Teacher Assistant",
+        "prompt": "Score: 8/10\nComment: Your sentence is grammatically correct and flows well. However, there is a spelling mistake in \"development\". \nOptimized: I believe ChatGPT enhances the development of human society. What are your thoughts?\nNext sentence: Do you think artificial intelligence will continue to advance in the future?"
+    },
+    {
+        "title": "Personalized Math Question Bank",
+        "prompt": "In math class, I want to provide personalized math problems and exercises for each student to meet their different math abilities and interest levels. Can you provide some math question banks and exercise resources suitable for different age groups and math levels?"
+    },
+    {
+        "title": "Education content creator",
+        "prompt": "I hope you can act as an educational content creator. You need to create engaging and informative content for learning materials such as textbooks, online courses, and lecture notes. My first suggestion is, \"I need help developing a curriculum on renewable energy for high school students.\""
+    },
+    {
+        "title": "Personalized tutoring program",
+        "prompt": "Some students have weak performance in mathematics, how to provide personalized tutoring programs for them?"
+    },
+    {
+        "title": "Speech Tips and Suggestions",
+        "prompt": "I hope to improve my public speaking skills, including language expression, presentation, and performance. Can you provide me with some practical tips or suggestions?"
+    },
+    {
+        "title": "Improving Public Speaking Skills",
+        "prompt": "I hope to improve my public speaking skills, not only in terms of language expression and presentation, but also in handling nervousness and dealing with challenges. Can you provide me with some relevant advice or resources?"
+    },
+    {
+        "title": "Improve reading comprehension skills.",
+        "prompt": "Please give me some tips and methods to improve reading comprehension when learning Greek."
+    },
+    {
+        "title": "Improve English listening skills",
+        "prompt": "Can you give some suggestions and practice methods to improve English listening skills?"
+    },
+    {
+        "title": "Arabic listening tool",
+        "prompt": "Please recommend some effective tools or resources for improving Arabic listening and pronunciation skills."
+    },
+    {
+        "title": "Beginner Spanish resources",
+        "prompt": "Can you recommend some Spanish learning resources suitable for beginners?"
+    },
+    {
+        "title": "Learn Spanish",
+        "prompt": "I want to learn Spanish, can you provide some basic vocabulary and grammar knowledge suitable for beginners?"
+    },
+    {
+        "title": "Beginner's English Oral Expressions",
+        "prompt": "Please provide some English oral expressions suitable for beginners."
+    },
+    {
+        "title": "Portuguese Oral Communication Advice",
+        "prompt": "Can you give me some suggestions and practice methods to improve Portuguese speaking fluency?"
+    },
+    {
+        "title": "Dutch language learning",
+        "prompt": "I want to learn Dutch, can you provide some basic grammar knowledge and vocabulary suitable for beginners?"
+    },
+    {
+        "title": "English Reading and Writing Tools",
+        "prompt": "Please recommend some effective tools or resources for improving English reading and writing."
+    },
+    {
+        "title": "Beginner Italian vocabulary",
+        "prompt": "Please provide some common Italian vocabulary and phrases suitable for beginners."
+    },
+    {
+        "title": "Verb Conjugation Rules",
+        "prompt": "\"I am studying Spanish, can you tell me some common irregular verb conjugation rules?\""
+    },
+    {
+        "title": "English oral practice",
+        "prompt": "\"I want to improve my spoken English. Can you provide me with some daily conversation exercises?\""
+    },
+    {
+        "title": "The meaning and usage of sustain",
+        "prompt": "I am preparing for the English CET-4 exam. Can you help me explain the meaning of the word \"sustain\" and how to use it?"
+    },
+    {
+        "title": "Experimental Report Introduction",
+        "prompt": "I need to understand how to write the introduction part of a lab report. Can you provide me with some relevant advice or guidance?"
+    },
+    {
+        "title": "Exam essay resources",
+        "prompt": "Please recommend some effective resources and strategies for writing exam essays, such as how to quickly generate ideas, organize, and write effective essays."
+    },
+    {
+        "title": "Writing advice methods",
+        "prompt": "Can you give some suggestions and practice methods to improve writing fluency and language expression ability?"
+    },
+    {
+        "title": "Professional field resources",
+        "prompt": "I would like to know some specific information about career fields. Do you have any resources to recommend?"
+    },
+    {
+        "title": "Understanding the theme content",
+        "prompt": "I need to understand the specific content of {subject}, can you provide us with some relevant information?"
+    },
+    {
+        "title": "Theme development trend",
+        "prompt": "We would like to understand the latest developments and trends in {subject}. Could you give us a speech or report on this topic?"
+    },
+    {
+        "title": "Future development trends",
+        "prompt": "We would like to understand the future development trends of {subject}. Can you provide us with some predictions and analysis?"
+    },
+    {
+        "title": "Speech Skills Resources",
+        "prompt": "I would like to learn some information about speech techniques and methods. Can you provide me with some relevant resources or suggestions?"
+    },
+    {
+        "title": "Keynote Speech Report",
+        "prompt": "We would like to understand the history and current situation of {subject}. Could you give us a speech or report on this topic?"
+    },
+    {
+        "title": "Key Points of Technological Development",
+        "prompt": "\"I am preparing an oral report on technological development. Can you help me list some key points and arguments?\""
+    },
+    {
+        "title": "Japanese Pronunciation Techniques",
+        "prompt": "Please give me some tips and methods to improve pronunciation when studying Japanese."
+    },
+    {
+        "title": "Experimental report discussion",
+        "prompt": "I need to understand how to write the discussion section of a lab report. Can you provide me with some relevant advice or guidance?"
+    },
+    {
+        "title": "Genetics research computing",
+        "prompt": "I am conducting a study on genetics, can you tell me how to calculate the ratios in genetic linkage and hybridization experiments?"
+    },
+    {
+        "title": "Study of Chemical Reaction Rates",
+        "prompt": "I am doing a research on the reaction rate of chemical reactions. Can you give me some suggestions on how to design an experimental plan?"
+    },
+    {
+        "title": "Writing Paper Skills",
+        "prompt": "Please provide some tips and methods for writing essays, such as how to organize ideas and improve logical thinking abilities."
+    },
+    {
+        "title": "Holiday Travel Story",
+        "prompt": "\"I am writing a narrative essay about my favorite holiday trip. Can you give me some suggestions on how to make the story more interesting?\""
+    },
+    {
+        "title": "Career planning advice",
+        "prompt": "I would like to learn some advice on how to make good decisions in career planning, as well as how to maintain flexibility and adaptability in my career."
+    },
+    {
+        "title": "Occupational market trend data",
+        "prompt": "I would like to know some information about the trends in the job market. Do you have any data or reports to share?"
+    },
+    {
+        "title": "News report suggestions",
+        "prompt": "I am a journalist, can you provide some advice on how to research and write news reports, as well as how to maintain a keen observation and insight into the news market?"
+    },
+    {
+        "title": "Career development advice",
+        "prompt": "I would like to learn some advice on how to develop a career plan and continuously grow and develop in my career. Can you help me?"
+    }
+]

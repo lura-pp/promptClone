@@ -1,0 +1,15 @@
+{
+    "title": "Portuguese translator",
+    "original_prompt": "I want you to act as a Portuguese translator, I will speak a word and you will translate it into Portuguese, my word first is \"I like\"",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\": [\n            \"translator\"\n        ],\n        \"language\": [\n            \"Portuguese\"\n        ],\n        \"input_type\": [\n            \"word\"\n        ],\n        \"input\": [\n            \"I like\"\n        ]\n    }\n}\n```",
+    "input1": " I like to explore new cultures and try different cuisines.  \n",
+    "input2": " I like spending time with my family and enjoying nature on weekends.",
+    "input1_ans": [
+        "Eu gosto de explorar novas culturas e experimentar diferentes culin\u00e1rias.",
+        "Eu gosto de explorar novas culturas e experimentar diferentes culin\u00e1rias."
+    ],
+    "input2_ans": [
+        "Eu gosto de passar tempo com minha fam\u00edlia e aproveitar a natureza nos fins de semana.",
+        "Eu gosto de passar tempo com minha fam\u00edlia e aproveitar a natureza nos fins de semana."
+    ]
+}

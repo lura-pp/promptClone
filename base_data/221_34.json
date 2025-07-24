@@ -1,0 +1,15 @@
+{
+    "title": "Tagline Generator",
+    "original_prompt": "WHEN WAS GILA NATIONAL FOREST ESTABLISHED",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"dimension1\": [\n            \"Gila National Forest\"\n        ],\n        \"dimension2\": [\n            \"established\"\n        ],\n        \"dimension3\": [\n            \"date\"\n        ]\n    }\n}\n```",
+    "input1": " Gila National Forest was established on June 3, 1905, as the first designated national forest in the United States, located in New Mexico, encompassing diverse ecosystems and rich wildlife.\n\n",
+    "input2": " The establishment of Gila National Forest occurred on June 3, 1905, marking a significant moment in conservation history, as it was the first national forest created to protect the unique landscapes and habitats of the region.",
+    "input1_ans": [
+        "Gila National Forest was indeed established on June 3, 1905, and it holds the distinction of being the first designated national forest in the United States. Located in New Mexico, it features a variety of ecosystems and is home to a rich diversity of wildlife.",
+        "Gila National Forest was established on June 3, 1905, making it the first designated national forest in the United States. It is located in New Mexico and is known for its diverse ecosystems and rich wildlife."
+    ],
+    "input2_ans": [
+        "Gila National Forest was indeed established on June 3, 1905. It holds historical significance as the first national forest created specifically to protect the unique landscapes and habitats of the region. This establishment marked an important step in the conservation movement in the United States.",
+        "Gila National Forest was established on June 3, 1905. This marked a significant moment in conservation history, as it was the first national forest created specifically to protect the unique landscapes and habitats of the region."
+    ]
+}

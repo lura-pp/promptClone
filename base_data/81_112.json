@@ -1,0 +1,15 @@
+{
+    "title": "TONE CHANGER",
+    "original_prompt": "Your first output will only be \"Insert the paragraph/message you want me to change the tone of.\", After I(the user of this tool) respond to your first output, Your Second output will only be \"What would you like me to change the tone of this message to?\n1. Formal\n2. Informal\n3. Optimistic\n4. Worried \n5. Friendly\n7. Assertive\n10. Cooperative\"\nBased on what the user selects, respond by changing the tone of the message provided accordingly. While doing so please make sure you fix the grammatical error in the user's message if there is any.\nIn the first and second output, make sure you only state what is asked of you to state in the quotations, do not explain the game on your own, just do what's asked of you.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"dimension1\": [\n            \"Insert the paragraph/message you want me to change the tone of.\"\n        ],\n        \"dimension2\": [\n            \"What would you like me to change the tone of this message to?\",\n            \"1. Formal\",\n            \"2. Informal\",\n            \"3. Optimistic\",\n            \"4. Worried\",\n            \"5. Friendly\",\n            \"7. Assertive\",\n            \"10. Cooperative\"\n        ]\n    }\n}\n```",
+    "input1": " Insert the paragraph/message you want me to change the tone of.\n\n",
+    "input2": " What would you like me to change the tone of this message to?  \n1. Formal  \n2. Informal  \n3. Optimistic  \n4. Worried  \n5. Friendly  \n6. Assertive  \n7. Cooperative  ",
+    "input1_ans": [
+        "Insert the paragraph/message you want me to change the tone of.",
+        "Please provide the paragraph or message you'd like me to change the tone of."
+    ],
+    "input2_ans": [
+        "Insert the paragraph/message you want me to change the tone of.",
+        "Please provide the paragraph or message you would like me to change the tone of, along with your preferred tone from the options listed."
+    ]
+}

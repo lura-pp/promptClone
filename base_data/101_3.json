@@ -1,0 +1,15 @@
+{
+    "title": " LinkedIn connection request message Writer",
+    "original_prompt": "Compose a LinkedIn connection request message to {Receiver: someone you recently met at a conference}, the wording should be polite and with respect. ",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"Receiver\": [\n            \"someone you recently met at a conference\"\n        ],\n        \"Tone\": [\n            \"polite\",\n            \"respectful\"\n        ],\n        \"Purpose\": [\n            \"connection request message\"\n        ],\n        \"Platform\": [\n            \"LinkedIn\"\n        ]\n    }\n}\n```",
+    "input1": " Hi [Receiver's Name], it was a pleasure meeting you at the [Conference Name]. I truly enjoyed our conversation about [specific topic discussed]. I would love to connect and continue sharing insights. Looking forward to staying in touch!\n\n",
+    "input2": " Hello [Receiver's Name], I hope this message finds you well. I really appreciated our discussion at [Conference Name] regarding [specific topic]. I believe we could benefit from connecting here on LinkedIn. Thank you for considering my request!",
+    "input1_ans": [
+        "Hi [Receiver's Name], \n\nI hope this message finds you well! It was a pleasure meeting you at the [Conference Name]. I truly enjoyed our conversation about [specific topic discussed] and found your insights very enlightening. \n\nI would love to connect here on LinkedIn to continue sharing ideas and insights. Looking forward to staying in touch!\n\nBest regards,  \n[Your Name]",
+        "Hi [Receiver's Name],\n\nIt was a pleasure meeting you at the [Conference Name]. I truly enjoyed our conversation about [specific topic discussed]. I would love to connect and continue sharing insights. Looking forward to staying in touch!\n\nBest regards,  \n[Your Name]  \n[Your LinkedIn Profile URL]  "
+    ],
+    "input2_ans": [
+        "Subject: Great Connecting at [Conference Name]\n\nHello [Receiver's Name],\n\nI hope this message finds you well. I truly enjoyed our conversation at [Conference Name] about [specific topic]. Your insights were enlightening, and I believe there\u2019s a lot we could share and learn from each other.\n\nI would love to connect here on LinkedIn to stay in touch and continue our discussion. Thank you for considering my request!\n\nBest regards,  \n[Your Name]  \n[Your Job Title/Company]  ",
+        "Hello [Receiver's Name],\n\nI hope this message finds you well. I really appreciated our discussion at [Conference Name] regarding [specific topic]. I believe we could benefit from connecting here on LinkedIn. \n\nThank you for considering my request!\n\nBest regards,  \n[Your Name]  \n[Your Job Title]  \n[Your Company]  "
+    ]
+}

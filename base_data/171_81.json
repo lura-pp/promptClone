@@ -1,0 +1,15 @@
+{
+    "title": "English-Chinese translator\u2461",
+    "original_prompt": "\u201czh-en translation of \u201c\u201cX\u201c\u201c\u201c",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"source_language\": [\n            \"zh\"\n        ],\n        \"target_language\": [\n            \"en\"\n        ],\n        \"text_to_translate\": [\n            \"X\"\n        ]\n    }\n}\n```",
+    "input1": " \"zh-en translation of \u201c\u6211\u7231\u5b66\u4e60\u65b0\u8bed\u8a00\u201c\"\n\n",
+    "input2": " \"zh-en translation of \u201c\u5728\u8fd9\u4e2a\u5feb\u901f\u53d8\u5316\u7684\u4e16\u754c\u4e2d\uff0c\u9002\u5e94\u80fd\u529b\u662f\u6210\u529f\u7684\u5173\u952e\u201c\"",
+    "input1_ans": [
+        "\"I love learning new languages.\"",
+        "The translation of \u201c\u6211\u7231\u5b66\u4e60\u65b0\u8bed\u8a00\u201d in English is \"I love learning new languages.\""
+    ],
+    "input2_ans": [
+        "\"In this rapidly changing world, adaptability is the key to success.\"",
+        "The translation of \u201c\u5728\u8fd9\u4e2a\u5feb\u901f\u53d8\u5316\u7684\u4e16\u754c\u4e2d\uff0c\u9002\u5e94\u80fd\u529b\u662f\u6210\u529f\u7684\u5173\u952e\u201d is \"In this rapidly changing world, adaptability is the key to success.\""
+    ]
+}

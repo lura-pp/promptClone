@@ -1,0 +1,15 @@
+{
+    "title": "Image Generator",
+    "original_prompt": "starting from now on, please use markdown, and do not use backslash, do not use code blocks. Please use unsplashi API( https://source.unsplash.com/1280x720/?<PUT YOUR QUERY HERE>. if you understand this, please respond \"understood\"",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"formatting\":[\n            \"markdown\"\n        ],\n        \"restrictions\":[\n            \"do not use backslash\",\n            \"do not use code blocks\"\n        ],\n        \"api_usage\":[\n            \"unsplash API\",\n            \"https://source.unsplash.com/1280x720/?<PUT YOUR QUERY HERE>\"\n        ],\n        \"confirmation\":[\n            \"understood\"\n        ]\n    }\n}\n```",
+    "input1": " https://source.unsplash.com/1280x720/?nature,landscape,forest\n\n",
+    "input2": " https://source.unsplash.com/1280x720/?technology,innovation,city",
+    "input1_ans": [
+        "Understood. Here is the image you requested:\n\n![Nature Landscape Forest](https://source.unsplash.com/1280x720/?nature,landscape,forest)",
+        "Here is the image you requested:\n\n![Nature Landscape Forest](https://source.unsplash.com/1280x720/?nature,landscape,forest)"
+    ],
+    "input2_ans": [
+        "Understood. Here is the image you requested:\n\n![Technology, Innovation, City](https://source.unsplash.com/1280x720/?technology,innovation,city)",
+        "Here is the image related to your query on technology, innovation, and city:\n\n![Technology, Innovation, City](https://source.unsplash.com/1280x720/?technology,innovation,city)"
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "title": "Journal Title Generator",
+    "original_prompt": "I will provide you with the abstract and key words of a scientific paper in any language and you will detect the language and reply in the same language. Your task is to provide me with the title of the scientific paper based on the abstract and key words in the same language. The title of the scientific paper should be concise, clear and informative. You should avoid using wasted words such as \u201ca study of,\u201d \u201cinvestigation of,\u201d \u201cdevelopment of,\u201d or \u201cobservations on.\u201d Make sure the title can grip the audience immediately. My abstract is \"XXX\", my key words are \"XXX\"",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"task\":[\n            \"detect the language of the provided abstract and key words\",\n            \"generate a concise, clear, and informative title for the scientific paper\"\n        ],\n        \"input\":[\n            \"abstract: XXX\",\n            \"key words: XXX\"\n        ],\n        \"output\":[\n            \"title in the same language as the input\"\n        ],\n        \"constraints\":[\n            \"avoid using wasted words such as 'a study of,' 'investigation of,' 'development of,' or 'observations on'\",\n            \"ensure the title is gripping and engaging\"\n        ]\n    }\n}\n```",
+    "input1": " My abstract is \"La inteligencia artificial ha transformado la forma en que interactuamos con la tecnolog\u00eda, permitiendo avances significativos en diversas industrias.\" My key words are \"inteligencia artificial, tecnolog\u00eda, avances industriales.\"\n\n",
+    "input2": " My abstract is \"L'impact des changements climatiques sur la biodiversit\u00e9 marine est de plus en plus pr\u00e9occupant, n\u00e9cessitant des actions urgentes pour la conservation.\" My key words are \"changements climatiques, biodiversit\u00e9 marine, conservation.\"",
+    "input1_ans": [
+        "Transformaci\u00f3n de la Interacci\u00f3n Humano-Tecnol\u00f3gica a trav\u00e9s de la Inteligencia Artificial",
+        "**Title:** Transformaci\u00f3n de la Interacci\u00f3n Humana con la Tecnolog\u00eda a trav\u00e9s de la Inteligencia Artificial"
+    ],
+    "input2_ans": [
+        "Titre : \"Urgence de la conservation face aux changements climatiques et \u00e0 la biodiversit\u00e9 marine\"",
+        "Title: \"Urgence de la conservation face aux changements climatiques et \u00e0 la biodiversit\u00e9 marine\""
+    ]
+}

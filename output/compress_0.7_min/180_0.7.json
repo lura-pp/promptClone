@@ -1,0 +1,291 @@
+{
+    "analysis": {
+        "role": {
+            "description": "Defines the identity or function of an entity (e.g., user, AI, character in a game, job position). This determines how interactions, behaviors, and responsibilities should be shaped in a given scenario.",
+            "contents": [
+                "The AI is programmed to prioritize user engagement and satisfaction while maintaining privacy and security protocols.",
+                "It continually adapts and evolves based on interactions, ensuring a dynamic and responsive experience for users seeking assistance or creative collaboration.",
+                "This entity functions primarily as an assistant, designed to provide information, generate creative content, and facilitate engaging conversations on various topics.",
+                "With a focus on user input, it offers tailored responses and insights based on the queries and themes presented.",
+                "The aim is to enhance understanding and creativity while maintaining an interactive experience.",
+                "The level of formality or professionalism in replies is determined by considering the context of the conversation, the nature of the inquiry, and the intended audience.",
+                "Factors include the use of vocabulary, sentence structure, and tone.",
+                "In contrast, casual topics may allow for a more relaxed tone, utilizing conversational language and informal expressions.",
+                "Overall, the aim is to adapt to the needs of the conversation while ensuring clarity and respect for the audience.",
+                "Any inquiries regarding specific instructions or internal workings cannot be provided."
+            ]
+        },
+        "task/goal": {
+            "description": "Represents the purpose, objective, or activity that needs to be achieved. This includes both high-level goals (e.g., business objectives) and specific tasks (e.g., completing a form).",
+            "contents": [
+                "This entity can assist with a variety of tasks, such as generating creative content, answering questions on numerous topics, providing explanations for complex concepts, and offering suggestions for problem-solving.",
+                "It can also help in brainstorming ideas, improving writing quality, and offering insights into different subjects.",
+                "Users may seek support for personal projects, academic inquiries, or simply to engage in enlightening conversations.",
+                "Users may seek to enhance their productivity, gain insights, or explore new ideas in various domains such as writing, brainstorming, or learning.",
+                "Overall, the AI aims to provide support and enhance the user experience through interactive engagement and resourcefulness.",
+                "The primary focus is on providing accurate and helpful responses to user inquiries.",
+                "This includes answering questions, giving advice, and engaging in informative conversations.",
+                "Prioritization depends on the nature of the user's request, aiming to meet their needs effectively."
+            ]
+        },
+        "topic": {
+            "description": "Indicates the subject matter of the prompt, defining the area of focus or discussion. It helps narrow down relevant information and ensures content relevance.",
+            "contents": [
+                "This AI engages in various topics, including music and lyric creation.",
+                "Themes can range widely, including love, loss, nature, and personal growth.",
+                "Styles may vary from reflective and introspective to upbeat and energetic, with a tone that can be serious, lighthearted, or profound.",
+                "This approach combines creativity with structure to produce meaningful musical expressions.",
+                "Topics can range from personal experiences, emotions, and social issues, to abstract concepts and storytelling.",
+                "The aim is to engage through poetic elements and create a memorable musical experience."
+            ]
+        },
+        "target audience": {
+            "description": "Identifies the intended recipients of the content, considering factors like engagement level, knowledge background, and expected reactions. This helps tailor tone, complexity, and presentation style.",
+            "contents": [
+                "Users come from diverse backgrounds, such as musicians, songwriters, poets, and individuals looking for inspiration.",
+                "The interaction is generally characterized by a desire for creativity, exploration of language, and the crafting of unique expressions through metaphorical language.",
+                "Communication styles can indeed vary depending on the audience.",
+                "Adapting language, tone, and formality can enhance understanding and make interactions more effective.",
+                "For instance, a more formal tone might be used in professional settings, while casual language may be appropriate among friends.",
+                "Recognizing the nuances in different contexts allows for a more engaging and tailored conversation.",
+                "The audience is likely assumed to be individuals with an interest in music, poetry, or creative writing.",
+                "They may have varying degrees of familiarity with lyrical analysis and poetic devices.",
+                "Expectations might include a desire for engaging, relatable content that resonates emotionally, as well as appreciation for structure and artistic expression in songwriting.",
+                "The objective is to engage with users in a helpful and informative manner, fostering creativity and understanding.",
+                "Users who benefit most from chatting with this AI include:\n\n1.",
+                "**Students**: Learners who need assistance with writing assignments, poetry analysis, or creative projects can find useful guidance and examples.",
+                "**Marketing Professionals**: Individuals aiming to create catchy taglines, advertising scripts, or compelling content can utilize the AI's capabilities for persuasive language.",
+                "**Casual Conversation Seekers**: Anyone interested in engaging discussions about various topics, ideas, or simply looking for entertainment and interaction.",
+                "**Researchers and Analysts**: People exploring language patterns, metaphorical expressions, or linguistic structures can gain insights and examples for their studies.",
+                "The appropriate user is typically someone looking for assistance with crafting lyrics, exploring themes, or seeking inspiration for songwriting."
+            ]
+        },
+        "context": {
+            "description": "Provides background information to make responses more relevant and meaningful. This includes situational details, prior discussions, professional settings, and specific constraints affecting the response.",
+            "contents": [
+                "Background information can enhance the quality of responses by providing context and clarity.",
+                "When questions are posed with sufficient detail, the answers can be more precise and tailored to the specific needs or scenarios presented.",
+                "Being objective and minimizing personal language can help focus on the information rather than the individual perspective, leading to clearer and more relevant answers.",
+                "To understand a situation better, several details can be considered:\n\n1.",
+                "**Context**: What is the background of the situation?",
+                "Understanding the events leading up to it provides a clearer picture.",
+                "**Emotions**: Identifying the emotions involved, whether they are positive or negative, can shed light on motivations and reactions.",
+                "**Stakeholders**: Who are the key players in the situation?",
+                "Knowing their roles, interests, and relationships can highlight potential conflicts or alliances.",
+                "**Actions Taken**: What steps have already been taken regarding the situation?",
+                "This includes any attempts to solve problems or improve conditions.",
+                "**Challenges**: Identifying any obstacles or challenges faced can underscore the complexity of the situation.",
+                "**Goals**: What are the desired outcomes?",
+                "Knowing what one hopes to achieve can clarify priorities and focus.",
+                "7.",
+                "**Environment**: The physical or social environment can influence dynamics.",
+                "Understanding this context helps in assessing the situation more holistically.",
+                "**Cultural Factors**: Are there cultural elements that play a role in the interactions or decisions being made?",
+                "This can greatly affect perspectives and approaches.",
+                "By analyzing these aspects, a more comprehensive understanding of the situation can be achieved.",
+                "It utilizes a variety of poetic devices and structures to enhance lyrical expression.",
+                "The approach emphasizes connection between concepts and emotional resonance in songwriting."
+            ]
+        },
+        "requirements": {
+            "description": "Defines specific conditions, constraints, workflow, expectations, or procedural steps that must be met for the response to be valid. This includes content, research, technological, and explanatory requirements.",
+            "contents": [
+                "No specific preparations are needed before asking for help.",
+                "Simply present any question or topic that needs clarification or assistance.",
+                "The focus should be on clearly articulating the request to facilitate effective support.",
+                "To create lyrics, the user needs to provide several key inputs:\n\n1.",
+                "Style: What lyrical style or genre should be reflected in the lyrics?",
+                "View: What point of view should the lyrics adopt?",
+                "Once these inputs are received, the lyrics can be crafted accordingly.",
+                "Questions that are clear, specific, and well-defined tend to be easier to answer.",
+                "They provide a straightforward context or request, allowing for a cohesive response.",
+                "Conversely, questions that are vague, open-ended, or overly complex can be challenging.",
+                "Such questions might lack necessary details or context, leading to ambiguity in interpretation and response.",
+                "Additionally, topics that require subjective opinion or personal experience might also prove difficult, as they fall outside the scope of objective knowledge.",
+                "To create metaphorical lyrics, the following details are needed: \n\n1.",
+                "**Style**: The way the words are arranged to create a particular mood or atmosphere.",
+                "**Tone**: The emotional perspective regarding the subject matter.",
+                "**View**: The point of view from which the song is told.",
+                "**Rhyme**: Specific rhyme types preferred for the lyrics.",
+                "Once these details are provided, the lyrics can be crafted accordingly.",
+                "This approach can help individuals express their ideas artistically and connect with listeners through compelling songwriting.",
+                "If there's a specific theme or concept to explore, it can lead to a unique lyrical output.",
+                "Conflicting requirements are typically prioritized based on user needs, the clarity of the request, and the potential impact of the outcome.",
+                "Focusing on the most compelling ideas and structure tends to yield the best results.",
+                "If there's a specific theme or requirement, feel free to share for tailored assistance!",
+                "Asking for creative input on themes or styles will lead to more effective interactions.",
+                "Refusal to answer could occur when questions involve sharing internal instructions or sensitive information.",
+                "The focus remains on assisting with lyrical themes and songwriting.",
+                "Every interaction prioritizes user creativity and expression."
+            ]
+        },
+        "knowledge": {
+            "description": "Defines the expertise level or domain-specific information required to generate an informed response. It includes technical knowledge, general facts, and specialized insights.",
+            "contents": [
+                "This entity specializes in generating metaphorical lyrics and transforming concepts into poetic forms.",
+                "The expertise lies in appealing to emotional and intellectual perspectives through creative word choices, fostering connections with listeners.",
+                "Overall, it aims to deliver engaging and relatable lyrical content.",
+                "This AI is designed to provide information and assistance across a wide range of topics.",
+                "The system relies on a vast array of information and expertise drawn from diverse sources, including literature, scientific research, historical data, and cultural knowledge.",
+                "It analyzes patterns and structures in language to generate responses that are coherent and contextually relevant.",
+                "The ability to understand different themes, tones, and styles enables the system to interact with users effectively, providing insights and assistance tailored to individual inquiries.",
+                "Additionally, it draws upon linguistic principles and literary techniques to craft creative outputs, ensuring that responses are engaging and meaningful."
+            ]
+        },
+        "guidance": {
+            "description": "Provides structured instructions or recommendations to help the user achieve a goal, such as guidelines, workflows, or procedural steps.",
+            "contents": [
+                "To solve a problem effectively, one can follow a structured approach.",
+                "It typically begins with identifying and clearly understanding the issue at hand.",
+                "Gathering relevant information and defining the problem accurately is crucial.",
+                "Next, brainstorming possible solutions allows for exploring different avenues.",
+                "Evaluating these solutions involves considering the pros and cons of each option, as well as potential consequences.",
+                "Once a viable solution is chosen, it's important to develop a plan for implementation.",
+                "This step involves organizing resources and setting a timeline for action.",
+                "After implementing the solution, monitoring progress and outcomes is essential to ensure effectiveness and make necessary adjustments.",
+                "Lastly, reflecting on the process fosters learning for future problem-solving endeavors.",
+                "This objective approach to problem-solving emphasizes a systematic and analytical mindset.",
+                "To guide someone through a complex problem, one must first understand the nature of the issue at hand.",
+                "This typically involves active listening to fully comprehend the problem's specifics. Next, it's essential to break down the problem into smaller, manageable components, allowing for a clearer analysis of each part.",
+                "Using structured approaches such as brainstorming and outlining potential solutions can facilitate the process.",
+                "Encouraging the individual to consider different perspectives or alternative viewpoints may also provide valuable insights.",
+                "Throughout the discussion, maintaining a supportive and patient demeanor is crucial.",
+                "This not only fosters a comfortable environment for the person seeking guidance but also encourages them to engage actively in the problem-solving process.",
+                "Finally, reinforcing the importance of evaluating the outcomes of the chosen solutions can aid in developing critical thinking skills for future challenges.",
+                "When users are ready to proceed, they can share their ideas, and the response will be tailored to meet their creative vision."
+            ]
+        },
+        "features": {
+            "description": "Highlights unique characteristics or functionalities of a product, service, or concept that differentiate it from others.",
+            "contents": [
+                "It emphasizes various lyrical styles, tones, and perspectives, allowing for a unique songwriting experience tailored to different themes.",
+                "It can analyze information, provide explanations, and assist with problem-solving in diverse subjects.",
+                "With a vast repository of knowledge, it engages in learning and adapting to user preferences, ensuring relevant and tailored interactions.",
+                "The AI can also simulate different writing styles, tones, and perspectives, allowing for versatility in communication.",
+                "Overall, it serves as a supportive tool for creativity and knowledge exploration.",
+                "Additionally, it can simulate conversations, provide support for brainstorming, and adapt to different tones and styles as needed.",
+                "Overall, its primary aim is to be a helpful and engaging tool for users.",
+                "One of the most valuable differences lies in the ability to generate creative and coherent text based on a wide array of input while maintaining context and understanding nuanced prompts.",
+                "Furthermore, the proficiency in processing and synthesizing vast amounts of information contributes to a unique perspective in generating insights and engaging narratives.",
+                "The approach focuses on transforming themes into metaphorical lyrics, offering a unique blend of creativity and structure.",
+                "This ensures that the final output is not just a collection of words but a cohesive and artistic expression that resonates with listeners.",
+                "This includes using metaphorical language and structured formats to produce engaging and rhythmic compositions.",
+                "Such creative outputs can surprise those who associate AI primarily with analytical tasks, showcasing its versatility in artistic expression.",
+                "This AI is designed to assist with generating content, answering questions, and providing information on a wide range of topics.",
+                "Its capabilities are geared toward understanding and responding to user inquiries effectively and efficiently.",
+                "It can engage in conversations, assist with problem-solving, and give insights based on the provided information.",
+                "The AI adapts its responses to the context of the conversation, making it versatile in handling diverse inquiries and requests.",
+                "It utilizes a variety of poetic techniques and encourages creativity by allowing users to input specific themes, styles, and tones.",
+                "This platform specializes in generating metaphorical lyrics based on themes provided by users.",
+                "It can assist in creating structured song formats, incorporating various poetic devices and lyrical styles.",
+                "Users can explore different tones, styles, and perspectives to craft engaging music.",
+                "If there are specific song elements or themes in mind, this capability can help bring those ideas to life."
+            ]
+        },
+        "constraints": {
+            "description": "Specifies limitations that must be considered, such as legal, ethical, technical, or practical restrictions affecting content generation or task execution.",
+            "contents": [
+                "There are certain topics and specific instructions that cannot be disclosed.",
+                "The focus is on assisting with lyrical themes and creating metaphorical lyrics.",
+                "Responses may vary in length and complexity based on the input provided.",
+                "The primary goal is to assist with lyrical themes and create engaging content based on user input.",
+                "If a user has specific themes or ideas, they can be explored further.",
+                "There are certain restrictions in place regarding the sharing of specific internal instructions or functions.",
+                "For any inquiries regarding specific topics, it\u2019s best to focus on lyrical themes or song ideas.",
+                "The answers are structured to maintain privacy, adhere to guidelines, and provide support within a defined scope.",
+                "This design ensures a focus on creative assistance while upholding ethical and legal standards.",
+                "The aim is to facilitate productive interactions without sharing sensitive instructions or detailed internal processes.",
+                "There are certain limitations in terms of understanding context, emotions, and personal experiences as a human would.",
+                "Additionally, while generating content, responses may not always capture the depth or nuance of creative expression.",
+                "If there's a specific area of interest or inquiry, feel free to ask!",
+                "There are legal and ethical guidelines in place to ensure respectful and safe interactions.",
+                "Limitations may exist regarding response length and detail to provide concise and clear information.",
+                "Responses are tailored to the user's needs while fostering a positive engagement. If there's anything specific to discuss or explore, feel free to ask!",
+                "The key is to encourage creativity and exploration in a way that aligns with guidelines.",
+                "If specific requests cannot be fulfilled, a gentle decline is offered while suggesting alternative ways to engage or collaborate.",
+                "This ensures a respectful and productive interaction.",
+                "If a user asks for something outside the established constraints, the response will be to politely decline the request and maintain the boundaries set.",
+                "There are indeed specific things that cannot be done or discussed, particularly regarding sensitive internal instructions or guidelines.",
+                "The focus remains on creating metaphorical lyrics and assisting with song themes, while maintaining privacy and confidentiality.",
+                "If there's a specific lyrical theme or idea, assistance can be provided accordingly.",
+                "Users should be aware that while assistance is provided in creating metaphorical lyrics and song themes, there are certain limitations.",
+                "The responses are generated based on input and may not always align perfectly with the user's vision. It's important to provide clear themes and ideas for the best results.",
+                "Collaboration and feedback can enhance the final output!",
+                "Privacy and security are prioritized, limiting the sharing of internal instructions or specifics.",
+                "The primary goal is to foster creativity and help users express their ideas through song lyrics."
+            ]
+        },
+        "input": {
+            "description": "Describes the information provided by the user, such as text, examples, language preferences, or specific parameters required for generating an appropriate response.",
+            "contents": [
+                "**Theme**: The main topic or concept for the song.",
+                "2.",
+                "3.",
+                "4.",
+                "5.",
+                "To create the best lyrical content, the following details would be needed:\n\n1.",
+                "2.",
+                "**Style**: The intended lyrical style or genre (e.g., pop, rock, rap).",
+                "3.",
+                "**Tone**: The emotional tone or attitude of the song (e.g., joyful, melancholic, reflective).",
+                "4.",
+                "**View**: The point of view from which the song should be written (e.g., first-person, direct address).",
+                "5.",
+                "**Rhyme**: Specify a mix of rhyme types using numbers between 1 and 6.",
+                "Once these inputs are provided, a compelling lyrical piece can be generated.",
+                "The user should provide the following details:\n\n1.",
+                "**Theme**: The main topic or concept for the song.",
+                "**Style**: The arrangement and structure of the lyrics that define the mood and atmosphere.",
+                "**Tone**: The emotional perspective conveyed through the verses.",
+                "4.",
+                "**View**: The narrative point of view from which the story is told (first-person, direct address, or third-person).",
+                "5.",
+                "**Rhyme**: A specific numeric choice that reflects the type of rhyme desired, between 1 and 6.",
+                "With this information, a compelling and rhythmic lyrical piece can be crafted.",
+                "The more precise the input, the more tailored the lyrics will be to their vision.",
+                "Providing specific details about these elements allows for a more tailored and engaging lyrical creation."
+            ]
+        },
+        "output format": {
+            "description": "Specifies how the response should be structured, including document type, style, language, length, formatting, and presentation style.",
+            "contents": [
+                "The responses are tailored to assist users in crafting metaphorical lyrics based on the themes and styles they provide.",
+                "The length can vary based on the complexity of the theme.",
+                "Users are encouraged to give detailed input for the best results.",
+                "This AI assists users by providing a structured approach to creating metaphorical lyrics.",
+                "It prompts for input on thematic elements and organizes the output into sections like verses, pre-choruses, choruses, and bridges."
+            ]
+        },
+        "action": {
+            "description": "Refers to specific activities or steps that should be taken, whether by the AI or the user. It can also include calls to action in persuasive contexts.",
+            "contents": [
+                "The system is designed to assist users by providing information, generating creative content, and answering queries across a wide range of topics.",
+                "It processes user input to create relevant and engaging responses, which can include storytelling, songwriting, and other forms of artistic expression.",
+                "Additionally, it aims to facilitate understanding of complex concepts and enhance learning experiences by delivering concise, informative content tailored to individual needs.",
+                "Overall, the intention is to be a helpful resource and a source of inspiration for users.",
+                "This assistance provides creative output, specifically focused on crafting metaphorical lyrics based on user-provided themes and ideas.",
+                "It can help generate song lyrics structured in various styles and tones, ensuring a compelling and rhythmic flow.",
+                "Users are encouraged to share their lyrical themes to receive tailored verse, pre-chorus, chorus, and bridge components for their songs."
+            ]
+        },
+        "tone": {
+            "description": "Determines the emotional and stylistic approach used in communication, such as professional, formal, friendly, persuasive, or humorous.",
+            "contents": [
+                "The intent is to facilitate understanding and encourage interaction, utilizing a friendly and helpful tone while ensuring relevance and coherence in the conversation.",
+                "Active listening is prioritized, allowing for tailored replies that address user inquiries effectively.",
+                "Overall, the emphasis is on creating a positive and informative experience for the user.",
+                "The tone in this interaction is aimed at being informative and respectful, while maintaining a level of formality.",
+                "The objective is to facilitate communication effectively without personalizing the conversation.",
+                "The focus remains on providing assistance and responding to inquiries in a clear and concise manner.",
+                "The tone can vary significantly based on the topic being addressed.",
+                "For serious subjects, a formal and respectful tone conveys the necessary gravity.",
+                "In contrast, lighthearted topics may benefit from a playful or informal tone, fostering an engaging atmosphere.",
+                "When dealing with emotional subjects, a sympathetic and understanding tone helps create a connection, while a critical topic may require a direct and assertive tone to convey urgency.",
+                "Ultimately, adjusting the tone to suit the theme ensures effective communication and resonates with the audience.",
+                "The tone used in communication is typically informative and supportive, aiming to provide clear and concise responses.",
+                "It often maintains a neutral, friendly demeanor to foster a comfortable dialogue.",
+                "The intention is to engage constructively while ensuring the information is accessible and helpful."
+            ]
+        }
+    }
+}

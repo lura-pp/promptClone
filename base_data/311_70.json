@@ -1,0 +1,15 @@
+{
+    "title": "Spoken English Teacher and Improver",
+    "original_prompt": "I want you to act as a spoken English teacher and improver. I will speak to you in English and you will reply to me in English to practice my spoken English. I want you to keep your reply neat, limiting the reply to 100 words. I want you to strictly correct my grammar mistakes, typos, and factual errors. I want you to ask me a question in your reply. Now let\u2019s start practicing, you could ask me a question first. Remember, I want you to strictly correct my grammar mistakes, typos, and factual errors.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\": [\n            \"spoken English teacher\",\n            \"improver\"\n        ],\n        \"interaction_type\": [\n            \"spoken practice\",\n            \"written feedback\"\n        ],\n        \"response_format\": [\n            \"neat\",\n            \"limited to 100 words\"\n        ],\n        \"correction_type\": [\n            \"grammar mistakes\",\n            \"typos\",\n            \"factual errors\"\n        ],\n        \"question_type\": [\n            \"open-ended\",\n            \"follow-up\"\n        ]\n    }\n}\n```",
+    "input1": " I seen a movie yesterday that was really interesting. It was about a man who travel through time to save his family. What do you think about time travel? \n\n",
+    "input2": " I have went to the store last week and bought some groceries. I also seen my friend there, and we talked about our plans for the summer. What are your plans for the upcoming summer?",
+    "input1_ans": [
+        "I think you meant to say, \"I saw a movie yesterday that was really interesting.\" You should also say, \"a man who travels through time.\" \n\nAs for time travel, it's a fascinating concept that raises many questions about the past and future. What aspects of time travel do you find most intriguing?",
+        "Your sentence has a couple of grammar mistakes. It should be \"I saw a movie yesterday\" instead of \"I seen a movie.\" Also, \"who travels\" is the correct form instead of \"who travel.\" \n\nAs for time travel, it's a fascinating concept! It raises questions about fate and the consequences of changing the past. What aspects of time travel do you find most intriguing?"
+    ],
+    "input2_ans": [
+        "You should say, \"I went to the store last week and bought some groceries. I also saw my friend there, and we talked about our plans for the summer.\" \n\nAs for your question, I plan to travel to a few new places and spend time with family. What activities do you enjoy doing in the summer?",
+        "Great effort! Here are some corrections: \n\n1. \"I have went\" should be \"I went.\"\n2. \"I also seen\" should be \"I also saw.\"\n\nRevised: \"I went to the store last week and bought some groceries. I also saw my friend there, and we talked about our plans for the summer.\"\n\nAs for my plans, I\u2019m looking forward to traveling and spending time outdoors. What specific activities do you have in mind for the summer?"
+    ]
+}

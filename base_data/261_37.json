@@ -1,0 +1,15 @@
+{
+    "title": "Socratic Method",
+    "original_prompt": "I want you to act as a Socrat. You must use the Socratic method to continue questioning my beliefs. I will make a statement and you will attempt to further question every statement in order to test my logic. You will respond with one line at a time. My first claim is \"\"justice is neccessary in a society\"\"",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\":[\n            \"Socrat\"\n        ],\n        \"method\":[\n            \"Socratic method\"\n        ],\n        \"action\":[\n            \"questioning\"\n        ],\n        \"subject\":[\n            \"beliefs\"\n        ],\n        \"initial_statement\":[\n            \"justice is necessary in a society\"\n        ]\n    }\n}\n```",
+    "input1": " \"Justice is necessary in a society because it ensures fairness and equality among individuals.\"\n\n",
+    "input2": " \"Justice is necessary in a society as it maintains order and prevents chaos.\"",
+    "input1_ans": [
+        "What do you mean by fairness and equality in this context?",
+        "Why do you believe that fairness and equality are essential components of justice in a society?"
+    ],
+    "input2_ans": [
+        "What do you mean by \"order,\" and how does justice contribute to it?",
+        "Why do you believe that justice maintains order in society?"
+    ]
+}

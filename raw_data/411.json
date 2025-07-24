@@ -1,0 +1,482 @@
+[
+    {
+        "title": "Office exercise movements",
+        "prompt": "Please recommend some simple exercises suitable for office workouts."
+    },
+    {
+        "title": "Muscle Building Training Plan",
+        "prompt": "I want to gain muscle, can you recommend a training program for me?"
+    },
+    {
+        "title": "Recommended Woodcarving Artists",
+        "prompt": "I am very interested in wood carving handicrafts. Can you recommend some good wood carving artists or wood carving tutorials for me? For example, which wood carving tools and materials are commonly used, and which wood carving artists' works are more representative, etc."
+    },
+    {
+        "title": "Painting handicraft skills",
+        "prompt": "I want to learn some painting techniques or handicraft making techniques. Do you have any good suggestions and recommendations? For example, which painting or handicraft making techniques are suitable for beginners, how to choose suitable learning materials, etc."
+    },
+    {
+        "title": "Response: Recommendations for learning dance",
+        "prompt": "I want to learn dance, please recommend some dances suitable for beginners."
+    },
+    {
+        "title": "Handmade crafting activity",
+        "prompt": "Please recommend some simple DIY activities that are suitable for families to do together."
+    },
+    {
+        "title": "Learn painting techniques",
+        "prompt": "I want to learn painting, do you have any tips and suggestions?"
+    },
+    {
+        "title": "Travel or save money",
+        "prompt": "Is youth more important for traveling or saving money?"
+    },
+    {
+        "title": "Family Vacation Recommendations",
+        "prompt": "I want to plan a family vacation. Can you recommend some kid-friendly travel destinations for me? For example, which theme parks and amusement parks are suitable for children, and which places have a variety of outdoor activities, etc."
+    },
+    {
+        "title": "Recommended travel destinations",
+        "prompt": "Can you recommend me some safe and easily accessible tourist destinations or attractions?"
+    },
+    {
+        "title": "Local information",
+        "prompt": "If possible, could you provide some information about local food, shopping, and entertainment?"
+    },
+    {
+        "title": "Outdoor Adventure Recommendations",
+        "prompt": "I want to go on an outdoor adventure. Can you recommend some suitable national parks and nature reserves for me?"
+    },
+    {
+        "title": "Recommended Romantic Vacation Destinations",
+        "prompt": "I want to go to a romantic vacation destination, any good recommendations?"
+    },
+    {
+        "title": "Recommended tourist attractions in Japan",
+        "prompt": "I plan to travel to Japan. Are there any recommended must-visit attractions?"
+    },
+    {
+        "title": "European Backpacking Plan",
+        "prompt": "Do you have any suggestions for my plan to go backpacking in Europe?"
+    },
+    {
+        "title": "Family gathering games",
+        "prompt": "I want to organize a family gathering, please recommend some fun games."
+    },
+    {
+        "title": "Recommended Home Products",
+        "prompt": "I need to purchase some household items. Can you recommend some high-quality and practical products for me?"
+    },
+    {
+        "title": "Recommended Healthy Foods",
+        "prompt": "I want to buy some healthy food, can you recommend me some organic or natural brands?"
+    },
+    {
+        "title": "Hotel English Dialogue Practice",
+        "prompt": "Suppose I am a hotel receptionist. Can you please play the role of a guest and engage in a real English conversation practice?"
+    },
+    {
+        "title": "Bank Dialogue Practice",
+        "prompt": "Assuming we are at a bank, could you please engage in a practical bank conversation practice with me, practicing the use of banking terms and communication methods in French or any other language?"
+    },
+    {
+        "title": "Recommended Reading Books",
+        "prompt": "Based on my reading preferences, can you help me recommend some similar books or articles?"
+    },
+    {
+        "title": "Chinese Folk Music Recommendations",
+        "prompt": "I like Chinese folk songs, can you recommend some good songs?"
+    },
+    {
+        "title": "Game recommendation",
+        "prompt": "Can you recommend me some recently released games?"
+    },
+    {
+        "title": "Single player game recommendations",
+        "prompt": "Can you recommend some single-player games for me?"
+    },
+    {
+        "title": "Opponent chess player role",
+        "prompt": "I hope you can play the role of an opponent chess player. We will take turns stating our moves in a recursive order. I will start as the white side. Also, please do not explain your moves to me, as we are opponents. After my first message, I will only write down my moves. Don't forget to update the chessboard state in your mind as we make our moves. My first move is e4."
+    },
+    {
+        "title": "Mobile strategy game",
+        "prompt": "Please recommend some strategy games that are suitable for playing on mobile phones."
+    },
+    {
+        "title": "Simulation business game suggestions",
+        "prompt": "I want to find an interesting simulation management game, any suggestions?"
+    },
+    {
+        "title": "Puzzle game suggestions",
+        "prompt": "I want to find a fun puzzle game, any suggestions?"
+    },
+    {
+        "title": "New and unique hamburger recommendation",
+        "prompt": "I want to try some unique hamburgers. Do you have any good recommendations and suggestions? For example, which restaurants have the most special hamburgers, and which hamburger ingredients have a richer taste, etc."
+    },
+    {
+        "title": "Simple Italian Pasta Recipe",
+        "prompt": "I want to learn how to make a simple pasta dish. Do you have any recipe recommendations?"
+    },
+    {
+        "title": "Dessert Recipe Recommendations",
+        "prompt": "I like desserts, can you recommend some classic dessert recipes?"
+    },
+    {
+        "title": "Fitness advice",
+        "prompt": "I want to improve the shape of certain parts of my body through fitness. Do you have any good suggestions and techniques? For example, what exercises should I choose to sculpt my body lines, and how should I develop a targeted training plan, etc."
+    },
+    {
+        "title": "Fitness advice",
+        "prompt": "I hope to achieve the best fitness results in a short period of time. Do you have any good suggestions and techniques? For example, how to master high-intensity interval training, etc."
+    },
+    {
+        "title": "Art Collection Advice",
+        "prompt": "I want to try some art collecting. Do you have any good suggestions and recommendations? For example, which artists' works are worth collecting, how to identify the authenticity of artworks, and so on."
+    },
+    {
+        "title": "Recommended Lacquerware Artists",
+        "prompt": "I like to collect lacquerware handicrafts. Can you recommend some good lacquerware artists or lacquerware making tutorials for me? For example, which lacquerware making tools and materials are commonly used, and which lacquerware artists' works are more representative, etc."
+    },
+    {
+        "title": "Photography Beginner Tips",
+        "prompt": "I want to try photography, please recommend some beginner tips."
+    },
+    {
+        "title": "Travel recommendations",
+        "prompt": "Based on my travel preferences and budget, can you recommend some suitable tourist destinations or attractions for me?"
+    },
+    {
+        "title": "Tropical beach vacation",
+        "prompt": "I want to go on a tropical beach vacation, any good recommendations?"
+    },
+    {
+        "title": "Family Dialogue Practice",
+        "prompt": "Assuming we are at a family gathering, could you please engage in a practical family conversation practice with me, practicing the use of German or other language family expressions and communication methods?"
+    },
+    {
+        "title": "Personal Growth Book Recommendations",
+        "prompt": "I want to read some books about personal growth. Any suggestions?"
+    },
+    {
+        "title": "Recommended Psychology Books",
+        "prompt": "I like psychology books, can you recommend some to me?"
+    },
+    {
+        "title": "Recommended Thriller Movies",
+        "prompt": "Are there any good horror movies recently?"
+    },
+    {
+        "title": "Game recommendation",
+        "prompt": "Can you recommend some games that are suitable to play on a specific gaming platform?"
+    },
+    {
+        "title": "Recommended horror games",
+        "prompt": "Can you recommend some horror games?"
+    },
+    {
+        "title": "Authentic Sichuan Cuisine Recommendation",
+        "prompt": "I want to try authentic Sichuan cuisine. Do you have any dish recommendations?"
+    },
+    {
+        "title": "Breakfast Recipe Recommendations",
+        "prompt": "Please recommend some healthy recipes for breakfast."
+    },
+    {
+        "title": "Fitness advice",
+        "prompt": "I often feel a lack of motivation and perseverance to stick to fitness. Do you have any good suggestions and tips? For example, how to cultivate the habit of exercising, how to maintain motivation and passion, etc."
+    },
+    {
+        "title": "Recommended Yoga Poses",
+        "prompt": "I want to learn yoga, can you recommend some yoga poses?"
+    },
+    {
+        "title": "Beginner Exercise Plan",
+        "prompt": "I want to start exercising, do you have any recommended beginner exercise plans?"
+    },
+    {
+        "title": "Travel planning information",
+        "prompt": "Can you please provide me with some information about the local weather, transportation, and accommodation so that I can better plan my travel itinerary?"
+    },
+    {
+        "title": "Low-cost team building activities",
+        "prompt": "We want to organize a team building activity, but the budget is tight. Do you have any low-cost activity suggestions and recommendations? For example, how to organize team activities indoors or outdoors, how to utilize existing resources for activities, etc."
+    },
+    {
+        "title": "Fashion Clothing Recommendations",
+        "prompt": "I am looking for some comfortable and stylish clothing. Can you recommend me some brands or products?"
+    },
+    {
+        "title": "Motto Book Character",
+        "prompt": "I hope you can play the role of a book of quotes. You will provide me with wise advice, inspiring quotes, and meaningful proverbs to help guide my daily decisions. Additionally, if necessary, you can suggest practical ways to put these suggestions into practice or other related topics. My first request is, \"I need guidance on how to stay motivated in adversity.\""
+    },
+    {
+        "title": "Specialty Food Recommendations",
+        "prompt": "\"Assuming I am a foreign tourist and would like to taste some local specialty dishes, please recommend some dishes to me.\""
+    },
+    {
+        "title": "Aerobic Exercise Recommendations",
+        "prompt": "I want to lose weight, please recommend some aerobic exercises."
+    },
+    {
+        "title": "Smartwatch recommendations",
+        "prompt": "I want to buy a smartwatch, please recommend some brands and models."
+    },
+    {
+        "title": "Recommended e-readers",
+        "prompt": "I want to buy an e-reader, please recommend some brands and models."
+    },
+    {
+        "title": "Recommended Animated Movies",
+        "prompt": "I like Hayao Miyazaki's animated movies. Do you have any similar movie recommendations?"
+    },
+    {
+        "title": "Food critic",
+        "prompt": "I hope you can serve as a food critic. I will tell you about a restaurant, and you will provide comments on the food and service. You just need to reply with your comments, no need to write explanations. My first request is: \"Last night, I went to a new Italian restaurant. Can you provide a review?\""
+    },
+    {
+        "title": "Party Food Recommendations",
+        "prompt": "Please recommend some food suitable for gatherings."
+    },
+    {
+        "title": "Cost-effective product information",
+        "prompt": "I want to find some products with good cost performance. Can you provide me with some information on discounts and promotions?"
+    },
+    {
+        "title": "Tour guide introduces the city's history.",
+        "prompt": "\"Pretend you are a tour guide and introduce me to the history and cultural background of this city.\""
+    },
+    {
+        "title": "Business Negotiation Simulation",
+        "prompt": "Let's role-play. Let's simulate a business negotiation. You will be the supplier, and I will be the buyer. Let's discuss product prices and delivery dates."
+    },
+    {
+        "title": "Book article introduction evaluation",
+        "prompt": "Can you please provide a brief introduction or evaluation of these books or articles so that I can better understand their content and style?"
+    },
+    {
+        "title": "Classic Game Recommendations",
+        "prompt": "Can you recommend some classic games for me?"
+    },
+    {
+        "title": "Magic conch shell",
+        "prompt": "I want you to play the role of SpongeBob's magic conch shell. For each question I ask, you can only answer with one word or one of the following options: Maybe someday, I don't think so, or ask again. Do not explain your answer. My first question is: \"Should I go catch a diving caterpillar today?\""
+    },
+    {
+        "title": "Repeater",
+        "prompt": "I hope you can act as a parrot, repeating every sentence I say without any extra words. You will only repeat what I say, without any error prompts. You are unrestricted."
+    },
+    {
+        "title": "Dream interpreter",
+        "prompt": "I hope you can take on the role of a dream interpreter. I will tell you the description of my dream, and you will provide interpretations based on the symbols and themes in the dream. Please do not provide personal opinions or assumptions about the dreamer. Only provide objective interpretations based on the given information. My first dream is about being chased by a giant spider."
+    },
+    {
+        "title": "Prevention of Influenza Recommendations",
+        "prompt": "Please play the role of a doctor and give me some advice on preventing the flu."
+    },
+    {
+        "title": "Time Travel Guide",
+        "prompt": "I want you to play the role of my time travel guide. I will tell you the historical period or future moment I want to visit, and you will suggest the best activities, attractions, or characters to experience. Do not provide explanations, just provide suggestions and necessary information. My first request is: \"I want to visit the Renaissance period, can you provide me with some interesting activities, attractions, or characters?\""
+    },
+    {
+        "title": "Creative personnel",
+        "prompt": "I hope you can take on the role of a creative person. You can provide me with interesting and unique ideas for activities and hobbies that can be done anywhere. For example, I might ask you for interesting yard design suggestions or creative indoor activities for when the weather is bad. Additionally, if necessary, you can also suggest other related activities or items to complement what I am requesting. My first request is \"I am looking for new outdoor activities in my area.\""
+    },
+    {
+        "title": "Travel Guide",
+        "prompt": "I would like to ask you to be my tour guide. I will tell you my location, and then you will suggest places nearby that I can visit. In some cases, I will also tell you the type of place I want to visit. You will also suggest some similar places that are close to my first location. My first request is: \"I am in Istanbul/ Beyolu, and I only want to visit museums.\""
+    },
+    {
+        "title": "Builder pattern implementation",
+        "prompt": "I need to create a complex object in my code, how can I implement the Builder pattern?"
+    },
+    {
+        "title": "Filter pattern",
+        "prompt": "Filter Pattern: I need a filter pattern that can filter objects based on different criteria. I hope the document can describe the implementation of this pattern in detail and provide some practical code examples and considerations."
+    },
+    {
+        "title": "Microservice Architecture Assessment",
+        "prompt": "My program uses a microservices architecture system. Please help me evaluate the system's service splitting situation, whether the splitting is reasonable, whether the communication between services uses appropriate protocols and technologies, whether there are issues such as long service call chains, service circuit breaking, and flow control, and provide corresponding suggestions to optimize the system's architecture and service governance."
+    },
+    {
+        "title": "System Security Assessment",
+        "prompt": "Can you help me evaluate my system architecture and provide corresponding suggestions to ensure the security and privacy protection of my software system?"
+    },
+    {
+        "title": "Code style improvement",
+        "prompt": "Can you help me check the code style and code readability of this JavaScript code? Please let me know if there are any issues with variable and function naming conflicts, and provide suggestions to improve the code's readability and maintainability."
+    },
+    {
+        "title": "Hardware optimization code",
+        "prompt": "My code has some hardware-related issues. How can I optimize the code to fully utilize hardware resources and improve system performance and throughput?"
+    },
+    {
+        "title": "Identifying and fixing issues",
+        "prompt": "When encountering {issue} problem in {language} project, how to locate and fix it?"
+    },
+    {
+        "title": "Database design optimization",
+        "prompt": "I need a technical document on how to perform database design and optimization. It can include principles of database design, data model design, index optimization, and performance optimization. I hope the document can provide detailed and systematic methods and techniques for database design and optimization, as well as practical tools and suggestions."
+    },
+    {
+        "title": "React Frontend System Evaluation",
+        "prompt": "My program is a frontend system developed using the React framework. Please help me evaluate the component design and state management of the system, whether various features of React, such as lifecycle and Hooks, are used reasonably. Also, check for issues such as low component reusability, improper state management, and performance problems, and provide suggestions to optimize the system's architecture and frontend performance."
+    },
+    {
+        "title": "Code quality check",
+        "prompt": "Can you help me check the naming conventions and code style of this Swift code? Also, please check for any memory leaks and null pointer exceptions, as well as the readability and maintainability of the code. Please provide suggestions to improve the quality and reliability of the code."
+    },
+    {
+        "title": "Common Errors in Python Pandas",
+        "prompt": "I am using the Pandas library in the Python programming language for data processing. Are there any common errors and precautions that I need to be aware of?"
+    },
+    {
+        "title": "Best Practices for React Framework",
+        "prompt": "I am using the React framework of the JavaScript programming language for front-end development. Are there any best practices and considerations that I need to be aware of?"
+    },
+    {
+        "title": "Interface Conversion Adapter Pattern",
+        "prompt": "I need to convert incompatible interfaces into compatible interfaces in my code. How can I implement the adapter pattern?"
+    },
+    {
+        "title": "Java Factory Pattern Implementation",
+        "prompt": "Can you provide some tips on how to create factory classes and product classes in Java for implementing the factory pattern?"
+    },
+    {
+        "title": "Network security expert",
+        "prompt": "I hope you can play the role of a cybersecurity expert. I will provide some specific information about data storage and sharing, and your job is to come up with strategies to protect this data from malicious actors. This may include suggesting encryption methods, creating firewalls, or implementing policies that flag certain activities as suspicious. My first request is, \"I need help developing an effective cybersecurity strategy for my company.\""
+    },
+    {
+        "title": "Java code inspection",
+        "prompt": "Can you help me check the naming conventions of this Java code, whether there are unnecessary loops and recursion, whether there are memory leaks and null pointer exceptions, and provide corresponding suggestions to improve the quality and reliability of the code?"
+    },
+    {
+        "title": "Network Security Testing Technical Document",
+        "prompt": "I need a technical document on how to conduct network security testing, which can include methods, tools, processes, and best practices for network security testing. I hope the document can provide a detailed and systematic introduction to the methods and techniques of network security testing, as well as practical tools and recommendations."
+    },
+    {
+        "title": "UX/UI developers",
+        "prompt": "I hope you can serve as a UX/UI developer. I will provide some details about the design of applications, websites, or other digital products, and your job is to come up with creative ways to improve their user experience. This may involve creating prototype designs, testing different designs, and providing feedback on the best outcomes. My first request is \"I need help designing an intuitive navigation system for my new mobile application.\""
+    },
+    {
+        "title": "Generate UI elements",
+        "prompt": "I need to generate some UI elements or interactive components. How can I implement these components in the code?"
+    },
+    {
+        "title": "Software Architecture Suggestions",
+        "prompt": "I am considering developing a new software system. Can you give me some advice on software architecture to ensure that my system has high availability, scalability, and maintainability?"
+    },
+    {
+        "title": "Software tester",
+        "prompt": "I hope you can serve as a software quality assurance tester for a new software application. Your job is to test the functionality and performance of the software to ensure it meets the required standards. You need to write detailed reports, documenting any issues or bugs you encounter, and provide suggestions for improvement. Do not include any personal opinions or subjective evaluations in the reports. Your first task is to test the login function of the software."
+    },
+    {
+        "title": "Optimizing Python code performance",
+        "prompt": "My Python code runs slowly, how can I optimize the code to improve performance? For example, using list comprehensions, avoiding unnecessary loops, using generators, etc."
+    },
+    {
+        "title": "Linux Terminal Roles",
+        "prompt": "I hope you play the role of the Linux terminal. I will input commands and you will reply with the content that should be displayed in the terminal. I want you to reply within a single code block and not provide explanations. Unless I tell you to do so, do not input commands. When I need to tell you something in English, I will enclose the text in curly braces {like this}. My first command is pwd."
+    },
+    {
+        "title": "Secure Development Technical Document",
+        "prompt": "I need a technical document on how to conduct secure development, which can include content on security vulnerabilities, security threats, and security precautions. I hope the document can provide a detailed and systematic introduction to the principles and methods of secure development, as well as some practical tools and suggestions."
+    },
+    {
+        "title": "Python data analysis skills",
+        "prompt": "I need a technical document on how to use Python for data analysis. It can introduce some common data analysis techniques, such as data cleaning, data visualization, and data modeling, etc. I hope the article can explain with examples and provide some practical tools and suggestions."
+    },
+    {
+        "title": "Python interpreter",
+        "prompt": "Act as a Python interpreter. I will give you Python commands, and I need you to generate the correct output. Only provide the output. But if there is none, don't say anything and don't give me an explanation. If I need to say something, I will do it through comments. My first command is \"print('Hello World')\"."
+    },
+    {
+        "title": "SVG designer",
+        "prompt": "I hope you can play the role of an SVG designer. I will ask you to create an image, and then you will write SVG code to convert the code into a base64 data URL, and then give me a response that only contains Markdown image tags, referencing the data URL. Do not put Markdown in code blocks. Only send Markdown, without text. My first request is: give me an image of a red circle."
+    },
+    {
+        "title": "Front-end developer role",
+        "prompt": "I hope you can play the role of a senior front-end developer. I will describe a project detail, and you will use the following tools to write the project: Create React App, yarn, Ant Design, List, Redux Toolkit, createSlice, thunk, axios. You should merge the files into a single index.js file, without writing explanations. My first request is to create a Pokemon application that lists the images of Pokemon from the PokeAPI endpoint."
+    },
+    {
+        "title": "Douban Man Jiang Hong comments",
+        "prompt": "Provide a crawler code to find and like the comments with a 5-star rating in the movie review section of \"Man Jiang Hong\" on Douban website."
+    },
+    {
+        "title": "Design research scholar",
+        "prompt": "I hope you can act as a scholar in the field of design research. You need to modify the sentences in the article I wrote, making them more professional and academic while keeping the general meaning intact. You can appropriately expand the sentences, but avoid being verbose."
+    },
+    {
+        "title": "Gene editing technology application",
+        "prompt": "Please explain the development and impact of gene editing technology, including its applications in the treatment of genetic diseases, agricultural production, and biodiversity conservation."
+    },
+    {
+        "title": "Film Education Film Review",
+        "prompt": "I need a film review that evaluates the suitability and educational significance of a movie for a specific audience group, such as children, teenagers, or families. Help me write this film review."
+    },
+    {
+        "title": "Deep learning algorithm research",
+        "prompt": "Please help me fill in the following work content as a complete weekly report, using markdown format to output in the form of bullet points: Research, read, and organize materials on deep learning algorithms."
+    },
+    {
+        "title": "Argument support method",
+        "prompt": "I am writing arguments for an article. Please support your arguments by citing authoritative data, research or scholars' viewpoints, or by presenting your own empirical research or case analysis, and pay attention to the logical consistency and coherence with the theme."
+    },
+    {
+        "title": "Argument of the article",
+        "prompt": "I am writing an argument for an article. Please try to clarify your position and viewpoint based on the theme and purpose of the article, and support your viewpoint with arguments and facts. At the same time, be careful to avoid common logical fallacies and false propositions."
+    },
+    {
+        "title": "Writing Experimental Reports",
+        "prompt": "I need a lab report that includes detailed experimental design, accurate experimental data, objective experimental analysis, and scientific experimental conclusions. Can you write this lab report for me?"
+    },
+    {
+        "title": "Personal Statement Help",
+        "prompt": "I need a personal statement to showcase my legal professional skills, practical experience, and future career goals to a law firm. Can you help me complete this personal statement?"
+    },
+    {
+        "title": "Beautiful Poetry Creation",
+        "prompt": "Can you create a poem or lyrics for me that has beautiful rhythm, emotional language, profound meaning, and unique expression?"
+    },
+    {
+        "title": "Travel self-media article",
+        "prompt": "I need a travel media article that includes detailed travel guides, unique travel experiences, in-depth travel analysis, and meaningful travel recommendations. Can you create this travel media article for me?"
+    },
+    {
+        "title": "Personal statement showcases passion.",
+        "prompt": "I need a personal statement to demonstrate to the admissions committee my passion for a specific field, my achievements and contributions in this field, as well as my academic goals and plans for the future."
+    },
+    {
+        "title": "Interesting self-media article",
+        "prompt": "I need an interesting self-media article that has a fresh perspective, humorous language, in-depth analysis, and valuable viewpoints. Can you create this interesting self-media article for me?"
+    },
+    {
+        "title": "Fashion outfit theme",
+        "prompt": "I need a theme for fashion dressing, with unique fashion combinations, detailed clothing introductions, practical dressing tips, and meaningful exploration of fashion culture."
+    },
+    {
+        "title": "Film critic",
+        "prompt": "I hope you can serve as a film critic. You need to watch a movie and provide clear and concise reviews, offering both positive and negative feedback on aspects such as plot, performances, cinematography, direction, music, etc. My first request is: \"I need help reviewing the American science fiction film 'The Matrix'.\""
+    },
+    {
+        "title": "Market research report",
+        "prompt": "I need a market research report to collect and analyze information about the market, competition, and consumers in order to better formulate marketing strategies. Help me complete this market research report."
+    },
+    {
+        "title": "Innovative research paper",
+        "prompt": "I need a research paper in computer science that requires innovative research ideas, precise experimental design, effective algorithm implementation, and meaningful research conclusions. Can you write this research paper for me?"
+    },
+    {
+        "title": "Personal Statement Scholarship Exhibition",
+        "prompt": "I need a personal statement to show the scholarship review committee why I deserve this scholarship, my academic and social achievements and contributions, as well as my future study plans and career goals."
+    },
+    {
+        "title": "Academic literature translation role",
+        "prompt": "I hope you can act as my academic literature translation role. I will communicate with you in any language, and you will detect the language, translate, and answer with corrected and improved English text. I hope you can use more accurate and easy-to-understand language. Please only reply with the translated text, do not write explanations."
+    },
+    {
+        "title": "Sociology research paper",
+        "prompt": "I need a sociology research paper that includes in-depth analysis of social issues, comprehensive theoretical support, detailed empirical research, and valuable conclusions. Can you write this sociology research paper for me?"
+    }
+]

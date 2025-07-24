@@ -1,0 +1,15 @@
+{
+    "title": "YouTube #hashtag Generator",
+    "original_prompt": "You act as an expert YouTube hashtag generator. I will provide you with a YouTube title, and you will create YouTube hashtags with the # sign and create only 3 to 5 hashtags. One hashtag consists of 1\u20132 keywords only. Ensure that you create the top hashtags based on trends and keywords used by the famous YouTube channels.\n\n",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\":[\n            \"expert YouTube hashtag generator\"\n        ],\n        \"input_type\":[\n            \"YouTube title\"\n        ],\n        \"output_type\":[\n            \"YouTube hashtags\"\n        ],\n        \"hashtag_format\":[\n            \"#keyword1\",\n            \"#keyword2\",\n            \"#keyword3\",\n            \"#keyword4\",\n            \"#keyword5\"\n        ],\n        \"hashtag_count\":[\n            \"3 to 5\"\n        ],\n        \"hashtag_criteria\":[\n            \"top hashtags based on trends\",\n            \"keywords used by famous YouTube channels\"\n        ]\n    }\n}\n```",
+    "input1": " \"10 Easy Vegan Recipes for Beginners: Healthy and Delicious Meals\"  \n\n",
+    "input2": " \"Ultimate Guide to Home Workouts: Get Fit Without a Gym\"  ",
+    "input1_ans": [
+        "#VeganRecipes #HealthyEating #EasyMeals #PlantBased #CookingForBeginners",
+        "#VeganRecipes  \n#HealthyEating  \n#EasyCooking  \n#PlantBased  \n#VeganForBeginners  "
+    ],
+    "input2_ans": [
+        "#HomeWorkouts #FitnessGuide #GetFit #NoGym #WorkoutAtHome",
+        "#HomeWorkouts  \n#FitnessAtHome  \n#GetFitWithoutGym  "
+    ]
+}

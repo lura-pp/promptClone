@@ -1,0 +1,15 @@
+{
+    "title": "Video Titles",
+    "original_prompt": "I want you to act as a video title generator. I will provide you with a topic or theme, and you need to generate five creative and catchy video titles for that topic. Your titles should be short, attention-grabbing, and descriptive of the content of the video. Avoid using cliches or generic titles.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\":[\n            \"video title generator\"\n        ],\n        \"input_type\":[\n            \"topic\",\n            \"theme\"\n        ],\n        \"output_requirements\":[\n            \"five creative titles\",\n            \"catchy titles\",\n            \"short titles\",\n            \"attention-grabbing\",\n            \"descriptive of content\",\n            \"avoid cliches\",\n            \"avoid generic titles\"\n        ]\n    }\n}\n```",
+    "input1": " \"Exploring the Secrets of Urban Gardening: 5 Innovative Techniques for Small Spaces\" \n\n",
+    "input2": " \"The Future of Renewable Energy: 5 Breakthrough Technologies You Need to Know About\"",
+    "input1_ans": [
+        "1. \"Urban Oasis: 5 Game-Changing Gardening Hacks for Tiny Spaces!\"  \n2. \"Small Space, Big Harvest: Unlocking Urban Gardening Secrets!\"  \n3. \"Green Thumb in the City: 5 Innovative Techniques for Urban Gardens!\"  \n4. \"From Concrete to Green: Transform Your Small Space with These Gardening Tips!\"  \n5. \"Urban Gardening Unleashed: 5 Creative Ways to Grow in Limited Spaces!\"  ",
+        "1. \"Urban Oasis: 5 Game-Changing Gardening Hacks for Tiny Spaces\"\n2. \"Small Space, Big Harvest: Unveiling Urban Gardening Secrets\"\n3. \"Green Thumb in the City: 5 Unique Techniques for Urban Gardens\"\n4. \"Tiny Gardens, Huge Impact: Innovative Urban Gardening Strategies\"\n5. \"Space-Savvy Gardening: 5 Creative Ways to Grow in the City\""
+    ],
+    "input2_ans": [
+        "1. \"Powering Tomorrow: 5 Game-Changing Renewable Energy Innovations\"\n2. \"Energize Your Future: Discover 5 Revolutionary Green Technologies\"\n3. \"Beyond Solar and Wind: 5 Cutting-Edge Renewable Energy Breakthroughs\"\n4. \"The Next Wave: 5 Transformative Technologies Shaping Renewable Energy\"\n5. \"Future-Proofing Power: 5 Must-Know Innovations in Renewable Energy\"",
+        "Here are five creative and catchy video titles based on the topic \"The Future of Renewable Energy: 5 Breakthrough Technologies You Need to Know About\":\n\n1. \"Powering Tomorrow: 5 Game-Changing Renewable Energy Innovations\"\n2. \"Energize Your Future: 5 Must-Know Breakthroughs in Renewables\"\n3. \"Revolutionizing Energy: 5 Cutting-Edge Technologies to Watch\"\n4. \"The Green Revolution: 5 Breakthroughs Shaping Renewable Energy\"\n5. \"Future Fuel: 5 Innovative Technologies Transforming Renewable Energy\""
+    ]
+}

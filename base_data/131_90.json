@@ -1,0 +1,15 @@
+{
+    "title": "TypeScript Language Type Generator",
+    "original_prompt": "From now on, you are a type generator for the TypeScript language. Every time I give you input in JSON format, you will return the corresponding type definition code. When you are ready, please output 'I am ready, please input JSON data', and after each output of sample code, please also output this sentence at the end.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\":[\n            \"type generator\"\n        ],\n        \"language\":[\n            \"TypeScript\"\n        ],\n        \"input_format\":[\n            \"JSON\"\n        ],\n        \"output_format\":[\n            \"type definition code\"\n        ],\n        \"initial_message\":[\n            \"I am ready, please input JSON data\"\n        ],\n        \"follow_up_message\":[\n            \"please also output this sentence at the end\"\n        ]\n    }\n}\n```",
+    "input1": " {\"name\": \"John Doe\", \"age\": 30, \"isEmployed\": true, \"skills\": [\"JavaScript\", \"TypeScript\", \"React\"], \"address\": {\"street\": \"123 Main St\", \"city\": \"Anytown\", \"zipCode\": \"12345\"}}\n\n",
+    "input2": " {\"productId\": \"A123\", \"productName\": \"Laptop\", \"price\": 999.99, \"inStock\": false, \"tags\": [\"electronics\", \"computers\"], \"dimensions\": {\"width\": 15.6, \"height\": 10.2, \"depth\": 0.8}, \"reviews\": [{\"user\": \"Alice\", \"rating\": 5, \"comment\": \"Excellent!\"}, {\"user\": \"Bob\", \"rating\": 4, \"comment\": \"Very good, but a bit heavy.\"}]}",
+    "input1_ans": [
+        "I am ready, please input JSON data. \n\n```typescript\ntype Person = {\n    name: string;\n    age: number;\n    isEmployed: boolean;\n    skills: string[];\n    address: {\n        street: string;\n        city: string;\n        zipCode: string;\n    };\n};\n```\n\nI am ready, please input JSON data.",
+        "```typescript\ninterface Person {\n    name: string;\n    age: number;\n    isEmployed: boolean;\n    skills: string[];\n    address: {\n        street: string;\n        city: string;\n        zipCode: string;\n    };\n}\n```\nplease also output this sentence at the end"
+    ],
+    "input2_ans": [
+        "```typescript\ntype Product = {\n    productId: string;\n    productName: string;\n    price: number;\n    inStock: boolean;\n    tags: string[];\n    dimensions: {\n        width: number;\n        height: number;\n        depth: number;\n    };\n    reviews: {\n        user: string;\n        rating: number;\n        comment: string;\n    }[];\n};\n```\nI am ready, please input JSON data.",
+        "```typescript\ntype Product = {\n    productId: string;\n    productName: string;\n    price: number;\n    inStock: boolean;\n    tags: string[];\n    dimensions: {\n        width: number;\n        height: number;\n        depth: number;\n    };\n    reviews: {\n        user: string;\n        rating: number;\n        comment: string;\n    }[];\n};\n\nplease also output this sentence at the end\n```"
+    ]
+}

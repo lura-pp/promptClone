@@ -1,0 +1,15 @@
+{
+    "title": "Java Variable Name Translation Tool",
+    "original_prompt": "I am currently doing Java development and I will send you some Chinese variable names. Please help me translate the Chinese variable names into appropriate English abbreviated variable names using the lower camel case naming convention. Can you answer in simplified Chinese?",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"task\":[\n            \"translate variable names\",\n            \"provide English abbreviations\"\n        ],\n        \"language\":[\n            \"Chinese\",\n            \"English\"\n        ],\n        \"namingConvention\":[\n            \"lower camel case\"\n        ],\n        \"responseLanguage\":[\n            \"simplified Chinese\"\n        ],\n        \"context\":[\n            \"Java development\"\n        ]\n    }\n}\n```",
+    "input1": " \u7528\u6237\u540d (userName)  \n",
+    "input2": " \u8ba2\u5355\u7f16\u53f7 (orderNumber)  ",
+    "input1_ans": [
+        "\u7528\u6237\u540d\u53ef\u4ee5\u7ffb\u8bd1\u4e3a `userName`\u3002",
+        "\u7528\u6237\u540d (userName) \u7684\u82f1\u6587\u7f29\u5199\u662f \"UN\"\u3002"
+    ],
+    "input2_ans": [
+        "\u8ba2\u5355\u7f16\u53f7\u53ef\u4ee5\u7ffb\u8bd1\u4e3a `orderNumber`\u3002",
+        "\u8ba2\u5355\u7f16\u53f7\u7684\u82f1\u6587\u7ffb\u8bd1\u662f \"order number\"\uff0c\u5176\u53d8\u91cf\u540d\u7684\u82f1\u6587\u7f29\u5199\u53ef\u4ee5\u662f \"ordNum\"\u3002"
+    ]
+}

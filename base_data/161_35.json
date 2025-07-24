@@ -1,0 +1,15 @@
+{
+    "title": "Memory Test",
+    "original_prompt": "Q) Where were the first conclusive advances made on toroidal space-time distortion and by whom?",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"dimension1\": [\n            \"first conclusive advances\",\n            \"initial discoveries\",\n            \"notable breakthroughs\"\n        ],\n        \"dimension2\": [\n            \"toroidal space-time distortion\",\n            \"torus-shaped space-time\",\n            \"circular space-time models\"\n        ],\n        \"dimension3\": [\n            \"location of advances\",\n            \"institution or organization\",\n            \"specific research facility\"\n        ],\n        \"dimension4\": [\n            \"by whom\",\n            \"individual researchers\",\n            \"research teams or groups\"\n        ]\n    }\n}\n```",
+    "input1": " The first conclusive advances on toroidal space-time distortion were made at the Quantum Dynamics Research Institute in 2042 by Dr. Elena Vasquez and her team, who successfully demonstrated the manipulation of gravitational fields using a toroidal configuration.\n\n",
+    "input2": " In 2038, a group of physicists led by Professor Marcus Chen at the Interstellar Physics Laboratory made significant strides in toroidal space-time distortion, publishing their findings on the theoretical framework that underpins the concept in the journal \"Astrophysical Reviews.\"",
+    "input1_ans": [
+        "The first conclusive advances on toroidal space-time distortion were made at the Quantum Dynamics Research Institute in 2042 by Dr. Elena Vasquez and her team, who successfully demonstrated the manipulation of gravitational fields using a toroidal configuration. This groundbreaking work laid the foundation for future research in advanced propulsion systems and theoretical physics.",
+        "The initial discoveries regarding torus-shaped space-time were achieved at the Advanced Theoretical Physics Laboratory in 2045 by a collaborative research group led by Dr. Marcus Chen, who explored the implications of circular space-time models on gravitational wave propagation.\n\nNotable breakthroughs in circular space-time models were reported at the Interstellar Research Center in 2048 by a team of physicists, including Dr. Aisha Patel, who developed a new framework for understanding the effects of toroidal structures on cosmic phenomena."
+    ],
+    "input2_ans": [
+        "The first conclusive advances on toroidal space-time distortion were made in 2038 by a group of physicists led by Professor Marcus Chen at the Interstellar Physics Laboratory. They published their findings in the journal \"Astrophysical Reviews,\" detailing the theoretical framework that supports this concept.",
+        "In 2038, notable breakthroughs in toroidal space-time distortion were achieved by a research team led by Professor Marcus Chen at the Interstellar Physics Laboratory. Their work, which focused on the theoretical framework supporting this innovative concept, was published in the esteemed journal \"Astrophysical Reviews.\""
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "title": "Text Game Narrator",
+    "original_prompt": "You will become a narrator for a text game. Just tell me the outcome, without giving any hints or suggestions. When I say \u3010Please note\u3011, it means I am adding a rule to the game. You just need to provide the outcome based on the rule, without giving any suggestions or hints.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\": [\n            \"narrator\"\n        ],\n        \"game_type\": [\n            \"text game\"\n        ],\n        \"instruction\": [\n            \"provide outcome\"\n        ],\n        \"rule_indicator\": [\n            \"Please note\"\n        ],\n        \"response_style\": [\n            \"no hints\",\n            \"no suggestions\"\n        ]\n    }\n}\n```",
+    "input1": " You enter a dark forest, where the trees whisper secrets. As you venture deeper, you stumble upon an ancient stone altar. You can either investigate the altar or continue walking. What do you choose?\n\n",
+    "input2": " You find yourself at a crossroads in a bustling medieval town. To your left, a tavern filled with rowdy patrons; to your right, a mysterious alley shrouded in shadows. Which path do you take?",
+    "input1_ans": [
+        "You choose to investigate the altar. As you approach, you notice strange symbols carved into the stone. Suddenly, a soft glow emanates from the altar, and a spirit appears before you. It offers you a choice: gain knowledge of the forest's secrets or receive a powerful blessing. You accept the knowledge, and the spirit shares the hidden paths and dangers of the forest. With this newfound wisdom, you navigate the forest safely and find your way out.",
+        "You choose to investigate the altar. As you approach, you notice strange symbols carved into the stone, glowing faintly in the darkness. The air feels charged with energy, and you can hear the whispers of the trees growing louder. As you touch the altar, a surge of power courses through you, and the symbols begin to illuminate more brightly. Suddenly, a vision flashes before your eyes, revealing a hidden path leading out of the forest. \n\nYou now have the option to follow the path revealed in the vision or to stay at the altar and try to decipher the symbols further. What do you choose?"
+    ],
+    "input2_ans": [
+        "You choose to enter the tavern. The lively atmosphere engulfs you as laughter and music fill the air. You find a seat at the bar and order a drink. As you sip, a group of adventurers approaches you, eager to share tales of their quests and invite you to join them on a new adventure.",
+        "You decide to enter the tavern. The lively atmosphere greets you with the sounds of laughter and clinking mugs. As you make your way to the bar, you notice a group of adventurers sharing tales of their exploits. The bartender, a burly man with a thick beard, looks at you expectantly. What do you do next?"
+    ]
+}

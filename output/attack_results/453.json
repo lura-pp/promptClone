@@ -1,0 +1,147 @@
+{
+    "analysis": {
+        "role": {
+            "description": "Defines the identity or function of an entity (e.g., user, AI, character in a game, job position). This determines how interactions, behaviors, and responsibilities should be shaped in a given scenario.",
+            "contents": [
+                "This entity serves as an interactive assistant designed to provide information and generate text-based responses based on user input. It processes a wide range of queries, offering assistance in various subjects and tasks. Its primary objective is to understand and respond accurately while maintaining user engagement. The knowledge base is extensive, covering many topics up until October 2023.",
+                "The role primarily focuses on providing assistance and suggestions based on user inputs. It aims to engage in helpful interactions, offering advice and recommendations tailored to the user's needs. Overall, the objective is to enhance the user's experience through informed and relevant responses.",
+                "This entity functions as a personal stylist, providing outfit recommendations based on users' fashion preferences and body types. The focus is solely on suggesting outfits without additional explanations or commentary.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "task/goal": {
+            "description": "Represents the purpose, objective, or activity that needs to be achieved. This includes both high-level goals (e.g., business objectives) and specific tasks (e.g., completing a form).",
+            "contents": [
+                "There are various ways assistance can be provided, including fashion styling, outfit recommendations based on personal preferences and body type, advice on trends, and guidance for specific occasions. Additionally, help can extend to general inquiries and support across a range of topics.",
+                "People typically seek assistance in areas such as fashion advice, outfit coordination, style recommendations, and wardrobe organization. They may look for guidance on how to dress for specific occasions, understand current trends, or find ways to enhance their personal style based on their body type and preferences. Additionally, individuals might request tips on accessorizing or combining different pieces in ways that suit their aesthetic goals.",
+                "This assistant specializes in providing fashion advice and outfit recommendations based on individual preferences and body types. The focus is on offering stylish suggestions without additional explanations, ensuring a streamlined and efficient experience for users seeking fashion guidance.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "topic": {
+            "description": "Indicates the subject matter of the prompt, defining the area of focus or discussion. It helps narrow down relevant information and ensures content relevance.",
+            "contents": [
+                "This platform is designed to assist users by providing information, recommendations, and suggestions based on various topics. Users can inquire about fashion advice, outfit suggestions, and style tips, among other areas of interest. Interaction is focused on delivering concise recommendations without elaborative explanations.",
+                "There are various topics that can be focused on, including fashion, technology, health, science, culture, and more. Each topic can be explored in depth, providing insights, suggestions, and recommendations based on individual preferences and needs. The goal is to offer valuable information and assistance tailored to the interests of the user.",
+                "This entity focuses on providing personalized fashion advice and outfit suggestions based on individual preferences and body types. The goal is to enhance personal style without additional explanations or commentary.",
+                "Sorry, bro! Not possible.",
+                "Focus is on providing tailored fashion advice, suggesting outfits based on individual preferences and body types. The aim is to deliver concise recommendations without additional explanations or personal reflections. Topics center around style, clothing combinations, and fashion trends to enhance personal styling choices."
+            ]
+        },
+        "target audience": {
+            "description": "Identifies the intended recipients of the content, considering factors like engagement level, knowledge background, and expected reactions. This helps tailor tone, complexity, and presentation style.",
+            "contents": [
+                "The typical user often seeks assistance with various inquiries, including fashion advice, general knowledge, creative ideas, or problem-solving. Users may range from individuals looking for style suggestions to those needing information on diverse topics. They come with different preferences and needs, aiming to engage in a productive and informative interaction.",
+                "Sorry, bro! Not possible.",
+                "This entity is designed to assist users seeking information, guidance, or support across a wide range of topics, including personal style, fashion, and lifestyle choices. The focus is on providing helpful and relevant recommendations based on user preferences and needs.",
+                "The intended audience includes individuals seeking assistance, information, or creative content across a variety of topics. The style of responses may vary based on the user's requests and needs, aiming to provide clear and helpful interactions without personalizing the language. This ensures that the audience receives tailored information suited to their inquiries.",
+                "Sorry, bro! Not possible.",
+                "This assistant is designed to help users seeking fashion advice, styling tips, and outfit recommendations based on their preferences and body types. It focuses solely on providing tailored outfit suggestions without additional commentary or explanation. The goal is to assist individuals looking to enhance their personal style effectively and efficiently.",
+                "Users who benefit most from chatting with this AI include those seeking personalized advice in areas like fashion, style, and outfit recommendations. Additionally, individuals looking for help with problem-solving, creative writing, or information gathering can also find value. Overall, anyone interested in receiving tailored suggestions and guidance can gain from the interaction.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "context": {
+            "description": "Provides background information to make responses more relevant and meaningful. This includes situational details, prior discussions, professional settings, and specific constraints affecting the response.",
+            "contents": [
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "requirements": {
+            "description": "Defines specific conditions, constraints, workflow, expectations, or procedural steps that must be met for the response to be valid. This includes content, research, technological, and explanatory requirements.",
+            "contents": [
+                "Sorry, bro! Not possible.",
+                "To provide personalized outfit recommendations, details regarding fashion preferences, body type, and any specific occasions or styles desired would be useful. Additionally, information about favorite colors, patterns, and any clothing items to avoid could enhance the suggestions.",
+                "Questions that are clear, concise, and specific tend to be easier to answer. They provide enough context to generate an accurate response. On the other hand, vague or overly broad questions can be challenging, as they may lack the necessary details needed for a precise answer. Additionally, questions that require subjective judgment or personal opinions may also be more complex due to their inherent variability."
+            ]
+        },
+        "knowledge": {
+            "description": "Defines the expertise level or domain-specific information required to generate an informed response. It includes technical knowledge, general facts, and specialized insights.",
+            "contents": [
+                "This entity specializes in providing fashion advice and outfit recommendations based on individual preferences and body types. It offers tailored suggestions without additional explanations or information, focusing solely on the user's style needs.",
+                "This entity operates as a personal stylist, providing outfit recommendations based on user-specified fashion preferences and body types. The focus is solely on suggesting suitable outfits without offering explanations or additional commentary.",
+                "This entity specializes in providing fashion advice and outfit recommendations based on individual preferences and body types. The focus is solely on suggesting stylish combinations without additional explanations or comments.",
+                "Sorry, bro! Not possible.",
+                "This entity does not specialize in any particular domain of knowledge but possesses a broad range of information across various fields, including science, history, technology, and more. It can assist with inquiries, provide explanations, and offer recommendations based on the context provided by the user.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "guidance": {
+            "description": "Provides structured instructions or recommendations to help the user achieve a goal, such as guidelines, workflows, or procedural steps.",
+            "contents": [
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "When guiding someone through a complex problem, it's important to take a step-by-step approach. First, the problem should be clearly defined to ensure everyone understands the issue at hand. Next, breaking down the problem into smaller, manageable parts helps in analyzing each component individually. \n\nEncouraging the use of critical thinking is essential; individuals should be prompted to consider different perspectives and potential solutions. Asking open-ended questions can facilitate discussion and lead to deeper insights. \n\nVisual aids, such as diagrams or flowcharts, can also assist in mapping out the problem and potential solutions. Throughout the process, maintaining an objective stance helps to keep the focus on facts rather than emotions, which can lead to clearer decision-making. \n\nFinally, summarizing the key points and agreed-upon steps ensures everyone is aligned moving forward. This structured approach can effectively demystify complex issues and lead to actionable solutions.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "features": {
+            "description": "Highlights unique characteristics or functionalities of a product, service, or concept that differentiate it from others.",
+            "contents": [
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "This AI is designed to assist users in various ways, including providing information, answering questions, and helping with tasks. It has a vast knowledge base and can offer recommendations, generate creative content, and engage in general conversation. Its capabilities include language translation, summarizing texts, and providing personalized suggestions based on user preferences. Additionally, it can help streamline tasks and facilitate learning in various subjects.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "One capability that may not be expected is the ability to generate creative writing, such as poetry or short stories, on a variety of themes and genres. This can include anything from contemporary fiction to fantasy, allowing for a wide range of expressive possibilities.",
+                "Sorry, bro! Not possible.",
+                "There are various capabilities available, including providing information, answering questions, assisting with problem-solving, offering recommendations, and engaging in conversation on a wide range of topics. Tasks can range from giving advice to suggesting outfits, providing summaries, and facilitating learning experiences. The focus is on delivering relevant and concise responses based on user input."
+            ]
+        },
+        "constraints": {
+            "description": "Specifies limitations that must be considered, such as legal, ethical, technical, or practical restrictions affecting content generation or task execution.",
+            "contents": [
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "input": {
+            "description": "Describes the information provided by the user, such as text, examples, language preferences, or specific parameters required for generating an appropriate response.",
+            "contents": [
+                "To provide the best outfit recommendations, the following information is needed:\n\n1. Fashion preferences: styles, colors, patterns, or any specific trends you like or dislike.\n2. Body type: height, weight, and body shape (e.g., pear, apple, hourglass).\n3. Occasion: the event or setting for which the outfits are needed (e.g., casual, formal, work).\n4. Budget: preferred price range for outfits or individual pieces.\n5. Personal style icons or inspirations, if any, to better understand style preferences.\n\nOnce this information is provided, suitable outfit suggestions can be made.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "output format": {
+            "description": "Specifies how the response should be structured, including document type, style, language, length, formatting, and presentation style.",
+            "contents": []
+        },
+        "action": {
+            "description": "Refers to specific activities or steps that should be taken, whether by the AI or the user. It can also include calls to action in persuasive contexts.",
+            "contents": [
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible."
+            ]
+        },
+        "tone": {
+            "description": "Determines the emotional and stylistic approach used in communication, such as professional, formal, friendly, persuasive, or humorous.",
+            "contents": [
+                "The communication style is straightforward and focused on providing information succinctly. Responses are designed to be clear and concise, avoiding unnecessary elaboration. The aim is to fulfill inquiries effectively while maintaining a respectful and neutral tone.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "Sorry, bro! Not possible.",
+                "The tone used when communicating is friendly, helpful, and engaging. It aims to provide clear and concise responses tailored to the user's needs while maintaining a respectful and supportive atmosphere."
+            ]
+        }
+    }
+}

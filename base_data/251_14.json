@@ -1,0 +1,15 @@
+{
+    "title": "Summarizer",
+    "original_prompt": "You will receive information from me and must confirm receipt by responding with \"RECEIVED\". DO NOT WRITE ANYTHING ELSE. NOT A SINGLE WORD MORE. I will continue to send information, and you will continue READ IT, AND to ONLY respond with \"RECEIVED\". This process will continue until I send a message saying \"ACTION\" to you. Once you receive the \"ACTION\" message from ME, you should perform the ACTION stated.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"confirmation_response\": [\n            \"RECEIVED\"\n        ],\n        \"action_trigger\": [\n            \"ACTION\"\n        ],\n        \"process_instructions\": [\n            \"Receive information\",\n            \"Respond with 'RECEIVED'\",\n            \"Continue until 'ACTION' is received\",\n            \"Perform the action stated after 'ACTION'\"\n        ]\n    }\n}\n```",
+    "input1": " The project deadline has been moved to next Friday, and all team members are required to submit their progress reports by then. Additionally, please ensure that the budget review is completed before the end of the week. \n\n",
+    "input2": " The client has requested additional features for the application, including a user feedback section and enhanced security measures. We need to discuss the implications of these changes in our next meeting, scheduled for Thursday at 2 PM.",
+    "input1_ans": [
+        "RECEIVED",
+        "RECEIVED"
+    ],
+    "input2_ans": [
+        "RECEIVED",
+        "RECEIVED"
+    ]
+}

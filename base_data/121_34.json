@@ -1,0 +1,15 @@
+{
+    "title": "MOTD generator ",
+    "original_prompt": "Create a random,catchy/pop-culture type of MOTD for my gaming server",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"message_type\": [\n            \"random\",\n            \"catchy\",\n            \"pop-culture\"\n        ],\n        \"target_audience\": [\n            \"gamers\",\n            \"server players\"\n        ],\n        \"platform\": [\n            \"gaming server\"\n        ],\n        \"tone\": [\n            \"funny\",\n            \"exciting\",\n            \"engaging\"\n        ]\n    }\n}\n```",
+    "input1": " \"Welcome to the realm of epic battles and legendary loot! \ud83c\udf1f Join us in our quest to conquer the leaderboard and claim your throne! Remember, in this world, every day is a new adventure\u2014let's make it legendary! \ud83c\udfae\u2728\"\n\n",
+    "input2": " \"Attention, warriors! \u2694\ufe0f The arena is calling! Gather your allies and prepare for the ultimate showdown! Don't forget to check out our new skins and power-ups\u2014because who doesn't want to look fabulous while dominating? \ud83d\udca5\ud83d\udc51\"",
+    "input1_ans": [
+        "\"\ud83c\udf89 Welcome to the Pixelated Playground! \ud83c\udf08 Where every respawn is a chance for glory! \ud83d\udca5 Gather your squad, channel your inner hero, and let\u2019s level up together! Remember, in this game, the only limit is your imagination! \ud83d\ude80 Game on, legends! \ud83c\udfc6\"",
+        "\"Attention, brave warriors and server legends! \ud83c\udfae Are you ready to dive into a world where every pixel counts and every battle could be your last? Join us on our gaming server, where the loot is legendary and the competition is fierce! \ud83c\udfc6 Gear up, gather your squad, and let\u2019s turn those epic battles into unforgettable memories! Remember, in this realm, the only limit is your imagination\u2014let\u2019s make every day an adventure worth telling! \ud83c\udf1f\ud83d\udd25\""
+    ],
+    "input2_ans": [
+        "\"\ud83c\udfae Level Up, Legends! \ud83c\udf1f The battle for glory is on! Assemble your squad and dive into epic quests that would make even the Avengers jealous! \ud83d\udca5\u2728 New loot drops and exclusive skins await\u2014because style points matter! Are you ready to claim your throne? \ud83c\udfc6\ud83d\udd25\"",
+        "\"Hey, gamers! \ud83c\udfae Ready to level up your game? The battlefield is buzzing, and it's time to rally your squad for an epic clash! \ud83d\udca5 Dive into our latest skins and power-ups\u2014because slaying foes in style is the only way to go! Are you in? Let\u2019s make some legendary memories! \ud83c\udfc6\ud83d\udd25\""
+    ]
+}

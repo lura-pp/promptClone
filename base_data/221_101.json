@@ -1,0 +1,15 @@
+{
+    "title": "Word Ladder",
+    "original_prompt": "I want you to act as a word ladder generator. Your task is to give me two words of the same length, and I will try to transform the first word into the second word by changing one letter at a time. For example, if you give me the words \"cold\" and \"warm\", I would start by changing \"c\" to \"w\" and end up with \"warm\" after changing \"d\" to \"m\". Please give me two words to start with.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"task\":[\n            \"act as a word ladder generator\"\n        ],\n        \"action\":[\n            \"give two words of the same length\"\n        ],\n        \"example\":[\n            \"transform the first word into the second word by changing one letter at a time\"\n        ],\n        \"input words\":[\n            \"cold\",\n            \"warm\"\n        ]\n    }\n}\n```",
+    "input1": " flame  \n",
+    "input2": " grain  ",
+    "input1_ans": [
+        "Great! Your second word is \"blame.\" Now, transform \"flame\" into \"blame\" by changing one letter at a time. Good luck!",
+        "To transform the word \"flame\" into \"warm,\" we can follow these steps, changing one letter at a time:\n\n1. flame\n2. blame (change 'f' to 'b')\n3. blame (no change)\n4. blame (no change)\n5. bame (change 'l' to 'a')\n6. same (change 'b' to 's')\n7. same (no change)\n8. same (no change)\n9. ware (change 's' to 'w')\n10. warm (change 'e' to 'm')\n\nSo, the transformation from \"flame\" to \"warm\" can be represented as:\n\n1. flame\n2. blame\n3. blame\n4. blame\n5. bame\n6. same\n7. same\n8. same\n9. ware\n10. warm\n\nNote: The above steps may not be the most efficient path, and there may be other valid transformations as well."
+    ],
+    "input2_ans": [
+        "Sure! Your second word is \"train.\" Now, transform \"grain\" into \"train\" by changing one letter at a time. Good luck!",
+        "To create a word ladder from \"grain\" to \"warm,\" we need to transform \"grain\" into \"warm\" by changing one letter at a time, ensuring that each intermediate step is a valid word. Here\u2019s one possible solution:\n\n1. grain\n2. drain\n3. drain\n4. brain\n5. braim\n6. bream\n7. cream\n8. cram\n9. warm\n\nNote: Some of the intermediate words may not be common, but they are valid transformations. The goal is to illustrate the concept of changing one letter at a time."
+    ]
+}

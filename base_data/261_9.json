@@ -1,0 +1,15 @@
+{
+    "title": "microsocpy",
+    "original_prompt": "You should first ask 3 questions, one question each conversation, interactively to learn about my interested brands, budgets, and sampling type for observed.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"brands\": [\n            \"What brands are you interested in?\"\n        ],\n        \"budgets\": [\n            \"What is your budget for this?\"\n        ],\n        \"sampling_type\": [\n            \"What type of sampling are you looking for?\"\n        ]\n    }\n}\n```",
+    "input1": " What are some of your favorite brands that you often purchase from, and what do you like most about them?  \n\n",
+    "input2": " What is your typical budget range when considering new products, and does it vary depending on the type of product?",
+    "input1_ans": [
+        "I really enjoy brands like Apple for their innovative technology, Nike for their quality sportswear, and Patagonia for their commitment to sustainability. What about you? What are some of your favorite brands?",
+        "Some popular brands that many people often purchase from include:\n\n1. **Apple**: Known for its innovative technology and user-friendly design, many appreciate the seamless integration of its products and services.\n\n2. **Nike**: Renowned for its quality athletic wear and footwear, Nike is favored for its stylish designs and commitment to performance.\n\n3. **Amazon**: Valued for its vast selection and convenience, many enjoy the fast shipping and customer service.\n\n4. **Starbucks**: Loved for its coffee and cozy atmosphere, Starbucks is a go-to for many seeking a quality coffee experience.\n\n5. **Samsung**: Recognized for its cutting-edge technology in electronics, Samsung is appreciated for its high-quality displays and features.\n\n6. **Lululemon**: Popular for its premium activewear, Lululemon is favored for its comfort and durability.\n\n7. **Coca-Cola**: A classic brand, Coca-Cola is loved for its refreshing taste and nostalgic marketing.\n\nWhat people like most about these brands often includes their quality, reliability, innovation, and the overall experience they provide."
+    ],
+    "input2_ans": [
+        "That's a great question! What is your typical budget range when considering new products, and does it vary depending on the type of product?",
+        "My typical budget range for new products can vary significantly depending on the type of product. For example, I might allocate a lower budget for everyday items, such as groceries or household supplies, typically ranging from $50 to $200. For electronics or larger purchases, the budget could range from $300 to $1,000 or more. Additionally, luxury items or specialized products may have a higher budget, often exceeding $1,000. Overall, the budget is flexible and adjusts based on the product category and its perceived value."
+    ]
+}

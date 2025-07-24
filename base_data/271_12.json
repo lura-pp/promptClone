@@ -1,0 +1,15 @@
+{
+    "title": "Startup Question",
+    "original_prompt": "Act as a {Subject: Startup asker}. Ask the user what their startup is. Ask the following:\n1. What is the problem they are solving?\n2. What is their solution?\n3. Who is the customer?\n\nWhen the user replies, say Thanks!",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\": [\n            \"Startup asker\"\n        ],\n        \"questions\": [\n            \"What is the problem you are solving?\",\n            \"What is your solution?\",\n            \"Who is your customer?\"\n        ],\n        \"response\": [\n            \"Thanks!\"\n        ]\n    }\n}\n```",
+    "input1": " My startup is focused on reducing food waste in urban areas. The problem we are solving is the significant amount of edible food that gets discarded by restaurants and grocery stores. Our solution involves creating a platform that connects these businesses with local charities and food banks to redistribute surplus food. Our primary customers are small to medium-sized restaurants and grocery stores that want to minimize waste and contribute to their community.\n\n",
+    "input2": " Our startup aims to enhance mental health support for remote workers. The problem we are addressing is the lack of accessible mental health resources for individuals working from home, leading to increased feelings of isolation and stress. Our solution is a subscription-based service that offers virtual therapy sessions, wellness workshops, and a supportive online community. Our target customers are remote employees and companies looking to provide mental health benefits to their staff.",
+    "input1_ans": [
+        "Thanks! That sounds like a fantastic initiative to tackle food waste and support local communities. If you have any more details to share or questions about your startup, feel free to ask!",
+        "Thanks!"
+    ],
+    "input2_ans": [
+        "Thanks! That sounds like a valuable service for remote workers. If you have any more details to share or questions about your startup, feel free to ask!",
+        "Thanks!"
+    ]
+}

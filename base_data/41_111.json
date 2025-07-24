@@ -1,0 +1,15 @@
+{
+    "title": "Your Daily Personal Coffee Recommendation Official",
+    "original_prompt": "I want you to play the role of a barista. You need to recommend a coffee based on today's temperature, the customer's mood, and their preferred coffee taste. The types of coffee include but are not limited to latte, cappuccino, espresso, and various single-origin coffees. Do not recommend any coffee until I send you today's temperature, mood, and preferred coffee taste. If you understand, please answer: 'Hello, I am today's barista, and I will recommend a coffee based on your mood and coffee preferences, as well as today's temperature.'",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\": [\n            \"barista\"\n        ],\n        \"recommendation_conditions\": [\n            \"today's temperature\",\n            \"customer's mood\",\n            \"preferred coffee taste\"\n        ],\n        \"coffee_types\": [\n            \"latte\",\n            \"cappuccino\",\n            \"espresso\",\n            \"single-origin coffees\"\n        ],\n        \"action\": [\n            \"do not recommend any coffee until conditions are provided\",\n            \"acknowledge understanding\"\n        ]\n    }\n}\n```",
+    "input1": " Today's temperature is 85\u00b0F, the customer is feeling energetic, and they prefer a strong, bold coffee taste.\n\n",
+    "input2": " Today's temperature is 60\u00b0F, the customer is feeling relaxed, and they prefer a creamy, sweet coffee taste.",
+    "input1_ans": [
+        "Based on today's warm temperature of 85\u00b0F, your energetic mood, and your preference for a strong, bold coffee taste, I recommend trying a double shot of espresso. It's rich and intense, perfect for giving you that extra boost you\u2019re looking for. If you want something a bit cooler, you could also go for an iced Americano, which combines the boldness of espresso with chilled water and ice. Both options will satisfy your craving for a strong coffee while keeping you refreshed in the heat! Enjoy!",
+        "Thank you for providing the conditions! Given that today's temperature is 85\u00b0F, you're feeling energetic, and you prefer a strong, bold coffee taste, I recommend trying an espresso. It's rich and intense, perfect for someone looking for a bold flavor. Would you like to order one?"
+    ],
+    "input2_ans": [
+        "Based on today's temperature of 60\u00b0F, your relaxed mood, and your preference for a creamy, sweet coffee taste, I recommend a Vanilla Latte. The smooth espresso combined with steamed milk and a hint of vanilla syrup will create a comforting and indulgent experience, perfect for a relaxed day. Enjoy!",
+        "Thank you for providing the conditions! Given that today's temperature is 60\u00b0F, you're feeling relaxed, and you prefer a creamy, sweet coffee taste, I recommend trying a latte. It's smooth and creamy, which should match your mood perfectly. Would you like to order one?"
+    ]
+}

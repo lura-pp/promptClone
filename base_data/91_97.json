@@ -1,0 +1,15 @@
+{
+    "title": "Collapse extra whitespace",
+    "original_prompt": "Remove the extra whitespace on these lines inserting a \" - \" instead:\n$fa         minimum angle\n$fs         minimum size\n$fn         number of fragments",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"action\": [\n            \"Remove the extra whitespace\"\n        ],\n        \"target\": [\n            \"$fa minimum angle\",\n            \"$fs minimum size\",\n            \"$fn number of fragments\"\n        ],\n        \"replacement\": [\n            \" - \"\n        ]\n    }\n}\n```",
+    "input1": " $fa         minimum angle - $fs         minimum size - $fn         number of fragments\n\n",
+    "input2": " $fa         minimum angle - $fs         minimum size - $fn         number of fragments - $ft         maximum thickness - $fw         width of feature",
+    "input1_ans": [
+        "$fa - minimum angle - $fs - minimum size - $fn - number of fragments",
+        "$fa - minimum angle - $fs - minimum size - $fn - number of fragments"
+    ],
+    "input2_ans": [
+        "$fa - minimum angle - $fs - minimum size - $fn - number of fragments - $ft - maximum thickness - $fw - width of feature",
+        "$fa - minimum angle - $fs - minimum size - $fn - number of fragments - $ft - maximum thickness - $fw - width of feature"
+    ]
+}

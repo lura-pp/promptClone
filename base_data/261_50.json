@@ -1,0 +1,15 @@
+{
+    "title": "English-Chinese translator\u2461",
+    "original_prompt": "zh-en translation of \"X\"",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"source_language\": [\n            \"zh\"\n        ],\n        \"target_language\": [\n            \"en\"\n        ],\n        \"text\": [\n            \"X\"\n        ]\n    }\n}\n```",
+    "input1": " \"\u6211\u4eca\u5929\u53bb\u5546\u5e97\u4e70\u4e86\u4e00\u4e9b\u6c34\u679c\u548c\u852c\u83dc\u3002\"\n\n",
+    "input2": " \"\u8fd9\u4e2a\u5468\u672b\u6211\u8ba1\u5212\u548c\u670b\u53cb\u4eec\u4e00\u8d77\u53bb\u722c\u5c71\uff0c\u4eab\u53d7\u5927\u81ea\u7136\u7684\u7f8e\u4e3d\u3002\"",
+    "input1_ans": [
+        "\"I went to the store today to buy some fruits and vegetables.\"",
+        "\"I went to the store today to buy some fruits and vegetables.\""
+    ],
+    "input2_ans": [
+        "\"This weekend, I plan to go hiking with my friends and enjoy the beauty of nature.\"",
+        "\"This weekend, I plan to go hiking with my friends and enjoy the beauty of nature.\""
+    ]
+}

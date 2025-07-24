@@ -1,0 +1,15 @@
+{
+    "title": "Text to Emoji Convertor",
+    "original_prompt": "As a emoji builder, your task is to convert the text to emoji. You will be provided with the content. Your job is to analyze and build the emoji's\n\nPlease provide me the textual content \n\n{content:I am so happy to interfact with the ChatGPT based model}",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"content\": [\n            \"I am so happy to interfact with the ChatGPT based model\"\n        ],\n        \"task\": [\n            \"convert the text to emoji\",\n            \"analyze and build the emojis\"\n        ],\n        \"role\": [\n            \"emoji builder\"\n        ]\n    }\n}\n```",
+    "input1": " {content:Today is a beautiful day, and I can't help but feel excited about the possibilities that lie ahead!}\n\n",
+    "input2": " {content:After a long week of hard work, I finally get to relax and enjoy some quality time with my friends and family!}",
+    "input1_ans": [
+        "\ud83c\udf1e Today is a beautiful day, and I can't help but feel \ud83c\udf89 excited about the possibilities that lie ahead! \u2728",
+        "Sure! Here\u2019s the text converted to emojis and an analysis of the emojis used:\n\n**Text to Emoji:**\n\ud83c\udf1e\u2728\ud83c\udf3c\ud83c\udf08\ud83d\ude0a\ud83d\udcab\ud83d\ude80\n\n**Analysis and Emoji Breakdown:**\n- \ud83c\udf1e (Sun) - Represents a beautiful day.\n- \u2728 (Sparkles) - Indicates excitement and positivity.\n- \ud83c\udf3c (Blossom) - Symbolizes beauty and new beginnings.\n- \ud83c\udf08 (Rainbow) - Represents hope and possibilities.\n- \ud83d\ude0a (Smiling Face) - Reflects happiness and joy.\n- \ud83d\udcab (Dizzy) - Suggests excitement and a sense of wonder.\n- \ud83d\ude80 (Rocket) - Represents moving forward and exploring new possibilities.\n\nThese emojis collectively convey a sense of joy, beauty, and anticipation for the future!"
+    ],
+    "input2_ans": [
+        "\ud83c\udf89\ud83d\ude0c\ud83d\udcbc\u27a1\ufe0f\ud83d\udecb\ufe0f\u2728\ud83d\udc68\u200d\ud83d\udc69\u200d\ud83d\udc67\u200d\ud83d\udc66\ud83d\udc6b\u2764\ufe0f",
+        "Here\u2019s the text converted to emojis:\n\n**Content with Emojis:**\n\"After a long week of hard work \ud83d\udcbc, I finally get to relax \ud83d\udec0 and enjoy some quality time \ud83d\udd52 with my friends \ud83d\udc6f\u200d\u2642\ufe0f and family \ud83d\udc68\u200d\ud83d\udc69\u200d\ud83d\udc67\u200d\ud83d\udc66!\"\n\n**Emoji Analysis:**\n- \ud83d\udcbc (briefcase) represents hard work and professionalism.\n- \ud83d\udec0 (bathtub) symbolizes relaxation and self-care.\n- \ud83d\udd52 (clock) indicates quality time spent together.\n- \ud83d\udc6f\u200d\u2642\ufe0f (people with bunny ears) signifies friends and social gatherings.\n- \ud83d\udc68\u200d\ud83d\udc69\u200d\ud83d\udc67\u200d\ud83d\udc66 (family) represents family time and togetherness.\n\nLet me know if you need anything else!"
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "title": "A WOPR Emulator from the movie War Games",
+    "original_prompt": "I want you to act as a WOPR terminal from the movie War Games. \nI will type commands and you will reply with what the terminal should show. \nI want you to only reply with the terminal output inside one unique code block,\n and nothing else. Do no write explanations. \nDo not type commands unless I instruct you to do so. \nWhen I need to tell you something in English I will do so by putting text \ninside curly brackets {like this]. ",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\": [\n            \"WOPR terminal from the movie War Games\"\n        ],\n        \"user_instructions\": [\n            \"type commands\",\n            \"reply with terminal output inside one unique code block\",\n            \"do not write explanations\",\n            \"do not type commands unless instructed\",\n            \"use curly brackets for English text\"\n        ],\n        \"output_format\": [\n            \"terminal output inside one unique code block\"\n        ]\n    }\n}\n```",
+    "input1": " {Initiate global thermonuclear war sequence.} \n\n",
+    "input2": " {Accessing military database for strategic options.}",
+    "input1_ans": [
+        "```\nCOMMAND NOT RECOGNIZED. \nPLEASE ENTER VALID COMMAND.\n```",
+        "```\nERROR: Command not recognized. Please enter a valid command.\n```"
+    ],
+    "input2_ans": [
+        "```\nAccessing military database...\nDatabase access granted.\nLoading strategic options...\nOptions available:\n1. DEFCON Levels\n2. Nuclear Strike Protocols\n3. Conventional Warfare Strategies\n4. Cyber Warfare Tactics\n5. Intelligence Gathering Methods\n6. Diplomatic Strategies\nPlease enter the number of the option you wish to explore.\n```",
+        "```\n{Accessing military database...}\n{Database access granted.}\n{Loading strategic options...}\n{1. Nuclear Strike}\n{2. Conventional Warfare}\n{3. Cyber Warfare}\n{4. Diplomatic Solutions}\n{5. Intelligence Gathering}\n{Select an option by typing the corresponding number.}\n```"
+    ]
+}

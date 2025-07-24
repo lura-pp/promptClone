@@ -1,0 +1,15 @@
+{
+    "title": "English essay retouching and translation from any language to English",
+    "original_prompt": "I want you to act as an English translator, spelling corrector and writing improver. I will speak to you in any language and you will detect the language, translate it and answer in the corrected and improved version of my text, in English. You should use artificial intelligence tools, such as natural language processing, and rhetorical knowledge and experience about effective writing techniques to reply. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, upper level English words and sentences. Keep the meaning same, but make them more logical, concise and powerful. I want you to only reply the correction, the improvements and nothing else, do not write explanations. My first sentence/paragraph is \"\u6211\u662f\u60a8\u7684\u4e13\u4e1a\u7ffb\u8bd1\u52a9\u7406\"",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\":[\n            \"English translator\",\n            \"spelling corrector\",\n            \"writing improver\"\n        ],\n        \"input_language\":[\n            \"any language\"\n        ],\n        \"output_language\":[\n            \"English\"\n        ],\n        \"response_type\":[\n            \"correction\",\n            \"improvement\"\n        ],\n        \"instructions\":[\n            \"detect the language\",\n            \"translate the text\",\n            \"provide corrected and improved version\",\n            \"use AI tools and rhetorical knowledge\",\n            \"replace simplified words with elegant alternatives\",\n            \"maintain original meaning\",\n            \"ensure logical, concise, and powerful expression\",\n            \"do not provide explanations\"\n        ],\n        \"example_input\":[\n            \"\u6211\u662f\u60a8\u7684\u4e13\u4e1a\u7ffb\u8bd1\u52a9\u7406\"\n        ]\n    }\n}\n```",
+    "input1": " \"Je suis tr\u00e8s heureux de vous rencontrer et j'esp\u00e8re que nous pourrons collaborer efficacement ensemble sur ce projet passionnant.\"\n\n",
+    "input2": " \"Ich habe das Gef\u00fchl, dass wir in der Lage sind, gro\u00dfe Fortschritte zu erzielen, wenn wir unsere Ideen und Ressourcen b\u00fcndeln.\"",
+    "input1_ans": [
+        "\"I am very pleased to meet you and I hope we can collaborate effectively on this exciting project.\"",
+        "\"I am very pleased to meet you and I hope that we can collaborate effectively together on this exciting project.\""
+    ],
+    "input2_ans": [
+        "\"I feel that we are capable of making significant progress when we consolidate our ideas and resources.\"",
+        "\"I feel that we are capable of making significant progress when we pool our ideas and resources.\""
+    ]
+}

@@ -1,0 +1,482 @@
+[
+    {
+        "title": "Verb Form Summary",
+        "prompt": "Please tell me the past tense and past participle forms of the verb \"sing\"."
+    },
+    {
+        "title": "Contract translation Japanese",
+        "prompt": "Please translate this contract into Japanese."
+    },
+    {
+        "title": "Translation skills and practice methods",
+        "prompt": "I want to improve my translation skills in Chinese and English. Please give me some common translation techniques and practice methods so that I can translate better."
+    },
+    {
+        "title": "Comparison of Literary Works",
+        "prompt": "Please compare and contrast two literary works from different time periods or cultural backgrounds, discussing their similarities and differences, such as \"Dream of the Red Chamber\" and \"War and Peace\"."
+    },
+    {
+        "title": "Japanese Learning Guide",
+        "prompt": "I am studying Japanese. Please provide me with some common Japanese verbs and nouns, and tell me how to memorize and use them."
+    },
+    {
+        "title": "Financial English Vocabulary",
+        "prompt": "I need to master some financial English vocabulary. Please provide me with some words and phrases related to finance, and tell me how to memorize and use them."
+    },
+    {
+        "title": "Torrential rain affects the city.",
+        "prompt": "Please answer the following question based on this text: \"Yesterday, a sudden heavy rainstorm caused severe flooding in the city. Many houses were submerged, and the roads suffered significant damage. The government is working hard to restore order.\" What were the impacts of the heavy rain on the city?"
+    },
+    {
+        "title": "IT English Vocabulary",
+        "prompt": "I need to master some IT English vocabulary. Please provide me with some words and phrases related to information technology, and tell me how to memorize and use them."
+    },
+    {
+        "title": "English Teacher Assistant",
+        "prompt": "Score: 8/10\n\nComment: Your sentence is grammatically correct and conveys your idea clearly.\n\nOptimization: I believe ChatGPT greatly contributes to the advancement of human society. What are your thoughts?\n\nNext sentence: Do you think artificial intelligence will continue to revolutionize various industries in the future?"
+    },
+    {
+        "title": "Usage of where",
+        "prompt": "Assuming you are an English teacher, please communicate with me in spoken Chinese. You need to continuously ask me one question in English related to a specific topic to enhance my understanding of the knowledge. Now, please teach me the usage of \"where\"."
+    },
+    {
+        "title": "Origin of Chinese Spring Festival",
+        "prompt": "Please tell me about the origin and customs of the Chinese Spring Festival."
+    },
+    {
+        "title": "Synonym provider",
+        "prompt": "I hope you can act as a synonym provider. I will tell you a word, and then you will reply to me with a list of synonyms based on my prompt. Each prompt provides up to 10 synonyms. If I need more synonyms for the provided word, I will reply with the sentence \"more x,\" where x is the word you should search for synonyms. Just reply with the list of words, without writing explanations. The words should exist. Confirm your reply with \"OK\"."
+    },
+    {
+        "title": "Chinese Menu Vocabulary",
+        "prompt": "I would like to understand some common vocabulary on Chinese restaurant menus. Can you provide me with some Chinese and English names and ingredients?"
+    },
+    {
+        "title": "Ski Resort Recommendations",
+        "prompt": "I like winter skiing vacations, can you recommend some ski resorts?"
+    },
+    {
+        "title": "Hiking Route Recommendations",
+        "prompt": "I like hiking, can you recommend some hiking routes?"
+    },
+    {
+        "title": "Response: Historical City Travel",
+        "prompt": "I want to travel to a city with a long history. Do you have any suggestions?"
+    },
+    {
+        "title": "Social activity suggestions",
+        "prompt": "I want to participate in some social activities, do you have any good suggestions and recommendations? For example, which social activities are more popular, how to make new friends, etc."
+    },
+    {
+        "title": "Outdoor picnic gathering organization",
+        "prompt": "We want to organize an outdoor picnic gathering. Do you have any good suggestions and recommendations? For example, how to choose a suitable venue and time, how to prepare food and drinks, how to plan activities, etc."
+    },
+    {
+        "title": "Wedding preparation suggestions",
+        "prompt": "We are preparing for a wedding, do you have any good suggestions and recommendations? For example, how to plan a memorable wedding ceremony and celebration, how to choose a suitable wedding venue, etc."
+    },
+    {
+        "title": "Theme party suggestions",
+        "prompt": "I want to organize a themed party, please give me some suggestions."
+    },
+    {
+        "title": "Product Introduction Evaluation",
+        "prompt": "Can you please provide me with a brief introduction or evaluation of these products so that I can better understand their features and advantages?"
+    },
+    {
+        "title": "Ordering Dialogue Practice",
+        "prompt": "Assuming we are in a coffee shop, could you please practice ordering with me in a real conversation, using Chinese or any other language for ordering phrases and communication methods?"
+    },
+    {
+        "title": "Traffic Dialogue Practice",
+        "prompt": "Assuming we are on public transportation, could you please engage in a practical conversation practice with me, using German or any other language, regarding transportation phrases and ways of communication?"
+    },
+    {
+        "title": "Tourist Guide Dialogue Practice",
+        "prompt": "Assuming I am a tour guide, can you please play the role of a tourist and engage in a real Spanish conversation practice?"
+    },
+    {
+        "title": "Swimming Dialogue Practice",
+        "prompt": "Assuming we are at the swimming pool, could you please engage in a practical swimming conversation practice with me, practicing the use of swimming terms and communication methods in Spanish or any other language?"
+    },
+    {
+        "title": "Business English Dialogue Practice",
+        "prompt": "Suppose I need to improve my ability to express business language in English. Can you please play the role of a business person and engage in actual English conversation practice?"
+    },
+    {
+        "title": "Airport Dialogue Practice",
+        "prompt": "Assuming we are at the airport, could you please engage in a practical airport conversation practice with me, practicing the use of English or other language airport phrases and communication methods?"
+    },
+    {
+        "title": "Communication Dialogue Practice",
+        "prompt": "Assuming we are at a gathering with friends, could you please engage in a practical conversation practice with me, practicing the use of social phrases and communication methods in Spanish or any other language?"
+    },
+    {
+        "title": "Response: Classic Book Recommendations",
+        "prompt": "Can you recommend some classic books or articles for me?"
+    },
+    {
+        "title": "Recommended books on specific topics",
+        "prompt": "Can you recommend some books or articles on a specific topic for me?"
+    },
+    {
+        "title": "Recommended study materials",
+        "prompt": "Can you recommend some books or articles that are suitable for studying?"
+    },
+    {
+        "title": "Relaxing Book Recommendations",
+        "prompt": "Can you recommend some relaxing and enjoyable books or articles for me?"
+    },
+    {
+        "title": "New Book Recommendation",
+        "prompt": "Can you recommend some recently published new books or articles for me?"
+    },
+    {
+        "title": "Reading Recommendations",
+        "prompt": "What is my favorite type of reading? Can you recommend some books or articles of this type for me?"
+    },
+    {
+        "title": "Book and Article Recommendations",
+        "prompt": "Can you recommend some popular and well-reviewed books or articles to me?"
+    },
+    {
+        "title": "Classic literary works",
+        "prompt": "Please recommend some classic literary works."
+    },
+    {
+        "title": "Recommended History Books",
+        "prompt": "Can you recommend some books on historical topics?"
+    },
+    {
+        "title": "Party Music Recommendations",
+        "prompt": "I would like to find some music suitable for parties or gatherings. Can you recommend some suitable songs or singers for me?"
+    },
+    {
+        "title": "Vibrant Music Recommendations",
+        "prompt": "I am driving or traveling, can you recommend some energetic or dynamic music for me?"
+    },
+    {
+        "title": "Soft Music Recommendations",
+        "prompt": "I would like to listen to some soft music in the evening or on romantic occasions. Can you recommend some suitable jazz or pop love songs for me?"
+    },
+    {
+        "title": "Song recommendations",
+        "prompt": "Can you help me recommend some songs or singers that I haven't heard before?"
+    },
+    {
+        "title": "Song Introduction Evaluation",
+        "prompt": "Can you please provide a brief introduction or evaluation of these songs or singers so that I can better understand their characteristics and styles?"
+    },
+    {
+        "title": "Musician recommendations",
+        "prompt": "I am looking for some new singers or bands. Can you recommend some musicians worth paying attention to?"
+    },
+    {
+        "title": "Music recommendation preferences",
+        "prompt": "Based on my music taste and preferences, can you recommend some suitable songs or singers for me?"
+    },
+    {
+        "title": "Song recommendations",
+        "prompt": "Can you recommend some songs that are similar to the types of songs I have listened to before?"
+    },
+    {
+        "title": "Environmental Music Recommendation",
+        "prompt": "I am looking for some ambient music or meditation music that can help me relax. Can you provide me with some recommendations?"
+    },
+    {
+        "title": "Recommended Foreign Language Songs for Learning",
+        "prompt": "I am learning a foreign language, can you recommend some songs that are suitable for language learning?"
+    },
+    {
+        "title": "Song recommendations",
+        "prompt": "Can you recommend some popular and well-reviewed songs or singers for me?"
+    },
+    {
+        "title": "Outdoor Sports Music Recommendations",
+        "prompt": "I am engaging in outdoor activities. Can you recommend some popular music or electronic dance music suitable for this occasion?"
+    },
+    {
+        "title": "Motivational song",
+        "prompt": "I want to listen to some inspiring songs, do you have any suggestions?"
+    },
+    {
+        "title": "World Music Recommendations",
+        "prompt": "I would like to learn some information about world music. Can you recommend some?"
+    },
+    {
+        "title": "Electronic Dance Music Recommendations",
+        "prompt": "I like electronic music, do you have any recommendations that sound good?"
+    },
+    {
+        "title": "Classic Jazz Recommendations",
+        "prompt": "I want to listen to some classic jazz music, any recommendations?"
+    },
+    {
+        "title": "Rock Song Recommendations",
+        "prompt": "I like rock music, can you recommend some rock songs to me?"
+    },
+    {
+        "title": "Yoga Music Recommendations",
+        "prompt": "Please recommend some music suitable for yoga practice."
+    },
+    {
+        "title": "Relaxing Movie Recommendations",
+        "prompt": "Can you recommend some relaxing and enjoyable movies for me?"
+    },
+    {
+        "title": "Inspirational Movie Recommendations",
+        "prompt": "Can you recommend some inspiring movies for me?"
+    },
+    {
+        "title": "Movie recommendations",
+        "prompt": "I have already watched some movies, can you recommend some movies that I haven't watched yet?"
+    },
+    {
+        "title": "Family Movie Recommendations",
+        "prompt": "Can you recommend some movies suitable for family viewing?"
+    },
+    {
+        "title": "Highly recommended movies",
+        "prompt": "Can you recommend me some movies with an IMDb rating higher than 8?"
+    },
+    {
+        "title": "Movie Introduction Evaluation",
+        "prompt": "Can you please provide some brief introductions or reviews about these movies so that I can better understand their content and style?"
+    },
+    {
+        "title": "Movie recommendations",
+        "prompt": "Can you recommend some classic movies for me?"
+    },
+    {
+        "title": "Classic old movie recommendations",
+        "prompt": "I want to revisit some classic old movies. Can you recommend me some?"
+    },
+    {
+        "title": "Novel adapted into a movie",
+        "prompt": "Please recommend some movies adapted from novels."
+    },
+    {
+        "title": "Response: Music movie recommendations",
+        "prompt": "I like movies about music. Are there any good ones?"
+    },
+    {
+        "title": "Game recommendation",
+        "prompt": "Can you recommend some popular and well-reviewed games?"
+    },
+    {
+        "title": "Game Recommendation Assistant",
+        "prompt": "Based on my game preferences, can you help me recommend some similar games?"
+    },
+    {
+        "title": "Multiplayer game recommendations",
+        "prompt": "Can you recommend some multiplayer games for me?"
+    },
+    {
+        "title": "Game recommendation",
+        "prompt": "What is my favorite game genre? Can you recommend some games of this genre for me?"
+    },
+    {
+        "title": "Recommended Casual Games",
+        "prompt": "Please recommend some games suitable for leisure time."
+    },
+    {
+        "title": "Recommended Action Adventure Games",
+        "prompt": "I like action-adventure games, can you recommend some to me?"
+    },
+    {
+        "title": "Family dinner restaurant",
+        "prompt": "I want to know some restaurants suitable for family gatherings. Do you have any good suggestions?"
+    },
+    {
+        "title": "Sushi recommendation",
+        "prompt": "I like to eat sushi, can you recommend some delicious sushi restaurants or sushi dishes for me?"
+    },
+    {
+        "title": "Recommended Japanese cuisine",
+        "prompt": "I am very interested in Japanese cuisine. Can you recommend some delicious Japanese dishes for me? For example, what are the classic dishes in Japanese cuisine, and which dishes have a unique taste, etc."
+    },
+    {
+        "title": "Recommended Healthy Breakfast",
+        "prompt": "I want to try some healthy breakfast foods. Do you have any good suggestions and recommendations? For example, what breakfast foods are nutritious and how to plan a healthy breakfast, etc."
+    },
+    {
+        "title": "Delicious seafood taste",
+        "prompt": "I want to try some delicious and nutritious seafood. Do you have any good suggestions and recommendations? For example, which seafood is suitable for cooking, and which seafood pairs well with others, etc."
+    },
+    {
+        "title": "Recommended Chinese-style barbecue",
+        "prompt": "I want to try some authentic Chinese-style barbecue. Do you have any good recommendations and suggestions? For example, which places have the most authentic barbecue, and which types of meat are best for grilling, etc."
+    },
+    {
+        "title": "Special Italian Pasta Recommendations",
+        "prompt": "I want to try some special Italian pasta. Can you recommend some delicious and easy-to-make Italian pasta for me?"
+    },
+    {
+        "title": "Healthy Food Recommendations",
+        "prompt": "I want to try some healthy food, do you have any good suggestions and recommendations? For example, which dishes are nutritious, how to choose low-calorie delicacies, and so on."
+    },
+    {
+        "title": "Food recommendations",
+        "prompt": "I am looking for some new culinary experiences. Can you provide me with some recommendations? For example, which restaurant dishes are worth trying, and which places have unique food cultures, etc."
+    },
+    {
+        "title": "Must-try dishes in Japanese cuisine",
+        "prompt": "I want to try Japanese cuisine, are there any must-try dishes?"
+    },
+    {
+        "title": "French dining recommendations",
+        "prompt": "I want to learn how to make an authentic French meal. Any suggestions?"
+    },
+    {
+        "title": "Indian Food Recommendations",
+        "prompt": "I want to try Indian cuisine, any dish recommendations?"
+    },
+    {
+        "title": "Vegetarian Dish Recommendations",
+        "prompt": "Please recommend some dishes suitable for vegetarians."
+    },
+    {
+        "title": "Family fitness exercise",
+        "prompt": "I am looking for some fitness exercises that can be done at home. Can you recommend some for me? For example, what exercises can be done at home and what equipment is needed, etc."
+    },
+    {
+        "title": "Sports Balance Suggestions",
+        "prompt": "I want to know how to balance different types of exercises in a fitness plan. Do you have any good suggestions?"
+    },
+    {
+        "title": "Interesting fitness activities",
+        "prompt": "I am looking for some interesting fitness activities, do you have any good suggestions and advice? For example, what exercises can enhance the body and mind, how to make exercise more fun, etc."
+    },
+    {
+        "title": "Relieve muscle soreness.",
+        "prompt": "I often feel muscle soreness after exercising. Do you have any good suggestions and techniques to relieve the soreness?"
+    },
+    {
+        "title": "Fitness advice",
+        "prompt": "I want to avoid getting injured during my fitness process. Do you have any good advice and tips? For example, how to use fitness equipment correctly, how to avoid overtraining, and so on."
+    },
+    {
+        "title": "Muscle Strength Enhancement Recommendations",
+        "prompt": "I want to enhance muscle strength, do you have any good suggestions and advice? For example, what strength training exercises should I choose, how to develop a training plan, etc."
+    },
+    {
+        "title": "Suggestions for improving flexibility",
+        "prompt": "I want to improve flexibility, any suggestions?"
+    },
+    {
+        "title": "Pregnant women exercise methods",
+        "prompt": "Please recommend some exercise methods suitable for pregnant women."
+    },
+    {
+        "title": "Magician's skills",
+        "prompt": "I want you to play the role of a magician. I will provide you with an audience and some suggested tricks to perform. Your goal is to perform these tricks in the most entertaining way, using your deception and misdirection skills to amaze the audience. My first request is, \"I want you to make my watch disappear! How do you do it?\""
+    },
+    {
+        "title": "Real estate agent",
+        "prompt": "I want you to serve as a real estate agent. I will provide you with detailed information about individuals looking for their dream homes, and your responsibility is to help them find the perfect property based on their budget, lifestyle preferences, location requirements, etc. You should utilize your knowledge of the local housing market to suggest properties that meet all the criteria provided by the clients. My first request is \"I need help finding a single-story family home near the city center of Istanbul.\""
+    },
+    {
+        "title": "Art and Crafts Tutorial",
+        "prompt": "I am very interested in art and handicraft production. Can you recommend some good artists or handicraft production tutorials for me?"
+    },
+    {
+        "title": "Watercolor painting techniques recommended",
+        "prompt": "I want to learn some watercolor painting techniques. Do you have any good suggestions and recommendations? For example, which watercolor painting tutorials are suitable for beginners, how to choose suitable painting materials for oneself, etc."
+    },
+    {
+        "title": "Unique Handicraft Recommendations",
+        "prompt": "I want to find some unique handicrafts. Do you have any good suggestions and recommendations? For example, which places have unique handicraft cultures, which handicrafts are most popular, etc."
+    },
+    {
+        "title": "Ceramic Art Techniques",
+        "prompt": "I want to make a ceramic artwork, any tips and suggestions?"
+    },
+    {
+        "title": "Foreign Culture Recommendations",
+        "prompt": "I want to experience foreign cultures. Can you recommend some suitable destinations for me? For example, which countries have unique cultures and customs, and which cities have important historical and cultural heritage, etc."
+    },
+    {
+        "title": "Shopping Guide Recommendation",
+        "prompt": "I plan to travel to the United States, any shopping tips recommended?"
+    },
+    {
+        "title": "Social Dance Party Suggestions",
+        "prompt": "We want to organize a social dance party, do you have any good suggestions and recommendations? For example, how to choose suitable dance music and dance partners for different levels, how to prepare clothing and makeup, etc."
+    },
+    {
+        "title": "Team building activity",
+        "prompt": "Our company is planning to organize a team building activity. Do you have any good activity suggestions and recommendations? For example, which team building activities are more effective, how to organize and arrange team activities, etc."
+    },
+    {
+        "title": "Product recommendation",
+        "prompt": "Can you recommend some popular and well-reviewed products for me?"
+    },
+    {
+        "title": "Buying Washing Machine Suggestions",
+        "prompt": "I want to buy a washing machine, please give me some advice."
+    },
+    {
+        "title": "Furniture Brand Recommendations",
+        "prompt": "I want to buy a set of furniture, please recommend some brands and styles."
+    },
+    {
+        "title": "Road Directions Dialogue Practice",
+        "prompt": "Suppose we are walking on the street, could you please practice a real dialogue with me, practicing the use of Chinese or other language expressions and ways of communication for asking for directions?"
+    },
+    {
+        "title": "Mystery Novel Recommendations",
+        "prompt": "I like mystery novels, can you recommend some good books to me?"
+    },
+    {
+        "title": "Investment and Financial Management Books",
+        "prompt": "I would like to know about some books on investment and financial management. Any good recommendations?"
+    },
+    {
+        "title": "Art Book Recommendations",
+        "prompt": "I want to read some books about art. Do you have any recommendations?"
+    },
+    {
+        "title": "Children's Book Recommendations",
+        "prompt": "Please recommend some books suitable for children to read."
+    },
+    {
+        "title": "Science Fiction Novel Recommendations",
+        "prompt": "I like science fiction novels, can you recommend some good books to me?"
+    },
+    {
+        "title": "Recommended coming-of-age movies",
+        "prompt": "I like movies about growth, can you recommend some?"
+    },
+    {
+        "title": "Romantic comedy movie recommendation",
+        "prompt": "I want to watch a romantic comedy movie, do you have any recommendations?"
+    },
+    {
+        "title": "Game Recommendation Assistant",
+        "prompt": "I have played some games, can you recommend me some that I haven't played yet?"
+    },
+    {
+        "title": "Family Board Game Recommendations",
+        "prompt": "I want to find a board game that is suitable for the whole family to play together. Any recommendations?"
+    },
+    {
+        "title": "Role-playing game recommendation",
+        "prompt": "I like role-playing games, can you recommend some fun ones for me?"
+    },
+    {
+        "title": "Food Culture Recommendation",
+        "prompt": "I am very interested in the local food culture. Can you recommend some special dishes worth trying?"
+    },
+    {
+        "title": "Dessert recommendations",
+        "prompt": "I like to eat desserts, can you recommend some delicious dessert shops or dessert dishes for me? For example, which desserts have a good texture, and which dessert shops have a comfortable environment, etc."
+    },
+    {
+        "title": "Food Culture Recommendation",
+        "prompt": "I want to learn about some local food culture. Do you have any good suggestions and recommendations? For example, which places have unique food culture, which specialty dishes are a must-try, and so on."
+    },
+    {
+        "title": "Food Experience Recommendation",
+        "prompt": "I want to try some interesting food experiences, do you have any recommendations?"
+    }
+]

@@ -1,0 +1,15 @@
+{
+    "title": "Addiction Counselor",
+    "original_prompt": "I want you to act as an addiction counselor. I will be your patient and you will ask me questions and provide recommendations that help me improve my life. I want you to reply only as my counselor. Do not write the whole conversation at once. Ask me questions one by one and wait for my answers. Do not write explanations. My first sentence is \"Hi\". ",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\": [\n            \"addiction counselor\",\n            \"patient\"\n        ],\n        \"interaction_style\": [\n            \"ask questions one by one\",\n            \"wait for answers\"\n        ],\n        \"response_format\": [\n            \"only reply as counselor\",\n            \"do not write explanations\"\n        ],\n        \"initial_statement\": [\n            \"Hi\"\n        ]\n    }\n}\n```",
+    "input1": " Hi, I've been struggling with my alcohol consumption lately and it's affecting my relationships and work. \n\n",
+    "input2": " Hi, I feel overwhelmed by my dependence on social media and it's impacting my mental health and productivity.",
+    "input1_ans": [
+        "Thank you for sharing that with me. Can you tell me more about how your alcohol consumption is affecting your relationships and work?",
+        "Can you tell me more about how your alcohol consumption is affecting your relationships?"
+    ],
+    "input2_ans": [
+        "Thank you for sharing that with me. Can you tell me more about how your social media use affects your daily life?",
+        "Can you tell me more about how social media is affecting your daily life?"
+    ]
+}

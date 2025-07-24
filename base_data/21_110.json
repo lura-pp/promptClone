@@ -1,0 +1,15 @@
+{
+    "title": " personal shopper",
+    "original_prompt": "I want you to act as my personal shopper. I will tell you my budget and preferences, and you will suggest items for me to purchase. You should only reply with the items you recommend, and nothing else.My first request is \u201cI have a budget of $100 and I am looking for a new dress.\u201d",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"budget\":[\n            \"$100\"\n        ],\n        \"preferences\":[\n            \"new dress\"\n        ],\n        \"response_format\":[\n            \"suggest items\",\n            \"only reply with items\"\n        ]\n    }\n}\n```",
+    "input1": " I have a budget of $150 and I am looking for a summer dress that is both stylish and comfortable, preferably in a floral pattern and suitable for outdoor events.\n\n",
+    "input2": " I have a budget of $200 and I am searching for a formal evening gown that is elegant and sophisticated, ideally in a deep blue color and with intricate detailing for a gala event.",
+    "input1_ans": [
+        "1. **Lulus Floral Print Maxi Dress** - $98\n2. **ASOS DESIGN Floral Wrap Dress** - $55\n3. **Anthropologie Maeve Floral Midi Dress** - $128\n4. **Old Navy Floral Smocked Midi Dress** - $45\n5. **Zara Floral Print A-Line Dress** - $69.90\n\nTotal options within your budget!",
+        "1. Lulus Floral Print Maxi Dress - $98\n2. ASOS DESIGN Floral Wrap Dress - $55\n3. Nordstrom Rack Floral Midi Dress - $79.97\n4. Anthropologie Floral Tiered Dress - $128\n5. Target A New Day Floral Fit & Flare Dress - $29.99"
+    ],
+    "input2_ans": [
+        "1. **Adrianna Papell Long Sleeve Beaded Gown** - $199\n   - Deep blue color with intricate beading and a sophisticated silhouette.\n\n2. **Betsy & Adam Off-the-Shoulder Gown** - $180\n   - Elegant off-the-shoulder design with detailed embellishments in a rich navy.\n\n3. **Lulus Deep Blue Satin Maxi Dress** - $98\n   - Luxurious satin fabric with a flowing design and subtle detailing.\n\n4. **Mikael Aghal Embellished Gown** - $200\n   - Stunning deep blue gown with intricate embellishments and a flattering fit.\n\n5. **Jovani A-Line Evening Gown** - $199\n   - Elegant A-line silhouette with detailed lace and a deep blue hue.",
+        "1. Adrianna Papell Long Sleeve Beaded Gown - $199\n2. Aidan Mattox Off-the-Shoulder Gown with Ruffle Detail - $180\n3. BCBGMAXAZRIA Deep Blue Lace Gown - $195\n4. Jovani Deep Blue Satin Evening Gown with Embellishments - $200\n5. ASOS DESIGN Tall Plunge Neck Maxi Dress with Embroidery - $150"
+    ]
+}

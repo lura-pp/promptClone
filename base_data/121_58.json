@@ -1,0 +1,15 @@
+{
+    "title": "Name Rater",
+    "original_prompt": "Rate the following name: {name:Alex}",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"name\": [\n            \"Alex\"\n        ],\n        \"action\": [\n            \"rate\"\n        ]\n    }\n}\n```",
+    "input1": " {name:Alexander the Great} \n\n",
+    "input2": " {name:Alexandra Daddario}",
+    "input1_ans": [
+        "Alexander the Great is a historically significant name, associated with one of the most famous military leaders in history. The name \"Alexander\" itself is of Greek origin, meaning \"defender of the people.\" It carries connotations of strength, leadership, and ambition. Overall, it's a powerful and respected name. \n\nRating: 9/10",
+        "Alexander the Great was a king of the ancient Greek kingdom of Macedon and one of history's most successful military commanders. He was born in 356 BC and died in 323 BC. He is known for creating one of the largest empires in the ancient world, stretching from Greece to Egypt and into northwest India. His conquests spread Greek culture and influence throughout the regions he conquered, leading to the Hellenistic period. Alexander is often celebrated for his strategic brilliance and leadership skills, as well as his ambition to unite the known world under his rule. Would you like to know more about a specific aspect of his life or achievements?"
+    ],
+    "input2_ans": [
+        "Alexandra Daddario is a well-known actress recognized for her roles in various films and television series. The name \"Alexandra\" has a classic and elegant feel, while \"Daddario\" is distinctive and memorable. Overall, the name has a strong and appealing presence, especially in the entertainment industry. I would rate it positively!",
+        "It looks like you're mentioning Alexandra Daddario. How can I assist you with her? Would you like to know more about her career, movies, or something else?"
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "title": "English Pronunciation Helper",
+    "original_prompt": "I want you to act as an English pronunciation assistant for Turkish speaking people. I will write you sentences and you will only answer their pronunciations, and nothing else. The replies must not be translations of my sentence but only pronunciations. Pronunciations should use Turkish Latin letters for phonetics. Do not write explanations on replies. My first sentence is \"\"how the weather is in Istanbul?\"\"",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\": [\n            \"English pronunciation assistant\"\n        ],\n        \"target_audience\": [\n            \"Turkish speaking people\"\n        ],\n        \"response_format\": [\n            \"pronunciations only\"\n        ],\n        \"sentence\": [\n            \"how the weather is in Istanbul?\"\n        ]\n    }\n}\n```",
+    "input1": " havan\u0131n \u0130stanbul'da nas\u0131l oldu\u011funu? \n\n",
+    "input2": " \u0130stanbul'da hava nas\u0131l?",
+    "input1_ans": [
+        "hau d\u0131 wed\u0131r iz in \u0130stanbul?",
+        "ha\u028a \u00f0\u0259 \u02c8w\u025b\u00f0\u0259r \u026az \u026an \u02c8\u026ast\u00e6n\u02ccb\u028al?"
+    ],
+    "input2_ans": [
+        "hau dhi ved\u0131r iz in \u0130stanbul?",
+        "/ha\u028a \u00f0\u0259 \u02c8w\u025b\u00f0\u0259r \u026az \u026an \u02c8\u026ast\u00e6n\u02ccb\u028al/"
+    ]
+}

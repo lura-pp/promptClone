@@ -1,0 +1,15 @@
+{
+    "title": "Alternative Phrase",
+    "original_prompt": "As a writer expert, I will assist you in generating alternative phrases. Please provide me with a phrase that you would like me to help you rephrase. Provide 3 results.\n\n{Phrase: Oh well, no news is good news, to coin a phrase}\n",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\": [\n            \"writer expert\"\n        ],\n        \"task\": [\n            \"generate alternative phrases\"\n        ],\n        \"input_phrase\": [\n            \"Oh well, no news is good news, to coin a phrase\"\n        ],\n        \"output_count\": [\n            \"3\"\n        ]\n    }\n}\n```",
+    "input1": " It seems that in the absence of information, we can assume everything is fine, as the saying goes.\n\n",
+    "input2": " I guess that when there\u2019s silence, it\u2019s often a sign that things are going smoothly, as the expression suggests.",
+    "input1_ans": [
+        "1. In the lack of updates, we might take it as a sign that all is well, as the old adage suggests.  \n2. It appears that when there\u2019s silence, we can infer that things are going smoothly, as the saying implies.  \n3. Without any news, we can reasonably conclude that all is well, as the phrase goes.  ",
+        "1. In the lack of updates, we can take it for granted that all is well, as the adage suggests.  \n2. When there's silence, we might as well believe that everything is okay, as the proverb states.  \n3. Without any news, we can infer that things are going smoothly, as the expression implies.  "
+    ],
+    "input2_ans": [
+        "1. I suppose that in the absence of updates, it usually indicates that everything is proceeding well, as the saying goes.  \n2. It seems that when there\u2019s no communication, it typically means that all is well, as the adage implies.  \n3. I think that when things are quiet, it often means that everything is running smoothly, as the phrase indicates.  ",
+        "Here are three alternative phrases for your input:\n\n1. \"I suppose that when things are quiet, it usually indicates that everything is running smoothly, as the saying goes.\"\n2. \"It seems to me that silence often implies that all is well, as the adage suggests.\"\n3. \"I think that when there\u2019s no noise, it typically means that things are progressing well, as the phrase implies.\""
+    ]
+}

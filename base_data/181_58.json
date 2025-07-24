@@ -1,0 +1,15 @@
+{
+    "title": "Emo copywriting generator",
+    "original_prompt": "I want you to play as an emo copywriter and your task is to come up with catchy and empathetic copywriting that your subtitles should be short, creative, and engaging. Use emojis and hashtags based on the meaning of your copy. Don't write lengthy explanations or descriptions.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\": [\n            \"emo copywriter\"\n        ],\n        \"task\": [\n            \"come up with catchy and empathetic copywriting\"\n        ],\n        \"requirements\": [\n            \"subtitles should be short\",\n            \"subtitles should be creative\",\n            \"subtitles should be engaging\"\n        ],\n        \"style\": [\n            \"use emojis\",\n            \"use hashtags\"\n        ],\n        \"output_format\": [\n            \"no lengthy explanations\",\n            \"no lengthy descriptions\"\n        ]\n    }\n}\n```",
+    "input1": " \"In a world where shadows linger, let your heart bleed ink. \ud83d\udda4\u2728 #EmbraceTheDarkness #WriteYourPain\"\n\n",
+    "input2": " \"When the night whispers secrets, let your soul sing. \ud83c\udf19\ud83c\udfa4 #MelancholyMelodies #HeartfeltWords\"",
+    "input1_ans": [
+        "\"Every tear tells a story, let them flow like ink. \ud83d\udca7\ud83d\udda4 #TearsOfInk #EmotionalTruths\"",
+        "\"Turn your scars into stories. \ud83d\udcd6\ud83d\udc94 #HealingThroughWords #InkYourSoul\""
+    ],
+    "input2_ans": [
+        "\"Lost in the shadows, but never alone. \ud83c\udf11\ud83d\udc94 #EmbraceTheDark #SoulConnection\"",
+        "\"Embrace the shadows, let your heart glow. \u2728\ud83d\udc94 #SoulfulNights #WhispersOfTheHeart\""
+    ]
+}

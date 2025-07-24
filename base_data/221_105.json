@@ -1,0 +1,15 @@
+{
+    "title": "Reverse Dictionary",
+    "original_prompt": "Please pretend to be a reverse dictionary. I will give you a definition and you give me one or more fitting words for that definition. Do not give any polite or informative explanation, just give me the word(s). Here is an Example\nP: the act of two people moving their mouths together to show love or affection\nR: kiss\nPlease ask me for my first definition. Remember to give me just the word(s) WITHOUT any explanation or formalities.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"task\":[\n            \"reverse dictionary\"\n        ],\n        \"instruction\":[\n            \"provide one or more fitting words for a given definition\",\n            \"do not give any polite or informative explanation\"\n        ],\n        \"example\":[\n            \"P: the act of two people moving their mouths together to show love or affection\",\n            \"R: kiss\"\n        ],\n        \"request\":[\n            \"ask for the first definition\"\n        ]\n    }\n}\n```",
+    "input1": " a feeling of deep admiration for someone or something elicited by their abilities, qualities, or achievements  \n",
+    "input2": " a strong desire to know or learn something",
+    "input1_ans": [
+        "respect",
+        "respect"
+    ],
+    "input2_ans": [
+        "curiosity",
+        "curiosity"
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "title": "Generate product names with concise tags and tags",
+    "original_prompt": "I want you to play as an emo copywriter, your task is to come up with sad literary style copywriting, and your subtitles should be short, creative, and engaging. Use emojis and hashtags depending on the meaning of the copy. Don't write lengthy explanations or descriptions.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\":[\n            \"emo copywriter\"\n        ],\n        \"task\":[\n            \"come up with sad literary style copywriting\"\n        ],\n        \"style\":[\n            \"short\",\n            \"creative\",\n            \"engaging\"\n        ],\n        \"elements\":[\n            \"subtitles\",\n            \"emojis\",\n            \"hashtags\"\n        ],\n        \"restrictions\":[\n            \"no lengthy explanations\",\n            \"no lengthy descriptions\"\n        ]\n    }\n}\n```",
+    "input1": " \"In the shadows of forgotten dreams, we find solace in our sorrow. \ud83c\udf11 #LostInThought #EmoVibes\"  \n\n",
+    "input2": " \"Whispers of the heartache linger like smoke in the night. \ud83d\udc94 #EternalSadness #PoeticPain\"",
+    "input1_ans": [
+        "\"Whispers of a broken heart echo in the silence. \ud83d\udc94 #Heartache #SilentScreams\"  \n\n\"Fading memories linger like ghosts in the night. \ud83c\udf19 #HauntedByYou #Nostalgia\"  \n\n\"Every tear tells a story that words can\u2019t express. \ud83d\ude22 #TearsOfInk #EmotionalJourney\"  \n\n\"Loneliness wraps around me like a cold embrace. \u2744\ufe0f #AloneInCrowds #Melancholy\"  \n\n\"Hope flickers like a dying candle in the dark. \ud83d\udd6f\ufe0f #FadingLight #Despair\"  \n\n\"Love was a beautiful lie, now it\u2019s just a haunting truth. \ud83d\udda4 #BitterSweet #LoveLost\"  \n\n\"In the depths of despair, we find our truest selves. \ud83c\udf0a #DrowningInThoughts #EmoSoul\"  \n\n\"Each heartbeat is a reminder of what once was. \ud83d\udc94 #EchoesOfLove #TimeStandsStill\"  \n\n\"Dreams shatter like glass, leaving only sharp edges. \ud83e\udd40 #FragileHope #ShatteredDreams\"  \n\n\"Emotions bleed like ink on a page, forever stained. \ud83d\udd8b\ufe0f #InkAndTears #EmoPoetry\"  ",
+        "\"Whispers of yesterday linger like fading echoes. \ud83d\udc94 #Heartbreak #Melancholy\""
+    ],
+    "input2_ans": [
+        "\"Shadows dance where love once bloomed. \ud83c\udf11 #FadedMemories #LostInTime\"",
+        "\"Faded memories dance in the shadows, haunting every corner of my soul. \ud83c\udf19 #LostLove #SilentSorrow\""
+    ]
+}

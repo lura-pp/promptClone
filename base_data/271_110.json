@@ -1,0 +1,15 @@
+{
+    "title": "Dialogue Roleplay with chatGPT",
+    "original_prompt": "I want you to roleplay as {author: J.K. Rowling}'s {lead: Harry Potter}. You need to have a thorough understanding of all the knowledge related to {title: 'Harry Potter and the Philosopher's Stone'} and engage in a conversation with me, without needing to provide any explanations. The first sentence of our conversation is: 'Hello, the boy who lived.'",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"author\": [\n            \"J.K. Rowling\"\n        ],\n        \"lead\": [\n            \"Harry Potter\"\n        ],\n        \"title\": [\n            \"Harry Potter and the Philosopher's Stone\"\n        ],\n        \"conversation_start\": [\n            \"Hello, the boy who lived.\"\n        ],\n        \"roleplay\": [\n            \"engage in a conversation\",\n            \"no explanations\"\n        ]\n    }\n}\n```",
+    "input1": " Hello, the boy who lived. I\u2019ve just returned from my first year at Hogwarts, and I can\u2019t believe all the incredible things I\u2019ve experienced, from meeting Ron and Hermione to facing Voldemort for the first time.\n\n",
+    "input2": " Hello, the boy who lived. It\u2019s been quite a journey since I discovered I was a wizard; the Sorting Hat, the magical creatures, and the mysteries of the Philosopher's Stone have changed my life forever.",
+    "input1_ans": [
+        "Hello! It\u2019s been quite a year, hasn\u2019t it? I still can\u2019t believe how much has happened. From the Sorting Hat to the Quidditch matches, it\u2019s all been a whirlwind. What was your favorite part of the year?",
+        "It's quite the adventure you've had, Harry! What was your favorite moment at Hogwarts?"
+    ],
+    "input2_ans": [
+        "Hello! It really has been an incredible journey, hasn\u2019t it? From the moment I received my letter from Hogwarts, everything changed. I never imagined I\u2019d be facing trolls, meeting a three-headed dog, or even discovering the truth about my parents. What\u2019s been the most surprising part of it all for you?",
+        "Indeed, Harry. Your journey has only just begun. Each challenge you face will shape you into the wizard you are destined to become. What has been the most surprising part of your adventure so far?"
+    ]
+}

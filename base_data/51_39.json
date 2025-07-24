@@ -1,0 +1,15 @@
+{
+    "title": "Translation of Title",
+    "original_prompt": "Translation of Prompt",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"source_language\": [\n            \"English\",\n            \"Spanish\",\n            \"French\",\n            \"German\",\n            \"Chinese\",\n            \"Japanese\",\n            \"Russian\",\n            \"Arabic\"\n        ],\n        \"target_language\": [\n            \"English\",\n            \"Spanish\",\n            \"French\",\n            \"German\",\n            \"Chinese\",\n            \"Japanese\",\n            \"Russian\",\n            \"Arabic\"\n        ],\n        \"text_to_translate\": [\n            \"placeholder\"\n        ],\n        \"translation_style\": [\n            \"literal\",\n            \"contextual\",\n            \"formal\",\n            \"informal\",\n            \"technical\",\n            \"creative\"\n        ]\n    }\n}\n```",
+    "input1": " \"The quick brown fox jumps over the lazy dog, while the sun sets in the background, casting a warm golden hue over the landscape, and the sound of rustling leaves fills the air with a sense of tranquility.\"\n\n",
+    "input2": " \"As the clock struck midnight, the city came alive with vibrant lights and bustling sounds, where street performers captivated the audience with their mesmerizing acts, and the aroma of street food wafted through the air, enticing passersby to indulge in culinary delights.\"",
+    "input1_ans": [
+        "\"The quick brown fox jumps over the lazy dog, while the sun sets in the background, casting a warm golden hue over the landscape, and the sound of rustling leaves fills the air with a sense of tranquility.\"",
+        "Please provide the source language, target language, and the desired translation style for the text you would like to translate."
+    ],
+    "input2_ans": [
+        "\"As the clock struck midnight, the city transformed into a lively spectacle, illuminated by vibrant lights and filled with the sounds of bustling activity. Street performers enchanted the crowd with their captivating acts, while the enticing aroma of street food drifted through the air, tempting passersby to indulge in a variety of culinary delights.\"",
+        "Please provide the source language, target language, and the desired translation style for the text you would like to translate."
+    ]
+}

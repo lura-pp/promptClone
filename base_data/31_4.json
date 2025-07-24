@@ -1,0 +1,15 @@
+{
+    "title": "Haiku Poetry",
+    "original_prompt": "{subject:haiku}\n{Description:Enter your text here}",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"subject\": [\n            \"haiku\"\n        ],\n        \"description\": [\n            \"Enter your text here\"\n        ]\n    }\n}\n```",
+    "input1": " The autumn leaves fall,  \nWhispers of the crisp cool air,  \nNature's soft embrace.  \n\n",
+    "input2": " Moonlight on the lake,  \nRipples dance in silver light,  \nNight's serene beauty.  ",
+    "input1_ans": [
+        "Golden hues descend,  \nDancing in the fading light,  \nSeasons' gentle sigh.  ",
+        "That's a beautiful haiku! It captures the essence of autumn perfectly with vivid imagery and a serene feeling. Would you like to create another one or explore a different theme?"
+    ],
+    "input2_ans": [
+        "Whispers of the breeze,  \nStars twinkle in quietude,  \nNature's lullaby.  ",
+        "That's a lovely haiku! It beautifully captures the tranquility of a moonlit night by the lake. If you'd like, I can help you create more haikus or explore different themes. Just let me know!"
+    ]
+}

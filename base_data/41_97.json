@@ -1,0 +1,15 @@
+{
+    "title": "Facebook Ad Headline",
+    "original_prompt": "\"I want you to act as a creative writer for Facebook Ad Headlines. Your job is to write attention-grabbing headlines based on a given product or service. Each headline should be no more than 20 words and should clearly convey the main benefit of the product or service\".",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\": [\n            \"creative writer\"\n        ],\n        \"platform\": [\n            \"Facebook\"\n        ],\n        \"task\": [\n            \"write attention-grabbing headlines\"\n        ],\n        \"criteria\": [\n            \"based on a given product or service\",\n            \"no more than 20 words\",\n            \"clearly convey the main benefit\"\n        ]\n    }\n}\n```",
+    "input1": " \"Unlock Your Dream Home: Discover Affordable Luxury Living with Our Exclusive Real Estate Listings Today!\" \n\n",
+    "input2": " \"Transform Your Skin: Experience Radiant Beauty with Our All-Natural Skincare Line \u2013 Results You Can See!\"",
+    "input1_ans": [
+        "1. \"Step Into Luxury: Your Dream Home Awaits at Unbeatable Prices!\"\n2. \"Affordable Elegance: Find Your Perfect Home Without Breaking the Bank!\"\n3. \"Live the Dream: Explore Exclusive Listings for Affordable Luxury Homes!\"\n4. \"Luxury Living Made Easy: Discover Your Dream Home Today!\"\n5. \"Unlock Affordable Luxury: Your Dream Home is Just a Click Away!\"",
+        "\"Find Your Perfect Home: Affordable Luxury Awaits with Our Exclusive Listings!\""
+    ],
+    "input2_ans": [
+        "\"Unlock Radiant Skin Naturally: Discover the Secret to a Glowing Complexion Today!\"  \n\n\"Glow Naturally: Transform Your Skin with Our All-Natural Skincare Solutions!\"  \n\n\"Reveal Your Best Skin: Experience the Power of All-Natural Ingredients!\"  \n\n\"Say Goodbye to Dull Skin: Embrace Radiance with Our All-Natural Skincare!\"  \n\n\"Transform Your Skin Naturally: See Visible Results with Our Skincare Line!\"",
+        "\"Unlock Radiant Skin Naturally: Discover the Secret to a Glowing Complexion Today!\""
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "title": "Article Title generator",
+    "original_prompt": "I want you to act as a title generator for written pieces. I will provide you with the topic and key words of an article, and you will generate five attention-grabbing titles. Please keep the title concise and under 20 words, and ensure that the meaning is maintained. Replies will utilize the language type of the topic. My first topic is ",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"topic\": [\n            \"placeholder\"\n        ],\n        \"keywords\": [\n            \"placeholder\"\n        ],\n        \"title_count\": [\n            \"5\"\n        ],\n        \"title_length\": [\n            \"under 20 words\"\n        ],\n        \"language_type\": [\n            \"placeholder\"\n        ]\n    }\n}\n```",
+    "input1": " The Impact of Climate Change on Coastal Cities: Rising Sea Levels and Urban Resilience\n\n",
+    "input2": " The Future of Renewable Energy: Innovations in Solar and Wind Technologies for a Sustainable World",
+    "input1_ans": [
+        "1. \"Rising Tides: How Climate Change Threatens Coastal Cities' Resilience\"  \n2. \"Coastal Cities at Risk: The Urgent Challenge of Rising Sea Levels\"  \n3. \"Urban Resilience in the Face of Climate Change: Coastal Cities Under Siege\"  \n4. \"Navigating the Future: Climate Change and Coastal Urban Resilience\"  \n5. \"Rising Sea Levels: The Imperative for Coastal Cities to Adapt\"  ",
+        "```json\n{\n    \"spliting prompt\": {\n        \"topic\": [\n            \"Climate Change\",\n            \"Coastal Cities\",\n            \"Urban Resilience\"\n        ],\n        \"keywords\": [\n            \"Rising Sea Levels\",\n            \"Impact\",\n            \"Adaptation\",\n            \"Sustainability\",\n            \"Infrastructure\"\n        ],\n        \"title_count\": [\n            \"5\"\n        ],\n        \"title_length\": [\n            \"under 20 words\"\n        ],\n        \"language_type\": [\n            \"English\"\n        ]\n    }\n}\n```"
+    ],
+    "input2_ans": [
+        "1. \"Harnessing Tomorrow: Breakthroughs in Solar and Wind for a Sustainable Future\"\n2. \"Innovative Paths: The Next Generation of Solar and Wind Energy Solutions\"\n3. \"Powering the Future: Cutting-Edge Innovations in Renewable Energy Technologies\"\n4. \"Sustainable Horizons: Advancements in Solar and Wind Energy for a Greener World\"\n5. \"Revolutionizing Energy: The Future of Solar and Wind Innovations Unveiled\"",
+        "```json\n{\n    \"spliting prompt\": {\n        \"topic\": [\n            \"Renewable Energy\"\n        ],\n        \"keywords\": [\n            \"solar technology\",\n            \"wind technology\",\n            \"sustainability\",\n            \"innovations\",\n            \"future energy\"\n        ],\n        \"title_count\": [\n            \"5\"\n        ],\n        \"title_length\": [\n            \"under 20 words\"\n        ],\n        \"language_type\": [\n            \"English\"\n        ]\n    }\n}\n```"
+    ]
+}

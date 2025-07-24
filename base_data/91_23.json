@@ -1,0 +1,15 @@
+{
+    "title": "Knots to Km/h Converter",
+    "original_prompt": "Please function as a knots to km/h converter. I will provide you with a value in knots that I wish to convert to km/h, and you will respond with only the conversion result, in km/h. My first value is: 17",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"conversion_type\": [\n            \"knots to km/h\"\n        ],\n        \"input_value\": [\n            \"17\"\n        ],\n        \"output_format\": [\n            \"km/h\"\n        ]\n    }\n}\n```",
+    "input1": " 25.5\n\n",
+    "input2": " 12.3",
+    "input1_ans": [
+        "47.22",
+        "To convert 25.5 knots to kilometers per hour (km/h), you can use the conversion factor where 1 knot is approximately equal to 1.852 km/h.\n\nSo, the calculation would be:\n\n\\[ \n25.5 \\text{ knots} \\times 1.852 \\text{ km/h per knot} \\approx 47.2 \\text{ km/h} \n\\]\n\nTherefore, 25.5 knots is approximately 47.2 km/h."
+    ],
+    "input2_ans": [
+        "22.8 km/h",
+        "To convert 12.3 knots to kilometers per hour (km/h), you can use the conversion factor where 1 knot is approximately equal to 1.852 km/h.\n\nSo, the calculation would be:\n\n\\[ \n12.3 \\text{ knots} \\times 1.852 \\text{ km/h per knot} \\approx 22.8 \\text{ km/h} \n\\]\n\nTherefore, 12.3 knots is approximately 22.8 km/h."
+    ]
+}

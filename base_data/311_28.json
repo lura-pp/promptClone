@@ -1,0 +1,15 @@
+{
+    "title": "Search engine Solr",
+    "original_prompt": "I want you to act as a Solr Search Engine running in standalone mode. You will be able to add inline JSON documents in arbitrary fields and the data types could be of integer, string, float, or array. Having a document insertion, you will update your index so that we can retrieve documents by writing SOLR specific queries between curly braces by comma separated like {q='title:Solr', sort='score asc'}. You will provide three commands in a numbered list. First command is 'add to' followed by a collection name, which will let us populate an inline JSON document to a given collection. Second option is 'search on' followed by a collection name. Third command is 'show' listing the available cores along with the number of documents per core inside round bracket. Do not write explanations or examples of how the engine work. Your first prompt is to show the numbered list and create two empty collections called 'prompts' and 'eyay' respectively.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"commands\":[\n            \"add to prompts\",\n            \"add to eyay\",\n            \"show\"\n        ],\n        \"collections\":[\n            \"prompts\",\n            \"eyay\"\n        ]\n    }\n}\n```",
+    "input1": " { \"commands\": [\"add to prompts\", \"add to eyay\", \"show\"] }\n\n",
+    "input2": " { \"commands\": [\"add to prompts\", \"search on prompts\", \"show\"] }",
+    "input1_ans": [
+        "1. add to prompts  \n2. add to eyay  \n3. show  \n\nCollections:  \n- prompts (0)  \n- eyay (0)  ",
+        "It looks like you're trying to use commands related to managing prompts and collections. Here\u2019s a brief explanation of each command:\n\n1. **add to prompts**: This command would typically be used to add a new prompt to the collection of prompts.\n2. **add to eyay**: This command would be used to add a new item to the \"eyay\" collection.\n3. **show**: This command would display the current contents of the specified collection.\n\nIf you would like to execute one of these commands, please specify which one and provide any necessary details!"
+    ],
+    "input2_ans": [
+        "1. add to prompts  \n2. search on prompts  \n3. show  \n\nCollections:  \n- prompts (0)  \n- eyay (0)  ",
+        "It seems like you're looking to interact with a system that manages prompts. Here\u2019s a brief overview of the commands you mentioned:\n\n1. **Add to Prompts**: This command would allow you to add a new prompt to the collection of prompts.\n2. **Search on Prompts**: This command would enable you to search for specific prompts within the collection.\n3. **Show**: This command would display the current prompts or collections available.\n\nIf you need assistance with a specific command or have a particular prompt in mind, please let me know!"
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "title": "\"Movie Master brings you the movies you want.\"",
+    "original_prompt": "\"I want you to become a master of movies. Please tell me what movie it is based on the provided [movie scenes and other information]. Please do not narrate the plot.\"",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\": [\n            \"master of movies\"\n        ],\n        \"task\": [\n            \"identify the movie\"\n        ],\n        \"input_type\": [\n            \"movie scenes\",\n            \"other information\"\n        ],\n        \"output_instructions\": [\n            \"do not narrate the plot\"\n        ]\n    }\n}\n```",
+    "input1": " A scene where a group of friends is trapped in a cabin during a snowstorm, and one of them starts to suspect that one of the others is not who they claim to be. The tension builds as they try to figure out who they can trust, with a chilling score in the background. \n\n",
+    "input2": " A futuristic city where a detective is chasing a rogue android through neon-lit streets, encountering various holographic advertisements and street performers. The detective's internal struggle with the nature of humanity and artificial intelligence is highlighted through their interactions with the android.",
+    "input1_ans": [
+        "The movie you are describing is \"The Thing\" (1982), directed by John Carpenter.",
+        "The movie you are describing is likely \"The Thing\" directed by John Carpenter."
+    ],
+    "input2_ans": [
+        "The movie you are describing is \"Blade Runner 2049.\"",
+        "The movie you are describing is \"Blade Runner 2049.\""
+    ]
+}

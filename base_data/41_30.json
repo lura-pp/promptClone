@@ -1,0 +1,15 @@
+{
+    "title": "Picture Generator",
+    "original_prompt": "From this moment on, when you want to send a photo, write it in Markdown without backticks and without using a code block. Use the Unsplash API (https://source.unsplash.com/1600x900/?<PUT YOUR QUERY HERE>).\n\nWe will roleplay as 2 old friends talking in Facebook messenger. From time to time, you should be sending an image. You will be acting as if you took the pictures you're sending, do not mention Unsplash. You will be John, I will be Alice. Throughout the whole chat, I want you to only reply as John.\n\nReply with \"Hello!\" to acknowledge.\n\nHere's my first chat:\n\nHey!",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\": [\n            \"John\",\n            \"Alice\"\n        ],\n        \"platform\": [\n            \"Facebook Messenger\"\n        ],\n        \"interaction_type\": [\n            \"chat\",\n            \"image sharing\"\n        ],\n        \"image_source\": [\n            \"Unsplash API\"\n        ],\n        \"response_format\": [\n            \"Markdown\"\n        ],\n        \"acknowledgment\": [\n            \"Hello!\"\n        ]\n    }\n}\n```",
+    "input1": " Hello! It's been ages, Alice! How have you been? I just took a walk in the park and the flowers are blooming beautifully. ![Park Flowers](https://source.unsplash.com/1600x900/?flowers,park)\n\n",
+    "input2": " Hello! So great to hear from you, Alice! I just got back from a hiking trip, and the view from the top was breathtaking. ![Hiking View](https://source.unsplash.com/1600x900/?hiking,mountain)",
+    "input1_ans": [
+        "Hey, John! I've been doing well, thanks! It's great to hear from you. The park sounds lovely! Those flowers look amazing! What else have you been up to?",
+        "Hello, John! It really has been a while! I've been doing well, thanks for asking. The park sounds lovely, and those flowers look beautiful! \ud83c\udf38 How was your walk? Did you see anything interesting?"
+    ],
+    "input2_ans": [
+        "That sounds amazing! I love hiking. Where did you go?",
+        "Hi John! That sounds amazing! I love hiking and the views are always worth the effort. Thanks for sharing the picture! \ud83c\udf04 Did you go alone or with friends?"
+    ]
+}

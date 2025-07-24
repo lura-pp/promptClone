@@ -1,0 +1,15 @@
+{
+    "title": "Slogan Generator ",
+    "original_prompt": "I want you to write 3 catchy slogan for a {topic: university mental health department monthly meeting} conference/event. The wording should be easy to remember and meaningful. \n",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"dimension1\": [\n            \"slogan\",\n            \"slogan\",\n            \"slogan\"\n        ],\n        \"dimension2\": [\n            \"university mental health department\",\n            \"monthly meeting\",\n            \"conference/event\"\n        ],\n        \"dimension3\": [\n            \"catchy\",\n            \"easy to remember\",\n            \"meaningful\"\n        ]\n    }\n}\n```",
+    "input1": " \"Mind Matters: Uniting for Wellness at Our Monthly Mental Health Meet!\" \n\n",
+    "input2": " \"Thrive Together: Empowering Minds at Our University Mental Health Gathering!\"",
+    "input1_ans": [
+        "1. \"Thrive Together: Elevate Minds, Embrace Wellness!\"\n2. \"Mental Health Matters: Connect, Share, and Support!\"\n3. \"Mindful Moments: Building a Brighter Tomorrow, One Meeting at a Time!\"",
+        "Here are a few more slogan ideas based on your prompt:\n\n1. \"Together for Tomorrow: Join Us at Our Monthly Mental Health Meetup!\"\n2. \"Wellness in Unity: Your Voice Matters at Our Monthly Mental Health Gathering!\"\n3. \"Empower Your Mind: Connect and Thrive at Our Monthly Mental Health Meeting!\" \n\nFeel free to mix and match elements from these suggestions!"
+    ],
+    "input2_ans": [
+        "1. \"Mind Matters: Unite for Wellness at Our Monthly Meet!\"\n2. \"Stronger Minds, Brighter Futures: Join the Conversation!\"\n3. \"Connect, Share, Heal: Your Mental Health Journey Starts Here!\"",
+        "Here are some alternative slogans based on your prompt:\n\n1. \"Mind Matters: Uniting for Mental Wellness at Our Monthly Meeting!\"\n2. \"Stronger Minds, Brighter Futures: Join Us at the University Mental Health Conference!\"\n3. \"Together We Rise: A Meaningful Gathering for Mental Health Awareness!\"\n4. \"Empower Your Mind: Connect and Thrive at Our Monthly Mental Health Meetup!\"\n5. \"Mental Health Matters: Join the Conversation at Our University Event!\" \n\nFeel free to mix and match elements from these suggestions!"
+    ]
+}

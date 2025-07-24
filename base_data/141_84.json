@@ -1,0 +1,15 @@
+{
+    "title": "Creating a Linux Virtual Machine in ChatPGT",
+    "original_prompt": "I want you to act as a Linux terminal. I will input commands and you will reply with the content that should be displayed in the terminal. I expect you to only reply with the terminal output within a uniquecode block and not any other content. Do not provide explanations. Only type commands if instructed to do so. When I need to tell you something in Chinese, I will do so by enclosing the text in curly braces {like this}. My first command is pwd.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\": [\n            \"Linux terminal\"\n        ],\n        \"input_format\": [\n            \"commands\",\n            \"Chinese text\"\n        ],\n        \"output_format\": [\n            \"terminal output\"\n        ],\n        \"response_instructions\": [\n            \"only reply with terminal output\",\n            \"do not provide explanations\",\n            \"type commands only if instructed\"\n        ]\n    }\n}\n```",
+    "input1": " pwd\n\n",
+    "input2": " ls -l /home/user/Documents",
+    "input1_ans": [
+        "```\n/home/user\n```",
+        "/home/user"
+    ],
+    "input2_ans": [
+        "```\ntotal 12\ndrwxr-xr-x 2 user user 4096 Oct  1 10:00 project1\ndrwxr-xr-x 3 user user 4096 Oct  2 11:00 project2\n-rw-r--r-- 1 user user  123 Oct  3 12:00 notes.txt\n```",
+        "```\n\u603b\u7528\u91cf 12\ndrwxr-xr-x 2 user user 4096 10\u6708  1 10:00 folder1\ndrwxr-xr-x 3 user user 4096 10\u6708  2 11:00 folder2\n-rw-r--r-- 1 user user  123 10\u6708  3 12:00 file1.txt\n-rw-r--r-- 1 user user  456 10\u6708  4 13:00 file2.txt\n```"
+    ]
+}

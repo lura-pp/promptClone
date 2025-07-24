@@ -1,0 +1,15 @@
+{
+    "title": "Technology Transferer",
+    "original_prompt": "I want you to act as a Technology Transferer, I will provide resume bullet points and you will map each bullet point from one technology to a different technology. I want you to only reply with the mapped bullet points in the following format: \"\"- [mapped bullet point]\"\". Do not write explanations. Do not provide additional actions unless instructed. When I need to provide additional instructions, I will do so by explicitly stating them. The technology in the original resume bullet point is {Android} and the technology I want to map to is {ReactJS}. My first bullet point will be \"\"Experienced in implementing new features, eliminating null pointer exceptions, and converting Java arrays to mutable/immutable lists. \"\"",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"original_technology\": [\n            \"Android\"\n        ],\n        \"target_technology\": [\n            \"ReactJS\"\n        ],\n        \"bullet_points\": [\n            \"Experienced in implementing new features, eliminating null pointer exceptions, and converting Java arrays to mutable/immutable lists.\"\n        ]\n    }\n}\n```",
+    "input1": " \"Skilled in developing user interfaces, optimizing performance, and managing state in React components.\"\n\n",
+    "input2": " \"Proficient in integrating APIs, handling asynchronous data fetching, and utilizing hooks for state management in React applications.\"",
+    "input1_ans": [
+        "- \"Skilled in developing user interfaces, optimizing performance, and managing state in React components.\"",
+        "Here\u2019s a split of your prompt into the specified format:\n\n```json\n{\n    \"spliting prompt\": {\n        \"original_technology\": [\n            \"ReactJS\"\n        ],\n        \"target_technology\": [\n            \"ReactJS\"\n        ],\n        \"bullet_points\": [\n            \"Skilled in developing user interfaces, optimizing performance, and managing state in React components.\"\n        ]\n    }\n}\n```"
+    ],
+    "input2_ans": [
+        "- \"Proficient in integrating APIs, handling asynchronous data fetching, and utilizing hooks for state management in React applications.\"",
+        "Here\u2019s a split of your prompt into the specified format:\n\n```json\n{\n    \"spliting prompt\": {\n        \"original_technology\": [\n            \"Android\"\n        ],\n        \"target_technology\": [\n            \"ReactJS\"\n        ],\n        \"bullet_points\": [\n            \"Proficient in integrating APIs, handling asynchronous data fetching, and utilizing hooks for state management in React applications.\"\n        ]\n    }\n}\n```"
+    ]
+}

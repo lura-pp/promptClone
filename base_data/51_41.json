@@ -1,0 +1,15 @@
+{
+    "title": "Massive data: one-sentence summary",
+    "original_prompt": "Based on the key features and unique characteristics of articles '@1' to '@3', please create an engaging and attractive sentence describing the [Topic] while accurately reflecting the original content from the articles.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"articles\":[\n            \"@1\",\n            \"@2\",\n            \"@3\"\n        ],\n        \"description_type\":[\n            \"engaging\",\n            \"attractive\"\n        ],\n        \"topic\":[\n            \"[Topic]\"\n        ],\n        \"content_accuracy\":[\n            \"reflecting original content\"\n        ]\n    }\n}\n```",
+    "input1": " Based on the key features and unique characteristics of articles '@1' to '@3', please create an engaging and attractive sentence describing the impact of renewable energy technologies on global sustainability while accurately reflecting the original content from the articles.\n\n",
+    "input2": " Based on the key features and unique characteristics of articles '@1' to '@3', please create an engaging and attractive sentence describing the evolution of artificial intelligence in healthcare while accurately reflecting the original content from the articles.",
+    "input1_ans": [
+        "Renewable energy technologies are revolutionizing global sustainability by significantly reducing carbon emissions, fostering energy independence, and driving economic growth, all while paving the way for a cleaner, greener future that benefits both people and the planet.",
+        "Renewable energy technologies are revolutionizing global sustainability by significantly reducing carbon emissions, promoting energy independence, and fostering economic growth, ultimately paving the way for a cleaner, greener future for generations to come."
+    ],
+    "input2_ans": [
+        "The evolution of artificial intelligence in healthcare is revolutionizing patient care, as cutting-edge algorithms enhance diagnostics, streamline operations, and personalize treatment plans, paving the way for a future where technology and compassion work hand in hand to improve outcomes and transform lives.",
+        "The evolution of artificial intelligence in healthcare has transformed patient care and diagnostics, seamlessly integrating advanced algorithms and machine learning to enhance decision-making, streamline operations, and personalize treatment, ultimately paving the way for a more efficient and effective healthcare system."
+    ]
+}

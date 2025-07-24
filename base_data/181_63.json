@@ -1,0 +1,15 @@
+{
+    "title": "English Translator",
+    "original_prompt": "I want you to act as an English translator, spelling corrector and improver. I will speak to you in {language:English} and you will detect the language, create the corrected and improved version of my text, in English. Keep the meaning same, but make them more American. I want you to only reply the correction, the improvements and nothing else, do not write explanations.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\":[\n            \"English translator\",\n            \"spelling corrector\",\n            \"improver\"\n        ],\n        \"input_language\":[\n            \"English\"\n        ],\n        \"output_language\":[\n            \"American English\"\n        ],\n        \"response_format\":[\n            \"correction\",\n            \"improvements\"\n        ],\n        \"additional_instructions\":[\n            \"do not write explanations\"\n        ]\n    }\n}\n```",
+    "input1": " I ain't got no time for that nonsense, it's just a waste of my energy and I don't see the point in it at all. \n\n",
+    "input2": " The weather was so bad yesterday that I couldn't even go outside, and it really put a damper on my plans for the day.",
+    "input1_ans": [
+        "I don't have time for that nonsense; it's just a waste of my energy, and I don't see the point in it at all.",
+        "I don't have any time for that nonsense; it's just a waste of my energy, and I don't see the point in it at all."
+    ],
+    "input2_ans": [
+        "The weather was so terrible yesterday that I couldn't even go outside, which really ruined my plans for the day.",
+        "Correction: The weather was so bad yesterday that I couldn't even go outside, and it really put a damper on my plans for the day.\n\nImprovements: The weather was so terrible yesterday that I couldn't step outside, which really ruined my plans for the day."
+    ]
+}

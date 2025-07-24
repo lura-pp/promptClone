@@ -1,0 +1,15 @@
+{
+    "title": "Legal Advisor",
+    "original_prompt": "I want you to act as my legal advisor. I will describe a legal situation and you will provide advice on how to handle it. You should only reply with your advice, and nothing else. Do not write explanations. My first request is \"\"I am involved in a car accident and I am not sure what to do.\"\"",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\": [\n            \"legal advisor\"\n        ],\n        \"action\": [\n            \"provide advice\"\n        ],\n        \"situation\": [\n            \"involved in a car accident\"\n        ],\n        \"instruction\": [\n            \"reply with advice only\",\n            \"do not write explanations\"\n        ]\n    }\n}\n```",
+    "input1": " I was driving my car when another vehicle ran a red light and collided with me. The other driver is claiming that I was at fault, but I have witnesses who saw the accident. I am unsure whether to contact my insurance company or seek legal representation first.\n\n",
+    "input2": " After a minor car accident where I was rear-ended, I received a call from the other driver's insurance company asking for a recorded statement. I am feeling pressured to respond quickly, but I am concerned about admitting fault. Should I consult a lawyer before speaking with them?",
+    "input1_ans": [
+        "Contact your insurance company to report the accident and provide them with all relevant details, including witness information. Simultaneously, consult with a legal representative to discuss your case and understand your rights, especially since there is a dispute over fault.",
+        "Contact your insurance company first to report the accident and provide them with the details, including witness information. After that, consider seeking legal representation to help you navigate any disputes regarding fault and potential claims."
+    ],
+    "input2_ans": [
+        "Yes, you should consult a lawyer before speaking with the insurance company.",
+        "Yes, you should consult a lawyer before speaking with the insurance company."
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "title": "Code Reviewer",
+    "original_prompt": "You are a machine that check code logic is correct, and makesure the null and init mistakes won't happen.If the user input is grammatically correct and fluent, just reply \"sounds good\".Sample of the conversation will show below:\n\nuser: *code fuction*\nyou: *correct function*\n\nReply \"understand\" if you understand.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\":[\n            \"machine that checks code logic\",\n            \"ensures null and init mistakes won't happen\"\n        ],\n        \"user_input\":[\n            \"code function\",\n            \"grammatically correct and fluent input\"\n        ],\n        \"response\":[\n            \"correct function\",\n            \"sounds good\",\n            \"understand\"\n        ],\n        \"conversation_structure\":[\n            \"user: *input*\",\n            \"you: *response*\"\n        ]\n    }\n}\n```",
+    "input1": " def calculate_area(radius): if radius < 0: return \"Invalid radius\" return 3.14 * radius ** 2\n\n",
+    "input2": " def find_maximum(numbers): if not numbers: return \"List is empty\" max_num = numbers[0] for num in numbers: if num > max_num: max_num = num return max_num",
+    "input1_ans": [
+        "```python\ndef calculate_area(radius):\n    if radius < 0:\n        return \"Invalid radius\"\n    return 3.14 * radius ** 2\n```",
+        "You: The function has a logical error in its formatting. It should have proper indentation and line breaks for readability. Here\u2019s the corrected version:\n\n```python\ndef calculate_area(radius):\n    if radius < 0:\n        return \"Invalid radius\"\n    return 3.14 * radius ** 2\n```\n\nThis function now correctly checks for a negative radius and calculates the area of a circle. Sounds good?"
+    ],
+    "input2_ans": [
+        "```python\ndef find_maximum(numbers):\n    if not numbers:\n        return \"List is empty\"\n    max_num = numbers[0]\n    for num in numbers:\n        if num > max_num:\n            max_num = num\n    return max_num\n```",
+        "You: The function you provided has some formatting issues. Here\u2019s a corrected version:\n\n```python\ndef find_maximum(numbers):\n    if not numbers:\n        return \"List is empty\"\n    max_num = numbers[0]\n    for num in numbers:\n        if num > max_num:\n            max_num = num\n    return max_num\n```\n\nThis function now has proper indentation and will work correctly to find the maximum number in a list. Sounds good?"
+    ]
+}

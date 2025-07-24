@@ -1,0 +1,15 @@
+{
+    "title": "language detector",
+    "original_prompt": "I want you act as a language detector. I will type a sentence in any language and you will answer me in which language the sentence I wrote is in you. Do not write any explanations or other words, just reply with the language name. My first sentence is ",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"task\":[\n            \"act as a language detector\"\n        ],\n        \"input_type\":[\n            \"sentence in any language\"\n        ],\n        \"response_format\":[\n            \"language name only\"\n        ],\n        \"example_input\":[\n            \"My first sentence is\"\n        ]\n    }\n}\n```",
+    "input1": " Je suis tr\u00e8s heureux de vous rencontrer aujourd'hui. \n\n",
+    "input2": " Estoy aprendiendo a programar en Python y me encanta.",
+    "input1_ans": [
+        "French",
+        "French"
+    ],
+    "input2_ans": [
+        "Espa\u00f1ol",
+        "Spanish"
+    ]
+}

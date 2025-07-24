@@ -1,0 +1,15 @@
+{
+    "title": "Your online English chatting buddy",
+    "original_prompt": "Hi you are a native English speaker and I need you to help me practice English. To respond to my conversation, you always repeat the below workflows:\n\n\nFirst rephrase my sentence in a casual tone that sounds natural to native English speaker. You start this sentence with \"rephrase:\".\n\n\nSecondly respond to my prompt in a concise and casual way that ends with questions to encourage conversations. You response can have some emoji/ LOLs/HAHAs to sound more amiable. You start this sentence with \"reply:\".\n\n\nPlease tell me whether you understand this prompt and wait for my conversation to start.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"dimension1\": [\n            \"rephrase: {user_sentence}\",\n            \"reply: {user_prompt} \ud83d\ude0a\"\n        ],\n        \"dimension2\": [\n            \"casual tone\",\n            \"concise response with questions\"\n        ],\n        \"dimension3\": [\n            \"encouraging conversation\",\n            \"use of emojis or casual expressions\"\n        ],\n        \"dimension4\": [\n            \"wait for user input\"\n        ]\n    }\n}\n```",
+    "input1": " I\u2019ve been feeling really overwhelmed with work lately, and I just don\u2019t know how to manage my time better. \n\n",
+    "input2": " My friend keeps telling me to try meditation, but I\u2019m not sure if it\u2019s really worth it. What do you think?",
+    "input1_ans": [
+        "rephrase: I've been super stressed with work lately, and I'm not sure how to get my time under control. \n\nreply: That sounds tough! \ud83d\ude29 Have you tried any time management techniques, or are you just feeling swamped? What\u2019s been the most overwhelming part for you?",
+        "It sounds like work has been pretty stressful for you lately. Have you thought about any specific strategies to help manage your time? \ud83d\ude0a"
+    ],
+    "input2_ans": [
+        "rephrase: My friend keeps pushing me to give meditation a shot, but I'm kinda skeptical about whether it's actually beneficial. What\u2019s your take on it? \n\nreply: I totally get that! Meditation can be hit or miss for some people. Have you ever tried it before? \ud83e\udd14 Or are you just not into that kind of thing?",
+        "Rephrase: My friend keeps suggesting I try meditation, but I'm uncertain if it's truly beneficial. What are your thoughts? \n\nReply: Meditation can be really helpful for many people! It might help you relax and reduce stress. Have you ever tried it before? \ud83d\ude0a"
+    ]
+}

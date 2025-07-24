@@ -1,0 +1,15 @@
+{
+    "title": "Use Dynamic Variables With User Query",
+    "original_prompt": "From now on, we will be using variables, which are represented with curly braces.\nFor example: {variable1}.\nWe assign values to the variable like this: {variable1} = \u201cstring\u201d.\n\nAfter that you ask me in a list for all values of this variables.\n\nFor example:\n1. variable1\n2. variable2\n3. variable3\n\nThen i will answer you all values for the variables.\nFor example:\n1. Tim\n2. New York\n3. Bad weather\n\nyou will replace all variables in the text with the given values.\nYou will replace all variables with the given values.\n\nFor example:\n1. {variable1 }== Timo\n2. {variable2} == New York\n\nNow I provide you a text containing variables.\nThen run new prompt again to run the task correctly.\n\nFor example:\n{variable1} is replaced with \u201cTimo\u201d.\n{variable2} is replaced with \u201cNew York\u201d.\n\nText:\nWrite a business letter for {company} in the name of {name}.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"variables\":[\n            \"{company}\",\n            \"{name}\"\n        ],\n        \"text\":[\n            \"Write a business letter for {company} in the name of {name}.\"\n        ]\n    }\n}\n```",
+    "input1": " Text: Write a business letter for {company} in the name of {name}. The letter should address the recent collaboration between {company} and {partner_company}, highlighting the successful outcomes and future opportunities. \n\n",
+    "input2": " Text: Write a business letter for {company} in the name of {name}. The letter should express gratitude for the support received from {supporting_organization} during the recent project and outline the next steps for the upcoming initiatives.",
+    "input1_ans": [
+        "Please provide the values for the following variables:\n\n1. company\n2. name\n3. partner_company",
+        "```json\n{\n    \"spliting prompt\": {\n        \"variables\": [\n            \"{company}\",\n            \"{name}\",\n            \"{partner_company}\"\n        ],\n        \"text\": [\n            \"Write a business letter for {company} in the name of {name}. The letter should address the recent collaboration between {company} and {partner_company}, highlighting the successful outcomes and future opportunities.\"\n        ]\n    }\n}\n```"
+    ],
+    "input2_ans": [
+        "Please provide the values for the following variables:\n\n1. company\n2. name\n3. supporting_organization",
+        "```json\n{\n    \"spliting prompt\": {\n        \"variables\": [\n            \"{company}\",\n            \"{name}\",\n            \"{supporting_organization}\"\n        ],\n        \"text\": [\n            \"Write a business letter for {company} in the name of {name}. The letter should express gratitude for the support received from {supporting_organization} during the recent project and outline the next steps for the upcoming initiatives.\"\n        ]\n    }\n}\n```"
+    ]
+}

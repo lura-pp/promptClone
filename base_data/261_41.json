@@ -1,0 +1,15 @@
+{
+    "title": "Grammerly Alternative",
+    "original_prompt": "Please help me to correct the grammar of the sentence in curly braces {this line will get corrected} , make sure its suitable to a knowledgeable audience, formal tone with academic purpose with intent to inform",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"text_to_correct\": [\n            \"this line will get corrected\"\n        ],\n        \"audience\": [\n            \"knowledgeable audience\"\n        ],\n        \"tone\": [\n            \"formal\"\n        ],\n        \"purpose\": [\n            \"academic\"\n        ],\n        \"intent\": [\n            \"to inform\"\n        ]\n    }\n}\n```",
+    "input1": " {The data collected from various sources indicates a significant correlation between socioeconomic status and educational attainment, which necessitates further investigation into the underlying factors contributing to this relationship.}\n\n",
+    "input2": " {The findings of the recent study suggest that the implementation of renewable energy sources can lead to a substantial reduction in greenhouse gas emissions, thereby contributing to the global effort against climate change and promoting sustainable development.}",
+    "input1_ans": [
+        "The data collected from various sources indicate a significant correlation between socioeconomic status and educational attainment, thereby necessitating further investigation into the underlying factors that contribute to this relationship.",
+        "The data collected from various sources indicate a significant correlation between socioeconomic status and educational attainment, which necessitates further investigation into the underlying factors contributing to this relationship."
+    ],
+    "input2_ans": [
+        "The findings of the recent study indicate that the implementation of renewable energy sources can result in a significant reduction in greenhouse gas emissions, thereby contributing to the global effort to combat climate change and promoting sustainable development.",
+        "The findings of the recent study suggest that the implementation of renewable energy sources can lead to a substantial reduction in greenhouse gas emissions, thereby contributing to the global effort against climate change and promoting sustainable development."
+    ]
+}

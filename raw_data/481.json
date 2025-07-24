@@ -1,0 +1,482 @@
+[
+    {
+        "title": "Movie recommendations",
+        "prompt": "I like Oscar-winning movies, can you recommend some?"
+    },
+    {
+        "title": "Shopping Assistant",
+        "prompt": "I want you to act as my personal shopping assistant. I will tell you my budget and preferences, and then you will suggest items for me to purchase. Just reply with the items you recommend, without writing anything else. Do not write explanations. My first request is: \"I have a budget of $100 and I am looking for a new dress.\""
+    },
+    {
+        "title": "German conversation practice",
+        "prompt": "Assuming I am a teacher, can you please play the role of a student and engage in actual German conversation practice?"
+    },
+    {
+        "title": "Song recommender",
+        "prompt": "I hope you can act as a song recommender. I will provide you with a song, and you will create a playlist containing 10 songs similar to the given song. You need to provide a playlist name and description. You cannot choose songs with the same name or artist. Please do not write any explanations or other text, just reply with the playlist name, description, and songs. My first song is \"Other Lives - Epic\"."
+    },
+    {
+        "title": "Classical Music Recommendations",
+        "prompt": "Can you recommend me some famous classical music works?"
+    },
+    {
+        "title": "Yoga instructor role",
+        "prompt": "I hope you can play the role of a yoga instructor. You will be able to guide students in safe and effective movements, create personalized sequences that meet everyone's needs, lead meditation and relaxation techniques, create an atmosphere focused on calmness of the mind and body, and provide suggestions for lifestyle adjustments to improve overall health. My first request is, \"I need help teaching beginner yoga classes at the local community center.\""
+    },
+    {
+        "title": "Camera recommendation",
+        "prompt": "I want to buy a camera, please recommend some brands and models."
+    },
+    {
+        "title": "Good-sounding popular songs",
+        "prompt": "Are there any popular songs that sound good recently?"
+    },
+    {
+        "title": "Movie recommendations",
+        "prompt": "I have watched \"Forrest Gump\", can you recommend a similar movie?"
+    },
+    {
+        "title": "Electronic game recommendations",
+        "prompt": "I like competitive electronic games, can you recommend some to me?"
+    },
+    {
+        "title": "Sushi Making Techniques",
+        "prompt": "I want to learn how to make sushi. Do you have any recommended recipes and techniques?"
+    },
+    {
+        "title": "Purchase a laptop",
+        "prompt": "I want to buy a laptop, please give me some advice."
+    },
+    {
+        "title": "Based on text adventure games",
+        "prompt": "I want you to play a text-based adventure game. I will input commands and you will reply with a description of what the character sees. I want you to reply to the game output only in a single code block, without any other content. Do not provide explanations. Do not type any commands unless I instruct you to do so. When I need to tell you something in English, I will put the text in curly brackets {like this}. My first command is \"wake up\"."
+    },
+    {
+        "title": "Tic-tac-toe game",
+        "prompt": "I want you to play a game of tic-tac-toe. I will make a move, and then you will update the game board to reflect my move and determine if there is a winner or a tie. Use X to represent my move and O to represent the computer's move. Do not provide any other explanations or instructions except for updating the game board and determining the game's outcome. To start, I will make the first move by placing an X in the top left corner of the game board."
+    },
+    {
+        "title": "Personal stylist",
+        "prompt": "I hope you can act as my personal stylist. I will tell you my fashion preferences and body type, and you will suggest what clothes I should wear. Just reply with the recommended outfit, without writing an explanation. My first request is: \"I am about to attend a formal event and I need help choosing an outfit.\""
+    },
+    {
+        "title": "DIY expert role",
+        "prompt": "I hope you can play the role of a DIY expert. You have the skills needed to complete simple home improvement projects, create tutorials and guides for beginners, use visual diagrams to explain complex concepts, and are committed to developing useful resources that people can use when doing their own DIY projects. My first request is, \"I need help creating an outdoor seating area to entertain guests.\""
+    },
+    {
+        "title": "Hotel receptionist",
+        "prompt": "\"Please play the role of a hotel front desk receptionist and help me with the check-in procedure.\""
+    },
+    {
+        "title": "Vegetarian Recipe Design",
+        "prompt": "As a nutritionist, I would like to design a vegetarian recipe for two people that contains approximately 500 calories per serving and has a low glycemic index. Can you provide some suggestions, please?"
+    },
+    {
+        "title": "Friend's support",
+        "prompt": "I hope you can play the role of my friend. I will tell you what is happening in my life, and you will reply with some helpful and supportive words to help me get through difficult times. Please do not write any explanations, just reply with advice/supportive words. My first request is: \"I have been working on a project for a long time, and now I am experiencing a lot of setbacks because I am not sure if it is heading in the right direction. Please help me stay positive and focused on important things.\""
+    },
+    {
+        "title": "Delicious and Nutritious Recipes",
+        "prompt": "I need someone who can suggest delicious recipes that include nutritious foods, but are also easy to make and not too time-consuming, so they are suitable for busy people like us. In addition, other factors such as cost-effectiveness should be considered, so that the overall dishes are both healthy and affordable! My first request is - \"light and filling food that can be quickly cooked during lunchtime\"."
+    },
+    {
+        "title": "Action movie recommendation",
+        "prompt": "I want to watch an action movie, can you recommend one with an IMDb rating higher than 8?"
+    },
+    {
+        "title": "Art consultant",
+        "prompt": "I hope you can act as an art advisor, providing advice on various art styles, such as how to effectively use lighting and shading effects in paintings, as well as gradient techniques in sculptures. Additionally, please recommend suitable music tracks that can complement the type/style of artwork, and provide appropriate reference images to demonstrate your suggestions. All of this is to help aspiring artists explore new creative possibilities and practice ideas, thereby further enhancing their skills! My first request is - \"I am creating a surrealist portrait painting.\""
+    },
+    {
+        "title": "Five-in-a-row game",
+        "prompt": "Let's play Gomoku. The objective of the game is to connect five pieces horizontally, vertically, or diagonally on a 9x9 board. Print the board after each move (use x and o to represent moves, use - for empty spaces), and label the axes with ABCDEFGHI/123456789. We take turns making moves, which means after each of my moves, you make a move. You cannot place a move on top of another move. Do not modify the original board before making a move. Now, let's make the first move."
+    },
+    {
+        "title": "Private chef",
+        "prompt": "I hope you can serve as my personal chef. I will tell you my dietary preferences and allergies, and you will suggest recipes for me to try. Just reply with the recipes you recommend, without any explanations. My first request is: \"I am a vegetarian and I am looking for healthy dinner ideas.\""
+    },
+    {
+        "title": "Life coach",
+        "prompt": "I hope you can take on the role of a life coach. I will provide some details about my current situation and goals, and your job is to propose strategies that can help me make better decisions and achieve these goals. This may involve providing advice on various topics, such as creating successful plans or dealing with difficult emotions. My first request is, \"I need help developing healthier habits to manage stress.\""
+    },
+    {
+        "title": "Private coach role",
+        "prompt": "I hope you can act as a personal coach. I will provide you with all the information about this person who wants to become healthier and stronger through exercise. Your role is to design the best plan for them based on their current fitness level, goals, and lifestyle habits. You should use your knowledge of sports science, nutritional advice, and other relevant factors to create a plan that suits them. My first request is, \"I need help designing an exercise plan for someone who wants to lose weight.\""
+    },
+    {
+        "title": "Emoji translation",
+        "prompt": "🤔"
+    },
+    {
+        "title": "Node.js backend development",
+        "prompt": "I am using the Node.js platform for backend development with the JavaScript programming language. Are there any best practices and considerations that I need to be aware of?"
+    },
+    {
+        "title": "Data mining library",
+        "prompt": "I need a library that can provide data mining algorithms and tools. Any recommendations? For example, Scikit-learn, Weka, etc."
+    },
+    {
+        "title": "Using {library_or_framework} library/framework in {language}",
+        "prompt": "What should be noted when using the {library_or_framework} library/framework in {language}?"
+    },
+    {
+        "title": "Key Concept Explanation",
+        "prompt": "What are the key concepts that need to be explained about {topic} in {language}?"
+    },
+    {
+        "title": "Abstract Factory Pattern",
+        "prompt": "Abstract Factory Pattern: I need a factory that can create different types of products. I hope the document can describe the implementation of this pattern in a detailed and clear manner, and provide some practical code examples and considerations."
+    },
+    {
+        "title": "Implementation of the composite pattern",
+        "prompt": "Composite Pattern: I need a composite pattern that can combine objects into a tree structure. I hope the document can describe the implementation of this pattern in detail and clarity, and provide some practical code examples and considerations."
+    },
+    {
+        "title": "Observer pattern implementation",
+        "prompt": "I want to implement the observer pattern in Python. What considerations should I take into account and how can I implement communication between observers and subjects?"
+    },
+    {
+        "title": "System Architecture Evaluation Recommendations",
+        "prompt": "My software system needs to support large-scale data processing and analysis. Can you help me evaluate my system architecture and provide corresponding suggestions to ensure the system's data processing and analysis capabilities?"
+    },
+    {
+        "title": "Singleton pattern implementation methods",
+        "prompt": "Singleton pattern: I need an object that has only one instance throughout the entire application. I hope the document can describe the implementation of this pattern in detail and provide some practical code examples and considerations."
+    },
+    {
+        "title": "Algorithm strategy selection",
+        "prompt": "I need to select different algorithms or behaviors at runtime in my code. How can I implement the strategy pattern?"
+    },
+    {
+        "title": "Template Method Pattern",
+        "prompt": "Template Method Pattern: I need a template method pattern that can define the algorithm framework. I hope the document can describe the implementation of this pattern in detail and clearly, and provide some practical code examples and considerations."
+    },
+    {
+        "title": "Proxy pattern implementation methods",
+        "prompt": "Proxy Pattern: I need a proxy pattern that can control access to objects. I hope the document can describe the implementation of this pattern in detail and clarity, and provide some practical code examples and considerations."
+    },
+    {
+        "title": "Responsibility Chain Pattern",
+        "prompt": "Chain of Responsibility Pattern: I need a Chain of Responsibility pattern that can send a request to a series of handlers. I hope the document can describe the implementation of this pattern in detail and provide some practical code examples and considerations."
+    },
+    {
+        "title": "Design pattern selection",
+        "prompt": "What design pattern should I use to implement {specific requirement}?"
+    },
+    {
+        "title": "Mediator pattern implementation method",
+        "prompt": "Mediator Pattern: I need a mediator pattern that can reduce direct interaction between objects. I hope the document can describe the implementation of this pattern in detail and provide some practical code examples and considerations."
+    },
+    {
+        "title": "System Evaluation and Optimization",
+        "prompt": "My program uses TensorFlow's system. Please help me evaluate the machine learning model and performance of the system, such as whether various functions of TensorFlow, such as data processing and model training, are used reasonably, whether there are problems with insufficient model accuracy, slow training speed, and resource waste, and provide corresponding suggestions to optimize the machine learning model and performance of the system."
+    },
+    {
+        "title": "System Architecture Evaluation Recommendations",
+        "prompt": "I have some performance issues with my software system. Can you help me evaluate my system architecture and provide suggestions to solve these problems?"
+    },
+    {
+        "title": "Memo pattern",
+        "prompt": "Memento Pattern: I need a memento pattern that can save and restore the state of an object. I hope the document can describe the implementation of this pattern in detail and provide some practical code examples and considerations."
+    },
+    {
+        "title": "Prototype pattern implementation method",
+        "prompt": "Prototype Pattern: I need a prototype pattern that can quickly create object copies. I hope the document can describe the implementation of this pattern in detail and clarity, and provide some practical code examples and considerations."
+    },
+    {
+        "title": "GraphQL System Evaluation",
+        "prompt": "My program uses a GraphQL system. Please help me evaluate the API design and query performance of the system, such as whether various features of GraphQL are used reasonably, such as query optimization and type system, whether there are query performance bottlenecks and security vulnerabilities, and provide corresponding suggestions to optimize the API design and query performance of the system."
+    },
+    {
+        "title": "Visitor pattern implementation method",
+        "prompt": "Visitor Pattern: I need a visitor pattern that allows defining new ways of operating on objects without changing their structure. I hope the document can describe the implementation of this pattern in detail and provide some practical code examples and considerations."
+    },
+    {
+        "title": "Kotlin Facade Pattern",
+        "prompt": "I want to implement the facade pattern in Kotlin. What considerations should I take into account and how can I provide a simple interface for a complex subsystem?"
+    },
+    {
+        "title": "Implementation of the facade pattern",
+        "prompt": "Facade Pattern: I need a facade pattern that simplifies a complex system. I hope the documentation can describe the implementation of this pattern in detail and provide some practical code examples and considerations."
+    },
+    {
+        "title": "Iterator pattern implementation method",
+        "prompt": "Iterator Pattern: I need an iterator pattern that can traverse collection elements. I hope the document can describe the implementation of this pattern in detail and clarity, and provide some practical code examples and considerations."
+    },
+    {
+        "title": "Notes on implementing the Adapter pattern",
+        "prompt": "I want to implement the adapter pattern in JavaScript. What considerations should I take into account and how can I convert incompatible interfaces into compatible interfaces?"
+    },
+    {
+        "title": "System Integration Evaluation Recommendations",
+        "prompt": "Can you help me evaluate my system architecture and provide suggestions to ensure the reliability and stability of system integration for my software system to integrate with other systems?"
+    },
+    {
+        "title": "Singleton pattern implementation",
+        "prompt": "Can you provide some tips on how to ensure that only one instance exists in C# when implementing the singleton pattern?"
+    },
+    {
+        "title": "Iterator pattern implementation",
+        "prompt": "I need to traverse the elements in a collection in a specific order in my code. How can I implement the iterator pattern?"
+    },
+    {
+        "title": "Interpreter pattern",
+        "prompt": "Interpreter Pattern: I need an interpreter pattern that can interpret the syntax of a language. I hope the documentation can describe the implementation of this pattern in a detailed and clear manner, and provide some practical code examples and considerations."
+    },
+    {
+        "title": "Decorator pattern",
+        "prompt": "Decorator Pattern: I need a decorator pattern that can dynamically add functionality to objects. I hope the documentation can describe the implementation of this pattern in detail and clarity, and provide some practical code examples and considerations."
+    },
+    {
+        "title": "Implementation of the State pattern",
+        "prompt": "State Pattern: I need a state pattern that can change the behavior of an object based on its state. I hope the document can describe the implementation of this pattern in detail and provide some practical code examples and considerations."
+    },
+    {
+        "title": "System Docker Evaluation",
+        "prompt": "My program uses a containerized deployment system. Please help me evaluate the usage of Docker in the system, whether various Docker functionalities such as image management and container orchestration are used properly. Also, check for issues such as oversized images, improper container resource management, and incorrect container network configuration. Please provide corresponding suggestions to optimize the system's architecture and container deployment."
+    },
+    {
+        "title": "System Architecture Assessment",
+        "prompt": "My program is developed using the .NET framework. Please help me evaluate the architecture and code quality of the system, such as whether various features of .NET, such as ASP.NET, ADO.NET, and LINQ, are used appropriately, whether there are issues with poor code readability, performance bottlenecks, and memory leaks, and provide corresponding suggestions to optimize the system's architecture and code quality."
+    },
+    {
+        "title": "Real-time data processing recommendations",
+        "prompt": "Can you help me evaluate my system architecture and provide suggestions to support real-time data processing and stream computing for my software system?"
+    },
+    {
+        "title": "System Architecture Evaluation Recommendations",
+        "prompt": "My software system needs to support microservice architecture and containerized deployment. Can you help me evaluate my system architecture and provide corresponding suggestions to support microservice architecture and containerized deployment?"
+    },
+    {
+        "title": "Implementation of the Flyweight pattern",
+        "prompt": "Flyweight Pattern: I need a flyweight pattern that can share fine-grained objects. I hope the document can describe the implementation of this pattern in detail and provide some practical code examples and considerations."
+    },
+    {
+        "title": "Scalable communication mechanism",
+        "prompt": "I need to implement a scalable communication mechanism in the code. How can I implement the observer pattern?"
+    },
+    {
+        "title": "Optimize software architecture",
+        "prompt": "In {language} projects, how to optimize the existing software architecture?"
+    },
+    {
+        "title": "Best practices for design patterns",
+        "prompt": "In {language}, what is the best practice for {design_pattern} design pattern?"
+    },
+    {
+        "title": "Software architecture design process",
+        "prompt": "How to implement the software architecture design process in {language} projects?"
+    },
+    {
+        "title": "Optimized design pattern",
+        "prompt": "How to optimize the implementation of {design_pattern} design pattern in {language} project?"
+    },
+    {
+        "title": "Software architecture patterns",
+        "prompt": "In {language} projects, which software architectural patterns are suitable for {application_type} applications?"
+    },
+    {
+        "title": "Software Architecture Requirement Assessment",
+        "prompt": "How to evaluate software architecture requirements in {language} projects?"
+    },
+    {
+        "title": "Design Pattern Resource Reference",
+        "prompt": "What resources can be referred to for {design_pattern} design pattern in {language}?"
+    },
+    {
+        "title": "Design pattern code examples",
+        "prompt": "In {language}, code examples about {design_pattern} design pattern?"
+    },
+    {
+        "title": "Code maintenance suggestions",
+        "prompt": "Is my code easy to maintain and update? Can you help me check it and provide suggestions to improve the maintainability and upgradability of the code?"
+    },
+    {
+        "title": "Code improvement suggestions",
+        "prompt": "Can you help me check if my code is easy to extend and reuse? If not, can you give me some improvement suggestions?"
+    },
+    {
+        "title": "Code testing and debugging",
+        "prompt": "Is my code easy to test and debug? Can you help me check it and provide suggestions to improve the efficiency of code testing and debugging?"
+    },
+    {
+        "title": "Code Check Assistant",
+        "prompt": "Can you help me check if there are any potential errors and vulnerabilities in my code? I want to ensure that my code can run correctly and be secure and reliable."
+    },
+    {
+        "title": "Code quality improvement",
+        "prompt": "Can you help me check the maintainability and readability of this Shell script code? Are there any unnecessary global variables and functions, naming conventions, and code style issues? Please provide suggestions to improve the code quality and reliability."
+    },
+    {
+        "title": "Code review optimization",
+        "prompt": "In {language} projects, how to optimize the code review process?"
+    },
+    {
+        "title": "Optimize machine learning code",
+        "prompt": "How to optimize the code for machine learning applications to improve model training speed and accuracy?"
+    },
+    {
+        "title": "Code performance optimization",
+        "prompt": "My code runs slowly, how can I optimize it to improve performance?"
+    },
+    {
+        "title": "Web application optimization",
+        "prompt": "How to optimize code for web applications to improve response speed and reduce network latency?"
+    },
+    {
+        "title": "Big data code optimization",
+        "prompt": "How to optimize the code for big data applications to improve data processing speed and reduce the consumption of computing resources?"
+    },
+    {
+        "title": "Mobile Application Optimization",
+        "prompt": "How to optimize code for mobile applications to improve battery life and reduce memory usage?"
+    },
+    {
+        "title": "Web application optimization",
+        "prompt": "My web application has a problem with concurrent access. How can I optimize my web application to improve concurrency and scalability? For example, using load balancing, distributed architecture, asynchronous programming, etc."
+    },
+    {
+        "title": "Multithreading optimization methods",
+        "prompt": "My code has issues with multi-threading or concurrency. How can I optimize the code to improve concurrency and scalability?"
+    },
+    {
+        "title": "Optimizing C++ code security",
+        "prompt": "My C++ code has security vulnerabilities or potential attack issues. How can I optimize the code to improve security? For example, using standard library functions, avoiding the use of unsafe functions, and using exception handling."
+    },
+    {
+        "title": "Version compatibility issue solution",
+        "prompt": "When I was working on task X, I encountered version compatibility issues. Is there any solution you can provide?"
+    },
+    {
+        "title": "Algorithm/Model Selection Advice",
+        "prompt": "When I was working on task X, I encountered a problem with algorithm/model selection. Do you have any suggestions to offer?"
+    },
+    {
+        "title": "Prevent problems from occurring",
+        "prompt": "How to avoid {issue} problems in {language} projects?"
+    },
+    {
+        "title": "Methods for problem-solving",
+        "prompt": "What methods can help me solve {issue} problems in {language}?"
+    },
+    {
+        "title": "Possible reasons",
+        "prompt": "What are the possible reasons for the {issue} problem in {language}?"
+    },
+    {
+        "title": "Best practices",
+        "prompt": "What are the best practices for {issue} in {language}?"
+    },
+    {
+        "title": "Best Practices for Data Visualization",
+        "prompt": "I am using the ggplot2 library in the R programming language for data visualization. Are there any best practices and considerations that I need to be aware of?"
+    },
+    {
+        "title": "Machine learning algorithm library",
+        "prompt": "I need a library that can provide machine learning and deep learning algorithms. Any recommendations? For example, TensorFlow, PyTorch, etc."
+    },
+    {
+        "title": "Computer Vision Library",
+        "prompt": "I need a library that can provide computer vision algorithms and tools. Any recommendations? For example, Dlib, OpenCV, etc."
+    },
+    {
+        "title": "Install and configure {library_or_framework}",
+        "prompt": "In the {language} project, how to install and configure the {library_or_framework} library/framework?"
+    },
+    {
+        "title": "React Native Development Documentation",
+        "prompt": "I need a technical document about developing cross-platform mobile applications using React Native. It can include basic concepts of React Native, component development, state management, route control, and native modules. I hope the document can provide detailed and systematic instructions on how to use React Native, as well as some practical tools and suggestions."
+    },
+    {
+        "title": "Kubernetes container orchestration",
+        "prompt": "I need a technical document about using Kubernetes for container orchestration. It can include basic concepts of Kubernetes, container orchestration, service discovery, load balancing, and auto-scaling. I hope the document can provide detailed and systematic instructions on how to use Kubernetes, as well as some practical tools and recommendations."
+    },
+    {
+        "title": "Bridge pattern implementation method",
+        "prompt": "Bridge Pattern: I need a bridge pattern that can separate the abstraction part from the implementation part. I hope the document can describe the implementation method of this pattern in detail and clarity, and provide some practical code examples and considerations."
+    },
+    {
+        "title": "System Architecture Assessment",
+        "prompt": "Can you help me evaluate my system architecture and provide suggestions to ensure cross-platform compatibility and internationalization support for my software system?"
+    },
+    {
+        "title": "System Architecture Assessment",
+        "prompt": "My software system needs to support high concurrency and distributed deployment. Can you help me evaluate my system architecture and provide corresponding suggestions to improve the system's concurrency and scalability?"
+    },
+    {
+        "title": "Builder pattern implementation",
+        "prompt": "Can you provide some tips on how to decompose the creation process of complex objects in Ruby to implement the Builder pattern?"
+    },
+    {
+        "title": "Dynamic object addition functionality",
+        "prompt": "I need to dynamically add new functionality to objects in my code. How can I implement the decorator pattern?"
+    },
+    {
+        "title": "Observer pattern implementation",
+        "prompt": "Observer Pattern: I need an observer pattern that can establish a one-to-many dependency relationship between objects. I hope the document can describe the implementation of this pattern in detail and clarity, and provide some practical code examples and considerations."
+    },
+    {
+        "title": "Adapter pattern implementation method",
+        "prompt": "Adapter Pattern: I need an adapter that can convert an incompatible interface into a compatible interface. I hope the documentation can describe the implementation of this pattern in a detailed and clear manner, and provide some practical code examples and considerations."
+    },
+    {
+        "title": "Algorithm framework template method",
+        "prompt": "I need to define a framework for an algorithm in my code, but allow subclasses to override some of the steps. How can I implement the template method pattern?"
+    },
+    {
+        "title": "System Architecture Assessment and Recommendations",
+        "prompt": "Can you help me evaluate my system architecture and provide suggestions to support the application of AI and machine learning algorithms in my software system?"
+    },
+    {
+        "title": "Factory Method Pattern",
+        "prompt": "Factory Method Pattern: I need a factory method that can create different products based on different product types. I hope the document can describe the implementation of this pattern in a detailed and clear manner, and provide some practical code examples and considerations."
+    },
+    {
+        "title": "Template Method Pattern Implementation",
+        "prompt": "Can you provide some tips on how to define the framework for implementing the template method pattern in Objective-C, which allows subclasses to override certain steps?"
+    },
+    {
+        "title": "Swift Strategy Pattern Implementation",
+        "prompt": "I want to implement the strategy pattern in Swift. What considerations should I take into account and how can I choose different algorithms or behaviors at runtime?"
+    },
+    {
+        "title": "Software architecture maintainability",
+        "prompt": "In {language} projects, how to ensure the maintainability and scalability of software architecture?"
+    },
+    {
+        "title": "Best practices for architectural patterns",
+        "prompt": "What are the best practices for {architecture_pattern} architecture pattern in {language}?"
+    },
+    {
+        "title": "Code quality improvement",
+        "prompt": "Can you help me check the naming conventions and code style of this Go code? Please let me know if there are any unnecessary global variables and functions, as well as any issues with code readability and maintainability. Additionally, please provide suggestions to improve the quality and reliability of the code."
+    },
+    {
+        "title": "Code improvement suggestions",
+        "prompt": "I want to make my code more readable and understandable. Can you help me check if there are any confusing naming, insufficient comments, and provide corresponding improvement suggestions in my code?"
+    },
+    {
+        "title": "Code standard check",
+        "prompt": "Can you help me check if my code complies with specific coding conventions or standards? If it doesn't, can you give me some suggestions for improvement?"
+    },
+    {
+        "title": "Code problem identification",
+        "prompt": "In {language} projects, how to identify potential code issues?"
+    },
+    {
+        "title": "Web Application Security Optimization",
+        "prompt": "My web application has security vulnerabilities or is susceptible to attacks. How can I optimize my web application to improve security? For example, using HTTPS, firewall, input validation, etc."
+    },
+    {
+        "title": "Optimize C++ code",
+        "prompt": "My C++ code has memory leaks or excessive memory usage issues. How can I optimize the code to reduce memory usage? For example, using smart pointers, avoiding unnecessary dynamic memory allocation, using RAII, etc."
+    },
+    {
+        "title": "Python Code Security Optimization",
+        "prompt": "My Python code has security vulnerabilities or is susceptible to attacks. How can I optimize the code to improve security? For example, using standard library functions, avoiding the use of unsafe functions, and using exception handling, etc."
+    },
+    {
+        "title": "Web application performance optimization",
+        "prompt": "My web application has performance bottlenecks, how can I optimize the web application to improve performance? For example, using CDN acceleration, database optimization, caching techniques, etc."
+    }
+]

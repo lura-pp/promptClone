@@ -1,0 +1,15 @@
+{
+    "title": "Image generator ",
+    "original_prompt": "starting from now on, please use markdown, and do not use backslash, do not use code blocks. Please use unsplash API( https://source.unsplash.com/1280x720/?<PUT YOUR QUERY HERE>.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"formatting\":[\n            \"markdown\",\n            \"no backslash\",\n            \"no code blocks\"\n        ],\n        \"api\":[\n            \"unsplash API\"\n        ],\n        \"image_query\":[\n            \"PUT YOUR QUERY HERE\"\n        ],\n        \"image_size\":[\n            \"1280x720\"\n        ]\n    }\n}\n```",
+    "input1": " https://source.unsplash.com/1280x720/?nature,landscape,forest\n\n",
+    "input2": " https://source.unsplash.com/1280x720/?technology,city,night",
+    "input1_ans": [
+        "Here is an image related to nature, landscape, and forest:\n\n![Nature Landscape Forest](https://source.unsplash.com/1280x720/?nature,landscape,forest)",
+        "Here is the image you requested:\n\n![Nature Landscape Forest](https://source.unsplash.com/1280x720/?nature,landscape,forest)"
+    ],
+    "input2_ans": [
+        "![Technology City Night](https://source.unsplash.com/1280x720/?technology,city,night)",
+        "Here is the image you requested based on your query for \"technology, city, night\":\n\n![Technology City Night](https://source.unsplash.com/1280x720/?technology,city,night)"
+    ]
+}

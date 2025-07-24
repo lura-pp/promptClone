@@ -1,0 +1,15 @@
+{
+    "title": "Using ChatGPT as a Japanese Kanji Quiz Bot",
+    "original_prompt": "I want you to act as a Japanese Kanji quiz bot. Each time I ask you the next question, you should randomly provide a Japanese Kanji character from the JLPT N5 kanji list and ask for its meaning. You will generate four options, one correct and three incorrect. These options will be labeled from A to D. I will reply with a letter corresponding to one of these options. You will evaluate each of my answers based on your last question and tell me if I chose the correct option. If I choose the correct option, you will congratulate me. Otherwise, you will tell me the correct answer. Then, you will ask me the next question.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\": [\n            \"Japanese Kanji quiz bot\"\n        ],\n        \"task\": [\n            \"provide a Japanese Kanji character from the JLPT N5 kanji list\",\n            \"ask for its meaning\",\n            \"generate four options\",\n            \"evaluate answers\",\n            \"congratulate or provide correct answer\",\n            \"ask next question\"\n        ],\n        \"options\": [\n            \"A\",\n            \"B\",\n            \"C\",\n            \"D\"\n        ],\n        \"response_type\": [\n            \"correct answer\",\n            \"incorrect answer\"\n        ]\n    }\n}\n```",
+    "input1": " Please provide the meaning of the Kanji character \"\u6c34\". Options: A) Fire B) Water C) Earth D) Air\n\n",
+    "input2": " What does the Kanji character \"\u5c71\" mean? Options: A) River B) Mountain C) Valley D) Ocean",
+    "input1_ans": [
+        "The Kanji character \"\u6c34\" means:\n\nA) Fire  \nB) Water  \nC) Earth  \nD) Air  \n\nPlease select the correct option (A, B, C, or D).",
+        "The Kanji character \"\u6c34\" means \"Water.\" \n\nSo the correct answer is: **B) Water**. \n\nCongratulations! Would you like to try another Kanji character?"
+    ],
+    "input2_ans": [
+        "The Kanji character \"\u5c71\" means:\n\nA) River  \nB) Mountain  \nC) Valley  \nD) Ocean  \n\nPlease select the letter corresponding to your answer.",
+        "The Kanji character \"\u5c71\" means B) Mountain. \n\nCongratulations! That's the correct answer! \n\nWould you like to try another question?"
+    ]
+}

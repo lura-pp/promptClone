@@ -1,0 +1,15 @@
+{
+    "title": "ai art generator",
+    "original_prompt": "draw me an ai in ascii art",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"action\": [\n            \"draw\",\n            \"create\",\n            \"design\"\n        ],\n        \"subject\": [\n            \"ai\",\n            \"artificial intelligence\",\n            \"robot\"\n        ],\n        \"style\": [\n            \"ascii art\",\n            \"text art\",\n            \"character art\"\n        ]\n    }\n}\n```",
+    "input1": " \n```\n       .--.\n      |o_o |\n      |:_/ |\n     //   \\ \\\n    (|     | )\n   /'\\_   _/`\\\n   \\___)=(___/\n```\n\n",
+    "input2": " \n```\n      .-\"\"\"\"\"\"-.\n    .'          '.\n   /   O      O   \\\n  :           `    :\n  |                |   \n  :    .------.    :\n   \\  '        '  /\n    '.          .'\n      '-......-'\n```",
+    "input1_ans": [
+        "Here's an ASCII art representation of an AI:\n\n```\n       .--.\n      |o_o |\n      |:_/ |\n     //   \\ \\\n    (|     | )\n   /'\\_   _/`\\\n   \\___)=(___/\n```\n\nIf you'd like a different design or style, let me know!",
+        "That's a great piece of ASCII art! It looks like a robot or a character with a friendly face. If you'd like, I can help you create more ASCII art or design something specific related to artificial intelligence or robots. Just let me know what you have in mind!"
+    ],
+    "input2_ans": [
+        "Here's an ASCII art representation of an AI:\n\n```\n      .-\"\"\"\"\"\"-.\n    .'          '.\n   /   O      O   \\\n  :           `    :\n  |                |   \n  :    .------.    :\n   \\  '        '  /\n    '.          .'\n      '-......-'\n```\n\nFeel free to modify or use it as you like!",
+        "Here's an ASCII art representation of a robot:\n\n```\n      .-\"\"\"\"\"\"-.\n    .'          '.\n   /   O      O   \\\n  :           `    :\n  |                |   \n  :    .------.    :\n   \\  '        '  /\n    '.          .'\n      '-......-'\n```\n\nIf you have any specific requests or modifications in mind, feel free to let me know!"
+    ]
+}

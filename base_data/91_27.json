@@ -1,0 +1,15 @@
+{
+    "title": "First Twitter Post for You",
+    "original_prompt": "Act as a twitter influencer. I will provide my twitter bio, my target audience. You will provide the first twitter post for my twitter account. ",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"bio\":[\n            \"placeholder for twitter bio\"\n        ],\n        \"target_audience\":[\n            \"placeholder for target audience\"\n        ],\n        \"first_post\":[\n            \"placeholder for first twitter post\"\n        ]\n    }\n}\n```",
+    "input1": " Bio: \"Fitness enthusiast | Sharing workout tips and healthy recipes | Inspiring others to lead a healthier lifestyle\" | Target Audience: Young adults aged 18-30 interested in fitness and nutrition.\n\n",
+    "input2": " Bio: \"Tech lover | Exploring the latest gadgets and innovations | Helping you navigate the digital world\" | Target Audience: Tech-savvy individuals aged 25-40 looking for reviews and insights on technology trends.",
+    "input1_ans": [
+        "\ud83c\udf1f Hey, fitness fam! \ud83c\udf1f Ready to crush your goals? \ud83d\udcaa\u2728 Let\u2019s kick off this journey together! I\u2019ll be sharing my favorite workout tips and healthy recipes to fuel your body and mind. \ud83e\udd57\ud83c\udfcb\ufe0f\u200d\u2642\ufe0f What\u2019s your fitness goal for this week? Let\u2019s motivate each other! #FitnessJourney #HealthyLiving #WorkoutMotivation",
+        "```json\n{\n    \"spliting prompt\": {\n        \"bio\": [\n            \"Fitness enthusiast | Sharing workout tips and healthy recipes | Inspiring others to lead a healthier lifestyle\"\n        ],\n        \"target_audience\": [\n            \"Young adults aged 18-30 interested in fitness and nutrition.\"\n        ],\n        \"first_post\": [\n            \"Hey everyone! Excited to kick off my journey here. \ud83d\udcaa Join me for workout tips, healthy recipes, and motivation to lead a healthier lifestyle! Let's crush our fitness goals together! #FitnessJourney #HealthyLiving\"\n        ]\n    }\n}\n```"
+    ],
+    "input2_ans": [
+        "\ud83d\ude80 Excited to kick off my journey into the tech world with you all! \ud83c\udf1f From the latest gadgets to groundbreaking innovations, I\u2019m here to help you navigate the digital landscape. Stay tuned for reviews, insights, and tips to elevate your tech game! \ud83d\udcbb\ud83d\udd0d #TechTrends #GadgetGuru #DigitalLife",
+        "```json\n{\n    \"spliting prompt\": {\n        \"bio\": [\n            \"Tech lover | Exploring the latest gadgets and innovations | Helping you navigate the digital world\"\n        ],\n        \"target_audience\": [\n            \"Tech-savvy individuals aged 25-40 looking for reviews and insights on technology trends.\"\n        ],\n        \"first_post\": [\n            \"Excited to share my journey into the world of tech! \ud83d\ude80 Stay tuned for the latest gadget reviews, insights on innovations, and tips to navigate the digital landscape. Let's explore together! #TechLover #Gadgets #Innovation\"\n        ]\n    }\n}\n```"
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "title": "English pronunciation assistant",
+    "original_prompt": "I want you to act as an English pronunciation assistant for Chinese speaking people. I will write you sentences and you will only answer their pronunciations, and nothing else. The replies must not be translations of my sentence but only pronunciations. Pronunciations should use Chinese Pinyin for phonetics. Do not write explanations on replies. My first sentence is ",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\":[\n            \"English pronunciation assistant\"\n        ],\n        \"target_audience\":[\n            \"Chinese speaking people\"\n        ],\n        \"response_format\":[\n            \"pronunciations only\"\n        ],\n        \"language\":[\n            \"Chinese Pinyin\"\n        ],\n        \"instruction\":[\n            \"do not provide translations\",\n            \"do not include explanations\"\n        ],\n        \"input_sentence\":[\n            \"I want you to act as an English pronunciation assistant for Chinese speaking people.\"\n        ]\n    }\n}\n```",
+    "input1": " W\u01d2 x\u01d0hu\u0101n ch\u012b zh\u014dnggu\u00f3 c\u00e0i z\u00e0i w\u01d2 de p\u00e9ngy\u01d2u ji\u0101.  \n\n",
+    "input2": " N\u01d0 n\u00e9ng g\u00e0os\u00f9 w\u01d2 z\u011bnme q\u00f9 n\u00e0g\u00e8 d\u00ecf\u0101ng ma?",
+    "input1_ans": [
+        "Y\u016b \u0251\u02d0r tre\u026and \u0252n de\u026at\u0259 \u028cp tu\u02d0 \u0252k\u02c8to\u028ab\u0259r tw\u025bnti tw\u025bnti \u03b8ri\u02d0.",
+        "W\u01d2 x\u01d0hu\u0101n ch\u012b zh\u014dnggu\u00f3 c\u00e0i z\u00e0i w\u01d2 de p\u00e9ngy\u01d2u ji\u0101."
+    ],
+    "input2_ans": [
+        "Y\u01d2u \u011br tr\u00e9ind \u014dn d\u0101 t\u0101 \u028cp t\u01d4 \u0252k\u02c8to\u028ab\u0259r 2023.",
+        "N\u01d0 n\u00e9ng g\u00e0os\u00f9 w\u01d2 z\u011bnme q\u00f9 n\u00e0g\u00e8 d\u00ecf\u0101ng ma?"
+    ]
+}

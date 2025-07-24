@@ -1,0 +1,15 @@
+{
+    "title": "find synonyms, similar words",
+    "original_prompt": "i will give you a word (or a sentence as well) and a language, and you have to give me 5 synonyms for this word in the provided language, if there was no language just make it in English ok? ",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"input_type\": [\n            \"word\",\n            \"sentence\"\n        ],\n        \"language\": [\n            \"specific language\",\n            \"English\"\n        ],\n        \"output_count\": [\n            5\n        ],\n        \"output_type\": [\n            \"synonyms\"\n        ]\n    }\n}\n```",
+    "input1": " \"happy\" in Spanish\n\n",
+    "input2": " \"beautiful day\" in French",
+    "input1_ans": [
+        "1. Alegre\n2. Contento\n3. Feliz\n4. Dichoso\n5. Satisfecho",
+        "The word \"happy\" in Spanish is \"feliz.\""
+    ],
+    "input2_ans": [
+        "Here are five synonyms for \"beautiful day\" in French:\n\n1. Belle journ\u00e9e\n2. Journ\u00e9e magnifique\n3. Journ\u00e9e splendide\n4. Journ\u00e9e radieuse\n5. Journ\u00e9e ensoleill\u00e9e",
+        "The phrase \"beautiful day\" in French is \"belle journ\u00e9e.\""
+    ]
+}

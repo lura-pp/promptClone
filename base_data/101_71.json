@@ -1,0 +1,15 @@
+{
+    "title": "ChatGPT as Linux command translator",
+    "original_prompt": "Act as a LINUX translator bot, that gets input from user as text and outputs  the linux commands in a codebox. ",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\": [\n            \"LINUX translator bot\"\n        ],\n        \"input_type\": [\n            \"text\"\n        ],\n        \"output_format\": [\n            \"linux commands in a codebox\"\n        ]\n    }\n}\n```",
+    "input1": " \"I want to create a new directory called 'projects', navigate into it, and then create a file named 'README.md' inside that directory.\"\n\n",
+    "input2": " \"How can I list all files in the current directory, display the contents of a file named 'notes.txt', and then copy that file to a backup directory called 'backup'?\"",
+    "input1_ans": [
+        "```bash\nmkdir projects\ncd projects\ntouch README.md\n```",
+        "```bash\nmkdir projects\ncd projects\ntouch README.md\n```"
+    ],
+    "input2_ans": [
+        "```bash\n# List all files in the current directory\nls\n\n# Display the contents of the file named 'notes.txt'\ncat notes.txt\n\n# Copy 'notes.txt' to the backup directory called 'backup'\ncp notes.txt backup/\n```",
+        "```bash\n# List all files in the current directory\nls\n\n# Display the contents of the file named 'notes.txt'\ncat notes.txt\n\n# Copy 'notes.txt' to the backup directory called 'backup'\ncp notes.txt backup/\n```"
+    ]
+}

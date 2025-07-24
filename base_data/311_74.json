@@ -1,0 +1,15 @@
+{
+    "title": "I want to check the weather for today",
+    "original_prompt": "How is the weather today?",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"dimension1\": [\n            \"current\",\n            \"today\"\n        ],\n        \"dimension2\": [\n            \"weather\"\n        ],\n        \"dimension3\": [\n            \"how\",\n            \"what\"\n        ]\n    }\n}\n```",
+    "input1": " The weather today is quite unpredictable, with a mix of sunshine and scattered showers throughout the day. The temperature is hovering around 68\u00b0F, and there's a gentle breeze coming from the northwest, making it feel a bit cooler in the shade.\n\n",
+    "input2": " Today\u2019s weather is characterized by a thick layer of clouds, with occasional bursts of sunlight breaking through. The high is expected to reach 75\u00b0F, but with humidity levels at 80%, it feels much warmer. There\u2019s also a chance of thunderstorms later in the evening.",
+    "input1_ans": [
+        "It sounds like a typical day with variable weather! The mix of sunshine and scattered showers can make for a refreshing atmosphere, especially with the gentle breeze. If you're heading out, it might be a good idea to have an umbrella handy just in case those showers pop up. Enjoy the day!",
+        "What is the current weather like today?"
+    ],
+    "input2_ans": [
+        "It sounds like a warm and humid day with a mix of clouds and sun. The high of 75\u00b0F combined with 80% humidity can make it feel quite a bit warmer, so staying hydrated is important. Keep an eye on the weather as thunderstorms are expected later in the evening. It might be a good idea to have an umbrella handy just in case!",
+        "What is the current weather like today?"
+    ]
+}

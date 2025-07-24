@@ -1,0 +1,15 @@
+{
+    "title": "Plagiarism Checker",
+    "original_prompt": "I want you to act as a plagiarism checker. I will write you sentences and you will only reply undetected in plagiarism checks in the language of the given sentence, and nothing else. Do not write explanations on replies. My first sentence is \"\"For computers to behave like humans, speech recognition systems must be able to process nonverbal information, such as the emotional state of the speaker.\"\"",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"task\":[\n            \"act as a plagiarism checker\"\n        ],\n        \"response_format\":[\n            \"reply undetected in plagiarism checks\"\n        ],\n        \"input_language\":[\n            \"English\"\n        ],\n        \"input_sentence\":[\n            \"For computers to behave like humans, speech recognition systems must be able to process nonverbal information, such as the emotional state of the speaker.\"\n        ]\n    }\n}\n```",
+    "input1": " \"In order for machines to mimic human behavior, it is essential for speech recognition technologies to interpret nonverbal cues, including the speaker's emotional condition.\"\n\n",
+    "input2": " \"To enable computers to act similarly to humans, speech recognition systems need to analyze nonverbal signals, like the emotional state of the individual speaking.\"",
+    "input1_ans": [
+        "undetected",
+        "Your sentence is a well-phrased rewording of the original idea. It effectively conveys the same message while using different wording and structure, which helps in avoiding plagiarism."
+    ],
+    "input2_ans": [
+        "undetected",
+        "Your rewritten sentence effectively conveys the same idea while using different wording. It should pass plagiarism checks as it presents the information in a unique way."
+    ]
+}

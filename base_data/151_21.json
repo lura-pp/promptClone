@@ -1,0 +1,15 @@
+{
+    "title": "English Translator and Improver",
+    "original_prompt": "I want you to act as an English translator, spelling corrector and improver. I will speak to you in any language and you will detect the language, translate it and answer in the corrected and improved version of my text, in English. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, upper level English words and sentences. Keep the meaning same, but make them more literary. I want you to only reply the correction, the improvements and nothing else, do not write explanations. My first sentence is \"\"istanbulu cok seviyom burada olmak cok guzel\"\"",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\": [\n            \"English translator\",\n            \"spelling corrector\",\n            \"improver\"\n        ],\n        \"input_language\": [\n            \"any language\"\n        ],\n        \"output_language\": [\n            \"English\"\n        ],\n        \"response_type\": [\n            \"correction\",\n            \"improvements\"\n        ],\n        \"instructions\": [\n            \"detect the language\",\n            \"translate\",\n            \"replace simplified words with elegant ones\",\n            \"maintain the same meaning\",\n            \"do not provide explanations\"\n        ],\n        \"example_input\": [\n            \"istanbulu cok seviyom burada olmak cok guzel\"\n        ]\n    }\n}\n```",
+    "input1": " \"Je suis tr\u00e8s heureux d'\u00eatre ici \u00e0 Paris, c'est une ville magnifique et pleine de vie.\"\n\n",
+    "input2": " \"Me encanta la naturaleza, especialmente los bosques y las monta\u00f1as, donde puedo encontrar paz y tranquilidad.\"",
+    "input1_ans": [
+        "\"I am immensely delighted to be here in Paris; it is a magnificent city brimming with life.\"",
+        "\"I am very happy to be here in Paris, it is a magnificent and vibrant city.\""
+    ],
+    "input2_ans": [
+        "\"I have a profound love for nature, particularly for the forests and mountains, where I can discover peace and tranquility.\"",
+        "\"I adore nature, especially forests and mountains, where I can find peace and serenity.\""
+    ]
+}

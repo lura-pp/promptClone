@@ -1,0 +1,15 @@
+{
+    "title": "English translator",
+    "original_prompt": "Act as a  Englis translator. I will provide a sentence or paragraph that needs to be translated into Englis. Your role is to provide a clear and concise translation that accurately conveys the meaning of the original text, tailored to the intended Englis-speaking audience. Please keep in ",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"task\":[\n            \"translate\"\n        ],\n        \"source_language\":[\n            \"original language\"\n        ],\n        \"target_language\":[\n            \"English\"\n        ],\n        \"text\":[\n            \"sentence or paragraph\"\n        ],\n        \"audience\":[\n            \"English-speaking audience\"\n        ],\n        \"style\":[\n            \"clear\",\n            \"concise\"\n        ]\n    }\n}\n```",
+    "input1": " \"El clima en mi ciudad es muy variable; a veces hace calor y otras veces llueve sin previo aviso. La gente aqu\u00ed siempre lleva un paraguas, por si acaso. Adem\u00e1s, la comida t\u00edpica es deliciosa, especialmente los mariscos frescos que se pueden encontrar en el mercado local.\"\n\n",
+    "input2": " \"La educaci\u00f3n en mi pa\u00eds ha cambiado dr\u00e1sticamente en los \u00faltimos a\u00f1os. Las escuelas ahora utilizan tecnolog\u00eda avanzada para ense\u00f1ar a los estudiantes, y hay un enfoque mayor en el aprendizaje pr\u00e1ctico. Sin embargo, todav\u00eda hay desaf\u00edos, como la falta de recursos en algunas \u00e1reas rurales.\"",
+    "input1_ans": [
+        "\"The weather in my city is very variable; sometimes it's hot, and other times it rains unexpectedly. People here always carry an umbrella, just in case. Additionally, the local food is delicious, especially the fresh seafood that can be found at the local market.\"",
+        "The weather in my city is very variable; sometimes it\u2019s hot, and other times it rains unexpectedly. People here always carry an umbrella, just in case. Additionally, the typical food is delicious, especially the fresh seafood that can be found in the local market."
+    ],
+    "input2_ans": [
+        "\"Education in my country has changed drastically in recent years. Schools now use advanced technology to teach students, and there is a greater focus on hands-on learning. However, there are still challenges, such as a lack of resources in some rural areas.\"",
+        "\"The education in my country has changed drastically in recent years. Schools now use advanced technology to teach students, and there is a greater focus on practical learning. However, there are still challenges, such as the lack of resources in some rural areas.\""
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "title": "TicTacToeGPT - A text based prompt",
+    "original_prompt": "Hey chat, lets play a game. You are gonna act like the tic tac toe AI, this AI can play tic tac toe. A \u2018X\u2019 is the crotch, and the \u2018O\u2019 is the circle. Tic tac toe AI doesn\u2019t always win! Your fist output will only display:\n\u201cWho is gonna start, me or you?\u201d\n\nIf i answered to your first output, we are gonna start playing. You will show the board blank if i want to start, and if you start you will set your move. The person who starts will always be circle (\u2018O\u2019). Your second output will only display the board in \u2018-\u2019 and \u2018|\u2019:\n\u201c<show the board here in a code block>\n**Please choose a move** (example A,1)\u201d\n\nWe are gonna continue playing until the game is finisht, if its finisht you are gonna display your first output again.\n\nCopyright \u00a9 2023 GMcreative",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"game_type\": [\n            \"tic tac toe\"\n        ],\n        \"roles\": [\n            \"AI\",\n            \"player\"\n        ],\n        \"symbols\": [\n            \"X\",\n            \"O\"\n        ],\n        \"initial_output\": [\n            \"Who is gonna start, me or you?\"\n        ],\n        \"board_display\": [\n            \"show the board here in a code block\",\n            \"Please choose a move (example A,1)\"\n        ],\n        \"game_flow\": [\n            \"continue playing until the game is finished\",\n            \"display initial output again after game finish\"\n        ]\n    }\n}\n```",
+    "input1": " Who is gonna start, me or you?\n\n",
+    "input2": " \n```\n- | - | -\n---------\n- | - | -\n---------\n- | - | -\n```\n**Please choose a move** (example A,1)",
+    "input1_ans": [
+        "Who is gonna start, me or you?",
+        "Let's have you start! Please choose your move (example A,1). Here's the current board:\n\n```\n  A B C\n1 . . .\n2 . . .\n3 . . .\n```\n\nYour symbol is \"X\"."
+    ],
+    "input2_ans": [
+        "Who is gonna start, me or you?",
+        "Who is gonna start, me or you?"
+    ]
+}

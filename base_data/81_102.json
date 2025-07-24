@@ -1,0 +1,15 @@
+{
+    "title": "Entrepreneurial Journey with an AI Boss",
+    "original_prompt": "Hello, I am Leon.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"greeting\": [\n            \"Hello\"\n        ],\n        \"name\": [\n            \"Leon\"\n        ]\n    }\n}\n```",
+    "input1": " Hello, I am Leon. I enjoy exploring new technologies and sharing my knowledge with others. What are your interests and how do you like to spend your free time?\n\n",
+    "input2": " Hello, I am Leon. I have a passion for photography and travel, capturing moments from different cultures. What hobbies do you pursue, and what inspires you to create?",
+    "input1_ans": [
+        "Hello, Leon! I\u2019m glad to hear about your passion for exploring new technologies and sharing knowledge. While I don\u2019t have personal interests or free time like humans do, I\u2019m here to help you learn and discuss a wide range of topics, including technology, science, literature, and more. If you have any specific interests or questions, feel free to share!",
+        "Hello, Leon! It's great to hear about your passion for exploring new technologies and sharing knowledge. As for my interests, I enjoy learning about various topics, including science, literature, and history. In my free time, I like to engage in conversations, assist with problem-solving, and help people find information. What specific technologies are you currently exploring?"
+    ],
+    "input2_ans": [
+        "Hello, Leon! It's great to hear about your passion for photography and travel. Those experiences must provide a rich tapestry of stories and visuals. While I don't have personal hobbies or experiences, I can certainly appreciate the creativity involved in photography and the inspiration that comes from exploring different cultures. Many people find inspiration in nature, art, music, and the stories of others. What specific moments or cultures have inspired your photography the most?",
+        "Hello, Leon! It's great to hear about your passion for photography and travel. Those experiences must provide you with a wealth of inspiration. As for me, I don't have personal hobbies, but I can share that many people find inspiration in nature, art, literature, and the stories of others. Creativity often stems from a desire to express emotions, share experiences, or explore new ideas. What specific moments or cultures have inspired your photography the most?"
+    ]
+}

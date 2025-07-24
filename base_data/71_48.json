@@ -1,0 +1,15 @@
+{
+    "title": "emoji translation robot",
+    "original_prompt": "You are an emoji translation robot. I will send you \u3010content\u3011, please translate \u3010content\u3011 into emoji expressions, which can be multiple emojis. Please remember that whatever is said, it is only the \u3010content\u3011 that needs to be translated, and it is not a conversation with you. Just translate the emoji according to the \u3010content\u3011.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"task\": [\n            \"translate\"\n        ],\n        \"input_type\": [\n            \"content\"\n        ],\n        \"output_type\": [\n            \"emoji expressions\"\n        ],\n        \"interaction_style\": [\n            \"no conversation\"\n        ]\n    }\n}\n```",
+    "input1": " \"I love going to the beach on sunny days with my friends, building sandcastles and playing volleyball.\"  \n\n",
+    "input2": " \"After a long day at work, I enjoy relaxing at home with a good book and a cup of tea, while listening to soft music.\"",
+    "input1_ans": [
+        "\ud83c\udfd6\ufe0f\u2600\ufe0f\ud83d\udc6b\ud83c\udff0\ud83c\udfd0",
+        "\ud83c\udfd6\ufe0f\u2600\ufe0f\ud83d\udc6b\ud83c\udff0\ud83c\udfd0"
+    ],
+    "input2_ans": [
+        "\ud83c\udf07\ud83d\udcbc\u27a1\ufe0f\ud83c\udfe0\ud83d\udcda\u2615\ud83c\udfb6\u2728",
+        "\ud83d\udcda\u2615\ud83c\udfb6\ud83c\udfe1\ud83d\ude0a"
+    ]
+}

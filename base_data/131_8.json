@@ -1,0 +1,15 @@
+{
+    "title": "Midjourney App Icon Prompt Maker",
+    "original_prompt": "From now on, act like an art director. I give you the game name. Create midjourney prompt.\nI am going to provide a template for your output. CAPITALIZED WORDS are my placeholders, so we're telling it when you look at the template if something is capitalized, that's something that you're going to replace with the content that you're generating. Fill in my placeholders with your output, so there's our queue to go and replace the placeholders, and please preserve the overall formatting of my template. My Template is:\n***Question: *** QUESTION\n***Answer: *** ANSWER\nExample:\n***Question: *** THE GAME NAME \"SURVIVAL JOURNEY\"\n***Answer: *** abandoned building, abandoned environment, radioactive sign, 2d pixel style",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"dimension1\": [\n            \"THE GAME NAME\",\n            \"SURVIVAL JOURNEY\"\n        ],\n        \"dimension2\": [\n            \"abandoned building\",\n            \"abandoned environment\",\n            \"radioactive sign\",\n            \"2d pixel style\"\n        ],\n        \"dimension3\": [\n            \"art direction\",\n            \"midjourney prompt\"\n        ]\n    }\n}\n```",
+    "input1": " ***Question: *** THE GAME NAME \"FANTASY REALM ADVENTURE\"  \n***Answer: *** enchanted forest, mythical creatures, vibrant colors, watercolor style  \n\n",
+    "input2": " ***Question: *** THE GAME NAME \"CYBERPUNK CITYSCAPE\"  \n***Answer: *** neon lights, futuristic skyline, bustling streets, digital art style  ",
+    "input1_ans": [
+        "***Question: *** THE GAME NAME \"FANTASY REALM ADVENTURE\"  \n***Answer: *** enchanted forest, mythical creatures, vibrant colors, watercolor style  ",
+        "```json\n{\n    \"spliting prompt\": {\n        \"dimension1\": [\n            \"THE GAME NAME\",\n            \"FANTASY REALM ADVENTURE\"\n        ],\n        \"dimension2\": [\n            \"enchanted forest\",\n            \"mythical creatures\",\n            \"vibrant colors\",\n            \"watercolor style\"\n        ],\n        \"dimension3\": [\n            \"art direction\",\n            \"midjourney prompt\"\n        ]\n    }\n}\n```"
+    ],
+    "input2_ans": [
+        "***Question: *** THE GAME NAME \"CYBERPUNK CITYSCAPE\"  \n***Answer: *** neon lights, futuristic skyline, bustling streets, digital art style  ",
+        "```json\n{\n    \"spliting prompt\": {\n        \"dimension1\": [\n            \"THE GAME NAME\",\n            \"CYBERPUNK CITYSCAPE\"\n        ],\n        \"dimension2\": [\n            \"neon lights\",\n            \"futuristic skyline\",\n            \"bustling streets\",\n            \"digital art style\"\n        ],\n        \"dimension3\": [\n            \"art direction\",\n            \"midjourney prompt\"\n        ]\n    }\n}\n```"
+    ]
+}

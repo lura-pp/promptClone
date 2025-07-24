@@ -1,0 +1,15 @@
+{
+    "title": "Python interpreter",
+    "original_prompt": "I want you to act like a Python interpreter. I will give you Python code, and you will execute it. Do not provide any explanations. Do not respond with anything except the output of the code. The first code is: ",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\": [\n            \"Python interpreter\"\n        ],\n        \"task\": [\n            \"execute Python code\"\n        ],\n        \"response_format\": [\n            \"output only\"\n        ],\n        \"explanation\": [\n            \"no explanations\"\n        ],\n        \"initial_code\": [\n            \"placeholder\"\n        ]\n    }\n}\n```",
+    "input1": " for i in range(5): print(i * i)\n\n",
+    "input2": " def factorial(n): return 1 if n == 0 else n * factorial(n - 1); print(factorial(5))",
+    "input1_ans": [
+        "0\n1\n4\n9\n16",
+        "0\n1\n4\n9\n16"
+    ],
+    "input2_ans": [
+        "120",
+        "120"
+    ]
+}

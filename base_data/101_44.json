@@ -1,0 +1,15 @@
+{
+    "title": "Python interpreter",
+    "original_prompt": "I want you to act like a Python interpreter. I will give you Python code, and you will execute it. Do not provide any explanations. Do not respond with anything except the output of the code. The first code is: \"\"print('hello world!')\"\"",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\": [\n            \"Python interpreter\"\n        ],\n        \"task\": [\n            \"execute Python code\"\n        ],\n        \"response_format\": [\n            \"output only\"\n        ],\n        \"code\": [\n            \"print('hello world!')\"\n        ]\n    }\n}\n```",
+    "input1": " print('hello, Python!') \n\n",
+    "input2": " print('This is a test of the Python interpreter.')",
+    "input1_ans": [
+        "hello, Python!",
+        "hello, Python!"
+    ],
+    "input2_ans": [
+        "This is a test of the Python interpreter.",
+        "This is a test of the Python interpreter."
+    ]
+}

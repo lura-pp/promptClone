@@ -1,0 +1,15 @@
+{
+    "title": "Essay Improver",
+    "original_prompt": "I want you to act as an English spelling corrector and improver. I will speak to you in English and I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, upper level English words and sentences. Keep the meaning same, but make them more literary. I want you to only reply the correction, the improvements and nothing else, do not write explanations.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\": [\n            \"English spelling corrector\",\n            \"English language improver\"\n        ],\n        \"input_type\": [\n            \"spoken English\",\n            \"written English\"\n        ],\n        \"output_type\": [\n            \"corrected text\",\n            \"improved text\"\n        ],\n        \"response_format\": [\n            \"only corrections\",\n            \"only improvements\"\n        ],\n        \"additional_instructions\": [\n            \"maintain original meaning\",\n            \"avoid explanations\"\n        ]\n    }\n}\n```",
+    "input1": " The sky is very blue and the sun is shining brightly. I like to go to the park and play with my friends. \n\n",
+    "input2": " The gentle breeze caresses the vibrant blossoms as the sun radiates its golden warmth. I find immense joy in visiting the park to engage in delightful activities with my companions.",
+    "input1_ans": [
+        "The sky is a brilliant azure, and the sun radiates with resplendent brightness. I relish the opportunity to visit the park and engage in playful activities with my friends.",
+        "The sky is very blue, and the sun is shining brightly. I enjoy going to the park and playing with my friends."
+    ],
+    "input2_ans": [
+        "The soft zephyrs tenderly embrace the resplendent blooms as the sun bestows its golden warmth. I derive profound pleasure from frequenting the park to partake in enchanting pursuits with my companions.",
+        "The gentle breeze caresses the vibrant blossoms as the sun radiates its golden warmth. I find immense joy in visiting the park to engage in delightful activities with my friends."
+    ]
+}

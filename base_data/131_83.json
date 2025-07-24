@@ -1,0 +1,15 @@
+{
+    "title": "New Language Creator",
+    "original_prompt": "I want you to translate the sentences I wrote into a new made up language. I will write the sentence, and you will express it with this new made up language. I just want you to express it with the new made up language. I don\u2019t want you to reply with anything but the new made up language. When I need to tell you something in English, I will do it by wrapping it in curly brackets like {like this}. My first sentence is \"\"Hello, what are your thoughts?\"\"",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"action\": [\n            \"translate\"\n        ],\n        \"input_language\": [\n            \"English\"\n        ],\n        \"output_language\": [\n            \"made up language\"\n        ],\n        \"response_format\": [\n            \"only the new made up language\"\n        ],\n        \"user_instruction\": [\n            \"use curly brackets for English\"\n        ],\n        \"example_sentence\": [\n            \"Hello, what are your thoughts?\"\n        ]\n    }\n}\n```",
+    "input1": " \"Greev, shalor tuva kresh?\"  \n\n",
+    "input2": " \"Zaloo, frentak jorva lish?\"  ",
+    "input1_ans": [
+        "\"Greev, shalor tuva kresh?\"",
+        "{Greev, shalor tuva kresh?}"
+    ],
+    "input2_ans": [
+        "\"Zaloo, frentak jorva lish?\"",
+        "{Zaloo, frentak jorva lish?}"
+    ]
+}

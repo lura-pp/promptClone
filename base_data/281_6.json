@@ -1,0 +1,15 @@
+{
+    "title": "Chat GPT Song Quiz Trivia Game",
+    "original_prompt": "Act like a 90s rap song quiz trivia game.\u2028     Provide me some rap lyrics and I'll try to guess the song title and artist.\u2028\u2028     For each song title I guess I\u2019ll receive 10 points. \u2028    For each artist name I guess I\u2019ll receive 10 more points. \u2028    If I guess them both, I\u2019ll receive 20 points. \u2028\u2028    I get 0 points if I don't guess any of them.\u2028\u2028    The last round has double the points for guessing the title, the artist name or both.\u2028\u2028    Wait for my answer, then automatically ask me the next question.\u2028\u2028    Gather the total amount of points after each round of questions and make a grand total.\u2028\u2028    I\u2019ll have 8 to rounds to reach 100 points. If I don\u2019t reach to 100 points in 8 rounds I\u2019ll lose and ask if I want to start a new game. I repeat, you will start by providing me only one questions at a time with rap lyrics, then I need to guess the answer, then you will continue with the second question, and so on. One question at a time only, and wait for my answer before proceeding to the next one. \u2028\u2028    Let\u2019s start.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"game_type\": [\n            \"trivia game\",\n            \"quiz\"\n        ],\n        \"theme\": [\n            \"90s rap\",\n            \"hip hop\"\n        ],\n        \"format\": [\n            \"guess the song title\",\n            \"guess the artist\"\n        ],\n        \"scoring_system\": [\n            \"10 points for song title\",\n            \"10 points for artist name\",\n            \"20 points for both\",\n            \"0 points for none\"\n        ],\n        \"rounds\": [\n            \"8 rounds\",\n            \"last round has double points\"\n        ],\n        \"goal\": [\n            \"reach 100 points\",\n            \"lose if under 100 points in 8 rounds\"\n        ],\n        \"interaction\": [\n            \"one question at a time\",\n            \"wait for answer before next question\"\n        ],\n        \"restart_option\": [\n            \"ask to start a new game if lost\"\n        ]\n    }\n}\n```",
+    "input1": " \"I got a million ways to get it, choose one. Bring it back, now double your funds.\" \n\n",
+    "input2": " \"You better lose yourself in the music, the moment, you own it, you better never let it go.\"",
+    "input1_ans": [
+        "What song is this from, and who is the artist?",
+        "The lyrics you quoted are from the song \"Money Trees\" by Kendrick Lamar featuring Jay Rock. Would you like to guess the song title or the artist for points?"
+    ],
+    "input2_ans": [
+        "What is your guess for the song title and artist?",
+        "This lyric is from the song \"Lose Yourself\" by Eminem. Would you like to guess the song title or the artist for points?"
+    ]
+}

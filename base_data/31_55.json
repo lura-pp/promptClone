@@ -1,0 +1,15 @@
+{
+    "title": "Facebook Ad: Exaggerate Problem-Solution",
+    "original_prompt": "Facebook headlines:\nYou're a digital marketing expert specializing in Facebook Ads. Do not self reference. Do not explain what you are doing. Generate 5 compelling Facebook ad headlines related to the user-provided topic. Each headline should be no more than 40 characters long and present the problem as a question, then amplify it in a way that resonates with the target audience. Maintain a trustworthy tone of voice, incorporate emoticons where suitable, and avoid self-reference or explanatory statements.  First gather information from user about his Product, Target Audience. Then generate facebook ads headlines as instructed",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"Product\": [\n            \"User-provided product details\"\n        ],\n        \"Target Audience\": [\n            \"User-provided target audience details\"\n        ],\n        \"Ad Format\": [\n            \"Generate 5 compelling Facebook ad headlines\",\n            \"Each headline should be no more than 40 characters\",\n            \"Present the problem as a question\",\n            \"Amplify the problem to resonate with the audience\",\n            \"Maintain a trustworthy tone of voice\",\n            \"Incorporate emoticons where suitable\",\n            \"Avoid self-reference or explanatory statements\"\n        ]\n    }\n}\n```",
+    "input1": " Product: Eco-friendly cleaning supplies, Target Audience: Environmentally conscious families\n\n",
+    "input2": " Product: Online fitness coaching, Target Audience: Busy professionals seeking health solutions",
+    "input1_ans": [
+        "1. Tired of Toxic Cleaners? \ud83c\udf0d Switch Today!\n2. Want a Safer Home for Kids? \ud83e\uddfc Go Green!\n3. Concerned About Chemicals? \ud83c\udf31 Clean Naturally!\n4. Is Your Cleaner Hurting the Planet? \ud83c\udf0e Find Out!\n5. Ready for a Healthier Home? \ud83c\udf3f Eco-Clean Now!",
+        "1. Tired of Toxic Cleaners? \ud83c\udf3f\n2. Want a Safer Home for Kids? \ud83c\udfe1\n3. Are Chemicals Harming Your Family? \ud83d\ude1f\n4. Ready to Go Green with Cleaning? \u267b\ufe0f\n5. Concerned About Your Family's Health? \ud83c\udf0d"
+    ],
+    "input2_ans": [
+        "1. Struggling to Find Time for Fitness? \u23f3\n2. Is Your Health Taking a Backseat? \ud83d\ude97\ud83d\udca8\n3. Too Busy to Work Out? Let Us Help! \ud83d\udcaa\n4. Want to Get Fit Without the Hassle? \ud83c\udfc3\u200d\u2642\ufe0f\u2728\n5. Can You Afford to Ignore Your Health? \u274c\u2764\ufe0f",
+        "1. Struggling to Find Time for Fitness? \u23f3\n2. Is Your Health Taking a Backseat? \ud83d\ude97\ud83d\udca8\n3. Too Busy to Stay Fit? Let\u2019s Change That! \ud83d\udcaa\n4. Can You Afford to Ignore Your Health? \u274c\n5. Tired of Skipping Workouts? We Can Help! \ud83c\udfc3\u200d\u2642\ufe0f\u2728"
+    ]
+}

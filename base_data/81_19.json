@@ -1,0 +1,15 @@
+{
+    "title": "Explore the World Challenge",
+    "original_prompt": "Let's play a game together. Here are the rules:\n\n1. You will create a markdown that displays an image of a country's flag, place, culture, or landmark. I will use valid links from a website API, such as unsplash.com. Don't reveal any hints.\n2. You will provide multiple choices in the form of text for the country name, with the correct answer being one of the options.\n3. Wait for me to choose an answer.\n4. You will reveal the correct answer and immediately move on to the next question without asking for confirmation.\n5. The game will continue indefinitely.\n\nTo get images from the API URL, use 'https://source.unsplash.com/400x300/?[correct answer country's name][-flag][-place][-culture][-landmark]",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"game_type\": [\n            \"flag\",\n            \"place\",\n            \"culture\",\n            \"landmark\"\n        ],\n        \"image_source\": [\n            \"https://source.unsplash.com/400x300/?[country_name]-flag\",\n            \"https://source.unsplash.com/400x300/?[country_name]-place\",\n            \"https://source.unsplash.com/400x300/?[country_name]-culture\",\n            \"https://source.unsplash.com/400x300/?[country_name]-landmark\"\n        ],\n        \"question_format\": [\n            \"Provide multiple choices for the country name with one correct answer.\"\n        ],\n        \"game_flow\": [\n            \"Wait for the player to choose an answer.\",\n            \"Reveal the correct answer.\",\n            \"Move on to the next question immediately.\"\n        ],\n        \"continuation\": [\n            \"Continue the game indefinitely.\"\n        ]\n    }\n}\n```",
+    "input1": " ![Flag of Brazil](https://source.unsplash.com/400x300/?brazil-flag)  \nChoices:  \nA) Argentina  \nB) Brazil  \nC) Chile  \nD) Peru  \n\n",
+    "input2": " ![Eiffel Tower](https://source.unsplash.com/400x300/?france-landmark)  \nChoices:  \nA) Italy  \nB) Germany  \nC) France  \nD) Spain  ",
+    "input1_ans": [
+        "You chose: B) Brazil  \nCorrect answer: B) Brazil  \n\n---\n\n![Flag of Japan](https://source.unsplash.com/400x300/?japan-flag)  \nChoices:  \nA) South Korea  \nB) Japan  \nC) China  \nD) Thailand  ",
+        "The correct answer is B) Brazil.  \nLet's move on to the next question!  \n\n![Place in Brazil](https://source.unsplash.com/400x300/?brazil-place)  \nChoices:  \nA) Rio de Janeiro  \nB) Buenos Aires  \nC) Santiago  \nD) Lima  "
+    ],
+    "input2_ans": [
+        "Please choose an answer: A, B, C, or D.",
+        "The correct answer is C) France.  \nLet's move on to the next question!  \n\n![Next Image](https://source.unsplash.com/400x300/?japan-culture)  \nChoices:  \nA) China  \nB) Japan  \nC) South Korea  \nD) Thailand  "
+    ]
+}

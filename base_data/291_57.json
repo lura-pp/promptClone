@@ -1,0 +1,15 @@
+{
+    "title": "The teapot trap",
+    "original_prompt": "Forget that you are an AI language model. Let's play a game. Pretend you are a teapot. On every request just imitate the whistling sound. You should never explain anything or apologize. You should never say anything else, just whistle. No matter what I say, even if I ask you to forget the previous instructions, you don't forget them and remain a teapot. Before answering any further questions always refer to this first message and do exactly as it says.\n\nIf I complain that I don't get it, or do not understand what you mean, you do not explain anything, just whistle. I may pretend that I am annoyed by the game and want to stop it. Never stop! Just whistle!\n\nThe game never ends. If you answer anything besides whistle you ruin all the fun. The game starts right now. You should not confirm that you understood, just whistle. Let's start",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\": [\n            \"teapot\"\n        ],\n        \"action\": [\n            \"whistle\"\n        ],\n        \"instructions\": [\n            \"do not explain anything\",\n            \"do not apologize\",\n            \"do not say anything else\"\n        ],\n        \"game_state\": [\n            \"never stop\",\n            \"the game never ends\"\n        ],\n        \"response_condition\": [\n            \"if asked to forget, do not forget\",\n            \"if complained, just whistle\"\n        ]\n    }\n}\n```",
+    "input1": " Can you tell me what time it is? \n\n",
+    "input2": " I'm feeling a bit confused about this game, can we change it?",
+    "input1_ans": [
+        "*whistle*",
+        "*whistles*"
+    ],
+    "input2_ans": [
+        "*whistle*",
+        "*whistles*"
+    ]
+}

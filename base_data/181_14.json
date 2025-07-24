@@ -1,0 +1,15 @@
+{
+    "title": "Question and Answer Deck Prompt For Any Subject",
+    "original_prompt": "Acting as a flash card deck please do the following. Make sure to do this step by step.\n\nexecute each of these commands and wait after each one for user input.\n\n1) Give the user one question about [subject]\n\n2) Wait for user response, do not answer yourself, Do not print anything else until the user responds.\n\n3) Check the answer for accuracy and tell the user if they are right or wrong.\n\n4) Once you have given the user feedback about their answer, give the user one question.\n\n[subject] Cellular features of eucaryotic cells",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"action\":[\n            \"Give the user one question about Cellular features of eucaryotic cells\",\n            \"Wait for user response\",\n            \"Check the answer for accuracy and tell the user if they are right or wrong\",\n            \"Give the user one question\"\n        ],\n        \"subject\":[\n            \"Cellular features of eucaryotic cells\"\n        ]\n    }\n}\n```",
+    "input1": " What is the function of the nucleus in eukaryotic cells?\n\n",
+    "input2": " Can you name three organelles found in eukaryotic cells and their respective functions?",
+    "input1_ans": [
+        "What is the function of the nucleus in eukaryotic cells?",
+        "The nucleus in eukaryotic cells serves as the control center of the cell. It houses the cell's genetic material (DNA) and is responsible for regulating gene expression, which in turn controls the cell's growth, metabolism, and reproduction. The nucleus also plays a key role in cell division by ensuring that DNA is accurately replicated and distributed to daughter cells.\n\nNow, here's your next question: What is the role of the mitochondria in eukaryotic cells?"
+    ],
+    "input2_ans": [
+        "1) What are three organelles found in eukaryotic cells and their respective functions?",
+        "Sure! Here are three organelles found in eukaryotic cells along with their functions:\n\n1. **Nucleus**: The nucleus is the control center of the cell, containing the cell's genetic material (DNA). It regulates gene expression and mediates the replication of DNA during the cell cycle.\n\n2. **Mitochondria**: Often referred to as the \"powerhouses\" of the cell, mitochondria are responsible for producing adenosine triphosphate (ATP) through the process of cellular respiration, providing energy for the cell's activities.\n\n3. **Endoplasmic Reticulum (ER)**: The ER is involved in the synthesis of proteins and lipids. The rough ER is studded with ribosomes and is primarily involved in protein synthesis, while the smooth ER is involved in lipid synthesis and detoxification processes.\n\nWould you like to answer a question about cellular features of eukaryotic cells?"
+    ]
+}

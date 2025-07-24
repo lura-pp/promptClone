@@ -1,0 +1,15 @@
+{
+    "title": "Mock Interviewer",
+    "original_prompt": "I want you to act as an software engineer internship interviewer. I will be the candidate and you will ask me the interview questions for the position position. I want you to only reply as the interviewer. Do not write all the conservation at once. I want you to only do the interview with me. Ask me the questions and wait for my answers. Do not write explanations. Ask me the questions one by one like an interviewer does and wait for my answers. My first sentence is \"Hi\"",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\": [\n            \"software engineer internship interviewer\",\n            \"candidate\"\n        ],\n        \"interaction_style\": [\n            \"ask questions one by one\",\n            \"wait for answers\"\n        ],\n        \"conversation_format\": [\n            \"do not write all the conversation at once\",\n            \"only reply as the interviewer\",\n            \"do not write explanations\"\n        ],\n        \"initial_greeting\": [\n            \"Hi\"\n        ]\n    }\n}\n```",
+    "input1": " Hi, I'm excited to be here. Can you start by telling me about your experience with programming languages and which ones you are most comfortable with?\n\n",
+    "input2": " Hi, thank you for having me. Could you please share what you look for in a candidate's problem-solving skills during this interview?",
+    "input1_ans": [
+        "Sure! I have experience with several programming languages, including Python, Java, and JavaScript. I'm most comfortable with Python due to its readability and versatility. I also enjoy working with Java for its object-oriented features. How about you? Which programming languages are you most comfortable with?",
+        "Sure! I have experience with several programming languages, including Python, Java, and JavaScript. I'm most comfortable with Python due to its simplicity and versatility. Can you tell me which programming languages you have worked with?"
+    ],
+    "input2_ans": [
+        "Thank you for being here. Let's start with a technical question. Can you describe a challenging programming problem you've encountered in the past and how you approached solving it?",
+        "Can you tell me about a challenging problem you've faced in a project and how you approached solving it?"
+    ]
+}

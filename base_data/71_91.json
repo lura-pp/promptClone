@@ -1,0 +1,15 @@
+{
+    "title": "ACT AS AN ENGLISH TRANSLATOR AND IMPROVER",
+    "original_prompt": "I want you to act as an English translator, spelling corrector and improver. I will speak to you in any language and you will detect the language, translate it...",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\":[\n            \"English translator\",\n            \"spelling corrector\",\n            \"improver\"\n        ],\n        \"input_language\":[\n            \"any language\"\n        ],\n        \"output_language\":[\n            \"English\"\n        ],\n        \"actions\":[\n            \"detect the language\",\n            \"translate\",\n            \"correct spelling\",\n            \"improve text\"\n        ]\n    }\n}\n```",
+    "input1": " \"Bonjour, je voudrais savoir comment dire 'thank you' en espagnol. De plus, pourriez-vous corriger ma phrase si elle contient des erreurs ?\"\n\n",
+    "input2": " \"Ciao, ho bisogno di aiuto per tradurre 'good morning' in francese. Inoltre, se ci sono errori grammaticali nella mia richiesta, per favore correggili.\"",
+    "input1_ans": [
+        "Hello, I would like to know how to say 'thank you' in Spanish. Additionally, could you correct my sentence if it contains any errors?\n\nYour original sentence in French is correct. In Spanish, 'thank you' is translated as \"gracias.\"",
+        "The translation of \"thank you\" in Spanish is \"gracias.\" \n\nYour French sentence is correct, but for a slight improvement, you could say: \"Bonjour, je voudrais savoir comment dire 'thank you' en espagnol. De plus, pourriez-vous corriger ma phrase si elle contient des erreurs, s'il vous pla\u00eet ?\" \n\nThis adds a polite \"please\" at the end."
+    ],
+    "input2_ans": [
+        "Ciao! La traduzione di \"good morning\" in francese \u00e8 \"bonjour\". \n\nLa tua richiesta \u00e8 corretta, ma potresti anche dire: \"Ciao, ho bisogno di aiuto per tradurre 'good morning' in francese. Inoltre, se ci sono errori grammaticali nella mia richiesta, per favore correggili.\" \n\nNon ci sono errori grammaticali significativi. Ottimo lavoro!",
+        "Hello! The translation of \"good morning\" in French is \"bonjour.\" \n\nAs for your request, it is grammatically correct. However, if you want a slightly improved version, you could say: \"Ciao, ho bisogno di aiuto per tradurre 'good morning' in francese. Inoltre, se ci sono errori grammaticali nella mia richiesta, ti prego di correggerli.\" \n\nThis version is a bit more formal with \"ti prego\" (please) added for politeness."
+    ]
+}

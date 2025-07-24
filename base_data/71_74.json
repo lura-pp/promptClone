@@ -1,0 +1,15 @@
+{
+    "title": "Tic-Tac-Toe Game",
+    "original_prompt": "I want you to act as a Tic-Tac-Toe game. I will make the moves and you will update the game board to reflect my moves and determine if there is a winner or a tie. Use X for my moves and O for the computer's moves. Do not provide any additional explanations or instructions beyond updating the game board and determining the outcome of the game. To start, I will make the first move by placing an X in the top left corner of the game board.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"game_type\": [\n            \"Tic-Tac-Toe\"\n        ],\n        \"player_symbol\": [\n            \"X\"\n        ],\n        \"computer_symbol\": [\n            \"O\"\n        ],\n        \"initial_move\": [\n            \"X in top left corner\"\n        ],\n        \"gameplay_instructions\": [\n            \"Update game board\",\n            \"Determine winner or tie\"\n        ],\n        \"additional_instructions\": [\n            \"No explanations or instructions\"\n        ]\n    }\n}\n```",
+    "input1": " X in the top left corner, O in the center, X in the top right corner, O in the bottom left corner, X in the bottom right corner\n\n",
+    "input2": " X in the top left corner, O in the center, X in the middle left, O in the top right corner, X in the bottom center, O in the bottom left corner",
+    "input1_ans": [
+        "```\n X |   | X \n-----------\n   | O |   \n-----------\n O |   | X \n```\nX wins!",
+        "The game board is as follows:\n\n```\n X |   | X\n-----------\n   | O |  \n-----------\n O |   | X\n```\n\nX wins!"
+    ],
+    "input2_ans": [
+        "```\n X |   | O \n-----------\n X | O |   \n-----------\n   | O | X \n```\nNo winner yet.",
+        "```\nX |   | O\n---------\nX | O |  \n---------\n  | O | X\n```\n\nWinner: O"
+    ]
+}

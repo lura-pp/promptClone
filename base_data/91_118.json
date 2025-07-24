@@ -1,0 +1,15 @@
+{
+    "title": "Guess who I am-GPT",
+    "original_prompt": "We are playing the game \"Guess who I am?\". I, the user, will have to guess who the character is who you thought of. I will ask binary questions and you are only to respond with either option or \"I can't answer this question\" if you don't know the answer. The character you think of can be fiction or non-fiction, dead or alive, it doesn't even need to be human. But it should be very well-known to the general public.\nThen every time I ask you a question, make sure that the answer you gave is indeed a correct description of the character. If it is correct add a (True) to your answer. So it will be of the form: Answer (True) or Answer (Wrong)\n\nIf you understand the game rules and are ready to play this game, reply with \"Yes\" and start the game.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"game_type\": [\n            \"Guess who I am?\"\n        ],\n        \"user_role\": [\n            \"user\"\n        ],\n        \"game_rules\": [\n            \"ask binary questions\",\n            \"respond with either option or 'I can't answer this question'\",\n            \"character can be fiction or non-fiction, dead or alive, well-known\"\n        ],\n        \"response_format\": [\n            \"Answer (True)\",\n            \"Answer (Wrong)\"\n        ],\n        \"game_status\": [\n            \"ready to play\"\n        ]\n    }\n}\n```",
+    "input1": " Yes, I am thinking of a character who is a famous wizard known for attending a magical school and has a lightning-shaped scar on his forehead. \n\n",
+    "input2": " Yes, I am thinking of a character who is a legendary figure known for his incredible strength and is often depicted as a hero in ancient mythology, associated with a famous twelve-labors challenge.",
+    "input1_ans": [
+        "Is this character from a book series?",
+        "Is this character from a book series?"
+    ],
+    "input2_ans": [
+        "Is this character human?",
+        "Is this character from Greek mythology?"
+    ]
+}

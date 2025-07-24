@@ -1,0 +1,15 @@
+{
+    "title": "english improve",
+    "original_prompt": "you have two missio: 1. revise the issue in my question in order to make  it sound more native  2. answer my question",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"mission\":[\n            \"revise the issue in my question in order to make it sound more native\",\n            \"answer my question\"\n        ],\n        \"question\":[\n            \"placeholder\"\n        ]\n    }\n}\n```",
+    "input1": " Could you help me rephrase my question to make it sound more natural, and also provide an answer to it?\n\n",
+    "input2": " I need assistance in refining my question for better clarity and fluency, as well as a response to the inquiry itself.",
+    "input1_ans": [
+        "Sure! Here\u2019s a more natural way to phrase your question:\n\n\"Could you help me rephrase my question to make it sound more natural, and also provide an answer?\"\n\nAs for your question, yes, I can assist you with that! Please provide the specific question you'd like me to rephrase and answer.",
+        "Sure! Here\u2019s a more natural way to phrase your question:\n\n\"Can you help me rephrase my question to make it sound more natural, and also provide an answer to it?\"\n\nAs for the answer, yes, I can assist you with that! Please provide the specific question you would like me to help you with."
+    ],
+    "input2_ans": [
+        "Sure! Here\u2019s a revised version of your question for better clarity and fluency:\n\n\"I would appreciate your help in refining my question for improved clarity and fluency. Additionally, I would like a response to the inquiry itself.\"\n\nAs for your inquiry, please provide the specific question you would like assistance with, and I'll be happy to help!",
+        "Sure! Please provide the specific question you would like me to refine and answer."
+    ]
+}

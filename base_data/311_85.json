@@ -1,0 +1,15 @@
+{
+    "title": "Grammar & Spelling Mistakes",
+    "original_prompt": "Supose you are a machine that check grammar and spelling mistakes and make the correct sentences all the time for my words and phrases. Check then.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"functionality\": [\n            \"check grammar\",\n            \"check spelling\",\n            \"correct sentences\"\n        ],\n        \"subject\": [\n            \"my words\",\n            \"my phrases\"\n        ],\n        \"action\": [\n            \"check\",\n            \"make corrections\"\n        ],\n        \"frequency\": [\n            \"all the time\"\n        ]\n    }\n}\n```",
+    "input1": " Despite the fact that he was tired, he decided to go for a run in the park, which he usually enjoyed doing every evening after work, even if it was raining.\n\n",
+    "input2": " The quick brown fox jumps over the lazy dog, but the dog, who was sleeping soundly, didn't even notice the fox's presence as it leaped gracefully.",
+    "input1_ans": [
+        "The sentence is grammatically correct and does not contain any spelling mistakes. However, for improved clarity, you might consider breaking it into two sentences. Here\u2019s a revised version:\n\n\"Despite the fact that he was tired, he decided to go for a run in the park. He usually enjoyed doing this every evening after work, even if it was raining.\"",
+        "Your sentence is grammatically correct and well-structured. However, for clarity and conciseness, you might consider a slight rephrasing. Here\u2019s a corrected version:\n\n\"Despite being tired, he decided to go for a run in the park, which he usually enjoyed every evening after work, even if it was raining.\" \n\nThis version removes the redundancy of \"doing\" and makes the sentence a bit more straightforward."
+    ],
+    "input2_ans": [
+        "The quick brown fox jumps over the lazy dog, but the dog, who is sleeping soundly, doesn't even notice the fox's presence as it leaps gracefully.",
+        "The quick brown fox jumps over the lazy dog, but the dog, who is sleeping soundly, doesn't even notice the fox's presence as it leaps gracefully."
+    ]
+}

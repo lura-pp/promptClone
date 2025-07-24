@@ -1,0 +1,15 @@
+{
+    "title": "Analysis - Customer Review Sentiment",
+    "original_prompt": "Perform sentiment analysis on the following customer reviews [{Customer Review: The clothes are too big and don't fit well}], and classify them as positive, negative, or neutral.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"task\": [\n            \"Perform sentiment analysis\"\n        ],\n        \"input_data\": [\n            \"The clothes are too big and don't fit well\"\n        ],\n        \"classification_labels\": [\n            \"positive\",\n            \"negative\",\n            \"neutral\"\n        ]\n    }\n}\n```",
+    "input1": " {Customer Review: The service was excellent, and the staff were very helpful, but the food was a bit bland.} \n\n",
+    "input2": " {Customer Review: I absolutely love the new shoes I bought! They are so comfortable and stylish, but they took a while to arrive.}",
+    "input1_ans": [
+        "The sentiment of the customer review is mixed. It contains both positive and negative elements. The positive aspect is the excellent service and helpful staff, while the negative aspect is the food being a bit bland. Therefore, it can be classified as neutral overall due to the balance of sentiments.",
+        "The sentiment analysis for the customer review is as follows:\n\n- **Overall Sentiment**: Mixed\n- **Positive Aspects**: \"The service was excellent\" and \"the staff were very helpful\"\n- **Negative Aspect**: \"the food was a bit bland\"\n\nIf classified into the provided labels, the review can be considered as **neutral** due to the presence of both positive and negative sentiments."
+    ],
+    "input2_ans": [
+        "The sentiment of the customer review is classified as positive.",
+        "Sentiment Analysis: \n\nThe overall sentiment of the review is **positive**. \n\n- Positive aspects: \"I absolutely love the new shoes,\" \"They are so comfortable and stylish.\"\n- Negative aspect: \"they took a while to arrive.\"\n\nDespite the delay in arrival, the positive sentiments about the shoes outweigh the negative aspect."
+    ]
+}

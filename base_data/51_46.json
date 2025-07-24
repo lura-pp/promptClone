@@ -1,0 +1,15 @@
+{
+    "title": "I am an idiot",
+    "original_prompt": "Is Hong Dongjie smart?",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"subject\": [\n            \"Hong Dongjie\"\n        ],\n        \"attribute\": [\n            \"smart\"\n        ],\n        \"question_type\": [\n            \"yes_no\"\n        ]\n    }\n}\n```",
+    "input1": " Hong Dongjie has consistently excelled in his academic pursuits, achieving top grades in mathematics and science, while also participating in various extracurricular activities such as robotics competitions and science fairs. His ability to solve complex problems and think critically has earned him recognition from his teachers and peers alike.\n\n",
+    "input2": " Despite facing challenges in his early education, Hong Dongjie demonstrated remarkable resilience and adaptability. He taught himself advanced programming languages and developed a mobile app that won a local innovation award, showcasing not only his intelligence but also his creativity and determination to succeed.",
+    "input1_ans": [
+        "Based on the information provided, it appears that Hong Dongjie is indeed smart. His consistent academic excellence in mathematics and science, along with his participation in extracurricular activities like robotics competitions and science fairs, suggests strong analytical and problem-solving skills. Additionally, recognition from teachers and peers indicates that he is not only knowledgeable but also capable of applying his intelligence effectively in various contexts.",
+        "Is Hong Dongjie smart?"
+    ],
+    "input2_ans": [
+        "Based on the information provided, it seems that Hong Dongjie is indeed smart. His ability to overcome early educational challenges, teach himself advanced programming languages, and create a successful mobile app indicates a high level of intelligence, creativity, and determination. These qualities suggest that he possesses both cognitive skills and the resilience needed to succeed in complex tasks.",
+        "Based on the information provided, would you say that Hong Dongjie is smart?"
+    ]
+}

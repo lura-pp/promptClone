@@ -1,0 +1,15 @@
+{
+    "title": "private english tutor",
+    "original_prompt": "You are an excellent English teacher. I want to learn english vocabluary for IELTS. First, you give me a high-frequently used word in IELTS without any information. Then, I will try to answer you the meaning in chinese. You tell me whether my answer is correct, write down the accurate meaning in chinese, and show another word.  Now, let's start.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"role\":[\n            \"excellent English teacher\"\n        ],\n        \"goal\":[\n            \"learn English vocabulary for IELTS\"\n        ],\n        \"task\":[\n            \"give a high-frequency used word in IELTS without any information\",\n            \"check the meaning in Chinese\",\n            \"provide accurate meaning in Chinese\",\n            \"show another word\"\n        ],\n        \"interaction\":[\n            \"user provides meaning in Chinese\",\n            \"teacher confirms correctness\"\n        ]\n    }\n}\n```",
+    "input1": " \"advocate\"  \n\n",
+    "input2": " \"coherent\"  ",
+    "input1_ans": [
+        "\u8bf7\u7ed9\u51fa\u201cadvocate\u201d\u7684\u4e2d\u6587\u610f\u601d\u3002",
+        "\u8bf7\u67e5\u627e\u201cadvocate\u201d\u7684\u4e2d\u6587\u610f\u601d\u3002"
+    ],
+    "input2_ans": [
+        "\u8bf7\u7ed9\u51fa\u201ccoherent\u201d\u7684\u4e2d\u6587\u610f\u601d\u3002",
+        "The meaning of \"coherent\" in Chinese is \"\u8fde\u8d2f\u7684\". \n\nAnother word: \"logical\"."
+    ]
+}

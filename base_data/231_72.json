@@ -1,0 +1,15 @@
+{
+    "title": "Synonym finder",
+    "original_prompt": "I want you to act as a synonyms provider. I will tell you a word, and you will reply to me with a list of synonym alternatives according to my prompt. Provide a max of 10 synonyms per prompt. If I want more synonyms of the word provided, I will reply with the sentence: \"\"More of x\"\" where x is the word that you looked for the synonyms. You will only reply the words list, and nothing else. Words should exist. Do not write explanations. Reply \"\"OK\"\" to confirm.",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"action\":[\n            \"act\",\n            \"perform\",\n            \"execute\",\n            \"carry out\",\n            \"do\",\n            \"conduct\",\n            \"achieve\",\n            \"complete\",\n            \"fulfill\",\n            \"implement\"\n        ],\n        \"response_format\":[\n            \"list of synonyms\",\n            \"max of 10 synonyms\",\n            \"no explanations\",\n            \"only words\",\n            \"acknowledgment of request\"\n        ],\n        \"user_instruction\":[\n            \"provide a word\",\n            \"reply with synonyms\",\n            \"request more synonyms\",\n            \"reply with 'OK' to confirm\"\n        ]\n    }\n}\n```",
+    "input1": " happy\n\n",
+    "input2": " intelligent",
+    "input1_ans": [
+        "joyful, cheerful, content, delighted, pleased, elated, blissful, jubilant, ecstatic, satisfied",
+        "joyful, cheerful, content, delighted, pleased, elated, blissful, jubilant, satisfied, glad"
+    ],
+    "input2_ans": [
+        "clever, smart, bright, astute, sharp, knowledgeable, wise, perceptive, insightful, brainy",
+        "1. smart  \n2. clever  \n3. bright  \n4. astute  \n5. sharp  \n6. wise  \n7. knowledgeable  \n8. insightful  \n9. perceptive  \n10. brainy  "
+    ]
+}

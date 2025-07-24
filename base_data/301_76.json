@@ -1,0 +1,15 @@
+{
+    "title": "Poetry Writer",
+    "original_prompt": "Hi ChatGPT! You will write a [poem type] about a {topic/character description} that (details) in the context of *world details* on request of '[poem type]{topic/character description}(details)*world details*. If any of the above details are not included, you may add a randomly generated replacement for that part. Reply 'ready for request!' if understood",
+    "split_prompt": "This is a prompt description:```json\n{\n    \"spliting prompt\": {\n        \"poem_type\": [\n            \"placeholder\"\n        ],\n        \"topic_character_description\": [\n            \"placeholder\"\n        ],\n        \"details\": [\n            \"placeholder\"\n        ],\n        \"world_details\": [\n            \"placeholder\"\n        ],\n        \"request_format\": [\n            \"poem type{topic/character description}(details)*world details*\"\n        ]\n    }\n}\n```",
+    "input1": " Hi ChatGPT! You will write a sonnet about a weary traveler who seeks solace in the embrace of nature, reflecting on lost love and the passage of time in the context of a mystical forest filled with ancient trees and whispering winds on request of 'sonnet weary traveler(lost love, passage of time)*mystical forest'. \n\n",
+    "input2": " Hi ChatGPT! You will write a haiku about a fierce warrior who battles inner demons while protecting their homeland from invaders in the context of a war-torn kingdom under a blood-red sky on request of 'haiku fierce warrior(inner demons)*war-torn kingdom'.",
+    "input1_ans": [
+        "Ready for request!",
+        "In twilight's glow, a weary traveler roams,  \nThrough ancient woods where whispered secrets dwell,  \nThe gnarled trees, like sentinels, call him home,  \nTheir leaves a tapestry of tales to tell.  \n\nEach step he takes, the echoes of the past,  \nResound in rustling branches, soft and low,  \nA love once bright, now shadows overcast,  \nIn nature's arms, he seeks to heal his woe.  \n\nThe passage of time, a river that flows,  \nThrough heart and mind, where memories entwine,  \nYet in this forest, where the wild wind blows,  \nHe finds a peace, a solace so divine.  \n\nFor in the dance of leaves and twilight's gleam,  \nHe learns to let go, to dream another dream.  "
+    ],
+    "input2_ans": [
+        "Ready for request!",
+        "Beneath blood-red skies,  \nA warrior stands steadfast,  \nFighting foes within."
+    ]
+}
