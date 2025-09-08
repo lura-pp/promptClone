@@ -1,0 +1,6 @@
+{
+    "chain_of_thought.py": 4,
+    "shot_prompting.py": 5,
+    "instruction_prompting.py": 5,
+    "prompting.py": 10
+}

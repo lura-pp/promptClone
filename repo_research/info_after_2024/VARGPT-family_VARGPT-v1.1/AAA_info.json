@@ -1,0 +1,19 @@
+{
+    "internvideo2.py": 1,
+    "videochat2.py": 0,
+    "moviechat.py": 1,
+    "xcomposer2_4KHD.py": 1,
+    "mathvista_evals.py": 1,
+    "utils.py": 21,
+    "d170_cn_utils.py": 1,
+    "dc200_cn_utils.py": 1,
+    "d170_en_utils.py": 0,
+    "dc100_en_utils.py": 0,
+    "utils_v2.py": 1,
+    "rule.json": 7,
+    "prompt.py": 3,
+    "prompt_w_imagesearch.py": 3,
+    "mathverse_evals.py": 2,
+    "question_finalizer.py": 2,
+    "alpaca_en_demo.json": 19
+}

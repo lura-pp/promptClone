@@ -1,0 +1,19 @@
+{
+    "tool_instruction_5000.json": 1446,
+    "api_instruction_5000.json": 1515,
+    "cate_instruction_5000.json": 1434,
+    "rank_prompts.py": 1,
+    "Tree_search_prompts.py": 1,
+    "ReAct_prompts.py": 2,
+    "Plan_prompts.py": 12,
+    "coarse_grained_prompts.py": 3,
+    "chatgpt_function_model.py": 1,
+    "new_eval_win_rate.py": 2,
+    "new_eval_win_rate_cut.py": 0,
+    "gpt4_eval_win_rate.py": 0,
+    "gpt4_eval_win_rate_cut_list.py": 0,
+    "new_eval_win_rate_cut_list.py": 0,
+    "gpt4_eval_win_rate_cut.py": 0,
+    "new_eval_win_rate_list.py": 0,
+    "eval_win_rate.py": 0
+}

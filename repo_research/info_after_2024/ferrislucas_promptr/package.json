@@ -1,0 +1,51 @@
+{
+  "name": "@ifnotnowwhen/promptr",
+  "version": "6.1.0",
+  "main": "Main.js",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "promptr": "bin/index.js"
+  },
+  "files": [
+    "src/**",
+    "*.js",
+    "*.ts"
+  ],
+  "dependencies": {
+    "commander": "^10.0.0",
+    "gpt-3-encoder": "^1.1.4",
+    "liquidjs": "^10.7.0",
+    "openai": "^3.3.0",
+    "prompt-sync": "^4.2.0"
+  },
+  "description": "Promptr is a CLI tool that lets you use plain English to instruct GPT3 or GPT4 to make changes to your codebase.",
+  "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
+    "babel-loader": "^9.1.2",
+    "mocha": "^10.2.0",
+    "sinon": "^15.0.3",
+    "webpack": "^5.77.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-node-externals": "^3.0.0"
+  },
+  "scripts": {
+    "test": "mocha",
+    "bundle": "webpack && cp build.json dist/package.json && cd dist && npm install  && cd ..",
+    "build:win": "cd dist && pkg -t node18-win . && cd ..",
+    "build:macos": "cd dist && pkg -t node18-macos . && cd ..",
+    "build:linux": "cd dist && pkg -t node18-linux . && cd ..",
+    "test-binary": "cd dist && ./promptr -p \"Create a new javascript class called AwesomeClass in AwesomeClass.js\" && cat AwesomeClass.js && rm AwesomeClass.js && cd .."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ferrislucas/promptr.git"
+  },
+  "author": "Ferris Lucas",
+  "bugs": {
+    "url": "https://github.com/ferrislucas/promptr/issues"
+  },
+  "homepage": "https://github.com/ferrislucas/promptr#readme"
+}

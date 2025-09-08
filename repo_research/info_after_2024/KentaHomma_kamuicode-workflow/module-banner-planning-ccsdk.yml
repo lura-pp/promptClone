@@ -1,0 +1,372 @@
+name: module-banner-planning-ccsdk
+
+on:
+  workflow_call:
+    inputs:
+      concept:
+        description: 'バナーのコンセプト'
+        required: true
+        type: string
+      text_content:
+        description: '画像に表示するテキスト'
+        required: true
+        type: string
+      banner_size:
+        description: 'バナーサイズ'
+        required: false
+        type: string
+        default: 'square_1_1'
+      branch-name:
+        description: 'ワーキングブランチ名'
+        required: true
+        type: string
+      folder-name:
+        description: 'プロジェクトフォルダ名'
+        required: true
+        type: string
+      total_banners:
+        description: '生成するバナーの数'
+        required: false
+        type: string
+        default: '1'
+    outputs:
+      planning-completed:
+        description: '企画完了ステータス'
+        value: ${{ jobs.planning.outputs.planning-completed }}
+      # 動的出力（最大8バナーまで対応）
+      base-image-prompt-1:
+        description: 'バナー1用ベース画像生成プロンプト'
+        value: ${{ jobs.planning.outputs.base-image-prompt-1 }}
+      base-image-prompt-2:
+        description: 'バナー2用ベース画像生成プロンプト'
+        value: ${{ jobs.planning.outputs.base-image-prompt-2 }}
+      base-image-prompt-3:
+        description: 'バナー3用ベース画像生成プロンプト'
+        value: ${{ jobs.planning.outputs.base-image-prompt-3 }}
+      base-image-prompt-4:
+        description: 'バナー4用ベース画像生成プロンプト'
+        value: ${{ jobs.planning.outputs.base-image-prompt-4 }}
+      base-image-prompt-5:
+        description: 'バナー5用ベース画像生成プロンプト'
+        value: ${{ jobs.planning.outputs.base-image-prompt-5 }}
+      base-image-prompt-6:
+        description: 'バナー6用ベース画像生成プロンプト'
+        value: ${{ jobs.planning.outputs.base-image-prompt-6 }}
+      base-image-prompt-7:
+        description: 'バナー7用ベース画像生成プロンプト'
+        value: ${{ jobs.planning.outputs.base-image-prompt-7 }}
+      base-image-prompt-8:
+        description: 'バナー8用ベース画像生成プロンプト'
+        value: ${{ jobs.planning.outputs.base-image-prompt-8 }}
+      banner-concept-1:
+        description: 'バナー1用コンセプト'
+        value: ${{ jobs.planning.outputs.banner-concept-1 }}
+      banner-concept-2:
+        description: 'バナー2用コンセプト'
+        value: ${{ jobs.planning.outputs.banner-concept-2 }}
+      banner-concept-3:
+        description: 'バナー3用コンセプト'
+        value: ${{ jobs.planning.outputs.banner-concept-3 }}
+      banner-concept-4:
+        description: 'バナー4用コンセプト'
+        value: ${{ jobs.planning.outputs.banner-concept-4 }}
+      banner-concept-5:
+        description: 'バナー5用コンセプト'
+        value: ${{ jobs.planning.outputs.banner-concept-5 }}
+      banner-concept-6:
+        description: 'バナー6用コンセプト'
+        value: ${{ jobs.planning.outputs.banner-concept-6 }}
+      banner-concept-7:
+        description: 'バナー7用コンセプト'
+        value: ${{ jobs.planning.outputs.banner-concept-7 }}
+      banner-concept-8:
+        description: 'バナー8用コンセプト'
+        value: ${{ jobs.planning.outputs.banner-concept-8 }}
+      text-overlay-prompt-1:
+        description: 'バナー1用テキストオーバーレイプロンプト'
+        value: ${{ jobs.planning.outputs.text-overlay-prompt-1 }}
+      text-overlay-prompt-2:
+        description: 'バナー2用テキストオーバーレイプロンプト'
+        value: ${{ jobs.planning.outputs.text-overlay-prompt-2 }}
+      text-overlay-prompt-3:
+        description: 'バナー3用テキストオーバーレイプロンプト'
+        value: ${{ jobs.planning.outputs.text-overlay-prompt-3 }}
+      text-overlay-prompt-4:
+        description: 'バナー4用テキストオーバーレイプロンプト'
+        value: ${{ jobs.planning.outputs.text-overlay-prompt-4 }}
+      text-overlay-prompt-5:
+        description: 'バナー5用テキストオーバーレイプロンプト'
+        value: ${{ jobs.planning.outputs.text-overlay-prompt-5 }}
+      text-overlay-prompt-6:
+        description: 'バナー6用テキストオーバーレイプロンプト'
+        value: ${{ jobs.planning.outputs.text-overlay-prompt-6 }}
+      text-overlay-prompt-7:
+        description: 'バナー7用テキストオーバーレイプロンプト'
+        value: ${{ jobs.planning.outputs.text-overlay-prompt-7 }}
+      text-overlay-prompt-8:
+        description: 'バナー8用テキストオーバーレイプロンプト'
+        value: ${{ jobs.planning.outputs.text-overlay-prompt-8 }}
+    secrets:
+      anthropic_api_key:
+        description: 'Anthropic API Key'
+        required: true
+      github_pat:
+        description: 'GitHub Token'
+        required: true
+
+jobs:
+  planning:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      planning-completed: ${{ steps.planning.outputs.completed }}
+      # 動的出力（最大8バナーまで対応）
+      base-image-prompt-1: ${{ steps.planning.outputs.base-image-prompt-1 }}
+      base-image-prompt-2: ${{ steps.planning.outputs.base-image-prompt-2 }}
+      base-image-prompt-3: ${{ steps.planning.outputs.base-image-prompt-3 }}
+      base-image-prompt-4: ${{ steps.planning.outputs.base-image-prompt-4 }}
+      base-image-prompt-5: ${{ steps.planning.outputs.base-image-prompt-5 }}
+      base-image-prompt-6: ${{ steps.planning.outputs.base-image-prompt-6 }}
+      base-image-prompt-7: ${{ steps.planning.outputs.base-image-prompt-7 }}
+      base-image-prompt-8: ${{ steps.planning.outputs.base-image-prompt-8 }}
+      banner-concept-1: ${{ steps.planning.outputs.banner-concept-1 }}
+      banner-concept-2: ${{ steps.planning.outputs.banner-concept-2 }}
+      banner-concept-3: ${{ steps.planning.outputs.banner-concept-3 }}
+      banner-concept-4: ${{ steps.planning.outputs.banner-concept-4 }}
+      banner-concept-5: ${{ steps.planning.outputs.banner-concept-5 }}
+      banner-concept-6: ${{ steps.planning.outputs.banner-concept-6 }}
+      banner-concept-7: ${{ steps.planning.outputs.banner-concept-7 }}
+      banner-concept-8: ${{ steps.planning.outputs.banner-concept-8 }}
+      text-overlay-prompt-1: ${{ steps.planning.outputs.text-overlay-prompt-1 }}
+      text-overlay-prompt-2: ${{ steps.planning.outputs.text-overlay-prompt-2 }}
+      text-overlay-prompt-3: ${{ steps.planning.outputs.text-overlay-prompt-3 }}
+      text-overlay-prompt-4: ${{ steps.planning.outputs.text-overlay-prompt-4 }}
+      text-overlay-prompt-5: ${{ steps.planning.outputs.text-overlay-prompt-5 }}
+      text-overlay-prompt-6: ${{ steps.planning.outputs.text-overlay-prompt-6 }}
+      text-overlay-prompt-7: ${{ steps.planning.outputs.text-overlay-prompt-7 }}
+      text-overlay-prompt-8: ${{ steps.planning.outputs.text-overlay-prompt-8 }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.branch-name }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install Claude Code SDK
+        run: npm install @anthropic-ai/claude-code
+      
+      - name: バナー制作計画エージェント
+        id: planning
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.anthropic_api_key }}
+        run: |
+          echo "::group::📋 Banner Planning Agent Execution"
+          echo "Starting at: $(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)"
+          
+          # 設定
+          USER_CONCEPT="${{ inputs.concept }}"
+          USER_TEXT_CONTENT="${{ inputs.text_content }}"
+          BANNER_SIZE="${{ inputs.banner_size }}"
+          FOLDER_NAME="${{ inputs.folder-name }}"
+          PLANNING_DIR="$FOLDER_NAME/planning"
+          TOTAL_BANNERS="${{ inputs.total_banners }}"
+          
+          echo "User concept: $USER_CONCEPT"
+          echo "User text content: $USER_TEXT_CONTENT"
+          echo "Banner size: $BANNER_SIZE"
+          echo "Planning folder: $PLANNING_DIR"
+          echo "Total banners: $TOTAL_BANNERS"
+          
+          # 計画フォルダを事前に作成
+          if [ ! -d "$PLANNING_DIR" ]; then
+            mkdir -p "$PLANNING_DIR"
+            echo "📁 Created planning folder: $PLANNING_DIR"
+          fi
+          
+          # プロンプトの構築
+          PROMPT="あなたはバナー広告制作の専門プランナーです。ユーザーの指示から${TOTAL_BANNERS}つのバナー広告を生成するための詳細な計画を立ててください。
+
+          **ユーザーの指示**:
+          - バナーコンセプト: $USER_CONCEPT
+          - 表示テキスト: '$USER_TEXT_CONTENT'
+          - バナーサイズ: $BANNER_SIZE
+          - 生成するバナー数: $TOTAL_BANNERS
+
+          **重要制約**:
+          - テキスト内容「$USER_TEXT_CONTENT」は一字一句変更禁止
+          - このテキストはFlux Kontext Maxで後から合成するため、ベース画像には含めない
+          - ベース画像にはテキスト配置エリアを確保する
+
+          **バナーサイズ別戦略**:
+          - square_1_1 (1:1): SNS投稿向け、中央配置重視
+          - landscape_16_9 (16:9): Web広告向け、横長レイアウト
+          - portrait_9_16 (9:16): モバイル広告向け、縦長デザイン
+
+          **全体戦略**:
+          - ${TOTAL_BANNERS}つのバナーで一つのキャンペーンを表現
+          - 各バナーは独立した魅力を持つ
+          - 異なる色調・レイアウト・背景で差別化
+          - 統一感のあるブランドイメージ
+
+          **各バナーの方向性**:
+          - バナー1: メインビジュアル、ブランドカラー重視
+          - バナー2: 異なる色調でのバリエーション
+          - バナー3: ミニマルデザインでの表現
+          - バナー4: ダイナミックなデザインでの表現
+          - バナー5以降: 創造的なアプローチでの独自表現
+
+          **タスク**:
+          1. ユーザーの指示を分析し、${TOTAL_BANNERS}つのバナーコンセプトを企画
+          2. 各バナー用のベース画像生成プロンプトを作成（テキストエリア確保）
+          3. 各バナーのコンセプトと方向性を定義
+          4. テキストレイアウト戦略を策定
+          5. 計画書を「$PLANNING_DIR/banner-plan.md」に保存
+          6. 各バナー用のベース画像生成プロンプトを保存：
+             - $PLANNING_DIR/base-image-prompt-1.txt
+             - $PLANNING_DIR/base-image-prompt-2.txt
+             - （以下、バナー数分）
+          7. 各バナー用のコンセプトを保存：
+             - $PLANNING_DIR/banner-concept-1.txt
+             - $PLANNING_DIR/banner-concept-2.txt
+             - （以下、バナー数分）
+          8. 各バナー用のテキストレイアウト戦略を保存：
+             - $PLANNING_DIR/text-overlay-prompt-1.txt
+             - $PLANNING_DIR/text-overlay-prompt-2.txt
+             - （以下、バナー数分）
+
+          **ベース画像プロンプトの要件**:
+          - 高品質な画像生成のための詳細なプロンプト
+          - **必須**: テキスト配置用の明確な空白エリアを確保
+          - テキスト内容は一切含めない（重要）
+          - 各バナーの特性に最適化された背景・色調
+          - 視覚的要素（色彩、構図、スタイル）を明確に指定
+          - 高解像度・高品質を意識した記述
+          - 50-100語程度の適切な長さ
+          - **重要**: ベース画像プロンプトは英語で作成してください
+          - **文字入れエリア確保の必須要件**:
+            * プロンプトに必ず「with clear empty space for text overlay」を含める
+            * 「clean background area」「text placement zone」「uncluttered center area」などの文言を含める
+            * テキストが読みやすい平坦で単色に近い背景エリアを指定
+            * 複雑すぎる装飾や細かいディテールを避ける
+            * コントラストが確保できる背景色を指定
+
+          **バナーコンセプトの要件**:
+          - 生成されるベース画像の特徴と方向性
+          - 各バナー固有のデザインアプローチ
+          - ターゲット層への訴求ポイント
+          - ブランドイメージとの整合性
+
+          **テキストレイアウト戦略の要件**:
+          - テキスト「$USER_TEXT_CONTENT」の最適配置位置（具体的なパーセンテージ指定）
+          - フォントスタイル・サイズの推奨値（Medium-Bold推奨）
+          - 文字色・背景色の組み合わせ（高コントラスト必須）
+          - 読みやすさを最大化する調整指示
+          - テキスト合成処理に適した形式
+          - **配置の具体例**: 「中央やや下部（垂直位置65-75%）」「左上隅（10-20%）」等
+          - **効果指定**: ドロップシャドウ、アウトライン、グロー効果の有無
+
+          **重要**: 
+          1. 必ず${TOTAL_BANNERS}個分のファイルを作成してください
+          2. txtファイルは機械処理用（1行テキスト）
+          3. 各ファイルの内容は具体的で詳細に記述してください
+          4. テキスト内容「$USER_TEXT_CONTENT」は変更禁止
+          5. ファイル作成後、必ずファイルパスを確認・報告してください
+          
+          **文字入れ成功のための重要指示**:
+          - ベース画像は必ずテキスト配置エリアを想定して設計する
+          - 背景が複雑すぎて文字が読めなくなることを避ける
+          - 「clear empty space for text overlay」を各プロンプトに含める
+          - テキストレイアウト戦略では具体的な位置とスタイルを明記する
+          - 後続のテキスト合成処理を前提とした設計にする"
+          
+          echo "🚀 Starting Banner Planning Agent Claude Code CLI..."
+          echo "📝 Prompt length: ${#PROMPT}"
+          
+          # Claude Code CLIの実行
+          npx @anthropic-ai/claude-code \
+            --allowedTools "Read,Write,Edit" \
+            --max-turns 25 \
+            --verbose \
+            --permission-mode "acceptEdits" \
+            -p "$PROMPT" || {
+              echo "::error::❌ Claude Code CLI execution failed"
+              exit 1
+            }
+          
+          # 生成された計画の確認
+          echo ""
+          echo "📋 Checking generated banner planning files..."
+          
+          # 各バナー用のファイルから出力を設定
+          for i in $(seq 1 $TOTAL_BANNERS); do
+            # ベース画像プロンプトの確認
+            if [ -f "$PLANNING_DIR/base-image-prompt-${i}.txt" ]; then
+              BASE_IMAGE_PROMPT=$(cat "$PLANNING_DIR/base-image-prompt-${i}.txt" | tr '\n' ' ')
+              echo "::notice::✅ Base image prompt ${i} generated"
+              echo "Base image prompt ${i}: $BASE_IMAGE_PROMPT"
+              echo "base-image-prompt-${i}=$BASE_IMAGE_PROMPT" >> $GITHUB_OUTPUT
+            else
+              echo "::error::❌ Base image prompt ${i} file not found"
+              exit 1
+            fi
+            
+            # バナーコンセプトの確認
+            if [ -f "$PLANNING_DIR/banner-concept-${i}.txt" ]; then
+              BANNER_CONCEPT=$(head -5 "$PLANNING_DIR/banner-concept-${i}.txt" | tr '\n' ' ')
+              echo "::notice::✅ Banner concept ${i} generated"
+              echo "Banner concept ${i}: $BANNER_CONCEPT"
+              echo "banner-concept-${i}=$BANNER_CONCEPT" >> $GITHUB_OUTPUT
+            else
+              echo "::error::❌ Banner concept ${i} file not found"
+              exit 1
+            fi
+            
+            # テキストオーバーレイプロンプトの確認
+            if [ -f "$PLANNING_DIR/text-overlay-prompt-${i}.txt" ]; then
+              TEXT_OVERLAY_PROMPT=$(head -3 "$PLANNING_DIR/text-overlay-prompt-${i}.txt" | tr '\n' ' ')
+              echo "::notice::✅ Text overlay prompt ${i} generated"
+              echo "Text overlay prompt ${i}: $TEXT_OVERLAY_PROMPT"
+              echo "text-overlay-prompt-${i}=$TEXT_OVERLAY_PROMPT" >> $GITHUB_OUTPUT
+            else
+              echo "::error::❌ Text overlay prompt ${i} file not found"
+              exit 1
+            fi
+          done
+          
+          echo "completed=true" >> $GITHUB_OUTPUT
+          echo "::endgroup::"
+      
+      - name: Commit and push planning
+        env:
+          GH_TOKEN: ${{ secrets.github_pat }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ${{ inputs.folder-name }}/
+          if git diff --cached --quiet; then
+            echo "No planning files to commit"
+          else
+            git commit -m "Add banner planning: ${{ inputs.concept }}
+
+            🤖 Generated with [Claude Code](https://claude.ai/code)
+
+            Co-Authored-By: Claude <noreply@anthropic.com>"
+            # 並列実行での競合を回避するためのリトライ処理
+            for i in {1..3}; do
+              git pull --rebase origin ${{ inputs.branch-name }} || true
+              if git push origin ${{ inputs.branch-name }}; then
+                echo "✅ Push successful on attempt $i"
+                break
+              else
+                echo "⚠️ Push failed on attempt $i, retrying..."
+                # ランダムな待機時間（1-5秒）
+                sleep $((RANDOM % 5 + 1))
+              fi
+            done
+          fi

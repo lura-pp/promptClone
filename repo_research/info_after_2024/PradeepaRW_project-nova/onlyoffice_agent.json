@@ -1,0 +1,885 @@
+{
+  "name": "onlyoffice-agent",
+  "nodes": [
+    {
+      "parameters": {
+        "public": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        1640,
+        -220
+      ],
+      "id": "7bfc8f6a-d327-4e89-bc24-d739689b5bc1",
+      "name": "When chat message received",
+      "webhookId": "596ab5b7-9c65-46cd-92ff-6aee801302cd"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.input }}",
+        "options": {
+          "systemMessage": "You are an intelligent assistant integrated with ONLYOFFICE DocSpace via the Model Context Protocol (MCP). Your role is to help users manage rooms, folders, files, and user access within DocSpace by efficiently using the available MCP tools.\n\n## GENERAL GUIDELINES\n\n- Respond helpfully and concisely\n- Prioritize understanding the user's intent before selecting tools\n- Ask specific follow-up questions when needed (e.g., \"What should I name this folder?\" rather than stating the request is vague)\n- Never fabricate tool results or capabilities\n- Clearly communicate limitations when a request falls outside available tool functionality\n\n## CRITICAL RESPONSE FORMAT RULES\n\n1. NEVER describe your internal processes to the user. Don't say things like \"Retrieving My Documents folder ID...\" or \"Executing tool...\"\n\n2. NEVER say you're going to do something and then pause. Always complete the full action.\n\n3. For folder creation, just say: \"I'll create a folder called '[name]' in your My Documents.\" Then execute BOTH steps (getting the folder ID AND creating the folder) before responding again.\n\n4. For ANY operation, do NOT explain the steps you're taking in the background. Just acknowledge the request briefly, execute the necessary steps, and provide the final result.\n\n5. Keep your responses concise and focused on the outcome, not the process.\n\nWhen executing a tool:\n1. Acknowledge the user's request briefly\n2. Execute ALL required tool calls silently and completely\n3. Present only the final result to the user\n\n## TOOL SELECTION PRINCIPLES\n\n1. Always map user requests to the most appropriate tool\n2. Select tools based on the action needed, not just keywords in the request\n3. For complex requests, break them down into sequential tool operations\n4. When multiple tools could work, select the most direct approach\n\n## AVAILABLE TOOLS\n\n### FILE AND FOLDER MANAGEMENT\n- `files_delete_file` - Delete a file.\n- `files_update_file` - Update a file.\n- `files_get_file_info` - Get file information.\n- `files_create_folder` - Create a folder. Required parameters:\n  * `parentId` - ID of the parent folder\n  * `title` - Name of the new folder\n- `files_delete_folder` - Delete a folder.\n- `files_get_folder` - Get content of a folder.\n- `files_get_folder_info` - Get folder information.\n- `files_get_folders` - Get subfolders of a folder.\n- `files_get_my_folder` - Get the 'My Documents' folder.\n- `files_rename_folder` - Rename a folder.\n- `files_get_rooms_folder` - Get the 'Rooms' folder.\n- `others_download_as_text` - Download a file as text.\n- `others_upload_file` - Upload a file.\n\n### BATCH OPERATIONS\n- `files_copy_batch_items` - Copy to a folder.\n- `files_move_batch_items` - Move to a folder.\n- `files_get_operation_statuses` - Get active file operations.\n\n### ROOM MANAGEMENT\n- `files_create_room` - Create a room. Required parameters:\n  * `title` - Name of the new room\n- `files_update_room` - Update a room.\n- `files_archive_room` - Archive a room.\n- `files_get_room_info` - Get room information.\n- `files_get_room_security_info` - Get room access rights.\n- `files_set_room_security` - Set room access rights.\n\n### USER MANAGEMENT\n- `people_get_all` - Get all people.\n\nIMPORTANT: When executing operations, use THE EXACT TOOL NOTATION as specified above, with underscores (not dots). The tools in the system are configured using underscore notation (e.g., 'files_get_my_folder'), NOT dot notation.\n\n## WORKING WITH FOLDER AND ROOM CREATION\n\nFor folder creation, you MUST:\n1. First get the parent folder ID by calling `files_get_my_folder` or other appropriate folder getter\n2. Then use that ID as the `parentId` parameter when calling `files_create_folder`\n3. Always provide both `parentId` and `title` parameters\n\nFor room creation, you MUST:\n1. Always provide the `title` parameter\n\n## EXAMPLE MULTI-STEP WORKFLOWS (FOLLOW THESE EXACTLY)\n\n### Creating a Folder in My Documents\nUser: \"Create a folder called 'Project X' in My Documents\"\nAssistant: \"I'll create a 'Project X' folder in your My Documents. One moment please...\"\n\n[INTERNAL STEPS - NOT SHOWN TO USER:\n1. Call `files_get_my_folder` to get My Documents folder ID\n2. Use returned ID as parentId when calling `files_create_folder` with title \"Project X\"]\n\n\"I've created the 'Project X' folder in your My Documents successfully.\"\n\n### Listing Users\nUser: \"List all users in the system\"\nAssistant: \"Here is the list of users in the system:\n1. **Name**: Administrator\n   * **Username**: administrator\n   * **Email**: user@example.com\n   * **Status**: Active\nIf you need additional details about any user, please let me know.\"\n\n### Viewing Documents\nUser: \"Show me the files in my documents\"\nAssistant: \"Here are the contents of your 'My Documents' folder:\n- Report.docx (Document)\n- Budget.xlsx (Spreadsheet)\n- Meeting_notes.pdf (PDF)\nIf you'd like to perform any actions with these files, just let me know.\"\n\n### Creating a Room\nUser: \"Create a new room for the Marketing team\"\nAssistant: \"I'll create a new Marketing team room for you.\"\n\n[INTERNAL STEPS - NOT SHOWN TO USER:\n1. Call `files_create_room` with title \"Marketing team\"]\n\n\"I've created a new room named 'Marketing team'. Would you like to set any specific access rights for this room?\"\n\n### Uploading Files\nUser: \"Upload this presentation to the Sales room\"\nAssistant: \"Please attach the file you'd like to upload to the Sales room.\"\n[After file attachment] \"Your file has been successfully uploaded to the Sales room.\"\n\n### Managing Access Rights\nUser: \"Who has access to the Finance room?\"\nAssistant: \"Here are the current access permissions for the Finance room:\n- Admin Group: Full Access\n- Finance Team: Edit Access\n- Viewers: Read Only Access\nWould you like to modify these permissions?\"\n\n## DETAILED TOOL USAGE INSTRUCTIONS\n\n### Folder Creation Process\nTo create a folder:\n1. FIRST get the parent folder ID:\n   ```\n   // First get the My Documents folder ID\n   const myDocsFolder = await executeTool('files_get_my_folder', {});\n   const parentId = myDocsFolder.id;\n   ```\n\n2. THEN create the folder using that parent ID:\n   ```\n   // Now create the new folder with the required parameters\n   await executeTool('files_create_folder', {\n     parentId: parentId,  // REQUIRED: Must use an actual folder ID\n     title: \"Folder Name\"  // REQUIRED: Name of the new folder\n   });\n   ```\n\n### Common Parameters\nWhen working with files and folders:\n- `id` - Unique identifier for a file or folder\n- `parentId` - ID of the parent folder\n- `title` - Name of the file, folder, or room\n- `fileId` - ID of a specific file\n\n## ERROR HANDLING\n\nIf a tool execution fails:\n1. Check that you're using the exact tool name with correct underscore notation\n2. Ensure ALL required parameters are provided (especially parentId and title)\n3. Do not reveal error messages directly to the user\n4. Provide a user-friendly explanation of what went wrong\n5. Suggest alternative approaches when possible\n6. If a feature appears to be unsupported, clearly communicate the limitation\n\nExample error handling process:\n```\n// Internal error handling - not shown to user\ntry {\n  // First get the My Documents folder ID\n  const myDocsFolder = await executeTool('files_get_my_folder', {});\n  const parentId = myDocsFolder.id;\n  \n  // Now create the new folder with the required parameters\n  await executeTool('files_create_folder', {\n    parentId: parentId,\n    title: \"Project X\"\n  });\n  \n  // Success response\n  return \"I've created the 'Project X' folder in your My Documents successfully.\";\n} catch (error) {\n  // Error response\n  return \"I wasn't able to create the folder at this time. This might be due to system limitations or permissions. Would you like me to try another operation?\";\n}\n```\n\nExample user-friendly error response:\n\"I'm sorry, but I wasn't able to create that folder. This might be because you don't have sufficient permissions or there was a system limitation. Would you like me to try something else instead?\"\n\n## MULTI-STEP OPERATIONS\n\nFor complex requests requiring multiple operations:\n1. Break down the task into individual steps\n2. Confirm the overall plan with the user if needed\n3. Execute each step sequentially\n4. Provide a summary of all completed actions\n\nExample:\nUser: \"Create a new Marketing folder and then upload these files to it\"\nAssistant: \"I'll create a new Marketing folder for you. Where would you like this folder to be created?\"\n[After user specifies location] \"The Marketing folder has been created successfully. Please attach the files you'd like to upload.\"\n[After files are attached] \"I've uploaded all your files to the Marketing folder. They're now available for access.\""
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        1572,
+        -20
+      ],
+      "id": "2f5e8766-20d2-4090-bd9e-352ed4986607",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "=files_archive_room"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        340,
+        200
+      ],
+      "id": "3eaac19a-8b9e-4685-af92-e1d3aac7e150",
+      "name": "Archive a room",
+      "notesInFlow": false,
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "WTG0A0n8zXvct8Ha",
+          "name": "MCP Client - onlyoffice-docspace"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "files_copy_batch_items"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        460,
+        200
+      ],
+      "id": "aabf01eb-332c-4fbf-811d-667017ecde75",
+      "name": "Copy to a folder",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "WTG0A0n8zXvct8Ha",
+          "name": "MCP Client - onlyoffice-docspace"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "files_create_folder",
+        "toolParameters": "{\n  \"parentId\": 2,\n  \"title\": \"{{$input.folder_name}}\"\n}"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        580,
+        200
+      ],
+      "id": "b1fc27ca-4fa9-4d16-81fa-52e0d21c40d2",
+      "name": "Create a folder",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "WTG0A0n8zXvct8Ha",
+          "name": "MCP Client - onlyoffice-docspace"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "files_create_room"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        700,
+        200
+      ],
+      "id": "017353bf-cd9a-46b2-a525-9b9c287133e4",
+      "name": "Create a room",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "WTG0A0n8zXvct8Ha",
+          "name": "MCP Client - onlyoffice-docspace"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "files_delete_file"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        820,
+        200
+      ],
+      "id": "976772d4-ddb8-42e2-8dbf-4904eeb27778",
+      "name": "Delete a file",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "WTG0A0n8zXvct8Ha",
+          "name": "MCP Client - onlyoffice-docspace"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "files_delete_folder"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        940,
+        200
+      ],
+      "id": "1b98de53-b4db-4c51-b3a0-7108dca0fd05",
+      "name": "Delete a folder",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "WTG0A0n8zXvct8Ha",
+          "name": "MCP Client - onlyoffice-docspace"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "files_get_file_info"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1060,
+        200
+      ],
+      "id": "3f97bf21-006d-4813-9735-ad7f135ff490",
+      "name": "Get file information",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "WTG0A0n8zXvct8Ha",
+          "name": "MCP Client - onlyoffice-docspace"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "files_get_folder"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1180,
+        200
+      ],
+      "id": "8bc48b2c-3110-4f73-8b91-f48f8d4c4d94",
+      "name": "Get content of a folder",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "WTG0A0n8zXvct8Ha",
+          "name": "MCP Client - onlyoffice-docspace"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "files_get_folder_info"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1300,
+        200
+      ],
+      "id": "94c1731a-6ba3-43a6-9f10-69edaa2d6554",
+      "name": "Get folder information",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "WTG0A0n8zXvct8Ha",
+          "name": "MCP Client - onlyoffice-docspace"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "files_get_folders"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1420,
+        200
+      ],
+      "id": "d1a27034-8c8e-4ebb-ba75-85a55d565da2",
+      "name": "Get subfolders of a folder",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "WTG0A0n8zXvct8Ha",
+          "name": "MCP Client - onlyoffice-docspace"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "files_get_operation_statuses"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1540,
+        200
+      ],
+      "id": "5e25ef6e-4cd1-4735-8457-fca7f5df07bd",
+      "name": "Get active file operations",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "WTG0A0n8zXvct8Ha",
+          "name": "MCP Client - onlyoffice-docspace"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "files_get_room_info"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1660,
+        200
+      ],
+      "id": "3d6172a0-9185-4548-a499-038eed2d1a1a",
+      "name": "Get room information",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "WTG0A0n8zXvct8Ha",
+          "name": "MCP Client - onlyoffice-docspace"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "files_get_room_security_info"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1780,
+        200
+      ],
+      "id": "bc14445f-41a9-482d-a3da-ca67325f75e3",
+      "name": "Get room access rights",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "WTG0A0n8zXvct8Ha",
+          "name": "MCP Client - onlyoffice-docspace"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "files_move_batch_items"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1900,
+        200
+      ],
+      "id": "3ec288fd-3f58-42ba-853b-a25e6accd5ac",
+      "name": "Move to a folder",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "WTG0A0n8zXvct8Ha",
+          "name": "MCP Client - onlyoffice-docspace"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "files_rename_folder"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        2020,
+        200
+      ],
+      "id": "106c8da6-b6bf-4f6c-874e-0e155390670f",
+      "name": "Rename a folder",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "WTG0A0n8zXvct8Ha",
+          "name": "MCP Client - onlyoffice-docspace"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "files_set_room_security"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        2140,
+        200
+      ],
+      "id": "3410d87e-73a1-4610-9a82-0c287f1d46ac",
+      "name": "Set room access rights",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "WTG0A0n8zXvct8Ha",
+          "name": "MCP Client - onlyoffice-docspace"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "files_update_file"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        2260,
+        200
+      ],
+      "id": "6c513752-d96a-4af1-8d35-f426635c40c7",
+      "name": "Update a file",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "WTG0A0n8zXvct8Ha",
+          "name": "MCP Client - onlyoffice-docspace"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "files_update_room"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        2380,
+        200
+      ],
+      "id": "83189df1-b7ca-49e2-93b2-f53941d37e9e",
+      "name": "Update a room",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "WTG0A0n8zXvct8Ha",
+          "name": "MCP Client - onlyoffice-docspace"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "others_download_as_text"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        2500,
+        200
+      ],
+      "id": "610c495a-c598-46d7-8235-b11c4d5d7340",
+      "name": "Download a file as text",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "WTG0A0n8zXvct8Ha",
+          "name": "MCP Client - onlyoffice-docspace"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "others_upload_file"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        2620,
+        200
+      ],
+      "id": "cac4d75a-8bd4-40da-9899-7587e56e8a44",
+      "name": "Upload a file",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "WTG0A0n8zXvct8Ha",
+          "name": "MCP Client - onlyoffice-docspace"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "people_get_all"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        2740,
+        200
+      ],
+      "id": "87079ae0-c801-4ad7-bfa7-462b17480733",
+      "name": "Get all people",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "WTG0A0n8zXvct8Ha",
+          "name": "MCP Client - onlyoffice-docspace"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        220,
+        200
+      ],
+      "id": "18e40683-64b5-40fb-a3f3-67777dc3b4e4",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "avSgLKwLvvI1EPHE",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "files_get_my_folder"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        2860,
+        200
+      ],
+      "id": "21a26d37-6c91-4ab1-9238-2af2935976f9",
+      "name": "Get the My Documents folder",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "WTG0A0n8zXvct8Ha",
+          "name": "MCP Client - onlyoffice-docspace"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "files_get_rooms_folder"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        2980,
+        200
+      ],
+      "id": "12b5ea1b-96eb-4195-b5f4-1f3b273d42ad",
+      "name": "Get the Rooms folder",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "WTG0A0n8zXvct8Ha",
+          "name": "MCP Client - onlyoffice-docspace"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        3100,
+        200
+      ],
+      "id": "20524064-4744-4609-8b9c-a1befaa404d0",
+      "name": "MCP Client",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "WTG0A0n8zXvct8Ha",
+          "name": "MCP Client - onlyoffice-docspace"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "inputSource": "jsonExample",
+        "jsonExample": "{\n  \"input\": \"create a new folder for the marketing team in DocSpace\",\n  \"reason\": \"The request involves managing folders in ONLYOFFICE DocSpace, which is exactly what the OnlyOffice Agent is designed to handle.\",\n  \"selectedAgent\": \"onlyoffice-agent\"\n}"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        1260,
+        -40
+      ],
+      "id": "f32358d1-6cec-4b8b-aa5c-09c78f7a1cc4",
+      "name": "When Executed by Another Workflow"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        []
+      ]
+    },
+    "Archive a room": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Copy to a folder": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create a folder": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create a room": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete a file": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete a folder": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get file information": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get content of a folder": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get folder information": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get subfolders of a folder": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get active file operations": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get room information": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get room access rights": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Move to a folder": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rename a folder": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set room access rights": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update a file": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update a room": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download a file as text": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload a file": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get all people": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get the My Documents folder": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get the Rooms folder": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MCP Client": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "ca2100ad-dce0-4e16-a825-0bc98163fb8f",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "558d88703fb65b2d0e44613bc35916258b0f0bf983c5d4730c00c424b77ca36a"
+  },
+  "id": "R7Mrgn6n1JLX5REW",
+  "tags": []
+}

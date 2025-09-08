@@ -1,0 +1,22 @@
+{
+    "creator.py": 1,
+    "main.py": 1,
+    "app.py": 1,
+    "clarifying_agent.py": 1,
+    "email_agent.py": 4,
+    "project-planner.py": 5,
+    "prompts.py": 2,
+    "writer_agent.py": 1,
+    "clarification_agent.py": 1,
+    "research_manager.py": 4,
+    "manager_agent.py": 2,
+    "build_agents.py": 2,
+    "evaluator_agent.py": 3,
+    "clarifier_agent.py": 3,
+    "pushover_notification_agent.py": 1,
+    "planner_agent.py": 1,
+    "optimizer_agent.py": 1,
+    "research_manager_agent.py": 1,
+    "clarifier.py": 1,
+    "question_refiner_agent.py": 1
+}

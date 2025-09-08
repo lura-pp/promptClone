@@ -1,0 +1,99 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/threads/thread_H6hq4f78l5gxCtSydD79yb6S/runs
+    body:
+      encoding: UTF-8
+      string: '{"assistant_id":"asst_NJFAvux0JqZz1Fi4yXfsAPMz"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_ACCESS_TOKEN>
+      Openai-Beta:
+      - assistants=v2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 14 Mar 2025 16:46:21 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Openai-Version:
+      - '2020-10-01'
+      Openai-Organization:
+      - user-jxm65ijkzc1qrfhc0ij8moic
+      X-Request-Id:
+      - req_ade92d0c894e7f0813a1c2a74e9ec7e4
+      Openai-Processing-Ms:
+      - '4475'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=KxZ9yZgR.lXokJoclTLEbcyMNznb7GDVIQoZfXMfZTg-1741970781-1.0.1.1-619ieI16fAkJgzRUS1aJvvtTD4g8K35HF6PEK9XjD0loFQRQGFw9yJdIlIvESn96kdi1xq2bzv8Huu8DyiShwmezFwaKJOuE49M1U83IPx8;
+        path=/; expires=Fri, 14-Mar-25 17:16:21 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=Oxw_6LD95gXKtoOFfKQjbAjKglMP88Dsnp99C7ld5Kg-1741970781477-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 92053f0b5fb6638e-LHR
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "run_Bsdc4YdgdNsU3ZJM30yvIgwc",
+          "object": "thread.run",
+          "created_at": 1741970777,
+          "assistant_id": "asst_NJFAvux0JqZz1Fi4yXfsAPMz",
+          "thread_id": "thread_H6hq4f78l5gxCtSydD79yb6S",
+          "status": "queued",
+          "started_at": null,
+          "expires_at": 1741971377,
+          "cancelled_at": null,
+          "failed_at": null,
+          "completed_at": null,
+          "required_action": null,
+          "last_error": null,
+          "model": "gpt-4",
+          "instructions": "When asked a question, write and run Ruby code to answer the question",
+          "tools": [],
+          "tool_resources": {},
+          "metadata": {},
+          "temperature": 1.0,
+          "top_p": 1.0,
+          "reasoning_effort": null,
+          "max_completion_tokens": null,
+          "max_prompt_tokens": null,
+          "truncation_strategy": {
+            "type": "auto",
+            "last_messages": null
+          },
+          "incomplete_details": null,
+          "usage": null,
+          "response_format": "auto",
+          "tool_choice": "auto",
+          "parallel_tool_calls": true
+        }
+  recorded_at: Fri, 14 Mar 2025 16:46:21 GMT
+recorded_with: VCR 6.3.1

@@ -1,0 +1,3036 @@
+{
+    "Name": "Keras-llm-Robot",
+    "Version": "1.0.0.",
+    "CreateDate": "11//07//2023 20:16PM",
+    "Description": "KERAS LLM Chat Robot",
+    "WebConfig": {
+        "ShowRunningStatus": false,
+        "SaveChatHistory": false
+    },
+    "ModelConfig": {
+        "OnlineModel": {
+            "google-api": {
+                "modellist": [
+                    "gemini-1.5-flash",
+                    "gemini-1.5-pro-latest",
+                    "gemini-2.0-flash-exp",
+                    "gemini-exp-1206",
+                    "gemini-2.0-flash-thinking-exp"
+                ],
+                "baseurl": "",
+                "load_type": "cloud",
+                "apiversion": "",
+                "preset": "default",
+                "apikey": "[Your Key]",
+                "apiproxy": "[Private Proxy]",
+                "support_tools": true,
+                "provider": "GoogleCloud"
+            },
+            "openai-api": {
+                "modellist": [
+                    "gpt-3.5-turbo",
+                    "gpt-4-turbo",
+                    "gpt-4o",
+                    "gpt-4o-mini"
+                ],
+                "baseurl": "https://api.openai.com/v1",
+                "load_type": "cloud",
+                "apiversion": "",
+                "preset": "default",
+                "apikey": "[Your Key]",
+                "apiproxy": "[Private Proxy]",
+                "support_tools": true,
+                "provider": "OpenAI"
+            },
+            "groq-api": {
+                "modellist": [
+                    "Gemma-7b-It",
+                    "Llama3-8b-8192",
+                    "Mixtral-8x7b-32768",
+                    "Llama3-70b-8192"
+                ],
+                "baseurl": "",
+                "load_type": "cloud",
+                "apiversion": "",
+                "preset": "default",
+                "apikey": "[Your Key]",
+                "apiproxy": "[Private Proxy]",
+                "support_tools": true,
+                "provider": "GroqCloud"
+            },
+            "together-api": {
+                "modellist": [
+                    "Qwen/Qwen2-72B-Instruct",
+                    "meta-llama/Llama-3-70b-chat-hf",
+                    "mistralai/Mixtral-8x22B-Instruct-v0.1",
+                    "mistralai/Mixtral-8x7B-Instruct-v0.1",
+                    "microsoft/WizardLM-2-8x22B"
+                ],
+                "baseurl": "https://api.together.xyz/v1",
+                "load_type": "cloud",
+                "apiversion": "",
+                "preset": "default",
+                "apikey": "[Your Key]",
+                "apiproxy": "[Private Proxy]",
+                "support_tools": true,
+                "provider": "TogetherCloud"
+            },
+            "firework-api": {
+                "modellist": [
+                    "accounts/fireworks/models/firefunction-v2",
+                    "accounts/fireworks/models/firefunction-v1",
+                    "accounts/fireworks/models/firellava-13b",
+                    "accounts/fireworks/models/mixtral-8x22b-instruct",
+                    "accounts/fireworks/models/qwen2-72b-instruct"
+                ],
+                "baseurl": "https://api.fireworks.ai/inference/v1",
+                "load_type": "cloud",
+                "apiversion": "",
+                "preset": "default",
+                "apikey": "[Your Key]",
+                "apiproxy": "[Private Proxy]",
+                "support_tools": true,
+                "provider": "FireworkCloud"
+            },
+            "ali-cloud-api": {
+                "modellist": [
+                    "qwen-max-longcontext",
+                    "qwen-max-1201",
+                    "qwen-max",
+                    "qwen-plus",
+                    "qwen-turbo",
+                    "qwen-vl-max",
+                    "qwen-vl-plus",
+                    "qwen-audio-turbo",
+                    "llama2-7b-chat-v2",
+                    "llama2-13b-chat-v2",
+                    "qwen-vl-v1",
+                    "qwen-vl-chat-v1",
+                    "qwen1.5-72b-chat",
+                    "qwen1.5-14b-chat",
+                    "qwen1.5-7b-chat",
+                    "qwen-72b-chat",
+                    "qwen-14b-chat",
+                    "qwen-7b-chat",
+                    "qwen-1.8b-longcontext-chat",
+                    "qwen-1.8b-chat",
+                    "qwen-audio-chat",
+                    "baichuan-7b-v1",
+                    "baichuan2-7b-chat-v1",
+                    "baichuan2-13b-chat-v1",
+                    "wanx-v1",
+                    "wanx-style-repaint-v1",
+                    "wanx-background-generation-v2",
+                    "wanx-sketch-to-image-lite",
+                    "facechain-facedetect",
+                    "facechain-finetune",
+                    "facechain-generation",
+                    "wordart-texture",
+                    "wordart-semantic",
+                    "multimodal-embedding-one-peace-v1",
+                    "stable-diffusion-xl",
+                    "stable-diffusion-v1.5",
+                    "opennlu-v1",
+                    "chatglm-6b-v2",
+                    "sanle-v1",
+                    "ziya-llama-13b-v1",
+                    "dolly-12b-v2",
+                    "belle-llama-13b-2m-v1",
+                    "moss-moon-003-base",
+                    "moss-moon-003-sft",
+                    "chatyuan-large-v2",
+                    "billa-7b-sft-v1"
+                ],
+                "baseurl": "",
+                "load_type": "cloud",
+                "apiversion": "",
+                "preset": "default",
+                "apikey": "[Your Key]",
+                "apiproxy": "[Private Proxy]",
+                "support_tools": false,
+                "provider": "AliCloud"
+            },
+            "baidu-cloud-api": {
+                "modellist": [
+                    "ERNIE-4.0-8K",
+                    "ERNIE-3.5-8K",
+                    "ERNIE-Bot-8K",
+                    "ERNIE-3.5-4K-0205",
+                    "ERNIE-Lite-8K-0922",
+                    "ERNIE-Lite-8K-0308",
+                    "Yi-34B-Chat",
+                    "BLOOMZ-7B",
+                    "Mixtral-8x7B-Instruct",
+                    "Qianfan-BLOOMZ-7B-compressed",
+                    "Llama-2-7b-chat",
+                    "Llama-2-13b-chat",
+                    "Llama-2-70b-chat",
+                    "Qianfan-Chinese-Llama-2-7B",
+                    "Qianfan-Chinese-Llama-2-13B",
+                    "ChatGLM2-6B-32K",
+                    "XuanYuan-70B-Chat-4bit",
+                    "ChatLaw",
+                    "AquilaChat-7B",
+                    "SQLCoder-7B",
+                    "CodeLlama-7b-Instruct",
+                    "Gemma-7B-it"
+                ],
+                "baseurl": "https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop",
+                "load_type": "cloud",
+                "apiversion": "",
+                "preset": "default",
+                "apikey": "[Your Key]",
+                "secretkey": "[Your Key]",
+                "apiproxy": "[Private Proxy]",
+                "support_tools": false,
+                "provider": "BaiduCloud"
+            },
+            "kimi-cloud-api": {
+                "modellist": [
+                    "moonshot-v1-8k",
+                    "moonshot-v1-32k",
+                    "moonshot-v1-128k"
+                ],
+                "baseurl": "https://api.moonshot.cn/v1",
+                "load_type": "cloud",
+                "apiversion": "",
+                "preset": "default",
+                "apikey": "[Your Key]",
+                "apiproxy": "[Private Proxy]",
+                "support_tools": true,
+                "provider": "KimiCloud"
+            },
+            "yi-01ai-api": {
+                "modellist": [
+                    "yi-large",
+                    "yi-medium",
+                    "yi-vision",
+                    "yi-medium-200k",
+                    "yi-spark",
+                    "yi-large-rag",
+                    "yi-large-turbo",
+                    "yi-large-preview",
+                    "yi-large-rag-preview"
+                ],
+                "baseurl": "https://api.lingyiwanwu.com/v1",
+                "load_type": "cloud",
+                "apiversion": "",
+                "preset": "default",
+                "apikey": "[Your Key]",
+                "apiproxy": "[Private Proxy]",
+                "support_tools": false,
+                "provider": "YiCloud"
+            }
+        },
+        "EmbeddingModel": {
+            "bge-large-en-v1.5": {
+                "path": "models/embeddings/bge-large-en-v1.5",
+                "Huggingface": "BAAI/bge-large-en-v1.5"
+            },
+            "bge-large-zh-v1.5": {
+                "path": "models/embeddings/bge-large-zh-v1.5",
+                "Huggingface": "BAAI/bge-large-zh-v1.5"
+            },
+            "m3e-small": {
+                "path": "models/embeddings/m3e-small",
+                "Huggingface": "moka-ai/m3e-small"
+            },
+            "m3e-base": {
+                "path": "models/embeddings/m3e-base",
+                "Huggingface": "moka-ai/m3e-base"
+            },
+            "m3e-large": {
+                "path": "models/embeddings/m3e-large",
+                "Huggingface": "moka-ai/m3e-large"
+            },
+            "bge-small-en-v1.5": {
+                "path": "models/embeddings/bge-small-en-v1.5",
+                "Huggingface": "BAAI/bge-small-en-v1.5"
+            },
+            "bge-base-en-v1.5": {
+                "path": "models/embeddings/bge-base-en-v1.5",
+                "Huggingface": "BAAI/bge-base-en-v1.5"
+            },
+            "bge-small-zh-v1.5": {
+                "path": "models/embeddings/bge-small-zh-v1.5",
+                "Huggingface": "BAAI/bge-small-zh-v1.5"
+            },
+            "bge-base-zh-v1.5": {
+                "path": "models/embeddings/bge-base-zh-v1.5",
+                "Huggingface": "BAAI/bge-base-zh-v1.5"
+            },
+            "text-embedding-ada-002": {
+                "path": "",
+                "apikey": "[Your Key]",
+                "provider": "OpenAI"
+            },
+            "embedding-gecko-001": {
+                "path": "",
+                "apikey": "[Your Key]",
+                "provider": "GoogleCloud"
+            },
+            "embedding-001": {
+                "path": "",
+                "apikey": "[Your Key]",
+                "provider": "GoogleCloud"
+            }
+        },
+        "RerankerModel": {
+            "bge-reranker-base": {
+                "path": "models/reranker/bge-reranker-base",
+                "Huggingface": "BAAI/bge-reranker-base"
+            },
+            "bge-reranker-large": {
+                "path": "models/reranker/bge-reranker-large",
+                "Huggingface": "BAAI/bge-reranker-large"
+            }
+        },
+        "ImageRecognition": {
+            "blip-image-captioning-large": {
+                "type": "local",
+                "path": "models/imagerecognition/blip-image-captioning-large",
+                "device": "cpu",
+                "loadbits": 16,
+                "Huggingface": "Salesforce/blip-image-captioning-large"
+            }
+        },
+        "ImageGeneration": {
+            "OpenDalleV1.1": {
+                "type": "local",
+                "path": "models/imagegeneration/OpenDalleV1.1",
+                "device": "auto",
+                "loadbits": 16,
+                "Huggingface": "dataautogpt3/OpenDalleV1.1",
+                "config": {
+                    "seed": -1,
+                    "torch_compile": false,
+                    "cpu_offload": false,
+                    "refiner": true
+                }
+            },
+            "ProteusV0.2": {
+                "type": "local",
+                "path": "models/imagegeneration/ProteusV0.2",
+                "device": "auto",
+                "loadbits": 16,
+                "Huggingface": "dataautogpt3/ProteusV0.2",
+                "config": {
+                    "seed": -1,
+                    "torch_compile": false,
+                    "cpu_offload": false,
+                    "refiner": true
+                }
+            },
+            "SDXL-Lightning": {
+                "type": "local",
+                "path": "models/imagegeneration/SDXL-Lightning",
+                "device": "auto",
+                "loadbits": 16,
+                "Huggingface": "ByteDance/SDXL-Lightning",
+                "config": {
+                    "seed": -1,
+                    "torch_compile": false,
+                    "cpu_offload": false,
+                    "refiner": false
+                }
+            },
+            "GhostXL": {
+                "type": "local",
+                "path": "models/imagegeneration/GhostXL",
+                "device": "auto",
+                "loadbits": 16,
+                "Huggingface": "drnighthan/GhostXL",
+                "config": {
+                    "seed": -1,
+                    "torch_compile": false,
+                    "cpu_offload": false,
+                    "refiner": false
+                }
+            },
+            "Hyper-SD": {
+                "type": "local",
+                "path": "models/imagegeneration/Hyper-SD",
+                "device": "auto",
+                "loadbits": 16,
+                "Huggingface": "ByteDance/Hyper-SD",
+                "config": {
+                    "seed": -1,
+                    "torch_compile": false,
+                    "cpu_offload": false,
+                    "refiner": false
+                }
+            }
+        },
+        "MusicGeneration": {
+            "musicgen-medium": {
+                "type": "local",
+                "path": "models/musicgen/musicgen-medium",
+                "device": "cpu",
+                "loadbits": 16,
+                "Huggingface": "facebook/musicgen-medium",
+                "config": {
+                    "seed": -1,
+                    "guiding_scale": 3,
+                    "max_new_tokens": 512,
+                    "do_sample": true
+                }
+            },
+            "musicgen-large": {
+                "type": "local",
+                "path": "models/musicgen/musicgen-large",
+                "device": "cpu",
+                "loadbits": 16,
+                "Huggingface": "facebook/musicgen-large",
+                "config": {
+                    "seed": -1,
+                    "guiding_scale": 3,
+                    "max_new_tokens": 512,
+                    "do_sample": true
+                }
+            },
+            "musicgen-small": {
+                "type": "local",
+                "path": "models/musicgen/musicgen-small",
+                "device": "cpu",
+                "loadbits": 16,
+                "Huggingface": "facebook/musicgen-small",
+                "config": {
+                    "seed": -1,
+                    "guiding_scale": 3,
+                    "max_new_tokens": 512,
+                    "do_sample": true
+                }
+            }
+        },
+        "VtoTModel": {
+            "GoogleVoiceService": {
+                "type": "cloud",
+                "key_json_path": "chatbot-speech-key.json",
+                "language": [
+                    "en-US"
+                ],
+                "provider": "GoogleCloud",
+                "CloudTemplates": "GoogleVoiceTemplate",
+                "language_code": [
+                    "en-US",
+                    "zh-CN",
+                    "af-ZA",
+                    "sq-AL",
+                    "am-ET",
+                    "ar-DZ",
+                    "ar-BH",
+                    "ar-EG",
+                    "ar-IQ",
+                    "ar-IL",
+                    "ar-JO",
+                    "ar-KW",
+                    "ar-LB",
+                    "ar-MR",
+                    "ar-MA",
+                    "ar-OM",
+                    "ar-QA",
+                    "ar-SA",
+                    "ar-PS",
+                    "ar-SY",
+                    "ar-TN",
+                    "ar-AE",
+                    "ar-YE",
+                    "hy-AM",
+                    "az-AZ",
+                    "eu-ES",
+                    "bn-BD",
+                    "bn-IN",
+                    "bs-BA",
+                    "bg-BG",
+                    "my-MM",
+                    "ca-ES",
+                    "yue-Hant-HK",
+                    "zh-TW",
+                    "hr-HR",
+                    "cs-CZ",
+                    "da-DK",
+                    "nl-BE",
+                    "nl-NL",
+                    "en-AU",
+                    "en-CA",
+                    "en-GH",
+                    "en-HK",
+                    "en-IN",
+                    "en-IE",
+                    "en-KE",
+                    "en-NZ",
+                    "en-NG",
+                    "en-PK",
+                    "en-PH",
+                    "en-SG",
+                    "en-ZA",
+                    "en-TZ",
+                    "en-GB",
+                    "et-EE",
+                    "fil-PH",
+                    "fi-FI",
+                    "fr-BE",
+                    "fr-CA",
+                    "fr-FR",
+                    "fr-CH",
+                    "gl-ES",
+                    "ka-GE",
+                    "de-AT",
+                    "de-DE",
+                    "de-CH",
+                    "el-GR",
+                    "gu-IN",
+                    "iw-IL",
+                    "hi-IN",
+                    "hu-HU",
+                    "is-IS",
+                    "id-ID",
+                    "it-IT",
+                    "it-CH",
+                    "ja-JP",
+                    "jv-ID",
+                    "kn-IN",
+                    "kk-KZ",
+                    "km-KH",
+                    "rw-RW",
+                    "ko-KR",
+                    "lo-LA",
+                    "lv-LV",
+                    "lt-LT",
+                    "mk-MK",
+                    "ms-MY",
+                    "ml-IN",
+                    "mr-IN",
+                    "mn-MN",
+                    "ne-NP",
+                    "no-NO",
+                    "fa-IR",
+                    "pl-PL",
+                    "pt-BR",
+                    "pt-PT",
+                    "pa-Guru-IN",
+                    "ro-RO",
+                    "ru-RU",
+                    "sr-RS",
+                    "si-LK",
+                    "sk-SK",
+                    "sl-SI",
+                    "st-ZA",
+                    "es-AR",
+                    "es-BO",
+                    "es-CL",
+                    "es-CO",
+                    "es-CR",
+                    "es-DO",
+                    "es-EC",
+                    "es-SV",
+                    "es-GT",
+                    "es-HN",
+                    "es-MX",
+                    "es-NI",
+                    "es-PA",
+                    "es-PY",
+                    "es-PE",
+                    "es-PR",
+                    "es-ES",
+                    "es-US",
+                    "es-UY",
+                    "es-VE",
+                    "su-ID",
+                    "sw-KE",
+                    "sw-TZ",
+                    "ss-Latn-ZA",
+                    "sv-SE",
+                    "ta-IN",
+                    "ta-MY",
+                    "ta-SG",
+                    "ta-LK",
+                    "te-IN",
+                    "th-TH",
+                    "ts-ZA",
+                    "tn-Latn-ZA",
+                    "tr-TR",
+                    "uk-UA",
+                    "ur-IN",
+                    "ur-PK",
+                    "uz-UZ",
+                    "ve-ZA",
+                    "vi-VN",
+                    "xh-ZA",
+                    "zu-ZA"
+                ]
+            },
+            "AzureVoiceService": {
+                "type": "cloud",
+                "voice_key": "[Your Key]",
+                "voice_region": "[Your Region]",
+                "language": [
+                    "en-US"
+                ],
+                "provider": "AzureCloud",
+                "CloudTemplates": "AzureVoiceTemplate",
+                "language_code": [
+                    "en-US",
+                    "zh-CN",
+                    "af-ZA",
+                    "am-ET",
+                    "ar-AE",
+                    "ar-BH",
+                    "ar-DZ",
+                    "ar-EG",
+                    "ar-IL",
+                    "ar-IQ",
+                    "ar-JO",
+                    "ar-KW",
+                    "ar-LB",
+                    "ar-LY",
+                    "ar-MA",
+                    "ar-OM",
+                    "ar-PS",
+                    "ar-QA",
+                    "ar-SA",
+                    "ar-SY",
+                    "ar-TN",
+                    "ar-YE",
+                    "az-AZ",
+                    "bg-BG",
+                    "bn-IN",
+                    "bs-BA",
+                    "ca-ES",
+                    "cs-CZ",
+                    "cy-GB",
+                    "da-DK",
+                    "de-AT",
+                    "de-CH",
+                    "de-DE",
+                    "el-GR",
+                    "en-AU",
+                    "en-CA",
+                    "en-GB",
+                    "en-GH",
+                    "en-HK",
+                    "en-IE",
+                    "en-IN",
+                    "en-KE",
+                    "en-NG",
+                    "en-NZ",
+                    "en-PH",
+                    "en-SG",
+                    "en-TZ",
+                    "en-ZA",
+                    "es-AR",
+                    "es-BO",
+                    "es-CL",
+                    "es-CO",
+                    "es-CR",
+                    "es-CU",
+                    "es-DO",
+                    "es-EC",
+                    "es-ES",
+                    "es-GQ",
+                    "es-GT",
+                    "es-HN",
+                    "es-MX",
+                    "es-NI",
+                    "es-PA",
+                    "es-PE",
+                    "es-PR",
+                    "es-PY",
+                    "es-SV",
+                    "es-US",
+                    "es-UY",
+                    "es-VE",
+                    "et-EE",
+                    "eu-ES",
+                    "fa-IR",
+                    "fi-FI",
+                    "fil-PH",
+                    "fr-BE",
+                    "fr-CA",
+                    "fr-CH",
+                    "fr-FR",
+                    "ga-IE",
+                    "gl-ES",
+                    "gu-IN",
+                    "he-IL",
+                    "hi-IN",
+                    "hr-HR",
+                    "hu-HU",
+                    "hy-AM",
+                    "id-ID",
+                    "is-IS",
+                    "it-CH",
+                    "it-IT",
+                    "ja-JP",
+                    "jv-ID",
+                    "ka-GE",
+                    "kk-KZ",
+                    "km-KH",
+                    "kn-IN",
+                    "ko-KR",
+                    "lo-LA",
+                    "lt-LT",
+                    "lv-LV",
+                    "mk-MK",
+                    "ml-IN",
+                    "mn-MN",
+                    "mr-IN",
+                    "ms-MY",
+                    "mt-MT",
+                    "my-MM",
+                    "nb-NO",
+                    "ne-NP",
+                    "nl-BE",
+                    "nl-NL",
+                    "pa-IN",
+                    "pl-PL",
+                    "ps-AF",
+                    "pt-BR",
+                    "pt-PT",
+                    "ro-RO",
+                    "ru-RU",
+                    "si-LK",
+                    "sk-SK",
+                    "sl-SI",
+                    "so-SO",
+                    "sq-AL",
+                    "sr-RS",
+                    "sv-SE",
+                    "sw-KE",
+                    "sw-TZ",
+                    "ta-IN",
+                    "te-IN",
+                    "th-TH",
+                    "tr-TR",
+                    "uk-UA",
+                    "ur-IN",
+                    "uz-UZ",
+                    "vi-VN",
+                    "wuu-CN",
+                    "yue-CN",
+                    "zh-CN-shandong",
+                    "zh-CN-sichuan",
+                    "zh-HK",
+                    "zh-TW",
+                    "zu-ZA"
+                ]
+            }
+        },
+        "TtoVModel": {
+            "GoogleSpeechService": {
+                "type": "cloud",
+                "speech_key": "chatbot-speech-key.json",
+                "speech_region": "[Your Region]",
+                "provider": "GoogleCloud",
+                "synthesis": {
+                    "en-US": {
+                        "male": [
+                            "en-US-Casual-K",
+                            "en-US-Journey-D",
+                            "en-US-Neural2-A",
+                            "en-US-Neural2-D",
+                            "en-US-Neural2-I",
+                            "en-US-Neural2-J",
+                            "en-US-News-N",
+                            "en-US-Polyglot-1",
+                            "en-US-Standard-A",
+                            "en-US-Standard-B",
+                            "en-US-Standard-D",
+                            "en-US-Standard-I",
+                            "en-US-Standard-J",
+                            "en-US-Studio-Q",
+                            "en-US-Wavenet-A",
+                            "en-US-Wavenet-B",
+                            "en-US-Wavenet-D",
+                            "en-US-Wavenet-I",
+                            "en-US-Wavenet-J"
+                        ],
+                        "female": [
+                            "en-US-Journey-F",
+                            "en-US-Journey-O",
+                            "en-US-Neural2-C",
+                            "en-US-Neural2-E",
+                            "en-US-Neural2-F",
+                            "en-US-Neural2-G",
+                            "en-US-Neural2-H",
+                            "en-US-News-K",
+                            "en-US-News-L",
+                            "en-US-Standard-C",
+                            "en-US-Standard-E",
+                            "en-US-Standard-F",
+                            "en-US-Standard-G",
+                            "en-US-Standard-H",
+                            "en-US-Studio-O",
+                            "en-US-Wavenet-C",
+                            "en-US-Wavenet-E",
+                            "en-US-Wavenet-F",
+                            "en-US-Wavenet-G",
+                            "en-US-Wavenet-H"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "cmn-CN": {
+                        "male": [
+                            "cmn-CN-Standard-B",
+                            "cmn-CN-Standard-C",
+                            "cmn-CN-Wavenet-B",
+                            "cmn-CN-Wavenet-C"
+                        ],
+                        "female": [
+                            "cmn-CN-Standard-A",
+                            "cmn-CN-Standard-D",
+                            "cmn-CN-Wavenet-A",
+                            "cmn-CN-Wavenet-D"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "cmn-TW": {
+                        "male": [
+                            "cmn-TW-Standard-B",
+                            "cmn-TW-Standard-C",
+                            "cmn-TW-Wavenet-B",
+                            "cmn-TW-Wavenet-C"
+                        ],
+                        "female": [
+                            "cmn-TW-Standard-A",
+                            "cmn-TW-Wavenet-A"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "af-ZA": {
+                        "male": [],
+                        "female": [
+                            "af-ZA-Standard-A"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "af-XA": {
+                        "male": [
+                            "ar-XA-Standard-B",
+                            "ar-XA-Standard-C",
+                            "ar-XA-Wavenet-B",
+                            "ar-XA-Wavenet-C"
+                        ],
+                        "female": [
+                            "ar-XA-Standard-A",
+                            "ar-XA-Standard-D",
+                            "ar-XA-Wavenet-A",
+                            "ar-XA-Wavenet-D"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "eu-ES": {
+                        "male": [],
+                        "female": [
+                            "eu-ES-Standard-A"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "bn-IN": {
+                        "male": [
+                            "bn-IN-Standard-B",
+                            "bn-IN-Standard-D",
+                            "bn-IN-Wavenet-B",
+                            "bn-IN-Wavenet-D"
+                        ],
+                        "female": [
+                            "bn-IN-Standard-A",
+                            "bn-IN-Wavenet-A",
+                            "bn-IN-Wavenet-C"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "bg-BG": {
+                        "male": [],
+                        "female": [
+                            "bg-BG-Standard-A"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "ca-ES": {
+                        "male": [],
+                        "female": [
+                            "ca-ES-Standard-A"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "yue-HK": {
+                        "male": [
+                            "yue-HK-Standard-B",
+                            "yue-HK-Standard-D"
+                        ],
+                        "female": [
+                            "yue-HK-Standard-A",
+                            "yue-HK-Standard-C"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "cs-CZ": {
+                        "male": [
+                            "yue-HK-Standard-B",
+                            "yue-HK-Standard-D"
+                        ],
+                        "female": [
+                            "cs-CZ-Standard-A",
+                            "cs-CZ-Wavenet-A"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "da-DK": {
+                        "male": [
+                            "da-DK-Standard-C",
+                            "da-DK-Wavenet-C"
+                        ],
+                        "female": [
+                            "da-DK-Neural2-D",
+                            "da-DK-Standard-A",
+                            "da-DK-Standard-D",
+                            "da-DK-Standard-E",
+                            "da-DK-Wavenet-A",
+                            "da-DK-Wavenet-D",
+                            "da-DK-Wavenet-E"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "nl-BE": {
+                        "male": [
+                            "nl-BE-Standard-B",
+                            "nl-BE-Wavenet-B"
+                        ],
+                        "female": [
+                            "nl-BE-Standard-A",
+                            "nl-BE-Wavenet-A"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "nl-NL": {
+                        "male": [
+                            "nl-NL-Standard-B",
+                            "nl-NL-Standard-C",
+                            "nl-NL-Wavenet-B",
+                            "nl-NL-Wavenet-C"
+                        ],
+                        "female": [
+                            "nl-NL-Standard-A",
+                            "nl-NL-Standard-D",
+                            "nl-NL-Standard-E",
+                            "nl-NL-Wavenet-A",
+                            "nl-NL-Wavenet-D",
+                            "nl-NL-Wavenet-E"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "en-AU": {
+                        "male": [
+                            "en-AU-Neural2-B",
+                            "en-AU-Neural2-D",
+                            "en-AU-News-G",
+                            "en-AU-Polyglot-1",
+                            "en-AU-Standard-B",
+                            "en-AU-Standard-D",
+                            "en-AU-Wavenet-B",
+                            "en-AU-Wavenet-D"
+                        ],
+                        "female": [
+                            "en-AU-Neural2-A",
+                            "en-AU-Neural2-C",
+                            "en-AU-News-E",
+                            "en-AU-News-F",
+                            "en-AU-Standard-A",
+                            "en-AU-Standard-C",
+                            "en-AU-Wavenet-A",
+                            "en-AU-Wavenet-C"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "en-IN": {
+                        "male": [
+                            "en-IN-Neural2-B",
+                            "en-IN-Neural2-C",
+                            "en-IN-Standard-B",
+                            "en-IN-Standard-C",
+                            "en-IN-Wavenet-B",
+                            "en-IN-Wavenet-C"
+                        ],
+                        "female": [
+                            "en-IN-Neural2-A",
+                            "en-IN-Neural2-D",
+                            "en-IN-Standard-A",
+                            "en-IN-Standard-D",
+                            "en-IN-Wavenet-A",
+                            "en-IN-Wavenet-D"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "en-GB": {
+                        "male": [
+                            "en-GB-Neural2-B",
+                            "en-GB-Neural2-D",
+                            "en-GB-News-J",
+                            "en-GB-News-K",
+                            "en-GB-News-L",
+                            "en-GB-News-M",
+                            "en-GB-Standard-B",
+                            "en-GB-Standard-D",
+                            "en-GB-Studio-B",
+                            "en-GB-Wavenet-B",
+                            "en-GB-Wavenet-D"
+                        ],
+                        "female": [
+                            "en-GB-Neural2-A",
+                            "en-GB-Neural2-C",
+                            "en-GB-Neural2-F",
+                            "en-GB-News-G",
+                            "en-GB-News-H",
+                            "en-GB-News-I",
+                            "en-GB-Standard-A",
+                            "en-GB-Standard-C",
+                            "en-GB-Standard-F",
+                            "en-GB-Studio-C",
+                            "en-GB-Wavenet-A",
+                            "en-GB-Wavenet-C",
+                            "en-GB-Wavenet-F"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "fil-PH": {
+                        "male": [
+                            "fil-PH-Standard-C",
+                            "fil-PH-Standard-D",
+                            "fil-PH-Wavenet-C",
+                            "fil-PH-Wavenet-D",
+                            "fil-ph-Neural2-D"
+                        ],
+                        "female": [
+                            "fil-PH-Standard-A",
+                            "fil-PH-Standard-B",
+                            "fil-PH-Wavenet-A",
+                            "fil-PH-Wavenet-B",
+                            "fil-ph-Neural2-A"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "fi-FI": {
+                        "male": [],
+                        "female": [
+                            "fi-FI-Standard-A",
+                            "fi-FI-Wavenet-A"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "fr-CA": {
+                        "male": [
+                            "fr-CA-Neural2-B",
+                            "fr-CA-Neural2-D",
+                            "fr-CA-Standard-B",
+                            "fr-CA-Standard-D",
+                            "fr-CA-Wavenet-B",
+                            "fr-CA-Wavenet-D"
+                        ],
+                        "female": [
+                            "fr-CA-Neural2-A",
+                            "fr-CA-Neural2-C",
+                            "fr-CA-Standard-A",
+                            "fr-CA-Standard-C",
+                            "fr-CA-Wavenet-A",
+                            "fr-CA-Wavenet-C"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "fr-FR": {
+                        "male": [
+                            "fr-FR-Neural2-B",
+                            "fr-FR-Neural2-D",
+                            "fr-FR-Polyglot-1",
+                            "fr-FR-Standard-B",
+                            "fr-FR-Standard-D",
+                            "fr-FR-Studio-D",
+                            "fr-FR-Wavenet-B",
+                            "fr-FR-Wavenet-D"
+                        ],
+                        "female": [
+                            "fr-FR-Neural2-A",
+                            "fr-FR-Neural2-C",
+                            "fr-FR-Neural2-E",
+                            "fr-FR-Standard-A",
+                            "fr-FR-Standard-C",
+                            "fr-FR-Standard-E",
+                            "fr-FR-Studio-A",
+                            "fr-FR-Wavenet-A",
+                            "fr-FR-Wavenet-C",
+                            "fr-FR-Wavenet-E"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "gl-ES": {
+                        "male": [],
+                        "female": [
+                            "gl-ES-Standard-A"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "de-DE": {
+                        "male": [
+                            "de-DE-Neural2-B",
+                            "de-DE-Neural2-D",
+                            "de-DE-Polyglot-1",
+                            "de-DE-Standard-B",
+                            "de-DE-Standard-D",
+                            "de-DE-Standard-E",
+                            "de-DE-Studio-B",
+                            "de-DE-Wavenet-B",
+                            "de-DE-Wavenet-D",
+                            "de-DE-Wavenet-E"
+                        ],
+                        "female": [
+                            "de-DE-Neural2-A",
+                            "de-DE-Neural2-C",
+                            "de-DE-Neural2-F",
+                            "de-DE-Standard-A",
+                            "de-DE-Standard-C",
+                            "de-DE-Standard-F",
+                            "de-DE-Studio-C",
+                            "de-DE-Wavenet-A",
+                            "de-DE-Wavenet-C",
+                            "de-DE-Wavenet-F"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "el-GR": {
+                        "male": [],
+                        "female": [
+                            "el-GR-Standard-A",
+                            "el-GR-Wavenet-A"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "gu-IN": {
+                        "male": [
+                            "gu-IN-Standard-B",
+                            "gu-IN-Standard-D",
+                            "gu-IN-Wavenet-B",
+                            "gu-IN-Wavenet-D"
+                        ],
+                        "female": [
+                            "gu-IN-Standard-A",
+                            "gu-IN-Standard-C",
+                            "gu-IN-Wavenet-A",
+                            "gu-IN-Wavenet-C"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "he-IL": {
+                        "male": [
+                            "he-IL-Standard-B",
+                            "he-IL-Standard-D",
+                            "he-IL-Wavenet-B",
+                            "he-IL-Wavenet-D"
+                        ],
+                        "female": [
+                            "he-IL-Standard-A",
+                            "he-IL-Standard-C",
+                            "he-IL-Wavenet-A",
+                            "he-IL-Wavenet-C"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "hi-IN": {
+                        "male": [
+                            "hi-IN-Neural2-B",
+                            "hi-IN-Neural2-C",
+                            "hi-IN-Standard-B",
+                            "hi-IN-Standard-C",
+                            "hi-IN-Wavenet-B",
+                            "hi-IN-Wavenet-C"
+                        ],
+                        "female": [
+                            "hi-IN-Neural2-A",
+                            "hi-IN-Neural2-D",
+                            "hi-IN-Standard-A",
+                            "hi-IN-Standard-D",
+                            "hi-IN-Wavenet-A",
+                            "hi-IN-Wavenet-D"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "hu-HU": {
+                        "male": [],
+                        "female": [
+                            "hu-HU-Standard-A",
+                            "hu-HU-Wavenet-A"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "is-IS": {
+                        "male": [],
+                        "female": [
+                            "is-IS-Standard-A"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "id-ID": {
+                        "male": [
+                            "id-ID-Standard-B",
+                            "id-ID-Standard-C",
+                            "id-ID-Wavenet-B",
+                            "id-ID-Wavenet-C"
+                        ],
+                        "female": [
+                            "id-ID-Standard-A",
+                            "id-ID-Standard-D",
+                            "id-ID-Wavenet-A",
+                            "id-ID-Wavenet-D"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "it-IT": {
+                        "male": [
+                            "it-IT-Neural2-C",
+                            "it-IT-Standard-C",
+                            "it-IT-Standard-D",
+                            "it-IT-Wavenet-C",
+                            "it-IT-Wavenet-D"
+                        ],
+                        "female": [
+                            "it-IT-Neural2-A",
+                            "it-IT-Standard-A",
+                            "it-IT-Standard-B",
+                            "it-IT-Wavenet-A",
+                            "it-IT-Wavenet-B"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "ja-JP": {
+                        "male": [
+                            "ja-JP-Neural2-C",
+                            "ja-JP-Neural2-D",
+                            "ja-JP-Standard-C",
+                            "ja-JP-Standard-D",
+                            "ja-JP-Wavenet-C",
+                            "ja-JP-Wavenet-D"
+                        ],
+                        "female": [
+                            "ja-JP-Neural2-B",
+                            "ja-JP-Standard-A",
+                            "ja-JP-Standard-B",
+                            "ja-JP-Wavenet-A",
+                            "ja-JP-Wavenet-B"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "kn-IN": {
+                        "male": [
+                            "kn-IN-Standard-B",
+                            "kn-IN-Standard-D",
+                            "kn-IN-Wavenet-B",
+                            "kn-IN-Wavenet-D"
+                        ],
+                        "female": [
+                            "kn-IN-Standard-A",
+                            "kn-IN-Standard-C",
+                            "kn-IN-Wavenet-A",
+                            "kn-IN-Wavenet-C"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "ko-KR": {
+                        "male": [
+                            "ko-KR-Neural2-C",
+                            "ko-KR-Standard-C",
+                            "ko-KR-Standard-D",
+                            "ko-KR-Wavenet-C",
+                            "ko-KR-Wavenet-D"
+                        ],
+                        "female": [
+                            "ko-KR-Neural2-A",
+                            "ko-KR-Neural2-B",
+                            "ko-KR-Standard-A",
+                            "ko-KR-Standard-B",
+                            "ko-KR-Wavenet-A",
+                            "ko-KR-Wavenet-B"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "lv-LV": {
+                        "male": [
+                            "lv-LV-Standard-A"
+                        ],
+                        "female": [],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "lt-LT": {
+                        "male": [
+                            "lt-LT-Standard-A"
+                        ],
+                        "female": [],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "ms-MY": {
+                        "male": [
+                            "ms-MY-Standard-B",
+                            "ms-MY-Standard-D",
+                            "ms-MY-Wavenet-B",
+                            "ms-MY-Wavenet-D"
+                        ],
+                        "female": [
+                            "ms-MY-Standard-A",
+                            "ms-MY-Standard-C",
+                            "ms-MY-Wavenet-A",
+                            "ms-MY-Wavenet-C"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "ml-IN": {
+                        "male": [
+                            "ml-IN-Standard-B",
+                            "ml-IN-Standard-D",
+                            "ml-IN-Wavenet-B",
+                            "ml-IN-Wavenet-D"
+                        ],
+                        "female": [
+                            "ml-IN-Standard-A",
+                            "ml-IN-Standard-C",
+                            "ml-IN-Wavenet-A",
+                            "ml-IN-Wavenet-C"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "mr-IN": {
+                        "male": [
+                            "mr-IN-Standard-B",
+                            "mr-IN-Wavenet-B"
+                        ],
+                        "female": [
+                            "mr-IN-Standard-A",
+                            "mr-IN-Standard-C",
+                            "mr-IN-Wavenet-A",
+                            "mr-IN-Wavenet-C"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "nb-NO": {
+                        "male": [
+                            "nb-NO-Standard-B",
+                            "nb-NO-Standard-D",
+                            "nb-NO-Wavenet-B",
+                            "nb-NO-Wavenet-D"
+                        ],
+                        "female": [
+                            "nb-NO-Standard-A",
+                            "nb-NO-Standard-C",
+                            "nb-NO-Standard-E",
+                            "nb-NO-Wavenet-A",
+                            "nb-NO-Wavenet-C",
+                            "nb-NO-Wavenet-E"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "pl-PL": {
+                        "male": [
+                            "pl-PL-Standard-B",
+                            "pl-PL-Standard-C",
+                            "pl-PL-Wavenet-B",
+                            "pl-PL-Wavenet-C"
+                        ],
+                        "female": [
+                            "pl-PL-Standard-A",
+                            "pl-PL-Standard-D",
+                            "pl-PL-Standard-E",
+                            "pl-PL-Wavenet-A",
+                            "pl-PL-Wavenet-D",
+                            "pl-PL-Wavenet-E"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "pt-BR": {
+                        "male": [
+                            "pt-BR-Neural2-B",
+                            "pt-BR-Standard-B",
+                            "pt-BR-Studio-B",
+                            "pt-BR-Wavenet-B"
+                        ],
+                        "female": [
+                            "pt-BR-Neural2-A",
+                            "pt-BR-Neural2-C",
+                            "pt-BR-Standard-A",
+                            "pt-BR-Standard-C",
+                            "pt-BR-Studio-C",
+                            "pt-BR-Wavenet-A",
+                            "pt-BR-Wavenet-C"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "pt-PT": {
+                        "male": [
+                            "pt-PT-Standard-B",
+                            "pt-PT-Standard-C",
+                            "pt-PT-Wavenet-B",
+                            "pt-PT-Wavenet-C"
+                        ],
+                        "female": [
+                            "pt-PT-Standard-A",
+                            "pt-PT-Standard-D",
+                            "pt-PT-Wavenet-A",
+                            "pt-PT-Wavenet-D"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "pa-IN": {
+                        "male": [
+                            "pa-IN-Standard-B",
+                            "pa-IN-Standard-D",
+                            "pa-IN-Wavenet-B",
+                            "pa-IN-Wavenet-D"
+                        ],
+                        "female": [
+                            "pa-IN-Standard-A",
+                            "pa-IN-Standard-C",
+                            "pa-IN-Wavenet-A",
+                            "pa-IN-Wavenet-C"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "ro-RO": {
+                        "male": [],
+                        "female": [
+                            "ro-RO-Standard-A",
+                            "ro-RO-Wavenet-A"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "ru-RU": {
+                        "male": [
+                            "ru-RU-Standard-B",
+                            "ru-RU-Standard-D",
+                            "ru-RU-Wavenet-B",
+                            "ru-RU-Wavenet-D"
+                        ],
+                        "female": [
+                            "ru-RU-Standard-A",
+                            "ru-RU-Standard-C",
+                            "ru-RU-Standard-E",
+                            "ru-RU-Wavenet-A",
+                            "ru-RU-Wavenet-C",
+                            "ru-RU-Wavenet-E"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "sr-RS": {
+                        "male": [],
+                        "female": [
+                            "sr-RS-Standard-A"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "sk-SK": {
+                        "male": [],
+                        "female": [
+                            "sk-SK-Standard-A",
+                            "sk-SK-Wavenet-A"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "es-ES": {
+                        "male": [
+                            "es-ES-Neural2-B",
+                            "es-ES-Neural2-F",
+                            "es-ES-Polyglot-1",
+                            "es-ES-Standard-B",
+                            "es-ES-Studio-F",
+                            "es-ES-Wavenet-B"
+                        ],
+                        "female": [
+                            "es-ES-Neural2-A",
+                            "es-ES-Neural2-C",
+                            "es-ES-Neural2-D",
+                            "es-ES-Neural2-E",
+                            "es-ES-Standard-A",
+                            "es-ES-Standard-C",
+                            "es-ES-Standard-D",
+                            "es-ES-Studio-C",
+                            "es-ES-Wavenet-C",
+                            "es-ES-Wavenet-D"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "es-US": {
+                        "male": [
+                            "es-US-Neural2-B",
+                            "es-US-Neural2-C",
+                            "es-US-News-D",
+                            "es-US-News-E",
+                            "es-US-Polyglot-1",
+                            "es-US-Standard-B",
+                            "es-US-Standard-C",
+                            "es-US-Studio-B",
+                            "es-US-Wavenet-B",
+                            "es-US-Wavenet-C"
+                        ],
+                        "female": [
+                            "es-US-Neural2-A",
+                            "es-US-News-F",
+                            "es-US-News-G",
+                            "es-US-Standard-A",
+                            "es-US-Wavenet-A"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "sv-SE": {
+                        "male": [
+                            "es-US-Wavenet-C",
+                            "sv-SE-Standard-D",
+                            "sv-SE-Standard-E",
+                            "sv-SE-Wavenet-C",
+                            "sv-SE-Wavenet-E"
+                        ],
+                        "female": [
+                            "sv-SE-Standard-A",
+                            "sv-SE-Standard-B",
+                            "sv-SE-Standard-C",
+                            "sv-SE-Wavenet-A",
+                            "sv-SE-Wavenet-B",
+                            "sv-SE-Wavenet-D"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "ta-IN": {
+                        "male": [
+                            "ta-IN-Standard-B",
+                            "ta-IN-Standard-D",
+                            "ta-IN-Wavenet-B",
+                            "ta-IN-Wavenet-D"
+                        ],
+                        "female": [
+                            "ta-IN-Standard-A",
+                            "ta-IN-Standard-C",
+                            "ta-IN-Wavenet-A",
+                            "ta-IN-Wavenet-C"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "te-IN": {
+                        "male": [
+                            "te-IN-Standard-B"
+                        ],
+                        "female": [
+                            "te-IN-Standard-A"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "th-TH": {
+                        "male": [],
+                        "female": [
+                            "th-TH-Neural2-C",
+                            "th-TH-Standard-A"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "tr-TR": {
+                        "male": [
+                            "tr-TR-Standard-B",
+                            "tr-TR-Standard-E",
+                            "tr-TR-Wavenet-B",
+                            "tr-TR-Wavenet-E"
+                        ],
+                        "female": [
+                            "tr-TR-Standard-A",
+                            "tr-TR-Standard-C",
+                            "tr-TR-Standard-D",
+                            "tr-TR-Wavenet-A",
+                            "tr-TR-Wavenet-C",
+                            "tr-TR-Wavenet-D"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "uk-UA": {
+                        "male": [],
+                        "female": [
+                            "uk-UA-Standard-A",
+                            "uk-UA-Wavenet-A"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    },
+                    "vi-VN": {
+                        "male": [
+                            "vi-VN-Neural2-D",
+                            "vi-VN-Standard-B",
+                            "vi-VN-Standard-D",
+                            "vi-VN-Wavenet-B",
+                            "vi-VN-Wavenet-D"
+                        ],
+                        "female": [
+                            "vi-VN-Neural2-A",
+                            "vi-VN-Standard-A",
+                            "vi-VN-Standard-C",
+                            "vi-VN-Wavenet-A",
+                            "vi-VN-Wavenet-C"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    }
+                },
+                "CloudTemplates": "GoogleSpeechTemplate"
+            },
+            "AzureSpeechService": {
+                "type": "cloud",
+                "speech_key": "[Your Key]",
+                "speech_region": "[Your Region]",
+                "provider": "AzureCloud",
+                "synthesis": {
+                    "en-US": {
+                        "male": [
+                            "en-US-GuyNeural",
+                            "en-US-DavisNeural",
+                            "en-US-AndrewNeural",
+                            "en-US-BrandonNeural",
+                            "en-US-BrianNeural",
+                            "en-US-ChristopherNeural",
+                            "en-US-EricNeural",
+                            "en-US-JacobNeural",
+                            "en-US-JasonNeural",
+                            "en-US-RogerNeural",
+                            "en-US-SteffanNeural",
+                            "en-US-TonyNeural",
+                            "en-US-AIGenerate1Neural",
+                            "en-US-RyanMultilingualNeural"
+                        ],
+                        "female": [
+                            "en-US-JennyMultilingualNeural",
+                            "en-US-JennyNeural",
+                            "en-US-AriaNeural",
+                            "en-US-AmberNeural",
+                            "en-US-AshleyNeural",
+                            "en-US-CoraNeural",
+                            "en-US-ElizabethNeural",
+                            "en-US-EmmaNeural",
+                            "en-US-JaneNeural",
+                            "en-US-MichelleNeural",
+                            "en-US-MonicaNeural",
+                            "en-US-NancyNeural",
+                            "en-US-SaraNeural",
+                            "en-US-AIGenerate2Neural",
+                            "en-US-JennyMultilingualV2Neural",
+                            "en-US-AnaNeural"
+                        ],
+                        "non-binary": [
+                            "en-US-BlueNeural"
+                        ]
+                    },
+                    "zh-CN": {
+                        "male": [
+                            "zh-CN-YunxiNeural",
+                            "zh-CN-YunjianNeural",
+                            "zh-CN-YunyangNeural",
+                            "zh-CN-YunfengNeural",
+                            "zh-CN-YunhaoNeural",
+                            "zh-CN-YunxiaNeural",
+                            "zh-CN-YunyeNeural",
+                            "zh-CN-YunzeNeural",
+                            "zh-CN-YunjieNeural"
+                        ],
+                        "female": [
+                            "zh-CN-XiaoxiaoNeural",
+                            "zh-CN-XiaoyiNeural",
+                            "zh-CN-XiaochenNeural",
+                            "zh-CN-XiaohanNeural",
+                            "zh-CN-XiaomengNeural",
+                            "zh-CN-XiaomoNeural",
+                            "zh-CN-XiaoqiuNeural",
+                            "zh-CN-XiaoruiNeural",
+                            "zh-CN-XiaoshuangNeural",
+                            "zh-CN-XiaoxuanNeural",
+                            "zh-CN-XiaoyanNeural",
+                            "zh-CN-XiaoyouNeural",
+                            "zh-CN-XiaozhenNeural",
+                            "zh-CN-XiaorouNeural",
+                            "zh-CN-XiaoshuangNeural",
+                            "zh-CN-XiaoyouNeural"
+                        ],
+                        "non-binary": []
+                    },
+                    "yue-CN": {
+                        "male": [
+                            "yue-CN-YunSongNeural"
+                        ],
+                        "female": [
+                            "yue-CN-XiaoMinNeural"
+                        ],
+                        "non-binary": []
+                    },
+                    "zh-TW": {
+                        "male": [
+                            "zh-TW-YunJheNeural"
+                        ],
+                        "female": [
+                            "zh-TW-HsiaoChenNeural",
+                            "zh-TW-HsiaoYuNeural"
+                        ],
+                        "non-binary": []
+                    },
+                    "en-CA": {
+                        "male": [
+                            "en-CA-LiamNeural"
+                        ],
+                        "female": [
+                            "en-CA-ClaraNeural"
+                        ],
+                        "non-binary": []
+                    },
+                    "en-AU": {
+                        "male": [
+                            "en-AU-WilliamNeural",
+                            "en-AU-DarrenNeural",
+                            "en-AU-DuncanNeural",
+                            "en-AU-KenNeural",
+                            "en-AU-NeilNeural",
+                            "en-AU-TimNeural"
+                        ],
+                        "female": [
+                            "en-AU-NatashaNeural",
+                            "en-AU-AnnetteNeural",
+                            "en-AU-CarlyNeural",
+                            "en-AU-ElsieNeural",
+                            "en-AU-FreyaNeural",
+                            "en-AU-JoanneNeural",
+                            "en-AU-KimNeural",
+                            "en-AU-TinaNeural"
+                        ],
+                        "non-binary": []
+                    },
+                    "de-DE": {
+                        "male": [
+                            "de-DE-ConradNeural",
+                            "de-DE-BerndNeural",
+                            "de-DE-ChristophNeural",
+                            "de-DE-KasperNeural",
+                            "de-DE-KillianNeural",
+                            "de-DE-KlausNeural",
+                            "de-DE-RalfNeural"
+                        ],
+                        "female": [
+                            "de-DE-KatjaNeural",
+                            "de-DE-AmalaNeural",
+                            "de-DE-ElkeNeural",
+                            "de-DE-GiselaNeural",
+                            "de-DE-KlarissaNeural",
+                            "de-DE-LouisaNeural",
+                            "de-DE-MajaNeural",
+                            "de-DE-SeraphinaNeural",
+                            "de-DE-TanjaNeural"
+                        ],
+                        "non-binary": []
+                    },
+                    "fr-FR": {
+                        "male": [
+                            "fr-FR-HenriNeural",
+                            "fr-FR-AlainNeural",
+                            "fr-FR-ClaudeNeural",
+                            "fr-FR-JeromeNeural",
+                            "fr-FR-MauriceNeural",
+                            "fr-FR-YvesNeural"
+                        ],
+                        "female": [
+                            "fr-FR-DeniseNeural",
+                            "fr-FR-BrigitteNeural",
+                            "fr-FR-CelesteNeural",
+                            "fr-FR-CoralieNeural",
+                            "fr-FR-EloiseNeural",
+                            "fr-FR-JacquelineNeural",
+                            "fr-FR-JosephineNeural",
+                            "fr-FR-VivienneNeural",
+                            "fr-FR-YvetteNeural"
+                        ],
+                        "non-binary": []
+                    },
+                    "fr-CA": {
+                        "male": [
+                            "fr-CA-JeanNeural",
+                            "fr-CA-AntoineNeural",
+                            "fr-CA-ThierryNeural"
+                        ],
+                        "female": [
+                            "fr-CA-SylvieNeural"
+                        ],
+                        "non-binary": []
+                    },
+                    "ko-KR": {
+                        "male": [
+                            "ko-KR-InJoonNeural",
+                            "ko-KR-BongJinNeural",
+                            "ko-KR-GookMinNeural",
+                            "ko-KR-HyunsuNeural"
+                        ],
+                        "female": [
+                            "ko-KR-SunHiNeural",
+                            "ko-KR-JiMinNeural",
+                            "ko-KR-SeoHyeonNeural",
+                            "ko-KR-SoonBokNeural",
+                            "ko-KR-YuJinNeural"
+                        ],
+                        "non-binary": []
+                    },
+                    "ja-JP": {
+                        "male": [
+                            "ja-JP-KeitaNeural",
+                            "ja-JP-DaichiNeural",
+                            "ja-JP-NaokiNeural"
+                        ],
+                        "female": [
+                            "ja-JP-NanamiNeural",
+                            "ja-JP-AoiNeural",
+                            "ja-JP-MayuNeural",
+                            "ja-JP-ShioriNeural"
+                        ],
+                        "non-binary": []
+                    }
+                },
+                "CloudTemplates": "AzureSpeechTemplate"
+            },
+            "OpenAISpeechService": {
+                "type": "cloud",
+                "speech_key": "[Your Key]",
+                "speech_region": "[Your Region]",
+                "provider": "OpenAICloud",
+                "synthesis": {
+                    "en-US": {
+                        "male": [
+                            "alloy",
+                            "echo",
+                            "fable",
+                            "onyx"
+                        ],
+                        "female": [
+                            "nova",
+                            "shimmer"
+                        ],
+                        "non-binary": [
+                            ""
+                        ]
+                    }
+                },
+                "CloudTemplates": "OpenAISpeechTemplate"
+            }
+        },
+        "LocalModel": {
+            "LLM Model": {
+                "3B Model": {
+                    "Qwen2-0.5B-Instruct": {
+                        "path": "models/llm/Qwen2-0.5B-Instruct",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "fastchat",
+                        "support_tools": false,
+                        "Huggingface": "Qwen/Qwen2-0.5B-Instruct"
+                    },
+                    "Qwen2-1.5B-Instruct": {
+                        "path": "models/llm/Qwen2-1.5B-Instruct",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "fastchat",
+                        "support_tools": false,
+                        "Huggingface": "Qwen/Qwen2-1.5B-Instruct"
+                    },
+                    "TinyLlama-1.1B-Chat-v1.0": {
+                        "path": "models/llm/TinyLlama-1.1B-Chat-v1.0",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "fastchat",
+                        "support_tools": false,
+                        "Huggingface": "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
+                    },
+                    "fastchat-t5-3b-v1.0": {
+                        "path": "models/llm/fastchat-t5-3b-v1.0",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "fastchat",
+                        "support_tools": false,
+                        "Huggingface": "lmsys/fastchat-t5-3b-v1.0"
+                    },
+                    "Qwen1.5-4B-Chat": {
+                        "path": "models/llm/Qwen1.5-4B-Chat",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "fastchat",
+                        "support_tools": false,
+                        "Huggingface": "Qwen/Qwen1.5-4B-Chat"
+                    }
+                },
+                "7B Model": {
+                    "llama-2-7b-hf": {
+                        "path": "models/llm/llama-2-7b-hf",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "fastchat",
+                        "support_tools": false,
+                        "Huggingface": "meta-llama/llama-2-7b-hf"
+                    },
+                    "llama-2-7b-chat-hf": {
+                        "path": "models/llm/Llama-2-7b-chat-hf",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 8,
+                        "preset": "default",
+                        "load_type": "fastchat",
+                        "support_tools": false,
+                        "Huggingface": "meta-llama/Llama-2-7b-chat-hf"
+                    },
+                    "chatglm2-6b": {
+                        "path": "models/llm/chatglm2-6b",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 8,
+                        "preset": "default",
+                        "load_type": "fastchat",
+                        "support_tools": false,
+                        "Huggingface": "THUDM/chatglm2-6b"
+                    },
+                    "chatglm2-6b-32k": {
+                        "path": "models/llm/chatglm2-6b-32k",
+                        "device": "auto",
+                        "maxmemory": 24,
+                        "cputhreads": 4,
+                        "loadbits": 8,
+                        "preset": "default",
+                        "load_type": "fastchat",
+                        "support_tools": false,
+                        "Huggingface": "THUDM/chatglm2-6b-32k"
+                    },
+                    "chatglm3-6b": {
+                        "path": "models/llm/chatglm3-6b",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 8,
+                        "preset": "default",
+                        "load_type": "fastchat",
+                        "support_tools": false,
+                        "Huggingface": "THUDM/chatglm3-6b"
+                    },
+                    "tigerbot-7b-chat": {
+                        "path": "models/llm/tigerbot-7b-chat",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "fastchat",
+                        "support_tools": false,
+                        "Huggingface": "TigerResearch/tigerbot-7b-chat"
+                    },
+                    "openchat_3.5": {
+                        "path": "models/llm/openchat_3.5",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 8,
+                        "preset": "default",
+                        "load_type": "fastchat",
+                        "support_tools": false,
+                        "Huggingface": "openchat/openchat_3.5"
+                    },
+                    "openchat-3.5-1210": {
+                        "path": "models/llm/openchat-3.5-1210",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "fastchat",
+                        "support_tools": false,
+                        "Huggingface": "openchat/openchat-3.5-1210"
+                    },
+                    "openchat-3.5-0106": {
+                        "path": "models/llm/openchat-3.5-0106",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "fastchat",
+                        "support_tools": false,
+                        "Huggingface": "openchat/openchat-3.5-0106"
+                    },
+                    "Qwen-7B-Chat-Int4": {
+                        "path": "models/llm/Qwen-7B-Chat-Int4",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "fastchat",
+                        "support_tools": false,
+                        "Huggingface": "Qwen/Qwen-7B-Chat-Int4"
+                    },
+                    "Qwen1.5-7B-Chat": {
+                        "path": "models/llm/Qwen1.5-7B-Chat",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "fastchat",
+                        "support_tools": false,
+                        "Huggingface": "Qwen/Qwen1.5-7B-Chat"
+                    },
+                    "fuyu-8b": {
+                        "path": "models/llm/fuyu-8b",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "fastchat",
+                        "support_tools": false,
+                        "Huggingface": "adept/fuyu-8b"
+                    },
+                    "Yi-6B-Chat-4bits": {
+                        "path": "models/llm/Yi-6B-Chat-4bits",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "fastchat",
+                        "support_tools": false,
+                        "Huggingface": "01-ai/Yi-6B-Chat-4bits"
+                    },
+                    "neural-chat-7b-v3-1": {
+                        "path": "models/llm/neural-chat-7b-v3-1",
+                        "device": "auto",
+                        "maxmemory": 24,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "fastchat",
+                        "support_tools": false,
+                        "Huggingface": "Intel/neural-chat-7b-v3-1"
+                    },
+                    "Mistral-7B-Instruct-v0.2": {
+                        "path": "models/llm/Mistral-7B-Instruct-v0.2",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "fastchat",
+                        "support_tools": false,
+                        "Huggingface": "mistralai/Mistral-7B-Instruct-v0.2"
+                    },
+                    "Baichuan2-7B-Chat": {
+                        "path": "models/llm/Baichuan2-7B-Chat",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "fastchat",
+                        "support_tools": false,
+                        "Huggingface": "baichuan-inc/Baichuan2-7B-Chat"
+                    },
+                    "Meta-Llama-3-8B": {
+                        "path": "models/llm/Meta-Llama-3-8B",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "fastchat",
+                        "support_tools": false,
+                        "Huggingface": "meta-llama/Meta-Llama-3-8B"
+                    },
+                    "Llama3-8B-Chinese-Chat": {
+                        "path": "models/llm/Llama3-8B-Chinese-Chat",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "fastchat",
+                        "support_tools": false,
+                        "Huggingface": "shenzhi-wang/Llama3-8B-Chinese-Chat"
+                    },
+                    "Yi-1.5-6B-Chat": {
+                        "path": "models/llm/Yi-1.5-6B-Chat",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "fastchat",
+                        "support_tools": false,
+                        "Huggingface": "01-ai/Yi-1.5-9B-Chat"
+                    },
+                    "Yi-1.5-9B-Chat": {
+                        "path": "models/llm/Yi-1.5-9B-Chat",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "fastchat",
+                        "support_tools": false,
+                        "Huggingface": "01-ai/Yi-1.5-9B-Chat"
+                    },
+                    "Yi-1.5-9B-Chat-16K": {
+                        "path": "models/llm/Yi-1.5-9B-Chat-16K",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "fastchat",
+                        "support_tools": false,
+                        "Huggingface": "01-ai/Yi-1.5-9B-Chat-16K"
+                    },
+                    "Qwen2-7B-Instruct": {
+                        "path": "models/llm/Qwen2-7B-Instruct",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "fastchat",
+                        "support_tools": false,
+                        "Huggingface": "Qwen/Qwen2-7B-Instruct"
+                    }
+                },
+                "13B Model": {
+                    "llama-2-13b-hf": {
+                        "path": "models/llm/llama-2-13b-hf",
+                        "device": "auto",
+                        "maxmemory": 24,
+                        "cputhreads": 4,
+                        "loadbits": 8,
+                        "preset": "default",
+                        "load_type": "fastchat",
+                        "Huggingface": "meta-llama/llama-2-13b-hf"
+                    },
+                    "llama-2-13b-chat-hf": {
+                        "path": "models/llm/Llama-2-13b-chat-hf",
+                        "device": "auto",
+                        "maxmemory": 24,
+                        "cputhreads": 4,
+                        "loadbits": 8,
+                        "preset": "default",
+                        "load_type": "fastchat",
+                        "support_tools": false,
+                        "Huggingface": "meta-llama/Llama-2-13b-chat-hf"
+                    },
+                    "tigerbot-13b-chat": {
+                        "path": "models/llm/tigerbot-13b-chat",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 8,
+                        "preset": "default",
+                        "load_type": "fastchat",
+                        "support_tools": false,
+                        "Huggingface": "TigerResearch/tigerbot-13b-chat"
+                    },
+                    "Qwen-14B-Chat": {
+                        "path": "models/llm/Qwen-14B-Chat",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "fastchat",
+                        "support_tools": false,
+                        "Huggingface": "Qwen/Qwen-14B-Chat"
+                    },
+                    "Qwen-14B-Chat-Int4": {
+                        "path": "models/llm/Qwen-14B-Chat-Int4",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "fastchat",
+                        "support_tools": false,
+                        "Huggingface": "Qwen/Qwen-14B-Chat-Int4"
+                    },
+                    "Baichuan2-13B-Chat": {
+                        "path": "models/llm/Baichuan2-13B-Chat",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "fastchat",
+                        "support_tools": false,
+                        "Huggingface": "baichuan-inc/Baichuan2-13B-Chat"
+                    }
+                },
+                "34B Model": {
+                    "Yi-34B-Chat-4bits": {
+                        "path": "models/llm/Yi-34B-Chat-4bits",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "fastchat",
+                        "support_tools": false,
+                        "Huggingface": "01-ai/Yi-34B-Chat-4bits"
+                    },
+                    "Qwen1.5-32B-Chat-GPTQ-Int4": {
+                        "path": "models/llm/Qwen1.5-32B-Chat-GPTQ-Int4",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "fastchat",
+                        "support_tools": false,
+                        "Huggingface": "Qwen/Qwen1.5-32B-Chat-GPTQ-Int4"
+                    },
+                    "Yi-1.5-34B-Chat-GPTQ-Int4": {
+                        "path": "models/llm/Yi-1.5-34B-Chat-GPTQ-Int4",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "fastchat",
+                        "support_tools": false,
+                        "Huggingface": "modelscope/Yi-1.5-34B-Chat-GPTQ"
+                    }
+                },
+                "70B Model": {
+                    "llama-2-70b-hf": {
+                        "path": "models/llm/llama-2-70b-hf",
+                        "device": "auto",
+                        "maxmemory": 24,
+                        "cputhreads": 8,
+                        "loadbits": 8,
+                        "preset": "default",
+                        "load_type": "fastchat",
+                        "support_tools": false,
+                        "Huggingface": "meta-llama/llama-2-70b-hf"
+                    },
+                    "llama-2-70b-chat-hf": {
+                        "path": "models/llm/Llama-2-70b-chat-hf",
+                        "device": "auto",
+                        "maxmemory": 24,
+                        "cputhreads": 8,
+                        "loadbits": 8,
+                        "preset": "default",
+                        "load_type": "fastchat",
+                        "support_tools": false,
+                        "Huggingface": "meta-llama/Llama-2-70b-chat-hf"
+                    },
+                    "Meta-Llama-3-70B": {
+                        "path": "models/llm/Meta-Llama-3-70B",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "fastchat",
+                        "support_tools": false,
+                        "Huggingface": "meta-llama/Meta-Llama-3-70B"
+                    }
+                }
+            },
+            "Multimodal Model": {
+                "Vision Chat Model": {
+                    "glm-4v-9b": {
+                        "path": "models/multimodal/image-chat/glm-4v-9b",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "causallm",
+                        "support_tools": false,
+                        "Huggingface": "THUDM/glm-4v-9b"
+                    },
+                    "MiniCPM-Llama3-V-2_5": {
+                        "path": "models/multimodal/image-chat/MiniCPM-Llama3-V-2_5",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "automodel",
+                        "support_tools": false,
+                        "Huggingface": "openbmb/MiniCPM-Llama3-V-2_5"
+                    },
+                    "Phi-3-vision-128k-instruct": {
+                        "path": "models/multimodal/image-chat/Phi-3-vision-128k-instruct",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "causallm",
+                        "support_tools": false,
+                        "Huggingface": "microsoft/Phi-3-vision-128k-instruct"
+                    },
+                    "cogvlm-chat-hf": {
+                        "path": "models/multimodal/image-chat/cogvlm-chat-hf",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "causallm",
+                        "support_tools": false,
+                        "Huggingface": "THUDM/cogvlm-chat-hf"
+                    },
+                    "Qwen-VL-Chat": {
+                        "path": "models/multimodal/image-chat/Qwen-VL-Chat",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 4,
+                        "preset": "default",
+                        "load_type": "causallm",
+                        "support_tools": false,
+                        "Huggingface": "Qwen/Qwen-VL-Chat"
+                    },
+                    "Qwen-VL-Chat-Int4": {
+                        "path": "models/multimodal/image-chat/Qwen-VL-Chat-Int4",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 4,
+                        "preset": "default",
+                        "load_type": "causallm",
+                        "support_tools": false,
+                        "Huggingface": "Qwen/Qwen-VL-Chat-Int4"
+                    },
+                    "stable-video-diffusion-img2vid": {
+                        "path": "models/multimodal/image-chat/stable-video-diffusion-img2vid",
+                        "device": "auto",
+                        "maxmemory": 24,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "vdiffusion",
+                        "support_tools": false,
+                        "Huggingface": "stabilityai/stable-video-diffusion-img2vid"
+                    },
+                    "stable-video-diffusion-img2vid-xt": {
+                        "path": "models/multimodal/image-chat/stable-video-diffusion-img2vid-xt",
+                        "device": "auto",
+                        "maxmemory": 24,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "vdiffusion",
+                        "support_tools": false,
+                        "Huggingface": "stabilityai/stable-video-diffusion-img2vid-xt"
+                    }
+                },
+                "Voice Chat Model": {
+                    "Qwen-Audio-Chat": {
+                        "path": "models/multimodal/voice-chat/Qwen-Audio-Chat",
+                        "device": "auto",
+                        "maxmemory": 24,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "causallm",
+                        "support_tools": false,
+                        "Huggingface": "Qwen/Qwen-Audio-Chat"
+                    }
+                },
+                "Video Chat Model": {}
+            },
+            "Code Model": {
+                "3B Model": {
+                    "stable-code-3b": {
+                        "path": "models/llm/stable-code-3b",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "causallm",
+                        "support_tools": false,
+                        "Huggingface": "stabilityai/stable-code-3b"
+                    }
+                },
+                "7B Model": {
+                    "CodeLlama-7b-Python-hf": {
+                        "path": "models/llm/CodeLlama-7b-Python-hf",
+                        "device": "auto",
+                        "maxmemory": 24,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "llama",
+                        "support_tools": false,
+                        "Huggingface": "codellama/CodeLlama-7b-Python-hf"
+                    },
+                    "CodeLlama-7b-Instruct-hf": {
+                        "path": "models/llm/CodeLlama-7b-Instruct-hf",
+                        "device": "auto",
+                        "maxmemory": 24,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "llama",
+                        "support_tools": false,
+                        "Huggingface": "codellama/CodeLlama-7b-Instruct-hf"
+                    }
+                },
+                "13B Model": {
+                    "CodeLlama-13b-Python-hf": {
+                        "path": "models/llm/CodeLlama-13b-Python-hf",
+                        "device": "auto",
+                        "maxmemory": 24,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "llama",
+                        "support_tools": false,
+                        "Huggingface": "codellama/CodeLlama-13b-Python-hf"
+                    },
+                    "CodeLlama-13b-Instruct-hf": {
+                        "path": "models/llm/CodeLlama-13b-Instruct-hf",
+                        "device": "auto",
+                        "maxmemory": 24,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "llama",
+                        "support_tools": false,
+                        "Huggingface": "codellama/CodeLlama-13b-Instruct-hf"
+                    }
+                },
+                "34B Model": {},
+                "70B Model": {}
+            },
+            "Special Model": {
+                "3B Model": {
+                    "phi-2-gguf": {
+                        "path": "models/llm/phi-2-GGUF",
+                        "device": "auto",
+                        "maxmemory": 6,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "Phi 2",
+                        "load_type": "llamacpp",
+                        "support_tools": false,
+                        "Huggingface": "TheBloke/phi-2-GGUF"
+                    },
+                    "phi-2": {
+                        "path": "models/llm/phi-2",
+                        "device": "auto",
+                        "maxmemory": 10,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "Phi 2",
+                        "load_type": "pipeline",
+                        "support_tools": false,
+                        "Huggingface": "microsoft/phi-2"
+                    },
+                    "gemma-2b-it": {
+                        "path": "models/llm/gemma-2b-it",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "ChatML",
+                        "load_type": "pipeline",
+                        "support_tools": false,
+                        "Huggingface": "google/gemma-2b-it"
+                    },
+                    "Phi-3-mini-128k-instruct": {
+                        "path": "models/llm/Phi-3-mini-128k-instruct",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "ChatML",
+                        "load_type": "pipeline",
+                        "support_tools": false,
+                        "Huggingface": "microsoft/Phi-3-mini-128k-instruct"
+                    }
+                },
+                "7B Model": {
+                    "Yi-6B-Chat-gguf": {
+                        "path": "models/llm/Yi-6B-Chat-GGUF",
+                        "device": "cpu",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "ChatML",
+                        "load_type": "llamacpp",
+                        "support_tools": false,
+                        "Huggingface": "TheBloke/Yi-6B-Chat-GGUF"
+                    },
+                    "OpenHermes-2.5-Mistral-7B": {
+                        "path": "models/llm/OpenHermes-2.5-Mistral-7B",
+                        "device": "auto",
+                        "maxmemory": 24,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "ChatML",
+                        "load_type": "pipeline",
+                        "support_tools": false,
+                        "Huggingface": "teknium/OpenHermes-2.5-Mistral-7B"
+                    },
+                    "gemma-7b-it": {
+                        "path": "models/llm/gemma-7b-it",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "ChatML",
+                        "load_type": "pipeline",
+                        "support_tools": false,
+                        "Huggingface": "google/gemma-7b-it"
+                    },
+                    "Meta-Llama-3-8B-Instruct": {
+                        "path": "models/llm/Meta-Llama-3-8B-Instruct",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "ChatML",
+                        "load_type": "pipeline",
+                        "support_tools": false,
+                        "Huggingface": "meta-llama/Meta-Llama-3-8B-Instruct"
+                    },
+                    "Llama3-8B-Chinese-Chat-GGUF-8bit": {
+                        "path": "models/llm/Llama3-8B-Chinese-Chat-GGUF-8bit",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "ChatML",
+                        "load_type": "llamacpp",
+                        "support_tools": false,
+                        "Huggingface": "shenzhi-wang/Llama3-8B-Chinese-Chat-GGUF-8bit"
+                    },
+                    "glm-4-9b-chat": {
+                        "path": "models/llm/glm-4-9b-chat",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "pipeline",
+                        "support_tools": false,
+                        "Huggingface": "THUDM/glm-4-9b-chat"
+                    },
+                    "glm-4-9b-chat-1m": {
+                        "path": "models/llm/glm-4-9b-chat-1m",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "pipeline",
+                        "support_tools": false,
+                        "Huggingface": "01-ai/glm-4-9b-chat-1m"
+                    },
+                    "gemma-2-9b-it": {
+                        "path": "models/llm/gemma-2-9b-it",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "pipeline",
+                        "support_tools": false,
+                        "Huggingface": "google/gemma-2-9b-it"
+                    }
+                },
+                "13B Model": {},
+                "34B Model": {
+                    "Yi-34B-Chat-gguf": {
+                        "path": "models/llm/Yi-34B-Chat-GGUF",
+                        "device": "cpu",
+                        "maxmemory": 50,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "llamacpp",
+                        "support_tools": false,
+                        "Huggingface": "TheBloke/Yi-34B-Chat-GGUF"
+                    },
+                    "Mixtral-8x7B-v0.1-gguf": {
+                        "path": "models/llm/Mixtral-8x7B-v0.1-GGUF",
+                        "device": "cpu",
+                        "maxmemory": 50,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "Mistral Instruct",
+                        "load_type": "llamacpp",
+                        "support_tools": false,
+                        "Huggingface": "TheBloke/Mixtral-8x7B-v0.1-GGUF"
+                    },
+                    "Mixtral-8x7B-Instruct-v0.1-GGUF": {
+                        "path": "models/llm/Mixtral-8x7B-Instruct-v0.1-GGUF",
+                        "device": "cpu",
+                        "maxmemory": 50,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "Mistral Instruct",
+                        "load_type": "llamacpp",
+                        "support_tools": false,
+                        "Huggingface": "TheBloke/Mixtral-8x7B-Instruct-v0.1-GGUF"
+                    },
+                    "gemma-2-27b-it": {
+                        "path": "models/llm/gemma-2-27b-it",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "default",
+                        "load_type": "pipeline",
+                        "support_tools": false,
+                        "Huggingface": "google/gemma-2-27b-it"
+                    }
+                },
+                "70B Model": {
+                    "Meta-Llama-3-70B-Instruct-GGUF": {
+                        "path": "models/llm/Meta-Llama-3-70B-Instruct-GGUF",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "ChatML",
+                        "load_type": "llamacpp",
+                        "support_tools": false,
+                        "Huggingface": "NousResearch/Meta-Llama-3-70B-Instruct-GGUF"
+                    },
+                    "Meta-Llama-3-70B-Instruct": {
+                        "path": "models/llm/Meta-Llama-3-70B-Instruct",
+                        "device": "auto",
+                        "maxmemory": 20,
+                        "cputhreads": 4,
+                        "loadbits": 16,
+                        "preset": "ChatML",
+                        "load_type": "pipeline",
+                        "support_tools": false,
+                        "Huggingface": "meta-llama/Meta-Llama-3-70B-Instruct"
+                    }
+                }
+            }
+        }
+    },
+    "ServerConfig": {
+        "default_host_ip": "0.0.0.0",
+        "default_timeout": 300,
+        "load_timeout": 120,
+        "release_timeout": 60,
+        "webui_server": {
+            "host": "default_host_ip",
+            "port": 8818
+        },
+        "fastchat_controller": {
+            "host": "default_host_ip",
+            "port": 20001,
+            "dispatch_method": "shortest_queue"
+        },
+        "api_server": {
+            "host": "default_host_ip",
+            "port": 8819
+        },
+        "fastchat_openai_api": {
+            "host": "default_host_ip",
+            "port": 20000
+        },
+        "vtot_model_worker": {
+            "host": "default_host_ip",
+            "port": 20002,
+            "device": "auto"
+        },
+        "ttov_model_worker": {
+            "host": "default_host_ip",
+            "port": 20003,
+            "device": "auto"
+        },
+        "image_recognition_worker": {
+            "host": "default_host_ip",
+            "port": 20004,
+            "device": "auto"
+        },
+        "image_generation_worker": {
+            "host": "default_host_ip",
+            "port": 20005,
+            "device": "auto"
+        },
+        "music_generation_worker": {
+            "host": "default_host_ip",
+            "port": 20006,
+            "device": "auto"
+        },
+        "fastchat_model_worker": {
+            "default": {
+                "host": "default_host_ip",
+                "port": 20010,
+                "device": "auto",
+                "vllm_enable": false
+            }
+        },
+        "keras_interpreter": {
+            "default": {
+                "host": "default_host_ip",
+                "port": 20020
+            }
+        },
+        "google_oauth-2": {
+            "default": {
+                "host": "default_host_ip",
+                "port": 20030
+            }
+        }
+    },
+    "ChatConfiguration": {
+        "dialogue_turns": 5,
+        "temperature": 0.7,
+        "top_p": 0.9,
+        "typical_p": 1.0,
+        "top_a": 1.0,
+        "tfs": 1.0,
+        "epsilon_cutoff": 0.0,
+        "eta_cutoff": 0.0,
+        "diversity_penalty": 0.0,
+        "no_repeat_ngram_size": 0,
+        "do_samples": false,
+        "tokens_length": {
+            "cur": 32768,
+            "min": 0,
+            "max": 131072,
+            "step": 10
+        },
+        "seed": {
+            "cur": -1,
+            "min": -1,
+            "max": 1000
+        },
+        "top_k": {
+            "cur": 50,
+            "min": 0,
+            "max": 200,
+            "step": 1
+        },
+        "repetition_penalty": {
+            "cur": 1.15,
+            "min": 0.0,
+            "max": 3.0,
+            "step": 0.05
+        },
+        "encoder_repetition_penalty": {
+            "cur": 1.15,
+            "min": 0.0,
+            "max": 3.0,
+            "step": 0.05
+        },
+        "length_penalty": {
+            "cur": 1,
+            "min": 0,
+            "max": 2,
+            "step": 1
+        },
+        "guidance_scale": {
+            "cur": 1,
+            "min": 0,
+            "max": 2,
+            "step": 1
+        }
+    },
+    "QuantizationConfiguration": {},
+    "Fine-Tuning": {
+        "unsloth": {
+            "basic_config": {
+                "compute_type": "fp16",
+                "load_in_4bit": false,
+                "seq_length": 2048
+            },
+            "train_config": {
+                "lr": 5e-05,
+                "epochs": 50,
+                "batch_size": 2,
+                "num_proc": 2,
+                "gradient_steps": 4,
+                "warmup_steps": 5,
+                "logging_steps": 10,
+                "save_strategy": "steps",
+                "save_steps": 100,
+                "optim": "adamw_8bit",
+                "weight_decay": 0.01,
+                "lr_scheduler": "linear",
+                "seed": 3407,
+                "packing": false
+            },
+            "lora_config": {
+                "lora_rank": 16,
+                "target_modules": [
+                    "q_proj",
+                    "k_proj",
+                    "v_proj",
+                    "o_proj",
+                    "gate_proj",
+                    "up_proj",
+                    "down_proj"
+                ],
+                "lora_alpha": 16,
+                "lora_dropout": 0.0,
+                "use_gradient_checkpointing": "unsloth",
+                "random_state": 3407,
+                "use_rslora": false
+            },
+            "dataset_config": {
+                "dataset_path": "",
+                "checkpoint_path": ""
+            },
+            "output_config": {
+                "output_path": "",
+                "output_format": "gguf",
+                "save_method": "merged_4bit",
+                "quantization_method": "f16"
+            }
+        }
+    },
+    "SearchEngine": {
+        "google_search": {
+            "search_url": "",
+            "api_key": "YOUR_API_KEY",
+            "cse_id": "YOUR_CSE_ID"
+        },
+        "duckduckgo": {
+            "search_url": "",
+            "api_key": ""
+        },
+        "bing": {
+            "search_url": "https://api.bing.microsoft.com/v7.0/search",
+            "api_key": "YOUR_API_KEY"
+        },
+        "metaphor": {
+            "search_url": "",
+            "api_key": "YOUR_API_KEY"
+        },
+        "top_k": 5
+    },
+    "CodeInterpreter": {
+        "Keras Interpreter": {
+            "custom_instructions": "[default]",
+            "system_message": "[default]"
+        },
+        "offline": false,
+        "auto_run": true,
+        "safe_mode": false
+    },
+    "ToolBoxes": {
+        "Google ToolBoxes": {
+            "credential": "google_credentials.json",
+            "search_key": "[Your Key]",
+            "Tools": [
+                "Google Maps",
+                "Google Mail",
+                "Google Youtube",
+                "Google Calendar",
+                "Google Drive",
+                "Google Photos",
+                "Google Docs",
+                "Google Sheets",
+                "Google Forms"
+            ]
+        }
+    },
+    "CurrentRunningConfig": {
+        "enable": true,
+        "chat_solution": {
+            "name": ""
+        },
+        "search_engine": {
+            "name": ""
+        },
+        "knowledge_base": {
+            "name": ""
+        },
+        "normal_calling": {
+            "enable": false
+        },
+        "code_interpreter": {
+            "name": ""
+        },
+        "role_player": {
+            "name": "",
+            "language": ""
+        },
+        "voice": {
+            "name": "",
+            "language": ""
+        },
+        "speech": {
+            "name": "",
+            "speaker": ""
+        },
+        "ToolBoxes": {
+            "Google ToolBoxes": {
+                "credential": "",
+                "search_key": "",
+                "Tools": {
+                    "Google Maps": {
+                        "enable": false
+                    },
+                    "Google Mail": {
+                        "enable": false
+                    },
+                    "Google Youtube": {
+                        "enable": false
+                    },
+                    "Google Calendar": {
+                        "enable": false
+                    },
+                    "Google Drive": {
+                        "enable": false
+                    },
+                    "Google Photos": {
+                        "enable": false
+                    },
+                    "Google Docs": {
+                        "enable": false
+                    },
+                    "Google Sheets": {
+                        "enable": false
+                    },
+                    "Google Forms": {
+                        "enable": false
+                    }
+                }
+            }
+        }
+    }
+}

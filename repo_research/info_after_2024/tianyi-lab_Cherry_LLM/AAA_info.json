@@ -1,0 +1,19 @@
+{
+    "alpaca_data.json": 713,
+    "cherry_wizardLM_10_percent.json": 3220,
+    "cherry_wizardLM_20_percent.json": 4964,
+    "cherry_wizardLM_30_percent.json": 4870,
+    "cherry_wizardLM_40_percent.json": 6023,
+    "cherry_alpaca_15_percent.json": 0,
+    "cherry_alpaca_10_percent.json": 0,
+    "cherry_alpaca_5_percent.json": 0,
+    "koala_wrap_reviews_gpt3.5.json": 83,
+    "wizardlm_wrap_reviews_gpt3.5.json": 167,
+    "koala_wrap_reviews_gpt4.json": 0,
+    "wizardlm_wrap.json": 0,
+    "wizardlm_wrap_reviews_gpt4.json": 0,
+    "sinstruct_wrap_reviews_gpt4.json": 67,
+    "sinstruct_wrap_reviews_gpt3.5.json": 0,
+    "koala_wrap.json": 0,
+    "sinstruct_wrap.json": 0
+}

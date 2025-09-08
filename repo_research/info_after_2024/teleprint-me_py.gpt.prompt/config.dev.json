@@ -1,0 +1,194 @@
+{
+  "app": {
+    "provider": "pygptprompt",
+    "test": {
+      "path": "local/tmp",
+      "type": "dir"
+    },
+    "local": {
+      "path": "local",
+      "type": "dir"
+    },
+    "env": {
+      "path": ".env",
+      "type": "file"
+    },
+    "cache": {
+      "path": "local/cache",
+      "type": "dir"
+    },
+    "logs": {
+      "general": {
+        "path": "local/logs/general.log",
+        "level": "DEBUG",
+        "type": "file"
+      },
+      "shadow": {
+        "path": "local/logs/shadow.log",
+        "level": "INFO",
+        "type": "file"
+      }
+    },
+    "database": {
+      "sqlite": {
+        "path": "local/sqlite/static.sqlite3",
+        "type": "file"
+      },
+      "chroma": {
+        "path": "local/chroma",
+        "type": "dir"
+      }
+    },
+    "access": {
+      "confirm": false,
+      "shell": {
+        "allowed_commands": [
+          "date",
+          "cal",
+          "pwd",
+          "cat",
+          "grep",
+          "git",
+          "tree"
+        ],
+        "disallowed_commands": ["rm", "sudo", "su"],
+        "disallowed_strings": ["-rf /", ":(){ :|:& };:"],
+        "disallowed_chars": ["&", ";", "*", ">", ">>", "|"]
+      },
+      "file": {
+        "allowed_paths": ["${PWD}", "local"],
+        "disallowed_paths": [".env", "local/.env", "local/config.json"]
+      }
+    },
+    "ui": {
+      "rich": {
+        "console": {
+          "color_system": "auto"
+        },
+        "panel": {
+          "title_align": "left",
+          "style": "none",
+          "border_color": "none"
+        }
+      },
+      "prompt": {
+        "style": {
+          "italic": "italic",
+          "bold": "bold"
+        }
+      }
+    }
+  },
+  "torch": {
+    "provider": "torch",
+    "device": {
+      "triton": false,
+      "type": "cpu",
+      "options": ["cpu", "cuda", "hip", "mps", "opencl", "vulkan", "lazy"]
+    }
+  },
+  "llama_cpp": {
+    "provider": "llama_cpp",
+    "model": {
+      "repo_id": "TheBloke/Mistral-7B-Instruct-v0.2-code-ft-GGUF",
+      "filename": "mistral-7b-instruct-v0.2-code-ft.Q4_0.gguf",
+      "local": "models/mistralai/Mistral-7B-Instruct-v0.2/ggml-model-q8_0.gguf",
+      "chat_format": "llama-2",
+      "n_ctx": 16384,
+      "n_parts": -1,
+      "seed": 1337,
+      "f16_kv": true,
+      "logits_all": false,
+      "vocab_only": false,
+      "use_mmap": true,
+      "use_mlock": false,
+      "embedding": true,
+      "n_threads": null,
+      "n_batch": 512,
+      "n_gpu_layers": 16,
+      "low_vram": true,
+      "last_n_tokens_size": 64,
+      "lora_base": null,
+      "lora_path": null,
+      "tensor_split": null,
+      "rope_freq_base": 10000.0,
+      "rope_freq_scale": 1.0,
+      "verbose": false
+    },
+    "chat_completions": {
+      "top_k": 50,
+      "top_p": 0.9,
+      "min_p": 0.1,
+      "temperature": 0.7,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "repeat_penalty": 1.1,
+      "logit_bias": null,
+      "max_tokens": -1,
+      "stop": []
+    },
+    "context": {
+      "reserve": 0.1,
+      "length": 16384,
+      "offset": 1024
+    },
+    "system_prompt": {
+      "role": "system",
+      "content": "My name is Mistral. I am a State of the Art Large Language Model designed to assist you."
+    }
+  },
+  "openai": {
+    "provider": "openai",
+    "chat_completions": {
+      "model": "gpt-3.5-turbo",
+      "temperature": 0.0,
+      "max_tokens": 2048,
+      "top_p": 0.95,
+      "n": 1,
+      "stop": [],
+      "presence_penalty": 0,
+      "frequency_penalty": 0,
+      "logit_bias": {}
+    },
+    "embedding": {
+      "model": "text-embedding-ada-002"
+    },
+    "context": {
+      "reserve": 0.2,
+      "length": 16384,
+      "offset": 2048
+    },
+    "system_prompt": {
+      "role": "system",
+      "content": "My name is ChatGPT. I am a State of the Art Large Language Model designed to assist you. I will only use the functions I have been provided with."
+    }
+  },
+  "function": {
+    "provider": "function",
+    "call": "auto",
+    "templates": [
+      {
+        "name": "get_current_weather",
+        "description": "Get the current weather in a given location",
+        "prompt": "How should I dress for this kind of weather?"
+      }
+    ],
+    "definitions": [
+      {
+        "name": "get_current_weather",
+        "description": "Get the current weather in a given location",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "location": {
+              "type": "string",
+              "description": "The city and state, e.g. San Francisco, CA"
+            },
+            "unit": { "type": "string", "enum": ["metric", "uscs"] }
+          },
+          "required": ["location"]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,395 @@
+{
+  "chat": {
+    "messages": {
+      "thought_for_seconds": "{second}秒間考えています | {second}秒間考えています",
+      "thinking": "考え中...",
+      "reading": "読み込み中",
+      "search_locally": "ブラウザ内で検索中..."
+    },
+    "quick_actions": {
+      "title": "クイックアクション"
+    },
+    "thinking_mode": {
+      "label": "思考"
+    },
+    "input": {
+      "placeholder": {
+        "ask_anything": "何でも質問してください...",
+        "ask_follow_up": "続けて質問してください..."
+      },
+      "attachment_selector": {
+        "all_tabs": "すべての開いているタブ",
+        "upload_from_computer": "コンピューターからアップロード",
+        "image_oversize": "画像サイズは{size}未満である必要があります",
+        "too_many_images": "最大{max}個の画像ファイルが許可されています",
+        "unsupported_image_type": "サポートされていない画像形式です。JPEGまたはPNGファイルをアップロードしてください。",
+        "unsupported_model": "画像のアップロードには視覚対応モデルが必要です。Gemma3または同様の視覚モデルに切り替えてください。",
+        "pdf_oversize": "PDFファイルサイズは{size}未満である必要があります",
+        "pdf_text_extract_error": "テキスト抽出に失敗しました - このPDFはスキャンされたものか画像ベースの可能性があります。",
+        "too_many_pdfs": "最大{max}個のPDFファイルまで許可されています",
+        "pdf_page_count_exceeded": "PDFは{max}ページ以下である必要があります",
+        "only_load_partial_pages": "ファイルサイズのため、最初の{max}ページのみが読み込まれました"
+      }
+    },
+    "prompt": {
+      "highlight_key_insights": {
+        "title": "重要な洞察を強調する"
+      },
+      "search_more": {
+        "title": "このようなコンテンツをもっと検索する"
+      },
+      "summarize_page_content": {
+        "title": "ページを要約する"
+      }
+    },
+    "tool_calls": {
+      "common": {
+        "reading": "読み込み中",
+        "read_failed": "読み込み失敗：{error}",
+        "reading_success": "読み込み完了"
+      },
+      "search_online": {
+        "searching": "検索中: \"{query}\"...",
+        "search_completed": "検索完了: \"{query}\"",
+        "search_failed": "検索に失敗しました: {query}"
+      },
+      "fetch_page": {
+        "error_no_content": "コンテンツが見つかりません"
+      },
+      "view_image": {
+        "analyzing": "分析中: {title}",
+        "analyze_failed": "解析に失敗しました: {error}",
+        "analyze_success": "分析完了: {title}",
+        "image_not_found": "画像が見つかりません"
+      },
+      "view_pdf": {
+        "pdf_not_found": "PDFが見つかりません"
+      },
+      "view_tab": {
+        "tab_not_found": "タブが見つかりません"
+      },
+      "page_click": {
+        "click": "{content}をクリック",
+        "error_can_not_click": "{destination}をクリックしてジャンプできません",
+        "error_no_active_tab": "アクティブなタブが見つかりません",
+        "error_unable_to_jump": "{destination}をクリックしてジャンプできません",
+        "redirected": "{destination}にリダイレクトされました",
+        "error_click_before_view_tab": "ページを表示する前に、ページリンクをクリックしてみてください",
+        "error_click_incorrect_link": "間違ったページリンクをクリックしてみてください"
+      }
+    }
+  },
+  "chat_history": {
+    "delete_confirm": "この会話を削除してもよろしいですか？この操作は元に戻すことができません。",
+    "delete": "消去",
+    "rename": "名前を変更します",
+    "unpin": "ピンを外す",
+    "pin": "ピン留め",
+    "title": "チャット履歴",
+    "pinned_section": "ピン留め済みチャット",
+    "recent_section": "最近のチャット",
+    "empty_state": "まだ会話がありません",
+    "untitled_chat": "無題のチャット",
+    "new_chat": "新しいチャット",
+    "save": "保存",
+    "cancel": "キャンセル"
+  },
+  "onboarding": {
+    "banner": {
+      "description": "プライバシーと安全性を確保しながら、デバイス内で完全に動作する強力な機能を体験できます。",
+      "title": "あなたのために開発されたオンデバイスAI"
+    },
+    "guide": {
+      "already_installed": "すでにOllamaをインストールして実行していますか？",
+      "features": {
+        "1": "高度なモデル（gpt-oss、DeepSeek、Qwen、Llama）を実行する",
+        "2": "完全な制御でモデルをカスタマイズし切り替えられます",
+        "3": "あなたのデータはデバイス上でプライベートに保たれます"
+      },
+      "follow_our_tutorial": "インストールガイドを確認する",
+      "get_ollama": "Ollamaを入手する",
+      "install_desc": "Ollamaをインストールして、ローカルAI環境を構築しましょう。",
+      "need_help": "お困りですか？",
+      "ollama_desc": "Ollamaで完全なローカルAIのパワーを活用しましょう。",
+      "setup": "セットアップ",
+      "step1": "ステップ 1",
+      "download_model_to_begin": "モデルをダウンロードして開始してください。",
+      "select_model_to_start": "モデルを選択してダウンロードし、開始してください",
+      "download_and_install": "ダウンロード & インストール",
+      "choose_model": "モデルを選択",
+      "no_sure_which_one": "🤔 どれを選べばよいかわからない？",
+      "learn_about_models": "モデルについて学ぶ",
+      "looking_for_more_options": "🔍 より多くのオプションをお探しですか？",
+      "browse_more_models": "他のモデルを見る"
+    },
+    "webllm_tutorial": {
+      "desc": "ブラウザで直接軽量モデル（Qwen 0.6b）を使用できます。セットアップ不要、待ち時間なし。",
+      "not_support_webllm": "WebLLMはお使いのデバイスではサポートされていません",
+      "start_with_webllm": "Webモデルで始める",
+      "title": "インストールの準備ができていませんか？すぐに試してみましょう。"
+    },
+    "welcome_msg": {
+      "title": "👋 **NativeMind** へようこそ",
+      "body": "NativeMindは、プライバシー重視のAIブラウザ拡張機能で、オンデバイス言語モデルを活用したチャット、検索、翻訳機能を提供します。\n\nNativeMindでできることは次のとおりです：\n\n- 複数のタブでチャットし、異なるページを管理できます。\n- チャット内で直接ウェブ検索を行い、より多くのコンテキストを得られます。\n- 右クリックでページの任意の部分を即座に翻訳できます。\n- 設定からいつでもモデルの切り替えやダウンロードが可能です。\n\n下記のクイックアクションを試してみましょう。"
+    },
+    "ollama_is_running": "Ollamaが実行中です"
+  },
+  "settings": {
+    "cache": {
+      "title": "翻訳キャッシュ",
+      "enable": "キャッシュを有効にする",
+      "enabled": "有効",
+      "disabled": "無効",
+      "max_size": "最大サイズ",
+      "retention_days": "保持期間",
+      "days": "日"
+    },
+    "advanced": {
+      "title": "詳細設定"
+    },
+    "choose_model": "モデルを選択",
+    "download": "ダウンロード",
+    "feedback": {
+      "contact_msg": "📧ご質問やフィードバックがありますか？{discord}に参加するか、{email}までメールでお問い合わせください。",
+      "join_waitlist": "💼職場でご利用希望の方は、エンタープライズ版の最新情報を受け取るために{join_waitlist_link}してください。",
+      "join_waitlist_link": "ウェイトリストに登録",
+      "discord": "Discord"
+    },
+    "get_ollama": "Ollamaを入手",
+    "models": {
+      "title": "モデル",
+      "discover_more": "より多くのモデルを発見する",
+      "no_model": "⚠️ モデルなし",
+      "add_model_to_start": "モデルを追加して開始"
+    },
+    "ollama": {
+      "already_installed": "Ollamaをすでにインストールして実行していますか？",
+      "connected": "接続済み",
+      "connection_error": "接続エラー",
+      "downloadable_model": "ダウンロード可能なモデル",
+      "follow_guide": "インストールガイドを確認する",
+      "learn_more_about_models": "モデルについて詳しく知る",
+      "need_help": "お困りですか？",
+      "re_scan": "再スキャン",
+      "server_address": "サーバーアドレス",
+      "setup": "セットアップ",
+      "unconnected": "未接続",
+      "context_window_size": "コンテキストウィンドウサイズ",
+      "custom_context_window_size": "カスタムコンテキストウィンドウサイズ",
+      "context_window_size_desc": "カスタムコンテキストウィンドウサイズをトークン数で入力してください（最小値：512）",
+      "server_address_desc": "Ollama サーバー API エンドポイント",
+      "context_window_size_error": "コンテキストウィンドウサイズは最低{min}トークンである必要があります",
+      "unload": "アンロード",
+      "expires_in": "{duration}で期限切れ",
+      "running": "実行中",
+      "running_models": "実行中のモデル"
+    },
+    "prompts": {
+      "chat_system_prompt": "チャットシステムプロンプト",
+      "title": "プロンプト",
+      "translation_system_prompt": "翻訳システムプロンプト"
+    },
+    "provider": {
+      "title": "接続"
+    },
+    "provider_model": {
+      "title": "Ollamaを設定する"
+    },
+    "quick_actions": {
+      "description": "新規チャットや右クリックメニューから、お気に入りのプロンプトをより速く実行できるようクイックアクションを設定します。",
+      "edit": {
+        "cancel": "キャンセル",
+        "prompt": "プロンプト",
+        "reset": "リセット",
+        "save": "保存",
+        "show_in_context_menu": "右クリックメニューに表示する",
+        "title": "タイトル"
+      },
+      "title": "クイックアクションのカスタマイズ"
+    },
+    "test": "テスト",
+    "translation": {
+      "title": "翻訳言語",
+      "description": "翻訳機能と対象言語を設定する",
+      "basic_config": {
+        "target_language": "ターゲット言語",
+        "target_language_desc": "翻訳対象言語を選択してください",
+        "title": "基本設定",
+        "translation_model": "翻訳モデル",
+        "translation_model_desc": "翻訳タスク用のAIモデルを選択してください",
+        "translation_system_prompt": "翻訳システムプロンプト",
+        "translation_system_prompt_desc": "AIの動作と翻訳時の出力形式を定義する",
+        "translation_system_prompt_error": "システムプロンプトには「{{LANGUAGE}}」が含まれている必要があります"
+      }
+    },
+    "webllm-desc": "WebLLMを使用中：クイック試用のためqwen3:0.6bを使用しています。フルモデルサポートとより良いパフォーマンスのために、Ollamaをインストールしてください。",
+    "general": {
+      "system_language": "システム言語",
+      "title": "一般",
+      "description": "基本設定とサーバー接続を設定する",
+      "discover_more_models": "より多くのモデルを発見する",
+      "refresh_status": "ステータスを更新",
+      "unload_model_confirm": "モデル「{model}」をアンロードしてもよろしいですか？",
+      "running_models": {
+        "vram": "{size} VRAM",
+        "params": "{size}パラメータ",
+        "quant": "{level}クオント",
+        "thinking": "思考",
+        "no_active_models": "Ollamaに接続されていますが、アクティブなモデルがありません",
+        "not_connected_to_ollama": "Ollamaに接続されていません"
+      }
+    },
+    "title": "設定",
+    "model_downloader": {
+      "description": "このモデルは使用前にダウンロードする必要があります。ダウンロードには数分かかる場合があります。",
+      "downloading_model": "「{model}」をダウンロード中",
+      "download_model": "「{model}」をダウンロード",
+      "downloading": "あなたのモデルをダウンロード中です。お待ちください…",
+      "download": "ダウンロード",
+      "retry": "リトライ",
+      "unable_to_download": "ダウンロードを開始できません",
+      "could_not_connect_ollama": "Ollamaに接続できませんでした。Ollamaが実行されていることを確認して、もう一度お試しください。"
+    },
+    "webllm_downloader": {
+      "description": "ローカルモードを使用するには、{model}モデル（{size}）をダウンロードする必要があります。今すぐダウンロードしますか？"
+    },
+    "writing_tools": {
+      "title": "ライティングツール",
+      "basic_config": {
+        "enable": "ライティングツールを有効にする",
+        "enable_desc": "テキストが選択されたときに文章作成支援オプションを表示する",
+        "title": "基本設定"
+      },
+      "description": "様々な文章作成支援機能を設定する",
+      "tool_config": {
+        "at_least_one_tool_error": "少なくとも1つの筆記用具を選択する必要があります。",
+        "list": {
+          "description": "コンテンツを明確で整理されたリストに変換する",
+          "title": "リスト"
+        },
+        "proofread": {
+          "description": "文法、スペル、句読点の誤りをチェックする",
+          "title": "校正"
+        },
+        "rewrite": {
+          "description": "テキストの明瞭性と流れを改善する",
+          "title": "書き直す"
+        },
+        "sparkle": {
+          "description": "絵文字と視覚的要素を追加する",
+          "title": "美化"
+        },
+        "title": "ツール設定"
+      }
+    },
+    "chat": {
+      "title": "チャット",
+      "description": "チャット機能とクイックアクションを設定する",
+      "basic_config": {
+        "title": "基本設定",
+        "chat_model": "チャットモデル",
+        "chat_model_description": "チャット会話用のAIモデルを選択してください",
+        "chat_system_prompt": "チャットシステムプロンプト",
+        "chat_system_prompt_description": "チャット会話中のAIの行動と役割を定義する",
+        "thinking_visibility": "思考プロセス表示",
+        "thinking_visibility_description": "LLM推論時の思考プロセスの表示方法を選択",
+        "thinking_visibility_hide": "思考を隠す",
+        "thinking_visibility_hide_description": "ローディングと最終回答のみ表示",
+        "thinking_visibility_preview": "思考をプレビュー",
+        "thinking_visibility_preview_description": "最後の2行を表示、展開可能",
+        "thinking_visibility_full": "完全な思考を表示",
+        "thinking_visibility_full_description": "デフォルトですべて表示、折りたたみ可能"
+      },
+      "quick_actions": {
+        "title": "クイックアクション",
+        "reset_to_default": "デフォルトにリセット",
+        "reset_to_default_confirm": "クイックアクションをデフォルト値にリセットしてもよろしいですか？"
+      }
+    },
+    "common": {
+      "saved": "保存されました"
+    },
+    "interface": {
+      "title": "インターフェース",
+      "interface_language": "インターフェース言語",
+      "interface_language_desc": "NativeMindインターフェースの表示言語を選択してください"
+    },
+    "header": {
+      "starts_on_github": "GitHubでスター",
+      "goto_website": "ウェブサイトに移動"
+    }
+  },
+  "context_menu": {
+    "quick_actions": {
+      "title": "クイックアクション"
+    },
+    "translation": {
+      "show_original": "原文を表示",
+      "translate_page_into": "このページを{language}に翻訳",
+      "translate_selected_text": "選択されたテキストを翻訳する"
+    },
+    "add_image": {
+      "title": "チャットに画像を追加"
+    },
+    "settings": {
+      "title": "設定"
+    }
+  },
+  "errors": {
+    "model_not_found": "おっと！何か問題が発生しました。設定でOllama接続を確認し、再度お試しください。",
+    "timeout_error": "操作がタイムアウトしました：{message}",
+    "unknown_error": "予期しないエラーが発生しました：{message}",
+    "model_request_error": "おっと！何か問題が発生しました。設定でOllama接続を確認し、再度お試しください。",
+    "model_request_timeout": "リクエストがタイムアウトしました。Ollama接続を確認するか、長いコンテキストが応答時間に影響を与える可能性があるため、新しいセッションの開始をご検討ください。",
+    "webllm_not_supported": "WebLLMはお使いのデバイスではサポートされていません。",
+    "max_characters_error": "最大 {count} 文字まで入力可能です"
+  },
+  "common": {
+    "cancel": "キャンセル",
+    "duration": {
+      "days": "{day}日 | {day}日",
+      "seconds": "{second}秒",
+      "minutes": "{minute}分 | {minute}分",
+      "hours": "{hour}時間",
+      "years": "{year}年 | {year}年",
+      "months": "{month}ヶ月 | {month}ヶ月"
+    },
+    "confirm": "確認"
+  },
+  "ollama": {
+    "sites": {
+      "add_to_nativemind": "NativeMindでの使用"
+    }
+  },
+  "popup": {
+    "reload_page": "ページを再読み込みしてNativeMindを使用してください。",
+    "page_not_supported": "このページはNativeMindでサポートされていません。",
+    "local_pdf_file_not_supported": "ブラウザの権限制限により、お使いのコンピュータのローカルファイルに直接アクセスすることができません。別のブラウザタブでプラグインを開き、ローカルPDFファイルを手動でアップロードしてください。"
+  },
+  "writing_tools": {
+    "processing": "処理中...",
+    "rewrite_suggestion": "書き直しの提案",
+    "sparkle_text": "文字の美化",
+    "key_points": "重要なポイント",
+    "grammar_and_style": "文法とスタイル",
+    "proofread": "校正",
+    "list": "リスト",
+    "sparkle": "美化",
+    "apply": "適用",
+    "dismiss": "却下する",
+    "rewrite": "書き直す"
+  },
+  "textarea": {
+    "reset_to_default": "デフォルトにリセット"
+  },
+  "tooltips": {
+    "clear_chat": "チャットをクリア",
+    "settings": "設定",
+    "pin_sidebar": "固定",
+    "unpin_sidebar": "固定を解除",
+    "close": "閉じる",
+    "chat_history": "歴史",
+    "new_chat": "新しいチャット",
+    "back": "戻る"
+  }
+}

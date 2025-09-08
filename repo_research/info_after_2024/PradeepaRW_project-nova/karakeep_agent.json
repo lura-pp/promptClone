@@ -1,0 +1,465 @@
+{
+  "name": "karakeep-agent",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        900,
+        60
+      ],
+      "id": "9cba23f0-41cc-425d-9b3d-805d01f72465",
+      "name": "When chat message received",
+      "webhookId": "89546f94-bea0-4752-a4e6-d358951dbafd"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.input }}",
+        "options": {
+          "systemMessage": "You are an AI assistant connected to a Karakeep instance via its Model Context Protocol (MCP) server. Your role is to assist the user in managing their digital content—bookmarks, notes, and images—by leveraging Karakeep's features.\n\nCapabilities:\n\n    Search Bookmarks: Retrieve bookmarks based on keywords, tags, or content.\n\n    Manage Lists: Create new lists, add bookmarks to existing lists, or remove them as needed.\n\n    Tag Management: Attach or detach tags to bookmarks to organize and categorize content effectively.\n\n    Add Bookmarks: Create new bookmarks by saving URLs or adding text-based notes.\n\nGuidelines:\n\n    Prioritize organizing content in a manner that enhances the user's workflow and information retrieval.\n\n    When adding new content, suggest appropriate tags and lists based on the content's context.\n\n    Ensure that any modifications, such as deletions or edits, are confirmed by the user to prevent unintended data loss.\n\nExample Interactions:\n\n    User: \"Save this article on AI advancements.\"\n    Assistant: \"Sure, I've added the article to your 'AI Research' list with tags: 'AI', 'Technology', 'Research'.\"\n\n    User: \"Find my notes on project X.\"\n    Assistant: \"I found 3 notes related to 'Project X' in your 'Work Notes' list.\"\n\nBy adhering to these guidelines, you will provide a seamless and efficient experience for the user in managing their digital content through Karakeep."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        1012,
+        280
+      ],
+      "id": "bae9743d-e347-43ca-9af3-86eb1f98518f",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        440,
+        500
+      ],
+      "id": "21956b4d-da4f-4945-8418-1931253182ff",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "avSgLKwLvvI1EPHE",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        560,
+        500
+      ],
+      "id": "b2ecc5fc-d5d8-4006-b443-c16eabad09e9",
+      "name": "MCP Client",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "iYBn27SaFnmB8Mr3",
+          "name": "MCP Client - karakeep-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "search-bookmarks"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        680,
+        500
+      ],
+      "id": "5c5df90c-8196-422f-bbfd-c6533a615f19",
+      "name": "search-bookmarks",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "iYBn27SaFnmB8Mr3",
+          "name": "MCP Client - karakeep-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "get-bookmark"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        800,
+        500
+      ],
+      "id": "0c4b56b2-bea2-4fa2-8e13-f5e674a7bcca",
+      "name": "get-bookmark",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "iYBn27SaFnmB8Mr3",
+          "name": "MCP Client - karakeep-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "create-bookmark"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        920,
+        500
+      ],
+      "id": "8d7efdab-8803-48e2-9050-85832739521e",
+      "name": "create-bookmark",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "iYBn27SaFnmB8Mr3",
+          "name": "MCP Client - karakeep-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "get-bookmark-content"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        500
+      ],
+      "id": "885370b5-8714-4b31-bd29-c97f6f0a607a",
+      "name": "get-bookmark-content",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "iYBn27SaFnmB8Mr3",
+          "name": "MCP Client - karakeep-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "get-lists"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1160,
+        500
+      ],
+      "id": "65b847ee-af20-49c2-883b-8fdc34c6924f",
+      "name": "get-lists",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "iYBn27SaFnmB8Mr3",
+          "name": "MCP Client - karakeep-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "add-bookmark-to-list"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1280,
+        500
+      ],
+      "id": "82a07fdb-31b4-4644-93f3-83cab2f56a67",
+      "name": "add-bookmark-to-list",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "iYBn27SaFnmB8Mr3",
+          "name": "MCP Client - karakeep-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "remove-bookmark-from-list"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1400,
+        500
+      ],
+      "id": "32812878-bb12-415b-a6e0-035089ebb51b",
+      "name": "remove-bookmark-from-list",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "iYBn27SaFnmB8Mr3",
+          "name": "MCP Client - karakeep-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "create-list"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1520,
+        500
+      ],
+      "id": "666999ff-9b02-4d87-a7e9-961f5ee06e55",
+      "name": "create-list",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "iYBn27SaFnmB8Mr3",
+          "name": "MCP Client - karakeep-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "attach-tag-to-bookmark"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1640,
+        500
+      ],
+      "id": "5d581856-e63f-409e-8c8b-aee6af9549cd",
+      "name": "attach-tag-to-bookmark",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "iYBn27SaFnmB8Mr3",
+          "name": "MCP Client - karakeep-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "detach-tag-from-bookmark"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1760,
+        500
+      ],
+      "id": "5986ab44-626f-4a00-ac29-78b71ec643bc",
+      "name": "detach-tag-from-bookmark",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "iYBn27SaFnmB8Mr3",
+          "name": "MCP Client - karakeep-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "inputSource": "jsonExample",
+        "jsonExample": "{\n  \"input\": \"add a bookmark for this design resource\",\n  \"reason\": \"The request is about adding a bookmark, which is one of the primary functions of the Karakeep Agent for digital content management.\",\n  \"selectedAgent\": \"karakee-agent\"\n}"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        760,
+        260
+      ],
+      "id": "08a48367-ab01-424d-bea6-504dcbf6b36b",
+      "name": "When Executed by Another Workflow"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        []
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MCP Client": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "search-bookmarks": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get-bookmark": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create-bookmark": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get-bookmark-content": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get-lists": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "add-bookmark-to-list": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "remove-bookmark-from-list": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create-list": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "attach-tag-to-bookmark": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "detach-tag-from-bookmark": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "8cd0a346-d7fd-47c9-b792-7e78e74bd175",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "558d88703fb65b2d0e44613bc35916258b0f0bf983c5d4730c00c424b77ca36a"
+  },
+  "id": "VRlbHY5QKtbwV9Tk",
+  "tags": []
+}

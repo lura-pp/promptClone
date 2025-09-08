@@ -1,0 +1,6 @@
+{
+    "test_bedrock_embeddings.py": 1,
+    "test_bedrock_agents.py": 1,
+    "function_calling.py": 1,
+    "prompts.py": 1
+}

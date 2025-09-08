@@ -1,0 +1,87 @@
+{
+  "schemaVersion": "1.0",
+  "title_i18n": {
+    "en_US": "MySQL MCP Server With OpenAI"
+  },
+  "configuration": {
+    "trace": true,
+    "nodes": [
+      {
+        "uiConfiguration": {
+          "position": {
+            "x": -117.61428833007814,
+            "y": -304.2476247151693
+          }
+        },
+        "id": "whiteModestSkunk",
+        "label": "Input Trigger",
+        "type": "inputTrigger",
+        "parameters": {}
+      },
+      {
+        "uiConfiguration": {
+          "position": {
+            "x": 188.74747752622517,
+            "y": -334.0006503166021
+          }
+        },
+        "id": "yellowGeographicalBedbug",
+        "label": "OpenAI Chat Model",
+        "type": "openAIChatModel",
+        "parameters": {
+          "modelName": "gpt-4o-mini",
+          "baseUrl": "https://api.openai.com/v1/",
+          "systemMessage": "",
+          "apiKey": "env:OPENAI_API_KEY",
+          "toolProvider": {
+            "mcp": {
+              "clients": [
+                {
+                  "transport": {
+                    "environment": {
+                      "PATH": "/home/petteri/.nvm/versions/node/v20.13.1/bin/node:/usr/bin:/bin",
+                      "MYSQL_PASS": "liferay",
+                      "MYSQL_PORT": "3306",
+                      "MYSQL_USER": "test",
+                      "MYSQL_DB": "lportal",
+                      "ALLOW_INSERT_OPERATION": "false",
+                      "ALLOW_UPDATE_OPERATION": "false",
+                      "MYSQL_HOST": "127.0.0.1",
+                      "ALLOW_DELETE_OPERATION": "false",
+                      "NODE_PATH": "/home/petteri/.nvm/versions/node/v20.13.1/lib/node_modules"
+                    },
+                    "logEvents": true,
+                    "type": "stdio",
+                    "command": [
+                      "/home/petteri/.nvm/versions/node/v20.13.1/bin/node",
+                      "/opt/projects/mcp-server-mysql/dist/index.js"
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "memoryMaxMessages": 20,
+          "temperature": "0.5",
+          "logitBias": {},
+          "useChatMemory": true,
+          "promptTemplate": "{{input.text}}",
+          "timeout": 20,
+          "outputParameterName": "text"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "ed0e4a37-9be0-4fa9-9893-94af13368522",
+        "source": "whiteModestSkunk",
+        "target": "yellowGeographicalBedbug"
+      }
+    ]
+  },
+  "description_i18n": {
+    "en_US": "A demo task relying on OpenAI and MySQL MCP server as the tool provider"
+  },
+  "enabled": true,
+  "externalReferenceCode": "mysql-mcp-server-with-openai"
+}

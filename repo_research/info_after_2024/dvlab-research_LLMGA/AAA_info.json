@@ -1,0 +1,14 @@
+{
+    "loaders.py": 1,
+    "pipeline_kandinsky2_2_controlnet.py": 1,
+    "pipeline_kandinsky2_2_controlnet_img2img.py": 0,
+    "pipeline_if.py": 1,
+    "pipeline_if_superresolution.py": 0,
+    "pipeline_blip_diffusion.py": 1,
+    "pipeline_controlnet_blip_diffusion.py": 0,
+    "sdxl_single_aot.py": 2,
+    "sdxl_single.py": 0,
+    "clip_guided_stable_diffusion_img2img.py": 1,
+    "run_onnx_controlnet.py": 1,
+    "run_tensorrt_controlnet.py": 0
+}

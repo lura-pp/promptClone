@@ -1,0 +1,13 @@
+{
+    "task_rewrite_agent.py": 0,
+    "task_planning_agent.py": 0,
+    "task_obversation_agent.py": 0,
+    "task_summary_agent.py": 0,
+    "workflow_select_agent.py": 1,
+    "simple_agent.py": 0,
+    "task_analysis_agent.py": 0,
+    "simple_react_agent.py": 0,
+    "task_stage_summary_agent.py": 0,
+    "query_suggest_agent.py": 0,
+    "task_decompose_agent.py": 0
+}

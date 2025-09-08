@@ -1,0 +1,293 @@
+name: module-planning-ccsdk
+
+on:
+  workflow_call:
+    inputs:
+      concept:
+        description: 'ユーザーのコンセプト'
+        required: true
+        type: string
+      branch-name:
+        description: 'ワーキングブランチ名'
+        required: true
+        type: string
+      folder-name:
+        description: 'プロジェクトフォルダ名'
+        required: true
+        type: string
+      total_videos:
+        description: '生成する動画の数'
+        required: false
+        type: string
+        default: '1'
+      image-model-type:
+        description: '画像生成モデルタイプ（指定時はそのモデルに最適化、未指定時は汎用プロンプト）'
+        required: false
+        type: string
+      video-model-type:
+        description: '動画生成モデルタイプ（指定時はそのモデルに最適化、未指定時は汎用プロンプト）'
+        required: false
+        type: string
+    outputs:
+      planning-completed:
+        description: '企画完了ステータス'
+        value: ${{ jobs.planning.outputs.planning-completed }}
+      # 動的出力（最大8動画まで対応）
+      image-prompt-1:
+        description: '動画1用画像生成プロンプト'
+        value: ${{ jobs.planning.outputs.image-prompt-1 }}
+      image-prompt-2:
+        description: '動画2用画像生成プロンプト'
+        value: ${{ jobs.planning.outputs.image-prompt-2 }}
+      image-prompt-3:
+        description: '動画3用画像生成プロンプト'
+        value: ${{ jobs.planning.outputs.image-prompt-3 }}
+      image-prompt-4:
+        description: '動画4用画像生成プロンプト'
+        value: ${{ jobs.planning.outputs.image-prompt-4 }}
+      image-prompt-5:
+        description: '動画5用画像生成プロンプト'
+        value: ${{ jobs.planning.outputs.image-prompt-5 }}
+      image-prompt-6:
+        description: '動画6用画像生成プロンプト'
+        value: ${{ jobs.planning.outputs.image-prompt-6 }}
+      image-prompt-7:
+        description: '動画7用画像生成プロンプト'
+        value: ${{ jobs.planning.outputs.image-prompt-7 }}
+      image-prompt-8:
+        description: '動画8用画像生成プロンプト'
+        value: ${{ jobs.planning.outputs.image-prompt-8 }}
+      video-concept-1:
+        description: '動画1用コンセプト'
+        value: ${{ jobs.planning.outputs.video-concept-1 }}
+      video-concept-2:
+        description: '動画2用コンセプト'
+        value: ${{ jobs.planning.outputs.video-concept-2 }}
+      video-concept-3:
+        description: '動画3用コンセプト'
+        value: ${{ jobs.planning.outputs.video-concept-3 }}
+      video-concept-4:
+        description: '動画4用コンセプト'
+        value: ${{ jobs.planning.outputs.video-concept-4 }}
+      video-concept-5:
+        description: '動画5用コンセプト'
+        value: ${{ jobs.planning.outputs.video-concept-5 }}
+      video-concept-6:
+        description: '動画6用コンセプト'
+        value: ${{ jobs.planning.outputs.video-concept-6 }}
+      video-concept-7:
+        description: '動画7用コンセプト'
+        value: ${{ jobs.planning.outputs.video-concept-7 }}
+      video-concept-8:
+        description: '動画8用コンセプト'
+        value: ${{ jobs.planning.outputs.video-concept-8 }}
+    secrets:
+      anthropic_api_key:
+        description: 'Anthropic API Key'
+        required: true
+      github_pat:
+        description: 'GitHub Token'
+        required: true
+
+jobs:
+  planning:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      planning-completed: ${{ steps.planning.outputs.completed }}
+      # 動的出力（最大8動画まで対応）
+      image-prompt-1: ${{ steps.planning.outputs.image-prompt-1 }}
+      image-prompt-2: ${{ steps.planning.outputs.image-prompt-2 }}
+      image-prompt-3: ${{ steps.planning.outputs.image-prompt-3 }}
+      image-prompt-4: ${{ steps.planning.outputs.image-prompt-4 }}
+      image-prompt-5: ${{ steps.planning.outputs.image-prompt-5 }}
+      image-prompt-6: ${{ steps.planning.outputs.image-prompt-6 }}
+      image-prompt-7: ${{ steps.planning.outputs.image-prompt-7 }}
+      image-prompt-8: ${{ steps.planning.outputs.image-prompt-8 }}
+      video-concept-1: ${{ steps.planning.outputs.video-concept-1 }}
+      video-concept-2: ${{ steps.planning.outputs.video-concept-2 }}
+      video-concept-3: ${{ steps.planning.outputs.video-concept-3 }}
+      video-concept-4: ${{ steps.planning.outputs.video-concept-4 }}
+      video-concept-5: ${{ steps.planning.outputs.video-concept-5 }}
+      video-concept-6: ${{ steps.planning.outputs.video-concept-6 }}
+      video-concept-7: ${{ steps.planning.outputs.video-concept-7 }}
+      video-concept-8: ${{ steps.planning.outputs.video-concept-8 }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.branch-name }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install Claude Code SDK
+        run: npm install @anthropic-ai/claude-code
+      
+      - name: 動画制作計画エージェント
+        id: planning
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.anthropic_api_key }}
+        run: |
+          echo "::group::📋 Video Planning Agent Execution"
+          echo "Starting at: $(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)"
+          
+          # 設定
+          USER_CONCEPT="${{ inputs.concept }}"
+          FOLDER_NAME="${{ inputs.folder-name }}"
+          PLANNING_DIR="$FOLDER_NAME/planning"
+          TOTAL_VIDEOS="${{ inputs.total_videos }}"
+          IMAGE_MODEL_TYPE="${{ inputs.image-model-type }}"
+          VIDEO_MODEL_TYPE="${{ inputs.video-model-type }}"
+          
+          echo "User concept: $USER_CONCEPT"
+          echo "Planning folder: $PLANNING_DIR"
+          echo "Total videos: $TOTAL_VIDEOS"
+          echo "Image model type: $IMAGE_MODEL_TYPE"
+          echo "Video model type: $VIDEO_MODEL_TYPE"
+          
+          # 計画フォルダを事前に作成
+          if [ ! -d "$PLANNING_DIR" ]; then
+            mkdir -p "$PLANNING_DIR"
+            echo "📁 Created planning folder: $PLANNING_DIR"
+          fi
+          
+          # プロンプトの構築
+          PROMPT="あなたは動画制作の専門プランナーです。ユーザーの指示から${TOTAL_VIDEOS}つの動画を生成するための詳細な計画を立ててください。
+
+          **ユーザーの指示**: $USER_CONCEPT
+          **生成する動画数**: $TOTAL_VIDEOS
+
+          **全体戦略**:
+          - ${TOTAL_VIDEOS}つの動画で一つのテーマを表現
+          - 各動画は独立した魅力を持つ
+          - 異なる視点・アングル・表現で差別化
+          - 統一感のあるビジュアルコンセプト
+
+          **各動画の方向性**:
+          - 動画1: メインアングル、正面からの基本動作・表現
+          - 動画2: サイドアングル、横からの動的表現
+          - 動画3: 上からの俯瞰、全体の動きを強調
+          - 動画4: クローズアップ、細部の魅力を表現
+          - 動画5以降: 創造的な視点での独自表現
+
+          **タスク**:
+          1. ユーザーの指示を分析し、${TOTAL_VIDEOS}つの動画コンセプトを企画
+          2. 各動画用の高品質な画像生成プロンプトを作成
+          3. 各動画のコンセプトと方向性を定義
+          4. 計画書を「$PLANNING_DIR/video-plan.md」に保存
+          5. 各動画用の画像生成プロンプトを保存：
+             - $PLANNING_DIR/image-prompt-1.txt
+             - $PLANNING_DIR/image-prompt-2.txt
+             - $PLANNING_DIR/image-prompt-3.txt
+             - $PLANNING_DIR/image-prompt-4.txt
+             - （以下、動画数分）
+          6. 各動画用のコンセプトを保存：
+             - $PLANNING_DIR/video-concept-1.txt
+             - $PLANNING_DIR/video-concept-2.txt
+             - $PLANNING_DIR/video-concept-3.txt
+             - $PLANNING_DIR/video-concept-4.txt
+             - （以下、動画数分）
+
+          **画像生成プロンプトの要件**:
+          - 汎用的で高品質な画像生成に適したプロンプト
+          - 各動画の特性に最適化された内容
+          - 視覚的要素（色彩、構図、スタイル）を明確に指定
+          - 高解像度・高品質を意識した記述
+          - 50-100語程度の適切な長さ
+          - **重要**: 画像生成プロンプトは英語で作成してください
+
+          **動画コンセプトの要件**:
+          - 生成される画像をベースにした動画の方向性
+          - 各動画固有の動きやアニメーションの種類
+          - 雰囲気や感情表現
+          - 汎用的な動画生成に適した内容
+
+          **モデル最適化**: 
+          - 画像生成モデル指定: ${IMAGE_MODEL_TYPE:-なし}
+          - 動画生成モデル指定: ${VIDEO_MODEL_TYPE:-なし}
+          - 指定されたモデルがある場合は、そのモデルの特性に合わせてプロンプトを最適化してください
+          - モデル未指定の場合は、汎用的で高品質なプロンプトを作成してください
+          - usage/kamuicode-usage.mdからモデル特性を参照して最適化を行ってください
+
+          **重要**: 
+          1. 必ず${TOTAL_VIDEOS}個分のファイルを作成してください
+          2. txtファイルは機械処理用（1行テキスト）
+          3. 各ファイルの内容は具体的で詳細に記述してください
+          4. ファイル作成後、必ずファイルパスを確認・報告してください
+          5. モデル指定がある場合は、まず .github/workflows/usage/kamuicode-usage.mdを読み込んで特性を理解してください"
+          
+          echo "🚀 Starting Planning Agent Claude Code CLI..."
+          echo "📝 Prompt length: ${#PROMPT}"
+          
+          # Claude Code CLIの実行
+          npx @anthropic-ai/claude-code \
+            --allowedTools "Read,Write,Edit" \
+            --max-turns 25 \
+            --verbose \
+            --permission-mode "acceptEdits" \
+            -p "$PROMPT" || {
+              echo "::error::❌ Claude Code CLI execution failed"
+              exit 1
+            }
+          
+          # 生成された計画の確認
+          echo ""
+          echo "📋 Checking generated planning files..."
+          
+          # 各動画用のファイルから出力を設定
+          for i in $(seq 1 $TOTAL_VIDEOS); do
+            # 画像プロンプトの確認
+            if [ -f "$PLANNING_DIR/image-prompt-${i}.txt" ]; then
+              IMAGE_PROMPT=$(cat "$PLANNING_DIR/image-prompt-${i}.txt" | tr '\n' ' ')
+              echo "::notice::✅ Image prompt ${i} generated"
+              echo "Image prompt ${i}: $IMAGE_PROMPT"
+              echo "image-prompt-${i}=$IMAGE_PROMPT" >> $GITHUB_OUTPUT
+            else
+              echo "::error::❌ Image prompt ${i} file not found"
+              exit 1
+            fi
+            
+            # 動画コンセプトの確認
+            if [ -f "$PLANNING_DIR/video-concept-${i}.txt" ]; then
+              VIDEO_CONCEPT=$(head -5 "$PLANNING_DIR/video-concept-${i}.txt" | tr '\n' ' ')
+              echo "::notice::✅ Video concept ${i} generated"
+              echo "Video concept ${i}: $VIDEO_CONCEPT"
+              echo "video-concept-${i}=$VIDEO_CONCEPT" >> $GITHUB_OUTPUT
+            else
+              echo "::error::❌ Video concept ${i} file not found"
+              exit 1
+            fi
+          done
+          
+          echo "completed=true" >> $GITHUB_OUTPUT
+          echo "::endgroup::"
+      
+      - name: Commit and push planning
+        env:
+          GH_TOKEN: ${{ secrets.github_pat }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ${{ inputs.folder-name }}/
+          if git diff --cached --quiet; then
+            echo "No planning files to commit"
+          else
+            git commit -m "Add video planning: ${{ inputs.concept }}"
+            # 並列実行での競合を回避するためのリトライ処理
+            for i in {1..3}; do
+              git pull --rebase origin ${{ inputs.branch-name }} || true
+              if git push origin ${{ inputs.branch-name }}; then
+                echo "✅ Push successful on attempt $i"
+                break
+              else
+                echo "⚠️ Push failed on attempt $i, retrying..."
+                # ランダムな待機時間（1-5秒）
+                sleep $((RANDOM % 5 + 1))
+              fi
+            done
+          fi

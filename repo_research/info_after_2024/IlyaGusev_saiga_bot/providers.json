@@ -1,0 +1,23 @@
+{
+    "providers": {
+        "gpt-4o-mini": {
+            "base_url": "https://api.openai.com/v1",
+            "api_key": "",
+            "model_name": "gpt-4o-mini",
+            "can_handle_images": true,
+            "can_handle_tools": true,
+            "history_max_tokens": 32000,
+            "system_prompt": "Ты - gpt-4o-mini, языковая модель, разработанная OpenAI",
+            "message_count_limit": {
+                "standard": {
+                    "limit": 10,
+                    "interval": 86400
+                },
+                "subscribed": {
+                    "limit": 50,
+                    "interval": 86400
+                }
+            }
+        }
+    }
+}

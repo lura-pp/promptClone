@@ -1,0 +1,12 @@
+{
+    "reasoning-agent-sk.py": 1,
+    "react-agent-lg.py": 1,
+    "react-agent-lc.py": 0,
+    "report-agents.py": 2,
+    "app.py": 2,
+    "trucking-plan.py": 1,
+    "trucking-execute.py": 1,
+    "create_onthologies.py": 1,
+    "create_chem_onthologies.py": 0,
+    "parse_invoice.py": 1
+}

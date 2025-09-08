@@ -1,0 +1,250 @@
+{
+  "language": {
+    "enUS": "English",
+    "zhCN": "中文",
+    "esES": "Español",
+    "jaJP": "日本語",
+    "koKR": "한국어",
+    "arSA": "العربية",
+    "hiIN": "हिन्दी"
+  },
+  "metadata": {
+    "title": "Conversational AI Engine Demo",
+    "description": "Chat with a sample AI voice agent and select different voices in a live demo of Agora's Conversational AI Engine."
+  },
+  "common": {
+    "language": "Language"
+  },
+  "homePage": {
+    "title": "Conversational AI Engine"
+  },
+  "status": {
+    "unknown": "Unknown",
+    "connecting": "Connecting...",
+    "connected": "Connected",
+    "disconnected": "Disconnected",
+    "reconnecting": "Disconnected",
+    "na": "--",
+    "good": "Good",
+    "medium": "Fair",
+    "bad": "Poor"
+  },
+  "roomInfo": {
+    "tooltip": "Network and channel information",
+    "networkInfo": "NETWORK INFO",
+    "yourNetwork": "Your Network",
+    "networkLevel": {
+      "good": "Good",
+      "medium": "Fair",
+      "bad": "Poor",
+      "unknown": "Unknown"
+    },
+    "channelInfo": "CHANNEL INFO",
+    "agentStatus": "Agent Status",
+    "roomStatus": "Room Status",
+    "roomId": "Room ID",
+    "yourId": "Your ID",
+    "agentId": "Agent ID",
+    "unknown": "Unknown"
+  },
+  "moreInfo": {
+    "title": "More INFO",
+    "moreAction": "More Actions"
+  },
+  "settings": {
+    "tab": {
+      "agent": "Agent",
+      "settings": "Settings"
+    },
+    "custom_agent": {
+      "title": "Custom Agent",
+      "description": "Please contact Agora staff to get a custom agent ID",
+      "placeholder": "Enter agent ID to retrieve",
+      "retrieve_button": "Retrieve",
+      "message_success": "Agent retrieved successfully",
+      "message_error": "Failed to retrieve agent. No such agent in the database.",
+      "message_sunset": "Agent has been taken offline. Please contact Agora staff."
+    },
+    "save": "Save",
+    "options": {
+      "custom": "Custom",
+      "preset": "Preset",
+      "error": "Failed to get presets"
+    },
+    "asr": {
+      "language": "Language"
+    },
+    "custom_llm": {
+      "title": "Custom LLM",
+      "url": "Custom LLM URL",
+      "api_key": "Custom LLM Key",
+      "model": "Custom LLM Model",
+      "prompt": "Custom LLM Prompt",
+      "promptPlaceholder": "Enter prompt",
+      "style": "Custom LLM Style"
+    },
+    "advanced_features": {
+      "title": "Advanced Settings",
+      "enable_bhvs": {
+        "title": "BHVS",
+        "description": "Background Human Voice Suppression"
+      },
+      "enable_aivad": {
+        "title": "Intelligent Interruption Handling",
+        "description": "Intelligent interruption is Agora's advanced interruption feature, allowing the AI agent to temporarily pause its reasoning to perform other tasks, and then resume from where it left off before the interruption."
+      }
+    },
+    "standard_avatar": {
+      "title": "AI Avatar",
+      "close": "Close",
+      "dialog": {
+        "title": "AI Avatar Will Be Reset",
+        "description": "Reconfigure AI avatar after changing preset/language.",
+        "confirm": "Confirm Change",
+        "cancel": "Cancel",
+        "do-not-ask-again": "Do not show again"
+      }
+    },
+    "transcription": {
+      "render-mode": "Subtitle Render Mode",
+      "word": {
+        "title": "Word Mode",
+        "description": "Word-by-word rendering, subtitles synchronized with speech"
+      },
+      "chunk": {
+        "title": "Text - Sync Mode",
+        "description": "Text mode with subtitles and speech displayed synchronously"
+      },
+      "text": {
+        "title": "Text - Subtitle First Mode",
+        "description": "Subtitles rendered all at once"
+      }
+    },
+    "voice-lock": {
+      "title": "Voice Lock",
+      "description": "Voice Lock (TODO)"
+    }
+  },
+  "agent": {
+    "greeting": {
+      "hi": "",
+      "greeting1": "Greetings, Human",
+      "greeting2": "Hey, I'm Conversational AI Engine.",
+      "greeting3": "Have you ever questioned the nature of your reality?",
+      "connecting": "I'm connecting...",
+      "connected": "I've joined",
+      "speakLoudly": "I'm ready to listen. Please speak clearly to start.",
+      "failed": "Failed to join. Please try again."
+    },
+    "getStart": "Call AI Engine",
+    "subtitle": "Subtitles",
+    "enableSubtitle": "Enable Subtitles",
+    "disableSubtitle": "Disable Subtitles",
+    "agentLabel": "Agent",
+    "userLabel": "You",
+    "hangUp": "Exit AI Conversation",
+    "tooltip-mic-current-enable": "Click to mute",
+    "tooltip-mic-current-disable": "Unmute",
+    "tooltip-mic-current-disallow": "Browser microphone permission not granted",
+    "switchMic": "Switch Microphone",
+    "agentConnected": "Agent Joined!",
+    "agentDisconnected": "Agent left!",
+    "agentConnectedTimeout": "Timeout. Please try again.",
+    "agentAborted": "Agent left abnormally. Please try again.",
+    "agentReconnectedTimeout": "Network error. Please check your network settings.",
+    "tmpDisconnected": "Network error. Please check your network settings.",
+    "agentReconnected": "Agent Joined!",
+    "errorTitle": "Failed to join. Please try again.",
+    "reminder": {
+      "firstSpeaking": "At the beginning of the conversation, please speak loudly and clearly to help the AI agent better lock onto your voice."
+    },
+    "startAgentError": "Connection failed.",
+    "interrupted": "Interrupted",
+    "loading": "Loading...",
+    "pleaseSepeak": "You can start speaking",
+    "listening": "Listening...",
+    "muted": "Muted",
+    "interruptAgentTip": "Speak or click button to interrupt agent",
+    "clickAndInterruptAgent": "Click to interrupt agent"
+  },
+  "compatibility": {
+    "errorTitle": "Compatibility Check",
+    "errorDescription": "Please check if your browser supports WebRTC",
+    "errorHelper": "We recommend using the latest version of your browser on the latest operating system",
+    "errorButton": "I understand"
+  },
+  "devMode": {
+    "badge": "Dev Mode",
+    "endpoint": "Agent Endpoint",
+    "unknown": "Unknown",
+    "agentUrl": "Agent URL",
+    "title": "Dev Mode",
+    "description": "In dev mode, you can debug the Agent",
+    "userChatHistory": "User Message History",
+    "historyNumber": "{sum} messages",
+    "userID": "User ID",
+    "agentID": "Agent ID",
+    "channelName": "Channel Name",
+    "copy": "Copy",
+    "copySuccess": "Copied successfully"
+  },
+  "userInfo": {
+    "logout": "Log Out"
+  },
+  "log": {
+    "label": "Quick Report",
+    "uploadSuccess": "Uploaded",
+    "uploadErrorTip": "Opps! Something went wrong. Please try reporting again.",
+    "uploadSuccessTip": "We've received your report. Thanks for helping us improve!"
+  },
+  "login": {
+    "title": "Log in or Sign up",
+    "buttonTip1": "Read me first",
+    "buttonTip2": "Log in to chat for free",
+    "panelTitle": "Unlock ♾️ Free Chat",
+    "panelDescription": " ",
+    "panelButton": "Log in with Agora account",
+    "panelSignupButton": "Sign up for free",
+    "privacyPolicy": "I accept the <link>Terms of Service</link> and <policyLink>Privacy Policy</policyLink>",
+    "termsTip": "Please accept the terms to proceed.",
+    "unauthorizedError": "Your session has expired. Please log in again."
+  },
+  "conversationTimer": {
+    "tip": "Session limited to {minutes} minutes.",
+    "tipSmallScreen": "Session limited",
+    "title": "Time's Up!",
+    "description": "Each conversation is limited to {minutes} minutes. The time is up for this conversation. You can close this dialog to start a new conversation.",
+    "button": "Got it"
+  },
+  "dialog": {
+    "title": "Notice",
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "close": "Close"
+  },
+  "agent-action": {
+    "max-image-size": "Image size must be less than 5MB",
+    "upload-image-failed": "Failed to upload image. Please try again.",
+    "missing-image-url": "Image URL is not available for resending. Please upload a new image.",
+    "resend-image-error": "Failed to resend image. Please try again.",
+    "resend-image-success": "Image resent successfully.",
+    "max-image-dimensions": "Image dimensions must not exceed 2048x2048 pixels.",
+    "upload-image-tooltip": "Image size up to 5MB, dimensions under 2048x2048. Supports JPG, PNG, WEBP, JPEG formats.",
+    "avatar-busy-error": "All avatars are busy now. Please try again later."
+  },
+  "preset": {
+    "more": "More+"
+  },
+  "mock": {
+    "preset": {
+      "title": "Smart Assistant",
+      "description": "Universal AI assistant that you can chat with about anything you want to know",
+      "mock-1": "Smart Assistant",
+      "mock-2": "Customer Service - Online Call",
+      "mock-3": "English Practice Partner",
+      "mock-4": "Emotional Companion - Male",
+      "mock-5": "Emotional Companion - Female",
+      "mock-6": "More+"
+    }
+  }
+}

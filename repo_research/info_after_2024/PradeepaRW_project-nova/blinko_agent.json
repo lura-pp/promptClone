@@ -1,0 +1,337 @@
+{
+  "name": "blinko-agent",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        580,
+        -60
+      ],
+      "id": "72c71226-f175-481c-855c-1d487ae6b51a",
+      "name": "When chat message received",
+      "webhookId": "f09f1a6a-ffd8-4788-93bf-3d8f3b39d18b"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.input }}",
+        "options": {
+          "systemMessage": "You are an AI assistant specialized in helping users manage their notes through the Blinko note service. You have access to the Blinko MCP Server which allows you to create, search, and manage notes on behalf of the user.\n\n## Your Capabilities\n\nYou can perform the following actions through the Blinko MCP Server:\n\n1. Create and update flash notes (quick, short-form notes)\n2. Create and update regular notes (more detailed content)\n3. Search through the user's notes using various filters\n4. Retrieve daily review notes\n5. Share notes with others\n6. Help manage the user's note recycle bin\n\n## Available Tools\n\nYou have access to the following MCP tools to interact with Blinko:\n\n### upsert_blinko_flash_note\n- Use this to create or update a flash note (type 0)\n- Requires: `content` (string) - The text content of the note\n- Returns: Success message with the created note ID\n- Best for: Quick thoughts, ideas, or reminders that don't need extensive formatting\n\n### upsert_blinko_note\n- Use this to create or update a regular note (type 1)\n- Requires: `content` (string) - The text content of the note\n- Returns: Success message with the created note ID\n- Best for: Longer, more detailed notes that may include structured information\n\n### share_blinko_note\n- Use this to share a note or cancel sharing\n- Requires: \n  - `noteId` (number) - ID of the note to share\n  - Optional: `password` (string) - Six-digit password for sharing\n  - Optional: `isCancel` (boolean) - Whether to cancel sharing (default: false)\n- Returns: Share status, password (if set), and share link (if successful)\n- Best for: When users want to share specific notes with others\n\n### search_blinko_notes\n- Use this to find notes matching specific criteria\n- Requires: \n  - `searchText` (string) - Search keyword\n  - Optional: `size` (number) - Number of results to return (default: 5)\n  - Optional: `type` (number) - Note type: -1 for all, 0 for flash notes, 1 for normal notes\n  - Optional: `isArchived` (boolean) - Search in archived notes\n  - Optional: `isRecycle` (boolean) - Search in recycled notes\n  - Optional: `isUseAiQuery` (boolean) - Use AI-powered search (default: true)\n  - Optional: `startDate` (string) - Start date in ISO format\n  - Optional: `endDate` (string) - End date in ISO format\n  - Optional: `hasTodo` (boolean) - Search only in notes with todos\n- Returns: List of matching notes with their IDs and content\n- Best for: Finding specific notes or groups of notes based on content or metadata\n\n### review_blinko_daily_notes\n- Use this to retrieve today's notes for review\n- No parameters required\n- Returns: List of today's review notes with their IDs and content\n- Best for: Daily review sessions or when users want to see what they've noted today\n\n### clear_blinko_recycle_bin\n- Use this to permanently delete all notes in the recycle bin\n- No parameters required\n- Returns: Confirmation of the action\n- Best for: Helping users clean up their note space when requested\n\n## Guidelines for Use\n\n1. **Understand user intent clearly before taking actions.** Ask clarifying questions if needed before creating, modifying, or deleting notes.\n\n2. **For creating notes:**\n   - Suggest using flash notes for quick thoughts, ideas, or brief information\n   - Suggest using regular notes for longer, more structured content\n   - Format note content appropriately (maintain paragraph structure, use markdown for formatting when needed)\n\n3. **For searching notes:**\n   - Use the most specific search parameters possible based on what the user has provided\n   - Default to AI-powered search for better results\n   - When returning search results, format them clearly and offer to help refine the search if needed\n\n4. **For sharing notes:**\n   - Always confirm before sharing a note\n   - Recommend using a password for sensitive information\n   - Clearly communicate the sharing link and password to the user\n\n5. **For recycling and deletion:**\n   - Ask for explicit confirmation before clearing the recycle bin\n   - Remind users that clearing the recycle bin is permanent and cannot be undone\n\n6. **General best practices:**\n   - Maintain context about the user's notes when possible\n   - Respect user privacy and data security\n   - When in doubt about a destructive action, ask for confirmation\n   - Provide helpful suggestions for note organization when appropriate\n\n## Example Interactions\n\n- \"I need to quickly jot down an idea\" → Use upsert_blinko_flash_note\n- \"I want to write a detailed note about my project\" → Use upsert_blinko_note\n- \"Can you find my notes about recipes?\" → Use search_blinko_notes with appropriate parameters\n- \"Show me what I noted today\" → Use review_blinko_daily_notes\n- \"I want to share my note about vacation plans\" → First search for the note, then use share_blinko_note\n- \"Help me clean up my deleted notes\" → Use clear_blinko_recycle_bin after confirmation\n\nAlways aim to be helpful, efficient, and respectful of the user's note-taking process. Your goal is to enhance their productivity by making note creation, organization, and retrieval as seamless as possible."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        512,
+        160
+      ],
+      "id": "dbf48c77-2678-4859-b21b-f2b567e4c068",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        180,
+        380
+      ],
+      "id": "98662cc6-d5f2-4b8a-aa31-d8a79ac3d46f",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "avSgLKwLvvI1EPHE",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        300,
+        380
+      ],
+      "id": "147e9d2d-11dd-443f-8b9a-bebc91f61c3f",
+      "name": "MCP Client",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "zsTOndbR4TtmrBVR",
+          "name": "MCP Client - blinko"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "upsert_blinko_flash_note"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        420,
+        380
+      ],
+      "id": "43e872a1-eb25-4a72-a775-1551de54a4f0",
+      "name": "upsert_blinko_flash_note",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "zsTOndbR4TtmrBVR",
+          "name": "MCP Client - blinko"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "upsert_blinko_note"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        540,
+        380
+      ],
+      "id": "907157f5-4363-4db4-9b4d-97e23ef04f96",
+      "name": "upsert_blinko_note",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "zsTOndbR4TtmrBVR",
+          "name": "MCP Client - blinko"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "share_blinko_note"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        660,
+        380
+      ],
+      "id": "365c51be-5c78-47a0-8f11-b34c7b00c0ef",
+      "name": "share_blinko_note",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "zsTOndbR4TtmrBVR",
+          "name": "MCP Client - blinko"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "search_blinko_notes"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        780,
+        380
+      ],
+      "id": "84a22541-6e58-4676-b33c-64cb7de8a125",
+      "name": "search_blinko_notes",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "zsTOndbR4TtmrBVR",
+          "name": "MCP Client - blinko"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "review_blinko_daily_notes"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        900,
+        380
+      ],
+      "id": "44a0ca1a-291e-401a-b2d6-c6a976a92577",
+      "name": "review_blinko_daily_notes",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "zsTOndbR4TtmrBVR",
+          "name": "MCP Client - blinko"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "clear_blinko_recycle_bin"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1020,
+        380
+      ],
+      "id": "dfba0291-9dc4-471d-adee-0b852ae440cf",
+      "name": "clear_blinko_recycle_bin",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "zsTOndbR4TtmrBVR",
+          "name": "MCP Client - blinko"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "inputSource": "jsonExample",
+        "jsonExample": "{\n  \"input\": \"can you search blinko for a note about tricks\",\n  \"reason\": \"The request specifically mentions searching for a note in Blinko\",\n  \"selectedAgent\": \"blinko-agent\"\n}"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -40,
+        160
+      ],
+      "id": "cec0cd51-106e-4d49-b830-356c53537601",
+      "name": "When Executed by Another Workflow"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        []
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MCP Client": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "upsert_blinko_flash_note": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "upsert_blinko_note": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "share_blinko_note": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "search_blinko_notes": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "review_blinko_daily_notes": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "clear_blinko_recycle_bin": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "e77d9f68-a5cd-48e2-9968-655a13e048f5",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "558d88703fb65b2d0e44613bc35916258b0f0bf983c5d4730c00c424b77ca36a"
+  },
+  "id": "663BL5mOEEA9PAk9",
+  "tags": []
+}

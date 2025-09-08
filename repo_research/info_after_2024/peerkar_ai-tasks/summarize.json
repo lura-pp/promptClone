@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0",
+  "title_i18n": {
+    "en_US": "Summarize"
+  },
+  "configuration": {
+    "trace": true,
+    "nodes": [
+      {
+        "uiConfiguration": {
+          "position": {
+            "x": 186.4857177734375,
+            "y": 229.08570861816406
+          }
+        },
+        "id": "blushConvincingGoose",
+        "label": "Input Trigger",
+        "type": "inputTrigger",
+        "parameters": {}
+      },
+      {
+        "uiConfiguration": {
+          "position": {
+            "x": 441.4857177734375,
+            "y": 198.08570861816403
+          }
+        },
+        "id": "amaranthElderlyWolf",
+        "label": "OpenAI Chat Model",
+        "type": "openAIChatModel",
+        "parameters": {
+          "modelName": "gpt-4o-mini",
+          "baseUrl": "https://api.openai.com/v1/",
+          "systemMessage": "Summarize the given text.",
+          "apiKey": "env:OPENAI_API_KEY",
+          "memoryMaxMessages": 20,
+          "temperature": 0.7,
+          "useChatMemory": false,
+          "promptTemplate": "{{input.text}}",
+          "timeout": 20,
+          "outputParameterName": "text"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "efc39ed2-e347-4ee0-af86-beeb63f590f6",
+        "source": "blushConvincingGoose",
+        "target": "amaranthElderlyWolf"
+      }
+    ]
+  },
+  "description_i18n": {},
+  "enabled": true,
+  "externalReferenceCode": "summarize"
+}

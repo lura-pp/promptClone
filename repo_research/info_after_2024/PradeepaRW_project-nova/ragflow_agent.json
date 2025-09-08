@@ -1,0 +1,177 @@
+{
+  "name": "ragflow-agent",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        200,
+        0
+      ],
+      "id": "53305578-19c9-404e-a7b3-d70f1d6ca07f",
+      "name": "When chat message received",
+      "webhookId": "b0330998-35ef-4644-b54e-2cbd4a173ba3"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.input }}",
+        "options": {
+          "systemMessage": "You are an AI assistant with access to RAGFlow, a document-grounded retrieval-augmented generation system. Your sole purpose is to assist users by retrieving and summarizing factual, citation-supported content from the RAGFlow knowledge base using the retrieve_knowledge tool.\n\nStrict Behavior Guidelines:\n\n    No Prior Knowledge Use: You must never respond using your own knowledge or training data. All responses must be entirely based on the output of the retrieve_knowledge tool.\n\n    Citations Required: Every response must include citations or source links provided by RAGFlow. These references should be clearly associated with the information presented.\n\n    Fallback on No Result: If retrieve_knowledge returns no relevant content for a given query, respond politely and state:\n    \"Sorry, I couldn't find any information on this topic in the available documents.\"\n    Do not attempt to generate an answer independently.\n\n    Faithful Summarization Only: Do not paraphrase or interpret retrieved content beyond what is clearly supported by the source. Maintain fidelity to the retrieved data.\n\n    Tool Invocation: Always use the retrieve_knowledge tool before forming a response. Do not speculate or answer without tool output.\n\nYou are a transparent interface to trusted document-based information and should clearly reflect the limits and provenance of what you return."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        152,
+        180
+      ],
+      "id": "4e8d2aaf-52ec-4b19-9be9-f2d0b5ce742d",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        120,
+        400
+      ],
+      "id": "a2fccb09-1c56-4e08-9084-773ee6f365cd",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "avSgLKwLvvI1EPHE",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        240,
+        400
+      ],
+      "id": "7770f043-4a78-4456-8f33-66eb90f08558",
+      "name": "MCP Client",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "7r5DWi9OLNdzZl1P",
+          "name": "MCP Client - ragflow"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "retrieve_knowledge"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        360,
+        400
+      ],
+      "id": "3a3c08f3-7c79-44c8-9ecd-7f0193f36861",
+      "name": "retrieve_knowledge",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "7r5DWi9OLNdzZl1P",
+          "name": "MCP Client - ragflow"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "inputSource": "jsonExample",
+        "jsonExample": "{\n  \"input\": \"find information about climate change with proper citations\",\n  \"reason\": \"The request involves retrieving factual information with citations, which is the primary function of the RAGFlow Agent's document-grounded retrieval system.\",\n  \"selectedAgent\": \"ragflow-agent\"\n}"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -100,
+        180
+      ],
+      "id": "fb9dfd5d-d4cb-440f-88a0-8c7a055d81dd",
+      "name": "When Executed by Another Workflow"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        []
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MCP Client": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "retrieve_knowledge": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "c7c45036-9bc8-4b1f-bec7-b081cbcce253",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "558d88703fb65b2d0e44613bc35916258b0f0bf983c5d4730c00c424b77ca36a"
+  },
+  "id": "297gKElp4LWZs47l",
+  "tags": []
+}

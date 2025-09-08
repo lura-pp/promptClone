@@ -1,0 +1,20 @@
+{
+    "code_review_prompts.py": 1,
+    "formatting_instructions.py": 1,
+    "generic_tools_agent_prompts.py": 1,
+    "security_tools_prompts.py": 2,
+    "document_prompts.py": 1,
+    "code_refactor_prompts.py": 1,
+    "stubbing_agent.py": 1,
+    "yelp_tool.py": 1,
+    "cvss_tool.py": 1,
+    "settings_tool.py": 2,
+    "g_news_tool.py": 1,
+    "code_tool.py": 1,
+    "code_refactor_tool.py": 1,
+    "code_review_tool.py": 1,
+    "code_repository_tool.py": 5,
+    "document_tool.py": 1,
+    "weather_tool.py": 1,
+    "discord.json": 3
+}

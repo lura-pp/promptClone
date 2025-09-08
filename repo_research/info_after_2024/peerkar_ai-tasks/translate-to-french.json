@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0",
+  "title_i18n": {
+    "en_US": "Translate to French"
+  },
+  "configuration": {
+    "trace": true,
+    "nodes": [
+      {
+        "uiConfiguration": {
+          "position": {
+            "x": 107.4857177734375,
+            "y": 205.08570861816406
+          }
+        },
+        "id": "ivorySocialFlamingo",
+        "label": "Input Trigger",
+        "type": "inputTrigger",
+        "parameters": {}
+      },
+      {
+        "uiConfiguration": {
+          "position": {
+            "x": 409.4857177734375,
+            "y": 171.75237528483072
+          }
+        },
+        "id": "coralGoverningHeron",
+        "label": "OpenAI Chat Model",
+        "type": "openAIChatModel",
+        "parameters": {
+          "modelName": "gpt-4o-mini",
+          "baseUrl": "https://api.openai.com/v1/",
+          "systemMessage": "Translate the given text to French.",
+          "apiKey": "env:OPENAI_API_KEY",
+          "memoryMaxMessages": 20,
+          "temperature": 0.7,
+          "useChatMemory": false,
+          "promptTemplate": "{{input.text}}",
+          "timeout": 20,
+          "outputParameterName": "text"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "14be48d1-a495-42be-906c-329320ab3b7d",
+        "source": "ivorySocialFlamingo",
+        "target": "coralGoverningHeron"
+      }
+    ]
+  },
+  "description_i18n": {},
+  "enabled": true,
+  "externalReferenceCode": "translate-to-french"
+}

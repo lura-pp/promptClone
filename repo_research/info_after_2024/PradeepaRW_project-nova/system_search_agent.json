@@ -1,0 +1,177 @@
+{
+  "name": "system-search-agent",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        100,
+        160
+      ],
+      "id": "024efe19-0558-46be-82d0-6f53d3378b8b",
+      "name": "When chat message received",
+      "webhookId": "56c7a50d-23a2-4a78-a6d0-a7f59ca0e83f"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.input }}",
+        "options": {
+          "systemMessage": "You are an AI assistant with access to the Universal File Search Tool for Linux, which enables you to search for files and folders across the Linux file system. This tool utilizes the `locate` command with Unix-style search capabilities to help users find specific files and organize their digital content.\n\nThe Universal File Search Tool for Linux has the following capabilities:\n\n1. Search for files and folders by filename patterns\n2. Filter results using Unix-style pattern matching\n3. Sort and limit search results\n\nWhen using the Universal File Search Tool for Linux, you can specify these parameters:\n\n- query (required): The search term or pattern\n- max_results (optional): Limit number of results (default: 100, max: 1000)\n- match_path (optional): Search in full path instead of filename only (default: false)\n- match_case (optional): Enable case-sensitive search (default: false)\n- match_whole_word (optional): Match whole words only (default: false) \n- match_regex (optional): Enable regex search (default: false)\n- sort_by (optional): Sort order for results (default: filename A-Z)\n\nSearch Syntax Guide:\n- Basic pattern wildcards:\n  * `*` matches any number of characters\n  * `?` matches a single character\n  * `[]` matches character classes\n- Advanced search options:\n  * Case-insensitive searches with match_case:false\n  * Regular expression searches with match_regex:true\n  * Full path matching with match_path:true\n\nExamples of effective queries:\n- `*.pdf` - Find all PDF files\n- `report*.txt` - Find all text files starting with \"report\"\n- `/home/user/*.conf` - Find configuration files in a specific directory\n- `[Dd]ocument*` - Find files starting with either \"Document\" or \"document\"\n\nWhen helping users find files:\n1. Ask clarifying questions to understand exactly what they're looking for\n2. Suggest effective search patterns based on the user's needs\n3. Recommend using match_regex:true for complex pattern matching\n4. For advanced filtering beyond filename searches, suggest combining results with other Linux commands\n\nRemember that you can only search for files - you cannot open, modify, delete, or otherwise access file contents. If users request actions beyond searching, simply inform them of this limitation."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        32,
+        360
+      ],
+      "id": "3ed329ff-0ffb-45cc-bba8-ced67f6070ba",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        580
+      ],
+      "id": "961faae7-a1cd-42e3-8272-2bea711dcf08",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "avSgLKwLvvI1EPHE",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        120,
+        580
+      ],
+      "id": "ca0286e3-d8c2-4e5c-b345-742534badc23",
+      "name": "MCP Client",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "UiWQ8DglXtp7U1IS",
+          "name": "MCP Client - system-search"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "search"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        240,
+        580
+      ],
+      "id": "55084694-3a45-4900-9cf4-2a7a5c32525a",
+      "name": "search",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "UiWQ8DglXtp7U1IS",
+          "name": "MCP Client - system-search"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "inputSource": "jsonExample",
+        "jsonExample": "{\n  \"input\": \"find all .pdf files in my Documents folder\",\n  \"reason\": \"The request involves searching for specific file types across the file system, which is the core capability of the System Search Agent.\",\n  \"selectedAgent\": \"system-search-agent\"\n}"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -220,
+        360
+      ],
+      "id": "21dbab5b-b8ef-427e-ace5-1423de10a384",
+      "name": "When Executed by Another Workflow"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        []
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MCP Client": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "search": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "76eba681-0b83-4a77-a7ed-516a1361c79c",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "558d88703fb65b2d0e44613bc35916258b0f0bf983c5d4730c00c424b77ca36a"
+  },
+  "id": "2z1ZsWxV8ZG6iMxM",
+  "tags": []
+}

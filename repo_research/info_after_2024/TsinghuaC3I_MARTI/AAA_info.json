@@ -1,0 +1,11 @@
+{
+    "aime.json": 26,
+    "math.json": 308,
+    "gpqa.json": 181,
+    "amc.json": 66,
+    "minerva.json": 228,
+    "olympiad_bench.json": 506,
+    "train.json": 6000,
+    "test.json": 0,
+    "mathchat_workflow.py": 3
+}

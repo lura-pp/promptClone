@@ -1,0 +1,11 @@
+{
+    "process_agent.py": 1,
+    "code_agent.py": 1,
+    "hypothesis_agent.py": 1,
+    "report_agent.py": 1,
+    "search_agent.py": 1,
+    "quality_review_agent.py": 1,
+    "note_agent.py": 1,
+    "visualization_agent.py": 1,
+    "refiner_agent.py": 1
+}

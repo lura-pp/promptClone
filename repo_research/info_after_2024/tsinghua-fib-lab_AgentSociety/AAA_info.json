@@ -1,0 +1,18 @@
+{
+    "societyagent.py": 1,
+    "utils.py": 1,
+    "plan_block.py": 3,
+    "needs_block.py": 4,
+    "economy_block.py": 1,
+    "other_block.py": 0,
+    "mobility_block.py": 6,
+    "cognition_block.py": 5,
+    "social_block.py": 2,
+    "agent.py": 1,
+    "dispatcher.py": 1,
+    "sharing_params.py": 0,
+    "defaults.py": 2,
+    "message_probe.py": 3,
+    "message_agents.py": 4,
+    "message_agent.py": 0
+}

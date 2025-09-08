@@ -1,0 +1,52 @@
+{
+  "Metadata": {
+    "title": "IMGPrompt - AIアート用スマートプロンプト生成器 | Midjourney・Stable Diffusion・DALL·E・FLUX",
+    "description": "AIアートのプロンプトに困っていませんか？IMGPromptならMidjourneyやStable Diffusion、DALL·Eに対応したスマートなプロンプトを生成し、無限の創作アイデアを引き出します。",
+    "keywords": "IMGPrompt、安定した拡散、Midjourney、DALL·E、FLUX、画像プロンプト生成、ビジュアルクリエイティビティツール、プロンプト、AI、プロンプト推奨、プロンプトの翻訳、画像プロンプト"
+  },
+  "ToolPage": {
+    "section1": "件名を選択",
+    "section2": "カテゴリを絞り込む",
+    "section3": "タグを追加",
+    "currentSelection": "選択されたプロンプト",
+    "hierarchyTip": "操作手順: 件名を選択 → カテゴリを絞り込む → タグを追加"
+  },
+  "ResultSection": {
+    "tooltip-light": "ポートレート照明テンプレートを適用する（フィルム照明、夕暮れの光線などを含む）",
+    "prompt-light": "ポートレート照明",
+    "tooltip-polish": "画像最適化パラメータ（解像度向上/芸術的スタイル向上）を読み込む",
+    "prompt-polish": "品質の最適化",
+    "insertSuccess": "最適化パラメータがプロンプトに追加されました",
+    "tooltip-negative": "よくある否定的なプロンプトをコピーする（よくある欠陥を避けるため）",
+    "prompt-negative": "否定プロンプト",
+    "prompt": "プロンプト",
+    "button-copy": "コピー",
+    "clearSuccess": "プロンプトはクリアされました",
+    "button-clear": "クリア",
+    "tooltip-translate": "任意の言語でテキストを入力すると英語に翻訳されます",
+    "button-translate": "翻訳する",
+    "translateSuccess": "翻訳が成功し、プロンプトに追加されました",
+    "translateEmptyError": "翻訳するコンテンツを入力してください",
+    "translateFailError": "翻訳に失敗しました。もう一度お試しください",
+    "title-other": "高度な機能:",
+    "tooltip-randomColor": "ランダムに色を変更するプロンプト",
+    "button-randomcolor": "ランダムカラー"
+  },
+  "CopyToClipboard": {
+    "empty": "コンテンツが空なのでコピーするものがありません",
+    "unsupported": "お使いのブラウザはクリップボード操作をサポートしていません。手動でコピーするか、別のブラウザを使用してください。",
+    "success": "コピーに成功しました。AIペイントツールに貼り付けることができます。",
+    "failure": "コピーに失敗しました。手動でコピーしてください。"
+  },
+  "feedback": {
+    "feedback1": "フィードバックと提案",
+    "feedback2": "使用中に問題が発生した場合や、ご提案やアイデアがある場合は、お気軽にお知らせください。皆様のフィードバックは、将来の機能の開発と改善に直接影響し、皆様のニーズをよりよく満たすツールの作成に役立ちます。",
+    "feedback3": "使用事例や発生した問題を詳しく記述するか、独創的なアイデアを共有してください。フィードバックを一つ一つ慎重に検討し、できるだけ早く調整と最適化を行います。",
+    "reaction0": "上",
+    "reaction1": "サポート",
+    "reaction2": "いいね",
+    "reaction3": "何？",
+    "reaction4": "パズル",
+    "placeholder": "メッセージを残してください。ログインは必要ありません（返信通知を受け取るにはメールアドレスを入力してください）"
+  }
+}

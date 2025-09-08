@@ -1,0 +1,103 @@
+parameters:
+  - name: PathToArtifacts
+    type: string
+  - name: Registry
+    type: string
+  - name: Tag
+    type: string
+
+steps:
+  - template: /eng/common/pipelines/templates/steps/set-default-branch.yml
+
+  - template: /eng/common/pipelines/templates/steps/create-authenticated-npmrc.yml
+    parameters:
+      npmrcPath: ${{parameters.PathToArtifacts}}/.npmrc
+      registryUrl: ${{parameters.Registry}}
+
+  - pwsh: |
+      $platformFiles = Get-ChildItem -Path ./platform -Filter *.tgz
+      $wrapperFiles = Get-ChildItem -Path ./wrapper -Filter *.tgz
+      $tgzFiles = $platformFiles + $wrapperFiles
+
+      if ($tgzFiles.Count -eq 0) {
+        Write-Host "No .tgz files found in ${{parameters.PathToArtifacts}}"
+        exit 1
+      }
+
+      Write-Host "Publishing the following files to ${{parameters.Registry}}:"
+      foreach ($file in $tgzFiles) {
+        Write-Host "  - $($file.FullName)"
+      }
+
+      $tag = '${{parameters.Tag}}'
+      foreach ($file in $tgzFiles) {
+        $command = "npm publish '$file' --access public --tag '$tag'"
+        Write-Host "> $command"
+        Invoke-Expression $command
+        if (!$?) {
+          exit 1
+        }
+      }
+    displayName: Publish packages to dev feed
+    workingDirectory: ${{parameters.PathToArtifacts}}
+
+  - pwsh: |
+      $version = $env:VERSION
+      $registryUrl = $env:REGISTRY_URL
+
+      if($registryUrl -match 'https://pkgs.dev.azure.com/(?<org>.+?)/(?<project>.+?)/_packaging/(?<feed>.+?)/npm/registry/')
+      {
+        $connectInstructions = "To connect to the feed, use the NPM connection instructions:  `n" +
+          "https://dev.azure.com/$($matches['org'])/$($matches['project'])/_artifacts/$($matches['feed'])/connect`n`n"
+      } else {
+        $connectInstructions = ""
+      }
+
+      $markdown = @"
+      $connectInstructions
+      To run the dev version of the package, you can use the following command:
+      ``````bash
+      npx --yes --registry '$registryUrl' @azure/mcp@$version --version
+      ``````
+
+      You can also globally install the package and run it like:
+      ``````bash
+      npm install --registry '$registryUrl' -g @azure/mcp@$version
+
+      azmcp --version
+      ``````
+
+      ## mcp.json
+
+      Configure the server in ``.vscode/mcp.json`` with:
+      ``````json
+      {
+        "servers": {
+          "Azure MCP Server": {
+            "command": "npx",
+            "args": [
+              "-y",
+              "--registry",
+              "$registryUrl",
+              "@azure/mcp@$version",
+              "server",
+              "start"
+            ]
+          }
+        }
+      }
+      ``````
+      "@
+
+      New-Item './.work' -ItemType Directory -Force | Out-Null
+      $path = './.work/Usage.md'
+
+      Set-Content -Path $path -Value $markdown -Encoding utf8
+      $file = Get-Item $path
+      Write-Host "Wrote summary to $($file.FullName). Uploading..."
+      Write-Host "##vso[task.uploadsummary]$($file.FullName)"
+    displayName: "Document dev version usage"
+    env:
+      REGISTRY_URL: ${{parameters.Registry}}
+      VERSION: $(Version)
+    workingDirectory: $(Pipeline.Workspace)

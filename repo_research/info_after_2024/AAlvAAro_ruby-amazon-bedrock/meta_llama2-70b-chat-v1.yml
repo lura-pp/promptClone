@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://bedrock-runtime.us-east-1.amazonaws.com/model/meta.llama2-70b-chat-v1/invoke
+    body:
+      encoding: UTF-8
+      string: '{"prompt":"Give me a short list of steps for creating a Ruby gem","max_gen_len":512,"temperature":0.2,"top_p":0.9}'
+    headers:
+      Accept-Encoding:
+      - ''
+      Content-Type:
+      - application/json
+      Accept:
+      - "*/*"
+      User-Agent:
+      - aws-sdk-ruby3/3.189.0 ua/2.0 api/bedrock_runtime#1.4.0 os/macos#22 md/arm64
+        lang/ruby#3.2.2 md/3.2.2 cfg/retry-mode#legacy
+      Host:
+      - bedrock-runtime.us-east-1.amazonaws.com
+      Content-Length:
+      - '114'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 06 Dec 2023 05:50:54 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '614'
+      Connection:
+      - keep-alive
+      X-Amzn-Requestid:
+      - 80aca649-324a-4e0a-bcf3-0d3985d004b5
+      X-Amzn-Bedrock-Invocation-Latency:
+      - '6196'
+      X-Amzn-Bedrock-Output-Token-Count:
+      - '133'
+      X-Amzn-Bedrock-Input-Token-Count:
+      - '13'
+    body:
+      encoding: UTF-8
+      string: '{"generation":".\n\n1. Choose a name for your gem and ensure it is
+        available.\n2. Create a new directory for your gem and initialize it as a
+        Ruby project.\n3. Write the code for your gem, including a `lib` directory
+        and any necessary files.\n4. Test your gem by writing test cases and running
+        them.\n5. Document your gem by creating a `README` file and any other necessary
+        documentation.\n6. Package your gem by creating a `gemfile` and running the
+        `bundle gem` command.\n7. Publish your gem to a gem hosting service such as
+        RubyGems.org.","prompt_token_count":13,"generation_token_count":133,"stop_reason":"stop"}'
+  recorded_at: Wed, 06 Dec 2023 05:50:54 GMT
+recorded_with: VCR 6.2.0

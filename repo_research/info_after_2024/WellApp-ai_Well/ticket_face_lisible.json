@@ -1,0 +1,13 @@
+{
+    "style": "Flat, front-facing thermal receipt on wooden table",
+    "camera_angle": "perfectly top-down (90 degrees), no perspective tilt",
+    "text_legibility": "very high, perfectly readable, clear black ink on white paper",
+    "font": "Arial or regular sans-serif font (no artistic rendering)",
+    "paper_texture": "flat thermal paper, no curl, no shadow on text area",
+    "receipt_layout": "straight lines, standard spacing, visible item lines and prices",
+    "background": "natural wood table, soft and uniform lighting",
+    "lighting": "even soft diffuse light, no shadows on the text",
+    "photo_effects": ["no blur", "no vignette", "no grain"],
+    "instructions": "Do NOT roll, curl or distort the paper. The receipt must appear perfectly straight and readable, as if scanned from above."
+  }
+  

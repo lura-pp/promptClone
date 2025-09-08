@@ -1,0 +1,18 @@
+{
+    "_prompts.py": 1,
+    "entity_summarization.py": 1,
+    "entity_extraction.py": 3,
+    "community_report_summarization.py": 1,
+    "entity_types.py": 2,
+    "domain.py": 1,
+    "community_reporter_role.py": 1,
+    "language.py": 1,
+    "community_report_rating.py": 1,
+    "persona.py": 1,
+    "entity_relationship.py": 3,
+    "prompts.py": 6,
+    "defaults.py": 1,
+    "map_system_prompt.py": 1,
+    "reduce_system_prompt.py": 2,
+    "system_prompt.py": 2
+}

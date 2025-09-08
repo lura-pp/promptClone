@@ -1,0 +1,9 @@
+{
+    "prompts.py": 1,
+    "lt_eval.py": 1,
+    "mmlu.py": 2,
+    "__init__.py": 2,
+    "gpqa.py": 2,
+    "mathvista.py": 3,
+    "scienceqa.py": 2
+}

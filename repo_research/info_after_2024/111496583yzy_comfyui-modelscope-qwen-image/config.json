@@ -1,0 +1,18 @@
+{
+  "default_model": "Qwen/Qwen-Image",
+  "timeout": 720,
+  "image_download_timeout": 30,
+  "default_prompt": "A beautiful landscape",
+  "default_negative_prompt": "",
+  "default_width": 512,
+  "default_height": 512,
+  "default_seed": -1,
+  "default_steps": 30,
+  "default_guidance": 7.5,
+  "default_chat_model": "Qwen/Qwen3-Coder-480B-A35B-Chat",
+  "default_chat_prompt": "你好，请介绍一下你自己。",
+  "default_text_model": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
+  "default_system_prompt": "You are a helpful assistant.",
+  "default_user_prompt": "你好，请介绍一下你自己。",
+  "api_token": ""
+}

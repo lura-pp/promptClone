@@ -1,0 +1,9 @@
+{
+    "idt_config.py": 1,
+    "create_title.py": 1,
+    "create_thumbnail_prompt.py": 1,
+    "create_hashtags.py": 2,
+    "create_description.py": 1,
+    "create_formatted_references.py": 1,
+    "prompts.py": 1
+}

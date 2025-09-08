@@ -1,0 +1,418 @@
+name: Create Video with Background Removal
+
+on:
+  workflow_dispatch:
+    inputs:
+      video_prompt:
+        description: '動画生成プロンプト (例: 猫が公園で遊んでいる様子)'
+        required: true
+        type: string
+      background_color:
+        description: '背景色指定'
+        required: false
+        default: 'transparent'
+        type: choice
+        options:
+        - transparent
+        - white
+        - black
+        - green
+      rembg_model:
+        description: 'rembg使用モデル'
+        required: false
+        default: 'u2net'
+        type: choice
+        options:
+        - u2net
+        - u2netp
+        - u2net_human_seg
+        - isnet-anime
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: read
+  issues: write
+
+jobs:
+  setup-branch:
+    runs-on: ubuntu-latest
+    outputs:
+      branch-name: ${{ steps.branch.outputs.branch-name }}
+      sanitized-prompt: ${{ steps.sanitize.outputs.sanitized-prompt }}
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.PAT_TOKEN || github.token }}
+        
+    - name: Sanitize prompt for branch name
+      id: sanitize
+      run: |
+        SANITIZED=$(echo "${{ github.event.inputs.video_prompt }}" | sed 's/[^a-zA-Z0-9]/-/g' | sed 's/--*/-/g' | sed 's/^-\|-$//g' | cut -c1-50)
+        echo "sanitized-prompt=$SANITIZED" >> $GITHUB_OUTPUT
+        
+    - name: Create branch name
+      id: branch
+      run: |
+        TIMESTAMP=$(date +%Y%m%d-%H%M%S)
+        BRANCH_NAME="video-bg-removal/${{ steps.sanitize.outputs.sanitized-prompt }}-$TIMESTAMP"
+        echo "branch-name=$BRANCH_NAME" >> $GITHUB_OUTPUT
+        
+    - name: Create and switch to new branch
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git checkout -b "${{ steps.branch.outputs.branch-name }}"
+        git push -u origin "${{ steps.branch.outputs.branch-name }}"
+
+  generate-video:
+    needs: setup-branch
+    runs-on: ubuntu-latest
+    outputs:
+      video-path: ${{ steps.set-output.outputs.video-path }}
+      output-dir: ${{ steps.set-output.outputs.output-dir }}
+      folder-name: ${{ steps.set-output.outputs.folder-name }}
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        ref: ${{ needs.setup-branch.outputs.branch-name }}
+        token: ${{ secrets.PAT_TOKEN || github.token }}
+        
+    - name: Setup output directory
+      id: setup
+      run: |
+        SANITIZED="${{ needs.setup-branch.outputs.sanitized-prompt }}"
+        if [ -z "$SANITIZED" ] || [ "$SANITIZED" = "-" ]; then
+          SANITIZED="video"
+        fi
+        OUTPUT_DIR="${SANITIZED}-$(date +%Y%m%d-%H%M%S)"
+        echo "Creating directory: $OUTPUT_DIR"
+        mkdir -p "$OUTPUT_DIR"/{original,frames,processed,final}
+        echo "output-dir=$OUTPUT_DIR" >> $GITHUB_OUTPUT
+        
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+    
+    - name: Install Claude Code SDK
+      run: npm install @anthropic-ai/claude-code
+        
+    - name: 動画生成エージェント (Veo3)
+      id: generate
+      env:
+        ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      run: |
+        echo "::group::🎬 Video Generation Agent Execution (Veo3)"
+        echo "Starting at: $(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)"
+        
+        # 設定
+        VIDEO_PROMPT="${{ github.event.inputs.video_prompt }}"
+        OUTPUT_DIR="${{ steps.setup.outputs.output-dir }}"
+        VIDEO_DIR="$OUTPUT_DIR/original"
+        MCP_CONFIG_ABS_PATH="$(pwd)/.claude/mcp-kamuicode.json"
+        
+        echo "Video prompt: $VIDEO_PROMPT"
+        echo "Output directory: $OUTPUT_DIR"
+        echo "Video directory: $VIDEO_DIR"
+        echo "MCP config: $MCP_CONFIG_ABS_PATH"
+        
+        # プロンプト作成
+        VIDEO_PROMPT_FULL="🎬 **動画生成タスク - Veo3エージェント**
+
+        **あなたの役割**: Veo3を使用して高品質動画を生成する専門エージェント
+
+        **生成指示**:
+        1. プロンプト「$VIDEO_PROMPT」でVeo3を使用して動画を生成
+        2. 生成した動画を「$VIDEO_DIR/generated-video.mp4」として保存
+        3. 動画の詳細情報（長さ、解像度、ファイルサイズ）を表示
+        4. 生成完了の確認メッセージを表示
+
+        **重要**: 必ず正しいツール名を使用してください:
+        - mcp__t2v-fal-veo3-fast__veo3_fast_submit
+        - mcp__t2v-fal-veo3-fast__veo3_fast_status  
+        - mcp__t2v-fal-veo3-fast__veo3_fast_result
+
+        **保存先**:
+        - 動画ディレクトリ: $VIDEO_DIR
+        - 動画ファイル: generated-video.mp4"
+        
+        npx @anthropic-ai/claude-code \
+          --mcp-config="$MCP_CONFIG_ABS_PATH" \
+          --allowedTools "mcp__t2v-fal-veo3-fast__veo3_fast_submit,mcp__t2v-fal-veo3-fast__veo3_fast_status,mcp__t2v-fal-veo3-fast__veo3_fast_result,Bash" \
+          --max-turns 50 \
+          --verbose \
+          --permission-mode "acceptEdits" \
+          -p "$VIDEO_PROMPT_FULL" || {
+            echo "::error::❌ Video generation failed"
+            exit 1
+          }
+        
+        # 生成された動画の確認
+        echo ""
+        echo "🎬 Checking generated video..."
+        if [ -f "$VIDEO_DIR/generated-video.mp4" ]; then
+          VIDEO_SIZE=$(stat -f%z "$VIDEO_DIR/generated-video.mp4" 2>/dev/null || stat -c%s "$VIDEO_DIR/generated-video.mp4" 2>/dev/null || echo "unknown")
+          echo "::notice::🎬 Video generated successfully: generated-video.mp4 (${VIDEO_SIZE} bytes)"
+        else
+          echo "::error::❌ Video file not found: $VIDEO_DIR/generated-video.mp4"
+          echo "Available files in $VIDEO_DIR:"
+          ls -la "$VIDEO_DIR/" || echo "Directory not found"
+          exit 1
+        fi
+        
+        echo "::endgroup::"
+        
+    - name: Commit generated video
+      run: |
+        OUTPUT_DIR="${{ steps.setup.outputs.output-dir }}"
+        
+        # Verify directory structure before commit
+        echo "Verifying directory structure before commit:"
+        ls -la "$OUTPUT_DIR"/ || echo "Output directory not found"
+        
+        # Create .gitkeep files to ensure empty directories are tracked
+        touch "$OUTPUT_DIR/frames/.gitkeep"
+        touch "$OUTPUT_DIR/processed/.gitkeep"
+        touch "$OUTPUT_DIR/final/.gitkeep"
+        
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add "$OUTPUT_DIR"
+        git commit -m "Add generated video for background removal
+
+        Video prompt: ${{ github.event.inputs.video_prompt }}
+        Generated at: $(date)
+        
+        🤖 Generated with [Claude Code](https://claude.ai/code)
+        
+        Co-Authored-By: Claude <noreply@anthropic.com>"
+        git push
+        
+    - name: Set video path output
+      id: set-output
+      run: |
+        OUTPUT_DIR="${{ steps.setup.outputs.output-dir }}"
+        echo "video-path=$OUTPUT_DIR/original/generated-video.mp4" >> $GITHUB_OUTPUT
+        echo "output-dir=$OUTPUT_DIR" >> $GITHUB_OUTPUT
+        echo "folder-name=$OUTPUT_DIR" >> $GITHUB_OUTPUT
+
+  remove-background:
+    needs: [setup-branch, generate-video]
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        ref: ${{ needs.setup-branch.outputs.branch-name }}
+        token: ${{ secrets.PAT_TOKEN || github.token }}
+        
+    - name: Setup Python environment
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y ffmpeg
+        pip install rembg[cpu] opencv-python pillow numpy
+        
+    - name: Setup Node.js for background removal
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+    
+    - name: Install Claude Code SDK for background removal
+      run: npm install @anthropic-ai/claude-code
+        
+    - name: 背景除去エージェント (rembg + ffmpeg)
+      id: background-removal
+      env:
+        ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      run: |
+        echo "::group::🎨 Background Removal Agent Execution (rembg + ffmpeg)"
+        echo "Starting at: $(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)"
+        
+        # 設定
+        FOLDER_NAME="${{ needs.generate-video.outputs.folder-name }}"
+        VIDEO_PROMPT="${{ github.event.inputs.video_prompt }}"
+        BACKGROUND_COLOR="${{ github.event.inputs.background_color }}"
+        REMBG_MODEL="${{ github.event.inputs.rembg_model }}"
+        MCP_CONFIG_ABS_PATH="$(pwd)/.claude/mcp-kamuicode.json"
+        
+        echo "Folder name: $FOLDER_NAME"
+        echo "Background color: $BACKGROUND_COLOR"
+        echo "Rembg model: $REMBG_MODEL"
+        echo "MCP config: $MCP_CONFIG_ABS_PATH"
+        
+        # プロンプト作成
+        REMOVAL_PROMPT_FULL="🎨 **動画背景除去タスク - rembgエージェント**
+
+        **あなたの役割**: rembgとffmpegを使用して動画の背景を除去する専門エージェント
+
+        **処理手順**:
+        1. 動画「$FOLDER_NAME/original/generated-video.mp4」から音声を分離・保存
+        2. 動画をフレームに分割
+        3. 各フレームにrembgで背景除去を適用（モデル: $REMBG_MODEL）
+        4. 背景色「$BACKGROUND_COLOR」を適用
+        5. 処理済みフレームから動画を再構築
+        6. 分離していた音声を最終動画に結合
+        7. 最終動画を「$FOLDER_NAME/final/video-background-removed.mp4」または「.webm」として保存
+
+        **技術仕様**:
+        - rembgモデル: $REMBG_MODEL
+        - 背景色: $BACKGROUND_COLOR (transparent/white/black/green)
+        - フレームレート: 30fps（元動画と同じ）
+        - 音声形式: AAC（音声がある場合）
+        - 透明背景の場合: WebM形式で出力
+        - 不透明背景の場合: MP4形式で出力
+        - **重要**: 最終動画の長さは元動画と完全に一致させること
+
+        **必要な処理**:
+        ```bash
+        cd $FOLDER_NAME
+        
+        # ディレクトリ準備
+        mkdir -p frames processed final
+        
+        # 元動画の情報を取得（フレームレート、長さ、解像度）
+        ORIGINAL_FPS=\$(ffprobe -v quiet -select_streams v:0 -show_entries stream=avg_frame_rate -of csv=p=0 original/generated-video.mp4)
+        ORIGINAL_DURATION=\$(ffprobe -v quiet -show_entries format=duration -of csv=p=0 original/generated-video.mp4)
+        
+        # 音声分離（元動画に音声がある場合）
+        ffmpeg -i original/generated-video.mp4 -vn -acodec copy original/audio.aac
+        
+        # フレーム抽出（元動画と同じフレームレートで）
+        ffmpeg -i original/generated-video.mp4 -vf fps=\$ORIGINAL_FPS frames/frame_%04d.png
+        
+        # rembgで背景除去 (Python)
+        # - rembg[$REMBG_MODEL]を使用
+        # - 背景色$BACKGROUND_COLORを適用
+        
+        # 動画再構築（元動画と同じフレームレート・長さで）
+        # フレームレート: \$ORIGINAL_FPS
+        # 長さ: \$ORIGINAL_DURATION秒
+        # transparent → WebM、その他 → MP4
+        
+        # 音声結合（音声ファイルが存在する場合）
+        # 最終動画に音声を合成し、元動画と同じ長さに調整
+        ```
+
+        **重要**: 
+        - rembgライブラリのインストール: pip install \"rembg[cpu]\" opencv-python pillow numpy
+        - 各フレームを個別に処理
+        - 音声分離・結合処理を含める
+        - 元動画に音声がない場合は音声処理をスキップ
+        - **必須**: 最終動画の長さを元動画と完全に一致させること
+        - ffprobeで元動画の正確な情報を取得すること
+        - エラーハンドリングを含める
+        - 処理進捗を表示"
+        
+        npx @anthropic-ai/claude-code \
+          --mcp-config="$MCP_CONFIG_ABS_PATH" \
+          --allowedTools "Bash" \
+          --max-turns 70 \
+          --verbose \
+          --permission-mode "acceptEdits" \
+          -p "$REMOVAL_PROMPT_FULL" || {
+            echo "::error::❌ Background removal failed"
+            exit 1
+          }
+        
+        # 処理結果の確認
+        echo ""
+        echo "🎨 Checking background removal results..."
+        if [ -f "$FOLDER_NAME/final/video-background-removed.mp4" ] || [ -f "$FOLDER_NAME/final/video-background-removed.webm" ]; then
+          echo "::notice::🎨 Background removal completed successfully"
+          ls -la "$FOLDER_NAME/final/"
+        else
+          echo "::error::❌ Background removed video not found"
+          echo "Available files in $FOLDER_NAME/final/:"
+          ls -la "$FOLDER_NAME/final/" || echo "Directory not found"
+          exit 1
+        fi
+        
+        echo "::endgroup::"
+        
+    - name: Create summary
+      run: |
+        FOLDER_NAME="${{ needs.generate-video.outputs.folder-name }}"
+        cd "$FOLDER_NAME"
+        cat > README.md << EOF
+        # Video Background Removal Results
+        
+        ## Settings
+        - **Original Prompt**: ${{ github.event.inputs.video_prompt }}
+        - **Background Color**: ${{ github.event.inputs.background_color }}
+        - **rembg Model**: ${{ github.event.inputs.rembg_model }}
+        - **Processing Date**: $(date)
+        
+        ## Files
+        - \`original/generated-video.mp4\` - Original generated video
+        - \`frames/\` - Extracted frames ($(ls frames/ | wc -l) frames)
+        - \`processed/\` - Background removed frames
+        - \`final/\` - Final background removed video
+        
+        ## Technical Details
+        - **Frame Rate**: 30 FPS
+        - **Total Frames**: $(ls frames/ | wc -l)
+        - **Processing Model**: ${{ github.event.inputs.rembg_model }}
+        
+        EOF
+        
+    - name: Commit results
+      run: |
+        FOLDER_NAME="${{ needs.generate-video.outputs.folder-name }}"
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add "$FOLDER_NAME"
+        git commit -m "Add video background removal results
+
+        Prompt: ${{ github.event.inputs.video_prompt }}
+        Background: ${{ github.event.inputs.background_color }}
+        Model: ${{ github.event.inputs.rembg_model }}
+        
+        🤖 Generated with [Claude Code](https://claude.ai/code)
+        
+        Co-Authored-By: Claude <noreply@anthropic.com>"
+        git push
+
+  create-pull-request:
+    needs: [setup-branch, remove-background]
+    runs-on: ubuntu-latest
+    if: always() && needs.remove-background.result == 'success'
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.PAT_TOKEN || github.token }}
+        
+    - name: Create Pull Request
+      run: |
+        gh pr create \
+          --title "🎬 Video Background Removal: ${{ needs.setup-branch.outputs.sanitized-prompt }}" \
+          --body "$(cat <<'EOF'
+        ## Summary
+        - ✅ Generated video from prompt: **${{ github.event.inputs.video_prompt }}**
+        - ✅ Removed background using rembg model: **${{ github.event.inputs.rembg_model }}**
+        - ✅ Applied background color: **${{ github.event.inputs.background_color }}**
+        
+        ## Files Generated
+        - Original video with background
+        - Background removed video 
+        - Individual processed frames
+        - Processing summary and metadata
+        
+        ## Technical Details
+        - **rembg Model**: ${{ github.event.inputs.rembg_model }}
+        - **Background Treatment**: ${{ github.event.inputs.background_color }}
+        - **Video Generation**: kamuicode Veo3
+        - **Processing Pipeline**: Video → Frames → Background Removal → Video Reconstruction
+        
+        🤖 Generated with [Claude Code](https://claude.ai/code)
+        EOF
+        )" \
+          --head "${{ needs.setup-branch.outputs.branch-name }}" \
+          --base main
+      env:
+        GH_TOKEN: ${{ secrets.PAT_TOKEN || github.token }}

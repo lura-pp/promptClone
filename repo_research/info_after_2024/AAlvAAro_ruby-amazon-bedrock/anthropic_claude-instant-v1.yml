@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://bedrock-runtime.us-east-1.amazonaws.com/model/anthropic.claude-instant-v1/invoke
+    body:
+      encoding: UTF-8
+      string: '{"prompt":"\n\nHuman: Give me a short list of steps for creating a
+        Ruby gem\n\nAssistant:","max_tokens_to_sample":300,"temperature":0.5,"top_k":250,"top_p":1,"stop_sequences":["\\n\\nHuman"],"anthropic_version":"bedrock-2023-05-31"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      Content-Type:
+      - application/json
+      Accept:
+      - "*/*"
+      User-Agent:
+      - aws-sdk-ruby3/3.189.0 ua/2.0 api/bedrock_runtime#1.4.0 os/macos#22 md/arm64
+        lang/ruby#3.2.2 md/3.2.2 cfg/retry-mode#legacy
+      Host:
+      - bedrock-runtime.us-east-1.amazonaws.com
+      Content-Length:
+      - '232'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 06 Dec 2023 05:48:47 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1104'
+      Connection:
+      - keep-alive
+      X-Amzn-Requestid:
+      - f542bb49-8e80-4c7b-926b-222edd1d7bf9
+      X-Amzn-Bedrock-Invocation-Latency:
+      - '5724'
+      X-Amzn-Bedrock-Output-Token-Count:
+      - '261'
+      X-Amzn-Bedrock-Input-Token-Count:
+      - '21'
+    body:
+      encoding: UTF-8
+      string: '{"completion":" Here are the basic steps to create a Ruby gem:\n\n1.
+        Generate the gem skeleton using the gem command:\n\n   `gem build <gem_name>`\n\n2.
+        This will create a directory with the gem name, containing basic files like
+        the gemspec, Rakefile, lib directory etc.\n\n3. Define the gem functionality
+        by writing code/classes in the lib directory.\n\n4. Document the gem usage,
+        classes, and methods using YARD syntax in the code. \n\n5. Update the gemspec
+        file with metadata like name, version, description etc.\n\n6. Add development
+        and test dependencies to the gemspec.\n\n7. Write tests for the gem functionality
+        in a tests directory.\n\n8. Add a Rake task to run the tests.\n\n9. Publish
+        the gem to a gem host like RubyGems with `gem push <gemfile>` after testing.\n\n10.
+        Market and distribute the gem so others can install and use it with `gem install
+        <gem_name>`.\n\n11. Maintain and update the gem as needed with new versions/features.\n\nSo
+        in summary - generate skeleton, add code, document, test, publish, distribute
+        and maintain updates.","stop_reason":"stop_sequence","stop":"\n\nHuman:"}'
+  recorded_at: Wed, 06 Dec 2023 05:48:46 GMT
+recorded_with: VCR 6.2.0

@@ -1,0 +1,208 @@
+{
+	"wakeup": {
+		"chunkSize": 640,
+		"detectSlient": 800,
+		"undetectSlient": 4000,
+		"minChunk": 3,
+		"responseSlient": 30000,
+		"enable_prevad": false,
+		"enable_notify": true,
+		"prevad_interval": 2000,
+		"start_voice": "start.wav",
+		"end_voice": "end.wav",
+        "intentMap": [
+            {
+                "index": 10086,
+				"text": "开灯",
+                "intents": [
+                    {
+                        "name": "OPEN_FURNITURE",
+                        "slots": [
+                            {
+                                "name": "furniture",
+                                "value": "灯"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+	},
+	"plugin":{
+		"orderFile": "plugin_order.txt"
+	},
+	"porcupine": {
+		"keyword": "小云_zh.ppn",
+		"model": "porcupine_params_zh.pv",
+		"key": "xxx",
+		"sensitivity": "0.5"
+	},
+	"cobra":{
+		"confidence": "0.5"
+	},
+	"koala":{
+		"model": "koala_params.pv"
+	},
+	"speex":{
+		"frame_size": 320
+	},
+	"openwakeup":{
+		"model": "nihao_wenwen.tflite"
+	},
+	"sherpa":{
+		"model": "sherpa-onnx-paraformer-zh-2024-03-09/model.int8.onnx",
+		"tokens": "sherpa-onnx-paraformer-zh-2024-03-09/tokens.txt",
+		"stream": false
+	},
+	"sherpa_tts": {
+		"model": "vits-zh-aishell3/vits-aishell3.int8.onnx",
+		"lexicon": "vits-zh-aishell3/lexicon.txt",
+		"tokens": "vits-zh-aishell3/tokens.txt",
+		"rules": "vits-zh-aishell3/rule.fst",
+		"vocoder": "hifigan_v3.onnx",
+		"dict": "matcha-icefall-zh-baker/dict",
+		"data_dir": "",
+		"noise": 0.2,
+		"noise-w": 0.3,
+		"length": 1,
+		"speakerid": 66,
+		"speed": 1,
+		"extra_volume": 20
+	},
+    "sherpa_wakeup": {
+        "model": "sherpa-kws/%1-epoch-12-avg-2-chunk-16-left-64.int8.onnx",
+        "thres": 0.5,
+        "score": 0.5,
+        "tokens": "sherpa-kws/tokens.txt",
+        "hotword": "sherpa-kws/keywords.txt"
+    },
+    "snowboy": {
+        "resource": "common.res",
+        "thres": 0.8,
+        "model": "snowboy.umdl",
+        "chunkSize": 3200
+    },
+	"unit":{
+		"apiKey": "c6AcEFLAYjp7jAezYekKlCI2",
+		"secret": "IMLmMjXajZlF5FpDlAcyBGVN3XrzuINX",
+		"unitId": "S83040",
+		"confThresh": 50
+	},
+	"silero":{
+		"model": "silero_vad.onnx",
+		"chunkSize": 1024,
+        "thresh": 0.1,
+		"abandonNum": 5
+	},
+	"netease_cloud":{
+		"phone": "xxx",
+		"password": "xxx",
+		"volumeStep": 10,
+		"homeDir": "xxx",
+		"port": "34793"
+	},
+	"duilite":{
+		"login": "duilite_login.json",
+		"res": "wakeup_far.bin",
+		"wakeword": "ni hao xiao zhi",
+		"thresh": "0.15",
+		"subword": "0",
+		"chunkSize": 640,
+		"asrRes": "ngram_lasr_v1.16_221218_dymc_oneshot_multidecoder.bin",
+		"gram": "gram.gram",
+		"asrEnv": "use_frame_split=1;use_filler=1;filler_penalty_score=2.0;",
+		"vadRes": "vad_aicar_v0.16.bin"
+	},
+	"rasa": {
+        "url": "http://127.0.0.1:5005/",
+		"model": "rasa/models/default.tar.gz",
+		"python_venv": "absolute path to activate",
+		"record_samples": true,
+		"conf": 0.5
+	},
+	"hass":{
+		"url": "http://127.0.0.1:8123",
+		"key": "Bearer xxx",
+		"services": [
+			{
+				"intent": "OPEN_FURNITURE",
+				"pattern": ".*热水器.*",
+				"path": "/api/services/switch/turn_on",
+				"params": {
+					"entity_id": "switch.cuco_cp2d_46fc_switch"
+				}
+			},
+			{
+				"intent": "CLOSE_FURNITURE",
+				"slots": [
+					{
+						"slotName": "furniture",
+						"slotValue": "热水器"
+					}
+				],
+				"path": "/api/services/switch/turn_off",
+				"params": {
+					"entity_id": "switch.cuco_cp2d_46fc_switch",
+					"time": "{number|--}"
+				}
+			}
+		]
+	},
+	"webrtc":{
+		"aec": true,
+		"deviceName": "alsa_output.pci-0000_00_1f.3.analog-stereo.monitor",
+		"ns": true,
+		"agc": true,
+		"delay": 200,
+		"ns_level": 1,
+		"agc_level": 1
+	},
+	"Weather":{
+		"key": "xxx",
+		"home": "xxx"
+	},
+	"chat": {
+        "type": "openai",
+        "botName": "chatgpt",
+        "modelName": "gpt-3.5-turbo",
+        "key": "sk-xxx",
+        "temperature": 1,
+        "max_tokens": 512,
+		"limit_token": 4096,
+        "stream": true,
+        "payload": "你是一个非常实用的AI助手，可以精确简短的回答问题",
+		"proxy": "127.0.0.1:7890",
+		"api_base": "https://api.openai.com/v1/chat/completions"
+    },
+	"wekws_wakeup": {
+		"model": "avg_30_infer.int8.onnx",
+		"chunkSize": 3200,
+		"thres": 0.5,
+		"num_bin": 80,
+		"batch_size": 10,
+		"keyword": "你好小智",
+		"token": "wekws/tokens.txt"
+	},
+	"azure": {
+		"model": "你好小智.table",
+		"chunkSize": 640
+	},
+	"server": {
+		"port": 20214
+	},
+	"mqtt": {
+		"topic": "QSmartAssistant/",
+		"host": "127.0.0.1",
+		"port": 1883,
+		"user": "abc",
+		"password": "123"
+	},
+	"funasr": {
+		"model": "paraformer-seaco/model.int8.onnx",
+		"cmvn": "paraformer-seaco/am.mvn",
+		"token": "paraformer-seaco/tokens.json",
+		"segdict": "paraformer-seaco/seg_dict",
+		"hw_model": "paraformer-seaco/model_eb.int8.onnx",
+		"hotword": "paraformer-seaco/hotword.txt"
+	}
+}

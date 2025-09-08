@@ -1,0 +1,9 @@
+{
+    "eval_zs_rsg.py": 0,
+    "eval_zs_tape.py": 0,
+    "annotate_meta_claude.py": 1,
+    "filter_claude.py": 1,
+    "settings.json": 0,
+    "training.json": 0,
+    "vicuna.json": 1
+}

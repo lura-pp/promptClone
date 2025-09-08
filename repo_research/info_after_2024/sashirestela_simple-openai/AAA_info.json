@@ -1,0 +1,18 @@
+{
+    "assistants_getlist.json": 1,
+    "threads_runs_getone.json": 0,
+    "images_create.json": 1,
+    "threads_runs_modify.json": 0,
+    "threads_runs_createthreadandrun_1.json": 0,
+    "threads_runs_submittool_stream_1.json": 0,
+    "assistants_getone.json": 0,
+    "threads_runs_cancel_2.json": 0,
+    "threads_runs_cancel_1.json": 0,
+    "threads_runs_getlist.json": 0,
+    "threads_runs_submittool_1.json": 0,
+    "threads_runs_submittool_2.json": 0,
+    "threads_runs_create_1.json": 0,
+    "assistants_modify.json": 0,
+    "response_create_imagegeneration.json": 1,
+    "assistants_create.json": 0
+}

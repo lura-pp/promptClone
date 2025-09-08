@@ -1,0 +1,957 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($uibModal, $scope, spUtil, $uibModalStack) {
+	var c = this;
+
+	c.goToPrompt = function(sys_id){
+		top.window.location = "?id=prompt&sys_id=" + sys_id;
+	}
+
+	c.goToAuthor = function(author, event){
+		if (event) event.stopPropagation();
+		top.window.location = "?id=library&display=" + c.data.display + "&query=opened_by.name=" + author;
+	}
+
+	c.goToSort = function(author){
+		top.window.location = "?id=library&display=" + c.data.display + "&sort=true";
+	}
+
+	c.goHome = function(){
+		top.window.location = "?id=library&display=" + c.data.display;
+	}
+	
+	c.goToLogin = function(event){
+		if (event) event.stopPropagation();
+		top.window.location = "?id=login";
+	}
+
+	c.goToProfile = function(){
+		top.window.location = "?id=user_profile&sys_id=" + c.data.userId;
+	}
+
+	c.addPrompt = function(prompt= {}, fork = false, event) {
+		if (event) event.stopPropagation();
+		c.data.fork = fork;
+		/*const promptMessage = `Assume users will copy and paste your code as-is into their Generative AI service.<br>
+Whenever the user should update specific text, wrap the instruction with brackets.<br>
+For example: [INPUT YOUR NAME HERE]`;*/
+		c.data.oldPromptText = prompt.prompt;
+		c.data.newPromptText = prompt.prompt;
+		c.data.newPromptParent = prompt.sys_id;
+		c.data.newPromptNumber = prompt.number;
+		c.data.newPromptCategory = prompt.category;
+		c.data.newPromptCategoryName = prompt["category.name"];
+		c.modalInstance = $uibModal.open({
+			templateUrl: 'newPrompt',
+			scope: $scope
+		});
+	}
+
+	c.modDelete = function(prompt, event){
+		$scope.prompt = prompt;
+		if (event) event.stopPropagation();
+		c.modalInstance = $uibModal.open({
+			templateUrl: 'modDelete',
+			scope: $scope
+		});
+	}
+
+	c.deletePrompt = function(prompt){
+		c.data.promptToDelete = prompt;
+		c.server.update().then(function(){
+			c.data.promptToDelete = null;
+			c.closeModal();
+		});
+	}
+
+	c.hideComments = function(prompt, event){
+		if (event) event.stopPropagation();
+		$scope.prompt = prompt;
+		c.modalInstance = $uibModal.open({
+			templateUrl: 'hideComments',
+			scope: $scope,
+		})
+	}
+
+	c.hideCommentsConfirmed = function(prompt){
+		c.data.hideAllComments = prompt;
+		c.server.update().then(function(){
+			$uibModalStack.dismissAll();
+			c.data.hideAllComments = null;
+		});
+	}
+
+	c.addComment = function(prompt, event){
+		if (event) event.stopPropagation();
+		$scope.comments = prompt.comments;
+		$scope.prompt = prompt.prompt;
+		$scope.sys_id = prompt.sys_id;
+		$scope.hideCommentsPrompt = prompt.hide_comments === 'true';
+		c.modalInstance = $uibModal.open({
+			templateUrl: 'commentModal',
+			scope: $scope,
+		})
+	}
+
+	c.openHistory = function(prompt, event){
+		if (event) event.stopPropagation();
+		$scope.prompt = prompt;
+		c.modalInstance = $uibModal.open({
+			templateUrl: 'historyModal',
+			scope: $scope,
+		})
+	}
+
+	c.submitComment = function (sys_id, userInput){
+		c.data.newComment = {
+			sys_id: sys_id,
+			userInput: userInput,
+		}
+		c.data.submitCommentConfirmed = true;
+		c.server.update().then(function() {
+			c.data.userInput = "";
+			c.closeModal();
+			c.data.submitCommentConfirmed = false;
+		});
+	}
+
+	c.closeModal = function() {
+		c.modalInstance.close();
+	}
+
+	if (c.data.debug) console.log(c.data);
+
+	c.copyToClipboard = function(prompt, event){
+		if (event) event.stopPropagation();
+		try {
+			navigator.clipboard.writeText(prompt);
+			spUtil.addInfoMessage('Copied to clipboard');
+		} catch (err) {
+			console.error('Failed to copy: ', err);
+		}
+	}
+
+	c.vote = function(sys_id, event){
+		if (event) event.stopPropagation();
+		c.data.voteClicked = sys_id;
+		c.server.update().then(function() {
+			c.data.voteClicked = '';
+		});
+	}
+
+	$scope.$on("field.change", function(evt, parms) {
+		c.data.newPromptCategory = parms.newValue;
+		if (c.data.debug) console.log(parms);
+	});
+
+	c.submitPrompt = function(submitPromptTrue){
+		if (submitPromptTrue === true) c.data.submitPromptConfirmed = true;
+		c.server.update().then(function(){
+			c.data.newPromptText = '';
+			c.data.newPromptCategory = '';
+			c.data.newPromptParent = '';
+			c.data.submitPromptConfirmed = false;
+			c.closeModal();
+			spUtil.addInfoMessage('Your prompt has been submitted!');
+
+			if (c.data.debug) console.log(c.data);
+			if (c.data.newPromptSysId){
+				spUtil.recordWatch($scope, "x_snc_ehd_servic_0_prompt", "sys_id=" + c.data.newPromptSysId, function(xname, xdata) {
+					console.log(xname); //Returns information about the event that has occurred
+					//console.log(xdata); //Returns the data inserted or updated on the table
+					c.data.prompts[c.data.prompts.findIndex(p => p.sys_id === c.data.newPromptSysId)].short_description = xname.data.record.short_description.value;
+				});
+			}
+		});
+	}
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.page-intro{
+  color: #000000;
+  padding: 2rem;
+}
+
+.my-profile{
+  float: right;
+}
+
+.prompt-block{
+  margin-bottom: 1.5rem;
+  //margin-left: 1rem;
+  //margin-right: 1rem;
+}
+
+.block-main:hover{
+  background-color: #F5F5F5;
+  //cursor: pointer;
+}
+
+.date{
+  text-align: right;
+}
+
+.author-block{
+  margin-bottom: 2rem;
+}
+.author-block-avatar{
+  float: left;
+  padding-right: 1rem;
+}
+
+.author-block-author{
+  font-weight: bold;
+}
+
+.author-block-category{
+  color: #333333;
+  font-size: 1rem;
+}
+
+.author-block-score{
+  float: right;
+  font-size:3rem;
+  padding-right: 1rem;
+}
+
+.block-main{
+  background-color: #FFFFFF;
+  color: #000000;
+  padding: 2rem;
+  border-radius: 25px;
+}
+
+.category, .author{
+  color: #000000;
+}
+
+.prompt-info{
+  margin-bottom: 1rem;
+}
+
+.prompt-info-header{
+  color: #333333;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.prompt {
+  margin-bottom: 1rem;
+}
+
+.pre-line {
+  white-space: pre-line;
+}
+
+.history {
+  background-color: #ADD8E6;
+  padding: 1rem;
+  margin: 1.5rem 0 1.5rem 0;
+  border-radius: 15px;
+  font-size: 1rem;
+}
+
+.filter-query {
+  background-color: #FFFFFF;
+  padding: 1rem;
+  margin: 1.5rem 0 1.5rem 0;
+  border-radius: 15px;
+  font-size: 1rem;
+}
+
+.engagement{
+  //font-size: 1rem;
+}
+
+.engagement-button, .home-button{
+  margin-right: 1rem;
+  border-radius: 3px;
+  padding: 5px;
+  background-color: #F5F5F5;
+  white-space: nowrap;
+}
+
+.engagement-button:hover, .history:hover, .prompt-info:hover{
+  background-color: #DEDCDA;
+}
+
+.submit-button:hover, .filter-query:hover{
+  background-color: #F5F5F5;
+}
+
+.col-sm-3, .col-xs-3, .col-xs-9, .col-sm-9{
+  padding-right: 0px;
+}
+
+.voted, .submit-button{
+  font-weight: bold;
+  background-color: #FFB6C1;
+}
+
+.comment-count{
+  padding-right: 3px;
+}
+
+.fork{
+  border-radius: 3px;
+  padding: 5px;
+  float:right;
+}
+
+.fork:hover{
+  background-color: #DEDCDA;
+}
+
+.votes{
+  font-size: 1.5rem;
+  //vertical-align: middle;
+}
+
+.limited-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.ai-sd{
+  padding-bottom: 0.5rem;
+}
+
+.ng-click-element {
+  position: relative;
+  //display: inline-block;
+  cursor: pointer;
+}
+
+.hover-text {
+  visibility: hidden;
+  width: 100px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%; /* Position above the element */
+  left: 50%;
+  margin-left: -50px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.ng-click-element:hover .hover-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.layered-box {
+  box-shadow: 0 1px 1px rgba(0,0,0,0.12), 
+              0 2px 2px rgba(0,0,0,0.12), 
+              0 4px 4px rgba(0,0,0,0.12), 
+              0 8px 8px rgba(0,0,0,0.12);
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>library</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>library</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+
+	//todo: category winners
+	//see all posts for this form
+	//configuration
+	data.debug = false;
+	data.loggedIn = gs.getSession().isLoggedIn();
+	data.userId = gs.getUserID();
+	data.isMod = gs.hasRole('x_snc_ehd_servic_0.moderator');
+	data.thisUrl = gs.getProperty('glide.servlet.uri');
+	data.query = $sp.getParameter('query') || '';
+	data.categoryFilter = data.query.indexOf('category=') != -1 ? true : false;
+	data.sort = $sp.getParameter('sort') == 'true' ? true : false;
+	data.promptFields = [
+		'prompt',
+		'category',
+		'category.name',
+		'short_description',
+		'description',
+		'sys_created_on',
+		'opened_by.name',
+		'opened_by',
+		'parent',
+		'parent.number',
+		'number',
+		'sys_id',
+		'hide_comments',
+		'short_description',
+	];
+
+	//inputs
+
+	if (input?.newComment && input?.submitCommentConfirmed === true){
+		data.newComment = input.newComment;
+		const newCommentGr = new GlideRecord('x_snc_ehd_servic_0_prompt');
+		if (newCommentGr.get(input.newComment.sys_id)){
+			newCommentGr.comments = input.newComment.userInput;
+			newCommentGr.update();
+		}
+	}
+	
+	if (input?.promptToDelete){
+		const deleteGr = new GlideRecord('x_snc_ehd_servic_0_prompt');
+		if (deleteGr.get(input.promptToDelete)){
+			deleteGr.setValue('active', 'false');
+			deleteGr.update();
+		}
+	}
+	
+	if (input?.hideAllComments){
+		const hideCommentsGr = new GlideRecord('x_snc_ehd_servic_0_prompt');
+		if (hideCommentsGr.get(input.hideAllComments)){
+			hideCommentsGr.setValue('hide_comments', 'true');
+			hideCommentsGr.update();
+		}
+	}
+
+	if (input?.voteClicked){
+		const newVoteGr = new GlideRecord('x_snc_ehd_servic_0_vote');
+		newVoteGr.addQuery('prompt', input.voteClicked);
+		newVoteGr.addQuery('user', data.userId);
+		newVoteGr.query();
+		if (newVoteGr.next()){
+			newVoteGr.deleteMultiple();
+		} else {
+			newVoteGr.newRecord();
+			newVoteGr.setValue('prompt', input.voteClicked);
+			newVoteGr.setValue('user', data.userId);
+			newVoteGr.insert();
+		}
+	}
+
+	if (input?.newPromptText && input?.newPromptCategory && input?.submitPromptConfirmed === true){
+		const newPromptGr = new GlideRecord('x_snc_ehd_servic_0_prompt');
+		newPromptGr.newRecord();
+		newPromptGr.setValue('prompt', input.newPromptText);
+		newPromptGr.setValue('opened_by', data.userId);
+		newPromptGr.setValue('category', input.newPromptCategory);
+		newPromptGr.setValue('short_description', 'Generating short description...');
+		if (input?.newPromptParent){
+			newPromptGr.setValue('parent', input.newPromptParent);
+		}
+		data.newPromptSysId = newPromptGr.insert();
+
+		//automatically add a new vote for self
+		const newPromptVoteGr = new GlideRecord('x_snc_ehd_servic_0_vote');
+		newPromptVoteGr.newRecord();
+		newPromptVoteGr.setValue('prompt', data.newPromptSysId);
+		newPromptVoteGr.setValue('user', data.userId);
+		newPromptVoteGr.insert();
+	}
+
+	//pagination
+	const countGa = new GlideAggregate('x_snc_ehd_servic_0_prompt');
+	if (data.query) countGa.addEncodedQuery(data.query);
+	countGa.addQuery('active', 'true');
+	//countGa.addEncodedQuery(stateFilter);
+	//if (data.query) countGa.addEncodedQuery(data.query);
+	//if (data.searchName) countGa.addEncodedQuery('user.user.nameLIKE' + data.searchName);
+	countGa.addAggregate('COUNT');
+	countGa.query();
+	if (countGa.next()) {
+		data.count = parseInt(countGa.getAggregate('COUNT'));
+	}
+	data.page = parseInt($sp.getParameter('page')) || 1;
+	data.display = parseInt($sp.getParameter('display')) > 0 ? parseInt($sp.getParameter('display')) : 10 || 10;
+	data.pages = calculatePaginationPages(data.count, data.display, data.page);
+	if (data.pages[data.pages.length - 1] < data.page) {
+		data.page = Math.ceil(data.count / data.display);
+	}
+	data.rowStart = (data.page - 1) * data.display;
+	const rowEnd = data.rowStart + data.display;
+
+	//data
+
+	data.prompts = [];
+	const promptGr = new GlideRecord('x_snc_ehd_servic_0_prompt');
+	if (data.sort) promptGr.orderByDesc('score');
+	else promptGr.orderByDesc('number');
+	promptGr.chooseWindow(data.rowStart, rowEnd);
+	if (data.query) promptGr.addEncodedQuery(data.query);
+	promptGr.addActiveQuery();
+	promptGr.query();
+	while (promptGr.next()){
+		const prompt = {};
+		for (let i of data.promptFields){
+			prompt[i] = (promptGr.getElement(i) + "").trim();
+		}
+
+		//get parents
+		prompt.parents = [];
+		let thisParentId = prompt.parent;
+		while (thisParentId != ''){
+			const parentGr = new GlideRecord('x_snc_ehd_servic_0_prompt');
+			if (parentGr.get(thisParentId)){
+				const parent = {
+					sys_id: parentGr.getUniqueValue(),
+					number: parentGr.getValue('number'),
+					author: parentGr.getElement('opened_by.name') + '',
+					parentId: parentGr.getValue('parent'),
+					prompt: parentGr.getValue('prompt'),
+				};
+				prompt.parents.push(parent);
+				thisParentId = parentGr.getValue('parent') || '';
+			}
+		}
+
+		//get children
+		prompt.children = [];
+		const childGr = new GlideRecord('x_snc_ehd_servic_0_prompt');
+		childGr.addQuery('parent', promptGr.getUniqueValue());
+		childGr.orderByDesc('number');
+		childGr.query();
+		while (childGr.next()){
+			const child = {
+				sys_id: childGr.getUniqueValue(),
+				number: childGr.getValue('number'),
+				author: childGr.getElement('opened_by.name') + '',
+				prompt: childGr.getValue('prompt'),
+			};
+			prompt.children.push(child);
+		}
+
+		//check for vote
+		const voteGr = new GlideRecord('x_snc_ehd_servic_0_vote');
+		voteGr.addQuery('prompt', prompt.sys_id)
+		voteGr.query();
+		prompt.score = voteGr.getRowCount();
+		voteGr.addQuery('user', data.userId);
+		voteGr.query();
+		if (voteGr.next()){
+			prompt.voted = true;
+		} else {
+			prompt.voted = false;
+		}
+
+		//get comments
+		prompt.comments = promptGr.comments.getJournalEntry(-1).replaceAll("(Additional comments)","").split('\n\n').filter(item => item.trim() !== "").map(str => str.split('\n'));
+
+		data.prompts.push(prompt);
+	}
+
+	//get categories
+	data.categories = {};
+	data.categoriesList = [];
+	const categoryGr = new GlideRecord('x_snc_ehd_servic_0_category');
+	categoryGr.addQuery('active', 'true');
+	categoryGr.orderBy('name');
+	categoryGr.query();
+	while (categoryGr.next()){
+		const category = {
+			description: categoryGr.getValue('description'),
+			keywords: categoryGr.getValue('keywords'),
+			name: categoryGr.getValue('name'),
+			sys_id: categoryGr.getUniqueValue(),
+		};
+		data.categories[categoryGr.getUniqueValue()] = category;
+		data.categoriesList.push(category);
+		if (data.categoryFilter){
+			if (category.sys_id == data.query.split('=')[1]){
+				data.thisCategory = category;
+			}
+		}
+	}
+
+	function calculatePaginationPages(totalRecords, recordsPerPage, currentPage) {
+		if (recordsPerPage <= 0) {
+			return [];
+		}
+
+		let totalPages = Math.ceil(totalRecords / recordsPerPage);
+		let pages = [];
+
+		let startPage, endPage;
+
+		if (totalPages <= 7) {
+			startPage = 1;
+			endPage = totalPages;
+		} else {
+			if (currentPage < 4) {
+				startPage = 1;
+				endPage = 5;
+			} else if (currentPage == 5){
+				startPage = 3;
+				endPage = 7;
+			} else if (currentPage + 2 >= totalPages) {
+				startPage = totalPages - 4;
+				endPage = totalPages;
+			} else {
+				startPage = currentPage - 2;
+				endPage = currentPage + 2;
+			}
+		}
+
+		if (startPage > 1) {
+			pages.push(1);
+			if (startPage > 2) {
+				pages.push('...');
+			}
+		}
+
+		for (let i = startPage; i <= endPage; i++) {
+			pages.push(i);
+		}
+
+		if (endPage < totalPages) {
+			if (endPage < totalPages - 1) {
+				pages.push('...');
+			}
+			pages.push(totalPages);
+		}
+
+		return pages;
+	}
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>earl.duque</sys_created_by>
+        <sys_created_on>2024-06-07 18:15:31</sys_created_on>
+        <sys_id>0182c9d793ea0a10b653ffbd1dba10b1</sys_id>
+        <sys_mod_count>784</sys_mod_count>
+        <sys_name>library</sys_name>
+        <sys_package display_value="ServiceNow GenAI Prompt Library" source="x_snc_ehd_servic_0">ff61a00ac32a8610c9bcbe2bb00131da</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ServiceNow GenAI Prompt Library">ff61a00ac32a8610c9bcbe2bb00131da</sys_scope>
+        <sys_update_name>sp_widget_0182c9d793ea0a10b653ffbd1dba10b1</sys_update_name>
+        <sys_updated_by>earl.duque</sys_updated_by>
+        <sys_updated_on>2024-07-15 17:49:31</sys_updated_on>
+        <template><![CDATA[<div class="page-intro">
+  <div ng-if="data.query || data.sort">
+    <span class="icon-home home-button" ng-click="c.goHome()"> Go to Library home</span>
+  </div>
+  <div class="h1">
+    <div class="my-profile" ng-click="c.goToProfile()" ng-if="data.loggedIn === true">
+      <span class="author-block-avatar"><sn-avatar class="avatar-medium" primary="data.userId"></sn-avatar></span>
+    </div>
+    <a href="?id=login" target="_self"ng-click="c.goToHome()" ng-if="data.loggedIn === false" class="h4 my-profile">
+      Login
+    </a>
+    ServiceNow Generative AI Prompt Library
+  </div>
+  <div>
+    Welcome to the community-driven hub for ServiceNow and Generative AI enthusiasts! ]]>🚀<![CDATA[ Designed for innovation and collaboration, our library offers a diverse collection of prompts tailored for a variety of ServiceNow applications, created by the people that use them the most! Immerse yourself in this shared resource to discover, contribute, and optimize AI responses, enhancing your ServiceNow day-to-day work. Read more about this app <a href="https://www.servicenow.com/community/developer-advocate-blog/it-s-julai-help-contribute-to-the-community-driven-servicenow/ba-p/2975106" target="_blank">here.</a>
+  </div>
+  <div ng-if="data.categoryFilter" ng-click="c.goHome()">
+    <div class="h3">
+      {{data.thisCategory.name}}
+    </div>
+    <div>
+      {{data.thisCategory.description}}
+    </div>
+  </div>
+  <div class="filter-query" ng-click="c.goHome()" ng-if="data.query && !data.categoryFilter">
+    <b>Currently filtered by:</b> {{data.query}} (click to clear)
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-9">
+    <div class="section-block">
+      <div ng-if="data.prompts.length == 0" class="prompt-block block-main">
+        No submissions for this category. Be the first!
+      </div>
+      <div ng-repeat="prompt in data.prompts" class="prompt-block" ng-click="c.goToPrompt(prompt.sys_id)">
+        <div class="block-main layered-box">
+          <div class="author-block" >
+            <span class="author-block-avatar"><sn-avatar class="avatar-medium" primary="prompt.opened_by"></sn-avatar></span>
+            <div class="author-block-score">
+              <span class="votes">votes: </span>{{prompt.score}}
+            </div>
+            <div class="author-block-author">
+              {{prompt["opened_by.name"]}}
+            </div>
+            <div class="author-block-category">
+              in <span class="category" ng-if="prompt['category.name'] !== ''">{{prompt["category.name"]}}</span>
+            </div>
+          </div>
+          <div class="row" ng-click="c.goToPrompt(prompt.sys_id)">
+            <div class="prompt col-xs-9 limited-text">
+              <div class="ai-sd">
+                <b>{{prompt.short_description}}</b>
+              </div>
+              <div>
+                <span class="pre-line">{{prompt.prompt}}</span>
+              </div>
+            </div>
+            <div class="vote col-xs-3">
+              <div class="prompt-info" ng-click="c.goToAuthor(prompt['opened_by.name'], $event)">
+                <div class="prompt-info-header">
+                  Author (Click to filter)
+                </div>
+                <div class="prompt-info-detail">
+                  {{prompt["opened_by.name"]}}
+                </div>
+              </div>
+              <div class="prompt-info">
+                <div class="prompt-info-header">
+                  Number (Click for permalink)
+                </div>
+                <div class="prompt-info-detal">
+                  {{prompt["number"]}}
+                </div>
+              </div>
+              <div class="prompt-info">
+                <div class="prompt-info-header">
+                  Created on
+                </div>
+                <div class="prompt-info-detal">
+                  {{prompt.sys_created_on}}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="history" ng-if="prompt.parents.length > 0 || prompt.children.length > 0" ng-click="c.openHistory(prompt, $event)">
+            <!--<span class="icon-tree"></span> Fork from {{prompt.parents[prompt.parents.length- 1].number}} by {{prompt.parents[prompt.parents.length- 1].author}}-->
+            <span class="icon-tree"></span>
+            <span ng-if="prompt.parents.length > 0"> {{prompt.parents.length + 1}} iteration{{prompt.parents.length == 1 ? '' : 's'}} from {{prompt.parents[0].number}} by {{prompt.parents[0].author}}.</span>
+            <span ng-if="prompt.children.length > 0"> {{prompt.children.length}} fork{{prompt.children.length == 1 ? '' : 's'}} from this.</span>
+          </div>
+          <div class="engagement">
+            <div class="icon-tree-right fork" ng-click="c.addPrompt(prompt, true, $event)" ng-if="data.loggedIn === true">
+              Fork
+            </div>
+            <div class="icon-tree-right fork ng-click-element" ng-click="c.goToLogin($event)" ng-if="data.loggedIn === false">
+              Fork<span class="hover-text">Login to fork</span>
+            </div>
+            <div class="icon-cross-circle fork" ng-click="c.modDelete(prompt.sys_id, $event)" ng-if="data.isMod === true">
+              Delete (Mod)
+            </div>
+            <span ng-if="data.loggedIn === true">
+              <span class="icon-arrow-up engagement-button" ng-class="{'voted': prompt.voted == true}" ng-click="c.vote(prompt.sys_id, $event)"></span>
+            </span>
+            <span ng-if="data.loggedIn === false">
+              <span class="icon-arrow-up engagement-button ng-click-element" ng-click="c.goToLogin()"><span class="hover-text">Login to vote</span></span>
+            </span>
+            <span class="engagement-button" ng-click="c.addComment(prompt, $event)"><span class="comment-count">{{prompt.comments.length}} comment{{prompt.comments.length == 1 ? '' : 's'}} </span><span class="icon-comment-add"></span></span>
+            <span class="engagement-button" ng-click="c.copyToClipboard(prompt.prompt, $event)">Copy Prompt <span class="icon-document"></span></span>
+            <span class="engagement-button" ng-click="c.copyToClipboard(data.thisUrl + 'ai?id=prompt&sys_id=' + prompt.sys_id, $event)">Copy Link <span class="icon-document"></span></span>
+            <!--span class="icon-share engagement-button"></span-->
+          </div>
+        </div>
+        <!--div class="block-footer">
+          <div class="date">
+            {{prompt.sys_created_on}}
+          </div>
+        </div-->
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="section-block">
+      <div class="block-main prompt-block submit-button layered-box" ng-if="data.loggedIn === true" ng-click="c.addPrompt({},false)">
+        Submit a new prompt
+      </div>
+      <div class="block-main prompt-block submit-button layered-box ng-click-element" ng-click="c.goToLogin()" ng-if="data.loggedIn === false">
+        Submit a new prompt<span class="hover-text">Login to submit</span>
+      </div>
+    </div>
+    <div class="section-block">
+      <div class="block-main prompt-block layered-box">
+        Filter by category:
+        <ul>
+          <li ng-repeat="category in data.categoriesList">
+            <a href="?id=library&display={{data.display}}&query=category={{category.sys_id}}" target="_self">{{category.name}}</a>
+        </ul>
+      </div>
+    </div>
+    <div class="section-block" ng-click="c.goToSort()" ng-if="!data.sort">
+      <div class="block-main prompt-block layered-box">
+        Sort by top voted
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav aria-label="Page navigation" ng-if="data.count > 0">
+  <ul class="pagination">
+    <li class="page-item">
+      <a class="page-link" href="?id=library&page={{data.page-1}}&display={{data.display}}&query={{data.query}}" aria-label="Previous" ng-if="data.page > 1">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="page-link disabled" aria-label="Previous" ng-if="data.page <= 1">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+    <li class="page-item" ng-repeat="page in data.pages track by $index" ng-class="{active: page == data.page}"><a class="page-link" href="?id=library&page={{page}}&display={{data.display}}&query={{data.query}}" ng-if="page != '...'">{{page}}</a><span ng-if="page == '...'">...</span></li>
+    <li class="page-item">
+      <a class="page-link" href="?id=library&page={{data.page+1}}&display={{data.display}}&query={{data.query}}" aria-label="Next" ng-if="data.page < data.pages[data.pages.length - 1]">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+      <a class="page-link disabled" aria-label="Next" ng-if="data.page >= data.pages[data.pages.length - 1]">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<div>
+  This app was created by <a href="https://www.linkedin.com/in/earlduque/" target="_blank">Earl Duque</a> from the ServiceNow Developer Program, let me know if you find any bugs.
+</div>
+
+<div ng-if="data.debug === true">
+  <pre>{{data}}</pre>
+</div>
+
+
+
+<script type="text/ng-template" id="newPrompt">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">Submit prompt</h4>
+  </div>
+  <div class="panel-body wrapper-xl">
+    <div class="form-group" ng-if="data.newPromptNumber">
+      <label for="promptParent">Forked from:</label>
+      <text class="form-control" id="promptParent" disabled>{{data.newPromptNumber}}</text>
+    </div>
+    <div ng-if="::!data.fork">
+      Category: <sn-record-picker field="category" table="'x_snc_ehd_servic_0_category'" display-fields="'category,description'" value-field="'sys_id'" search-fields="'name'" page-size="100" ></sn-record-picker><br>
+    </div>
+    <div class="form-group" ng-if="::data.fork">
+      <label for="promptCategory">Category:</label>
+      <text class="form-control" id="promptCategory" disabled>{{data.newPromptCategoryName}}</text>
+    </div>
+    <div ng-if="data.newPromptCategory">
+      <b>Category description</b><br>
+      {{data.categories[data.newPromptCategory].description}}<br>
+      <b>Keywords to use in your prompt</b><br>
+      {{data.categories[data.newPromptCategory].keywords}}<br><br>
+    </div>
+    <div class="form-group">
+      <label for="promptText">Your prompt:</label>
+      <textarea class="form-control" id="promptText" rows="3" ng-model="data.newPromptText" placeholder="Your actual, full prompt. Upon submission, a short description will be generated based on what you put here."></textarea>
+    </div>
+    <div>
+    	Need some guidance? The RISEN framework helps structure tasks for generative AI into actionable steps:
+			<ul>
+      	<li>R — Role: Define the AI's role. (e.g., "Act as an agile coach.")
+      	<li>I — Instructions: Provide clear instructions. (e.g., "Write a guide on crafting a good agile development story.")
+      	<li>S — Steps: Outline specific steps. (e.g., "Start with a user persona, describe the user's goal, list the tasks to achieve the goal, and define the acceptance criteria.")
+      	<li>E — End goal: State the goal and audience. (e.g., "Help team members understand how to write clear and effective agile stories.")
+      	<li>N — Narrowing: Add constraints. (e.g., "Max 800 words, avoid technical jargon, use practical examples.")
+      </ul>
+    </div>
+  </div>
+  <div class="panel-footer text-right">
+    <button class="btn btn-primary" ng-click="c.submitPrompt(true)" ng-class="{disabled: !data.newPromptText || !data.newPromptCategory || (data.oldPromptText == data.newPromptText)}">${Submit Prompt}</button>
+    <button class="btn btn-info" ng-click="c.closeModal()">${Close}</button>
+  </div>
+</div>
+</script>
+
+<script type="text/ng-template" id="modDelete">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">Mods only: Delete prompt?</h4>
+  </div>
+  <div class="panel-footer text-right">
+    <button class="btn btn-primary" ng-click="c.deletePrompt(prompt)">${Delete}</button>
+    <button class="btn btn-info" ng-click="c.closeModal()">${Close}</button>
+  </div>
+</div>
+</script>
+
+<script type="text/ng-template" id="hideComments">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">Mods only: Hide comments?</h4>
+  </div>
+  <div class="panel-footer text-right">
+    <button class="btn btn-primary" ng-click="c.hideCommentsConfirmed(prompt)">${Hide all}</button>
+    <button class="btn btn-info" ng-click="c.closeModal()">${Close}</button>
+  </div>
+</div>
+</script>
+
+<script type="text/ng-template" id="commentModal">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">Comments</h4>
+  </div>
+  <div class="panel-body wrapper-xl">
+    <div>
+      <span style="white-space: pre-line;">{{prompt}}</span><br>
+    <span class="icon-cross-circle" ng-click="c.hideComments(sys_id, $event)" ng-if="data.isMod === true && hideCommentsPrompt == false" style="float: right">
+			Hide comments (Mod)
+  	</span>
+    <hr class="solid">
+    </div>
+    <div ng-if="hideCommentsPrompt">
+    	Comments have been hidden by moderators<br>
+    </div>
+    <div ng-if="comments.length == 0">
+    	Be the first to comment!<br><br>
+    </div>
+    <div ng-repeat="comment in comments" ng-if="!hideCommentsPrompt">
+      <div>
+        {{comment[0]}}<br>
+        {{comment[1]}}
+      </div>
+      <hr class="dashed">
+    </div>
+    <div class="form-group" ng-if="!hideCommentsPrompt && data.loggedIn === true">
+      <label for="multiLineTextBox">Add a comment:</label>
+      <textarea id="multiLineTextBox" class="form-control" rows="5" ng-model="data.userInput"></textarea>
+    </div>
+    <button class="btn btn-primary" ng-click="c.submitComment(sys_id, data.userInput)" ng-if="!hideCommentsPrompt && data.loggedIn === true" ng-class="{disabled: !data.userInput}">Submit</button>
+    <button ng-if="data.loggedIn === false" class="btn btn-info" ng-click="c.goToLogin()">
+    	Login to comment
+    </button>
+  </div>
+  <div class="panel-footer text-right">
+    <button class="btn btn-primary" ng-click="c.closeModal()">${Close Comments}</button>
+  </div>
+</div>
+</script>
+
+<script type="text/ng-template" id="historyModal">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">History (newest versions at top)</h4>
+  </div>
+  <div class="panel-body wrapper-xl">
+    <div ng-repeat="child in prompt.children">
+      <a href="?id=prompt&sys_id={{child.sys_id}}" target="_self"><div><b>Fork {{$index + 1}}. {{child.author}}</b> {{child.number}}</div></a>
+      <div>
+        <textarea class="form-control" rows="5" disabled>{{child.prompt}}</textarea><br>
+      </div>
+    </div>
+    <div><b>This prompt</b></div>
+    <div>
+      <textarea class="form-control" rows="5" disabled>{{prompt.prompt}}</textarea><br>
+    </div>
+    <div ng-repeat="parent in prompt.parents">
+      <a href="?id=prompt&sys_id={{parent.sys_id}}" target="_self"><div><b>{{$index + 1}}. {{parent.author}}</b> {{parent.number}}</div></a>
+      <div>
+        <textarea class="form-control" rows="5" disabled>{{parent.prompt}}</textarea><br>
+      </div>
+    </div>
+  </div>
+  <div class="panel-footer text-right">
+    <button class="btn btn-primary" ng-click="c.closeModal()">${Close History}</button>
+  </div>
+</div>
+</script>]]></template>
+    </sp_widget>
+</record_update>

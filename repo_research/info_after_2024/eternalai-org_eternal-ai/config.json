@@ -1,0 +1,102 @@
+{
+    "base_mainnet": {
+        "promptSchedulerAddress": "0xA1d2F74C345Ff1d97B8FC72E061903cD84C66F69",
+        "models": [
+            {
+                "modelName": "DeepSeek V3",
+                "modelAddress": "0xfC2875Ac6148aaf332e2991A27b4f0251807759A",
+                "description": "UniverseDagents"
+            },
+            {
+                "modelName": "wan2.1",
+                "modelAddress": "0x19aeEfFbc0244Be6187314A74a443A18AA2cCeEe",
+                "description": "UniverseDagents"
+            }
+        ]
+    },
+    "symbiosis_mainnet": {
+        "promptSchedulerAddress": "0x87e9B8630c1E20dd86451AE15aF7663D006f089c",
+        "models": [
+            {
+                "modelName": "unsloth/Llama-3.3-70B-Instruct-bnb-4bit",
+                "modelAddress": "0xdBb2CDdbD9fe47Cc1971dF416d2A18D8c344222d",
+                "description": "UniverseDagents"
+            },
+            {
+                "modelName": "DeepSeek V3",
+                "modelAddress": "0xD953b8f1DF45277c34e9e098E99d8F9922eAB030",
+                "description": "UniverseDagents"
+            }
+        ]
+    },
+    "abstract_testnet": {
+        "promptSchedulerAddress": "0xF958069b13D26FeeBc43Df7Bd7e0D2B71212101B",
+        "models": [
+            {
+                "modelName": "unsloth/Llama-3.3-70B-Instruct-bnb-4bit",
+                "modelAddress": "0xf7E27f352bD7dA3c17DC0c42B1087815354AB2D4",
+                "description": "UniverseDagents"
+            }
+        ]
+    },
+    "bittensor_mainnet": {
+        "promptSchedulerAddress": "0x0A77958AB03E60a7e939f660D4cdC8862Ae0e966",
+        "models": [
+            {
+                "modelName": "unsloth/Llama-3.3-70B-Instruct-bnb-4bit",
+                "modelAddress": "0xC47E14AC0ea793e25e9644b555cb5902423F78E7",
+                "description": "UniverseDagents"
+            }
+        ]
+    },
+    "polygon_mainnet": {
+        "promptSchedulerAddress": "0x36C1ebc3a354947694525FdEE1Be273e70a45689",
+        "models": [
+            {
+                "modelName": "SentientAGI/Dobby-Mini-Unhinged-Llama-3.1-8B",
+                "modelAddress": "0x43344aFF9CA6F11A320d0702Dcf846FE560DDFff",
+                "description": "UniverseDagents"
+            }
+        ]
+    },
+    "ethereum_mainnet": {
+        "promptSchedulerAddress": "0xb2a51f4a3F3A6a0bF653763Bf50830219dc5e62D",
+        "models": [
+            {
+                "modelName": "DeepSeek-R1-Distill-Llama-70B",
+                "modelAddress": "0x16465e92C68675b4f775efD1ad830D22d14641bb",
+                "description": "UniverseDagents"
+            }
+        ]
+    },
+    "hyper_mainnet": {
+        "promptSchedulerAddress": "0x23613D7Ae65Eca6d02eaDe94ab4Be83b18b1F691",
+        "models": [
+            {
+                "modelName": "DeepSeek-R1-Distill-Llama-70B",
+                "modelAddress": "0xf65CADd63E5196072E7171e5139AD4a48D5abBD1",
+                "description": "UniverseDagents"
+            }
+        ]
+    },
+    "avax_mainnet": {
+        "promptSchedulerAddress": "0xcbeB849347e9fD09Ae125D2d280D30f68504356b",
+        "models": [
+            {
+                "modelName": "unsloth/r1-1776-GGUF",
+                "modelAddress": "0x31c4e363d85452B85f8888c4744Ce00efcc2E0aF",
+                "description": "UniverseDagents"
+            }
+        ]
+    },
+    "megaeth_testnet": {
+        "promptSchedulerAddress": "0x51D1E39D4E83f411033F3F6E159c13C18Fae26A2",
+        "models": [
+            {
+                "modelName": "DeepSeek-R1-Distill-Llama-70B",
+                "modelAddress": "0xF5ff10edf673017A6455f7Da2994578565586Fa8",
+                "description": "UniverseDagents"
+            }
+        ]
+    }
+}

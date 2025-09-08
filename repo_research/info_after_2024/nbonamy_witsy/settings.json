@@ -1,0 +1,482 @@
+
+{
+  "general": {
+    "firstRun": true,
+    "safeKeys": true,
+    "onboardingDone": false,
+    "keepRunning": true,
+    "hideOnStartup": false,
+    "proxyMode": "default",
+    "customProxy": "",
+    "tips": {
+    },
+    "confirm": {
+      "retryGeneration": true
+    },
+    "locale": ""
+  },
+  "llm": {
+    "locale": "",
+    "forceLocale": false,
+    "engine": "openai",
+    "instructions": "standard",
+    "favorites": [],
+    "autoVisionSwitch": true,
+    "conversationLength": 20,
+    "imageResize": 768,
+    "defaults": [],
+    "customInstructions": [],
+    "additionalInstructions": {
+      "toolRetry": true,
+      "datetime": true,
+      "mermaid": true,
+      "artifacts": true
+    }
+  },
+  "deepresearch": {
+    "runtime": "ms",
+    "breadth": 4,
+    "depth": 1,
+    "searchResults": 8
+  },
+  "appearance": {
+    "theme": "system",
+    "lighTint": "white",
+    "darkTint": "black",
+    "chatList": {
+      "mode": "timeline",
+      "layout": "normal"
+    },
+    "chat": {
+      "autoPreview": {
+        "html": true
+      },
+      "copyFormat": "text",
+      "showReasoning": true,
+      "showToolCalls": "always",
+      "theme": "openai",
+      "fontFamily": "",
+      "fontSize": 3
+    }
+  },
+  "scratchpad": {
+    "engine": "",
+    "model": "",
+    "fontSize": "3",
+    "fontFamily": "serif"
+  },
+  "prompt": {
+    "engine": "",
+    "model": "",
+    "autosave": false,
+    "disableStreaming": false,
+    "disableTools": false
+  },
+  "commands": {
+    "engine": "",
+    "model": ""
+  },
+  "automation": {
+    "altWinCopyPaste": false
+  },
+  "studio": {
+    "type": "image",
+    "engines": {
+      "image": "openai",
+      "imageEdit": "google",
+      "video": "replicate",
+      "videoEdit": "replicate"
+    },
+    "favorites": [],
+    "defaults": []
+  },
+  "shortcuts": {
+    "main": {
+      "key": "Space",
+      "ctrl": true
+    },
+    "command": {
+      "key": "Space",
+      "alt": true,
+      "ctrl": true
+    },
+    "prompt": {
+      "key": "P",
+      "shift": true,
+      "meta": true
+    },
+    "transcribe": {
+      "key": "Space",
+      "shift": true,
+      "ctrl": true,
+      "alt": true
+    },
+    "readaloud": {
+      "key": "Space",
+      "alt": true,
+      "shift": false,
+      "ctrl": true,
+      "meta": true
+    },
+    "scratchpad": {
+      "key": "N",
+      "meta": true,
+      "alt": true
+    },
+    "realtime": {
+      "key": "none"
+    }
+  },
+  "rag": {
+    "maxDocumentSizeMB": 1,
+    "chunkSize": 500,
+    "chunkOverlap": 50,
+    "searchResultCount": 5,
+    "relevanceCutOff": 0.2
+  },
+  "stt": {
+    "engine": "openai", 
+    "model": "whisper-1",
+    "locale": "",
+    "vocabulary": [],
+    "autoStart": false,
+    "pushToTalk": false,
+    "silenceDetection": true,
+    "silenceDuration": 2000,
+    "silenceAction": "stop_transcribe",
+    "customOpenAI": {
+      "baseURL": ""
+    },
+    "nvidia": {
+      "prompt": "Transcribe the audio clip into text.\nFormat sentences with clear line breaks and paragraphs for natural reading. Remove filler words like um, uh.\nYour response should be formatted as follows:\n\"transcribed text here\""
+    },
+    "mistralai": {
+      "prompt": "Transcribe the audio clip into text.\nFormat sentences with clear line breaks and paragraphs for natural reading. Remove filler words like um, uh.\nYour response should be formatted as follows:\n\"transcribed text here\""
+    },
+    "whisper": {
+      "gpu": true
+    },
+    "soniox": {
+      "cleanup": false,
+      "audioFormat": "auto"
+    }
+  },
+  "tts": {
+    "engine": "openai",
+    "model": "tts-1",
+    "voice": "alloy"
+  },
+  "realtime": {
+    "engine": "openai"
+  },
+  "engines": {
+    "__favorites__": {
+      "models": {
+        "chat": [],
+        "image": [],
+        "video": []
+      },
+      "model": {
+        "chat": "",
+        "image": "",
+        "video": ""
+      }
+    },
+    "openai": {
+      "apiKey": "",
+      "baseURL": "https://api.openai.com/v1",
+      "models": {
+        "chat": [],
+        "image": []
+      },
+      "model": {
+        "chat": "gpt-4.1",
+        "image": "gpt-image-1",
+        "vision": "gpt-4.1"
+      },
+      "realtime": {
+        "model": "gpt-4o-mini-realtime-preview",
+        "voice": "ash"
+      }
+    },
+    "anthropic": {
+      "models": {
+        "chat": [],
+        "image": []
+      },
+      "model": {
+        "chat": "claude-3-5-haiku-20241022",
+        "image": "",
+        "vision": "claude-3-5-haiku-20241022"
+      }
+    },
+    "google": {
+      "models": {
+        "chat": [],
+        "image": []
+      },
+      "model": {
+        "chat": "gemini-2.5-flash",
+        "image": "gemini-2.0-flash-exp",
+        "imageEdit": "gemini-2.0-flash-exp",
+        "vision": "gemini-1.5-pro-latest"
+      }
+    },
+    "groq": {
+      "models": {
+        "chat": [],
+        "image": []
+      },
+      "model": {
+        "chat": "qwen/qwen3-32b",
+        "image": "",
+        "vision": "meta-llama/llama-4-scout-17b-16e-instruct"
+      }
+    },
+    "xai": {
+      "models": {
+        "chat": [],
+        "image": []
+      },
+      "model": {
+        "chat": "grok-4-0709",
+        "image": "",
+        "vision": "grok-2-vision-1212"
+      }
+    },
+    "openrouter": {
+      "models": {
+        "chat": [],
+        "image": []
+      },
+      "model": {
+        "chat": "google/gemini-2.0-flash-exp:free",
+        "image": "",
+        "vision": "meta-llama/llama-4-maverick:free"
+      }
+    },
+    "deepseek": {
+      "models": {
+        "chat": [],
+        "image": []
+      },
+      "model": {
+        "chat": "deepseek-chat",
+        "image": ""
+      }
+    },
+    "cerebras": {
+      "models": {
+        "chat": [],
+        "image": []
+      },
+      "model": {
+        "chat": "qwen-3-32b",
+        "image": ""
+      }
+    },
+    "meta": {
+      "apiKey": "",
+      "models": {
+        "chat": [],
+        "image": []
+      },
+      "model": {
+        "chat": "Llama-4-Maverick-17B-128E-Instruct-FP8",
+        "image": "",
+        "vision": "Llama-4-Scout-17B-16E-Instruct-FP8"
+      }
+    },
+    "mistralai": {
+      "models": {
+        "chat": [],
+        "image": []
+      },
+      "model": {
+        "chat": "mistral-medium-latest",
+        "image": "",
+        "vision": "pixtral-large-latest"
+      }
+    },
+    "nvidia": {
+      "apiKey": "",
+      "models": {
+        "chat": [],
+        "image": []
+      },
+      "model": {
+        "chat": "",
+        "image": ""
+      }
+    },
+    "lmstudio": {
+      "apiKey": "dummy",
+      "baseURL": "http://localhost:1234/v1",
+      "models": {
+        "chat": [],
+        "image": []
+      },
+      "model": {
+        "chat": "",
+        "image": ""
+      }
+    },
+    "ollama": {
+      "baseURL": "http://127.0.0.1:11434",
+      "keepAlive": "",
+      "models": {
+        "chat": [],
+        "image": []
+      },
+      "model": {
+        "chat": "",
+        "image": ""
+      }
+    },
+    "huggingface": {
+      "apiKey": "",
+      "models": {
+        "chat": [],
+        "image": []
+      },
+      "model": {
+        "chat": "",
+        "image": "black-forest-labs/FLUX.1-schnell"
+      }
+    },
+    "replicate": {
+      "apiKey": "",
+      "models": {
+        "chat": [],
+        "image": [],
+        "video": []
+      },
+      "model": {
+        "chat": "",
+        "image": "black-forest-labs/flux-schnell",
+        "video": "google/veo-3",
+        "videoEdit": "arielreplicate/deoldify_video"
+      }
+    },
+    "elevenlabs": {
+      "apiKey": "",
+      "models": {
+        "tts": []
+      }
+    },
+    "sdwebui": {
+      "baseURL": "http://127.0.0.1:7860",
+      "models": {
+        "chat": [],
+        "image": []
+      },
+      "model": {
+        "chat": "",
+        "image": ""
+      }
+    },
+    "falai": {
+      "apiKey": "",
+      "models": {
+        "chat": [],
+        "image": []
+      },
+      "model": {
+        "chat": "",
+        "image": ""
+      }
+    },
+    "gladia": {
+      "apiKey": "",
+      "models": {
+        "chat": [],
+        "image": []
+      },
+      "model": {
+        "chat": "",
+        "image": ""
+      }
+    },
+    "speechmatics": {
+      "apiKey": "",
+      "models": {
+        "chat": [],
+        "image": []
+      },
+      "model": {
+        "chat": "",
+        "image": ""
+      }
+    },
+    "fireworks": {
+      "apiKey": "",
+      "models": {
+        "chat": [],
+        "image": []
+      },
+      "model": {
+        "chat": "",
+        "image": ""
+      }
+    },
+    "soniox": {
+      "apiKey": "",
+      "models": {
+        "chat": [],
+        "image": []
+      },
+      "model": {
+        "chat": "",
+        "image": ""
+      }
+    }
+  },
+  "plugins": {
+    "browse": {
+      "enabled": true
+    },
+    "python": {
+      "enabled": false
+    },
+    "search": {
+      "enabled": false,
+      "engine": "local",
+      "contentLength": 5000,
+      "maxResults": 5
+    },
+    "youtube": {
+      "enabled": true
+    },
+    "image": {
+      "enabled": true,
+      "engine": "openai"
+    },
+    "memory": {
+      "enabled": false,
+      "engine": "openai",
+      "model": "text-embedding-3-small"
+    },
+    "video": {
+      "enabled": true,
+      "engine": "replicate"
+    },
+    "vega": {
+      "enabled": false
+    },
+    "mcp": {
+      "enabled": true
+    },
+    "filesystem": {
+      "enabled": false,
+      "allowedPaths": [],
+      "allowWrite": false,
+      "skipConfirmation": false
+    }
+  },
+  "mcp": {
+    "servers": [],
+    "mcpServersExtra": {},
+    "smitheryApiKey": ""
+  },
+  "mcpServers": {}
+}

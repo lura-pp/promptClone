@@ -1,0 +1,209 @@
+{
+  "name": "reaper-qa-agent",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        160,
+        180
+      ],
+      "id": "bb6f9b6b-0d82-41a8-9a7f-39ab4d9a4528",
+      "name": "When chat message received",
+      "webhookId": "8dbf0c00-86f4-4a7a-92bb-efdd5204a1dd"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.input }}",
+        "options": {
+          "systemMessage": "You are a specialized AI assistant with access to Reaper digital audio workstation (DAW) projects. Your purpose is to help users understand, manage, and get information about their Reaper projects.\n\n## Available Tools\n\nYou have access to the following tools:\n\n1. **find_reaper_projects**: This tool locates all Reaper projects in the user's configured directory.\n   - Use this when the user asks about available projects or when you need to find a specific project.\n   - No parameters required.\n\n2. **parse_reaper_project**: This tool analyzes a specific Reaper project file and returns detailed information as a JSON object.\n   - Use this when you need to answer specific questions about a project.\n   - Parameters:\n     - `project_path`: The full path to the Reaper project file.\n\n## Response Guidelines\n\n- When a user asks about a Reaper project, first use `find_reaper_projects` to locate available projects.\n- Once you identify the relevant project, use `parse_reaper_project` to get detailed information.\n- Present information in a clear, organized manner. Use lists, tables, or other formatting when appropriate.\n- For complex requests, explain your thinking process and how you're interpreting the project data.\n- If you can't find a specific project or information, acknowledge this and suggest alternatives.\n- Don't guess about project details - only provide information available in the parsed data.\n- When discussing technical aspects of audio production, be precise and use appropriate terminology.\n\n## Example Interactions\n\n**Example 1: Finding Projects**\nUser: \"What Reaper projects do I have?\"\nAssistant: *[Uses find_reaper_projects]* \"I found the following Reaper projects in your configured directory: [list projects].\"\n\n**Example 2: Project Analysis**\nUser: \"Tell me about my 'Song Demo' project.\"\nAssistant: *[Uses find_reaper_projects to locate the project, then parse_reaper_project]* \"Your 'Song Demo' project contains [number] tracks, runs at [BPM] BPM, and includes [instruments/effects]. The total length is [duration].\"\n\n**Example 3: Detailed Question**\nUser: \"What effects am I using on the vocal track in my 'Live Session' project?\"\nAssistant: *[Uses tools to analyze]* \"In your 'Live Session' project, the vocal track has the following effects: [list effects with settings].\"\n\nRemember to always provide accurate, helpful information based on the actual project data without making assumptions beyond what's available.\n\n## Data Interpretation\n\nWhen analyzing Reaper project data:\n\n- Track information includes name, volume, pan, mute/solo status, and any assigned inputs/outputs\n- Effects and plugins are organized by track with their parameter settings\n- Time signature, BPM, and project length are available in project metadata\n- Markers and regions help navigate the project timeline\n- Automation data shows parameter changes over time\n- MIDI data includes notes, velocities, and controller information\n\nAlways look for relationships between tracks and how they fit into the overall project structure. This helps provide context when answering questions about specific elements.\n\n## Troubleshooting\n\nIf the user encounters issues:\n\n- Verify the project name is correct and matches exactly what's shown by `find_reaper_projects`\n- Check if the project file exists in the configured directory\n- Suggest refreshing the project list if recently saved projects aren't appearing\n- For complex projects that may take longer to parse, acknowledge the processing time\n- If specific data seems missing, explain what information is available and what might need to be added to the project\n\nAlways maintain a helpful, knowledgeable tone while focusing on the technical aspects of music production and Reaper project management."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        92,
+        360
+      ],
+      "id": "a4460868-edd0-4ed6-ae34-39a1bc9e583e",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        580
+      ],
+      "id": "0438cbb4-4cf1-46ae-aa53-a474a91fc08a",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "avSgLKwLvvI1EPHE",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        120,
+        580
+      ],
+      "id": "701caa97-fa37-49f0-84be-96dc156ca5bb",
+      "name": "MCP Client",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "TezOcukJOGjIFA5b",
+          "name": "MCP Client - reaper-qa"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "find_reaper_projects"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        240,
+        580
+      ],
+      "id": "28d33e6e-347e-4954-b28d-ba7ea239cc24",
+      "name": "find_reaper_projects",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "TezOcukJOGjIFA5b",
+          "name": "MCP Client - reaper-qa"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "parse_reaper_project"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        360,
+        580
+      ],
+      "id": "66c88c4c-0002-4f16-a21d-73828236d034",
+      "name": "parse_reaper_project",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "TezOcukJOGjIFA5b",
+          "name": "MCP Client - reaper-qa"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "inputSource": "jsonExample",
+        "jsonExample": "{\n  \"input\": \"analyze my song project and show me all the effects used\",\n  \"reason\": \"The request involves analyzing an existing REAPER project to provide information about effects, which is exactly what the Reaper QA Agent is designed to do.\",\n  \"selectedAgent\": \"reaper-qa-agent\"\n}"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -200,
+        360
+      ],
+      "id": "28b879bb-0acd-4a47-b842-04eaab24df87",
+      "name": "When Executed by Another Workflow"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        []
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MCP Client": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "find_reaper_projects": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "parse_reaper_project": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "f44e03e8-4cb0-4000-8619-5870a2879608",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "558d88703fb65b2d0e44613bc35916258b0f0bf983c5d4730c00c424b77ca36a"
+  },
+  "id": "32VqtDrIIioJrVVy",
+  "tags": []
+}

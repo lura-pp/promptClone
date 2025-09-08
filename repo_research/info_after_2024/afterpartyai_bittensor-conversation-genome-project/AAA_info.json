@@ -1,0 +1,11 @@
+{
+    "app.py": 1,
+    "test_full_loop.py": 0,
+    "test_llm_openai.py": 1,
+    "test_api_lib.py": 1,
+    "llm_groq.py": 1,
+    "llm_textgenai.py": 1,
+    "llm_openai.py": 2,
+    "llm_anthropic.py": 0,
+    "ValidatorLib.py": 1
+}

@@ -1,0 +1,21 @@
+{
+    "prompts.py": 3,
+    "add.py": 1,
+    "predict.py": 0,
+    "llm_judge.py": 1,
+    "zh_merge_profile.py": 0,
+    "summary_profile.py": 1,
+    "extract_profile.py": 1,
+    "zh_extract_profile.py": 0,
+    "pick_related_profiles.py": 1,
+    "zh_merge_profile_yolo.py": 0,
+    "zh_summary_entry_chats.py": 0,
+    "merge_profile_yolo.py": 1,
+    "organize_profile.py": 1,
+    "merge_profile.py": 1,
+    "summary_entry_chats.py": 1,
+    "event_tagging.py": 1,
+    "zh_infer_plot.py": 0,
+    "zh_detect_interest.py": 0,
+    "cli_demo.py": 1
+}

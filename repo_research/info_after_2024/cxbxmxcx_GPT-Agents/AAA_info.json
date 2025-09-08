@@ -1,0 +1,8 @@
+{
+    "SK_semantic_memory_prompt.py": 1,
+    "SK_semantic_memory_preference_skill.py": 0,
+    "SK_semantic_memory_context_skill.py": 0,
+    "unit_test_assistant.py": 1,
+    "SK_context_variables.py": 1,
+    "SK_semantic_native_functions.py": 1
+}

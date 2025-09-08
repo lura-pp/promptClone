@@ -1,0 +1,290 @@
+{
+  "country": {
+    "name": "中国",
+    "code": "CN"
+  },
+  "t": {
+    "metadata": {
+      "title": "Findto —— 您的新一代智能搜索助手",
+      "description": "Findto 帮您轻松搜索 Web 与 AI 资源，探索互联网的无限可能。"
+    },
+    "feedback": {
+      "title": "发送反馈",
+      "url": "https://forms.gle/US69JvUT1qxYkiF58"
+    },
+    "welcome": {
+      "goodMorning": "早上好",
+      "goodEvening": "下午好",
+      "goodNight": "晚安"
+    },
+    "voice": {
+      "voice": "Voice",
+      "speak": "Speak now",
+      "allow": "Waiting..."
+    },
+    "widgetProtection": {
+      "title": "防护",
+      "description": "您可以检查所选搜索源的信誉。",
+      "source": "已选择",
+      "carbon": "碳足迹",
+      "security": "安全",
+      "privacy": "隐私"
+    },
+    "copyright": "来自巴西的开源软件，开发者",
+    "about": "关于项目",
+    "privacy": "隐私政策",
+    "terms": "服务条款",
+    "donate": "立即捐赠",
+    "accept": "好的",
+    "learnMore": "了解更多关于 Findto",
+    "viewNearbyPlaces": "View nearby places",
+    "openApp": "打开 Findto",
+    "placeholder": "搜索",
+    "search": "Search",
+    "clear": "Clear",
+    "powered": "数据提供者",
+    "settings": "用户设置",
+    "theme": "主题",
+    "language": "语言",
+    "contribute": "贡献你的力量",
+    "explore": "探索",
+    "trends": "热门内容",
+    "stories": "最新动态",
+    "categories": "模块",
+    "category": "选定模式",
+    "warnings": {
+      "cookies": "Findto 使用 Cookie。我们尊重您的隐私，不会存储任何个人信息。"
+    }
+  },
+  "categories": [
+    {
+      "name": "Home",
+      "name_translated": "家",
+      "active": true,
+      "data": [
+        {
+          "name": "Baidu",
+          "action": "https://www.baidu.com/s?wd="
+        },
+        {
+          "name": "Google",
+          "action": "https://www.google.com/search?q="
+        },
+        {
+          "name": "Bing",
+          "action": "https://www.bing.com/search?q="
+        },
+        {
+          "name": "ChatGPT",
+          "action": "https://chatgpt.com/?q="
+        },
+        {
+          "name": "DeepSeek",
+          "action": "https://chat.deepseek.com/?q="
+        },
+        {
+          "name": "Copilot",
+          "action": "https://copilot.microsoft.com/?q="
+        },
+        {
+          "name": "YouTube",
+          "action": "https://www.youtube.com/results?search_query="
+        },
+        {
+          "name": "Douyin",
+          "action": "https://www.douyin.com/root/search/"
+        },
+        {
+          "name": "Weibo",
+          "action": "https://s.weibo.com/weibo?q="
+        },
+        {
+          "name": "Taobao",
+          "action": "https://s.taobao.com/search?q="
+        },
+        {
+          "name": "Toutiao",
+          "action": "https://so.toutiao.com/search?dvpf=pc&input&keyword="
+        },
+        {
+          "name": "Xiaohongshu",
+          "action": "https://www.xiaohongshu.com/explore?q="
+        },
+        {
+          "name": "Reddit",
+          "action": "https://www.reddit.com/search?q="
+        },
+        {
+          "name": "X",
+          "action": "https://x.com/search?src=typed_query&q="
+        },
+        {
+          "name": "Instagram",
+          "action": "https://www.instagram.com/explore/tags/"
+        },
+        {
+          "name": "LinkedIn",
+          "action": "https://www.linkedin.com/search/results/index/?keywords="
+        },
+        {
+          "name": "Pinterest",
+          "action": "https://br.pinterest.com/search/pins/?q="
+        },
+        {
+          "name": "Yahoo",
+          "action": "https://search.yahoo.com/search?p="
+        },
+        {
+          "name": "JD",
+          "action": "http://search.jd.com/Search?keyword="
+        },
+        {
+          "name": "Temu",
+          "action": "https://www.temu.com/search_result.html?search_key="
+        },
+        {
+          "name": "GOV.CN",
+          "action": "https://search.english.www.gov.cn/en/search.shtml?code=17dbe3acd9d&dataTypeId=57&searchWord="
+        }
+      ]
+    },
+    {
+      "name": "AI",
+      "name_translated": "人工智能",
+      "active": true,
+      "data": [
+        {
+          "name": "Doubao",
+          "action": "https://www.doubao.com/?q="
+        },
+        {
+          "name": "DeepSeek",
+          "action": "https://chat.deepseek.com/?q="
+        },
+        {
+          "name": "Qwen",
+          "action": "https://chat.qwenlm.ai/?q="
+        },
+        {
+          "name": "ChatGPT",
+          "action": "https://chatgpt.com/?q="
+        },
+        {
+          "name": "Copilot",
+          "action": "https://copilot.microsoft.com/?q="
+        },
+        {
+          "name": "Perplexity",
+          "action": "https://www.perplexity.ai/?q="
+        },
+        {
+          "name": "Grok",
+          "action": "https://grok.com/?q="
+        },
+        {
+          "name": "HuggingChat",
+          "action": "https://huggingface.co/chat?q="
+        },
+        {
+          "name": "Claude",
+          "action": "https://claude.ai/new?q="
+        },
+        {
+          "name": "Mistral",
+          "action": "https://chat.mistral.ai/chat?q="
+        },
+        {
+          "name": "Gemini",
+          "action": "https://gemini.google.com/app?q="
+        },
+        {
+          "name": "Meta AI",
+          "action": "https://www.meta.ai/?q="
+        },
+        {
+          "name": "You",
+          "action": "https://you.com/search?fromSearchBar=true&tbm=youchat&q="
+        },
+        {
+          "name": "Phind",
+          "action": "https://www.phind.com/agent?q="
+        },
+        {
+          "name": "iAsk",
+          "action": "https://iask.ai/?mode=question&q="
+        },
+        {
+          "name": "Wenxiaoyan",
+          "action": "https://chat.baidu.com/search?q="
+        },
+        {
+          "name": "Kimi",
+          "action": "https://kimi.ai?q="
+        },
+        {
+          "name": "Adobe Firefly",
+          "action": "https://firefly.adobe.com/generate/images?prompt="
+        }
+      ]
+    },
+    {
+      "name": "News",
+      "name_translated": "消息",
+      "active": true,
+      "data": [
+        {
+          "name": "Google News",
+          "action": "https://news.google.com/search?q="
+        },
+        {
+          "name": "Xinhua",
+          "action": "https://so.news.cn/#search/0/"
+        },
+        {
+          "name": "China News",
+          "action": "https://sou.chinanews.com/search.do?q="
+        },
+        {
+          "name": "People.cn",
+          "action": "http://search.people.cn/s?keyword="
+        },
+        {
+          "name": "CGTN",
+          "action": "https://www.cgtn.com/searching/index.html?keyword="
+        },
+        {
+          "name": "QQ",
+          "action": "https://news.qq.com/search?query="
+        },
+        {
+          "name": "Sina",
+          "action": "https://sina.com.cn"
+        },
+        {
+          "name": "163",
+          "action": "https://www.163.com/search?keyword="
+        },
+        {
+          "name": "CNN",
+          "action": "https://edition.cnn.com/search?q="
+        },
+        {
+          "name": "Reuters",
+          "action": "https://www.reuters.com/site-search/?query="
+        },
+        {
+          "name": "BBC",
+          "action": "https://www.bbc.co.uk/search?q="
+        },
+        {
+          "name": "Feedly",
+          "action": "https://feedly.com/i/discover/sources/search/feed/"
+        },
+        {
+          "name": "Flipboard",
+          "action": "https://flipboard.com/search/"
+        }
+      ]
+    }
+  ]
+}

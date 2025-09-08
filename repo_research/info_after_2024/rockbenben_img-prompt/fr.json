@@ -1,0 +1,52 @@
+{
+  "Metadata": {
+    "title": "IMGPrompt - Générateur intelligent de prompts d’art IA | Midjourney, Stable Diffusion, DALL·E, FLUX",
+    "description": "Vous manquez d’idées de prompts pour l’art IA ? IMGPrompt génère des prompts intelligents compatibles avec Midjourney, Stable Diffusion et DALL·E pour stimuler votre créativité.",
+    "keywords": "IMGPrompt, Stable Diffusion, Midjourney, DALL·E, FLUX, Génération d'invite d'image, Outil de créativité visuelle, invite, IA, recommandation d'invite, invite de traduction, invite d'image"
+  },
+  "ToolPage": {
+    "section1": "Sélectionnez le sujet",
+    "section2": "Affiner la catégorie",
+    "section3": "Ajouter des balises",
+    "currentSelection": "Questions sélectionnées",
+    "hierarchyTip": "Séquence d'opérations : Sélectionner un sujet → Affiner la catégorie → Ajouter des balises"
+  },
+  "ResultSection": {
+    "tooltip-light": "Appliquer un modèle d’éclairage de portrait (y compris l’éclairage du film, les rayons du crépuscule et autres)",
+    "prompt-light": "Éclairage de portrait",
+    "tooltip-polish": "Charger les paramètres d’optimisation de l’image (amélioration de la résolution/amélioration du style artistique)",
+    "prompt-polish": "Optimisation de la qualité",
+    "insertSuccess": "Des paramètres d'optimisation ont été ajoutés à l'invite",
+    "tooltip-negative": "Copiez les invites négatives courantes (pour éviter les défauts courants)",
+    "prompt-negative": "Invite négative",
+    "prompt": "Rapide",
+    "button-copy": "Copie",
+    "clearSuccess": "Les invites ont été effacées",
+    "button-clear": "Clair",
+    "tooltip-translate": "Saisissez du texte dans n'importe quelle langue pour le traduire en anglais",
+    "button-translate": "Traduire",
+    "translateSuccess": "Traduction réussie et ajoutée à l'invite",
+    "translateEmptyError": "Veuillez saisir le contenu à traduire",
+    "translateFailError": "La traduction a échoué, veuillez réessayer",
+    "title-other": "Fonctionnalités avancées :",
+    "tooltip-randomColor": "Changer de couleur de manière aléatoire",
+    "button-randomcolor": "Couleur aléatoire"
+  },
+  "CopyToClipboard": {
+    "empty": "Le contenu est vide, rien à copier",
+    "unsupported": "Votre navigateur ne prend pas en charge les opérations du presse-papiers, veuillez essayer de copier manuellement ou d'utiliser un autre navigateur",
+    "success": "Copié avec succès, vous pouvez le coller dans l'outil de peinture AI",
+    "failure": "La copie a échoué, veuillez copier manuellement"
+  },
+  "feedback": {
+    "feedback1": "Commentaires et suggestions",
+    "feedback2": "Si vous rencontrez des problèmes lors de l'utilisation ou si vous avez des suggestions et des idées, n'hésitez pas à me le faire savoir ! Vos commentaires influenceront directement le développement et l'amélioration des fonctionnalités futures, nous aidant à créer un outil qui répond mieux aux besoins de chacun.",
+    "feedback3": "Veuillez décrire en détail votre cas d'utilisation ou le problème rencontré, ou partager vos idées créatives. J'examinerai attentivement chaque commentaire et procéderai aux ajustements et optimisations dès que possible.",
+    "reaction0": "En haut",
+    "reaction1": "Soutien",
+    "reaction2": "Cool",
+    "reaction3": "Quoi?",
+    "reaction4": "Puzzle",
+    "placeholder": "Merci de laisser un message, aucune connexion requise (entrez votre email pour recevoir les notifications de réponse)"
+  }
+}

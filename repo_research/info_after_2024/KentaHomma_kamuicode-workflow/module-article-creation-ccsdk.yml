@@ -1,0 +1,282 @@
+name: module-article-creation-ccsdk
+
+on:
+  workflow_call:
+    inputs:
+      concept:
+        description: '記事のテーマ・コンセプト'
+        required: true
+        type: string
+      search-results:
+        description: '検索結果データ'
+        required: true
+        type: string
+      found-sources:
+        description: '実際に見つかったソースURL'
+        required: true
+        type: string
+      target-language:
+        description: '記事作成言語 (japanese/english)'
+        required: false
+        type: string
+        default: 'japanese'
+      article-style:
+        description: '記事スタイル (news/blog/summary/analysis)'
+        required: false
+        type: string
+        default: 'news'
+      article-length:
+        description: '記事の長さ (short/medium/long)'
+        required: false
+        type: string
+        default: 'medium'
+      branch-name:
+        description: 'ワーキングブランチ名'
+        required: true
+        type: string
+      folder-name:
+        description: 'プロジェクトフォルダ名'
+        required: true
+        type: string
+      article_index:
+        description: '記事インデックス'
+        required: false
+        type: string
+        default: '1'
+    outputs:
+      completed:
+        description: '完了ステータス'
+        value: ${{ jobs.article-creation.outputs.completed }}
+      article-content:
+        description: '記事本文'
+        value: ${{ jobs.article-creation.outputs.article-content }}
+      article-title:
+        description: '記事タイトル'
+        value: ${{ jobs.article-creation.outputs.article-title }}
+      article-summary:
+        description: '記事要約'
+        value: ${{ jobs.article-creation.outputs.article-summary }}
+      audio-script:
+        description: '音声用スクリプト'
+        value: ${{ jobs.article-creation.outputs.audio-script }}
+    secrets:
+      anthropic_api_key:
+        description: 'Anthropic API Key'
+        required: true
+      github_pat:
+        description: 'GitHub Token'
+        required: true
+
+jobs:
+  article-creation:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      completed: ${{ steps.article-creation.outputs.completed }}
+      article-content: ${{ steps.article-creation.outputs.article-content }}
+      article-title: ${{ steps.article-creation.outputs.article-title }}
+      article-summary: ${{ steps.article-creation.outputs.article-summary }}
+      audio-script: ${{ steps.article-creation.outputs.audio-script }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.branch-name }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install Claude Code SDK
+        run: npm install @anthropic-ai/claude-code
+      
+      - name: AI記事作成エージェント
+        id: article-creation
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.anthropic_api_key }}
+        run: |
+          echo "::group::📝 Article Creation Agent Execution"
+          echo "Starting at: $(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)"
+          
+          # 設定
+          USER_CONCEPT="${{ inputs.concept }}"
+          SEARCH_RESULTS="${{ inputs.search-results }}"
+          FOUND_SOURCES="${{ inputs.found-sources }}"
+          TARGET_LANGUAGE="${{ inputs.target-language }}"
+          ARTICLE_STYLE="${{ inputs.article-style }}"
+          ARTICLE_LENGTH="${{ inputs.article-length }}"
+          FOLDER_NAME="${{ inputs.folder-name }}"
+          ARTICLE_INDEX="${{ inputs.article_index }}"
+          ARTICLES_DIR="$FOLDER_NAME/articles-$ARTICLE_INDEX"
+          
+          echo "User concept: $USER_CONCEPT"
+          echo "Target language: $TARGET_LANGUAGE"
+          echo "Article style: $ARTICLE_STYLE"
+          echo "Article length: $ARTICLE_LENGTH"
+          echo "Articles folder: $ARTICLES_DIR"
+          
+          # 記事フォルダを事前に作成
+          if [ ! -d "$ARTICLES_DIR" ]; then
+            mkdir -p "$ARTICLES_DIR"
+            echo "📁 Created articles folder: $ARTICLES_DIR"
+          fi
+          
+          # プロンプトの構築
+          PROMPT="あなたは高品質なAI記事作成の専門エージェントです。提供された検索結果から正確で読みやすいニュース記事を作成してください。
+
+          記事テーマ: $USER_CONCEPT
+          検索結果: $SEARCH_RESULTS
+          ソースURL: $FOUND_SOURCES
+          言語: $TARGET_LANGUAGE
+          記事スタイル: $ARTICLE_STYLE
+          記事長さ: $ARTICLE_LENGTH
+
+          重要原則:
+          - 提供された検索結果の情報のみを使用
+          - フィクションや推測は一切含めない
+          - 実在する企業・製品・ニュースのみ記載
+
+          タスク:
+          1. 検索結果を分析し、信頼できる情報を特定
+          2. 記事構成を設計（タイトル、要約、本文、参考文献）
+          3. 以下のファイルを作成：
+             - $ARTICLES_DIR/article.md（記事本文、Markdown形式）
+             - $ARTICLES_DIR/article-title.txt（タイトル、1行）
+             - $ARTICLES_DIR/article-summary.txt（要約、1行）
+             - $ARTICLES_DIR/audio-script.txt（音声用スクリプト、2-3分程度）
+
+          音声スクリプト要件:
+          - 自然な話し言葉で構成
+          - 専門用語の読み方を考慮
+          - URL等の音声に不適切な部分は除外
+
+          禁止事項:
+          - フィクション企業の創作（Global AI, TechStar Inc.等）
+          - 存在しないURL/記事の引用
+          - 推測による情報の追加
+
+          まず検索結果を確認し、実在する情報のみで記事を作成してください。"
+          
+          echo "🚀 Starting Article Creation Agent Claude Code CLI..."
+          echo "📝 Prompt length: ${#PROMPT}"
+          
+          # Claude Code CLIの実行
+          npx @anthropic-ai/claude-code \
+            --allowedTools "Read,Write,Bash" \
+            --max-turns 30 \
+            --verbose \
+            --permission-mode "acceptEdits" \
+            -p "$PROMPT" || {
+              echo "::error::❌ Claude Code CLI execution failed"
+              exit 1
+            }
+          
+          # 生成された記事の確認と出力設定
+          echo ""
+          echo "📝 Checking generated article files..."
+          
+          # 記事タイトル確認
+          if [ -f "$ARTICLES_DIR/article-title.txt" ]; then
+            ARTICLE_TITLE=$(cat "$ARTICLES_DIR/article-title.txt")
+            echo "✅ Article title: $ARTICLE_TITLE"
+            echo "article-title=$ARTICLE_TITLE" >> $GITHUB_OUTPUT
+          else
+            echo "❌ Article title file not found"
+            echo "article-title=記事タイトルが生成されませんでした" >> $GITHUB_OUTPUT
+          fi
+          
+          # 記事要約確認
+          if [ -f "$ARTICLES_DIR/article-summary.txt" ]; then
+            ARTICLE_SUMMARY=$(cat "$ARTICLES_DIR/article-summary.txt")
+            echo "✅ Article summary: $ARTICLE_SUMMARY"
+            echo "article-summary=$ARTICLE_SUMMARY" >> $GITHUB_OUTPUT
+          else
+            echo "❌ Article summary file not found"
+            echo "article-summary=記事要約が生成されませんでした" >> $GITHUB_OUTPUT
+          fi
+          
+          # 音声用スクリプト確認
+          if [ -f "$ARTICLES_DIR/audio-script.txt" ]; then
+            AUDIO_SCRIPT=$(cat "$ARTICLES_DIR/audio-script.txt")
+            SCRIPT_LENGTH=${#AUDIO_SCRIPT}
+            echo "✅ Audio script created: $SCRIPT_LENGTH characters"
+            
+            # GitHub Actions出力変数用にエスケープ（サイズ制限考慮）
+            if [ $SCRIPT_LENGTH -gt 3000 ]; then
+              TRUNCATED_SCRIPT=$(echo "$AUDIO_SCRIPT" | head -c 3000)
+              echo "audio-script=${TRUNCATED_SCRIPT}..." >> $GITHUB_OUTPUT
+            else
+              AUDIO_SCRIPT_ESCAPED=$(echo "$AUDIO_SCRIPT" | sed ':a;N;$!ba;s/\n/\\n/g')
+              echo "audio-script=$AUDIO_SCRIPT_ESCAPED" >> $GITHUB_OUTPUT
+            fi
+          else
+            echo "❌ Audio script file not found"
+            echo "audio-script=音声用スクリプトが生成されませんでした" >> $GITHUB_OUTPUT
+          fi
+          
+          # 記事本文確認
+          if [ -f "$ARTICLES_DIR/article.md" ]; then
+            ARTICLE_CONTENT=$(cat "$ARTICLES_DIR/article.md")
+            CONTENT_LENGTH=${#ARTICLE_CONTENT}
+            echo "✅ Article content created: $CONTENT_LENGTH characters"
+            
+            # GitHub Actions出力変数用にエスケープ（サイズ制限考慮）
+            if [ $CONTENT_LENGTH -gt 4000 ]; then
+              TRUNCATED_CONTENT=$(echo "$ARTICLE_CONTENT" | head -c 4000)
+              echo "article-content=${TRUNCATED_CONTENT}..." >> $GITHUB_OUTPUT
+            else
+              ARTICLE_CONTENT_ESCAPED=$(echo "$ARTICLE_CONTENT" | sed ':a;N;$!ba;s/\n/\\n/g')
+              echo "article-content=$ARTICLE_CONTENT_ESCAPED" >> $GITHUB_OUTPUT
+            fi
+            
+            # 品質チェック
+            echo "🔍 Article Quality Check:"
+            if echo "$ARTICLE_CONTENT" | grep -q "Global AI\|TechStar Inc\|AI Solutions Corp"; then
+              echo "⚠️ Warning: Potential fictional companies detected"
+            else
+              echo "✅ No obvious fictional companies detected"
+            fi
+          else
+            echo "❌ Article content file not found"
+            echo "article-content=記事本文が生成されませんでした" >> $GITHUB_OUTPUT
+          fi
+          
+          echo "completed=true" >> $GITHUB_OUTPUT
+          echo "::endgroup::"
+          
+      - name: Commit article files
+        env:
+          GH_TOKEN: ${{ secrets.github_pat }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ${{ inputs.folder-name }}/
+          if git diff --cached --quiet; then
+            echo "No article files to commit"
+          else
+            git commit -m "Add AI news article created by Claude Code SDK: ${{ inputs.concept }}
+
+            Language: ${{ inputs.target-language }}
+            Style: ${{ inputs.article-style }}
+            Length: ${{ inputs.article-length }}
+            Based on: Real web search results
+
+            🤖 Generated with [Claude Code](https://claude.ai/code)
+
+            Co-Authored-By: Claude <noreply@anthropic.com>"
+            # 並列実行での競合を回避するためのリトライ処理
+            for i in {1..3}; do
+              git pull --rebase origin ${{ inputs.branch-name }} || true
+              if git push origin ${{ inputs.branch-name }}; then
+                echo "✅ Push successful on attempt $i"
+                break
+              else
+                echo "⚠️ Push failed on attempt $i, retrying..."
+                # ランダムな待機時間（1-5秒）
+                sleep $((RANDOM % 5 + 1))
+              fi
+            done
+          fi

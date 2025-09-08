@@ -1,0 +1,14 @@
+{
+    "translation.json": 1,
+    "constants.py": 2,
+    "workstation.py": 1,
+    "assistant_agent.py": 1,
+    "knowledge_imp.py": 0,
+    "assistant_prompt_base.py": 0,
+    "assistant_prompt_cohere.py": 1,
+    "tool.py": 1,
+    "react_prompt.py": 0,
+    "prompt.py": 2,
+    "prompt_cohere.py": 4,
+    "qa_generator.py": 0
+}

@@ -1,0 +1,6 @@
+{
+    "gan_chat_bbh.py": 1,
+    "gan_chat_gsm8k.py": 0,
+    "gan_chat.py": 1,
+    "gan_chat_mmlu.py": 0
+}

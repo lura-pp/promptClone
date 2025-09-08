@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "1.0",
+  "title_i18n": {
+    "en_US": "Liferay RAG"
+  },
+  "configuration": {
+    "trace": true,
+    "nodes": [
+      {
+        "uiConfiguration": {
+          "position": {
+            "x": -472.5142822265625,
+            "y": -68.91429138183592
+          }
+        },
+        "id": "aquamarineTotalGrasshopper",
+        "label": "Input Trigger",
+        "type": "inputTrigger",
+        "parameters": {}
+      },
+      {
+        "uiConfiguration": {
+          "position": {
+            "x": -221.19047037760416,
+            "y": -98.52381896972656
+          }
+        },
+        "id": "blackUrgentTyrannosaurus",
+        "label": "Liferay Search",
+        "type": "liferaySearch",
+        "parameters": {
+          "topK": 3,
+          "inputParameterName": "text",
+          "sxpBlueprintExternalReferenceCode": "semantic_search",
+          "taskContextOutputParameterName": "ragDocuments",
+          "documentResultField": "content_{{taskContext.currentLanguageId}}"
+        }
+      },
+      {
+        "uiConfiguration": {
+          "position": {
+            "x": 81.47619628906247,
+            "y": -101.92385864257811
+          }
+        },
+        "id": "pinkPassingHedgehog",
+        "label": "Ollama Chat Model",
+        "type": "ollamaChatModel",
+        "parameters": {
+          "modelName": "llama3.2:1b",
+          "baseUrl": "http://localhost:11434",
+          "systemMessage": "If possible, base your answers on the following context:\n\n{{taskContext.ragDocuments}}",
+          "memoryMaxMessages": 20,
+          "temperature": 0.7,
+          "useChatMemory": true,
+          "promptTemplate": "{{input.text}}",
+          "outputParameterName": "text"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "d90381b0-363b-4443-9ceb-097fb19e44b7",
+        "source": "aquamarineTotalGrasshopper",
+        "target": "blackUrgentTyrannosaurus"
+      },
+      {
+        "id": "ab568547-d2ab-4b90-8c1c-6d616ddcb77b",
+        "source": "blackUrgentTyrannosaurus",
+        "target": "pinkPassingHedgehog"
+      }
+    ]
+  },
+  "description_i18n": {
+    "en_US": "A demo task for creating a local, Liferay search grounded chatbot"
+  },
+  "enabled": true,
+  "externalReferenceCode": "liferay-rag"
+}

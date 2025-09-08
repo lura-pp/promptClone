@@ -1,0 +1,23 @@
+{
+  "modelNameForDisplayOnly": "Gpt-4o Example",
+  "endpoint": "https://api.openai.com",
+  "apiKey": "Your API Key Here",
+  "apiTypeConfigFileName": "Open-Ai-Api",
+  "maxContextTokenSize": 65535,
+  "modelNameToSendToAPI": "None",
+  "promptTemplate": "chatml",
+  "addGenerationPrompt": true,
+  "trimBeginningAndEndLineBreaks": true,
+  "dontIncludeModel": true,
+  "removeThinking": false,
+  "startThinkTag": "<think>",
+  "endThinkTag": "</think>",
+  "expectOnlyClosingThinkTag": false,
+  "addTextToStartOfSystem": false,
+  "textToAddToStartOfSystem": "/no_think ",
+  "addTextToStartOfPrompt": false,
+  "textToAddToStartOfPrompt": "/think_no",
+  "addTextToStartOfCompletion": false,
+  "textToAddToStartOfCompletion": "<think>\n</think>\n",
+  "ensureTextAddedToAssistantWhenChatCompletion": false
+}

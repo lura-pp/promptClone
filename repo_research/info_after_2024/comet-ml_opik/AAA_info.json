@@ -1,0 +1,18 @@
+{
+    "templates.py": 1,
+    "demo_data.py": 5,
+    "demo_data_generator.py": 4,
+    "test_prompt_template.py": 1,
+    "evolutionary_optimizer.py": 1,
+    "meta_prompt_optimizer.py": 1,
+    "adk_evolutionary_hotpot_example.py": 1,
+    "langgraph_fewshot_hotpot_example.py": 1,
+    "langgraph_evolutionary_hotpot_example.py": 0,
+    "langgraph_metaprompt_hotpot_example.py": 0,
+    "adk_metaprompt_hotpot_example.py": 0,
+    "litellm_evolutionary_hotpot_example.py": 1,
+    "adk_fewshot_hotpot_example.py": 0,
+    "litellm_metaprompt_hotpot_example.py": 0,
+    "litellm_fewshot_hotpot_example.py": 0,
+    "StrandsAgents.py": 1
+}

@@ -1,0 +1,519 @@
+{
+  "link": [
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "text": "This is"
+        },
+        {
+          "type": "link",
+          "href": "http://www.google.com",
+          "children": [
+            {
+              "text": "GoogleLink"
+            }
+          ]
+        },
+        {
+          "text": "use for search"
+        },
+        {
+          "text": " "
+        }
+      ]
+    }
+  ],
+  "hangout_link_op": {
+    "text": "This is <http://www.google.com|GoogleLink> use for search"
+  },
+  "image": [
+            {
+              "type":"paragraph",
+              "children":[{
+                "text":""
+              }]
+            },
+            {
+              "type":"image",
+              "alt":"Dog Image",
+              "src":"https://i.imgur.com/nFL91Pc.jpeg",
+              "children":[{
+                "text":"Dog Image"
+              }]
+            }
+          ],
+  "hangout_image_op":{"cards": [{"sections": [{"widgets": [{"textParagraph": {"text": "Dog Image"}}, {"image": {"imageUrl": "https://i.imgur.com/nFL91Pc.jpeg", "onClick": {"openLink": {"url": "https://i.imgur.com/nFL91Pc.jpeg"}}}}]}]}]},
+  "slack_link_op": {"blocks": [{"type": "section", "text": {"type": "mrkdwn", "text": "This is <http://www.google.com|GoogleLink> use for search"}}]},
+  "slack_image_op": {"blocks": [{"type": "image", "title": {"type": "plain_text", "text": "Dog Image", "emoji": true}, "image_url": "https://i.imgur.com/nFL91Pc.jpeg", "alt_text": "Dog Image"}]},
+  "messenger_link_op": {"text": "This is http://www.google.com use for search"},
+  "messenger_image_op": {"attachment": {"type": "template", "payload": {"template_type": "generic", "elements": [{"title": "Dog Image", "image_url": "https://i.imgur.com/nFL91Pc.jpeg", "default_action": {"type": "web_url", "url": "https://i.imgur.com/nFL91Pc.jpeg"}}]}}},
+  "whatsapp_link_op": {"preview_url": true, "body": "This is http://www.google.com use for search"},
+  "whatsapp_image_op": {"link": "https://i.imgur.com/nFL91Pc.jpeg", "caption": "Dog Image"},
+  "telegram_link_op": {"text": "This is http://www.google.com use for search", "parse_mode": "HTML", "disable_web_page_preview": false, "disable_notification": false, "reply_to_message_id": 0},
+  "telegram_image_op": {"photo": "https://i.imgur.com/nFL91Pc.jpeg", "caption": "Dog Image"},
+  "multi_link": [{
+                    "type": "paragraph",
+                    "children": [{
+                            "text": "This is"
+                        },
+                        {
+                            "type": "link",
+                            "href": "http://www.google.com",
+                            "children": [{
+                                "text": "GoogleLink"
+                            }]
+                        },
+                        {
+                            "text": "use for search"
+                        },
+                        {
+                            "text": " "
+                        }
+                        ]
+                    },
+                    {
+                        "type": "paragraph",
+                        "children": [{
+                                "text": "and you can also see news on"
+                            },
+                            {
+                                "type": "link",
+                                "href": "https://www.indiatoday.in/",
+                                "children": [{
+                                    "text": "Indiatoday"
+                                }]
+                            },
+                            {
+                                "text": "and slatejs details on"
+                            },
+                            {
+                                "type": "link",
+                                "href": "https://www.slatejs.org/examples/richtext",
+                                "children": [{
+                                    "text": "SlateJS"
+                                }]
+                            },
+                            {
+                                "text": " "
+                            }
+                        ]
+                    }],
+  "only_link": [{
+                    "type": "paragraph",
+                    "children": [{
+                            "text": " "
+                        },
+                        {
+                            "type": "link",
+                            "href": "http://www.google.com",
+                            "children": [{
+                                "text": "GoogleLink"
+                            }]
+                        },
+                        {
+                            "text": " "
+                        }
+                        ]
+                    }],
+  "json_generator": [{"name": "testadmin","bot": 123}, {"name": "testadmin1", "bot": 100}],
+  "json_generator_nolist": {"name": "testadmin","bot": 123},
+  "json_generator_nodata": [],
+  "link_wrong_json": [
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "text": "This is"
+        },
+        {
+          "type": "link",
+          "children": [
+            {
+              "text": "GoogleLink"
+            }
+          ]
+        },
+        {
+          "text": "use for search"
+        },
+        {
+          "text": " "
+        }
+      ]
+    }
+  ],
+  "video": [{"type":"video",
+    "url":"https://www.youtube.com/watch?v=YFbCaahCWQ0",
+    "children":[{"text":""}]
+    },
+    {
+      "type":"paragraph",
+      "children":[{"text":""}]
+    }],
+  "quick_reply_one": [{"type": "quick_reply", "content_type": "text", "value": "single button is clicked",
+        "image_url": "https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg",
+        "id": "3", "children": [{"text": "One"}]}],
+  "quick_reply_two": [
+    {"type": "quick_reply", "content_type": "text", "value": "single button is clicked",
+      "image_url": "https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg",
+      "id": "3", "children": [{"text": "One"}]},
+    {"type": "quick_reply", "content_type": "phone_number", "value": "", "image_url": "", "id": "2",
+      "children": [{"text": "9876543210"}]}
+  ],
+  "quick_reply_three": [
+    {"type": "quick_reply", "content_type": "text", "value": "single button is clicked",
+      "image_url": "", "id": "3", "children": [{"text": "One"}]},
+    {"type": "quick_reply", "content_type": "phone_number", "value": "", "image_url": "", "id": "2",
+      "children": [{"text": "9876543210"}]},
+    {"type": "quick_reply", "content_type": "email", "value": "", "image_url": "", "id": "1",
+      "children": [{"text": "mahesh.sattala@digite.com"}]}
+  ],
+  "messenger_quick_reply_op_one": {
+    "text": "Please select from quick buttons:",
+    "quick_replies": [{"content_type": "text", "title": "One", "payload": "single button is clicked",
+      "image_url": "https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg"}]
+  },
+  "messenger_quick_reply_op_two": {
+    "text": "Please select from quick buttons:",
+    "quick_replies": [{"content_type": "text", "title": "One", "payload": "single button is clicked",
+      "image_url": "https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg"},
+      {"content_type": "9876543210"}]
+  },
+  "messenger_quick_reply_op_three": {
+    "text": "Please select from quick buttons:",
+    "quick_replies": [{"content_type": "text", "title": "One", "payload": "single button is clicked", "image_url": ""},
+      {"content_type": "9876543210"},
+      {"content_type": "mahesh.sattala@digite.com"}]},
+  "button_one": [
+    {"type":"button","value":"single button is clicked","id":"5","children":[{"text":"One"}]},
+    {"type":"paragraph","children":[{"text":""}]}
+  ],
+  "button_two": [
+    {"type":"button","value":"seeds are treated with Bavistin","id":"1","children":[{"text":"Yes"}]},
+    {"type":"button","value":"Bavistin is not sprayed on seeds","id":"2","children":[{"text":"No"}]},
+    {"type":"paragraph","children":[{"text":""}]}
+  ],
+  "button_three": [{"type":"button","value":"Vegetables only","id":"2","children":[{"text":"Veg"}]},
+                  {"type":"button","value":"fish food served","id":"3","children":[{"text":"Non-veg"}]},
+                  {"type":"button","value":"Only Desert food","id":"4","children":[{"text":"Desert"}]},
+                  {"type":"paragraph","children":[{"text":""}]}],
+  "hangout_video_op": {"text": "https://www.youtube.com/watch?v=YFbCaahCWQ0"},
+  "slack_video_op": {"blocks": [{"type": "section", "text": {"type": "mrkdwn", "text": "https://www.youtube.com/watch?v=YFbCaahCWQ0"}}]},
+  "messenger_video_op": {"text": "https://www.youtube.com/watch?v=YFbCaahCWQ0"},
+  "whatsapp_video_op": {"caption": "", "link": "https://www.youtube.com/watch?v=YFbCaahCWQ0"},
+  "telegram_video_op": {"text": "https://www.youtube.com/watch?v=YFbCaahCWQ0"},
+  "messenger_button_op_one": {"attachment": {"type": "template",
+    "payload": {"template_type": "button", "text": "Please select from quick buttons:",
+      "buttons": [{"type": "postback", "title": "One", "payload": "single button is clicked"}]}}},
+  "messenger_button_op_two": {"attachment": {"type": "template",
+    "payload": {"template_type": "button", "text": "Please select from quick buttons:",
+      "buttons": [{"type": "postback", "title": "Yes", "payload": "seeds are treated with Bavistin"},
+        {"type": "postback", "title": "No", "payload": "Bavistin is not sprayed on seeds"}]}}},
+  "messenger_button_op_three": {"attachment": {"type": "template",
+    "payload": {"template_type": "button", "text": "Please select from quick buttons:",
+      "buttons": [{"type": "postback", "title": "Veg", "payload": "Vegetables only"},
+        {"type": "postback", "title": "Non-veg", "payload": "fish food served"},
+        {"type": "postback", "title": "Desert", "payload": "Only Desert food"}]}}},
+  "whatsapp_button_op_two": {"type": "button", "body": {"text": "Please select from quick buttons:"},
+    "action": {"buttons": [{"type": "reply", "reply": {"id": "seeds are treated with Bavistin", "title": "Yes"}},
+                            {"type": "reply", "reply": {"id": "Bavistin is not sprayed on seeds", "title": "No"}}
+                          ]
+              }
+          },
+  "whatsapp_button_op_three": {"type": "button", "body": {"text": "Please select from quick buttons:"},
+                        "action": {"buttons": [{"reply": {"id": "Vegetables only", "title": "Veg"},
+                         "type": "reply"},
+                        {"reply": {"id": "fish food served",
+                                   "title": "Non-veg"},
+                         "type": "reply"},
+                        {"reply": {"id": "Only Desert food", "title": "Desert"},
+                         "type": "reply"}]}},
+  "whatsapp_button_op_one": {"type": "button", "body": {"text": "Please select from quick buttons:"},
+                        "action": {"buttons": [{"reply": {"id": "single button is clicked", "title": "One"},
+                         "type": "reply"}]}},
+  "msteams_link_op": "This is http://www.google.com use for search",
+  "msteams_image_op": { "text": "Dog Image",
+    "attachments":[{
+            "contentType": "image/png",
+            "contentUrl": "https://i.imgur.com/nFL91Pc.jpeg"
+        }]},
+  "msteams_button_one_op": {"attachments":[
+            {
+            "contentType": "application/vnd.microsoft.card.hero",
+            "content": {
+                "text": "Please select from quick buttons:",
+                "buttons": [
+                    {
+                        "type": "imBack",
+                        "title": "One",
+                        "value": "single button is clicked"
+                    }
+                ]}
+                }]},
+    "msteams_button_three_op": {"attachments":[
+            {
+            "contentType": "application/vnd.microsoft.card.hero",
+            "content": {
+                "text": "Please select from quick buttons:",
+                "buttons": [
+                    {
+                        "type": "imBack",
+                        "title": "Veg",
+                        "value": "Vegetables only"},
+                  { "type": "imBack",
+                        "title": "Non-veg",
+                        "value": "fish food served"},
+                  { "type": "imBack",
+                        "title": "Desert",
+                        "value": "Only Desert food"
+                    }
+                ]
+              }
+                }
+          ]},
+  "msteams_button_two_op":  {"attachments":[
+            {
+            "contentType": "application/vnd.microsoft.card.hero",
+            "content": {
+                "text": "Please select from quick buttons:",
+                "buttons": [
+                    {
+                        "type": "imBack",
+                        "title": "Yes",
+                        "value": "seeds are treated with Bavistin"},
+                  { "type": "imBack",
+                        "title": "No",
+                        "value": "Bavistin is not sprayed on seeds"}
+
+                ]
+              }
+                }
+          ]},
+  "msteams_multilink_op": "This is http://www.google.com use for search and you can also see news on https://www.indiatoday.in/ and slatejs details on https://www.slatejs.org/examples/richtext",
+  "msteams_video_op": "https://www.youtube.com/watch?v=YFbCaahCWQ0",
+
+  "whatsapp_drop_down_input": [{
+		"rule": "/dropdown",
+		"slot": "defect",
+		"type": "dropdown",
+		"dropdownLabel": "Select the fertilizer",
+		"options": [{
+				"label": "fertilizer1",
+				"value": "/fertilizer1",
+                "desc": "Fuel your plants' vitality with Fertilizer1's nutrient-rich formula."
+			},
+			{
+				"label": "fertilizer2",
+				"value": "/fertilizer2"
+			},
+			{
+				"label": "fertilizer3",
+				"value": "/fertilizer3",
+                "desc": "Nourish your garden to perfection with Fertilizer3's balanced blend."
+			}
+		],
+		"children": [{
+			"text": ""
+		}]
+	}],
+  "whatsapp_drop_down_output":{
+        "type": "list",
+  "body": {
+    "text": "Select the fertilizer"
+  },
+  "action": {
+    "sections":[
+      {
+
+        "rows": [
+          {
+            "id":"/dropdown{\"defect\":\"/fertilizer1\"}",
+            "title": "fertilizer1",
+            "description": "Fuel your plants' vitality with Fertilizer1's nutrient-rich formula."
+          },
+          {
+            "id":"/dropdown{\"defect\":\"/fertilizer2\"}",
+            "title": "fertilizer2"
+          },
+          {
+            "id":"/dropdown{\"defect\":\"/fertilizer3\"}",
+            "title": "fertilizer3",
+            "description": "Nourish your garden to perfection with Fertilizer3's balanced blend."
+          }
+        ]
+      }
+    ],
+    "button": "Submit Option"
+  }
+    },
+
+  "whatsapp_drop_down_blank_input": [{
+		"rule": "",
+		"slot": "",
+		"type": "dropdown",
+		"dropdownLabel": "Select the fertilizer",
+		"options": [{
+				"label": "fertilizer1",
+				"value": "/fertilizer1",
+                "desc": "Fuel your plants' vitality with Fertilizer1's nutrient-rich formula."
+			},
+			{
+				"label": "fertilizer2",
+				"value": "/fertilizer2"
+			},
+			{
+				"label": "fertilizer3",
+				"value": "/fertilizer3",
+                "desc": "Nourish your garden to perfection with Fertilizer3's balanced blend."
+			}
+		],
+		"children": [{
+			"text": ""
+		}]
+	}],
+
+  "whatsapp_drop_down_blank_output":{
+        "type": "list",
+  "body": {
+    "text": "Select the fertilizer"
+  },
+  "action": {
+    "sections":[
+      {
+
+        "rows": [
+          {
+            "id":"/fertilizer1",
+            "title": "fertilizer1",
+            "description": "Fuel your plants' vitality with Fertilizer1's nutrient-rich formula."
+          },
+          {
+            "id":"/fertilizer2",
+            "title": "fertilizer2"
+          },
+          {
+            "id":"/fertilizer3",
+            "title": "fertilizer3",
+            "description": "Nourish your garden to perfection with Fertilizer3's balanced blend."
+          }
+        ]
+      }
+    ],
+    "button": "Submit Option"
+  }
+    },
+
+  "whatsapp_drop_down_input_exception": [{
+		"rule": "/dropdown",
+		"slot": "defect",
+		"type": "dropdown",
+		"dropdownLabel_exp": "Select the fertilizer",
+		"options": [{
+				"label": "fertilizer1",
+				"value": "/fertilizer1"
+			},
+			{
+				"label": "fertilizer2",
+				"value": "/fertilizer2"
+			},
+			{
+				"label": "fertilizer3",
+				"value": "/fertilizer3"
+			}
+		],
+		"children": [{
+			"text": ""
+		}]
+	}],
+
+  "whatsapp_drop_down_header_input": [{
+		"rule": "/dropdown",
+		"slot": "defect",
+		"type": "dropdown",
+		"dropdownLabel": "Select the fertilizer",
+		"options": [{
+				"label": "fertilizer1",
+				"value": "/fertilizer1",
+                "desc": "Fuel your plants' vitality with Fertilizer1's nutrient-rich formula.",
+                "optionHeader": "Fertilizer"
+			},
+			{
+				"label": "fertilizer2",
+				"value": "/fertilizer2",
+              "optionHeader": "Fertilizer"
+			},
+			{
+				"label": "fertilizer3",
+				"value": "/fertilizer3",
+                "desc": "Nourish your garden to perfection with Fertilizer3's balanced blend.",
+              "optionHeader": "Fertilizer"
+			},
+            {
+				"label": "crop1",
+				"value": "/crop1",
+                "desc": "Crop1 is a versatile and high-yielding option adaptable to diverse environments.",
+              "optionHeader": "Crop"
+			},
+           {
+				"label": "crop2",
+				"value": "/crop2",
+              "optionHeader": "Crop"
+			}
+		],
+		"children": [{
+			"text": ""
+		}]
+	}],
+  "whatsapp_drop_down_header_output":{
+        "type": "list",
+  "body": {
+    "text": "Select the fertilizer"
+  },
+  "action": {
+    "sections":[
+      {
+        "title": "Fertilizer",
+        "rows": [
+          {
+            "id":"/dropdown{\"defect\":\"/fertilizer1\"}",
+            "title": "fertilizer1",
+            "description": "Fuel your plants' vitality with Fertilizer1's nutrient-rich formula."
+          },
+          {
+            "id":"/dropdown{\"defect\":\"/fertilizer2\"}",
+            "title": "fertilizer2"
+          },
+          {
+            "id":"/dropdown{\"defect\":\"/fertilizer3\"}",
+            "title": "fertilizer3",
+            "description": "Nourish your garden to perfection with Fertilizer3's balanced blend."
+          }
+        ]
+      },
+      {
+        "title": "Crop",
+        "rows": [
+          {
+            "id":"/dropdown{\"defect\":\"/crop1\"}",
+            "title": "crop1",
+            "description": "Crop1 is a versatile and high-yielding option adaptable to diverse environments."
+          },
+          {
+            "id":"/dropdown{\"defect\":\"/crop2\"}",
+            "title": "crop2"
+          }
+        ]
+      }
+    ],
+    "button": "Submit Option"
+  }
+    },
+  "telegram_button_op_one": {"inline_keyboard": [[{"text": "One", "callback_data": "single button is clicked"}]]},
+  "telegram_button_op_multi": {"inline_keyboard": [[{"text": "Veg", "callback_data": "Vegetables only"},
+  {"text": "Non-veg", "callback_data": "fish food served"},
+  {"text": "Desert", "callback_data": "Only Desert food"}]]},
+
+  "button_one_exception": [{"type":"button","value":"single button is clicked","id":"5"},
+    {"type":"paragraph","children":[{"text":""}]}]
+}

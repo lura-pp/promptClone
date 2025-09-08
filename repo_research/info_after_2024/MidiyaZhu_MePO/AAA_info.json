@@ -1,0 +1,7 @@
+{
+    "qwen_degrade_alpaca_ans.json": 4058,
+    "qwen_degrade_BPO_ans.json": 424,
+    "vicuna_poopt.json": 24,
+    "selfeval_poopt.json": 67,
+    "BPO_test_poopt.json": 109
+}

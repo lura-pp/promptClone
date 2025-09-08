@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0",
+  "title_i18n": {
+    "en_US": "Sentiment Analysis"
+  },
+  "configuration": {
+    "trace": true,
+    "nodes": [
+      {
+        "uiConfiguration": {
+          "position": {
+            "x": 116.12857055664062,
+            "y": 223.08570861816406
+          }
+        },
+        "id": "limeFoolishPigeon",
+        "label": "Input Trigger",
+        "type": "inputTrigger",
+        "parameters": {}
+      },
+      {
+        "uiConfiguration": {
+          "position": {
+            "x": 359.79523722330725,
+            "y": 192.08570861816406
+          }
+        },
+        "id": "pinkFaithfulChickadee",
+        "label": "OpenAI Chat Model",
+        "type": "openAIChatModel",
+        "parameters": {
+          "modelName": "gpt-4o-mini",
+          "baseUrl": "https://api.openai.com/v1/",
+          "systemMessage": "Analyze the sentiment of the given text and finally classify it to one of the following categories: positive, negative, neutral.",
+          "apiKey": "env:OPENAI_API_KEY",
+          "memoryMaxMessages": 20,
+          "temperature": 0.7,
+          "useChatMemory": false,
+          "promptTemplate": "{{input.text}}",
+          "timeout": 20,
+          "outputParameterName": "text"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "50d62919-3977-436c-af2c-3a50fec14a59",
+        "source": "limeFoolishPigeon",
+        "target": "pinkFaithfulChickadee"
+      }
+    ]
+  },
+  "description_i18n": {},
+  "enabled": true,
+  "externalReferenceCode": "sentiment-analysis"
+}

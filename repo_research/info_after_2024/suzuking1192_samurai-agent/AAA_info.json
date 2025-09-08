@@ -1,0 +1,9 @@
+{
+    "agent_tools.py": 1,
+    "test_curly_brace_fix.py": 1,
+    "test_isolate_error.py": 1,
+    "test_exact_flow.py": 0,
+    "test_real_llm_error.py": 0,
+    "test_combined_content.py": 0,
+    "test_step_by_step_debug.py": 0
+}

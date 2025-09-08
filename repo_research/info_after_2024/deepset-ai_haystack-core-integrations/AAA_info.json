@@ -1,0 +1,15 @@
+{
+    "context_prompt.py": 1,
+    "system_prompt.py": 1,
+    "issue_commenter_prompt.py": 1,
+    "repo_viewer_prompt.py": 1,
+    "file_editor_prompt.py": 1,
+    "repo_forker_prompt.py": 1,
+    "pr_creator_prompt.py": 1,
+    "issue_viewer_prompt.py": 1,
+    "chatgenerator_example.py": 2,
+    "embedders_generator_with_rag_example.py": 1,
+    "rag_pipeline_example.py": 1,
+    "test_generator.py": 1,
+    "pipeline_example.py": 1
+}

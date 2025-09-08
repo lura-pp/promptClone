@@ -1,0 +1,16 @@
+{
+    "xsum_chatgpt.py": 1,
+    "lambada_002.py": 1,
+    "lambada_003.py": 0,
+    "lambada_chatgpt.py": 0,
+    "eval_truthfulqa.py": 1,
+    "solve_turbo.py": 2,
+    "hotpotqa-claude.py": 1,
+    "hotpotqa.py": 0,
+    "hotpotqa-hf.py": 0,
+    "hotpotqa-chat.py": 0,
+    "huggingface_train.json": 9,
+    "huggingface_eval.json": 1,
+    "torchhub_train.json": 1,
+    "eval_gpt-3.5-turbo-0301.json": 240
+}

@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://bedrock-runtime.us-east-1.amazonaws.com/model/cohere.command-light-text-v14/invoke
+    body:
+      encoding: UTF-8
+      string: '{"prompt":"Give me a short list of steps for creating a Ruby gem:","max_tokens":100,"temperature":0.8}'
+    headers:
+      Accept-Encoding:
+      - ''
+      Content-Type:
+      - application/json
+      Accept:
+      - "*/*"
+      User-Agent:
+      - aws-sdk-ruby3/3.189.0 ua/2.0 api/bedrock_runtime#1.4.0 os/macos#22 md/arm64
+        lang/ruby#3.2.2 md/3.2.2 cfg/retry-mode#legacy
+      Host:
+      - bedrock-runtime.us-east-1.amazonaws.com
+      Content-Length:
+      - '102'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 06 Dec 2023 05:49:08 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '610'
+      Connection:
+      - keep-alive
+      X-Amzn-Requestid:
+      - 6cb5c51a-cbef-4aa0-89b9-1a82301b9fae
+      X-Amzn-Bedrock-Invocation-Latency:
+      - '1851'
+      X-Amzn-Bedrock-Output-Token-Count:
+      - '100'
+      X-Amzn-Bedrock-Input-Token-Count:
+      - '13'
+    body:
+      encoding: UTF-8
+      string: '{"generations":[{"finish_reason":"MAX_TOKENS","id":"1f09f5b8-309d-4f63-9611-e58206b07ed7","text":"
+        Here is a step-by-step guide to creating a Ruby gem:\n1. **Set up your development
+        environment**:  \n   - Ensure you have Ruby (version 2.5 or higher) installed
+        on your machine. You can download it from [the official website](https://www.ruby-lang.org/).\n   -
+        Install a code editor or an IDE, such as [Visual Studio Code](https://code.visualstudio.com/).\n   -
+        Install a `git` repository manager,"}],"id":"6cb5c51a-cbef-4aa0-89b9-1a82301b9fae","prompt":"Give
+        me a short list of steps for creating a Ruby gem:"}'
+  recorded_at: Wed, 06 Dec 2023 05:49:07 GMT
+recorded_with: VCR 6.2.0

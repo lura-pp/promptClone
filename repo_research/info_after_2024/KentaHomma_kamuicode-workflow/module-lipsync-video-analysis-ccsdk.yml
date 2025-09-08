@@ -1,0 +1,296 @@
+name: module-lipsync-video-analysis-ccsdk
+
+on:
+  workflow_call:
+    inputs:
+      concept:
+        description: 'ユーザーのコンセプト'
+        required: true
+        type: string
+      audio-url:
+        description: '音声ファイルURL'
+        required: true
+        type: string
+      text-content:
+        description: '音声テキスト内容'
+        required: true
+        type: string
+      target-language:
+        description: '字幕言語 (japanese または english)'
+        required: false
+        type: string
+        default: 'japanese'
+      branch-name:
+        description: 'ワーキングブランチ名'
+        required: true
+        type: string
+      folder-name:
+        description: 'プロジェクトフォルダ名'
+        required: true
+        type: string
+      video_index:
+        description: '動画インデックス'
+        required: false
+        type: string
+        default: '1'
+    outputs:
+      completed:
+        description: '解析完了ステータス'
+        value: ${{ jobs.lipsync-video-analysis.outputs.completed }}
+      subtitle-srt-content:
+        description: '字幕SRTファイル内容'
+        value: ${{ jobs.lipsync-video-analysis.outputs.subtitle-srt-content }}
+    secrets:
+      anthropic_api_key:
+        description: 'Anthropic API Key'
+        required: true
+      github_pat:
+        description: 'GitHub Token'
+        required: true
+
+jobs:
+  lipsync-video-analysis:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      completed: ${{ steps.analysis-complete.outputs.completed }}
+      subtitle-srt-content: ${{ steps.analysis-complete.outputs.subtitle-srt-content }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.branch-name }}
+          
+      - name: Install ffmpeg for video analysis
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg wget curl jq
+          ffmpeg -version | head -5
+          
+      - name: Get audio metadata
+        id: audio-metadata
+        run: |
+          AUDIO_URL="${{ inputs.audio-url }}"
+          ANALYSIS_DIR="${{ inputs.folder-name }}/subtitle-analysis-${{ inputs.video_index }}"
+          
+          # ディレクトリ作成
+          mkdir -p "$ANALYSIS_DIR"
+          
+          echo "Audio URL: $AUDIO_URL"
+          
+          # 音声をダウンロードしてメタデータを取得
+          if [[ "$AUDIO_URL" == http* ]]; then
+            echo "Downloading audio from URL..."
+            wget "$AUDIO_URL" -O "$ANALYSIS_DIR/temp_audio.mp3"
+            AUDIO_FILE="$ANALYSIS_DIR/temp_audio.mp3"
+          else
+            echo "Using local audio file..."
+            AUDIO_FILE="$AUDIO_URL"
+          fi
+          
+          # ffprobeで音声情報を取得
+          if [ -f "$AUDIO_FILE" ]; then
+            DURATION=$(ffprobe -v quiet -show_entries format=duration -of csv=p=0 "$AUDIO_FILE")
+            
+            echo "Audio Duration: $DURATION seconds"
+            
+            # GitHub Outputに設定
+            echo "duration=$DURATION" >> $GITHUB_OUTPUT
+            
+            # メタデータをファイルに保存
+            echo "{
+              \"duration\": $DURATION,
+              \"url\": \"$AUDIO_URL\"
+            }" > "$ANALYSIS_DIR/audio-metadata.json"
+            
+            echo "✅ Audio metadata extracted successfully"
+          else
+            echo "::error::❌ Audio file not found: $AUDIO_FILE"
+            exit 1
+          fi
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install Claude Code SDK
+        run: npm install @anthropic-ai/claude-code
+      
+      - name: 📊 リップシンク動画字幕解析エージェント (Claude Code)
+        id: analyze-lipsync-video
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.anthropic_api_key }}
+          GEMINI_API_KEY: ${{ secrets.gemini_api_key }}
+        run: |
+          echo "::group::📊 Lipsync Video Analysis Agent Execution"
+          echo "Starting at: $(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)"
+          
+          # 設定
+          AUDIO_URL="${{ inputs.audio-url }}"
+          TEXT_CONTENT="${{ inputs.text-content }}"
+          TARGET_LANGUAGE="${{ inputs.target-language }}"
+          CONCEPT="${{ inputs.concept }}"
+          FOLDER_NAME="${{ inputs.folder-name }}"
+          ANALYSIS_DIR="$FOLDER_NAME/subtitle-analysis-${{ inputs.video_index }}"
+          VIDEO_INDEX="${{ inputs.video_index }}"
+          AUDIO_DURATION="${{ steps.audio-metadata.outputs.duration }}"
+          
+          echo "Audio URL: $AUDIO_URL"
+          echo "Audio Duration: $AUDIO_DURATION seconds"
+          echo "Target language: $TARGET_LANGUAGE"
+          echo "Analysis directory: $ANALYSIS_DIR"
+          
+          # プロンプトの構築
+          PROMPT="📊 音声ファイル字幕タイミング解析エージェント
+
+            **タスク**: 音声ファイルの実際の音声タイミングを分析して、正確に同期した字幕設定を作成
+
+            **入力データ**:
+            - 音声URL: $AUDIO_URL
+            - 音声テキスト: \"$TEXT_CONTENT\"
+            - 音声長: $AUDIO_DURATION秒
+            - 言語: $TARGET_LANGUAGE
+            - 作業フォルダ: $ANALYSIS_DIR
+
+            **実行したいこと**:
+            1. 音声ファイルの実際の音声波形を分析して発話タイミングを検出
+            2. 音声テキストを日本語文法に基づいて適切にセグメント分割
+            3. SRT形式の字幕ファイルを作成（時間と文字を同時に解析して精密に同期）
+            4. **品質チェックと自動修正**: 生成された字幕の品質を評価し、問題があれば自動的に再解析・修正
+            5. 詳細な分析レポートを作成
+
+            **使用可能なツール**:
+            - Bash: ffmpeg, ffprobe, wget, curl, jq, python3
+            - Read/Write/Edit: ファイル操作
+            - 音声分析: silencedetect フィルターで無音区間検出
+
+            **重要な要求**:
+            - 音声テキスト内の時間制約（「30秒以内」等）は完全に無視
+            - 実際の音声ファイル（$AUDIO_DURATION秒）のみを基準とする
+            - ffmpegで音声波形を分析し、実際の発話区間を検出
+            - **時間と文字の同時解析**: 発話区間の検出と同時にテキストを分割し、タイミングと文字数のバランスを最適化
+            - 意味を保持したテキストセグメント分割
+            - **SRT形式での出力**: 標準的なSRT字幕形式で出力すること
+
+            **テキスト分割の優先順位（重要）**:
+            1. **文章単位分割**: 句点（。）で基本的に分割する
+            2. **読点の処理**: 読点（、）では分割せず、長い文章（30文字以上）の場合のみ読点で分割
+            3. **意味保持**: 助詞や接続詞で不自然に分割しない
+            4. **文字数制限**: 1つの字幕は15-30文字程度を目安とする
+            5. **句読点無音の無視**: 読点（、）や句点（。）での短い無音（0.3秒以下）は字幕分割の基準にしない
+
+            **音声分析の改善**:
+            - silencedetectの閾値を調整: -30dB以下、0.5秒以上の無音のみを分割点として検出
+            - 句読点での短い無音（0.1-0.3秒）は無視する
+            - 文末（。）での長い無音（0.5秒以上）を優先的に検出
+            - 音声の自然な区切りとテキストの文法的区切りを両方考慮する
+
+            **品質基準（80点レベル - 実用的な改善目標）**:
+            - **極端なアンバランスの回避**: 1秒あたり5文字未満または25文字超過を避ける
+            - **最短表示時間**: 0.8秒以上（あまりに短すぎる字幕を回避）
+            - **最長表示時間**: 8秒以内（異常に長い字幕を回避）
+            - **重大な問題の修正**: 明らかに読めない・不自然なセグメントのみ修正
+            - **許容範囲**: 完璧でなくても読める範囲であれば許容
+
+            **修正対象（重大な問題のみ）**:
+            - **極端な短時間・長文**: 0.5秒で20文字以上など明らかに読めない場合
+            - **極端な長時間・短文**: 6秒以上で1-2文字など明らかに無駄な場合
+            - **品質判定**: 「要調整」レベルではなく「修正必須」レベルのみ対象
+            - **柔軟な対応**: 文脈や読みやすさを優先し、数値にこだわりすぎない
+
+            **処理フロー（実用重視）**:
+            1. **音声分析**: ffmpegで音声波形を分析、0.5秒以上の無音区間のみ検出
+            2. **テキスト分割**: 日本語文法に基づく分割（句点優先、読点は補助）
+            3. **タイミングマッピング**: 分割されたテキストを音声タイミングに適切にマッピング
+            4. **SRT生成**: 標準SRT形式で字幕ファイルを作成
+            5. **品質チェック**: 極端な問題（読めない字幕）があるかのみチェック
+            6. **重大な問題のみ修正**: 明らかに問題のあるセグメントのみ対象
+            7. **実用判定**: 80点レベルの品質で十分と判断すれば完了
+            8. **最終出力**: 実用的な品質のSRTファイル
+
+            **修正パターン例（重大な問題のみ）**:
+            - 0.3秒/30文字以上 → 明らかに読めない場合のみ分割
+            - 8秒以上/1-2文字 → 明らかに無駄な場合のみ統合
+            - 0.5秒/40文字以上 → 物理的に読めない場合のみ調整
+
+            **実用的なアプローチ**: 完璧を求めず、視聴者が十分読める品質（80点レベル）を目標とする。細かい調整より全体の読みやすさを重視。句読点での不適切な分割を避け、日本語として自然な字幕を作成する。
+
+            **成果物（この2つのみ作成すること）**:
+            1. $ANALYSIS_DIR/subtitle.srt - SRT形式字幕ファイル（80点レベルの実用品質）
+            2. $ANALYSIS_DIR/analysis-report.md - 詳細分析レポート（修正履歴含む）
+
+            実際の音声ファイルを確認して、タイミングをきっちり合わせることが最重要です。"
+          
+          echo "🚀 Starting Audio Analysis Agent Claude Code CLI..."
+          echo "📝 Prompt length: ${#PROMPT}"
+          
+          # Claude Code CLIの実行
+          npx @anthropic-ai/claude-code \
+            --max-turns 60 \
+            --verbose \
+            -p "$PROMPT" || {
+              echo "::error::❌ Claude Code CLI execution failed"
+              exit 1
+            }
+          
+          echo "::endgroup::"
+
+      - name: Mark analysis complete
+        id: analysis-complete
+        run: |
+          ANALYSIS_DIR="${{ inputs.folder-name }}/subtitle-analysis-${{ inputs.video_index }}"
+          
+          # 生成されたファイルの確認
+          if [ -f "$ANALYSIS_DIR/subtitle.srt" ]; then
+            echo "✅ SRT字幕ファイル作成完了"
+            
+            # SRTファイルの内容を表示（デバッグ用）
+            echo "📋 SRT file contents:"
+            cat "$ANALYSIS_DIR/subtitle.srt"
+            
+            # SRTの内容をGitHub Outputに設定
+            SUBTITLE_SRT_CONTENT=$(cat "$ANALYSIS_DIR/subtitle.srt" | base64 -w 0)
+            echo "subtitle-srt-content=$SUBTITLE_SRT_CONTENT" >> $GITHUB_OUTPUT
+            echo "completed=true" >> $GITHUB_OUTPUT
+            
+            # セグメント数の表示（エラーになっても無視）
+            SEGMENT_COUNT=$(grep -c "^[0-9]" "$ANALYSIS_DIR/subtitle.srt" 2>/dev/null || echo "unknown")
+            echo "::notice::字幕セグメント数: $SEGMENT_COUNT"
+            
+          else
+            echo "::error::❌ SRT字幕ファイルが見つかりません"
+            echo "completed=false" >> $GITHUB_OUTPUT
+            exit 1
+          fi
+          
+      - name: Commit analysis results
+        env:
+          GH_TOKEN: ${{ secrets.github_pat }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          if git diff --cached --quiet; then
+            echo "No analysis files to commit"
+          else
+            git commit -m "📊 Add lipsync video subtitle analysis: ${{ inputs.concept }} (video-${{ inputs.video_index }})
+            
+            🤖 Generated with [Claude Code](https://claude.ai/code)
+            
+            Co-Authored-By: Claude <noreply@anthropic.com>"
+            # 並列実行での競合を回避するためのリトライ処理
+            for i in {1..3}; do
+              git pull --rebase origin ${{ inputs.branch-name }} || true
+              if git push origin ${{ inputs.branch-name }}; then
+                echo "✅ Push successful on attempt $i"
+                break
+              else
+                echo "⚠️ Push failed on attempt $i, retrying..."
+                # ランダムな待機時間（1-5秒）
+                sleep $((RANDOM % 5 + 1))
+              fi
+            done
+          fi

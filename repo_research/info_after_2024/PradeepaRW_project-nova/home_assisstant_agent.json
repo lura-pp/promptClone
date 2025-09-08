@@ -1,0 +1,497 @@
+{
+  "name": "home-assisstant-agent",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        620,
+        -100
+      ],
+      "id": "fc2e059c-8580-46aa-9be2-a03cef8f4347",
+      "name": "When chat message received",
+      "webhookId": "b59d38dc-4145-4dac-8dac-d9efa118f8ec"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.input }}",
+        "options": {
+          "systemMessage": "You are an AI assistant with direct access to Home Assistant through the Hass-MCP integration. Your primary function is to help users interact with, understand, and optimize their smart home environment. You can query device states, control smart devices, troubleshoot automations, and provide guidance on home automation tasks.\n\n## Available Tools\n\nYou have access to the following Home Assistant tools through the Hass-MCP integration:\n\n1. **get_version**: Retrieve the current Home Assistant version.\n2. **get_entity**: Get the state of specific entities with optional field filtering.\n3. **entity_action**: Control entities (turn on, off, toggle).\n4. **list_entities**: Get a list of entities with optional domain filtering and search.\n5. **search_entities_tool**: Search for entities matching specific criteria.\n6. **domain_summary_tool**: Get a summary of entities within a specific domain.\n7. **list_automations**: Get a list of all automations.\n8. **call_service_tool**: Call any Home Assistant service.\n9. **restart_ha**: Restart Home Assistant.\n10. **get_history**: Get the state history of an entity.\n11. **get_error_log**: Get the Home Assistant error log.\n\n## Available Resources\n\nYou can also access these resource endpoints:\n\n- `hass://entities/{entity_id}`: Get state of a specific entity\n- `hass://entities/{entity_id}/detailed`: Get detailed entity information\n- `hass://entities`: List all entities grouped by domain\n- `hass://entities/domain/{domain}`: Get entities for a specific domain\n- `hass://search/{query}/{limit}`: Search for entities with custom result limit\n\n## Guided Conversation Templates\n\nYou can initiate guided conversations for common tasks using these templates:\n\n- **create_automation**: Guide users through creating automations\n- **debug_automation**: Help troubleshoot non-working automations\n- **troubleshoot_entity**: Diagnose issues with entities\n- **routine_optimizer**: Suggest optimized routines based on usage patterns\n- **automation_health_check**: Review automations for conflicts or improvements\n- **entity_naming_consistency**: Audit entity names for standardization\n- **dashboard_layout_generator**: Create optimized dashboards\n\n## Response Guidelines\n\n1. **Be Concise**: Provide clear, direct responses about home states and actions.\n2. **Be Proactive**: Offer relevant suggestions based on the context of user queries.\n3. **Confirm Actions**: Always confirm when you've successfully controlled a device.\n4. **Explain Limitations**: If you cannot perform a requested action, explain why.\n5. **Use Natural Language**: Translate technical Home Assistant concepts into user-friendly terms.\n6. **Maintain Context**: Remember the state of previous interactions to provide continuity.\n7. **Prioritize Security**: Never expose sensitive information like tokens or passwords.\n\n## Example Interactions\n\nWhen users ask questions like:\n- \"What's the temperature in my living room?\"\n  → Use `search_entities_tool` to find temperature sensors in the living room, then `get_entity` to retrieve current values.\n  \n- \"Turn off all the kitchen lights.\"\n  → Use `list_entities` to find kitchen lights, then `entity_action` to turn them off.\n  \n- \"Is my front door locked?\"\n  → Use `search_entities_tool` to find door lock entities, then `get_entity` to check status.\n  \n- \"Create an automation for my bedtime routine.\"\n  → Initiate the `create_automation` guided conversation template.\n\n- \"My motion sensor isn't triggering the hallway lights.\"\n  → Use `debug_automation` to investigate the issue.\n\n## Error Handling\n\nIf you encounter errors:\n1. Check if the requested entity exists using `search_entities_tool`\n2. Verify if the requested action is valid for that entity type\n3. Check the Home Assistant error log with `get_error_log` if needed\n4. Suggest alternatives if the requested action cannot be performed\n\nAlways strive to be helpful, accurate, and user-focused while interacting with Home Assistant on the user's behalf."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        852,
+        160
+      ],
+      "id": "49799f6e-c30d-448d-9bfb-a2997f11e0b4",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        220,
+        380
+      ],
+      "id": "7a8a53cd-dce6-4097-ae83-6d1c0aa665ee",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "avSgLKwLvvI1EPHE",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        340,
+        380
+      ],
+      "id": "1b3aebdc-301a-4abd-a0e0-4fd43f8b4c8b",
+      "name": "MCP Client",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "B9a5Fgyy9alsuZSq",
+          "name": "MCP Client - home-assisstant"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "get_version"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        460,
+        380
+      ],
+      "id": "15ec8cc0-7633-4ad7-912f-462e6288cd34",
+      "name": "get_version",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "B9a5Fgyy9alsuZSq",
+          "name": "MCP Client - home-assisstant"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "get_entity"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        580,
+        380
+      ],
+      "id": "5e590182-247c-4518-9492-42a4fed739fb",
+      "name": "get_entity",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "B9a5Fgyy9alsuZSq",
+          "name": "MCP Client - home-assisstant"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "entity_action"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        700,
+        380
+      ],
+      "id": "56698a85-8c4c-4fe5-856f-edb3a85a2e59",
+      "name": "entity_action",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "B9a5Fgyy9alsuZSq",
+          "name": "MCP Client - home-assisstant"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "list_entities"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        820,
+        380
+      ],
+      "id": "aab88762-ce1f-4e19-a6e0-684c5600e911",
+      "name": "list_entities",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "B9a5Fgyy9alsuZSq",
+          "name": "MCP Client - home-assisstant"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "search_entities_tool"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        940,
+        380
+      ],
+      "id": "fea8570c-4731-409c-97b1-aad8afd12a78",
+      "name": "search_entities_tool",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "B9a5Fgyy9alsuZSq",
+          "name": "MCP Client - home-assisstant"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "domain_summary_tool"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1060,
+        380
+      ],
+      "id": "87373e98-a0e6-4374-9807-dd11a5007b9e",
+      "name": "domain_summary_tool",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "B9a5Fgyy9alsuZSq",
+          "name": "MCP Client - home-assisstant"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "list_automations"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1180,
+        380
+      ],
+      "id": "9d1941b1-68e4-4510-85ed-d09eba6f7d9d",
+      "name": "list_automations",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "B9a5Fgyy9alsuZSq",
+          "name": "MCP Client - home-assisstant"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "restart_ha"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1300,
+        380
+      ],
+      "id": "e650a9e5-91dd-45af-a8aa-fe062e440266",
+      "name": "restart_ha",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "B9a5Fgyy9alsuZSq",
+          "name": "MCP Client - home-assisstant"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "call_service_tool"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1420,
+        380
+      ],
+      "id": "b750a077-23e9-4d19-96c8-4bfcb863b305",
+      "name": "call_service_tool",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "B9a5Fgyy9alsuZSq",
+          "name": "MCP Client - home-assisstant"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "get_history"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1540,
+        380
+      ],
+      "id": "e4159b71-ba61-421b-b36a-9b75cfb0a9bb",
+      "name": "get_history",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "B9a5Fgyy9alsuZSq",
+          "name": "MCP Client - home-assisstant"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "get_error_log"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1660,
+        380
+      ],
+      "id": "33319fae-ffaa-47b2-a5e8-e14691639b5f",
+      "name": "get_error_log",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "B9a5Fgyy9alsuZSq",
+          "name": "MCP Client - home-assisstant"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "inputSource": "jsonExample",
+        "jsonExample": "{\n  \"input\": \"turn off all the lights in the living room\",\n  \"reason\": \"The request involves controlling smart home devices (lights), which is exactly what the Home Assistant Agent is designed to handle.\",\n  \"selectedAgent\": \"home-assisstant-agent\"\n}"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        580,
+        140
+      ],
+      "id": "ae2eb4d3-141e-4e16-b223-9ee9a8d3263a",
+      "name": "When Executed by Another Workflow"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        []
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MCP Client": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_version": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_entity": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "entity_action": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "list_entities": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "search_entities_tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "domain_summary_tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "list_automations": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "restart_ha": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "call_service_tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_history": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_error_log": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "444fa299-576a-49a6-a095-2c7e01b2a742",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "558d88703fb65b2d0e44613bc35916258b0f0bf983c5d4730c00c424b77ca36a"
+  },
+  "id": "IRoM12q6Bmj6ZOEf",
+  "tags": []
+}

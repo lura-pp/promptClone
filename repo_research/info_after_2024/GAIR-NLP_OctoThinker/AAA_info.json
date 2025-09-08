@@ -1,0 +1,9 @@
+{
+    "cot_gpqa_5_shot.py": 1,
+    "cot_minerva_math_4_shot.py": 1,
+    "cot_gsm_8_shot.py": 1,
+    "cot_mmlu_stem_4_shot.py": 1,
+    "cot_math_sat_4_shot.py": 1,
+    "cot_mathqa_4_shot.py": 1,
+    "cot_ocwcourses_4_shot.py": 2
+}

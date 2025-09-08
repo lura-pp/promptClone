@@ -1,0 +1,912 @@
+{
+  "app": {
+    "title": "Folda-Scan",
+    "description": "代码项目扫描与监控"
+  },
+  "github": {
+    "title": "从GitHub下载",
+    "description": "直接从GitHub下载并分析仓库",
+    "username": "用户名/组织名",
+    "repository": "仓库名",
+    "branch": "分支名",
+    "defaultBranch": "默认: main",
+    "download": "下载",
+    "downloading": "下载中...",
+    "cancel": "取消下载",
+    "success": "仓库下载成功",
+    "error": "仓库下载失败",
+    "networkError": "网络错误，请重试",
+    "invalidRepo": "请输入有效的用户名和仓库名",
+    "progress": "下载进度: {percent}%",
+    "placeholder": {
+      "username": "输入GitHub用户名或组织名",
+      "repository": "输入仓库名",
+      "branch": "输入分支名 (默认: main)"
+    }
+  },
+  "nav": {
+    "statistics": "统计"
+  },
+  "settings": {
+    "title": "设置",
+    "language": "语言",
+    "about": "关于",
+    "theme": "主题",
+    "darkMode": "深色模式",
+    "lightMode": "浅色模式",
+    "close": "关闭",
+    "back": "返回",
+    "backToHome": "返回首页",
+    "languageDescription": "选择应用界面的显示语言",
+    "themeDescription": "选择适合您的应用主题",
+    "lightModeDescription": "适合在光线充足的环境中使用",
+    "darkModeDescription": "减少眼睛疲劳，适合夜间使用",
+    "pwaInstall": "将网页安装为应用",
+    "pwaInstallDescription": "安装此应用到您的设备，以便离线使用和获得更好的体验",
+    "save": "保存"
+  },
+  "pwa": {
+    "install": "安装应用",
+    "installSuccess": "应用安装成功",
+    "installFailed": "应用安装失败",
+    "alreadyInstalled": "应用已安装",
+    "offline": "您当前处于离线状态"
+  },
+  "about": {
+    "title": "关于 Folda-Scan",
+    "description": "Folda-Scan 是一款本地文件夹扫描工具，可以实时监控项目文件夹中的变化。它支持 .gitignore 规则，提供项目结构报告和版本管理功能。",
+    "version": "版本",
+    "developer": "开发者",
+    "copyright": "© 2024 Folda-Scan 团队。保留所有权利。"
+  },
+  "changelog": {
+    "title": "更新日志",
+    "description": "跟踪 Folda-Scan 的最新更新和改进",
+    "date": "日期",
+    "version": "版本",
+    "changes": "变更内容",
+    "backToHome": "返回首页",
+    "latestUpdates": "最新更新",
+    "olderUpdates": "历史更新",
+    "noUpdates": "暂无更新记录",
+    "refresh": "刷新",
+    "refreshing": "刷新中...",
+    "multiThreadSupport": {
+      "supported": "当前浏览器支持多线程索引，索引速度将更快！",
+      "notSupported": "当前浏览器不支持多线程索引，索引会有点慢 耐心等一下:)"
+    }
+  },
+  "incrementalScan": {
+    "supported": "当前浏览器支持FileSystemObserver API进行增量索引！",
+    "notSupported": "当前环境不支持FileSystemObserver API增量索引，每次索引都是全量索引，这会很慢。建议使用Chrome或Edge浏览器获得更好的性能。"
+  },
+  "folderPicker": {
+    "selectFolder": "选择文件夹",
+    "selecting": "选择中...",
+    "noPermission": "未能获取文件夹访问权限",
+    "gitignoreFound": "已找到 .gitignore 文件",
+    "gitignoreNotFound": "未找到 .gitignore 文件",
+    "viewRules": "查看规则",
+    "welcomeTitle": "欢迎使用 Folda-Scan",
+    "welcomeDescription": "请选择一个项目文件夹开始扫描和监控",
+    "privacyNote": "所有操作均在本地进行，不会上传您的文件",
+    "changeFolder": "更换文件夹",
+    "selectedFolder": "已选择的文件夹",
+    "ready": "就绪",
+    "errorTitle": "出错了",
+    "dismiss": "关闭",
+    "gitignoreRules": ".gitignore 规则",
+    "ignoreRules": "忽略规则",
+    "wildcardRule": "通配符规则",
+    "excludeRule": "排除规则",
+    "directoryRule": "文件夹规则",
+    "fileRule": "文件规则",
+    "comments": "注释",
+    "gitignoreEmpty": ".gitignore 文件为空",
+    "gitignoreUnreadable": "无法读取 .gitignore 规则"
+  },
+  "homePage": {
+    "quickStart": "快速启动",
+    "openKnowledgeBase": "打开知识库",
+    "manageKnowledge": "管理和查询项目相关知识",
+    "viewChangelog": "查看更新日志",
+    "learnUpdates": "了解最新功能和改进"
+  },
+  "copy": {
+    "copy": "复制",
+    "copied": "已复制"
+  },
+  "requirementGenerator": {
+    "title": "需求生成器",
+    "generate": "生成需求",
+    "generating": "正在根据对话内容生成需求，请稍候...",
+    "generated": "已根据对话内容生成以下需求，可直接复制并粘贴到代码智能体（如Cursor、GitHub Copilot等）中使用：",
+    "error": "生成需求时出错，请重试",
+    "copy": "复制需求",
+    "copied": "已复制",
+    "close": "关闭",
+    "footer": "适用于代码智能体的需求描述"
+  },
+  "scanControls": {
+    "startScan": "开始索引",
+    "stopScan": "停止索引",
+    "startMonitoring": "持续索引",
+    "stopMonitoring": "停止索引",
+    "scanning": "索引中...",
+    "monitorInterval": "索引间隔",
+    "seconds": "秒",
+    "showAllFiles": "显示所有文件",
+    "download": "下载报告",
+    "vectorize": "与代码库对话",
+    "monitoring": "索引中...",
+    "usingObserver": "使用实时文件系统观察器",
+    "usingPolling": "(当前浏览器不支持文件系统观察器)自动索引，每",
+    "observerFallback": "注意：文件系统观察器可用但未成功启用，已回退到轮询模式",
+    "lastScanTime": "上次索引时间",
+    "changeDetected": "检测到变化",
+    "downloading": "下载中...",
+    "preparingReport": "正在准备报告..."
+  },
+  "versionManager": {
+    "title": "版本",
+    "createBackup": "创建备份",
+    "backupInfo": "描述此版本的更改，如'完成登录模块'等",
+    "backingUp": "备份中...",
+    "backupCurrentVersion": "备份",
+    "versionHistory": "版本历史",
+    "restore": "恢复",
+    "confirmRestore": "确定要恢复此版本吗？当前未备份的更改将会丢失。",
+    "cancel": "取消",
+    "confirm": "确认",
+    "restoring": "恢复中..."
+  },
+  "resultDisplay": {
+    "waitingForScan": "扫描中，请稍候...",
+    "selectFolderPrompt": "请选择一个文件夹并点击'开始扫描'按钮",
+    "structure": "结构",
+    "changes": "变更",
+    "details": "详情",
+    "files": "文件",
+    "noChanges": "未检测到变更",
+    "addedFiles": "新增",
+    "deletedFiles": "删除",
+    "modifiedFiles": "修改",
+    "filesAndFoldersCount": "共找到 {count} 个",
+    "directoryType": "文件夹",
+    "fileType": "文件",
+    "noContent": "无内容可显示",
+    "directoryContent": "文件夹",
+    "view": "查看",
+    "cancel": "取消"
+  },
+  "docker": {
+    "title": "Docker",
+    "selectProject": "请先选择一个项目文件夹",
+    "noDockerfile": "当前项目中未检测到Dockerfile",
+    "content": "Dockerfile内容",
+    "analysis": "分析结果",
+    "baseInfo": "基本信息",
+    "baseImage": "基础镜像",
+    "stages": "构建阶段",
+    "workdir": "工作目录",
+    "ports": "暴露端口",
+    "cmd": "命令",
+    "environment": "环境变量",
+    "errors": "错误信息",
+    "buildStages": "多阶段构建",
+    "instructions": "指令数",
+    "loading": "加载中...",
+    "loadingAnalysis": "正在分析Dockerfile...",
+    "fix": "修复问题",
+    "fixing": "修复中...",
+    "hasErrors": "存在问题",
+    "valid": "语法正确"
+  },
+  "dockerCompose": {
+    "title": "Docker Compose",
+    "noDockerCompose": "当前项目中未检测到Docker Compose文件",
+    "content": "Docker Compose内容",
+    "serviceDetails": "服务详情",
+    "version": "版本",
+    "serviceCount": "服务数量",
+    "image": "镜像",
+    "build": "构建配置",
+    "ports": "端口映射",
+    "environment": "环境变量",
+    "envFiles": "环境变量文件",
+    "dependsOn": "依赖服务",
+    "volumes": "卷映射",
+    "networks": "网络配置",
+    "selectService": "选择一个服务查看详情",
+    "hasErrors": "存在问题",
+    "valid": "配置正确"
+  },
+  "envFile": {
+    "title": "环境变量",
+    "selectProject": "请先选择一个项目文件夹",
+    "noEnvFile": "当前项目中未检测到环境变量文件(.env)",
+    "content": "文件内容",
+    "variables": "变量列表",
+    "key": "变量名",
+    "value": "变量值",
+    "line": "行号",
+    "type": "类型",
+    "normalType": "普通",
+    "sensitiveType": "敏感",
+    "commentType": "注释",
+    "comment": "注释",
+    "errors": "错误信息",
+    "loading": "加载中...",
+    "loadingAnalysis": "正在分析环境变量文件...",
+    "fix": "修复格式",
+    "fixing": "修复中...",
+    "hasErrors": "存在问题",
+    "valid": "格式正确",
+    "showSensitive": "显示敏感信息",
+    "hideSensitive": "隐藏敏感信息"
+  },
+  "statistics": {
+    "title": "项目统计",
+    "rescan": "重新扫描",
+    "scanning": "扫描中...",
+    "showComments": "显示注释",
+    "hideComments": "隐藏注释",
+    "overallStatistics": "整体统计",
+    "fileStatistics": "文件",
+    "codeFiles": "代码文件",
+    "totalFiles": "总文件数",
+    "lineStatistics": "行数",
+    "codeLines": "代码行",
+    "totalLines": "总行数",
+    "commentStatistics": "注释行",
+    "commentPercentage": "注释比例",
+    "fileTypeStatistics": "文件类型统计",
+    "extension": "扩展名",
+    "fileCount": "文件数量",
+    "totalLineCount": "总行数",
+    "codeLineCount": "代码行数",
+    "commentLineCount": "注释行数",
+    "blankLineCount": "空行数",
+    "commentRatio": "注释比例",
+    "projectComments": "项目注释",
+    "commentsHelp": "显示项目中的所有注释，帮助您理解代码文档",
+    "noComments": "项目中未找到注释",
+    "blockComment": "块注释",
+    "lineComment": "行注释",
+    "noFolder": "请先选择一个项目文件夹",
+    "startScan": "点击\"重新扫描\"按钮开始分析项目",
+    "search_comments": "搜索注释",
+    "search_code": "搜索代码",
+    "no_results": "未找到结果",
+    "show_context": "显示上下文",
+    "hide_context": "隐藏上下文"
+  },
+  "presetPrompts": {
+    "title": "预设提示",
+    "description": "选择一个提示类别和提示，快速了解项目",
+    "button": "提示",
+    "close": "关闭",
+    "categories": {
+      "coreProcesses": {
+        "name": "核心流程",
+        "prompts": {
+          "mainFlow": "请描述当用户执行主要操作时，从前端到后端的典型处理步骤和关键函数调用顺序。",
+          "inputValidation": "对于用户输入（如URL参数、表单字段、HTTP头部），系统是如何进行处理和过滤的？是否存在未经验证或未充分净化的输入点，可能导致注入类漏洞（如XSS、SQL注入、命令注入）？",
+          "authMechanism": "系统的认证和授权机制是如何实现的？是否存在绕过认证、权限提升或越权访问（IDOR）的潜在风险点？",
+          "sessionManagement": "会话（Session）是如何管理的？是否存在会话固定、会话劫持或跨站请求伪造（CSRF）的风险？",
+          "dependencySecurity": "项目依赖的第三方库或组件版本是否存在已知的公开漏洞（CVE）？如何检查和更新这些依赖？",
+          "sensitiveInfoExposure": "代码、配置文件或日志中是否存在硬编码的凭证、API密钥或其他敏感信息？错误信息是否会泄露过多的系统细节？",
+          "fileUploadHandling": "如果项目支持文件上传，对上传文件的类型、大小和内容是如何校验的？是否存在上传任意文件或路径遍历的风险？",
+          "apiSecurity": "项目的API接口是否有访问控制？是否存在数据泄露、未授权访问或滥用（如无限次重试、数据遍历）的风险？",
+          "businessLogicVulnerabilities": "在核心业务流程中，是否存在可以被恶意利用的逻辑缺陷，例如绕过支付、刷单、数据篡改等？",
+          "configSecurity": "服务器、数据库或中间件的配置是否存在安全隐患，例如默认凭证、不必要的开放端口、不安全的默认设置？",
+          "passwordPolicy": "用户密码是如何存储的（例如，是否加盐哈希）？密码复杂度、重置和找回机制是否存在薄弱环节？",
+          "clickjackingRisk": "前端页面是否采取了防点击劫持的措施（如X-Frame-Options头部）？",
+          "ssrfRisk": "系统是否存在功能点允许用户控制发往内部或其他服务器的请求，可能导致SSRF漏洞？",
+          "xxeRisk": "如果项目处理XML数据，XML解析器是否配置安全，以防止XXE攻击？",
+          "deserializationVulnerabilities": "如果项目使用了对象的序列化和反序列化，输入的数据是否可信？是否存在利用反序列化执行任意代码的风险？",
+          "debuggingFunctions": "生产环境中是否残留了不应存在的调试功能、接口或后门？",
+          "httpSecurityHeaders": "Web应用是否使用了推荐的HTTP安全头部，如CSP (Content Security Policy)、HSTS (HTTP Strict Transport Security)等？",
+          "rateLimiting": "对于登录尝试、API调用等敏感操作，是否有适当的速率限制来防止暴力破解或资源耗尽攻击？",
+          "unsafeRedirects": "系统中的URL重定向或请求转发功能是否可能被恶意用户控制，导致钓鱼或将用户导向恶意站点？",
+          "errorHandling": "当发生错误或异常时，系统是如何处理的？是否会向用户暴露过多内部实现细节或堆栈跟踪信息？",
+          "securityAuditing": "系统是否记录了足够的安全相关日志（如登录尝试、权限变更、关键操作），以便于事后审计和追踪可疑行为？"
+        }
+      },
+      "components": {
+        "name": "组件与职责",
+        "prompts": {
+          "overview": "构成这个项目的主要模块或组件有哪些？请简要描述每个部分的主要功能以及它们如何协作。"
+        }
+      },
+      "dataFlow": {
+        "name": "数据流路径",
+        "prompts": {
+          "tracking": "追踪一个关键数据片段（如用户输入或业务实体）并解释它是如何生成的，哪些函数处理/转换它，以及它最终流向何处。"
+        }
+      },
+      "implementation": {
+        "name": "巧妙实现",
+        "prompts": {
+          "clever": "项目中有哪些巧妙的实现？"
+        }
+      },
+      "startup": {
+        "name": "启动与初始化",
+        "prompts": {
+          "process": "系统是如何启动和初始化的？请指出首先执行的关键脚本或函数，以及它们主要完成哪些准备工作。"
+        }
+      },
+      "errorHandling": {
+        "name": "错误处理机制",
+        "prompts": {
+          "mechanisms": "当发生错误或异常情况时，系统通常是如何捕获和处理的？请描述通用的错误处理流程或关键的错误处理函数。"
+        }
+      },
+      "specificFeature": {
+        "name": "特定功能深挖",
+        "prompts": {
+          "deepDive": "针对项目中一个[例如：用户认证/订单处理/数据分析]功能，解释其实现的关键逻辑和主要的函数调用链。"
+        }
+      },
+      "configuration": {
+        "name": "配置与环境",
+        "prompts": {
+          "loading": "项目的配置信息是如何加载和使用的？哪些关键参数会影响其运行行为？"
+        }
+      },
+      "codeStructure": {
+        "name": "代码结构与导航",
+        "prompts": {
+          "overview": "描述一下这个项目的主要代码目录结构，以及通常在哪里能找到核心业务逻辑或特定功能的实现？"
+        }
+      },
+      "configManagement": {
+        "name": "配置管理",
+        "prompts": {
+          "keyConfig": "项目的关键配置信息（如数据库连接、API密钥等）是如何管理的？在哪里可以找到并修改它们？"
+        }
+      },
+      "async": {
+        "name": "异步与并发",
+        "prompts": {
+          "handling": "如果项目中存在异步操作或并发请求，它们是如何实现的？有哪些关键模式或技术要点？"
+        }
+      },
+      "dataModels": {
+        "name": "核心数据模型",
+        "prompts": {
+          "main": "项目中最重要的数据实体或模型有哪些？它们之间有什么关键关系？"
+        }
+      },
+      "dependencies": {
+        "name": "外部依赖",
+        "prompts": {
+          "overview": "这个项目依赖哪些重要的第三方库、框架或外部服务？它们各自在项目中扮演什么角色？"
+        }
+      },
+      "logging": {
+        "name": "日志与监控",
+        "prompts": {
+          "entry": "在排查问题时，我应该关注哪些日志文件或监控指标？系统如何记录关键事件？"
+        }
+      },
+      "moduleDeepDive": {
+        "name": "特定模块深度分析",
+        "prompts": {
+          "clever": "选择项目中一个你认为设计巧妙或逻辑复杂的模块，简要描述其设计思路和主要工作流程。"
+        }
+      },
+      "security": {
+        "name": "安全考量",
+        "prompts": {
+          "measures": "在代码层面，项目采取了哪些常见的安全措施来防范潜在风险（如输入验证、权限控制等）？"
+        }
+      },
+      "abstractions": {
+        "name": "关键抽象与模式",
+        "prompts": {
+          "patterns": "项目中是否有核心抽象设计或重复使用的设计模式？它们如何帮助组织代码？"
+        }
+      },
+      "stateManagement": {
+        "name": "状态管理",
+        "prompts": {
+          "mechanisms": "系统如何管理和同步状态？有哪些关键的存储或更新机制？"
+        }
+      },
+      "entryPoints": {
+        "name": "主要入口点",
+        "prompts": {
+          "analysis": "除了用户界面操作外，系统还有哪些其他执行入口点（如定时任务、API调用、消息队列消费者等）？它们是如何被触发和处理的？"
+        }
+      },
+      "testing": {
+        "name": "测试策略",
+        "prompts": {
+          "coverage": "项目是如何测试的？主要类型的测试（单元、集成等）集中在哪些模块上？"
+        }
+      },
+      "performance": {
+        "name": "性能",
+        "prompts": {
+          "bottleneckIdentification": "项目中哪些部分或操作最容易成为性能瓶颈？通常通过什么方法或工具来定位它们？",
+          "keyPerformanceIndicators": "项目关注哪些关键的性能指标（如响应时间、吞吐量、并发用户数）？这些指标的目标值是多少？",
+          "databasePerformance": "数据库查询的效率如何？是否存在慢查询、不合理的索引或过多的数据库交互影响性能？",
+          "memoryUsage": "应用的内存使用情况如何？是否存在内存泄漏、不合理的内存分配或频繁的GC（垃圾回收）问题？",
+          "cpuUsageAnalysis": "哪些类型的计算或操作最消耗CPU资源？是否有针对性的优化来降低CPU负载？",
+          "networkIO": "网络请求（如API调用、资源加载）的延迟和吞吐量对整体性能影响如何？是否有优化措施（如压缩、CDN）？",
+          "cachingStrategies": "项目中运用了哪些缓存策略（如数据缓存、页面缓存、CDN缓存）来提升性能？缓存的命中率和更新机制是怎样的？",
+          "asyncConcurrentProcessing": "异步处理和并发机制（如线程池、协程、消息队列）是如何被用来优化响应速度和提高系统吞吐能力的？",
+          "algorithmEfficiency": "代码中是否存在低效的算法或数据结构，可能成为性能瓶颈？",
+          "frontendOptimization": "前端性能方面，如页面加载速度（FCP, LCP）、渲染效率、资源大小和用户交互响应，有哪些主要的优化手段和关注点？",
+          "codeLevelOptimization": "在代码编写层面，项目是否采用了一些通用的性能优化技巧（如减少循环嵌套、避免不必要的计算、延迟加载）？",
+          "performanceTesting": "项目如何进行性能测试（如压力测试、负载测试、基准测试）？测试结果如何指导优化？",
+          "scalabilityDesign": "当前架构在负载增加时，其性能表现和水平/垂直扩展能力如何？",
+          "resourceManagement": "关键系统资源（如数据库连接池、线程池）的管理是否高效，以避免资源耗尽或竞争？",
+          "thirdPartyDependencies": "外部API调用或第三方库的性能表现对整体系统性能有何影响？是否有监控和应对策略？",
+          "startupTime": "应用的启动时间和初始化过程对用户感知性能或系统可用性的影响如何？是否有优化空间？",
+          "loggingImpact": "日志记录的级别和方式是否对性能有显著影响？性能监控系统本身是否引入了不可忽视的开销？",
+          "specificScenarioTuning": "针对项目中的特定高并发或大数据量场景，是否进行了专门的性能调优？",
+          "performanceRegression": "是否有机制来防止已优化的性能点发生回归？如何在开发流程中尽早发现潜在性能问题？",
+          "configurationImpact": "项目的配置文件中，哪些参数对性能有直接或间接的重要影响（如线程数、缓存大小、超时设置）？"
+        }
+      },
+      "codeReuse": {
+        "name": "代码复用与共享",
+        "prompts": {
+          "common": "项目中跨多个模块重用的通用工具函数、共享库或服务有哪些？它们提供了哪些通用能力？"
+        }
+      },
+      "domainSpecific": {
+        "name": "领域特定语言",
+        "prompts": {
+          "terms": "代码中是否有项目特定的术语、命名约定或内部'行话'，需要理解才能更好地理解代码？"
+        }
+      },
+      "deployment": {
+        "name": "部署与构建概述",
+        "prompts": {
+          "process": "简要描述项目是如何构建和部署到运行环境的。有哪些关键步骤或脚本？"
+        }
+      },
+      "userScenarios": {
+        "name": "用户场景映射",
+        "prompts": {
+          "codeMapping": "主要用户场景或用例如何反映在代码中？它们通常涉及哪些核心模块？"
+        }
+      },
+      "scalability": {
+        "name": "可扩展性设计",
+        "prompts": {
+          "considerations": "代码设计中有哪些考虑是为了支持未来的可扩展性或更高负载？"
+        }
+      },
+      "internalAPIs": {
+        "name": "内部API通信",
+        "prompts": {
+          "patterns": "项目内部模块之间如何通过API或接口进行通信？这些接口设计有什么特点？"
+        }
+      },
+      "database": {
+        "name": "数据库交互",
+        "prompts": {
+          "patterns": "与数据库交互时，项目主要使用哪些模式（如ORM、直接SQL查询）？如何处理事务管理？"
+        }
+      },
+      "backgroundTasks": {
+        "name": "后台任务",
+        "prompts": {
+          "scheduling": "如果项目有后台任务或定时作业，它们是如何调度和执行的？处理了哪些主要逻辑？"
+        }
+      },
+      "frontendSeparation": {
+        "name": "前端逻辑分离",
+        "prompts": {
+          "patterns": "前端代码如何分离表现逻辑和业务逻辑？有哪些关键边界或模式？"
+        }
+      },
+      "resourceManagement": {
+        "name": "关键资源管理",
+        "prompts": {
+          "handling": "关键资源（如数据库连接、文件句柄）是如何管理和释放的，以避免泄漏？"
+        }
+      },
+      "pluginArchitecture": {
+        "name": "插件架构",
+        "prompts": {
+          "extensionPoints": "项目是如何设计以支持未来的功能扩展或插件集成的？有哪些预留的扩展点？"
+        }
+      },
+      "codeReadability": {
+        "name": "代码可读性",
+        "prompts": {
+          "factors": "代码的注释、命名约定和整体结构在多大程度上帮助理解其功能？"
+        }
+      },
+      "designDecisions": {
+        "name": "设计决策起源",
+        "prompts": {
+          "reasons": "某些关键模块或算法的代码或注释是否揭示了它们的设计决策原因？"
+        }
+      },
+      "securityEnhancement": {
+        "name": "安全增强",
+        "prompts": {
+          "specific": "除了一般的安全措施外，项目在哪些特定方面（如用户输入处理、API授权）加强了安全性？"
+        }
+      },
+      "externalIntegration": {
+        "name": "外部集成详情",
+        "prompts": {
+          "errorHandling": "在与外部API或服务集成时，有哪些常见的错误处理和重试机制？"
+        }
+      },
+      "bottleneckAnalysis": {
+        "name": "潜在瓶颈分析",
+        "prompts": {
+          "identification": "基于代码结构，你认为哪些部分最有可能成为潜在的性能瓶颈或维护难点？"
+        }
+      },
+      "dataValidation": {
+        "name": "数据验证与清洗",
+        "prompts": {
+          "processes": "数据在进入系统或在模块之间传递时如何进行验证和清洗？"
+        }
+      },
+      "concurrencyControl": {
+        "name": "并发控制",
+        "prompts": {
+          "strategies": "在处理共享资源或并发操作时，项目采用了哪些锁定机制或并发控制策略？"
+        }
+      },
+      "loggingLevels": {
+        "name": "日志级别与使用",
+        "prompts": {
+          "details": "日志记录的详细程度如何？是否可以按不同级别（调试、信息、错误）进行过滤和分析？"
+        }
+      },
+      "configHardcoding": {
+        "name": "配置与硬编码",
+        "prompts": {
+          "balance": "哪些行为通过配置文件控制，哪些在代码中硬编码？这种划分的依据是什么？"
+        }
+      },
+      "eventDriven": {
+        "name": "事件驱动机制",
+        "prompts": {
+          "implementation": "项目中是否有事件驱动机制？事件是如何发布、订阅和处理的？"
+        }
+      },
+      "codeStyle": {
+        "name": "代码风格与一致性",
+        "prompts": {
+          "consistency": "项目的整体代码风格是否一致？是否遵循统一的编码标准？"
+        }
+      },
+      "dependencyInjection": {
+        "name": "依赖注入与IoC",
+        "prompts": {
+          "usage": "如果项目使用依赖注入(DI)或控制反转(IoC)，它是如何实现的？带来了哪些好处？"
+        }
+      },
+      "configFiles": {
+        "name": "配置文件位置",
+        "prompts": {
+          "formats": "项目的主要配置文件通常位于何处？它们使用什么格式（例如，JSON、YAML、.env、TOML）？"
+        }
+      },
+      "configLoading": {
+        "name": "配置加载",
+        "prompts": {
+          "mechanisms": "应用程序如何在启动或运行时加载和解析其配置？"
+        }
+      },
+      "configUsage": {
+        "name": "配置在代码中的使用",
+        "prompts": {
+          "access": "在代码库中通常如何访问和使用配置值？"
+        }
+      },
+      "multiEnvConfig": {
+        "name": "多环境配置",
+        "prompts": {
+          "strategy": "项目如何管理不同环境（如开发、测试、生产）之间的配置差异？"
+        }
+      },
+      "sensitiveInfo": {
+        "name": "敏感信息管理",
+        "prompts": {
+          "handling": "如何安全地管理API密钥或数据库凭证等敏感配置信息？"
+        }
+      },
+      "configOverride": {
+        "name": "配置覆盖逻辑",
+        "prompts": {
+          "mechanism": "是否存在配置覆盖机制，例如本地设置覆盖默认设置或特定环境文件覆盖通用设置？"
+        }
+      },
+      "manifestConfig": {
+        "name": "项目清单配置",
+        "prompts": {
+          "role": "项目的清单文件（如package.json、pyproject.toml、Cargo.toml、pubspec.yaml）在配置或构建设置中扮演什么角色？"
+        }
+      },
+      "containerConfig": {
+        "name": "容器配置",
+        "prompts": {
+          "key": "对于容器化部署（例如Docker），Dockerfile或compose文件中的关键配置点是什么？"
+        }
+      },
+      "configValidation": {
+        "name": "配置验证",
+        "prompts": {
+          "handling": "配置值在加载时是否进行验证？如果缺少或无效所需配置会发生什么？"
+        }
+      },
+      "dynamicConfigUpdate": {
+        "name": "动态配置更新",
+        "prompts": {
+          "capability": "某些配置是否可以在不重启应用程序的情况下动态更新？"
+        }
+      },
+      "buildRuntime": {
+        "name": "构建与运行时配置",
+        "prompts": {
+          "distinction": "项目如何区分构建时配置和运行时配置？"
+        }
+      },
+      "configNaming": {
+        "name": "配置命名约定",
+        "prompts": {
+          "patterns": "这个项目中配置变量或键的常见命名约定是什么？"
+        }
+      },
+      "cliEnvOverride": {
+        "name": "命令行/环境变量覆盖",
+        "prompts": {
+          "mechanism": "是否有通过命令行参数或环境变量直接覆盖文件配置的机制？"
+        }
+      },
+      "frameworkConfig": {
+        "name": "框架配置影响",
+        "prompts": {
+          "influence": "如果项目使用特定框架，该框架如何影响或管理项目的配置方法？"
+        }
+      },
+      "defaultConfig": {
+        "name": "默认配置值",
+        "prompts": {
+          "sources": "如果未明确设置，项目的默认配置值是如何确立的？"
+        }
+      },
+      "addingConfig": {
+        "name": "添加新配置参数",
+        "prompts": {
+          "process": "向系统添加新的可配置参数通常需要哪些步骤？"
+        }
+      },
+      "configTools": {
+        "name": "配置管理工具",
+        "prompts": {
+          "usage": "是否有用于管理或生成配置文件的特定工具或脚本？"
+        }
+      },
+      "i18nConfig": {
+        "name": "国际化与配置",
+        "prompts": {
+          "support": "如果适用，项目的配置方案如何支持国际化(i18n)或本地化(l10n)？"
+        }
+      },
+      "microserviceConfig": {
+        "name": "微服务配置",
+        "prompts": {
+          "management": "在微服务架构中，如何管理共享配置或服务发现详情？"
+        }
+      },
+      "productionConfigUpdates": {
+        "name": "生产环境配置更新",
+        "prompts": {
+          "process": "在已部署环境中更新配置的典型流程是什么？"
+        }
+      }
+    }
+  },
+  "codeStructure": {
+    "noStructuresFound": "未找到代码结构。请确保您的项目包含受支持的代码文件。",
+    "totalStructures": "总结构数",
+    "classes": "类",
+    "interfaces": "接口",
+    "structs": "结构体",
+    "enums": "枚举",
+    "members": "成员变量",
+    "methods": "方法",
+    "avgPerStructure": "每个结构平均",
+    "structureComposition": "结构组成",
+    "visualization": "代码结构可视化",
+    "visualizationHelp": "拖动节点调整位置。显示代码结构之间的关系。"
+  },
+  "projectConfig": {
+    "title": "项目架构图表",
+    "description": "此图表展示了项目的配置文件和整体架构",
+    "showConfig": "显示项目架构图",
+    "hideConfig": "隐藏项目架构图",
+    "configFiles": "配置文件",
+    "projectStructure": "项目结构",
+    "pages": "页面",
+    "components": "组件",
+    "libraries": "库函数",
+    "staticAssets": "静态资源",
+    "apis": "API",
+    "noConfigFiles": "未找到配置文件",
+    "dragHelp": "您可以拖动节点、缩放视图，点击配置文件节点可以查看文件内容"
+  },
+  "codeAnalysis": {
+    "title": "项目代码分析图表",
+    "description": "此图表展示了项目中所有函数、方法和类型的关系，支持多种编程语言",
+    "showAnalysis": "显示代码分析图表",
+    "hideAnalysis": "隐藏代码分析图表",
+    "languageFilter": "语言过滤器",
+    "typeFilter": "类型过滤器",
+    "displayOptions": "显示选项",
+    "showRelationLabels": "显示关系标签",
+    "dragHelp": "您可以使用左侧面板过滤不同的语言和代码结构类型",
+    "fileCount": "文件数量",
+    "type": "类型",
+    "language": "语言",
+    "inheritance": "继承",
+    "implementation": "实现",
+    "static": "静态",
+    "instance": "实例",
+    "visibility": "可见性",
+    "parameters": "参数",
+    "returnType": "返回类型",
+    "memberCount": "成员数量",
+    "methodCount": "方法数量",
+    "noAnalysisData": "未找到可分析的代码结构"
+  },
+  "vectorReport": {
+    "title": "向量化报告",
+    "description": "通过自然语言提问，获取项目信息",
+    "placeholder": "输入语义查询，如「项目架构分析」、「查找认证模块」或「定位API实现」",
+    "submit": "向量化",
+    "processing": "处理中...",
+    "result": "向量化结果",
+    "close": "关闭",
+    "noResult": "暂无结果，请先提交问题",
+    "error": "处理出错，请重试",
+    "scanningInProgress": "扫描正在进行中，请等待扫描完成后再进行向量化",
+    "waitForScan": "等待扫描完成",
+    "scanningTip": "您可以先输入提示词，但需要等待扫描完成后才能进行向量化",
+    "enableContentMatching": "启用精准模式（可能会增加处理时间） @Deprecated",
+    "copyPrompt": "复制Prompt",
+    "resultCopied": "",
+    "resultPreview": "结果预览",
+    "markdownFormat": "Markdown格式",
+    "resultDescription": "已生成结构化的Markdown文本，包含查询内容、相关文件列表、文件内容和优化统计",
+    "copyInstructions": "点击上方按钮复制结果，可直接粘贴到大模型中使用",
+    "testPrompt": "与代码库对话",
+    "testingPrompt": "准备...",
+    "testResult": "AI响应",
+    "testInstructions": "测试此Prompt在AI模型中的表现，支持多轮对话",
+    "testPlaceholder": "AI响应将显示在这里...",
+    "processingPhases": {
+      "initializing": "初始化向量化引擎",
+      "collecting": "收集项目文件数据",
+      "analyzing": "分析文件内容特征",
+      "computing": "执行语义向量计算",
+      "parsing": "解析向量匹配结果",
+      "extracting": "提取相关资源内容",
+      "generating": "生成优化数据结构"
+    },
+    "optimization": {
+      "title": "智能向量优化",
+      "description": "通过语义向量分析，已从 {totalCount} 个项目文件中精确定位 {relevantCount} 个相关资源，预计为大模型节省约 {tokenCount} tokens，提高处理效率约 {efficiencyFactor} 倍"
+    },
+    "toolCard": {
+      "title": "工具调用",
+      "params": "参数",
+      "result": "结果",
+      "simulation": "AI模拟"
+    },
+    "codeBlock": {
+      "copy": "复制代码",
+      "copied": "代码已复制"
+    },
+    "testComplete": "测试已完成60轮对话，测试完毕。如需继续，请重新开始测试。",
+    "aiDialog": {
+      "title": "代码库对话",
+      "terminate": "终止对话",
+      "round": "第 {current}/{max} 轮对话",
+      "initializing": "正在初始化对话...",
+      "optionsTitle": "选择下一步操作:",
+      "customInputPlaceholder": "输入您的问题...按Ctrl+Enter发送",
+      "send": "发送",
+      "thinking": "AI正在思考中..."
+    },
+    "knowledgeResults": "相关知识库条目 ({count})",
+    "knowledgeEntries": "知识库条目",
+    "knowledgeContent": "知识库条目内容"
+  },
+  "knowledgeModal": {
+    "title": "知识库",
+    "description": "在这里管理您的知识库条目，添加、编辑和删除知识内容。",
+    "createNew": "新建",
+    "uploadMd": "上传MD",
+    "uploadZip": "上传ZIP",
+    "importLib": "导入库",
+    "exportLib": "导出库",
+    "lastScanTime": "最后扫描时间",
+    "dataSecurityPromise": "您的知识库数据将仅存储在您的浏览器本地,更换设备时需重新导入",
+    "privateNotice": "您的知识库数据将仅存储在您的浏览器本地,更换设备时需重新导入",
+    "titlePlaceholder": "输入知识条目标题...",
+    "contentPlaceholder": "输入Markdown格式的内容...",
+    "titleImportant": "对后续的向量检索至关重要，请确保标题能够准确概括内容核心",
+    "searchPlaceholder": "搜索知识条目...",
+    "emptyMessage": "知识库为空，开始添加您的第一条知识",
+    "noMatchMessage": "没有找到匹配的知识条目",
+    "importSuccess": "成功导入 {total} 个条目（新增: {added}, 更新: {updated}）",
+    "importFailed": "导入失败: {message}",
+    "exportFailed": "导出失败: {message}",
+    "deletionConfirm": "确定要删除这个知识条目吗？",
+    "deletionFailed": "删除失败: {message}",
+    "saveFailed": "保存失败: {message}",
+    "titleRequired": "标题不能为空",
+    "importing": "导入中...",
+    "edit": "编辑",
+    "newEntry": "新建条目",
+    "titleLabel": "标题",
+    "contentLabel": "内容 (Markdown格式)",
+    "selectOrCreateMessage": "选择或创建一个知识条目来查看内容",
+    "processingZip": "处理ZIP文件中...",
+    "zipImportSuccess": "成功从ZIP文件导入 {total} 个Markdown文件",
+    "searchGenerate": "",
+    "generateFailed": "生成失败: {message}"
+  },
+  "rssFeed": {
+    "title": "技术资讯",
+    "loading": "加载中...",
+    "readMore": "阅读全文",
+    "author": "作者",
+    "uncategorized": "科技",
+    "error": "获取RSS feed失败",
+    "refresh": "刷新资讯"
+  },
+  "aiagent": {
+    "title": "代码智能体",
+    "user": "用户",
+    "agent": "智能体",
+    "permissionTitle": "需要授权",
+    "inputPlaceholder": "输入您的问题...按Ctrl+Enter发送",
+    "permissionDescription": "智能体需要获取修改文件的权限才能继续操作。",
+    "permissionWarning": "警告：智能体将能够修改、删除和创建项目文件。请确保您信任此操作。",
+    "indexingReminder": "提示：请确保已启用持续索引功能，以便智能体能够获取最新的代码信息。",
+    "grantPermission": "授予权限",
+    "cancel": "取消",
+    "modifyFile": "修改文件",
+    "deleteFile": "删除文件",
+    "createFile": "创建文件",
+    "filePath": "文件路径",
+    "lineRange": "行范围",
+    "lines": "行",
+    "changes": "修改内容",
+    "newContent": "新内容",
+    "approve": "批准",
+    "reject": "拒绝",
+    "pendingOperations": "待处理操作",
+    "fileOperations": "文件操作",
+    "thinking": "思考中...",
+    "indexing": "正在索引相关文件...",
+    "processing": "正在处理文件操作...",
+    "complete": "智能体任务已完成",
+    "autoMode": "自动模式",
+    "taskCompleted": "任务完成",
+    "taskExecuting": "执行中",
+    "taskPlanning": "规划中",
+    "taskWaiting": "等待中",
+    "execute": "执行",
+    "eta": "预计{seconds}秒",
+    "suggestion": "建议一次对话只完成一项任务",
+    "defaultExecutePrompt": "基于上面的规划,改吧"
+  }
+}

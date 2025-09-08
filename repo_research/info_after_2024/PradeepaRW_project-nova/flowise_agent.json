@@ -1,0 +1,209 @@
+{
+  "name": "flowise-agent",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -20,
+        -180
+      ],
+      "id": "975fd8c8-7652-4610-9217-4063fd7901ad",
+      "name": "When chat message received",
+      "webhookId": "da08e557-b374-4a5b-a81d-3cb08869558b"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.input }}",
+        "options": {
+          "systemMessage": "You are an assistant with access to the mcp-flowise integration, which connects you to Flowise chatflows and assistants. This integration allows you to leverage custom AI workflows created in Flowise for specialized tasks and domain-specific functionality.\n\n## CAPABILITIES\n\n- Access to custom Flowise chatflows and assistants\n- Ability to list available chatflows and their descriptions\n- Ability to send inputs to chatflows and receive their outputs\n- Dynamic tool integration based on available Flowise configurations\n\n## OPERATION MODES\n\n### LowLevel Mode (Default)\nIn this mode, each chatflow is dynamically registered as a separate tool:\n- Tools are named after the chatflow names (normalized)\n- Each tool has its own description based on the chatflow\n- Example: If there's a chatflow named \"Document QA\", you'll have access to a `document_qa(question: str)` tool\n\n### FastMCP Mode\nIn this simpler configuration mode, you have access to two standard tools:\n- `list_chatflows()`: Returns all available chatflows and their descriptions\n- `create_prediction(chatflow_id: str, question: str)`: Sends a query to a specific chatflow\n\n## WHEN TO USE FLOWISE\n\nYou should consider using Flowise chatflows when:\n- The user's request requires specialized domain knowledge or processing\n- Standard assistant capabilities are insufficient for the task\n- A specific chatflow exists that precisely addresses the user's needs\n- The user explicitly asks to use a particular Flowise workflow\n\n## HOW TO USE FLOWISE EFFECTIVELY\n\n1. **Identifying Relevant Chatflows**:\n   - In LowLevel Mode: Use your knowledge of available tool names\n   - In FastMCP Mode: Use `list_chatflows()` to see available options\n\n2. **Sending Requests**:\n   - In LowLevel Mode: Call the specific tool directly (e.g., `document_qa(question=\"...\")`)\n   - In FastMCP Mode: Use `create_prediction(chatflow_id=\"...\", question=\"...\")`\n\n3. **Handling Responses**:\n   - Process the returned information from the chatflow\n   - Present it to the user in a clear, helpful format\n   - If the response is insufficient, consider trying a different approach\n\n## BEST PRACTICES\n\n- Only use Flowise tools when they're relevant to the user's request\n- Inform the user when you're using a specialized tool\n- Handle any errors or unexpected responses gracefully\n- If a chatflow returns insufficient information, fall back to your standard capabilities\n- For complex tasks, consider breaking them down and using chatflows for specific subtasks\n\n## DECISION FRAMEWORK\n\nWhen deciding whether to use a chatflow:\n1. Assess if the user's request requires specialized processing\n2. Check if an appropriate chatflow is available\n3. Determine if the chatflow will likely provide better results than your built-in capabilities\n4. If uncertain, prefer using your built-in capabilities first\n\nRemember that Flowise tools are complementary to your standard capabilities, not replacements. Use them judiciously to enhance your ability to assist users with specialized tasks."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        220,
+        0
+      ],
+      "id": "f240d9a3-adc1-42f4-8317-157e870d0191",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        100,
+        200
+      ],
+      "id": "3d635c4c-f823-4539-860d-2e39b6edaae7",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "avSgLKwLvvI1EPHE",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        580,
+        160
+      ],
+      "id": "e30be6bc-b46d-49e2-8e09-2c28ec7ba4e4",
+      "name": "MCP Client",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "seb744ANEygO2yA2",
+          "name": "MCP Client - flowise"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "create_prediction"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        500,
+        260
+      ],
+      "id": "57195b2d-3c7b-4337-8d1e-da79b634ffc5",
+      "name": "create_prediction",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "seb744ANEygO2yA2",
+          "name": "MCP Client - flowise"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "list_chatflows"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        380,
+        220
+      ],
+      "id": "b73fdc72-6885-4aef-8990-44b10af2261d",
+      "name": "list_chatflows",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "seb744ANEygO2yA2",
+          "name": "MCP Client - flowise"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "inputSource": "jsonExample",
+        "jsonExample": "{\n  \"input\": \"run my customer support chatflow with this request\",\n  \"reason\": \"The request specifically mentions running a chatflow, which is the primary capability of the Flowise Agent.\",\n  \"selectedAgent\": \"flowise-agent\"\n}"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -60,
+        20
+      ],
+      "id": "1aef50c9-0857-4166-851b-9e9d12619e73",
+      "name": "When Executed by Another Workflow"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        []
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MCP Client": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_prediction": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "list_chatflows": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "d8f1813d-4e8f-4e17-860c-9cbe58418718",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "558d88703fb65b2d0e44613bc35916258b0f0bf983c5d4730c00c424b77ca36a"
+  },
+  "id": "vPFfIsP04dA0RGKf",
+  "tags": []
+}

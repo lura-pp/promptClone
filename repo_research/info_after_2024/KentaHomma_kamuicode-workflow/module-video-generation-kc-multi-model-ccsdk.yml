@@ -1,0 +1,240 @@
+name: module-video-generation-kc-multi-model-ccsdk
+
+on:
+  workflow_call:
+    inputs:
+      concept:
+        description: 'ユーザーのコンセプト'
+        required: true
+        type: string
+      model-type:
+        description: '使用する動画生成モデル (例: i2v-fal-hailuo-02-pro, t2v-fal-veo3-fast, r2v-fal-vidu-q1)'
+        required: true
+        type: string
+      text-prompt:
+        description: 'テキストプロンプト（t2v用）'
+        required: false
+        type: string
+      video-prompt:
+        description: '動画生成用プロンプト（i2v/r2v用）'
+        required: false
+        type: string
+      image-url:
+        description: '画像URL（i2v/r2v用）'
+        required: false
+        type: string
+      branch-name:
+        description: 'ワーキングブランチ名'
+        required: true
+        type: string
+      folder-name:
+        description: 'プロジェクトフォルダ名'
+        required: true
+        type: string
+      video_index:
+        description: '動画インデックス'
+        required: false
+        type: string
+        default: '1'
+    outputs:
+      completed:
+        description: '完了ステータス'
+        value: ${{ jobs.video-generation.outputs.completed }}
+      video-url:
+        description: '動画URL'
+        value: ${{ jobs.video-generation.outputs.video-url }}
+    secrets:
+      anthropic_api_key:
+        description: 'Anthropic API Key'
+        required: true
+      github_pat:
+        description: 'GitHub Token'
+        required: true
+
+jobs:
+  video-generation:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      completed: ${{ steps.video.outputs.completed }}
+      video-url: ${{ steps.video.outputs.video-url }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.branch-name }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install Claude Code SDK
+        run: npm install @anthropic-ai/claude-code
+      
+      - name: 動画生成エージェント (マルチモデル対応)
+        id: video
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.anthropic_api_key }}
+        run: |
+          echo "::group::🎬 Video Generation Agent Execution (Multi-Model)"
+          echo "Starting at: $(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)"
+          
+          # 設定
+          USER_CONCEPT="${{ inputs.concept }}"
+          MODEL_TYPE="${{ inputs.model-type }}"
+          TEXT_PROMPT="${{ inputs.text-prompt }}"
+          VIDEO_PROMPT="${{ inputs.video-prompt }}"
+          IMAGE_URL="${{ inputs.image-url }}"
+          FOLDER_NAME="${{ inputs.folder-name }}"
+          VIDEO_INDEX="${{ inputs.video_index }}"
+          VIDEOS_DIR="$FOLDER_NAME/videos-${VIDEO_INDEX}"
+          
+          echo "User concept: $USER_CONCEPT"
+          echo "Model type: $MODEL_TYPE"
+          echo "Text prompt: $TEXT_PROMPT"
+          echo "Video prompt: $VIDEO_PROMPT"
+          echo "Image URL: $IMAGE_URL"
+          echo "Video index: $VIDEO_INDEX"
+          echo "Target folder: $VIDEOS_DIR"
+          
+          # 動画フォルダを事前に作成
+          if [ ! -d "$VIDEOS_DIR" ]; then
+            mkdir -p "$VIDEOS_DIR"
+            echo "📁 Created videos folder: $VIDEOS_DIR"
+          fi
+          
+          # MCP設定の確認
+          MCP_CONFIG_PATH=".claude/mcp-kamuicode.json"
+          MCP_CONFIG_ABS_PATH="$(pwd)/$MCP_CONFIG_PATH"
+          
+          # MCP設定ファイルの存在確認
+          if [ -f "$MCP_CONFIG_ABS_PATH" ]; then
+            echo "✅ MCP config file exists at: $MCP_CONFIG_ABS_PATH"
+          else
+            echo "❌ MCP config file not found at: $MCP_CONFIG_ABS_PATH"
+            exit 1
+          fi
+          
+          # プロンプトの構築
+          PROMPT="指定されたモデルタイプを使用して動画を生成してください。
+
+          **元のユーザー指示**: $USER_CONCEPT
+          **使用するモデルタイプ**: $MODEL_TYPE
+          **テキストプロンプト**: $TEXT_PROMPT
+          **動画プロンプト**: $VIDEO_PROMPT
+          **画像URL**: $IMAGE_URL
+
+          **実行手順**:
+          1. まず、\`.github/workflows/usage/kamuicode-usage.md\`ファイルを読み込んで、モデルタイプ「$MODEL_TYPE」に対応するMCPツール名を確認してください
+          2. ファイルから以下の情報を抽出:
+             - submitツール名（例: mcp__i2v-fal-hailuo-02-pro__hailuo_02_submit）
+             - statusツール名（例: mcp__i2v-fal-hailuo-02-pro__hailuo_02_status）
+             - resultツール名（例: mcp__i2v-fal-hailuo-02-pro__hailuo_02_result）
+          3. モデルタイプに応じて適切なパラメータを使用:
+             - **t2v-で始まる場合**: テキストプロンプト（$TEXT_PROMPT）を使用してテキストから動画生成
+             - **i2v-で始まる場合**: 画像URL（$IMAGE_URL）と動画プロンプト（$VIDEO_PROMPT）を使用して画像から動画生成
+             - **r2v-で始まる場合**: 画像URL（$IMAGE_URL）と動画プロンプト（$VIDEO_PROMPT）を使用して参照動画生成
+          4. submitツールで動画生成を開始
+          5. statusツールでステータス確認（動画生成は時間がかかるため、適度な間隔で確認）
+          6. 必要に応じてBashツールで \`sleep 60\` を実行してから再度ステータス確認
+          7. resultツールで結果取得して動画URLを取得
+          8. **必須**: 取得した動画URLを「$VIDEOS_DIR/video-url.txt」ファイルに保存
+          9. **必須**: 取得した動画URLをBashツールで「$VIDEOS_DIR/video.mp4」にダウンロード保存
+
+          **重要な注意点**:
+          - usage/kamuicode-usage.mdから正しいツール名を読み取ること
+          - 動画生成は時間がかかるため、ステータス確認の間に適度な待機時間を入れること
+          - Google URLの有効期限は約1時間のため、生成後すぐにダウンロード
+          - 必ずGoogle提供の認証済URLを使用
+          - 動画は必ず「$VIDEOS_DIR」ディレクトリに保存
+          - ファイル名は「video.mp4」とする
+          - **最重要**: 生成時の動画URLを「$VIDEOS_DIR/video-url.txt」に保存し、次のジョブで参照できるようにする
+          - **両方を実行**: ①動画URLをテキストファイルに保存 ②動画URLから動画をダウンロードしてローカル保存"
+          
+          echo "🚀 Starting Video Generation Agent Claude Code CLI..."
+          echo "📝 Prompt length: ${#PROMPT}"
+          
+          # Claude Code CLIの実行（動画生成系ツールはワイルドカードで許可）
+          npx @anthropic-ai/claude-code \
+            --mcp-config="$MCP_CONFIG_ABS_PATH" \
+            --max-turns 40 \
+            --verbose \
+            -p "$PROMPT" || {
+              echo "::error::❌ Claude Code CLI execution failed"
+              exit 1
+            }
+          
+          # 生成された動画の確認
+          echo ""
+          echo "🎬 Checking generated videos..."
+          if [ -d "$VIDEOS_DIR" ]; then
+            VIDEO_COUNT=$(find "$VIDEOS_DIR" -name "*.mp4" -o -name "*.mov" -o -name "*.avi" | wc -l)
+            echo "::notice::🎬 Generated $VIDEO_COUNT videos using $MODEL_TYPE"
+            if [ "$VIDEO_COUNT" -gt 0 ]; then
+              # 動画ファイルサイズの確認
+              for video_file in $(find "$VIDEOS_DIR" -name "*.mp4" -o -name "*.mov" -o -name "*.avi" | head -3); do
+                if [ -f "$video_file" ]; then
+                  VIDEO_SIZE=$(stat -c%s "$video_file" 2>/dev/null || stat -f%z "$video_file" 2>/dev/null || echo "0")
+                  echo "::notice::📹 Video file: $video_file (${VIDEO_SIZE} bytes)"
+                  if [ "$VIDEO_SIZE" -eq 0 ]; then
+                    echo "::error::❌ Video file is empty: $video_file"
+                    exit 1
+                  fi
+                fi
+              done
+              
+              # 動画URLファイルの確認と出力設定
+              VIDEO_URL_FILE="$VIDEOS_DIR/video-url.txt"
+              if [ -f "$VIDEO_URL_FILE" ]; then
+                VIDEO_URL=$(cat "$VIDEO_URL_FILE")
+                echo "✅ Video URL found: $VIDEO_URL"
+                echo "video-url=$VIDEO_URL" >> $GITHUB_OUTPUT
+              else
+                echo "❌ Video URL file not found: $VIDEO_URL_FILE"
+                echo "Creating empty URL file to continue workflow..."
+                echo "" > "$VIDEO_URL_FILE"
+                echo "video-url=" >> $GITHUB_OUTPUT
+              fi
+            else
+              echo "::error::❌ No videos were generated"
+              exit 1
+            fi
+          else
+            echo "::error::❌ Videos directory not found"
+            exit 1
+          fi
+          
+          echo "completed=true" >> $GITHUB_OUTPUT
+          echo "::endgroup::"
+      
+      - name: Commit and push videos
+        env:
+          GH_TOKEN: ${{ secrets.github_pat }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ${{ inputs.folder-name }}/
+          if git diff --cached --quiet; then
+            echo "No videos to commit"
+          else
+            git commit -m "Add generated videos using ${{ inputs.model-type }}: ${{ inputs.concept }}
+            
+            🤖 Generated with [Claude Code](https://claude.ai/code)
+            
+            Co-Authored-By: Claude <noreply@anthropic.com>"
+            # 並列実行での競合を回避するためのリトライ処理
+            for i in {1..3}; do
+              git pull --rebase origin ${{ inputs.branch-name }} || true
+              if git push origin ${{ inputs.branch-name }}; then
+                echo "✅ Push successful on attempt $i"
+                break
+              else
+                echo "⚠️ Push failed on attempt $i, retrying..."
+                # ランダムな待機時間（1-5秒）
+                sleep $((RANDOM % 5 + 1))
+              fi
+            done
+          fi

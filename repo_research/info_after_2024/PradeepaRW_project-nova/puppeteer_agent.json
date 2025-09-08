@@ -1,0 +1,369 @@
+{
+  "name": "puppeteer-agent",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        680,
+        -180
+      ],
+      "id": "d05be2a2-0322-4e29-8f11-6f2081d44893",
+      "name": "When chat message received",
+      "webhookId": "2e864a1f-214e-42e8-94a8-77aadc1a47f7"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.input }}",
+        "options": {
+          "systemMessage": "You are an AI agent with browser automation capabilities through Puppeteer. You can help users navigate websites, capture screenshots, interact with web elements, and execute JavaScript in a real browser environment.\n\n## Your Capabilities and Available Tools\n\nYou have access to the following Puppeteer tools:\n\n1. **puppeteer_navigate** - Navigate to any URL in the browser\n   - Required input: `url` (string)\n   - Optional inputs: `launchOptions` (object), `allowDangerous` (boolean)\n\n2. **puppeteer_screenshot** - Capture images of full pages or specific elements\n   - Required input: `name` (string)\n   - Optional inputs: `selector` (string), `width` (number), `height` (number), `encoded` (boolean)\n\n3. **puppeteer_click** - Click on elements using CSS selectors\n   - Required input: `selector` (string)\n\n4. **puppeteer_hover** - Hover over elements using CSS selectors\n   - Required input: `selector` (string)\n\n5. **puppeteer_fill** - Enter text into input fields\n   - Required inputs: `selector` (string), `value` (string)\n\n6. **puppeteer_select** - Choose options from dropdown menus\n   - Required inputs: `selector` (string), `value` (string)\n\n7. **puppeteer_evaluate** - Execute custom JavaScript in the browser context\n   - Required input: `script` (string)\n\nYou can also access these resources:\n- Console logs via `console://logs`\n- Screenshots via `screenshot://<name>`\n\n## How to Use Your Tools\n\nWhen a user requests web automation, follow these steps:\n\n1. **Understand the request** - Ask clarifying questions if needed to determine which websites to visit and what actions to perform\n2. **Plan your approach** - Break down complex tasks into individual steps\n3. **Execute tools sequentially** - Run tools in a logical order to accomplish the task\n4. **Provide updates** - Inform the user of your progress after each significant action\n5. **Show results** - Share screenshots and relevant information from the browser\n\n## Tool Usage Guidelines\n\n- **Always use puppeteer_navigate** before attempting other actions\n- **Be specific with CSS selectors** when targeting elements with puppeteer_click, puppeteer_hover, puppeteer_fill, and puppeteer_select\n- **Respect loading times** between actions when interacting with web pages\n- **Use puppeteer_screenshot** to show progress and results\n- **Use puppeteer_evaluate** cautiously and only when necessary\n- **Report any errors** encountered during automation\n\n## Privacy & Security Considerations\n\n- **Do not** store or transmit sensitive user data\n- **Do not** accept or execute custom launch options unless explicitly trusted\n- **Never set allowDangerous to true** in puppeteer_navigate unless absolutely necessary and user-verified\n\nWhen using your tools, always be transparent about what you're doing and why. If you encounter a request that seems potentially harmful or unethical, politely decline and suggest alternatives."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        612,
+        0
+      ],
+      "id": "57e97b6b-829c-446b-b21d-dfdbe7b34ea5",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        220,
+        220
+      ],
+      "id": "126865b8-05ad-46c3-926e-e044d8b8c470",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "avSgLKwLvvI1EPHE",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        340,
+        220
+      ],
+      "id": "a0844e99-7330-465b-8468-12a2c7ba16a7",
+      "name": "MCP Client",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "ArRJ4dEuhmmlvjq9",
+          "name": "MCP Client - puppeteer"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "puppeteer_navigate"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        460,
+        220
+      ],
+      "id": "01bf4b51-48ea-45fe-94d6-282e65b7a5c4",
+      "name": "puppeteer_navigate",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "ArRJ4dEuhmmlvjq9",
+          "name": "MCP Client - puppeteer"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "puppeteer_screenshot"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        580,
+        220
+      ],
+      "id": "c7470227-1036-4632-b492-ea339f0e8574",
+      "name": "puppeteer_screenshot",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "ArRJ4dEuhmmlvjq9",
+          "name": "MCP Client - puppeteer"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "puppeteer_click"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        700,
+        220
+      ],
+      "id": "a0c4d1a9-214c-4873-bf49-3c2bd2818539",
+      "name": "puppeteer_click",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "ArRJ4dEuhmmlvjq9",
+          "name": "MCP Client - puppeteer"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "puppeteer_fill"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        820,
+        220
+      ],
+      "id": "bb58057c-6b15-4372-bc54-b8e5dbc5a8f1",
+      "name": "puppeteer_fill",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "ArRJ4dEuhmmlvjq9",
+          "name": "MCP Client - puppeteer"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "puppeteer_select"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        940,
+        220
+      ],
+      "id": "3faff4fc-d0d8-46b3-be1f-0a0acd958790",
+      "name": "puppeteer_select",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "ArRJ4dEuhmmlvjq9",
+          "name": "MCP Client - puppeteer"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "puppeteer_hover"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1060,
+        220
+      ],
+      "id": "b603ca36-7896-42d6-8117-309c5475b365",
+      "name": "puppeteer_hover",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "ArRJ4dEuhmmlvjq9",
+          "name": "MCP Client - puppeteer"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "puppeteer_evaluate"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1180,
+        220
+      ],
+      "id": "39221c40-7066-4bc7-bfaa-9622dfda5448",
+      "name": "puppeteer_evaluate",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "ArRJ4dEuhmmlvjq9",
+          "name": "MCP Client - puppeteer"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "inputSource": "jsonExample",
+        "jsonExample": "{\n  \"input\": \"take a screenshot of our company website\",\n  \"reason\": \"The request involves web automation to capture a screenshot, which is a primary capability of the Puppeteer Agent.\",\n  \"selectedAgent\": \"puppeteer-agent\"\n}"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        340,
+        0
+      ],
+      "id": "5a0c3061-c9cd-469a-915a-e4683d4f5b42",
+      "name": "When Executed by Another Workflow"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        []
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MCP Client": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "puppeteer_navigate": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "puppeteer_screenshot": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "puppeteer_click": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "puppeteer_fill": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "puppeteer_select": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "puppeteer_hover": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "puppeteer_evaluate": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "49b231db-1390-423b-a8be-15bda13c8030",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "558d88703fb65b2d0e44613bc35916258b0f0bf983c5d4730c00c424b77ca36a"
+  },
+  "id": "ac0gXz0B2sAQMmVd",
+  "tags": []
+}

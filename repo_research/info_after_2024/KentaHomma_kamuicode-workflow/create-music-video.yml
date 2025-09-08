@@ -1,0 +1,1838 @@
+name: Create Music Video
+
+on:
+  workflow_dispatch:
+    inputs:
+      music_concept:
+        description: '音楽のコンセプト（例：静かな夜のピアノ曲）'
+        required: true
+        type: string
+
+jobs:
+  setup-branch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      branch-name: ${{ steps.create-branch.outputs.branch-name }}
+      folder-name: ${{ steps.create-branch.outputs.folder-name }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Create branch for music video generation
+        id: create-branch
+        run: |
+          BRANCH_NAME="music-video/$(date +%Y%m%d)-${{ github.run_id }}"
+          FOLDER_NAME="music-video-$(date +%Y%m%d)-${{ github.run_id }}"
+          git checkout -b $BRANCH_NAME
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git push origin $BRANCH_NAME
+          echo "branch-name=$BRANCH_NAME" >> $GITHUB_OUTPUT
+          echo "folder-name=$FOLDER_NAME" >> $GITHUB_OUTPUT
+          echo "Created branch: $BRANCH_NAME"
+          echo "Folder name: $FOLDER_NAME"
+
+  music-planning:
+    runs-on: ubuntu-latest
+    needs: [setup-branch]
+    permissions:
+      contents: write
+    outputs:
+      planning-completed: ${{ steps.planning.outputs.completed }}
+      music-prompt: ${{ steps.planning.outputs.music-prompt }}
+      image-prompt: ${{ steps.planning.outputs.image-prompt }}
+      video-concept: ${{ steps.planning.outputs.video-concept }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.setup-branch.outputs.branch-name }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install Claude Code SDK
+        run: npm install @anthropic-ai/claude-code
+      
+      - name: ミュージックビデオ計画エージェント
+        id: planning
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          echo "::group::🎵 Music Video Planning Agent Execution"
+          echo "Starting at: $(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)"
+          
+          # 設定
+          MUSIC_CONCEPT="${{ inputs.music_concept }}"
+          FOLDER_NAME="${{ needs.setup-branch.outputs.folder-name }}"
+          PLANNING_DIR="$FOLDER_NAME/planning"
+          
+          echo "Music concept: $MUSIC_CONCEPT"
+          echo "Planning folder: $PLANNING_DIR"
+          
+          # 計画フォルダを事前に作成
+          if [ ! -d "$PLANNING_DIR" ]; then
+            mkdir -p "$PLANNING_DIR"
+            echo "📁 Created planning folder: $PLANNING_DIR"
+          fi
+          
+          # プロンプトの構築
+          PROMPT="あなたは音楽主導のミュージックビデオ制作の戦略的プランナーです。5秒×3つの動画を30-40秒の音楽に最適化する戦略を中心とした詳細な制作計画を立ててください。
+
+          **音楽コンセプト**: $MUSIC_CONCEPT
+          **重要制約**: 動画は5秒×3つのみ、音楽は30-40秒
+
+          **戦略的タスク**:
+          1. 音楽コンセプトを分析し、Google Lyriaで生成すべき音楽の詳細な設定を計画
+          2. **編集戦略の策定**: 5秒×3動画を30-40秒音楽に最適化する具体的戦略
+          3. **動画役割分析**: 3つの動画の戦略的役割（メイン、アクセント、トランジション）を定義
+          4. **使用頻度計画**: 各動画の音楽内での使用頻度・配置戦略を設計
+          5. 編集戦略に基づいた画像生成プロンプトを作成
+          6. ループ・速度調整・エフェクトを考慮した動画コンセプトを定義
+          7. 戦略的制作計画書を「$PLANNING_DIR/music-video-strategy.md」に保存
+          8. 音楽生成用プロンプトを「$PLANNING_DIR/music-prompt.txt」に保存
+          9. 戦略的画像プロンプトを「$PLANNING_DIR/image-prompt.txt」に保存
+          10. 編集最適化動画コンセプトを「$PLANNING_DIR/video-strategy.txt」に保存
+
+          **音楽生成プロンプトの要件**:
+          - Google Lyriaに最適化された詳細な音楽プロンプト
+          - 楽器、テンポ、雰囲気、感情を明確に指定
+          - ジャンルとスタイルを具体的に記述
+          - 「短い」「ショート」「イントロ」等の短時間を意図するキーワードを含む
+          - 注意：Google Lyriaは通常30-40秒の音楽を生成します
+
+          **画像生成プロンプトの要件**:
+          - 音楽のコンセプトと完全に一致する視覚的表現
+          - Imagen4 Fastに最適化された詳細なプロンプト
+          - 音楽の雰囲気を視覚的に表現する色彩、構図、スタイル
+          - 50-80語程度の適切な長さ
+
+          **戦略的動画コンセプトの要件**:
+          - **制約認識**: 5秒×3動画で30-40秒音楽をカバーする戦略的設計
+          - **役割分担戦略**:
+            * 動画1（メイン）: 音楽の50-60%で使用、基本的な雰囲気・テーマ表現
+            * 動画2（アクセント）: 音楽の20-30%で使用、クライマックス・転換点
+            * 動画3（トランジション）: 音楽の10-20%で使用、つなぎ・変化演出
+          - **編集最適化設計**:
+            * ループ耐性: 始点・終点が自然に連続する構成
+            * 速度可変性: 0.5-2倍速対応可能な動き設計
+            * エフェクト適応: フィルター・トランジション追加前提
+          - **戦略的配置計画**:
+            * 音楽構造分析に基づく各動画の最適配置タイミング
+            * ビート・テンポに合わせた使用頻度・速度調整計画
+            * 感情変化に対応した動画切り替え戦略
+          - **技術要件**: Hailuo-02 Pro最適化（5秒制限内で最大効果）
+
+          **重要**: 
+          1. 必ず以下の7つのファイルを作成してください：
+             - $PLANNING_DIR/music-video-strategy.md（戦略的制作計画）
+             - $PLANNING_DIR/music-prompt.txt
+             - $PLANNING_DIR/music-prompt.md（ユーザー確認用）
+             - $PLANNING_DIR/image-prompt.txt（編集戦略対応）
+             - $PLANNING_DIR/image-prompt.md（ユーザー確認用）
+             - $PLANNING_DIR/video-strategy.txt（編集最適化コンセプト）
+             - $PLANNING_DIR/video-strategy.md（ユーザー確認用）
+          2. txtファイルは機械処理用（1行テキスト）、mdファイルはユーザー確認用
+          3. 音楽→画像→動画の一貫したコンセプトを維持
+          4. 各ファイルの内容は具体的で詳細に記述してください
+          5. ファイル作成後、必ずファイルパスを確認・報告してください"
+          
+          echo "🚀 Starting Music Video Planning Agent Claude Code CLI..."
+          echo "📝 Prompt length: ${#PROMPT}"
+          
+          # Claude Code CLIの実行
+          npx @anthropic-ai/claude-code \
+            --allowedTools "Read,Write,Edit" \
+            --max-turns 25 \
+            --verbose \
+            --permission-mode "acceptEdits" \
+            -p "$PROMPT" || {
+              echo "::error::❌ Claude Code CLI execution failed"
+              exit 1
+            }
+          
+          # 生成された計画の確認
+          echo ""
+          echo "📋 Checking generated planning files..."
+          
+          # 音楽プロンプトの確認
+          if [ -f "$PLANNING_DIR/music-prompt.txt" ]; then
+            MUSIC_PROMPT=$(cat "$PLANNING_DIR/music-prompt.txt" | tr '\n' ' ')
+            echo "::notice::✅ Music prompt generated"
+            echo "Music prompt: $MUSIC_PROMPT"
+            echo "music-prompt=$MUSIC_PROMPT" >> $GITHUB_OUTPUT
+          else
+            echo "::error::❌ Music prompt file not found"
+            exit 1
+          fi
+          
+          # 画像プロンプトの確認
+          if [ -f "$PLANNING_DIR/image-prompt.txt" ]; then
+            IMAGE_PROMPT=$(cat "$PLANNING_DIR/image-prompt.txt" | tr '\n' ' ')
+            echo "::notice::✅ Image prompt generated"
+            echo "Image prompt: $IMAGE_PROMPT"
+            echo "image-prompt=$IMAGE_PROMPT" >> $GITHUB_OUTPUT
+          else
+            echo "::error::❌ Image prompt file not found"
+            exit 1
+          fi
+          
+          # 動画コンセプトの確認
+          if [ -f "$PLANNING_DIR/video-strategy.txt" ]; then
+            VIDEO_CONCEPT=$(head -5 "$PLANNING_DIR/video-strategy.txt" | tr '\n' ' ')
+            echo "::notice::✅ Video concept generated"
+            echo "Video concept: $VIDEO_CONCEPT"
+            echo "video-concept=$VIDEO_CONCEPT" >> $GITHUB_OUTPUT
+          else
+            echo "::error::❌ Video concept file not found"
+            exit 1
+          fi
+          
+          # 計画書の確認
+          if [ -f "$PLANNING_DIR/music-video-strategy.md" ]; then
+            echo "::notice::✅ Music video plan document generated"
+            echo "First 10 lines of plan:"
+            head -10 "$PLANNING_DIR/music-video-strategy.md"
+          else
+            echo "::warning::⚠️ Music video plan document not found"
+          fi
+          
+          echo "completed=true" >> $GITHUB_OUTPUT
+          echo "::endgroup::"
+      
+      - name: Commit and push planning
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ${{ needs.setup-branch.outputs.folder-name }}/
+          if git diff --cached --quiet; then
+            echo "No planning files to commit"
+          else
+            git commit -m "Add music video planning: ${{ inputs.music_concept }}"
+            git push origin ${{ needs.setup-branch.outputs.branch-name }}
+          fi
+
+  music-generation:
+    runs-on: ubuntu-latest
+    needs: [setup-branch, music-planning]
+    permissions:
+      contents: write
+    outputs:
+      music-completed: ${{ steps.music.outputs.completed }}
+      music-url: ${{ steps.music.outputs.music-url }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.setup-branch.outputs.branch-name }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install Claude Code SDK
+        run: npm install @anthropic-ai/claude-code
+      
+      - name: 音楽生成エージェント (Google Lyria)
+        id: music
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          echo "::group::🎵 Music Generation Agent Execution (Google Lyria)"
+          echo "Starting at: $(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)"
+          
+          # 設定
+          MUSIC_CONCEPT="${{ inputs.music_concept }}"
+          MUSIC_PROMPT="${{ needs.music-planning.outputs.music-prompt }}"
+          FOLDER_NAME="${{ needs.setup-branch.outputs.folder-name }}"
+          MUSIC_DIR="$FOLDER_NAME/music"
+          
+          echo "Music concept: $MUSIC_CONCEPT"
+          echo "Music prompt: $MUSIC_PROMPT"
+          echo "Target folder: $MUSIC_DIR"
+          
+          # 音楽フォルダを事前に作成
+          if [ ! -d "$MUSIC_DIR" ]; then
+            mkdir -p "$MUSIC_DIR"
+            echo "📁 Created music folder: $MUSIC_DIR"
+          fi
+          
+          # MCP設定の確認
+          MCP_CONFIG_PATH=".claude/mcp-kamuicode.json"
+          MCP_CONFIG_ABS_PATH="$(pwd)/$MCP_CONFIG_PATH"
+          
+          echo "📋 MCP Configuration Check:"
+          echo "Working directory: $(pwd)"
+          echo "MCP config path: $MCP_CONFIG_PATH"
+          echo "MCP config absolute path: $MCP_CONFIG_ABS_PATH"
+          echo "Allowed tools: mcp__t2m-google-lyria__lyria_submit,mcp__t2m-google-lyria__lyria_status,mcp__t2m-google-lyria__lyria_result,Bash"
+          
+          # MCP設定ファイルの存在確認
+          if [ -f "$MCP_CONFIG_ABS_PATH" ]; then
+            echo "✅ MCP config file exists at: $MCP_CONFIG_ABS_PATH"
+            echo "MCP servers configured:"
+            jq -r '.mcpServers | keys[]' "$MCP_CONFIG_ABS_PATH" || true
+          else
+            echo "❌ MCP config file not found at: $MCP_CONFIG_ABS_PATH"
+            exit 1
+          fi
+          
+          # 一括実行: 音楽生成（Google Lyria Generate）
+          echo "🚀 Music Generation (Google Lyria Generate)"
+          MUSIC_PROMPT_FULL="Google Lyriaを使用して音楽生成を実行してください。
+
+          **音楽コンセプト**: $MUSIC_CONCEPT
+          **最適化された音楽生成プロンプト**: $MUSIC_PROMPT
+
+          **実行手順**:
+          1. \`mcp__t2m-google-lyria__lyria_generate\`ツールを使用して音楽生成を実行
+          2. 生成された音楽ファイルを「$MUSIC_DIR/generated-music.mp3」または「$MUSIC_DIR/generated-music.wav」に保存
+          3. 音楽ファイルのパスを「$FOLDER_NAME/music-url.txt」に保存（後の処理で参照用）
+          4. 生成完了の確認メッセージを表示
+
+          **重要**: 必ず正しいツール名 \`mcp__t2m-google-lyria__lyria_generate\` を使用してください。
+          
+          **保存先**:
+          - 音楽ディレクトリ: $MUSIC_DIR
+          - 音楽ファイル: generated-music.mp3 または generated-music.wav
+          - パス保存ファイル: $FOLDER_NAME/music-url.txt"
+          
+          npx @anthropic-ai/claude-code \
+            --mcp-config="$MCP_CONFIG_ABS_PATH" \
+            --allowedTools "mcp__t2m-google-lyria__lyria_generate,Bash" \
+            --max-turns 25 \
+            --verbose \
+            --permission-mode "acceptEdits" \
+            -p "$MUSIC_PROMPT_FULL" || {
+              echo "::error::❌ Music generation failed"
+              exit 1
+            }
+          
+          # 生成された音楽の確認
+          echo ""
+          echo "🎵 Checking generated music..."
+          if [ -d "$MUSIC_DIR" ]; then
+            MUSIC_COUNT=$(find "$MUSIC_DIR" -name "*.mp3" -o -name "*.wav" -o -name "*.m4a" | wc -l)
+            echo "::notice::🎵 Generated $MUSIC_COUNT music files"
+            if [ "$MUSIC_COUNT" -gt 0 ]; then
+              echo "Music files:"
+              FIRST_MUSIC=$(find "$MUSIC_DIR" -name "*.mp3" -o -name "*.wav" -o -name "*.m4a" | head -1)
+              echo "First music: $FIRST_MUSIC"
+              
+              # 音楽URLを確認してGitHub Outputに設定
+              if [ -f "$FOLDER_NAME/music-url.txt" ]; then
+                MUSIC_URL=$(cat "$FOLDER_NAME/music-url.txt")
+                echo "Music URL: $MUSIC_URL"
+                echo "music-url=$MUSIC_URL" >> $GITHUB_OUTPUT
+              else
+                echo "::warning::⚠️ Music URL not found in file"
+                echo "music-url=" >> $GITHUB_OUTPUT
+              fi
+            else
+              echo "::error::❌ No music files were generated"
+              exit 1
+            fi
+          else
+            echo "::error::❌ Music directory not found"
+            exit 1
+          fi
+          
+          echo "completed=true" >> $GITHUB_OUTPUT
+          echo "::endgroup::"
+      
+      - name: Commit and push music
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ${{ needs.setup-branch.outputs.folder-name }}/
+          if git diff --cached --quiet; then
+            echo "No music files to commit"
+          else
+            git commit -m "Add generated music: ${{ inputs.music_concept }}"
+            # リトライロジックでプッシュ
+            PUSH_SUCCESS=false
+            for i in {1..5}; do
+              echo "Push attempt $i/5..."
+              git pull origin ${{ needs.setup-branch.outputs.branch-name }} --rebase
+              if git push origin ${{ needs.setup-branch.outputs.branch-name }}; then
+                echo "✅ Push successful on attempt $i"
+                PUSH_SUCCESS=true
+                break
+              fi
+              echo "⚠️ Push failed on attempt $i, waiting before retry..."
+              sleep $((RANDOM % 10 + 5))  # 5-15秒のランダム待機
+            done
+            if [ "$PUSH_SUCCESS" = false ]; then
+              echo "❌ Failed to push after 5 attempts"
+              exit 1
+            fi
+          fi
+
+  music-analysis:
+    runs-on: ubuntu-latest
+    needs: [setup-branch, music-planning, music-generation]
+    permissions:
+      contents: write
+    outputs:
+      analysis-completed: ${{ steps.analysis.outputs.completed }}
+      image-prompt-1: ${{ steps.analysis.outputs.image-prompt-1 }}
+      image-prompt-2: ${{ steps.analysis.outputs.image-prompt-2 }}
+      image-prompt-3: ${{ steps.analysis.outputs.image-prompt-3 }}
+      video-prompt-1: ${{ steps.analysis.outputs.video-prompt-1 }}
+      video-prompt-2: ${{ steps.analysis.outputs.video-prompt-2 }}
+      video-prompt-3: ${{ steps.analysis.outputs.video-prompt-3 }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.setup-branch.outputs.branch-name }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install Claude Code SDK
+        run: npm install @anthropic-ai/claude-code
+      
+      - name: 音楽分析・プロンプト最適化エージェント
+        id: analysis
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          echo "::group::🎵 Music Analysis & Prompt Optimization Agent Execution"
+          echo "Starting at: $(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)"
+          
+          # 設定
+          MUSIC_CONCEPT="${{ inputs.music_concept }}"
+          ORIGINAL_IMAGE_PROMPT="${{ needs.music-planning.outputs.image-prompt }}"
+          ORIGINAL_VIDEO_PROMPT="${{ needs.music-planning.outputs.video-concept }}"
+          MUSIC_URL="${{ needs.music-generation.outputs.music-url }}"
+          FOLDER_NAME="${{ needs.setup-branch.outputs.folder-name }}"
+          MUSIC_DIR="$FOLDER_NAME/music"
+          ANALYSIS_DIR="$FOLDER_NAME/analysis"
+          
+          echo "Music concept: $MUSIC_CONCEPT"
+          echo "Original image prompt: $ORIGINAL_IMAGE_PROMPT"
+          echo "Original video prompt: $ORIGINAL_VIDEO_PROMPT"
+          echo "Music URL: $MUSIC_URL"
+          echo "Analysis folder: $ANALYSIS_DIR"
+          
+          # 分析フォルダを事前に作成
+          if [ ! -d "$ANALYSIS_DIR" ]; then
+            mkdir -p "$ANALYSIS_DIR"
+            echo "📁 Created analysis folder: $ANALYSIS_DIR"
+          fi
+          
+          # 生成された音楽ファイルの確認
+          if [ ! -d "$MUSIC_DIR" ]; then
+            echo "::error::❌ Music directory not found: $MUSIC_DIR"
+            exit 1
+          fi
+          
+          GENERATED_MUSIC=$(find "$MUSIC_DIR" -name "*.mp3" -o -name "*.wav" -o -name "*.m4a" | head -1)
+          if [ -z "$GENERATED_MUSIC" ]; then
+            echo "::error::❌ No generated music found"
+            exit 1
+          fi
+          
+          echo "Generated music file: $GENERATED_MUSIC"
+          
+          # プロンプトの構築
+          PROMPT="音楽分析専門家として、生成された音楽の特徴を分析し、既存の戦略計画をベースに音楽に最適化された画像・動画プロンプトを微調整してください。
+
+          **重要**: 戦略を再策定するのではなく、既存の戦略計画に音楽の特徴を反映した微調整を実施
+
+          **参照すべき戦略計画**: $FOLDER_NAME/planning/music-video-strategy.md、$FOLDER_NAME/planning/video-strategy.txt
+          **音楽コンセプト**: $MUSIC_CONCEPT
+          **生成済み音楽ファイル**: $GENERATED_MUSIC
+          **元の画像プロンプト**: $ORIGINAL_IMAGE_PROMPT
+          **元の動画プロンプト**: $ORIGINAL_VIDEO_PROMPT
+
+          **タスク**:
+          1. 戦略計画書を読み込み、既存の編集戦略と動画役割を理解
+          2. 生成された音楽ファイルを分析して音楽的特徴を把握
+          3. 既存戦略を維持しながら、音楽の実際の特徴に合わせてプロンプトを微調整
+          5. 元の画像・動画プロンプトを音楽の特徴に合わせて微調整
+          6. 調整されたプロンプトを指定ファイルに保存
+
+          **微調整の原則**:
+          - 戦略計画で定義された役割分担（メイン50-60%、アクセント20-30%、トランジション10-20%）を維持
+          - 音楽の実際のテンポ、雰囲気、楽器構成を元プロンプトに反映
+          - 編集戦略（ループ耐性、速度可変、エフェクト対応）を保持
+
+          **実行手順**:
+          1. 戦略計画書を読み込み
+          2. 音楽ファイルを分析（テンポ、雰囲気、構造）
+          3. 元プロンプトに音楽の特徴を加味して微調整
+          4. 以下の成果物を保存:
+
+          **保存すべき成果物**:
+          - **音楽分析レポート**: 「$ANALYSIS_DIR/music-analysis.md」
+            * 音楽の特徴分析結果（テンポ、楽器、雰囲気）
+            * 既存戦略との整合性確認
+            * 微調整の根拠と理由
+          - **調整済み画像プロンプト**: 
+            * 「$ANALYSIS_DIR/image-prompt-1.txt」（機械処理用1行テキスト）
+            * 「$ANALYSIS_DIR/image-prompt-2.txt」（機械処理用1行テキスト）
+            * 「$ANALYSIS_DIR/image-prompt-3.txt」（機械処理用1行テキスト）
+          - **調整済み動画プロンプト**:
+            * 「$ANALYSIS_DIR/video-prompt-1.txt」（機械処理用1行テキスト）
+            * 「$ANALYSIS_DIR/video-prompt-2.txt」（機械処理用1行テキスト）
+            * 「$ANALYSIS_DIR/video-prompt-3.txt」（機械処理用1行テキスト）
+          - **ユーザー確認用**:
+            * 「$ANALYSIS_DIR/image-prompt-1.md」〜「$ANALYSIS_DIR/image-prompt-3.md」
+            * 「$ANALYSIS_DIR/video-prompt-1.md」〜「$ANALYSIS_DIR/video-prompt-3.md」
+
+          **必須**: 戦略の大幅変更ではなく、音楽に合わせた細かな調整のみ実施"
+          
+          echo "🚀 Starting Music Analysis & Prompt Optimization Agent Claude Code CLI..."
+          echo "📝 Prompt length: ${#PROMPT}"
+          
+          # Claude Code CLIの実行
+          npx @anthropic-ai/claude-code \
+            --allowedTools "Read,Write,Edit" \
+            --max-turns 50 \
+            --verbose \
+            --permission-mode "acceptEdits" \
+            -p "$PROMPT" || {
+              echo "::error::❌ Claude Code CLI execution failed"
+              exit 1
+            }
+          
+          # 最適化結果の確認
+          echo ""
+          echo "🎵 Checking music analysis and optimized prompts..."
+          
+          # 画像プロンプトの確認
+          SEGMENTS_COUNT=3
+          echo "segments-count=$SEGMENTS_COUNT" >> $GITHUB_OUTPUT
+          
+          for i in $(seq 1 $SEGMENTS_COUNT); do
+            if [ -f "$ANALYSIS_DIR/image-prompt-$i.txt" ]; then
+              IMAGE_PROMPT=$(cat "$ANALYSIS_DIR/image-prompt-$i.txt" | tr '\n' ' ')
+              echo "::notice::✅ Image prompt $i generated"
+              echo "Image prompt $i: $IMAGE_PROMPT"
+              echo "image-prompt-$i=$IMAGE_PROMPT" >> $GITHUB_OUTPUT
+            else
+              echo "::error::❌ Image prompt $i file not found"
+              exit 1
+            fi
+          done
+          
+          # 動画セグメントプロンプトの確認
+          for i in $(seq 1 $SEGMENTS_COUNT); do
+            if [ -f "$ANALYSIS_DIR/video-prompt-$i.txt" ]; then
+              VIDEO_PROMPT=$(cat "$ANALYSIS_DIR/video-prompt-$i.txt" | tr '\n' ' ')
+              echo "::notice::✅ Video segment $i prompt generated"
+              echo "Video prompt $i: $VIDEO_PROMPT"
+              echo "video-prompt-$i=$VIDEO_PROMPT" >> $GITHUB_OUTPUT
+            else
+              echo "::error::❌ Video segment $i prompt file not found"
+              exit 1
+            fi
+          done
+          
+          # 音楽分析レポートの確認
+          if [ -f "$ANALYSIS_DIR/music-analysis.md" ]; then
+            echo "::notice::✅ Music analysis report generated"
+            echo "First 10 lines of analysis:"
+            head -10 "$ANALYSIS_DIR/music-analysis.md"
+          else
+            echo "::warning::⚠️ Music analysis report not found"
+          fi
+          
+          echo "completed=true" >> $GITHUB_OUTPUT
+          echo "::endgroup::"
+      
+      - name: Commit and push analysis
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ${{ needs.setup-branch.outputs.folder-name }}/
+          if git diff --cached --quiet; then
+            echo "No analysis files to commit"
+          else
+            git commit -m "Add music analysis and optimized prompts: ${{ inputs.music_concept }}"
+            # リトライロジックでプッシュ
+            PUSH_SUCCESS=false
+            for i in {1..5}; do
+              echo "Push attempt $i/5..."
+              git pull origin ${{ needs.setup-branch.outputs.branch-name }} --rebase
+              if git push origin ${{ needs.setup-branch.outputs.branch-name }}; then
+                echo "✅ Push successful on attempt $i"
+                PUSH_SUCCESS=true
+                break
+              fi
+              echo "⚠️ Push failed on attempt $i, waiting before retry..."
+              sleep $((RANDOM % 10 + 5))  # 5-15秒のランダム待機
+            done
+            if [ "$PUSH_SUCCESS" = false ]; then
+              echo "❌ Failed to push after 5 attempts"
+              exit 1
+            fi
+          fi
+
+  image-generation-1:
+    runs-on: ubuntu-latest
+    needs: [setup-branch, music-analysis]
+    permissions:
+      contents: write
+    outputs:
+      image-completed: ${{ steps.image.outputs.completed }}
+      google-image-url: ${{ steps.image.outputs.google-image-url }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.setup-branch.outputs.branch-name }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install Claude Code SDK
+        run: npm install @anthropic-ai/claude-code
+      
+      - name: 画像セグメント1生成 (Imagen4 Fast)
+        id: image
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          echo "::group::🎨 Image Segment 1 Generation (Imagen4 Fast)"
+          echo "Starting at: $(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)"
+          
+          # 設定
+          MUSIC_CONCEPT="${{ inputs.music_concept }}"
+          IMAGE_PROMPT="${{ needs.music-analysis.outputs.image-prompt-1 }}"
+          FOLDER_NAME="${{ needs.setup-branch.outputs.folder-name }}"
+          IMAGES_DIR="$FOLDER_NAME/images"
+          
+          echo "Music concept: $MUSIC_CONCEPT"
+          echo "Image prompt 1: $IMAGE_PROMPT"
+          echo "Target folder: $IMAGES_DIR"
+          
+          # 画像フォルダを事前に作成
+          if [ ! -d "$IMAGES_DIR" ]; then
+            mkdir -p "$IMAGES_DIR"
+            echo "📁 Created images folder: $IMAGES_DIR"
+          fi
+          
+          # MCP設定の確認
+          MCP_CONFIG_PATH=".claude/mcp-kamuicode.json"
+          MCP_CONFIG_ABS_PATH="$(pwd)/$MCP_CONFIG_PATH"
+          
+          echo "📋 MCP Configuration Check:"
+          echo "Working directory: $(pwd)"
+          echo "MCP config path: $MCP_CONFIG_PATH"
+          echo "MCP config absolute path: $MCP_CONFIG_ABS_PATH"
+          echo "Allowed tools: mcp__t2i-fal-imagen4-fast__imagen4_fast_submit,mcp__t2i-fal-imagen4-fast__imagen4_fast_status,mcp__t2i-fal-imagen4-fast__imagen4_fast_result,Bash"
+          
+          # MCP設定ファイルの存在確認
+          if [ -f "$MCP_CONFIG_ABS_PATH" ]; then
+            echo "✅ MCP config file exists at: $MCP_CONFIG_ABS_PATH"
+            echo "MCP servers configured:"
+            jq -r '.mcpServers | keys[]' "$MCP_CONFIG_ABS_PATH" || true
+          else
+            echo "❌ MCP config file not found at: $MCP_CONFIG_ABS_PATH"
+            exit 1
+          fi
+          
+          # 最適化プロンプトの選択
+          if [ -n "$OPTIMIZED_IMAGE_PROMPT" ]; then
+            FINAL_IMAGE_PROMPT="$OPTIMIZED_IMAGE_PROMPT"
+            echo "Using optimized image prompt from music analysis"
+          else
+            FINAL_IMAGE_PROMPT="$ORIGINAL_IMAGE_PROMPT"
+            echo "Using original image prompt from planning"
+          fi
+          
+          # プロンプトの構築
+          PROMPT="画像セグメント1を生成してください。
+
+          **画像プロンプト**: $FINAL_IMAGE_PROMPT
+
+          **実行手順**:
+          1. 画像プロンプト（$FINAL_IMAGE_PROMPT）を使用してImagen4 Fastで画像生成
+          2. \`mcp__t2i-fal-imagen4-fast__imagen4_fast_submit\`ツールで画像生成を開始
+          3. \`mcp__t2i-fal-imagen4-fast__imagen4_fast_status\`でステータス確認
+          4. \`mcp__t2i-fal-imagen4-fast__imagen4_fast_result\`で結果取得してGoogle URLを取得
+          5. **重要**: 生成時に取得したGoogle URLを「$FOLDER_NAME/google-image-url.txt」ファイルに保存
+          6. 取得したGoogle URLをBashツールで「$IMAGES_DIR/generated-image.png」にダウンロード保存
+
+          **重要な注意点**:
+          - Google URLの有効期限は約1時間のため、生成後すぐにダウンロード
+          - 必ずGoogle提供の認証済URLを使用
+          - 画像は必ず「$IMAGES_DIR」ディレクトリに保存
+          - ファイル名は「generated-image.png」とする
+          - **最重要**: 生成時のGoogle URLを「$FOLDER_NAME/google-image-url.txt」に保存し、次のジョブで参照できるようにする
+          - **両方を実行**: ①Google URLをテキストファイルに保存 ②Google URLから画像をダウンロードしてローカル保存
+          
+          **処理の流れ**:
+          1. 画像生成してGoogle URLを取得
+          2. Google URLを「$FOLDER_NAME/google-image-url.txt」に保存（動画生成用）
+          3. 同じGoogle URLから「$IMAGES_DIR/generated-image.png」にダウンロード（保存用）"
+          
+          echo "🚀 Starting Image Generation Agent Claude Code CLI..."
+          echo "📝 Prompt length: ${#PROMPT}"
+          
+          # Claude Code CLIの実行
+          npx @anthropic-ai/claude-code \
+            --mcp-config="$MCP_CONFIG_ABS_PATH" \
+            --allowedTools "mcp__t2i-fal-imagen4-fast__imagen4_fast_submit,mcp__t2i-fal-imagen4-fast__imagen4_fast_status,mcp__t2i-fal-imagen4-fast__imagen4_fast_result,Bash" \
+            --max-turns 25 \
+            --verbose \
+            --permission-mode "acceptEdits" \
+            -p "$PROMPT" || {
+              echo "::error::❌ Claude Code CLI execution failed"
+              exit 1
+            }
+          
+          # 生成された画像の確認
+          echo ""
+          echo "📸 Checking generated images..."
+          if [ -d "$IMAGES_DIR" ]; then
+            IMAGE_COUNT=$(find "$IMAGES_DIR" -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" | wc -l)
+            echo "::notice::📸 Generated $IMAGE_COUNT images"
+            if [ "$IMAGE_COUNT" -gt 0 ]; then
+              echo "Image files:"
+              FIRST_IMAGE=$(find "$IMAGES_DIR" -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" | head -1)
+              echo "First image: $FIRST_IMAGE"
+              
+              # Google URLを確認してGitHub Outputに設定
+              if [ -f "$FOLDER_NAME/google-image-url.txt" ]; then
+                GOOGLE_URL=$(cat "$FOLDER_NAME/google-image-url.txt")
+                echo "Google image URL: $GOOGLE_URL"
+                echo "google-image-url=$GOOGLE_URL" >> $GITHUB_OUTPUT
+              else
+                echo "::warning::⚠️ Google image URL not found in file"
+                echo "google-image-url=" >> $GITHUB_OUTPUT
+              fi
+            else
+              echo "::error::❌ No images were generated"
+              exit 1
+            fi
+          else
+            echo "::error::❌ Images directory not found"
+            exit 1
+          fi
+          
+          echo "completed=true" >> $GITHUB_OUTPUT
+          echo "::endgroup::"
+      
+      - name: Commit and push images
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ${{ needs.setup-branch.outputs.folder-name }}/
+          if git diff --cached --quiet; then
+            echo "No images to commit"
+          else
+            git commit -m "Add generated image segment 1: ${{ inputs.music_concept }}"
+            # リトライロジックでプッシュ
+            PUSH_SUCCESS=false
+            for i in {1..5}; do
+              echo "Push attempt $i/5..."
+              git pull origin ${{ needs.setup-branch.outputs.branch-name }} --rebase
+              if git push origin ${{ needs.setup-branch.outputs.branch-name }}; then
+                echo "✅ Push successful on attempt $i"
+                PUSH_SUCCESS=true
+                break
+              fi
+              echo "⚠️ Push failed on attempt $i, waiting before retry..."
+              sleep $((RANDOM % 10 + 5))  # 5-15秒のランダム待機
+            done
+            if [ "$PUSH_SUCCESS" = false ]; then
+              echo "❌ Failed to push after 5 attempts"
+              exit 1
+            fi
+          fi
+
+  image-generation-2:
+    runs-on: ubuntu-latest
+    needs: [setup-branch, music-analysis]
+    permissions:
+      contents: write
+    outputs:
+      image-completed: ${{ steps.image.outputs.completed }}
+      google-image-url: ${{ steps.image.outputs.google-image-url }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.setup-branch.outputs.branch-name }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install Claude Code SDK
+        run: npm install @anthropic-ai/claude-code
+      
+      - name: 画像セグメント2生成 (Imagen4 Fast)
+        id: image
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          echo "::group::🎨 Image Segment 2 Generation (Imagen4 Fast)"
+          echo "Starting at: $(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)"
+          
+          # 設定
+          MUSIC_CONCEPT="${{ inputs.music_concept }}"
+          IMAGE_PROMPT="${{ needs.music-analysis.outputs.image-prompt-2 }}"
+          FOLDER_NAME="${{ needs.setup-branch.outputs.folder-name }}"
+          IMAGES_DIR="$FOLDER_NAME/images"
+          
+          echo "Music concept: $MUSIC_CONCEPT"
+          echo "Image prompt 2: $IMAGE_PROMPT"
+          echo "Target folder: $IMAGES_DIR"
+          
+          # 画像フォルダを事前に作成
+          if [ ! -d "$IMAGES_DIR" ]; then
+            mkdir -p "$IMAGES_DIR"
+            echo "📁 Created images folder: $IMAGES_DIR"
+          fi
+          
+          # MCP設定の確認
+          MCP_CONFIG_PATH=".claude/mcp-kamuicode.json"
+          MCP_CONFIG_ABS_PATH="$(pwd)/$MCP_CONFIG_PATH"
+          
+          # プロンプトの構築
+          PROMPT="画像セグメント2を生成してください。
+
+          **音楽コンセプト**: $MUSIC_CONCEPT
+          **画像プロンプト**: $IMAGE_PROMPT
+
+          **実行手順**:
+          1. **画像プロンプト**（$IMAGE_PROMPT）を使用してImagen4 Fastで画像生成
+          2. \`mcp__t2i-fal-imagen4-fast__imagen4_fast_submit\`ツールで画像生成を開始
+          3. \`mcp__t2i-fal-imagen4-fast__imagen4_fast_status\`でステータス確認
+          4. \`mcp__t2i-fal-imagen4-fast__imagen4_fast_result\`で結果取得してGoogle URLを取得
+          5. **重要**: 生成時に取得したGoogle URLを「$FOLDER_NAME/google-image-url-2.txt」ファイルに保存
+          6. 取得したGoogle URLをBashツールで「$IMAGES_DIR/segment-2-image.png」にダウンロード保存"
+          
+          echo "🚀 Starting Image Segment 2 Generation Agent Claude Code CLI..."
+          
+          # Claude Code CLIの実行
+          npx @anthropic-ai/claude-code \
+            --mcp-config="$MCP_CONFIG_ABS_PATH" \
+            --allowedTools "mcp__t2i-fal-imagen4-fast__imagen4_fast_submit,mcp__t2i-fal-imagen4-fast__imagen4_fast_status,mcp__t2i-fal-imagen4-fast__imagen4_fast_result,Bash" \
+            --max-turns 25 \
+            --verbose \
+            --permission-mode "acceptEdits" \
+            -p "$PROMPT" || {
+              echo "::error::❌ Claude Code CLI execution failed"
+              exit 1
+            }
+          
+          # Google URLを確認してGitHub Outputに設定
+          if [ -f "$FOLDER_NAME/google-image-url-2.txt" ]; then
+            GOOGLE_URL=$(cat "$FOLDER_NAME/google-image-url-2.txt")
+            echo "Google image URL 2: $GOOGLE_URL"
+            echo "google-image-url=$GOOGLE_URL" >> $GITHUB_OUTPUT
+          else
+            echo "::warning::⚠️ Google image URL 2 not found in file"
+            echo "google-image-url=" >> $GITHUB_OUTPUT
+          fi
+          
+          echo "completed=true" >> $GITHUB_OUTPUT
+          echo "::endgroup::"
+      
+      - name: Commit and push image segment 2
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ${{ needs.setup-branch.outputs.folder-name }}/
+          if git diff --cached --quiet; then
+            echo "No image segment 2 to commit"
+          else
+            git commit -m "Add generated image segment 2: ${{ inputs.music_concept }}"
+            # リトライロジックでプッシュ
+            PUSH_SUCCESS=false
+            for i in {1..5}; do
+              echo "Push attempt $i/5..."
+              git pull origin ${{ needs.setup-branch.outputs.branch-name }} --rebase
+              if git push origin ${{ needs.setup-branch.outputs.branch-name }}; then
+                echo "✅ Push successful on attempt $i"
+                PUSH_SUCCESS=true
+                break
+              fi
+              echo "⚠️ Push failed on attempt $i, waiting before retry..."
+              sleep $((RANDOM % 10 + 5))  # 5-15秒のランダム待機
+            done
+            if [ "$PUSH_SUCCESS" = false ]; then
+              echo "❌ Failed to push after 5 attempts"
+              exit 1
+            fi
+          fi
+
+  image-generation-3:
+    runs-on: ubuntu-latest
+    needs: [setup-branch, music-analysis]
+    permissions:
+      contents: write
+    outputs:
+      image-completed: ${{ steps.image.outputs.completed }}
+      google-image-url: ${{ steps.image.outputs.google-image-url }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.setup-branch.outputs.branch-name }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install Claude Code SDK
+        run: npm install @anthropic-ai/claude-code
+      
+      - name: 画像セグメント3生成 (Imagen4 Fast)
+        id: image
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          echo "::group::🎨 Image Segment 3 Generation (Imagen4 Fast)"
+          echo "Starting at: $(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)"
+          
+          # 設定
+          MUSIC_CONCEPT="${{ inputs.music_concept }}"
+          IMAGE_PROMPT="${{ needs.music-analysis.outputs.image-prompt-3 }}"
+          FOLDER_NAME="${{ needs.setup-branch.outputs.folder-name }}"
+          IMAGES_DIR="$FOLDER_NAME/images"
+          
+          echo "Music concept: $MUSIC_CONCEPT"
+          echo "Image prompt 3: $IMAGE_PROMPT"
+          echo "Target folder: $IMAGES_DIR"
+          
+          # 画像フォルダを事前に作成
+          if [ ! -d "$IMAGES_DIR" ]; then
+            mkdir -p "$IMAGES_DIR"
+            echo "📁 Created images folder: $IMAGES_DIR"
+          fi
+          
+          # MCP設定の確認
+          MCP_CONFIG_PATH=".claude/mcp-kamuicode.json"
+          MCP_CONFIG_ABS_PATH="$(pwd)/$MCP_CONFIG_PATH"
+          
+          # プロンプトの構築
+          PROMPT="画像セグメント3を生成してください。
+
+          **音楽コンセプト**: $MUSIC_CONCEPT
+          **画像プロンプト**: $IMAGE_PROMPT
+
+          **実行手順**:
+          1. **画像プロンプト**（$IMAGE_PROMPT）を使用してImagen4 Fastで画像生成
+          2. \`mcp__t2i-fal-imagen4-fast__imagen4_fast_submit\`ツールで画像生成を開始
+          3. \`mcp__t2i-fal-imagen4-fast__imagen4_fast_status\`でステータス確認
+          4. \`mcp__t2i-fal-imagen4-fast__imagen4_fast_result\`で結果取得してGoogle URLを取得
+          5. **重要**: 生成時に取得したGoogle URLを「$FOLDER_NAME/google-image-url-3.txt」ファイルに保存
+          6. 取得したGoogle URLをBashツールで「$IMAGES_DIR/segment-3-image.png」にダウンロード保存"
+          
+          echo "🚀 Starting Image Segment 3 Generation Agent Claude Code CLI..."
+          
+          # Claude Code CLIの実行
+          npx @anthropic-ai/claude-code \
+            --mcp-config="$MCP_CONFIG_ABS_PATH" \
+            --allowedTools "mcp__t2i-fal-imagen4-fast__imagen4_fast_submit,mcp__t2i-fal-imagen4-fast__imagen4_fast_status,mcp__t2i-fal-imagen4-fast__imagen4_fast_result,Bash" \
+            --max-turns 25 \
+            --verbose \
+            --permission-mode "acceptEdits" \
+            -p "$PROMPT" || {
+              echo "::error::❌ Claude Code CLI execution failed"
+              exit 1
+            }
+          
+          # Google URLを確認してGitHub Outputに設定
+          if [ -f "$FOLDER_NAME/google-image-url-3.txt" ]; then
+            GOOGLE_URL=$(cat "$FOLDER_NAME/google-image-url-3.txt")
+            echo "Google image URL 3: $GOOGLE_URL"
+            echo "google-image-url=$GOOGLE_URL" >> $GITHUB_OUTPUT
+          else
+            echo "::warning::⚠️ Google image URL 3 not found in file"
+            echo "google-image-url=" >> $GITHUB_OUTPUT
+          fi
+          
+          echo "completed=true" >> $GITHUB_OUTPUT
+          echo "::endgroup::"
+      
+      - name: Commit and push image segment 3
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ${{ needs.setup-branch.outputs.folder-name }}/
+          if git diff --cached --quiet; then
+            echo "No image segment 3 to commit"
+          else
+            git commit -m "Add generated image segment 3: ${{ inputs.music_concept }}"
+            # リトライロジックでプッシュ
+            PUSH_SUCCESS=false
+            for i in {1..5}; do
+              echo "Push attempt $i/5..."
+              git pull origin ${{ needs.setup-branch.outputs.branch-name }} --rebase
+              if git push origin ${{ needs.setup-branch.outputs.branch-name }}; then
+                echo "✅ Push successful on attempt $i"
+                PUSH_SUCCESS=true
+                break
+              fi
+              echo "⚠️ Push failed on attempt $i, waiting before retry..."
+              sleep $((RANDOM % 10 + 5))  # 5-15秒のランダム待機
+            done
+            if [ "$PUSH_SUCCESS" = false ]; then
+              echo "❌ Failed to push after 5 attempts"
+              exit 1
+            fi
+          fi
+
+
+  video-prompt-adjustment:
+    runs-on: ubuntu-latest
+    needs: [setup-branch, music-analysis, image-generation-1, image-generation-2, image-generation-3]
+    permissions:
+      contents: write
+    outputs:
+      adjusted-video-prompt-1: ${{ steps.adjust.outputs.video-prompt-1 }}
+      adjusted-video-prompt-2: ${{ steps.adjust.outputs.video-prompt-2 }}
+      adjusted-video-prompt-3: ${{ steps.adjust.outputs.video-prompt-3 }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.setup-branch.outputs.branch-name }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install Claude Code SDK
+        run: npm install @anthropic-ai/claude-code
+      
+      - name: 動画プロンプト調整エージェント
+        id: adjust
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          echo "::group::🎨 Video Prompt Adjustment Agent"
+          echo "Starting at: $(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)"
+          
+          # 設定
+          FOLDER_NAME="${{ needs.setup-branch.outputs.folder-name }}"
+          ADJUSTMENT_DIR="$FOLDER_NAME/video-adjustments"
+          
+          # 調整フォルダを事前に作成
+          if [ ! -d "$ADJUSTMENT_DIR" ]; then
+            mkdir -p "$ADJUSTMENT_DIR"
+            echo "📁 Created adjustment folder: $ADJUSTMENT_DIR"
+          fi
+          
+          # オリジナルの動画プロンプト
+          ORIGINAL_VIDEO_PROMPT_1="${{ needs.music-analysis.outputs.video-prompt-1 }}"
+          ORIGINAL_VIDEO_PROMPT_2="${{ needs.music-analysis.outputs.video-prompt-2 }}"
+          ORIGINAL_VIDEO_PROMPT_3="${{ needs.music-analysis.outputs.video-prompt-3 }}"
+          
+          # MCP設定の確認
+          MCP_CONFIG_PATH=".claude/mcp-kamuicode.json"
+          MCP_CONFIG_ABS_PATH="$(pwd)/$MCP_CONFIG_PATH"
+          
+          # プロンプトの構築
+          PROMPT="戦略的計画と生成された画像を分析し、方向性を保ちながら最適化された動画プロンプトを作成してください。
+
+          **重要**: 戦略的計画の方向性を維持しながら、実際の画像に合わせた調整を行うこと
+
+          **タスク**:
+          1. 戦略的計画書を読み込み、全体の方向性と各動画の役割を理解
+          2. 3つの生成画像を読み込んで視覚的特徴を分析
+          3. 戦略と画像の両方を考慮し、バランスの取れた調整を実施
+          4. 各動画の戦略的役割（メイン/アクセント/トランジション）を維持
+
+          **参照すべき戦略文書**:
+          - 戦略的計画: $FOLDER_NAME/planning/music-video-strategy.md
+          - 動画戦略: $FOLDER_NAME/planning/video-strategy.txt
+          - 音楽コンセプト: $FOLDER_NAME/planning/music-prompt.md
+
+          **画像の場所**:
+          - 画像1: $FOLDER_NAME/images/segment-1-image.png
+          - 画像2: $FOLDER_NAME/images/segment-2-image.png
+          - 画像3: $FOLDER_NAME/images/segment-3-image.png
+
+          **オリジナル動画プロンプト**:
+          - 動画1: $ORIGINAL_VIDEO_PROMPT_1
+          - 動画2: $ORIGINAL_VIDEO_PROMPT_2
+          - 動画3: $ORIGINAL_VIDEO_PROMPT_3
+
+          **実行手順**:
+          1. 戦略的計画書を読み込み、各動画の役割と編集戦略を把握
+          2. 各画像をReadツールで読み込み、視覚的特徴を分析
+          3. 戦略的役割を維持しながら、画像の実際の内容に合わせて調整
+          4. 音楽との統合を考慮した動きやタイミングを設計
+          5. 調整後のプロンプトを以下のファイルに保存:
+             - $ADJUSTMENT_DIR/adjusted-video-prompt-1.txt
+             - $ADJUSTMENT_DIR/adjusted-video-prompt-2.txt
+             - $ADJUSTMENT_DIR/adjusted-video-prompt-3.txt
+          6. 調整理由と戦略との整合性を$ADJUSTMENT_DIR/adjustment-report.mdに保存
+
+          **調整の原則**:
+          - 戦略的役割（メイン50-60%、アクセント20-30%、トランジション10-20%）を維持
+          - 画像の実際の要素を活かしつつ、全体の統一感を保持
+          - 音楽のテンポとビートに合わせた動きの設計
+          - 編集時の使用頻度と配置を考慮した最適化"
+          
+          echo "🚀 Starting Video Prompt Adjustment Agent Claude Code CLI..."
+          
+          # Claude Code CLIの実行
+          npx @anthropic-ai/claude-code \
+            --allowedTools "Read,Write" \
+            --max-turns 30 \
+            --verbose \
+            --permission-mode "acceptEdits" \
+            -p "$PROMPT" || {
+              echo "::error::❌ Claude Code CLI execution failed"
+              exit 1
+            }
+          
+          # 調整されたプロンプトを確認してGitHub Outputに設定
+          if [ -f "$ADJUSTMENT_DIR/adjusted-video-prompt-1.txt" ]; then
+            ADJUSTED_PROMPT_1=$(cat "$ADJUSTMENT_DIR/adjusted-video-prompt-1.txt" | tr '\n' ' ')
+            echo "Adjusted video prompt 1: $ADJUSTED_PROMPT_1"
+            echo "video-prompt-1=$ADJUSTED_PROMPT_1" >> $GITHUB_OUTPUT
+          else
+            echo "::warning::⚠️ Using original prompt 1"
+            echo "video-prompt-1=$ORIGINAL_VIDEO_PROMPT_1" >> $GITHUB_OUTPUT
+          fi
+          
+          if [ -f "$ADJUSTMENT_DIR/adjusted-video-prompt-2.txt" ]; then
+            ADJUSTED_PROMPT_2=$(cat "$ADJUSTMENT_DIR/adjusted-video-prompt-2.txt" | tr '\n' ' ')
+            echo "Adjusted video prompt 2: $ADJUSTED_PROMPT_2"
+            echo "video-prompt-2=$ADJUSTED_PROMPT_2" >> $GITHUB_OUTPUT
+          else
+            echo "::warning::⚠️ Using original prompt 2"
+            echo "video-prompt-2=$ORIGINAL_VIDEO_PROMPT_2" >> $GITHUB_OUTPUT
+          fi
+          
+          if [ -f "$ADJUSTMENT_DIR/adjusted-video-prompt-3.txt" ]; then
+            ADJUSTED_PROMPT_3=$(cat "$ADJUSTMENT_DIR/adjusted-video-prompt-3.txt" | tr '\n' ' ')
+            echo "Adjusted video prompt 3: $ADJUSTED_PROMPT_3"
+            echo "video-prompt-3=$ADJUSTED_PROMPT_3" >> $GITHUB_OUTPUT
+          else
+            echo "::warning::⚠️ Using original prompt 3"
+            echo "video-prompt-3=$ORIGINAL_VIDEO_PROMPT_3" >> $GITHUB_OUTPUT
+          fi
+          
+          echo "::endgroup::"
+      
+      - name: Commit and push adjustments
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ${{ needs.setup-branch.outputs.folder-name }}/
+          if git diff --cached --quiet; then
+            echo "No adjustments to commit"
+          else
+            git commit -m "Add video prompt adjustments based on generated images"
+            # リトライロジック
+            PUSH_SUCCESS=false
+            for i in {1..5}; do
+              echo "Push attempt $i..."
+              if git push origin ${{ needs.setup-branch.outputs.branch-name }}; then
+                PUSH_SUCCESS=true
+                break
+              else
+                echo "Push failed, pulling and rebasing..."
+                git pull --rebase origin ${{ needs.setup-branch.outputs.branch-name }}
+              fi
+            done
+            
+            if [ "$PUSH_SUCCESS" = false ]; then
+              echo "❌ Failed to push after 5 attempts"
+              exit 1
+            fi
+          fi
+
+  video-generation-1:
+    runs-on: ubuntu-latest
+    needs: [setup-branch, music-analysis, image-generation-1, video-prompt-adjustment]
+    permissions:
+      contents: write
+    outputs:
+      video-completed: ${{ steps.video.outputs.completed }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.setup-branch.outputs.branch-name }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install Claude Code SDK
+        run: npm install @anthropic-ai/claude-code
+      
+      - name: 動画セグメント1生成 (Hailuo-02 Pro)
+        id: video
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          echo "::group::🎬 Video Segment 1 Generation (Hailuo-02 Pro)"
+          echo "Starting at: $(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)"
+          
+          # 設定
+          FOLDER_NAME="${{ needs.setup-branch.outputs.folder-name }}"
+          VIDEOS_DIR="$FOLDER_NAME/videos"
+          VIDEO_PROMPT="${{ needs.video-prompt-adjustment.outputs.adjusted-video-prompt-1 }}"
+          GOOGLE_IMAGE_URL="${{ needs.image-generation-1.outputs.google-image-url }}"
+          
+          # 動画フォルダを事前に作成
+          if [ ! -d "$VIDEOS_DIR" ]; then
+            mkdir -p "$VIDEOS_DIR"
+            echo "📁 Created videos folder: $VIDEOS_DIR"
+          fi
+          
+          echo "Video prompt 1: $VIDEO_PROMPT"
+          echo "Using Google image URL: $GOOGLE_IMAGE_URL"
+          
+          # MCP設定の確認
+          MCP_CONFIG_PATH=".claude/mcp-kamuicode.json"
+          MCP_CONFIG_ABS_PATH="$(pwd)/$MCP_CONFIG_PATH"
+          
+          # プロンプトの構築
+          PROMPT="動画セグメント1を生成してください。
+
+          **Google画像URL**: $GOOGLE_IMAGE_URL
+          **動画プロンプト**: $VIDEO_PROMPT
+
+          **実行手順**:
+          1. 提供されたGoogle画像URL（$GOOGLE_IMAGE_URL）を使用
+          2. 動画プロンプト（$VIDEO_PROMPT）を使用してHailuo-02 Proで動画生成
+          3. \`mcp__i2v-fal-hailuo-02-pro__hailuo_02_submit\`ツールで動画生成を開始
+          4. **待機処理**: Bashツールで「sleep 120」コマンドを実行して120秒待機
+          5. \`mcp__i2v-fal-hailuo-02-pro__hailuo_02_status\`でステータス確認
+          6. ステータスが「completed」でない場合、再度「sleep 120」で待機して再確認（最大10回）
+          7. \`mcp__i2v-fal-hailuo-02-pro__hailuo_02_result\`で結果取得
+          8. 動画URLを「$VIDEOS_DIR/segment-1.mp4」にダウンロード保存
+          
+          **重要な実行手順**:
+          1. 動画生成をsubmitで開始
+          2. 60秒待機（sleep 60）してからstatusで確認
+          3. "completed"になるまで60秒間隔でステータス確認を繰り返す
+          4. 完了後にresultで動画URLを取得してダウンロード"
+          
+          echo "🚀 Starting Video Segment 1 Generation Agent Claude Code CLI..."
+          
+          # Claude Code CLIの実行
+          npx @anthropic-ai/claude-code \
+            --mcp-config="$MCP_CONFIG_ABS_PATH" \
+            --allowedTools "mcp__i2v-fal-hailuo-02-pro__hailuo_02_submit,mcp__i2v-fal-hailuo-02-pro__hailuo_02_status,mcp__i2v-fal-hailuo-02-pro__hailuo_02_result,Bash" \
+            --max-turns 70 \
+            --verbose \
+            --permission-mode "acceptEdits" \
+            -p "$PROMPT" || {
+              echo "::error::❌ Claude Code CLI execution failed"
+              exit 1
+            }
+          
+          echo "completed=true" >> $GITHUB_OUTPUT
+          echo "::endgroup::"
+      
+      - name: Commit and push video segment 1
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ${{ needs.setup-branch.outputs.folder-name }}/
+          if git diff --cached --quiet; then
+            echo "No video segment 1 to commit"
+          else
+            git commit -m "Add video segment 1: ${{ inputs.music_concept }}"
+            # リトライロジックでプッシュ
+            PUSH_SUCCESS=false
+            for i in {1..5}; do
+              echo "Push attempt $i/5..."
+              git pull origin ${{ needs.setup-branch.outputs.branch-name }} --rebase
+              if git push origin ${{ needs.setup-branch.outputs.branch-name }}; then
+                echo "✅ Push successful on attempt $i"
+                PUSH_SUCCESS=true
+                break
+              fi
+              echo "⚠️ Push failed on attempt $i, waiting before retry..."
+              sleep $((RANDOM % 10 + 5))  # 5-15秒のランダム待機
+            done
+            if [ "$PUSH_SUCCESS" = false ]; then
+              echo "❌ Failed to push after 5 attempts"
+              exit 1
+            fi
+          fi
+
+  video-generation-2:
+    runs-on: ubuntu-latest
+    needs: [setup-branch, music-analysis, image-generation-2, video-prompt-adjustment]
+    permissions:
+      contents: write
+    outputs:
+      video-completed: ${{ steps.video.outputs.completed }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.setup-branch.outputs.branch-name }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install Claude Code SDK
+        run: npm install @anthropic-ai/claude-code
+      
+      - name: 動画セグメント2生成 (Hailuo-02 Pro)
+        id: video
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          echo "::group::🎬 Video Segment 2 Generation (Hailuo-02 Pro)"
+          echo "Starting at: $(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)"
+          
+          # 設定
+          FOLDER_NAME="${{ needs.setup-branch.outputs.folder-name }}"
+          VIDEOS_DIR="$FOLDER_NAME/videos"
+          VIDEO_PROMPT="${{ needs.video-prompt-adjustment.outputs.adjusted-video-prompt-2 }}"
+          GOOGLE_IMAGE_URL="${{ needs.image-generation-2.outputs.google-image-url }}"
+          
+          # 動画フォルダを事前に作成
+          if [ ! -d "$VIDEOS_DIR" ]; then
+            mkdir -p "$VIDEOS_DIR"
+            echo "📁 Created videos folder: $VIDEOS_DIR"
+          fi
+          
+          echo "Video prompt 2: $VIDEO_PROMPT"
+          echo "Using Google image URL: $GOOGLE_IMAGE_URL"
+          
+          # MCP設定の確認
+          MCP_CONFIG_PATH=".claude/mcp-kamuicode.json"
+          MCP_CONFIG_ABS_PATH="$(pwd)/$MCP_CONFIG_PATH"
+          
+          # プロンプトの構築
+          PROMPT="動画セグメント2を生成してください。
+
+          **Google画像URL**: $GOOGLE_IMAGE_URL
+          **動画プロンプト**: $VIDEO_PROMPT
+
+          **実行手順**:
+          1. 提供されたGoogle画像URL（$GOOGLE_IMAGE_URL）を使用
+          2. 動画プロンプト（$VIDEO_PROMPT）を使用してHailuo-02 Proで動画生成
+          3. \`mcp__i2v-fal-hailuo-02-pro__hailuo_02_submit\`ツールで動画生成を開始
+          4. **待機処理**: Bashツールで「sleep 120」コマンドを実行して120秒待機
+          5. \`mcp__i2v-fal-hailuo-02-pro__hailuo_02_status\`でステータス確認
+          6. ステータスが「completed」でない場合、再度「sleep 120」で待機して再確認（最大10回）
+          7. \`mcp__i2v-fal-hailuo-02-pro__hailuo_02_result\`で結果取得
+          8. 動画URLを「$VIDEOS_DIR/segment-2.mp4」にダウンロード保存
+          
+          **重要な実行手順**:
+          1. 動画生成をsubmitで開始
+          2. 60秒待機（sleep 60）してからstatusで確認
+          3. "completed"になるまで60秒間隔でステータス確認を繰り返す
+          4. 完了後にresultで動画URLを取得してダウンロード"
+          
+          echo "🚀 Starting Video Segment 2 Generation Agent Claude Code CLI..."
+          
+          # Claude Code CLIの実行
+          npx @anthropic-ai/claude-code \
+            --mcp-config="$MCP_CONFIG_ABS_PATH" \
+            --allowedTools "mcp__i2v-fal-hailuo-02-pro__hailuo_02_submit,mcp__i2v-fal-hailuo-02-pro__hailuo_02_status,mcp__i2v-fal-hailuo-02-pro__hailuo_02_result,Bash" \
+            --max-turns 70 \
+            --verbose \
+            --permission-mode "acceptEdits" \
+            -p "$PROMPT" || {
+              echo "::error::❌ Claude Code CLI execution failed"
+              exit 1
+            }
+          
+          echo "completed=true" >> $GITHUB_OUTPUT
+          echo "::endgroup::"
+      
+      - name: Commit and push video segment 2
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ${{ needs.setup-branch.outputs.folder-name }}/
+          if git diff --cached --quiet; then
+            echo "No video segment 2 to commit"
+          else
+            git commit -m "Add video segment 2: ${{ inputs.music_concept }}"
+            # リトライロジックでプッシュ
+            PUSH_SUCCESS=false
+            for i in {1..5}; do
+              echo "Push attempt $i/5..."
+              git pull origin ${{ needs.setup-branch.outputs.branch-name }} --rebase
+              if git push origin ${{ needs.setup-branch.outputs.branch-name }}; then
+                echo "✅ Push successful on attempt $i"
+                PUSH_SUCCESS=true
+                break
+              fi
+              echo "⚠️ Push failed on attempt $i, waiting before retry..."
+              sleep $((RANDOM % 10 + 5))  # 5-15秒のランダム待機
+            done
+            if [ "$PUSH_SUCCESS" = false ]; then
+              echo "❌ Failed to push after 5 attempts"
+              exit 1
+            fi
+          fi
+
+  video-generation-3:
+    runs-on: ubuntu-latest
+    needs: [setup-branch, music-analysis, image-generation-3, video-prompt-adjustment]
+    permissions:
+      contents: write
+    outputs:
+      video-completed: ${{ steps.video.outputs.completed }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.setup-branch.outputs.branch-name }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install Claude Code SDK
+        run: npm install @anthropic-ai/claude-code
+      
+      - name: 動画セグメント3生成 (Hailuo-02 Pro)
+        id: video
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          echo "::group::🎬 Video Segment 3 Generation (Hailuo-02 Pro)"
+          echo "Starting at: $(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)"
+          
+          # 設定
+          FOLDER_NAME="${{ needs.setup-branch.outputs.folder-name }}"
+          VIDEOS_DIR="$FOLDER_NAME/videos"
+          VIDEO_PROMPT="${{ needs.video-prompt-adjustment.outputs.adjusted-video-prompt-3 }}"
+          GOOGLE_IMAGE_URL="${{ needs.image-generation-3.outputs.google-image-url }}"
+          
+          # 動画フォルダを事前に作成
+          if [ ! -d "$VIDEOS_DIR" ]; then
+            mkdir -p "$VIDEOS_DIR"
+            echo "📁 Created videos folder: $VIDEOS_DIR"
+          fi
+          
+          echo "Video prompt 3: $VIDEO_PROMPT"
+          echo "Using Google image URL: $GOOGLE_IMAGE_URL"
+          
+          # MCP設定の確認
+          MCP_CONFIG_PATH=".claude/mcp-kamuicode.json"
+          MCP_CONFIG_ABS_PATH="$(pwd)/$MCP_CONFIG_PATH"
+          
+          # プロンプトの構築
+          PROMPT="動画セグメント3を生成してください。
+
+          **Google画像URL**: $GOOGLE_IMAGE_URL
+          **動画プロンプト**: $VIDEO_PROMPT
+
+          **実行手順**:
+          1. 提供されたGoogle画像URL（$GOOGLE_IMAGE_URL）を使用
+          2. 動画プロンプト（$VIDEO_PROMPT）を使用してHailuo-02 Proで動画生成
+          3. \`mcp__i2v-fal-hailuo-02-pro__hailuo_02_submit\`ツールで動画生成を開始
+          4. **待機処理**: Bashツールで「sleep 120」コマンドを実行して120秒待機
+          5. \`mcp__i2v-fal-hailuo-02-pro__hailuo_02_status\`でステータス確認
+          6. ステータスが「completed」でない場合、再度「sleep 120」で待機して再確認（最大10回）
+          7. \`mcp__i2v-fal-hailuo-02-pro__hailuo_02_result\`で結果取得
+          8. 動画URLを「$VIDEOS_DIR/segment-3.mp4」にダウンロード保存
+          
+          **重要な実行手順**:
+          1. 動画生成をsubmitで開始
+          2. 60秒待機（sleep 60）してからstatusで確認
+          3. "completed"になるまで60秒間隔でステータス確認を繰り返す
+          4. 完了後にresultで動画URLを取得してダウンロード"
+          
+          echo "🚀 Starting Video Segment 3 Generation Agent Claude Code CLI..."
+          
+          # Claude Code CLIの実行
+          npx @anthropic-ai/claude-code \
+            --mcp-config="$MCP_CONFIG_ABS_PATH" \
+            --allowedTools "mcp__i2v-fal-hailuo-02-pro__hailuo_02_submit,mcp__i2v-fal-hailuo-02-pro__hailuo_02_status,mcp__i2v-fal-hailuo-02-pro__hailuo_02_result,Bash" \
+            --max-turns 70 \
+            --verbose \
+            --permission-mode "acceptEdits" \
+            -p "$PROMPT" || {
+              echo "::error::❌ Claude Code CLI execution failed"
+              exit 1
+            }
+          
+          echo "completed=true" >> $GITHUB_OUTPUT
+          echo "::endgroup::"
+      
+      - name: Commit and push video segment 3
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ${{ needs.setup-branch.outputs.folder-name }}/
+          if git diff --cached --quiet; then
+            echo "No video segment 3 to commit"
+          else
+            git commit -m "Add video segment 3: ${{ inputs.music_concept }}"
+            # リトライロジックでプッシュ
+            PUSH_SUCCESS=false
+            for i in {1..5}; do
+              echo "Push attempt $i/5..."
+              git pull origin ${{ needs.setup-branch.outputs.branch-name }} --rebase
+              if git push origin ${{ needs.setup-branch.outputs.branch-name }}; then
+                echo "✅ Push successful on attempt $i"
+                PUSH_SUCCESS=true
+                break
+              fi
+              echo "⚠️ Push failed on attempt $i, waiting before retry..."
+              sleep $((RANDOM % 10 + 5))  # 5-15秒のランダム待機
+            done
+            if [ "$PUSH_SUCCESS" = false ]; then
+              echo "❌ Failed to push after 5 attempts"
+              exit 1
+            fi
+          fi
+
+
+  video-concatenation:
+    runs-on: ubuntu-latest
+    needs: [setup-branch, music-generation, video-generation-1, video-generation-2, video-generation-3]
+    permissions:
+      contents: write
+    outputs:
+      concatenation-completed: ${{ steps.concat.outputs.completed }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.setup-branch.outputs.branch-name }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install Claude Code SDK
+        run: npm install @anthropic-ai/claude-code
+      
+      - name: 動画連結・音楽統合エージェント
+        id: concat
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          echo "::group::🎬 Video Concatenation & Music Integration Agent"
+          echo "Starting at: $(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)"
+          
+          # 設定
+          FOLDER_NAME="${{ needs.setup-branch.outputs.folder-name }}"
+          VIDEOS_DIR="$FOLDER_NAME/videos"
+          MUSIC_DIR="$FOLDER_NAME/music"
+          OUTPUT_DIR="$FOLDER_NAME/final"
+          
+          # 最終出力フォルダを作成
+          if [ ! -d "$OUTPUT_DIR" ]; then
+            mkdir -p "$OUTPUT_DIR"
+            echo "📁 Created output folder: $OUTPUT_DIR"
+          fi
+          
+          # 動画と音楽ファイルの確認
+          echo "📁 Checking video segments..."
+          ls -la "$VIDEOS_DIR" || echo "Videos directory not found"
+          
+          echo "📁 Checking music files..."  
+          ls -la "$MUSIC_DIR" || echo "Music directory not found"
+          
+          # 音楽ファイルの存在確認と形式特定
+          MUSIC_FILE=""
+          if [ -f "$MUSIC_DIR/generated-music.mp3" ]; then
+            MUSIC_FILE="$MUSIC_DIR/generated-music.mp3"
+            echo "✅ Found music file: $MUSIC_FILE"
+          elif [ -f "$MUSIC_DIR/generated-music.wav" ]; then
+            MUSIC_FILE="$MUSIC_DIR/generated-music.wav"
+            echo "✅ Found music file: $MUSIC_FILE"
+          else
+            echo "❌ Music file not found! Checking all audio files in $MUSIC_DIR..."
+            find "$MUSIC_DIR" -name "*.mp3" -o -name "*.wav" -o -name "*.m4a" | head -1 > /tmp/music_file.txt
+            if [ -s /tmp/music_file.txt ]; then
+              MUSIC_FILE=$(cat /tmp/music_file.txt)
+              echo "✅ Found alternative music file: $MUSIC_FILE"
+            else
+              echo "❌ No audio files found in $MUSIC_DIR"
+              exit 1
+            fi
+          fi
+          
+          # プロンプトの構築
+          PROMPT="ffmpegで3つの動画セグメントを連結し音楽と統合してミュージックビデオを作成。
+
+          **最重要**: 最終動画に音楽を必ず結合（音声なしは失敗）
+
+          **フォルダ**: 動画($VIDEOS_DIR)、音楽($MUSIC_DIR)、出力($OUTPUT_DIR)
+          **音楽ファイル**: $MUSIC_FILE
+          **戦略参照**: $FOLDER_NAME/planning/music-video-strategy.md、$FOLDER_NAME/planning/video-strategy.txt
+
+          **手順**:
+          1. 戦略的計画書を読み込み、編集戦略と動画役割を把握
+          2. segment-1.mp4～segment-3.mp4と音楽ファイルを確認
+          3. 3つの動画を全て使用（省略禁止）
+          4. 戦略に基づいて音楽の長さ（30-40秒）に合わせて動画を編集・延長
+          5. 動画1（メイン50-60%）、動画2（アクセント20-30%）、動画3（トランジション10-20%）で配置
+          6. ffmpegで動画連結・音楽統合
+          7. **必須**: '$OUTPUT_DIR/final-music-video.mp4'に保存
+          8. 音声ストリーム確認
+
+          **ffmpegコマンド例**:
+          - 延長: ffmpeg -i segment-1.mp4 -filter_complex 'loop=loop=7:size=150:start=0' segment-1-extended.mp4
+          - 連結: ffmpeg -i seg1-ext.mp4 -i seg2-ext.mp4 -i seg3-ext.mp4 -filter_complex '[0:v][1:v][2:v]concat=n=3:v=1:a=0[outv]' -map '[outv]' video-edited.mp4
+          - 音楽統合: ffmpeg -i video-edited.mp4 -i \"$MUSIC_FILE\" -c:v copy -c:a aac -map 0:v:0 -map 1:a:0 -shortest '$OUTPUT_DIR/final-music-video.mp4'
+          - 確認: ffmpeg -i final-music-video.mp4 -show_streams -select_streams a
+
+          **必須**: 戦略計画参照、3つ全動画使用、音楽結合、音声ストリーム確認、音楽ファイル（$MUSIC_FILE）が存在することを確認"
+          
+          echo "🚀 Starting Video Concatenation Agent Claude Code CLI..."
+          
+          # Claude Code CLIの実行
+          npx @anthropic-ai/claude-code \
+            --allowedTools "Read,Write,Bash" \
+            --max-turns 70 \
+            --verbose \
+            --permission-mode "acceptEdits" \
+            -p "$PROMPT" || {
+              echo "::error::❌ Claude Code CLI execution failed"
+              exit 1
+            }
+          
+          echo "completed=true" >> $GITHUB_OUTPUT
+          echo "::endgroup::"
+      
+      - name: Commit and push final video
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ${{ needs.setup-branch.outputs.folder-name }}/
+          if git diff --cached --quiet; then
+            echo "No final video to commit"
+          else
+            git commit -m "Add final music video: ${{ inputs.music_concept }}"
+            # リトライロジックでプッシュ
+            PUSH_SUCCESS=false
+            for i in {1..5}; do
+              echo "Push attempt $i/5..."
+              git pull origin ${{ needs.setup-branch.outputs.branch-name }} --rebase
+              if git push origin ${{ needs.setup-branch.outputs.branch-name }}; then
+                echo "✅ Push successful on attempt $i"
+                PUSH_SUCCESS=true
+                break
+              fi
+              echo "⚠️ Push failed on attempt $i, waiting before retry..."
+              sleep $((RANDOM % 10 + 5))  # 5-15秒のランダム待機
+            done
+            if [ "$PUSH_SUCCESS" = false ]; then
+              echo "❌ Failed to push after 5 attempts"
+              exit 1
+            fi
+          fi
+
+
+  create-pr:
+    runs-on: ubuntu-latest
+    needs: [setup-branch, music-planning, music-generation, music-analysis, image-generation-1, image-generation-2, image-generation-3, video-generation-1, video-generation-2, video-generation-3, video-concatenation]
+    permissions:
+      contents: write
+      pull-requests: write
+      actions: read
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.setup-branch.outputs.branch-name }}
+      
+      - name: Create Pull Request
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          # ブランチ名を取得
+          BRANCH_NAME="${{ needs.setup-branch.outputs.branch-name }}"
+          
+          # 変更をコミット
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # 最終成果物の確認とコミット
+          FOLDER_NAME="${{ needs.setup-branch.outputs.folder-name }}"
+          echo "=== Final Music Video Generation Summary ==="
+          echo "Music video folder: $FOLDER_NAME"
+          
+          MUSIC_COUNT=0
+          IMAGES_COUNT=0
+          VIDEOS_COUNT=0
+          FINAL_COUNT=0
+          
+          if [ -d "$FOLDER_NAME" ]; then
+            echo "✅ Music video folder exists: $FOLDER_NAME"
+            echo "Contents:"
+            ls -la "$FOLDER_NAME"
+            
+            # 音楽ファイルの確認
+            if [ -d "$FOLDER_NAME/music" ]; then
+              MUSIC_COUNT=$(find "$FOLDER_NAME/music" -name "*.mp3" -o -name "*.wav" -o -name "*.m4a" | wc -l)
+              echo "✅ Music directory exists with $MUSIC_COUNT files"
+            fi
+            
+            # 画像ファイルの確認
+            if [ -d "$FOLDER_NAME/images" ]; then
+              IMAGES_COUNT=$(find "$FOLDER_NAME/images" -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" | wc -l)
+              echo "✅ Images directory exists with $IMAGES_COUNT files"
+            fi
+            
+            # 動画セグメントの確認
+            if [ -d "$FOLDER_NAME/videos" ]; then
+              VIDEOS_COUNT=$(find "$FOLDER_NAME/videos" -name "*.mp4" -o -name "*.mov" -o -name "*.avi" | wc -l)
+              echo "✅ Videos directory exists with $VIDEOS_COUNT files"
+            fi
+            
+            # 最終動画の確認
+            if [ -d "$FOLDER_NAME/final" ]; then
+              FINAL_COUNT=$(find "$FOLDER_NAME/final" -name "*.mp4" -o -name "*.mov" -o -name "*.avi" | wc -l)
+              echo "✅ Final directory exists with $FINAL_COUNT files"
+            fi
+          else
+            echo "❌ Music video folder not found: $FOLDER_NAME"
+          fi
+          
+          # すべてのファイルをコミット
+          git add "$FOLDER_NAME/" 2>/dev/null || true
+          
+          # コミットメッセージを作成
+          COMMIT_MESSAGE="Add AI-generated music video: ${{ inputs.music_concept }}
+          
+          コンセプト: ${{ inputs.music_concept }}
+          生成日時: $(date -u +%Y-%m-%d\ %H:%M:%S)\ UTC
+          
+          📊 Generation Summary:
+          - Music: $MUSIC_COUNT files (Google Lyria)
+          - Images: $IMAGES_COUNT files (Imagen4 Fast)
+          - Video Segments: $VIDEOS_COUNT files (Hailuo-02 Pro)
+          - Final Video: $FINAL_COUNT files (Concatenated & Integrated)
+          
+          
+          🤖 Generated with Claude Code SDK & kamuicode MCP
+          Co-Authored-By: Claude <noreply@anthropic.com>"
+          
+          # コミット
+          if git diff --cached --quiet; then
+            echo "Warning: No changes to commit"
+            git commit --allow-empty -m "$COMMIT_MESSAGE"
+          else
+            git commit -m "$COMMIT_MESSAGE"
+          fi
+          
+          # プッシュ
+          git push origin $BRANCH_NAME
+          
+          # 最終動画のパス取得
+          FINAL_VIDEO_PATH=""
+          if [ -d "$FOLDER_NAME/final" ] && [ "$FINAL_COUNT" -gt 0 ]; then
+            FINAL_VIDEO_PATH=$(find "$FOLDER_NAME/final" -name "*.mp4" -o -name "*.mov" -o -name "*.avi" | head -1)
+          fi
+          
+          # プルリクエスト用のボディを作成
+          PR_BODY="🎵 音楽主導のミュージックビデオが完成しました！
+
+          音楽コンセプト: ${{ inputs.music_concept }}
+
+          ## 📊 生成結果
+          - 🎵 **音楽**: $MUSIC_COUNT ファイル (Google Lyria)
+          - 🎨 **画像**: $IMAGES_COUNT ファイル (Imagen4 Fast)
+          - 🎬 **動画セグメント**: $VIDEOS_COUNT ファイル (Hailuo-02 Pro)
+          - 🎞️ **最終動画**: $FINAL_COUNT ファイル (統合済み)
+
+          ## 🔄 生成フロー
+          1. 音楽コンセプトから音楽を生成
+          2. 生成音楽を分析して最適化されたプロンプトを作成
+          3. 音楽に合う画像を生成
+          4. 音楽の時間軸に合わせて複数の動画セグメントを並列生成
+          5. 動画セグメントを連結して音楽と統合"
+          
+          # 最終動画をプルリクに埋め込み
+          if [ -n "$FINAL_VIDEO_PATH" ] && [ -f "$FINAL_VIDEO_PATH" ]; then
+            # GitHubの生ファイルURL構築
+            GITHUB_VIDEO_URL="https://github.com/${{ github.repository }}/raw/$BRANCH_NAME/$FINAL_VIDEO_PATH"
+            PR_BODY="$PR_BODY"$'\n\n'"## 🎵 完成したミュージックビデオ"
+            PR_BODY="$PR_BODY"$'\n\n'"<video width=\"640\" height=\"480\" controls>"
+            PR_BODY="$PR_BODY"$'\n'"  <source src=\"$GITHUB_VIDEO_URL\" type=\"video/mp4\">"
+            PR_BODY="$PR_BODY"$'\n'"  お使いのブラウザは動画タグをサポートしていません。"
+            PR_BODY="$PR_BODY"$'\n'"  <a href=\"$GITHUB_VIDEO_URL\">動画をダウンロードして再生</a>"
+            PR_BODY="$PR_BODY"$'\n'"</video>"
+            PR_BODY="$PR_BODY"$'\n\n'"📁 **ファイルパス**: \`$FINAL_VIDEO_PATH\`"
+          fi
+          
+          PR_BODY="$PR_BODY
+
+          ---
+          🤖 Generated with Claude Code SDK & kamuicode MCP"
+          
+          # PR作成 (GH_TOKENを使用)
+          gh pr create \
+            --title "🎵 AI音楽主導ミュージックビデオ: ${{ inputs.music_concept }}" \
+            --body "$PR_BODY" \
+            --base main \
+            --head $BRANCH_NAME
+          
+          # GitHubサマリーに結果表示
+          echo "## 🎵 ミュージックビデオ生成完了" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**音楽コンセプト**: ${{ inputs.music_concept }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📊 生成結果" >> $GITHUB_STEP_SUMMARY
+          echo "- 🎵 音楽: $MUSIC_COUNT ファイル" >> $GITHUB_STEP_SUMMARY
+          echo "- 🎨 画像: $IMAGES_COUNT ファイル" >> $GITHUB_STEP_SUMMARY
+          echo "- 🎬 動画: $VIDEOS_COUNT ファイル" >> $GITHUB_STEP_SUMMARY
+          echo "- 🎞️ 最終動画: $FINAL_COUNT ファイル" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "🤖 Generated with Claude Code & kamuicode MCP" >> $GITHUB_STEP_SUMMARY

@@ -1,0 +1,20 @@
+{
+    "create-video-with-bg-removal.yml": 0,
+    "module-article-creation-ccsdk.yml": 0,
+    "module-upload-fal-ccsdk.yml": 0,
+    "module-image-generation-kc-t2i-fal-imagen4-ultra-ccsdk.yml": 0,
+    "module-video-generation-kc-multi-model-ccsdk.yml": 0,
+    "module-planning-pixverse-lipsync-ccsdk.yml": 0,
+    "module-audio-generation-kc-minimax-voice-design-ccsdk.yml": 0,
+    "module-planning-ccsdk.yml": 0,
+    "module-lipsync-generation-kc-multi-model-ccsdk.yml": 0,
+    "module-video-concatenation-ffmpeg-ccsdk.yml": 0,
+    "module-audio-generation-kc-multi-model-ccsdk.yml": 0,
+    "module-video-generation-kc-r2v-fal-vidu-q1-ccsdk.yml": 0,
+    "module-image-generation-kc-multi-model-ccsdk.yml": 0,
+    "module-video-analysis-ccsdk.yml": 0,
+    "module-video-prompt-optimization-ccsdk.yml": 0,
+    "module-news-planning-ccsdk.yml": 0,
+    "create-music-video.yml": 0,
+    "create-video-from-prompt.yml": 0
+}

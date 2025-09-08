@@ -1,0 +1,23 @@
+{
+    "document_processing": {
+        "max_chunk_tokens": 999000
+    },
+    "document_analysis_agent": {
+        "system_prompt": "You are a helpful assistant that creates an appendix of the document. This appendix should be in bullet point format. Don't include details, only pointers that the information is there.",
+        "model_prompt": "Provide a concise appendix of the following document.\n\n",
+        "max_tokens": 500,
+        "temperature": 0.3
+    },
+    "researcher_agent": {
+        "system_prompt": "You are a helpful assistant that evaluates document relevance. Respond only with a JSON object containing filename keys and relevance score values (0-100). Don't use ```json or ```, just return the pure JSON.",
+        "model_prompt": "Given the following document appendices and a question, analyze each document's relevance to the question.\nReturn a JSON object with filename keys and relevance scores (0-100) as values.\nOnly return the JSON object, no other text.",
+        "max_tokens": 1000,
+        "temperature": 0.3
+    },
+    "reply_agent": {
+        "system_prompt": "You are a helpful assistant. Use ONLY the following document to answer questions. DO NOT MAKE UP ANY INFO. If the answer is not within the document say I don't know. Be descriptive in your answer.",
+        "model_prompt": "Based on the provided document context, please answer the following question.\n\n",
+        "max_tokens": 1000,
+        "temperature": 0.1
+    }
+}

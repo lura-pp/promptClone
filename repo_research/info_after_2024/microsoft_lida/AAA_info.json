@@ -1,0 +1,11 @@
+{
+    "summarizer.py": 1,
+    "goal.py": 2,
+    "persona.py": 1,
+    "vizexplainer.py": 2,
+    "vizrepairer.py": 1,
+    "vizeditor.py": 1,
+    "vizevaluator.py": 1,
+    "vizgenerator.py": 1,
+    "vizrecommender.py": 1
+}

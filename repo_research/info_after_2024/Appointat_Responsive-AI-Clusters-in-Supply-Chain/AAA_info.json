@@ -1,0 +1,6 @@
+{
+    "format_agent.py": 1,
+    "role_assignment_agent.py": 3,
+    "insight_agent.py": 2,
+    "deductive_reasoner_agent.py": 1
+}

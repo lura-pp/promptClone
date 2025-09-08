@@ -1,0 +1,71 @@
+{
+    "ru": {
+        "RESET": "История сообщений сброшена!",
+        "NO_HISTORY": "Нет истории!",
+        "CHOOSE_MODEL": "Выберите модель:",
+        "NEW_MODEL": "Новая модель задана:\n\n{model_name}",
+        "NEW_SYSTEM_PROMPT": "Новый системный промпт задан:\n\n{system_prompt}",
+        "EMPTY_SYSTEM_PROMPT": "Системный промпт пуст. Учтите, что его надо писать в одном сообщении с командой.",
+        "RESET_SYSTEM_PROMPT": "Системный промпт сброшен!",
+        "EMPTY_SHORT_NAME": "Короткое имя не может быть пустым. Напишите имя в одном сообщении с командой.",
+        "NEW_SHORT_NAME": "Новое короткое имя задано:\n\n{name}",
+        "GET_SHORT_NAME": "Короткое имя бота: {name}",
+        "CHOOSE_CHARACTER": "Выберите персонажа:",
+        "NEW_CHARACTER": "Новый персонаж задан:\n\n{system_prompt}\n\nМожно обращаться так: '{name}'",
+        "HISTORY": "{tokens_count} токенов: {history}",
+        "INACTIVE_SUB": "Подписка неактивна",
+        "ACTIVE_SUB": "Подписка активирована! Осталось {remaining_hours}ч",
+        "REMAINING_MESSAGES": "Осталось запросов к {model}: {remaining_count}",
+        "SET_EMAIL": "Пожалуйста, сначала задайте свою почту через '/setemail ...'. Туда придёт чек.",
+        "SUB_WEEK_TITLE": "Покупка подписки в боте 'Сайга' на неделю для пользователя {user_id}",
+        "SUB_WEEK_SHORT_TITLE": "Покупка подписки на неделю",
+        "SUB_MONTH_TITLE": "Покупка подписки в боте 'Сайга' на месяц для пользователя {user_id}",
+        "SUB_MONTH_SHORT_TITLE": "Покупка подписки на месяц",
+        "SUB_NOT_CHAT": "Подписку можно купить только в переписке с самим ботом!",
+        "SUB_SUCCESS": "Спасибо за оплату, подписка выдана! Узнать статус: /subinfo",
+        "MODEL_NOT_SUPPORTED": "Выбранная модель больше не поддерживается, переключите на другую с помощью /setmodel",
+        "LIMIT_EXCEEDED": "Превышен лимит запросов по {model}. Подождите несколько суток, переключите модель с /setmodel, или купите подписку с /subbuy.",
+        "CLAUDE_HIGH_TEMPERATURE": "Claude не поддерживает температуру выше 1, задайте новую с помощью /settemperature",
+        "CONTENT_NOT_SUPPORTED_BY_MODEL": "Выбранная модель не может обработать ваше сообщение",
+        "CONTENT_NOT_SUPPORTED": "Такой тип сообщений (ещё) не поддерживается",
+        "ERROR": "Что-то пошло не так, ответ от Сайги не получен или не смог отобразиться. Попробуйте сделать /reset и пришлите @{admin_username} вот эту строку: {conv_id}",
+        "NEW_TEMPERATURE": "Новая температура задана:\n\n{temperature}",
+        "NEW_TOP_P": "Новое top-p задано:\n\n{top_p}",
+        "NEW_FREQUENCY_PENALTY": "Новое freq penalty задано:\n\n{frequency_penalty}",
+        "SELECT_TOP_P": "Выберите top-p:",
+        "SELECT_TEMPERATURE": "Выберите температуру:",
+        "SELECT_FREQUENCY_PENALTY": "Выберите штраф за повторения (OpenAI-style):",
+        "CURRENT_PARAMS": "Текущие параметры генерации: {params}",
+        "TOOLS_NOT_SUPPORTED_BY_MODEL": "Для модели {model} инструменты недоступны.",
+        "ENABLED_TOOLS": "Инструменты включены!",
+        "DISABLED_TOOLS": "Инструменты выключены! Чтобы включить их назад, снова наберите /tools",
+        "INCORRECT_EMAIL": "Некорректный e-mail!",
+        "FILLED_EMAIL": "Спасибо! Адрес задан: {email}",
+        "ADMINS_ONLY": "{username}, только админы могут это делать",
+        "CREATORS_ONLY": "{username}, только создатели бота могут это делать",
+        "PAYMENT_URL": "Ссылка для оплаты: {url}",
+        "PAYMENT_CANCEL": "Платёж отменён!",
+        "DALLE_ANSWER": "Картинка сгенерирована!",
+        "BUY_WEEK_WITH_STARS": "Купить 7 дней за Telegram Stars",
+        "BUY_WEEK_WITH_RUB": "Купить 7 дней за рубли",
+        "BUY_MONTH_WITH_STARS": "Купить 31 день за Telegram Stars",
+        "BUY_MONTH_WITH_RUB": "Купить 31 день за рубли",
+        "WRONG_COMMAND": "Такой команды у бота нет. Если вы не пытались ввести команду, уберите '/' из начала сообщения.",
+        "PAY_SUPPORT": "Возврат средств за подписку возможен в течение 12 часов с момента её оформления, и если с момента оформления было сделано менее 20 запросов к любым моделями. Контакт: @YallenGusev",
+        "FILE_IS_TOO_BIG": "Слишком большой файл! Телеграм-боты не могут скачивать файлы больше 20 МБ.",
+        "MESSAGE_FILTERED": "Я не могу обсуждать эту тему, сработал фильтр.",
+        "O1_WRONG_PARAMS": "O1 модели поддерживают только temperature=1.0, top_p=1.0 и пустой системный промпт. Измените параметры.",
+        "PRIVACY": {
+            "template_name": "ru_privacy"
+        },
+        "HELP": {
+            "template_name": "ru_help"
+        },
+        "LIMITS": {
+            "template_name": "ru_limits"
+        },
+        "SUB_DESCRIPTION": {
+            "template_name": "ru_sub"
+        }
+    }
+}

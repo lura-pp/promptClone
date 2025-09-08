@@ -1,0 +1,17 @@
+{
+    "supervisor.py": 1,
+    "summary.py": 2,
+    "recon.py": 2,
+    "planner.py": 2,
+    "terminal.py": 2,
+    "initaccess.py": 2,
+    "initial_access_persona.py": 1,
+    "summary_persona.py": 1,
+    "supervisor_persona.py": 1,
+    "planner_persona.py": 1,
+    "reconnaissance_persona.py": 1,
+    "recon_tools.py": 1,
+    "initaccess_tools.py": 1,
+    "swarm_handoff_tools.py": 1,
+    "interactive_exec.py": 1
+}

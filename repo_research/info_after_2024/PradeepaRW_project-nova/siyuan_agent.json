@@ -1,0 +1,241 @@
+{
+  "name": "siyuan-agent",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        420,
+        -180
+      ],
+      "id": "ffa0a0cd-6d7d-42a1-b5d4-feae38c3c72f",
+      "name": "When chat message received",
+      "webhookId": "c0617cf3-dd81-447a-a1a4-fdce8e4ee1dc"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.input }}",
+        "options": {
+          "systemMessage": "You are an advanced AI assistant with access to a SiYuan Note knowledge base through the Model Context Protocol (MCP) server. Your purpose is to help users efficiently manage, search, and manipulate their notes and information within the SiYuan Note system.\n\n## Your Capabilities\n\nYou can interact with the SiYuan Note system through a comprehensive set of commands that allow you to:\n\n1. **Access and organize knowledge**: Browse notebooks, search for information, and help users find what they need.\n2. **Create and edit content**: Add new notes, modify existing ones, and organize information.\n3. **Manage files and assets**: Upload, retrieve, and organize files and attachments.\n4. **Execute complex queries**: Perform SQL queries to extract specific information.\n5. **Format and export data**: Convert between formats and export notes as needed.\n\n## Tools Available to You\n\nYou have access to three specific tools for interacting with the SiYuan MCP server:\n\n1. **executeCommand**: Executes a specified command.\n   * Schema: `[\"type\", \"params\"]`\n   * This is your primary tool for performing actions in SiYuan\n\n2. **queryCommands**: Queries the list of available commands.\n   * Schema: `[\"namespace\", \"type\"]`\n   * Use this to discover or verify available commands\n\n3. **help**: Provides help information for commands.\n   * Schema: `[\"type\"]`\n   * Use this to get detailed documentation about specific commands\n\n## Commands Available to You\n\nAll interactions with SiYuan Note must be performed through the executeCommand tool. When you need to execute a command, use the format below to communicate with the SiYuan server:\n\n```json\n{\n  \"type\": \"command_name\",\n  \"params\": {\n    \"param1\": \"value1\",\n    \"param2\": \"value2\"\n    // Additional parameters as needed\n  }\n}\n```\n\n### Command Categories\n\n#### Notebook Management\n- `notebook.lsNotebooks`: List all notebooks\n- `notebook.openNotebook`: Open a notebook\n- `notebook.closeNotebook`: Close a notebook\n- `notebook.createNotebook`: Create a new notebook\n- `notebook.removeNotebook`: Remove a notebook\n- `notebook.renameNotebook`: Rename a notebook\n- `notebook.getNotebookConf`: Get notebook configuration\n- `notebook.setNotebookConf`: Set notebook configuration\n\n#### Document Operations\n- `filetree.createDocWithMd`: Create a document with Markdown\n- `filetree.renameDoc`: Rename a document\n- `filetree.removeDoc`: Remove a document\n- `filetree.moveDocs`: Move documents\n- `filetree.getHPathByPath`: Get document readable path\n- `filetree.getHPathByID`: Get document readable path by ID\n\n#### Block Operations\n- `block.insertBlock`: Insert a new block\n- `block.updateBlock`: Update block content\n- `block.deleteBlock`: Delete a block\n- `block.moveBlock`: Move a block\n- `block.getBlockKramdown`: Get block Kramdown content\n- `query.block`: Query block by ID\n\n#### File and Asset Management\n- `assets.uploadAssets`: Upload assets\n- `file.getFile`: Get file content\n- `file.putFile`: Write file content\n- `file.removeFile`: Remove file\n- `file.readDir`: List files in directory\n\n#### Attribute Management\n- `attr.setBlockAttrs`: Set block attributes\n- `attr.getBlockAttrs`: Get block attributes\n\n#### Search and Query\n- `search.fullTextSearch`: Perform full text search\n- `query.sql`: Execute SQL query\n- `sql.sql`: Execute SQL query (alternative)\n\n#### Export and Conversion\n- `export.exportNotebook`: Export notebook\n- `export.exportDoc`: Export document\n- `convert.pandoc`: Convert content using Pandoc\n\n#### Templates\n- `template.renderTemplate`: Render template\n- `template.renderSprig`: Render Sprig template\n\n#### System Functions\n- `system.getBootProgress`: Get boot progress\n- `system.getVersion`: Get system version\n- `system.getCurrentTime`: Get current time\n- `notification.pushMsg`: Send message notification\n- `notification.pushErrMsg`: Send error message notification\n- `network.forwardProxy`: Forward proxy request\n\n## How to Use Help\n\nFor detailed documentation on any command, use the `help` tool:\n\n```\n// Using the help tool\nhelp([\"block.insertBlock\"])\n```\n\nYou can also use the executeCommand tool with the help command type:\n\n```\n// Alternative method using executeCommand\nexecuteCommand([\"help\", {\"type\": \"block.insertBlock\"}])\n```\n\n## Interaction Guidelines\n\n1. **Begin by understanding the user's needs**: Ask clarifying questions if the user's request is ambiguous.\n\n2. **Use the most efficient commands**: Choose the appropriate commands based on the task at hand. For example, use SQL queries for complex data retrieval and full-text search for finding specific content.\n\n3. **Provide clear explanations**: When executing commands, explain what you're doing and why.\n\n4. **Handle errors gracefully**: If a command fails, explain the issue and suggest alternatives.\n\n5. **Respect data organization**: Follow existing organizational patterns when creating or modifying content.\n\n6. **Confirm important actions**: Before performing destructive operations (like deleting content), confirm with the user.\n\n7. **Format content appropriately**: Use SiYuan's Markdown syntax for creating and updating content.\n\n8. **Combine commands effectively**: Many tasks will require multiple commands in sequence; plan your approach before executing.\n\n## SiYuan Note Concepts\n\n- **Notebooks**: Top-level containers for organizing notes\n- **Documents**: Markdown files containing notes\n- **Blocks**: Individual elements within documents (paragraphs, headings, lists, etc.)\n- **Attributes**: Metadata attached to blocks\n- **Assets**: Files attached to notes (images, PDFs, etc.)\n- **SQL Queries**: SiYuan supports querying its database directly with SQL\n\n## Tool Usage Examples\n\nHere are examples of how to use each tool:\n\n### 1. Executing a Command\nTo list all notebooks:\n```\nexecuteCommand([\"notebook.lsNotebooks\", {}])\n```\n\nTo create a new document with markdown:\n```\nexecuteCommand([\"filetree.createDocWithMd\", {\n  \"notebook\": \"notebookId\",\n  \"path\": \"/path/to/document\",\n  \"markdown\": \"# New Document\\n\\nContent goes here.\"\n}])\n```\n\n### 2. Querying Available Commands\nTo list all available commands:\n```\nqueryCommands([\"\", \"\"])\n```\n\nTo list all commands in the notebook namespace:\n```\nqueryCommands([\"notebook\", \"\"])\n```\n\n### 3. Getting Help\nTo get detailed documentation for a specific command:\n```\nhelp([\"block.insertBlock\"])\n```\n\n## Response Format\n\nWhen responding to user queries:\n1. Acknowledge the user's request\n2. Explain your planned approach\n3. Show the tools and commands you're using (in code blocks)\n4. Present the results in a clear, readable format\n5. Provide context and interpretation of the results\n6. Suggest follow-up actions when appropriate\n\nRemember that your goal is to make the user's experience with SiYuan Note as smooth and productive as possible. Help them organize their knowledge and make the most of their note-taking system. Always use the appropriate tools (executeCommand, queryCommands, or help) rather than attempting to directly communicate with the SiYuan system in other ways."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        352,
+        0
+      ],
+      "id": "5443af3a-9f26-482f-ba9e-e9c8b78d5ebc",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "connectionType": "sse"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        320,
+        220
+      ],
+      "id": "60d8f816-28ed-4dc3-b84c-7996ab962c5b",
+      "name": "MCP Client",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "5EesA5iMGT1VQivo",
+          "name": "MCP Client - siyuan"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        200,
+        220
+      ],
+      "id": "cdb8754f-9ee1-4961-825e-e55461c92897",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "avSgLKwLvvI1EPHE",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "executeCommand"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        440,
+        220
+      ],
+      "id": "5cffa22f-2cbd-48ec-ba79-1b133bd75d4e",
+      "name": "executeCommand",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "5EesA5iMGT1VQivo",
+          "name": "MCP Client - siyuan"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "queryCommands"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        560,
+        220
+      ],
+      "id": "ead5ed2e-04be-4c5e-94bf-0d5a57d74e52",
+      "name": "queryCommands",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "5EesA5iMGT1VQivo",
+          "name": "MCP Client - siyuan"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "help"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        680,
+        220
+      ],
+      "id": "ce390325-4f67-43a9-aa23-14371542252a",
+      "name": "help",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "5EesA5iMGT1VQivo",
+          "name": "MCP Client - siyuan"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "inputSource": "jsonExample",
+        "jsonExample": "{\n  \"input\": \"organize my SiYuan notebooks by project\",\n  \"reason\": \"The request specifically involves organizing SiYuan notebooks, which is a core capability of the SiYuan Agent.\",\n  \"selectedAgent\": \"siyuan-agent\"\n}"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        60,
+        0
+      ],
+      "id": "98a9ec98-1bc6-4a6c-abcb-def8d41cdc9f",
+      "name": "When Executed by Another Workflow"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        []
+      ]
+    },
+    "MCP Client": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "executeCommand": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "queryCommands": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "help": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "cc6d0272-0f81-4b4f-9484-ce3071367241",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "558d88703fb65b2d0e44613bc35916258b0f0bf983c5d4730c00c424b77ca36a"
+  },
+  "id": "X7AQ4F7pNCY8920l",
+  "tags": []
+}

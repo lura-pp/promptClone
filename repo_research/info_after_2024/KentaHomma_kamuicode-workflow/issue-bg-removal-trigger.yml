@@ -1,0 +1,162 @@
+name: Issue Video Background Removal Trigger
+
+on:
+  issues:
+    types: [opened]
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: read
+  issues: write
+
+jobs:
+  parse-and-trigger:
+    runs-on: ubuntu-latest
+    if: contains(github.event.issue.body, '@create-video-remove-bg') || contains(github.event.comment.body, '@create-video-remove-bg')
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.PAT_TOKEN || github.token }}
+
+    - name: Extract content from issue or comment
+      id: extract
+      run: |
+        if [ "${{ github.event_name }}" = "issues" ]; then
+          CONTENT="${{ github.event.issue.body }}"
+        else
+          CONTENT="${{ github.event.comment.body }}"
+        fi
+        
+        echo "Raw content: $CONTENT"
+        
+        # @create-video-remove-bg以降の内容を抽出
+        EXTRACTED=$(echo "$CONTENT" | sed -n '/@create-video-remove-bg/,$p' | tail -n +2)
+        echo "Extracted content: $EXTRACTED"
+        
+        # プロンプトを抽出（プロンプト:またはPrompt:の後の内容）
+        PROMPT=$(echo "$EXTRACTED" | grep -i "プロンプト\|prompt" | sed 's/.*[プromp：:]\s*//' | head -1)
+        if [ -z "$PROMPT" ]; then
+          PROMPT=$(echo "$EXTRACTED" | head -1 | sed 's/^[[:space:]]*//')
+        fi
+        
+        # 背景色を抽出（デフォルト: transparent）
+        BACKGROUND=$(echo "$EXTRACTED" | grep -i "背景\|background" | sed 's/.*[背景backgroundground：:]\s*//' | head -1)
+        if [ -z "$BACKGROUND" ]; then
+          BACKGROUND="transparent"
+        fi
+        
+        # モデルを抽出（デフォルト: u2net）
+        MODEL=$(echo "$EXTRACTED" | grep -i "モデル\|model" | sed 's/.*[モデルmodel：:]\s*//' | head -1)
+        if [ -z "$MODEL" ]; then
+          MODEL="u2net"
+        fi
+        
+        echo "prompt=$PROMPT" >> $GITHUB_OUTPUT
+        echo "background=$BACKGROUND" >> $GITHUB_OUTPUT
+        echo "model=$MODEL" >> $GITHUB_OUTPUT
+        
+        echo "Parsed - Prompt: $PROMPT, Background: $BACKGROUND, Model: $MODEL"
+
+    - name: Validate extracted data
+      id: validate
+      run: |
+        PROMPT="${{ steps.extract.outputs.prompt }}"
+        BACKGROUND="${{ steps.extract.outputs.background }}"
+        MODEL="${{ steps.extract.outputs.model }}"
+        
+        # プロンプトが空でないことを確認
+        if [ -z "$PROMPT" ] || [ "$PROMPT" = "@create-video-remove-bg" ]; then
+          echo "Error: No valid prompt found"
+          echo "valid=false" >> $GITHUB_OUTPUT
+          exit 0
+        fi
+        
+        # 背景色の正規化
+        case "$BACKGROUND" in
+          透明|transparent|trans) BACKGROUND="transparent" ;;
+          白|white|ホワイト) BACKGROUND="white" ;;
+          黒|black|ブラック) BACKGROUND="black" ;;
+          緑|green|グリーン) BACKGROUND="green" ;;
+          *) BACKGROUND="transparent" ;;
+        esac
+        
+        # モデルの正規化
+        case "$MODEL" in
+          u2net*) MODEL="u2net" ;;
+          u2netp*) MODEL="u2netp" ;;
+          human*|人*) MODEL="u2net_human_seg" ;;
+          anime*|アニメ*) MODEL="isnet-anime" ;;
+          *) MODEL="u2net" ;;
+        esac
+        
+        echo "normalized_prompt=$PROMPT" >> $GITHUB_OUTPUT
+        echo "normalized_background=$BACKGROUND" >> $GITHUB_OUTPUT
+        echo "normalized_model=$MODEL" >> $GITHUB_OUTPUT
+        echo "valid=true" >> $GITHUB_OUTPUT
+
+    - name: Add reaction to issue/comment
+      if: steps.validate.outputs.valid == 'true'
+      run: |
+        if [ "${{ github.event_name }}" = "issues" ]; then
+          gh api repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/reactions \
+            --method POST \
+            --field content='rocket'
+        else
+          gh api repos/${{ github.repository }}/issues/comments/${{ github.event.comment.id }}/reactions \
+            --method POST \
+            --field content='rocket'
+        fi
+      env:
+        GH_TOKEN: ${{ secrets.PAT_TOKEN || github.token }}
+
+    - name: Comment on issue with processing start
+      if: steps.validate.outputs.valid == 'true'
+      run: |
+        gh issue comment ${{ github.event.issue.number }} --body "🚀 **動画背景除去処理を開始しました！**
+
+        **設定内容:**
+        - **プロンプト**: ${{ steps.validate.outputs.normalized_prompt }}
+        - **背景色**: ${{ steps.validate.outputs.normalized_background }}
+        - **rembgモデル**: ${{ steps.validate.outputs.normalized_model }}
+
+        処理が完了すると、自動的にプルリクエストが作成されます。
+        進捗は[Actions](../actions)タブで確認できます。
+
+        ⏱️ 処理時間目安: 5-10分"
+      env:
+        GH_TOKEN: ${{ secrets.PAT_TOKEN || github.token }}
+
+    - name: Trigger video background removal workflow
+      if: steps.validate.outputs.valid == 'true'
+      run: |
+        gh workflow run "create-video-with-bg-removal.yml" \
+          --field video_prompt="${{ steps.validate.outputs.normalized_prompt }}" \
+          --field background_color="${{ steps.validate.outputs.normalized_background }}" \
+          --field rembg_model="${{ steps.validate.outputs.normalized_model }}"
+      env:
+        GH_TOKEN: ${{ secrets.PAT_TOKEN || github.token }}
+
+    - name: Comment on error
+      if: steps.validate.outputs.valid != 'true'
+      run: |
+        gh issue comment ${{ github.event.issue.number }} --body "❌ **エラー: 有効なプロンプトが見つかりません**
+
+        正しい形式で入力してください：
+
+        \`\`\`
+        @create-video-remove-bg
+        プロンプト: 猫が公園で遊んでいる様子
+        背景色: transparent (オプション: transparent/white/black/green)
+        モデル: u2net (オプション: u2net/u2netp/u2net_human_seg/isnet-anime)
+        \`\`\`
+
+        **簡単な形式:**
+        \`\`\`
+        @create-video-remove-bg
+        猫が公園で遊んでいる様子
+        \`\`\`"
+      env:
+        GH_TOKEN: ${{ secrets.PAT_TOKEN || github.token }}

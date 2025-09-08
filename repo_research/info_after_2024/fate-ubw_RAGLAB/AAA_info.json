@@ -1,0 +1,20 @@
+{
+    "asqa_sum_or_ext.json": 1,
+    "qampari_closedbook.json": 1,
+    "eli5_default.json": 0,
+    "eli5_light_inst.json": 1,
+    "eli5_sum_or_ext.json": 0,
+    "asqa_light_inst.json": 0,
+    "qampari_default.json": 1,
+    "qampari_interact_search.json": 1,
+    "asqa_interact_doc_id.json": 1,
+    "qampari_interact_doc_id.json": 0,
+    "eli5_interact_doc_id.json": 0,
+    "asqa_default.json": 0,
+    "eli5_interact_search.json": 0,
+    "qampari_light_inst.json": 1,
+    "asqa_interact_search.json": 0,
+    "qampari_sum_or_ext.json": 0,
+    "dataset_instructions.py": 2,
+    "instruction_lab.py": 21
+}

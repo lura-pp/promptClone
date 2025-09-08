@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "1.0",
+  "title_i18n": {
+    "en_US": "OpenAI Chat"
+  },
+  "configuration": {
+    "trace": true,
+    "nodes": [
+      {
+        "uiConfiguration": {
+          "position": {
+            "x": 81.12857055664062,
+            "y": 233.08570861816406
+          }
+        },
+        "id": "violetRaspyQuelea",
+        "label": "Input Trigger",
+        "type": "inputTrigger",
+        "parameters": {}
+      },
+      {
+        "uiConfiguration": {
+          "position": {
+            "x": 375.79523722330725,
+            "y": 200.75237528483072
+          }
+        },
+        "id": "cyanComprehensiveBoar",
+        "label": "OpenAI Chat Model",
+        "type": "openAIChatModel",
+        "parameters": {
+          "modelName": "gpt-4o-mini",
+          "baseUrl": "https://api.openai.com/v1/",
+          "systemMessage": "",
+          "apiKey": "env:OPENAI_API_KEY",
+          "memoryMaxMessages": 20,
+          "temperature": 0.7,
+          "useChatMemory": true,
+          "promptTemplate": "{{input.text}}",
+          "timeout": 20,
+          "outputParameterName": "text"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "2add1d3a-7ae3-486d-92f1-d99319d09671",
+        "source": "violetRaspyQuelea",
+        "target": "cyanComprehensiveBoar"
+      }
+    ]
+  },
+  "description_i18n": {
+    "en_US": "A chat demo task relying on OpenAI"
+  },
+  "enabled": true,
+  "externalReferenceCode": "openai-chat"
+}

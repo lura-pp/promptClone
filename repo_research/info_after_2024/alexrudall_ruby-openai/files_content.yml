@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.openai.com/v1/files/file-VAyM3yAs580Dk9SbTBzwl8yN/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_ACCESS_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 14 Nov 2023 21:48:50 GMT
+      Content-Type:
+      - application/octet-stream
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Content-Disposition:
+      - attachment; filename="sentiment.jsonl"
+      Openai-Version:
+      - '2020-10-01'
+      Openai-Organization:
+      - user-jxm65ijkzc1qrfhc0ij8moic
+      X-Request-Id:
+      - f575ab5b400a1b9a6dc1aa23b557b573
+      Openai-Processing-Ms:
+      - '84'
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=ecSdU_k92m9twb0uhcvFUGUN8vVuggCX_JJ0KYz6ak8-1699998530-0-AcC5oe+KBr+tR5Gx3VG8GaSvfsjW525sXA354DzrfRyJL3h0gGOV4VonFoqGTZDi5lj1JgocQljmGlHH6phvf1E=;
+        path=/; expires=Tue, 14-Nov-23 22:18:50 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=3CDLlmcUZ9S___3_KPOZS.7YWwNLzflYxFAf9bwKDtE-1699998530242-0-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 826275fa9e076328-LHR
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: |
+        {"prompt":"Overjoyed with my new phone! ->", "completion":" positive"}
+        {"prompt":"@lakers disappoint for a third straight night ->", "completion":" negative"}
+  recorded_at: Tue, 14 Nov 2023 21:48:50 GMT
+recorded_with: VCR 6.1.0

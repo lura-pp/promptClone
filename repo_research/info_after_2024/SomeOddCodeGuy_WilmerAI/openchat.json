@@ -1,0 +1,9 @@
+{
+  "promptTemplateSystemPrefix": "",
+  "promptTemplateSystemSuffix": "",
+  "promptTemplateUserPrefix": "",
+  "promptTemplateUserSuffix": "<|end_of_turn|>",
+  "promptTemplateAssistantPrefix": "",
+  "promptTemplateAssistantSuffix": "<|end_of_turn|>",
+  "promptTemplateEndToken": ""
+}

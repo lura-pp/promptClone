@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0",
+  "title_i18n": {
+    "en_US": "Ollama Chat with llama3.2:1b"
+  },
+  "configuration": {
+    "trace": true,
+    "nodes": [
+      {
+        "uiConfiguration": {
+          "position": {
+            "x": 211.461903889974,
+            "y": 221.41904195149738
+          }
+        },
+        "id": "blushCoolCoyote",
+        "label": "Input Trigger",
+        "type": "inputTrigger",
+        "parameters": {}
+      },
+      {
+        "uiConfiguration": {
+          "position": {
+            "x": 517.1285705566406,
+            "y": 192.75237528483075
+          }
+        },
+        "id": "brownEducationalPossum",
+        "label": "Ollama Chat Model",
+        "type": "ollamaChatModel",
+        "parameters": {
+          "modelName": "llama3.2:1b",
+          "baseUrl": "http://localhost:11434",
+          "systemMessage": "",
+          "memoryMaxMessages": 20,
+          "temperature": 0.7,
+          "useChatMemory": true,
+          "promptTemplate": "{{input.text}}",
+          "outputParameterName": "text"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "83b3d5a0-a478-4d8a-8dd1-1a0a9ae4a5e1",
+        "source": "blushCoolCoyote",
+        "target": "brownEducationalPossum"
+      }
+    ]
+  },
+  "description_i18n": {
+    "en_US": "A chat demo task relying on local llama3.2:1b on Ollama"
+  },
+  "enabled": true,
+  "externalReferenceCode": "ollama-chat-llama32-1b"
+}

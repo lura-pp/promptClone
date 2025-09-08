@@ -1,0 +1,247 @@
+name: module-banner-concept-to-prompt-planning
+
+on:
+  workflow_call:
+    inputs:
+      concept:
+        description: 'バナーのコンセプト（従来方式）'
+        required: false
+        type: string
+      concept_file:
+        description: 'コンセプトファイル名（新方式、拡張子なし）'
+        required: false
+        type: string
+      text_content:
+        description: '画像に表示するテキスト'
+        required: true
+        type: string
+      banner_size:
+        description: 'バナーサイズ'
+        required: false
+        type: string
+        default: 'square_1_1'
+      input_mode:
+        description: '入力モード (prompt_only/with_image)'
+        required: false
+        type: string
+        default: 'prompt_only'
+      branch-name:
+        description: 'ワーキングブランチ名'
+        required: true
+        type: string
+      folder-name:
+        description: 'プロジェクトフォルダ名'
+        required: true
+        type: string
+    outputs:
+      planning-completed:
+        description: 'プランニング完了ステータス'
+        value: ${{ jobs.planning.outputs.planning-completed }}
+      image-prompt:
+        description: 'コンセプトに忠実な画像プロンプト'
+        value: ${{ jobs.planning.outputs.image-prompt }}
+      concept:
+        description: '元のコンセプト（評価用）'
+        value: ${{ jobs.planning.outputs.concept }}
+      text-overlay-prompt:
+        description: 'テキストオーバーレイプロンプト'
+        value: ${{ jobs.planning.outputs.text-overlay-prompt }}
+    secrets:
+      anthropic_api_key:
+        description: 'Anthropic API Key'
+        required: true
+      github_pat:
+        description: 'GitHub Token'
+        required: true
+
+jobs:
+  planning:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      planning-completed: ${{ steps.planning.outputs.completed }}
+      image-prompt: ${{ steps.planning.outputs.image-prompt }}
+      concept: ${{ steps.planning.outputs.concept }}
+      text-overlay-prompt: ${{ steps.planning.outputs.text-overlay-prompt }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.branch-name }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install Claude Code SDK
+        run: npm install @anthropic-ai/claude-code
+      
+      - name: 🎯 コンセプト→プロンプト変換プランニングエージェント
+        id: planning
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.anthropic_api_key }}
+        run: |
+          echo "::group::🎯 Concept to Prompt Planning Agent Execution"
+          echo "Starting at: $(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)"
+          
+          # 設定
+          CONCEPT_PARAM="${{ inputs.concept }}"
+          CONCEPT_FILE_PARAM="${{ inputs.concept_file }}"
+          USER_TEXT_CONTENT="${{ inputs.text_content }}"
+          BANNER_SIZE="${{ inputs.banner_size }}"
+          INPUT_MODE="${{ inputs.input_mode }}"
+          FOLDER_NAME="${{ inputs.folder-name }}"
+          PLANNING_DIR="$FOLDER_NAME/planning"
+          
+          # 入力モードの判定（concept_fileがあれば新方式、なければ従来方式）
+          if [ -n "$CONCEPT_FILE_PARAM" ]; then
+            CONCEPT_MODE="file"
+            CONCEPT_SOURCE=".github/workflows/docs/$CONCEPT_FILE_PARAM.md"
+            echo "🆕 New mode: Using concept file: $CONCEPT_SOURCE" 
+          else
+            CONCEPT_MODE="direct"
+            USER_CONCEPT="$CONCEPT_PARAM"
+            echo "📝 Traditional mode: Using direct concept: $USER_CONCEPT"
+          fi
+          
+          echo "Concept mode: $CONCEPT_MODE"
+          echo "User text content: $USER_TEXT_CONTENT"
+          echo "Banner size: $BANNER_SIZE"
+          echo "Input mode: $INPUT_MODE"
+          echo "Planning folder: $PLANNING_DIR"
+          
+          # 計画フォルダを事前に作成
+          mkdir -p "$PLANNING_DIR"
+          
+          # プロンプトの構築
+          PROMPT="あなたはバナー広告制作の専門プランナーです。ユーザーのコンセプトを評価基準を考慮した技術的なプロンプトに変換してください。
+
+          **基本情報**:
+          - 入力モード: $CONCEPT_MODE
+          - 表示テキスト: '$USER_TEXT_CONTENT' （一字一句変更禁止）
+          - バナーサイズ: $BANNER_SIZE
+          - 入力モード: $INPUT_MODE
+          - プロジェクトフォルダ: $FOLDER_NAME
+
+          **コンセプト情報**:
+          - コンセプトモード: $CONCEPT_MODE
+          - 従来方式の場合: $USER_CONCEPT
+          - 新方式の場合: $CONCEPT_SOURCE
+
+          **重要制約**:
+          - テキスト内容「$USER_TEXT_CONTENT」は一字一句変更禁止
+          - このテキストはFlux Kontext Maxで後から合成するため、ベース画像には含めない
+          - ベース画像にはテキスト配置エリアを確保する
+
+          **タスク**:
+          1. コンセプトを詳細分析（新方式の場合はファイルを読み込み）
+          2. 評価基準ファイルを参照: .github/workflows/docs/banner-evaluation-criteria.md（最低基準として）
+          3. コンセプトに忠実な表現プロンプトを生成
+          4. 以下のファイルを作成:
+             - $PLANNING_DIR/image-prompt.txt （英語での技術的プロンプト）
+             - $PLANNING_DIR/concept.txt （元のコンセプト保存）
+             - $PLANNING_DIR/text-overlay-prompt.txt （テキストオーバーレイプロンプト）
+             - $PLANNING_DIR/planning-summary.md （プランニング結果サマリー）
+
+          **コンセプト忠実プロンプトの要件**:
+          - **最優先**: コンセプトの本質・雰囲気・メッセージを完全に表現
+          - 評価基準は最低品質基準として参照（高得点狙いではない）
+          - コンセプトの感情・価値観・ブランドイメージを重視
+          - **必須**: テキスト配置用の明確な空白エリアを確保
+          - 「with clear empty space for text overlay」を必ず含める
+          - テキスト内容は一切含めない（重要）
+          - バナーサイズに最適化された背景・色調
+          - 50-100語程度の適切な長さ
+          - **英語で作成**
+
+          **テキストオーバーレイプロンプトの要件**:
+          - テキスト「$USER_TEXT_CONTENT」の最適配置位置
+          - フォントスタイル・サイズの推奨値
+          - 文字色・背景色の組み合わせ
+          - 読みやすさを最大化する調整指示
+          - 具体的な位置指定（パーセンテージ）
+
+          重要: コンセプトの本質・感情・メッセージを最優先に、そのコンセプトが持つ独自性と魅力を最大限に表現するプロンプトを作成してください。評価基準は品質の最低ラインとして参考程度に留め、コンセプトの忠実な再現を第一目標としてください。"
+          
+          echo "🚀 Starting Concept to Prompt Planning Agent..."
+          echo "📝 Prompt length: ${#PROMPT}"
+          
+          # Claude Code CLIの実行
+          npx @anthropic-ai/claude-code \
+            --allowedTools "Read,Write,Edit" \
+            --max-turns 25 \
+            --verbose \
+            --permission-mode "acceptEdits" \
+            -p "$PROMPT" || {
+              echo "::error::❌ Claude Code CLI execution failed"
+              exit 1
+            }
+          
+          # 生成された計画の確認とGitHub Outputsの設定
+          echo ""
+          echo "📋 Checking generated planning files..."
+          
+          # 最適化プロンプトの確認
+          if [ -f "$PLANNING_DIR/image-prompt.txt" ]; then
+            IMAGE_PROMPT=$(cat "$PLANNING_DIR/image-prompt.txt" | tr '\n' ' ')
+            echo "::notice::✅ Image prompt generated"
+            echo "image-prompt=$IMAGE_PROMPT" >> $GITHUB_OUTPUT
+          else
+            echo "::error::❌ Image prompt file not found"
+            exit 1
+          fi
+          
+          # 元のコンセプトの確認
+          if [ -f "$PLANNING_DIR/concept.txt" ]; then
+            CONCEPT=$(head -5 "$PLANNING_DIR/concept.txt" | tr '\n' ' ')
+            echo "::notice::✅ Concept saved"
+            echo "concept=$CONCEPT" >> $GITHUB_OUTPUT
+          else
+            echo "::error::❌ Concept file not found"
+            exit 1
+          fi
+          
+          # テキストオーバーレイプロンプトの確認
+          if [ -f "$PLANNING_DIR/text-overlay-prompt.txt" ]; then
+            TEXT_OVERLAY_PROMPT=$(head -3 "$PLANNING_DIR/text-overlay-prompt.txt" | tr '\n' ' ')
+            echo "::notice::✅ Text overlay prompt generated"
+            echo "text-overlay-prompt=$TEXT_OVERLAY_PROMPT" >> $GITHUB_OUTPUT
+          else
+            echo "::error::❌ Text overlay prompt file not found"
+            exit 1
+          fi
+          
+          echo "completed=true" >> $GITHUB_OUTPUT
+          echo "::endgroup::"
+      
+      - name: Commit and push planning
+        env:
+          GH_TOKEN: ${{ secrets.github_pat }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ${{ inputs.folder-name }}/
+          if git diff --cached --quiet; then
+            echo "No planning files to commit"
+          else
+            git commit -m "Add concept to prompt planning: ${{ inputs.concept_file || inputs.concept }}
+
+            🤖 Generated with [Claude Code](https://claude.ai/code)
+
+            Co-Authored-By: Claude <noreply@anthropic.com>"
+            # 並列実行での競合を回避するためのリトライ処理
+            for i in {1..3}; do
+              git pull --rebase origin ${{ inputs.branch-name }} || true
+              if git push origin ${{ inputs.branch-name }}; then
+                echo "✅ Push successful on attempt $i"
+                break
+              else
+                echo "⚠️ Push failed on attempt $i, retrying..."
+                # ランダムな待機時間（1-5秒）
+                sleep $((RANDOM % 5 + 1))
+              fi
+            done
+          fi

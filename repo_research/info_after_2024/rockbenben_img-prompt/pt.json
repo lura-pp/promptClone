@@ -1,0 +1,52 @@
+{
+  "Metadata": {
+    "title": "IMGPrompt - Gerador inteligente de prompts para arte com IA | Midjourney, Stable Diffusion, DALL·E, FLUX",
+    "description": "Dificuldade em criar prompts de arte com IA? IMGPrompt gera prompts inteligentes para Midjourney, Stable Diffusion e DALL·E, despertando inspiração ilimitada.",
+    "keywords": "IMGPrompt, Difusão Estável, Midjourney, DALL·E, FLUX, Geração de prompt de imagem, Ferramenta de criatividade visual, prompt, IA, recomendação de prompt, prompt de tradução, prompt de imagem"
+  },
+  "ToolPage": {
+    "section1": "Selecione o assunto",
+    "section2": "Refinar categoria",
+    "section3": "Adicionar tags",
+    "currentSelection": "Prompts selecionados",
+    "hierarchyTip": "Sequência de operações: Selecione Assunto → Refinar categoria → Adicionar tags"
+  },
+  "ResultSection": {
+    "tooltip-light": "Aplicar modelo de iluminação de retrato (incluindo iluminação de filme, raios crepusculares e outros)",
+    "prompt-light": "Iluminação de retrato",
+    "tooltip-polish": "Carregar parâmetros de otimização de imagem (melhoria de resolução/melhoria de estilo artístico)",
+    "prompt-polish": "Otimização da Qualidade",
+    "insertSuccess": "Parâmetros de otimização foram adicionados ao prompt",
+    "tooltip-negative": "Copie prompts negativos comuns (para evitar falhas comuns)",
+    "prompt-negative": "Prompt negativo",
+    "prompt": "Incitar",
+    "button-copy": "Cópia",
+    "clearSuccess": "Os prompts foram limpos",
+    "button-clear": "Claro",
+    "tooltip-translate": "Insira o texto em qualquer idioma para traduzir para o inglês",
+    "button-translate": "Traduzir",
+    "translateSuccess": "Tradução bem-sucedida e adicionada ao prompt",
+    "translateEmptyError": "Por favor, insira o conteúdo para traduzir",
+    "translateFailError": "A tradução falhou, tente novamente",
+    "title-other": "Recursos avançados:",
+    "tooltip-randomColor": "Alterar prompt de cor aleatoriamente",
+    "button-randomcolor": "Cor aleatória"
+  },
+  "CopyToClipboard": {
+    "empty": "O conteúdo está vazio, nada para copiar",
+    "unsupported": "Seu navegador não suporta operações de área de transferência, tente copiar manualmente ou use um navegador diferente",
+    "success": "Copiado com sucesso, você pode colá-lo na ferramenta de pintura de IA",
+    "failure": "A cópia falhou, copie manualmente"
+  },
+  "feedback": {
+    "feedback1": "Comentários e sugestões",
+    "feedback2": "Se você encontrar algum problema durante o uso ou tiver alguma sugestão ou ideia, sinta-se à vontade para me avisar! Seu feedback influenciará diretamente o desenvolvimento e a melhoria de recursos futuros, nos ajudando a criar uma ferramenta que atenda melhor às necessidades de todos.",
+    "feedback3": "Por favor, descreva seu caso de uso ou o problema que você encontrou em detalhes, ou compartilhe suas ideias criativas. Considerarei cuidadosamente cada feedback e farei ajustes e otimizações o mais rápido possível.",
+    "reaction0": "Acima",
+    "reaction1": "Apoiar",
+    "reaction2": "Legal",
+    "reaction3": "O que?",
+    "reaction4": "Quebra-cabeça",
+    "placeholder": "Por favor, deixe uma mensagem, não é necessário fazer login (digite seu e-mail para receber notificações de resposta)"
+  }
+}

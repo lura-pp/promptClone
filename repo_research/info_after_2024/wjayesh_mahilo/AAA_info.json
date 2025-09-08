@@ -1,0 +1,17 @@
+{
+    "control_plane.py": 3,
+    "buyer_agent.py": 1,
+    "seller_agent.py": 1,
+    "dispatcher_example.py": 3,
+    "health_emergency_example.py": 3,
+    "agent.py": 1,
+    "story_weaver_agent.py": 1,
+    "logistics_coordinator.py": 1,
+    "public_communications_director.py": 0,
+    "medical_advisor.py": 1,
+    "dispatcher.py": 1,
+    "police.py": 1,
+    "medic.py": 1,
+    "mold_specialist.py": 0,
+    "plumber.py": 0
+}

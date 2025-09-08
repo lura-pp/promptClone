@@ -1,0 +1,271 @@
+{
+  "name": "n8n Voice Agent 語音預約確認服務",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## LLM - GPT 4.1\n\n",
+        "height": 220,
+        "width": 210,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        60,
+        340
+      ],
+      "id": "88cd891c-c0be-4c88-a1df-2ab78160a1da",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4.1",
+          "mode": "list",
+          "cachedResultName": "gpt-4.1"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        140,
+        420
+      ],
+      "id": "120136d2-0ca6-4a93-9d7c-19b5e677ef7b",
+      "name": "OpenAI 4.1",
+      "credentials": {
+        "openAiApi": {
+          "id": "vo1Kz0pllXw8z5Cv",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## 輸出格式\n",
+        "height": 220,
+        "width": 260,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        340,
+        340
+      ],
+      "id": "0e2f6e17-66d2-47ad-b241-012872c9a7ab",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "calendar": {
+          "__rl": true,
+          "value": "qwedsazxc78@gmail.com",
+          "mode": "list",
+          "cachedResultName": "AI Automation"
+        },
+        "limit": 10,
+        "timeMax": "={{ $now.plus({ hour: 24 }) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleCalendar",
+      "typeVersion": 1.3,
+      "position": [
+        -40,
+        140
+      ],
+      "id": "fff32d0f-0604-40ba-9e75-78f0218cc60b",
+      "name": "Google Calendar",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "Xzqq6faOy8jGM4gY",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 8
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -260,
+        140
+      ],
+      "id": "f430b56b-a12d-4f41-9fd7-9275a4d165b1",
+      "name": "8am"
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"output\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"name\": {\n          \"type\": \"string\"\n        },\n        \"email\": {\n          \"type\": \"string\",\n          \"format\": \"email\"\n        },\n        \"phone_number\": {\n          \"type\": \"string\"\n        },\n        \"reason\": {\n          \"type\": \"string\"\n        },\n        \"start_time\": {\n          \"type\": \"string\",\n          \"format\": \"date-time\"\n        },\n        \"end_time\": {\n          \"type\": \"string\",\n          \"format\": \"date-time\"\n        }\n      },\n      \"required\": [\n        \"name\",\n        \"email\",\n        \"phone_number\",\n        \"reason\",\n        \"start_time\",\n        \"end_time\"\n      ]\n    }\n  },\n  \"required\": [\"output\"]\n}\n"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        440,
+        420
+      ],
+      "id": "9c82773e-67ae-44b9-96e0-365c9d0973b7",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=預約內容：\n{{ $json.description }}\n\n開始時間 {{ $json.start.dateTime }}\n結束時間 {{ $json.end.dateTime }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=你是一位助手。請產生一個結構化的 JSON 物件，包含以下欄位：\n\nname：收件人的全名\nphone_number：電話號碼（字串格式）\nreason：預約的原因\nstart_time：開始時間，使用 ISO 8601 日期時間格式\nend_time：結束時間，使用 ISO 8601 日期時間格式\nemail：收件人的電子郵件地址\n\n請僅以有效的 JSON 格式輸出結果。不要包含任何額外的文字或註解。"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        180,
+        140
+      ],
+      "id": "ddc6f84d-1fd1-450d-b949-b4fce45c1c09",
+      "name": "Voice Format AI Agent"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.retellai.com/v2/create-phone-call",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"from_number\": \"+17753693149\", \n  \"to_number\": \"{{ $json.output.phone_number }}\",\n  \"override_agent_id\": \"agent_e3276f6c5a8606272e80c31965\", \n  \"retell_llm_dynamic_variables\": {\n    \"customer_name\": \"{{ $json.output.name }}\",\n    \"customer_email\": \"{{ $json.output.email }}\",\n    \"phone_number\": \"{{ $json.output.phone_number }}\",\n    \"reason\": \"{{ $json.output.reason }}\",\n    \"start_time\": \"{{ $json.output.start_time }}\",\n    \"end_time\": \"{{ $json.output.end_time }}\"\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        560,
+        140
+      ],
+      "id": "33731f7a-06a4-489a-89bc-3e85103a1363",
+      "name": "Retell Phone Call",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "zuozKFRJLaJf2CYO",
+          "name": "Header Auth - Retell"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## n8n 語音 AI Agent 預約確認服務\n\ngoogle calandar - https://calendar.google.com/calendar/\nRetell - https://dashboard.retellai.com/\nRetell API - https://docs.retellai.com/api-references/create-phone-call\nTwillo - https://console.twilio.com/\n\n- google calandar: 確認預約時間\n- Retell: 打造 AI 語音來訪服務\n- Twillo: 設定電話號碼\n- webhook: 紀錄 Retell 語音的執行紀錄\n\n",
+        "height": 520,
+        "width": 470,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        780,
+        80
+      ],
+      "id": "378f8206-59b1-4cfa-af26-0917fe3f4ee0",
+      "name": "Sticky Note"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "OpenAI 4.1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Voice Format AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "8am": {
+      "main": [
+        [
+          {
+            "node": "Google Calendar",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Calendar": {
+      "main": [
+        [
+          {
+            "node": "Voice Format AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Voice Format AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Voice Format AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Retell Phone Call",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "d2aa4a81-ca04-4e7b-a263-68f2d131a0eb",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "98fc6998a4fc974191a50fd1e28f3c93149311bffb0a029723a4889a4111c908"
+  },
+  "id": "dXPzZ3FpYbeH2e2B",
+  "tags": [
+    {
+      "createdAt": "2025-01-21T07:13:36.575Z",
+      "updatedAt": "2025-01-21T07:13:36.575Z",
+      "id": "yM2YsERN8eAqo2ZC",
+      "name": "ai-agent"
+    },
+    {
+      "createdAt": "2025-03-17T08:20:06.861Z",
+      "updatedAt": "2025-03-17T08:20:06.861Z",
+      "id": "pvRmfUcHdkTEgrk9",
+      "name": "yt"
+    },
+    {
+      "createdAt": "2025-03-17T08:20:09.856Z",
+      "updatedAt": "2025-03-17T08:20:09.856Z",
+      "id": "Xk0zSy3b5bn7QLYA",
+      "name": "mcp"
+    }
+  ]
+}

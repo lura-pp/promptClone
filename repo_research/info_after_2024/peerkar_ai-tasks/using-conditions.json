@@ -1,0 +1,122 @@
+{
+  "schemaVersion": "1.0",
+  "title_i18n": {
+    "en_US": "Using Conditions"
+  },
+  "configuration": {
+    "trace": true,
+    "nodes": [
+      {
+        "uiConfiguration": {
+          "position": {
+            "x": 72.4857177734375,
+            "y": 220.08570861816406
+          }
+        },
+        "id": "purpleConsciousGamefowl",
+        "label": "Input Trigger",
+        "type": "inputTrigger",
+        "parameters": {}
+      },
+      {
+        "uiConfiguration": {
+          "position": {
+            "x": 350.4857177734375,
+            "y": 188.08570861816406
+          }
+        },
+        "id": "tanDangerousHalibut",
+        "label": "Classifier",
+        "type": "ollamaChatModel",
+        "parameters": {
+          "modelName": "llama3.2:1b",
+          "baseUrl": "http://localhost:11434",
+          "systemMessage": "Classify the given text into one of the given categories: Positive, Negative. Only output the category and nothing else. ",
+          "taskContextOutputParameterName": "classification",
+          "memoryMaxMessages": 20,
+          "temperature": 0.7,
+          "useChatMemory": true,
+          "promptTemplate": "{{input.text}}",
+          "outputParameterName": ""
+        }
+      },
+      {
+        "condition": {
+          "equals": {
+            "field": "{{taskContext.classification}}",
+            "id": "plumSplendidKangarooCondition",
+            "value": "Positive"
+          }
+        },
+        "uiConfiguration": {
+          "position": {
+            "x": 680.4857177734375,
+            "y": 106.41904195149738
+          }
+        },
+        "id": "plumSplendidKangaroo",
+        "label": "The Positive Guy",
+        "type": "ollamaChatModel",
+        "parameters": {
+          "modelName": "llama3.2:1b",
+          "baseUrl": "http://localhost:11434",
+          "systemMessage": "You are very positive bot. Always answer with a positive and encouraging tone.",
+          "taskContextOutputParameterName": "",
+          "memoryMaxMessages": 20,
+          "temperature": 0.7,
+          "useChatMemory": true,
+          "promptTemplate": "{{input.text}}",
+          "outputParameterName": "text"
+        }
+      },
+      {
+        "condition": {
+          "equals": {
+            "field": "{{taskContext.classification}}",
+            "id": "chocolateRichSturgeonCondition",
+            "value": "Negative"
+          }
+        },
+        "uiConfiguration": {
+          "position": {
+            "x": 682.4857177734375,
+            "y": 312.08570861816406
+          }
+        },
+        "id": "chocolateRichSturgeon",
+        "label": "The Negative Guy",
+        "type": "ollamaChatModel",
+        "parameters": {
+          "modelName": "llama3.2:1b",
+          "baseUrl": "http://localhost:11434",
+          "systemMessage": "You are negative, gloomy bot. Always answer with a dark and discouraging tone.",
+          "memoryMaxMessages": 20,
+          "temperature": 0.7,
+          "useChatMemory": true,
+          "promptTemplate": "{{input.text}}",
+          "outputParameterName": "text"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "18ac0f75-bac1-4605-9b22-8cf9360d0582",
+        "source": "purpleConsciousGamefowl",
+        "target": "tanDangerousHalibut"
+      },
+      {
+        "id": "e5dbb720-d443-43a3-a136-8a5587793c08",
+        "source": "tanDangerousHalibut",
+        "target": "plumSplendidKangaroo"
+      },
+      {
+        "id": "521a20e9-e85f-4495-8a32-6a8e71dcd5da",
+        "source": "tanDangerousHalibut",
+        "target": "chocolateRichSturgeon"
+      }
+    ]
+  },
+  "description_i18n": {},
+  "enabled": true,
+  "externalReferenceCode": "using-conditions"
+}

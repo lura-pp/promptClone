@@ -1,0 +1,9 @@
+{
+  "promptTemplateSystemPrefix": "",
+  "promptTemplateSystemSuffix": "\n",
+  "promptTemplateUserPrefix": "USER: ",
+  "promptTemplateUserSuffix": " ",
+  "promptTemplateAssistantPrefix": "ASSISTANT:",
+  "promptTemplateAssistantSuffix": "\n",
+  "promptTemplateEndToken": ""
+}

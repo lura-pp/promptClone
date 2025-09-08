@@ -1,0 +1,110 @@
+{
+  "testDataPath": "aweme-login",
+  "testCases": [
+    {
+      "prompt": "密码登录",
+      "multi": false,
+      "annotation_index_id": 1,
+      "response_rect": {
+        "left": 721,
+        "top": 245,
+        "width": 72,
+        "height": 15
+      },
+      "response_element": {
+        "id": "fobmb",
+        "indexId": 7
+      }
+    },
+    {
+      "prompt": "扫码登录",
+      "multi": false,
+      "annotation_index_id": 2,
+      "response_rect": {
+        "left": 485,
+        "top": 246,
+        "width": 72,
+        "height": 15
+      },
+      "response_element": {
+        "id": "aonmh",
+        "indexId": 5
+      }
+    },
+    {
+      "prompt": "手机号输入框",
+      "multi": false,
+      "annotation_index_id": 3,
+      "response_rect": {
+        "left": 492,
+        "top": 341,
+        "width": 294,
+        "height": 49
+      },
+      "response_element": {
+        "id": "mfodf",
+        "indexId": 10
+      }
+    },
+    {
+      "prompt": "验证码输入框",
+      "multi": false,
+      "annotation_index_id": 4,
+      "response_rect": {
+        "left": 492,
+        "top": 418,
+        "width": 294,
+        "height": 50
+      },
+      "response_element": {
+        "id": "nhbof",
+        "indexId": 12
+      }
+    },
+    {
+      "prompt": "发送验证码按钮",
+      "multi": false,
+      "annotation_index_id": 5,
+      "response_rect": {
+        "left": 697,
+        "top": 435,
+        "width": 71,
+        "height": 14
+      },
+      "response_element": {
+        "id": "kdbdc",
+        "indexId": 11
+      }
+    },
+    {
+      "prompt": "登录按钮",
+      "multi": false,
+      "annotation_index_id": 6,
+      "response_rect": {
+        "left": 492,
+        "top": 558,
+        "width": 294,
+        "height": 45
+      },
+      "response_element": {
+        "id": "bjnpl",
+        "indexId": 18
+      }
+    },
+    {
+      "prompt": "X 关闭按钮",
+      "multi": false,
+      "annotation_index_id": 7,
+      "response_rect": {
+        "left": 845,
+        "top": 120,
+        "width": 15,
+        "height": 15
+      },
+      "response_element": {
+        "id": "aigcl",
+        "indexId": 4
+      }
+    }
+  ]
+}

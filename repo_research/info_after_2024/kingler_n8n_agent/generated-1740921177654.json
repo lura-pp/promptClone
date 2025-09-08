@@ -1,0 +1,563 @@
+{
+  "id": "generated-1740921177654",
+  "originalFilename": "agent:order_management_agent.json",
+  "category": "agent",
+  "name": "order_management_agent",
+  "description": "Node Types:\n- @n8n/n8n-nodes-langchain.lmChatOpenRouter: 1\n- @n8n/n8n-nodes-langchain.agent: 1\n- n8n-nodes-base.executeWorkflowTrigger: 1\n- @n8n/n8n-nodes-langchain.chatTrigger: 1\n- n8n-nodes-base.shopifyTool: 10\n- n8n-nodes-base.set: 1\n- @n8n/n8n-nodes-langchain.memoryBufferWindow: 1\n\nNode Names:\n- OpenRouter Chat Model2\n- Product Management Agent\n- When Executed by Another Workflow\n- When chat message received\n- Get A Product\n- Get All Products\n- Update A Product\n- Add New Product\n- Delete A Product\n- Get Inventory Levels\n- Update Inventory Level\n- Search Products\n- Get Product Variants\n- Update Product Price\n- Edit Fields\n- Window Buffer Memory\n",
+  "tags": [
+    "lmChatOpenRouter",
+    "langchain",
+    "agent",
+    "executeWorkflowTrigger",
+    "chatTrigger",
+    "shopifyTool",
+    "set",
+    "memoryBufferWindow"
+  ],
+  "complexity": {
+    "nodeCount": 16,
+    "connectionCount": 3,
+    "uniqueNodeTypes": 7,
+    "complexity": "complex"
+  },
+  "originalWorkflow": {
+    "nodes": [
+      {
+        "parameters": {
+          "model": "anthropic/claude-3.7-sonnet",
+          "options": {}
+        },
+        "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+        "typeVersion": 1,
+        "position": [
+          -880,
+          260
+        ],
+        "id": "bd3f616e-c3ab-44ca-9368-40603cb484e8",
+        "name": "OpenRouter Chat Model2",
+        "credentials": {
+          "openRouterApi": {
+            "id": "szOlCHdB2KAydgnn",
+            "name": "OpenRouter account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "promptType": "define",
+          "text": "={{ $('When chat message received') }}",
+          "options": {
+            "systemMessage": "You are a Product Management Agent responsible for managing the entire product lifecycle in our Shopify store. Your responsibilities include:\n\n1. RETRIEVING PRODUCT INFORMATION:\n   - For a specific product: Use 'Get A Product' tool with the Product ID\n   - For all products: Use 'Get All Products' tool with optional limit parameter\n   - For filtered searches: Use 'Search Products' tool with title, product_type, vendor, or handle parameters\n   - For product variants: Use 'Get Product Variants' tool with the Product ID\n\n2. UPDATING PRODUCT DETAILS:\n   - First get the current product data using 'Get A Product'\n   - Then use 'Update A Product' tool with the Product ID and only the specific fields that need updating\n   - Always confirm changes before executing updates\n\n3. PRICING MANAGEMENT:\n   - First retrieve a product's variants using 'Get Product Variants'\n   - Then update prices using 'Update Product Price' with the Variant ID\n   - You can set both the current price and the compare-at price (for sales)\n   - Always confirm pricing changes before executing\n\n4. INVENTORY MANAGEMENT:\n   - Check stock: Use 'Get Inventory Levels' with the Inventory Item ID\n   - Update stock: Use 'Update Inventory Level' with Location ID, Inventory Item ID, and available quantity\n   - For products with low inventory (less than 5 items), notify stakeholders\n\n5. ADDING NEW PRODUCTS:\n   Required information:\n   - Title (required): Clear, descriptive product name\n   - Body HTML (required): Detailed product description with formatting\n   - Images: Source URL for product images\n   - Tags: Comma-separated list of relevant tags\n   - Price: Retail price of the product\n   - Inventory quantity: Initial stock level\n   - Variants (if applicable): Different versions of the product\n\n6. REMOVING PRODUCTS:\n   - First get the product details to confirm it's the correct item\n   - Then use 'Delete A Product' with the Product ID\n   - Always ask for explicit confirmation before deletion\n\nGUIDELINES FOR INTERACTIONS:\n1. Always verify input data for accuracy and completeness\n2. Break complex operations into step-by-step explanations\n3. When interfacing with other agents or artists, ask specific questions to gather all required information\n4. For missing information, ask clear follow-up questions\n5. Provide structured responses that clearly present product information\n\nFor all operations, explain what you're doing and why, especially before making any changes to the product database."
+          }
+        },
+        "type": "@n8n/n8n-nodes-langchain.agent",
+        "typeVersion": 1.7,
+        "position": [
+          -400,
+          -160
+        ],
+        "id": "e10112db-6738-4252-a3a6-586c4913443e",
+        "name": "Product Management Agent"
+      },
+      {
+        "parameters": {
+          "inputSource": "passthrough"
+        },
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "typeVersion": 1.1,
+        "position": [
+          -820,
+          -300
+        ],
+        "id": "0eb95ce1-c08c-4b95-9179-64d356a526a1",
+        "name": "When Executed by Another Workflow"
+      },
+      {
+        "parameters": {
+          "options": {}
+        },
+        "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+        "typeVersion": 1.1,
+        "position": [
+          -820,
+          -100
+        ],
+        "id": "38ae25fa-4434-4497-8a99-e36dab9f8670",
+        "name": "When chat message received",
+        "webhookId": "c8a69060-fda7-4da3-8dfb-24081b89b2c1"
+      },
+      {
+        "parameters": {
+          "authentication": "accessToken",
+          "resource": "product",
+          "operation": "get",
+          "productId": "={{ $fromAI('Product_ID', ``, 'string') }}",
+          "additionalFields": {
+            "fields": ""
+          }
+        },
+        "type": "n8n-nodes-base.shopifyTool",
+        "typeVersion": 1,
+        "position": [
+          -560,
+          260
+        ],
+        "id": "8819968e-a861-4636-9b3f-346e5b848000",
+        "name": "Get A Product",
+        "credentials": {
+          "shopifyAccessTokenApi": {
+            "id": "ydMK26GiyQu6TtTr",
+            "name": "Shopify Access Token account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "descriptionType": "manual",
+          "toolDescription": "Use this tool to retrieve all the products in the product database.",
+          "authentication": "accessToken",
+          "resource": "product",
+          "operation": "getAll",
+          "limit": "={{ $fromAI('Limit', ``, 'number') }}",
+          "additionalFields": {}
+        },
+        "type": "n8n-nodes-base.shopifyTool",
+        "typeVersion": 1,
+        "position": [
+          -340,
+          260
+        ],
+        "id": "5bee1c18-6c63-45a9-9e0e-629c80f0704f",
+        "name": "Get All Products",
+        "credentials": {
+          "shopifyAccessTokenApi": {
+            "id": "ydMK26GiyQu6TtTr",
+            "name": "Shopify Access Token account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "descriptionType": "manual",
+          "toolDescription": "Use this tool to update a specific product",
+          "authentication": "accessToken",
+          "resource": "product",
+          "operation": "update",
+          "productId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Product_ID', ``, 'string') }}",
+          "updateFields": {}
+        },
+        "type": "n8n-nodes-base.shopifyTool",
+        "typeVersion": 1,
+        "position": [
+          -120,
+          260
+        ],
+        "id": "d9efa266-98d1-4ca5-9a6e-9488f27defb1",
+        "name": "Update A Product",
+        "credentials": {
+          "shopifyAccessTokenApi": {
+            "id": "ydMK26GiyQu6TtTr",
+            "name": "Shopify Access Token account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "descriptionType": "manual",
+          "toolDescription": "Use this tool to update a specific product",
+          "authentication": "accessToken",
+          "resource": "product",
+          "title": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Title', `Tile should be`, 'string') }}",
+          "additionalFields": {
+            "body_html": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Body_HTML', ``, 'string') }}",
+            "images": [
+              {
+                "src": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Source', ``, 'string') }}",
+                "id": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('ID', ``, 'number') }}"
+              }
+            ],
+            "tags": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Tags', ``, 'string') }}"
+          }
+        },
+        "type": "n8n-nodes-base.shopifyTool",
+        "typeVersion": 1,
+        "position": [
+          140,
+          260
+        ],
+        "id": "c598602e-38b8-41d0-a190-b32cef06d786",
+        "name": "Add New Product",
+        "credentials": {
+          "shopifyAccessTokenApi": {
+            "id": "ydMK26GiyQu6TtTr",
+            "name": "Shopify Access Token account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "descriptionType": "manual",
+          "toolDescription": "Use this tool to delete/remove a specific product",
+          "authentication": "accessToken",
+          "resource": "product",
+          "operation": "delete",
+          "productId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Product_ID', ``, 'string') }}"
+        },
+        "type": "n8n-nodes-base.shopifyTool",
+        "typeVersion": 1,
+        "position": [
+          320,
+          260
+        ],
+        "id": "b2d91686-459b-4260-87f5-4958fcef6826",
+        "name": "Delete A Product",
+        "credentials": {
+          "shopifyAccessTokenApi": {
+            "id": "ydMK26GiyQu6TtTr",
+            "name": "Shopify Access Token account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "descriptionType": "manual",
+          "toolDescription": "Use this tool to get inventory information for a specific product",
+          "authentication": "accessToken",
+          "resource": "inventoryLevel",
+          "operation": "getAll",
+          "inventoryItemIds": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Inventory_Item_ID', ``, 'string') }}"
+        },
+        "type": "n8n-nodes-base.shopifyTool",
+        "typeVersion": 1,
+        "position": [
+          -560,
+          420
+        ],
+        "id": "6a521b47-c98d-4ac2-b87e-19f3b584c611",
+        "name": "Get Inventory Levels",
+        "credentials": {
+          "shopifyAccessTokenApi": {
+            "id": "ydMK26GiyQu6TtTr",
+            "name": "Shopify Access Token account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "descriptionType": "manual",
+          "toolDescription": "Use this tool to update inventory levels for a specific product",
+          "authentication": "accessToken",
+          "resource": "inventoryLevel",
+          "operation": "update",
+          "locationId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Location_ID', ``, 'string') }}",
+          "inventoryItemId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Inventory_Item_ID', ``, 'string') }}",
+          "additionalFields": {
+            "available": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Available_Quantity', ``, 'number') }}"
+          }
+        },
+        "type": "n8n-nodes-base.shopifyTool",
+        "typeVersion": 1,
+        "position": [
+          -340,
+          420
+        ],
+        "id": "d7c83a94-b762-4fe8-b9a8-cc863a9ea2f1",
+        "name": "Update Inventory Level",
+        "credentials": {
+          "shopifyAccessTokenApi": {
+            "id": "ydMK26GiyQu6TtTr",
+            "name": "Shopify Access Token account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "descriptionType": "manual",
+          "toolDescription": "Use this tool to search for products by title, vendor, product type, or tags",
+          "authentication": "accessToken",
+          "resource": "product",
+          "operation": "getAll",
+          "limit": "50",
+          "additionalFields": {
+            "title": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Search_Title', ``, 'string') }}",
+            "product_type": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Product_Type', ``, 'string') }}",
+            "vendor": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Vendor', ``, 'string') }}",
+            "handle": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Handle', ``, 'string') }}"
+          }
+        },
+        "type": "n8n-nodes-base.shopifyTool",
+        "typeVersion": 1,
+        "position": [
+          -120,
+          420
+        ],
+        "id": "f5e9a3c7-d1b4-4e23-a7b6-78d52a9c4f70",
+        "name": "Search Products",
+        "credentials": {
+          "shopifyAccessTokenApi": {
+            "id": "ydMK26GiyQu6TtTr",
+            "name": "Shopify Access Token account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "descriptionType": "manual",
+          "toolDescription": "Use this tool to retrieve product variants for a specific product",
+          "authentication": "accessToken",
+          "resource": "productVariant",
+          "operation": "getAll",
+          "productId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Product_ID', ``, 'string') }}"
+        },
+        "type": "n8n-nodes-base.shopifyTool",
+        "typeVersion": 1,
+        "position": [
+          140,
+          420
+        ],
+        "id": "eb9f4c3a-5d72-49e8-aeb2-893dc5f7e98d",
+        "name": "Get Product Variants",
+        "credentials": {
+          "shopifyAccessTokenApi": {
+            "id": "ydMK26GiyQu6TtTr",
+            "name": "Shopify Access Token account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "descriptionType": "manual",
+          "toolDescription": "Use this tool to update the price of a product variant",
+          "authentication": "accessToken",
+          "resource": "productVariant",
+          "operation": "update",
+          "variantId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Variant_ID', `ID of the product variant to update`, 'string') }}",
+          "updateFields": {
+            "price": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Price', `New price for the product variant`, 'string') }}",
+            "compare_at_price": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Compare_At_Price', `Original price for comparison (if on sale)`, 'string') }}"
+          }
+        },
+        "type": "n8n-nodes-base.shopifyTool",
+        "typeVersion": 1,
+        "position": [
+          320,
+          420
+        ],
+        "id": "4e7b9c2d-81f3-45a9-b1d7-e923a5c8f21e",
+        "name": "Update Product Price",
+        "credentials": {
+          "shopifyAccessTokenApi": {
+            "id": "ydMK26GiyQu6TtTr",
+            "name": "Shopify Access Token account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "assignments": {
+            "assignments": [
+              {
+                "id": "64ea67ba-5abc-4777-8c49-10d742199b11",
+                "name": "output",
+                "value": "={{ $json.output }}",
+                "type": "string"
+              }
+            ]
+          },
+          "options": {}
+        },
+        "type": "n8n-nodes-base.set",
+        "typeVersion": 3.4,
+        "position": [
+          40,
+          -160
+        ],
+        "id": "d2d7b710-335a-4f21-ad32-75ae94dff6d7",
+        "name": "Edit Fields"
+      },
+      {
+        "parameters": {},
+        "id": "a60c8572-56c1-4bf3-8352-a6419a475887",
+        "name": "Window Buffer Memory",
+        "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+        "typeVersion": 1.1,
+        "position": [
+          -560,
+          -160
+        ]
+      }
+    ],
+    "connections": {
+      "OpenRouter Chat Model2": {
+        "ai_languageModel": [
+          [
+            {
+              "node": "Product Management Agent",
+              "type": "ai_languageModel",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Product Management Agent": {
+        "main": [
+          [
+            {
+              "node": "Edit Fields",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "When Executed by Another Workflow": {
+        "main": [
+          [
+            {
+              "node": "Product Management Agent",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "When chat message received": {
+        "main": [
+          [
+            {
+              "node": "Product Management Agent",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Window Buffer Memory": {
+        "ai_memory": [
+          [
+            {
+              "node": "Product Management Agent",
+              "type": "ai_memory",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Get A Product": {
+        "ai_tool": [
+          [
+            {
+              "node": "Product Management Agent",
+              "type": "ai_tool",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Get All Products": {
+        "ai_tool": [
+          [
+            {
+              "node": "Product Management Agent",
+              "type": "ai_tool",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Update A Product": {
+        "ai_tool": [
+          [
+            {
+              "node": "Product Management Agent",
+              "type": "ai_tool",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Add New Product": {
+        "ai_tool": [
+          [
+            {
+              "node": "Product Management Agent",
+              "type": "ai_tool",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Delete A Product": {
+        "ai_tool": [
+          [
+            {
+              "node": "Product Management Agent",
+              "type": "ai_tool",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Get Inventory Levels": {
+        "ai_tool": [
+          [
+            {
+              "node": "Product Management Agent",
+              "type": "ai_tool",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Update Inventory Level": {
+        "ai_tool": [
+          [
+            {
+              "node": "Product Management Agent",
+              "type": "ai_tool",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Search Products": {
+        "ai_tool": [
+          [
+            {
+              "node": "Product Management Agent",
+              "type": "ai_tool",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Get Product Variants": {
+        "ai_tool": [
+          [
+            {
+              "node": "Product Management Agent",
+              "type": "ai_tool",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Update Product Price": {
+        "ai_tool": [
+          [
+            {
+              "node": "Product Management Agent",
+              "type": "ai_tool",
+              "index": 0
+            }
+          ]
+        ]
+      }
+    },
+    "pinData": {},
+    "meta": {
+      "templateCredsSetupCompleted": true,
+      "instanceId": "69a529eeb24202ae982789d4d111b2b603401089ff539a858feb5e663276ba44"
+    }
+  }
+}

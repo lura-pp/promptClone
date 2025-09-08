@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "mcp-prompts": {
+      "command": "npx",
+      "args": ["-y", "@sparesparrow/mcp-prompts"],
+      "env": {
+        "STORAGE_TYPE": "file",
+        "PROMPTS_DIR": "./prompts",
+        "LOG_LEVEL": "info",
+        "PORT": "3003",
+        "HOST": "0.0.0.0"
+      }
+    }
+  }
+}

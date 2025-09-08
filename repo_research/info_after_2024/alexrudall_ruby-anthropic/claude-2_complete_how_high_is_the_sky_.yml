@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.anthropic.com/v1/complete
+    body:
+      encoding: UTF-8
+      string: '{"model":"claude-2","max_tokens_to_sample":5,"prompt":"\n\nHuman: How
+        high is the sky?\n\nAssistant:"}'
+    headers:
+      X-Api-Key:
+      - "<ANTHROPIC_API_KEY>"
+      Anthropic-Version:
+      - '2023-06-01'
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 29 Jan 2025 12:42:55 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Request-Id:
+      - req_0198ngFKNhsbiAJcnsxVJU1y
+      Via:
+      - 1.1 google
+      Cf-Cache-Status:
+      - DYNAMIC
+      X-Robots-Tag:
+      - none
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 90994e09db8a76a7-LHR
+    body:
+      encoding: ASCII-8BIT
+      string: '{"type":"completion","id":"compl_0153DQ5G1U98PpDfu2wiwTby","completion":"
+        The sky doesn''t have","stop_reason":"max_tokens","model":"claude-2.1","stop":null,"log_id":"compl_0153DQ5G1U98PpDfu2wiwTby"}'
+  recorded_at: Wed, 29 Jan 2025 12:42:55 GMT
+recorded_with: VCR 6.1.0

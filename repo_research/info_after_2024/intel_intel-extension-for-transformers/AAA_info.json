@@ -1,0 +1,10 @@
+{
+    "run_generation.py": 2,
+    "run_assisted_generation.py": 1,
+    "run_generation_sq.py": 0,
+    "run_generation_cpu_woq.py": 0,
+    "run_generation_gpu_woq.py": 0,
+    "fastrag_service.py": 5,
+    "chat_with_memory.py": 2,
+    "prompt.py": 2
+}

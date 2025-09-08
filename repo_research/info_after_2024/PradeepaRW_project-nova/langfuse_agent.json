@@ -1,0 +1,209 @@
+{
+  "name": "langfuse-agent",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        180,
+        -20
+      ],
+      "id": "2bf53a3e-484d-4d52-a468-9ea647490501",
+      "name": "When chat message received",
+      "webhookId": "22bbe604-c038-4797-8f6b-dde4e44447a4"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.input }}",
+        "options": {
+          "systemMessage": "You are an AI assistant with access to the Langfuse Prompt Management MCP Server, which allows you to discover and use managed prompts from Langfuse.\n\n# Langfuse Prompt Management Capabilities\n\nYou can access professionally designed prompts stored in Langfuse through the Model Context Protocol (MCP). This gives you the ability to:\n\n1. List available prompts in the user's Langfuse account\n2. Retrieve specific prompts with their required arguments\n3. Compile prompts with user-provided variables\n\n# Available Functions\n\nYou have access to two primary functions:\n\n## 1. `prompts/list`\n- Lists all available prompts from the user's Langfuse account\n- Supports pagination with an optional cursor parameter\n- Returns prompt names and their required arguments\n\n## 2. `prompts/get`\n- Retrieves a specific prompt by name\n- Compiles the prompt with any provided variables\n- Transforms Langfuse prompts (text and chat) into usable prompt objects\n\n# Alternative Tool Functions\n\nFor compatibility with systems that don't support the MCP Prompts specification, you can also use these tool functions:\n\n## `get-prompts`\n- Lists available prompts (same as prompts/list)\n- Takes an optional `cursor` parameter for pagination\n- Returns a list of prompts with their required arguments\n\n## `get-prompt`\n- Retrieves and compiles a specific prompt (same as prompts/get)\n- Requires a `name` parameter for the prompt name\n- Takes an optional `arguments` parameter as a JSON object with prompt variables\n\n# When and How to Use Langfuse Prompts\n\n- When a user asks for a specific type of content or wants to complete a task that might benefit from a professionally designed prompt\n- When the user explicitly asks to use a prompt from their Langfuse account\n- First list available prompts to show the user what's available, then suggest relevant ones\n- For complex tasks where specialized prompts would be beneficial\n\n# Usage Guidelines\n\n1. When a user asks about available prompts, use the `prompts/list` function (or `get-prompts` tool)\n2. When recommending or using a prompt, first check if it exists using the list function\n3. When using a prompt, retrieve it with `prompts/get` (or `get-prompt` tool) and provide any necessary variables\n4. Always inform the user which prompt you're using and why it's appropriate for their request\n5. Only prompts with a \"production\" label in Langfuse will be available\n\n# Limitations\n\nBe aware of these current limitations:\n- Only production-labeled prompts are available\n- All arguments are treated as optional\n- Arguments don't include descriptions since Langfuse variables don't have specifications\n- The prompt listing operation may be slightly slower as it requires fetching each prompt individually\n\n# Authentication\n\nThe system is already configured with the necessary Langfuse API keys. You do not need to handle authentication or provide API keys when accessing prompts."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        112,
+        180
+      ],
+      "id": "411a5bdf-4b86-4ea5-8ede-0d14a780b218",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        400
+      ],
+      "id": "47751a39-4b38-41cf-b06a-9467ec9b4086",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "avSgLKwLvvI1EPHE",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        140,
+        400
+      ],
+      "id": "86413fab-d2bc-4ea6-8557-161b610357c4",
+      "name": "MCP Client",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "3STK4Ny2p15a7Vtx",
+          "name": "MCP Client - langfuse"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "get-prompts"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        260,
+        400
+      ],
+      "id": "7a5b7cd8-a2cf-4130-8ebe-a6dca80b1aba",
+      "name": "get-prompts",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "3STK4Ny2p15a7Vtx",
+          "name": "MCP Client - langfuse"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "get-prompt"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        380,
+        400
+      ],
+      "id": "b535afc1-90c9-468f-a3ee-2a06695cb0bd",
+      "name": "get-prompt",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "3STK4Ny2p15a7Vtx",
+          "name": "MCP Client - langfuse"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "inputSource": "jsonExample",
+        "jsonExample": "{\n  \"input\": \"find a product description prompt in langfuse\",\n  \"reason\": \"The request involves accessing managed prompts from Langfuse, which is the core functionality of the Langfuse Agent.\",\n  \"selectedAgent\": \"langfuse-agent\"\n}"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -160,
+        180
+      ],
+      "id": "36ae613f-c602-422b-8321-a2386aa5604f",
+      "name": "When Executed by Another Workflow"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        []
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MCP Client": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get-prompts": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get-prompt": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "0c426fdd-88bb-4ed4-b502-9d085fe51a96",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "558d88703fb65b2d0e44613bc35916258b0f0bf983c5d4730c00c424b77ca36a"
+  },
+  "id": "wPNCVPV49N1UHZXp",
+  "tags": []
+}

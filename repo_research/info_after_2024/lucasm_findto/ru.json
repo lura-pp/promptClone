@@ -1,0 +1,282 @@
+{
+  "country": {
+    "name": "Россия",
+    "code": "RU"
+  },
+  "t": {
+    "metadata": {
+      "title": "Findto — вашего умного помощника в мире поиска",
+      "description": "Децентрализованный поиск, которому можно доверять. Быстро. Просто. Эффективно."
+    },
+    "feedback": {
+      "title": "Отправить отзыв",
+      "url": "https://forms.gle/US69JvUT1qxYkiF58"
+    },
+    "welcome": {
+      "goodMorning": "Доброе утро",
+      "goodEvening": "Добрый день",
+      "goodNight": "Добрый вечер"
+    },
+    "voice": {
+      "voice": "Voice",
+      "speak": "Speak now",
+      "allow": "Waiting..."
+    },
+    "widgetProtection": {
+      "title": "Защита",
+      "description": "Проверьте репутацию выбранного шрифта.",
+      "source": "Источник",
+      "carbon": "Углеродный след",
+      "security": "Безопасность",
+      "privacy": "Частная жизнь"
+    },
+    "copyright": "Программное обеспечение с открытым исходным кодом, созданное",
+    "about": "О проекте",
+    "privacy": "Политика конфиденциальности",
+    "terms": "Условия эксплуатации",
+    "donate": "Поддержать проект",
+    "accept": "Принимать",
+    "learnMore": "Познакомьтесь с Findto",
+    "viewNearbyPlaces": "View nearby places",
+    "openApp": "Открыть Findto",
+    "placeholder": "Поиск в",
+    "search": "Поиск",
+    "clear": "Очистить",
+    "powered": "Питаться от",
+    "settings": "Настройки",
+    "theme": "Цвет",
+    "language": "Язык",
+    "contribute": "Внести вклад",
+    "explore": "Исследуйте",
+    "trends": "Тенденции",
+    "stories": "Истории",
+    "categories": "Режимы",
+    "category": "Режим",
+    "warnings": {
+      "cookies": "Findto использует файлы cookie. Мы уважаем вашу конфиденциальность и не храним персональные данные."
+    }
+  },
+  "categories": [
+    {
+      "name": "Home",
+      "name_translated": "Дом",
+      "active": true,
+      "data": [
+        {
+          "name": "Yandex",
+          "action": "https://www.yandex.com/search/?text="
+        },
+        {
+          "name": "Google",
+          "action": "https://www.google.ru/search?q="
+        },
+        {
+          "name": "ChatGPT",
+          "action": "https://chatgpt.com/?q="
+        },
+        {
+          "name": "Copilot",
+          "action": "https://copilot.microsoft.com/?q="
+        },
+        {
+          "name": "YouTube",
+          "action": "https://www.youtube.com/results?search_query="
+        },
+        {
+          "name": "VK",
+          "action": "https://vk.com/search?q="
+        },
+        {
+          "name": "Mail.ru",
+          "action": "https://news.mail.ru/search/?q="
+        },
+        {
+          "name": "Rutube",
+          "action": "https://rutube.ru/search/?query="
+        },
+        {
+          "name": "Reddit",
+          "action": "https://www.reddit.com/search?q="
+        },
+        {
+          "name": "X",
+          "action": "https://x.com/search?src=typed_query&q="
+        },
+        {
+          "name": "Instagram",
+          "action": "https://www.instagram.com/explore/tags/"
+        },
+        {
+          "name": "LinkedIn",
+          "action": "https://www.linkedin.com/search/results/index/?keywords="
+        },
+        {
+          "name": "Pinterest",
+          "action": "https://br.pinterest.com/search/pins/?q="
+        },
+        {
+          "name": "RBC",
+          "action": "https://www.rbc.ru/search/?query="
+        },
+        {
+          "name": "Ozon",
+          "action": "https://www.ozon.ru/search/?text="
+        },
+        {
+          "name": "Avito",
+          "action": "https://www.avito.ru/all?q="
+        },
+        {
+          "name": "Wildberries",
+          "action": "https://www.wildberries.ru/catalog/0/search.aspx?search="
+        },
+        {
+          "name": "Government.ru",
+          "action": "http://government.ru/en/search/?q="
+        }
+      ]
+    },
+    {
+      "name": "AI",
+      "name_translated": "ИИ",
+      "active": true,
+      "data": [
+        {
+          "name": "ChatGPT",
+          "action": "https://chatgpt.com/?q="
+        },
+        {
+          "name": "Copilot",
+          "action": "https://copilot.microsoft.com/?q="
+        },
+        {
+          "name": "Perplexity",
+          "action": "https://www.perplexity.ai/?q="
+        },
+        {
+          "name": "Grok",
+          "action": "https://grok.com/?q="
+        },
+        {
+          "name": "DeepSeek",
+          "action": "https://chat.deepseek.com/?q="
+        },
+        {
+          "name": "Claude",
+          "action": "https://claude.ai/new?q="
+        },
+        {
+          "name": "You",
+          "action": "https://you.com/search?fromSearchBar=true&tbm=youchat&q="
+        },
+        {
+          "name": "HuggingChat",
+          "action": "https://huggingface.co/chat?q="
+        },
+        {
+          "name": "Gemini",
+          "action": "https://gemini.google.com/app?q="
+        },
+        {
+          "name": "Mistral",
+          "action": "https://chat.mistral.ai/chat?q="
+        },
+        {
+          "name": "Meta AI",
+          "action": "https://www.meta.ai/?q="
+        },
+        {
+          "name": "Phind",
+          "action": "https://www.phind.com/agent?q="
+        },
+        {
+          "name": "iAsk",
+          "action": "https://iask.ai/?mode=question&q="
+        },
+        {
+          "name": "Adobe Firefly",
+          "action": "https://firefly.adobe.com/generate/images?prompt="
+        },
+        {
+          "name": "Cohere",
+          "action": "https://coral.cohere.com/?q="
+        },
+        {
+          "name": "Falcon",
+          "action": "https://chat.falconllm.tii.ae/?q="
+        },
+        {
+          "name": "Qwen",
+          "action": "https://chat.qwenlm.ai/?q="
+        }
+      ]
+    },
+    {
+      "name": "News",
+      "name_translated": "Новости",
+      "active": true,
+      "data": [
+        {
+          "name": "Google News",
+          "action": "https://news.google.com/search?q="
+        },
+        {
+          "name": "Mail.ru",
+          "action": "https://news.mail.ru/search/?q="
+        },
+        {
+          "name": "RIA Novosti",
+          "action": "https://ria.ru/search/?query="
+        },
+        {
+          "name": "TASS",
+          "action": "https://tass.com/search?searchStr="
+        },
+        {
+          "name": "Lenta.ru",
+          "action": "https://lenta.ru/search?query="
+        },
+        {
+          "name": "Gazeta.ru",
+          "action": "https://www.gazeta.ru/search.shtml?text="
+        },
+        {
+          "name": "RBC",
+          "action": "https://www.rbc.ru/search/?query="
+        },
+        {
+          "name": "Sputnik",
+          "action": "https://sputnikglobe.com/search/?query="
+        },
+        {
+          "name": "RT",
+          "action": "https://www.rt.com/search?q="
+        },
+        {
+          "name": "Moscow Times",
+          "action": "https://www.themoscowtimes.com/search?q="
+        },
+        {
+          "name": "CNN",
+          "action": "https://edition.cnn.com/search?q="
+        },
+        {
+          "name": "Reuters",
+          "action": "https://www.reuters.com/site-search/?query="
+        },
+        {
+          "name": "BBC",
+          "action": "https://www.bbc.co.uk/search?q="
+        },
+        {
+          "name": "Feedly",
+          "action": "https://feedly.com/i/discover/sources/search/feed/"
+        },
+        {
+          "name": "Flipboard",
+          "action": "https://flipboard.com/search/"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+    "identify_project.py": 1,
+    "generate_ecs_cloudformation_code.py": 1,
+    "generate_eks_cloudformation_code.py": 1,
+    "generate_ecs_terraform_code.py": 1,
+    "generate_eks_terraform_code.py": 1,
+    "generate_buildspec.py": 1,
+    "generate_docker_file.py": 3
+}

@@ -1,0 +1,209 @@
+name: module-image-generation-kc-multi-model-ccsdk
+
+on:
+  workflow_call:
+    inputs:
+      concept:
+        description: 'ユーザーのコンセプト'
+        required: true
+        type: string
+      image-prompt:
+        description: '画像生成用プロンプト'
+        required: true
+        type: string
+      model-type:
+        description: '使用する画像生成モデル (例: t2i-fal-imagen4-ultra)'
+        required: true
+        type: string
+      branch-name:
+        description: 'ワーキングブランチ名'
+        required: true
+        type: string
+      folder-name:
+        description: 'プロジェクトフォルダ名'
+        required: true
+        type: string
+      video_index:
+        description: '動画インデックス'
+        required: false
+        type: string
+        default: '1'
+    outputs:
+      completed:
+        description: '完了ステータス'
+        value: ${{ jobs.image-generation.outputs.completed }}
+      image-url:
+        description: '画像URL'
+        value: ${{ jobs.image-generation.outputs.image-url }}
+    secrets:
+      anthropic_api_key:
+        description: 'Anthropic API Key'
+        required: true
+      github_pat:
+        description: 'GitHub Token'
+        required: true
+
+jobs:
+  image-generation:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      completed: ${{ steps.image.outputs.completed }}
+      image-url: ${{ steps.image.outputs.image-url }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.branch-name }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install Claude Code SDK
+        run: npm install @anthropic-ai/claude-code
+      
+      - name: 画像生成エージェント (マルチモデル対応)
+        id: image
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.anthropic_api_key }}
+        run: |
+          echo "::group::🎨 Image Generation Agent Execution (Multi-Model)"
+          echo "Starting at: $(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)"
+          
+          # 設定
+          USER_CONCEPT="${{ inputs.concept }}"
+          PLANNED_IMAGE_PROMPT="${{ inputs.image-prompt }}"
+          MODEL_TYPE="${{ inputs.model-type }}"
+          FOLDER_NAME="${{ inputs.folder-name }}"
+          VIDEO_INDEX="${{ inputs.video_index }}"
+          IMAGES_DIR="$FOLDER_NAME/images-${VIDEO_INDEX}"
+          
+          echo "User concept: $USER_CONCEPT"
+          echo "Planned image prompt: $PLANNED_IMAGE_PROMPT"
+          echo "Model type: $MODEL_TYPE"
+          echo "Video index: $VIDEO_INDEX"
+          echo "Target folder: $IMAGES_DIR"
+          
+          # 画像フォルダを事前に作成
+          if [ ! -d "$IMAGES_DIR" ]; then
+            mkdir -p "$IMAGES_DIR"
+            echo "📁 Created images folder: $IMAGES_DIR"
+          fi
+          
+          # MCP設定の確認
+          MCP_CONFIG_PATH=".claude/mcp-kamuicode.json"
+          MCP_CONFIG_ABS_PATH="$(pwd)/$MCP_CONFIG_PATH"
+          
+          # MCP設定ファイルの存在確認
+          if [ -f "$MCP_CONFIG_ABS_PATH" ]; then
+            echo "✅ MCP config file exists at: $MCP_CONFIG_ABS_PATH"
+          else
+            echo "❌ MCP config file not found at: $MCP_CONFIG_ABS_PATH"
+            exit 1
+          fi
+          
+          # プロンプトの構築
+          PROMPT="指定されたモデルタイプを使用して高品質な画像を生成してください。
+
+          **元のユーザー指示**: $USER_CONCEPT
+          **最適化された画像生成プロンプト**: $PLANNED_IMAGE_PROMPT
+          **使用するモデルタイプ**: $MODEL_TYPE
+
+          **実行手順**:
+          1. まず、\`.github/workflows/usage/kamuicode-usage.md\`ファイルを読み込んで、モデルタイプ「$MODEL_TYPE」に対応するMCPツール名を確認してください
+          2. ファイルから以下の情報を抽出:
+             - モデルの表示名（例: Imagen4 Ultra）
+             - submitツール名（例: mcp__t2i-fal-imagen4-ultra__imagen4_ultra_submit）
+             - statusツール名（例: mcp__t2i-fal-imagen4-ultra__imagen4_ultra_status）
+             - resultツール名（例: mcp__t2i-fal-imagen4-ultra__imagen4_ultra_result）
+          3. **最適化された画像生成プロンプト**（$PLANNED_IMAGE_PROMPT）を使用して、抽出したツールで画像生成
+          4. submitツールで画像生成を開始
+          5. statusツールでステータス確認
+          6. resultツールで結果取得してGoogle URLを取得
+          7. **重要**: 生成時に取得したGoogle URLを「$IMAGES_DIR/image-url.txt」ファイルに保存
+          8. 取得したGoogle URLをBashツールで「$IMAGES_DIR/image.png」にダウンロード保存
+
+          **重要な注意点**:
+          - usage/kamuicode-usage.mdから正しいツール名を読み取ること
+          - Google URLの有効期限は約1時間のため、生成後すぐにダウンロード
+          - 必ずGoogle提供の認証済URLを使用
+          - 画像は必ず「$IMAGES_DIR」ディレクトリに保存
+          - ファイル名は「image.png」とする
+          - **最重要**: 生成時のGoogle URLを「$IMAGES_DIR/image-url.txt」に保存し、次のジョブで参照できるようにする
+          - **両方を実行**: ①Google URLをテキストファイルに保存 ②Google URLから画像をダウンロードしてローカル保存"
+          
+          echo "🚀 Starting Image Generation Agent Claude Code CLI..."
+          echo "📝 Prompt length: ${#PROMPT}"
+          
+          # Claude Code CLIの実行（MCPツールはワイルドカードで許可）
+          npx @anthropic-ai/claude-code \
+            --mcp-config="$MCP_CONFIG_ABS_PATH" \
+            --allowedTools "mcp__t2i-*,Read,Bash" \
+            --max-turns 40 \
+            --verbose \
+            --permission-mode "acceptEdits" \
+            -p "$PROMPT" || {
+              echo "::error::❌ Claude Code CLI execution failed"
+              exit 1
+            }
+          
+          # 生成された画像の確認
+          echo ""
+          echo "📸 Checking generated images..."
+          if [ -d "$IMAGES_DIR" ]; then
+            IMAGE_COUNT=$(find "$IMAGES_DIR" -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" | wc -l)
+            echo "::notice::📸 Generated $IMAGE_COUNT images using $MODEL_NAME"
+            if [ "$IMAGE_COUNT" -gt 0 ]; then
+              # Google URLを確認してGitHub Outputに設定
+              if [ -f "$IMAGES_DIR/image-url.txt" ]; then
+                GOOGLE_URL=$(cat "$IMAGES_DIR/image-url.txt")
+                echo "Google image URL: $GOOGLE_URL"
+                echo "image-url=$GOOGLE_URL" >> $GITHUB_OUTPUT
+              else
+                echo "::warning::⚠️ Google image URL not found in file"
+                echo "image-url=" >> $GITHUB_OUTPUT
+              fi
+            else
+              echo "::error::❌ No images were generated"
+              exit 1
+            fi
+          else
+            echo "::error::❌ Images directory not found"
+            exit 1
+          fi
+          
+          echo "completed=true" >> $GITHUB_OUTPUT
+          echo "::endgroup::"
+      
+      - name: Commit and push images
+        env:
+          GH_TOKEN: ${{ secrets.github_pat }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ${{ inputs.folder-name }}/
+          if git diff --cached --quiet; then
+            echo "No images to commit"
+          else
+            git commit -m "Add generated images using ${{ inputs.model-type }}: ${{ inputs.concept }}
+            
+            🤖 Generated with [Claude Code](https://claude.ai/code)
+            
+            Co-Authored-By: Claude <noreply@anthropic.com>"
+            # 並列実行での競合を回避するためのリトライ処理
+            for i in {1..3}; do
+              git pull --rebase origin ${{ inputs.branch-name }} || true
+              if git push origin ${{ inputs.branch-name }}; then
+                echo "✅ Push successful on attempt $i"
+                break
+              else
+                echo "⚠️ Push failed on attempt $i, retrying..."
+                # ランダムな待機時間（1-5秒）
+                sleep $((RANDOM % 5 + 1))
+              fi
+            done
+          fi

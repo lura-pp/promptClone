@@ -1,0 +1,887 @@
+name: Create Video from Prompt
+
+on:
+  workflow_dispatch:
+    inputs:
+      prompt:
+        description: '動画のプロンプト（画像生成用）'
+        required: true
+        type: string
+
+jobs:
+  setup-branch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      branch-name: ${{ steps.create-branch.outputs.branch-name }}
+      folder-name: ${{ steps.create-branch.outputs.folder-name }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Create branch for video generation
+        id: create-branch
+        run: |
+          BRANCH_NAME="video/$(date +%Y%m%d)-${{ github.run_id }}"
+          FOLDER_NAME="video-$(date +%Y%m%d)-${{ github.run_id }}"
+          git checkout -b $BRANCH_NAME
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git push origin $BRANCH_NAME
+          echo "branch-name=$BRANCH_NAME" >> $GITHUB_OUTPUT
+          echo "folder-name=$FOLDER_NAME" >> $GITHUB_OUTPUT
+          echo "Created branch: $BRANCH_NAME"
+          echo "Folder name: $FOLDER_NAME"
+
+  planning:
+    runs-on: ubuntu-latest
+    needs: [setup-branch]
+    permissions:
+      contents: write
+    outputs:
+      planning-completed: ${{ steps.planning.outputs.completed }}
+      image-prompt: ${{ steps.planning.outputs.image-prompt }}
+      video-concept: ${{ steps.planning.outputs.video-concept }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.setup-branch.outputs.branch-name }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install Claude Code SDK
+        run: npm install @anthropic-ai/claude-code
+      
+      - name: 動画制作計画エージェント
+        id: planning
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          echo "::group::📋 Video Planning Agent Execution"
+          echo "Starting at: $(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)"
+          
+          # 設定
+          USER_PROMPT="${{ inputs.prompt }}"
+          FOLDER_NAME="${{ needs.setup-branch.outputs.folder-name }}"
+          PLANNING_DIR="$FOLDER_NAME/planning"
+          
+          echo "User prompt: $USER_PROMPT"
+          echo "Planning folder: $PLANNING_DIR"
+          
+          # 計画フォルダを事前に作成
+          if [ ! -d "$PLANNING_DIR" ]; then
+            mkdir -p "$PLANNING_DIR"
+            echo "📁 Created planning folder: $PLANNING_DIR"
+          fi
+          
+          # プロンプトの構築
+          PROMPT="あなたは動画制作の専門プランナーです。ユーザーの指示から最適な画像と動画を生成するための詳細な計画を立ててください。
+
+          **ユーザーの指示**: $USER_PROMPT
+
+          **タスク**:
+          1. ユーザーの指示を分析し、どのような画像と動画を生成すべきかを計画
+          2. 高品質な画像生成用のプロンプトを作成
+          3. 動画のコンセプトと方向性を定義
+          4. 計画書を「$PLANNING_DIR/video-plan.md」に保存
+          5. 画像生成用プロンプトを「$PLANNING_DIR/image-prompt.txt」に保存
+          6. 動画コンセプトを「$PLANNING_DIR/video-concept.txt」に保存
+
+          **計画のポイント**:
+          - ユーザーの意図を正確に理解
+          - 魅力的で視覚的に美しい画像・動画の構想
+          - 技術的制約を考慮した現実的な計画
+          - 一貫したビジュアルコンセプト
+          - 具体的で詳細なプロンプト作成
+
+          **画像生成プロンプトの要件**:
+          - Imagen4 Ultraに最適化された詳細なプロンプト
+          - 視覚的要素（色彩、構図、スタイル）を明確に指定
+          - 高解像度・高品質を意識した記述
+          - 50-100語程度の適切な長さ
+
+          **動画コンセプトの要件**:
+          - 生成される画像をベースにした動画の方向性
+          - 動きやアニメーションの種類
+          - 雰囲気や感情表現
+          - Vidu Q1での動画生成に適した内容
+
+          **重要**: 
+          1. 必ず以下の5つのファイルを作成してください：
+             - $PLANNING_DIR/video-plan.md
+             - $PLANNING_DIR/image-prompt.txt
+             - $PLANNING_DIR/image-prompt.md（ユーザー確認用）
+             - $PLANNING_DIR/video-concept.txt
+             - $PLANNING_DIR/video-concept.md（ユーザー確認用）
+          2. txtファイルは機械処理用（1行テキスト）、mdファイルはユーザー確認用
+          3. 各ファイルの内容は具体的で詳細に記述してください
+          4. ファイル作成後、必ずファイルパスを確認・報告してください"
+          
+          echo "🚀 Starting Planning Agent Claude Code CLI..."
+          echo "📝 Prompt length: ${#PROMPT}"
+          
+          # Claude Code CLIの実行
+          npx @anthropic-ai/claude-code \
+            --allowedTools "Read,Write,Edit" \
+            --max-turns 25 \
+            --verbose \
+            --permission-mode "acceptEdits" \
+            -p "$PROMPT" || {
+              echo "::error::❌ Claude Code CLI execution failed"
+              exit 1
+            }
+          
+          # 生成された計画の確認
+          echo ""
+          echo "📋 Checking generated planning files..."
+          
+          # 画像プロンプトの確認
+          if [ -f "$PLANNING_DIR/image-prompt.txt" ]; then
+            IMAGE_PROMPT=$(cat "$PLANNING_DIR/image-prompt.txt" | tr '\n' ' ')
+            echo "::notice::✅ Image prompt generated"
+            echo "Image prompt: $IMAGE_PROMPT"
+            echo "image-prompt=$IMAGE_PROMPT" >> $GITHUB_OUTPUT
+          else
+            echo "::error::❌ Image prompt file not found"
+            exit 1
+          fi
+          
+          # 画像プロンプト詳細版の確認
+          if [ -f "$PLANNING_DIR/image-prompt.md" ]; then
+            echo "::notice::✅ Image prompt (MD) generated"
+          else
+            echo "::warning::⚠️ Image prompt (MD) not found"
+          fi
+          
+          # 動画コンセプトの確認
+          if [ -f "$PLANNING_DIR/video-concept.txt" ]; then
+            VIDEO_CONCEPT=$(head -5 "$PLANNING_DIR/video-concept.txt" | tr '\n' ' ')
+            echo "::notice::✅ Video concept generated"
+            echo "Video concept: $VIDEO_CONCEPT"
+            echo "video-concept=$VIDEO_CONCEPT" >> $GITHUB_OUTPUT
+          else
+            echo "::error::❌ Video concept file not found"
+            exit 1
+          fi
+          
+          # 動画コンセプト詳細版の確認
+          if [ -f "$PLANNING_DIR/video-concept.md" ]; then
+            echo "::notice::✅ Video concept (MD) generated"
+          else
+            echo "::warning::⚠️ Video concept (MD) not found"
+          fi
+          
+          # 計画書の確認
+          if [ -f "$PLANNING_DIR/video-plan.md" ]; then
+            echo "::notice::✅ Video plan document generated"
+            echo "First 10 lines of plan:"
+            head -10 "$PLANNING_DIR/video-plan.md"
+          else
+            echo "::warning::⚠️ Video plan document not found"
+          fi
+          
+          echo "completed=true" >> $GITHUB_OUTPUT
+          echo "::endgroup::"
+      
+      - name: Commit and push planning
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ${{ needs.setup-branch.outputs.folder-name }}/
+          if git diff --cached --quiet; then
+            echo "No planning files to commit"
+          else
+            git commit -m "Add video planning: ${{ inputs.prompt }}"
+            git push origin ${{ needs.setup-branch.outputs.branch-name }}
+          fi
+
+  image-generation:
+    runs-on: ubuntu-latest
+    needs: [setup-branch, planning]
+    permissions:
+      contents: write
+    outputs:
+      image-completed: ${{ steps.image.outputs.completed }}
+      google-image-url: ${{ steps.image.outputs.google-image-url }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.setup-branch.outputs.branch-name }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install Claude Code SDK
+        run: npm install @anthropic-ai/claude-code
+      
+      - name: 画像生成エージェント (Imagen4 Ultra)
+        id: image
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          echo "::group::🎨 Image Generation Agent Execution (Imagen4 Ultra)"
+          echo "Starting at: $(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)"
+          
+          # 設定
+          USER_PROMPT="${{ inputs.prompt }}"
+          PLANNED_IMAGE_PROMPT="${{ needs.planning.outputs.image-prompt }}"
+          FOLDER_NAME="${{ needs.setup-branch.outputs.folder-name }}"
+          IMAGES_DIR="$FOLDER_NAME/images"
+          
+          echo "User prompt: $USER_PROMPT"
+          echo "Planned image prompt: $PLANNED_IMAGE_PROMPT"
+          echo "Target folder: $IMAGES_DIR"
+          
+          # 画像フォルダを事前に作成
+          if [ ! -d "$IMAGES_DIR" ]; then
+            mkdir -p "$IMAGES_DIR"
+            echo "📁 Created images folder: $IMAGES_DIR"
+          fi
+          
+          # MCP設定の確認
+          MCP_CONFIG_PATH=".claude/mcp-kamuicode.json"
+          MCP_CONFIG_ABS_PATH="$(pwd)/$MCP_CONFIG_PATH"
+          
+          echo "📋 MCP Configuration Check:"
+          echo "Working directory: $(pwd)"
+          echo "MCP config path: $MCP_CONFIG_PATH"
+          echo "MCP config absolute path: $MCP_CONFIG_ABS_PATH"
+          echo "Allowed tools: mcp__t2i-fal-imagen4-ultra__imagen4_ultra_submit,mcp__t2i-fal-imagen4-ultra__imagen4_ultra_status,mcp__t2i-fal-imagen4-ultra__imagen4_ultra_result,Bash"
+          
+          # MCP設定ファイルの存在確認
+          if [ -f "$MCP_CONFIG_ABS_PATH" ]; then
+            echo "✅ MCP config file exists at: $MCP_CONFIG_ABS_PATH"
+            echo "MCP servers configured:"
+            jq -r '.mcpServers | keys[]' "$MCP_CONFIG_ABS_PATH" || true
+          else
+            echo "❌ MCP config file not found at: $MCP_CONFIG_ABS_PATH"
+            exit 1
+          fi
+          
+          # プロンプトの構築
+          PROMPT="以下のプロンプトでImagen4 Ultraを使用して高品質な画像を生成してください。
+
+          **元のユーザー指示**: $USER_PROMPT
+          **最適化された画像生成プロンプト**: $PLANNED_IMAGE_PROMPT
+
+          **実行手順**:
+          1. **最適化された画像生成プロンプト**（$PLANNED_IMAGE_PROMPT）を使用してImagen4 Ultraで画像生成
+          2. \`mcp__t2i-fal-imagen4-ultra__imagen4_ultra_submit\`ツールで画像生成を開始
+          3. \`mcp__t2i-fal-imagen4-ultra__imagen4_ultra_status\`でステータス確認
+          4. \`mcp__t2i-fal-imagen4-ultra__imagen4_ultra_result\`で結果取得してGoogle URLを取得
+          5. **重要**: 生成時に取得したGoogle URLを「$FOLDER_NAME/google-image-url.txt」ファイルに保存
+          6. 取得したGoogle URLをBashツールで「$IMAGES_DIR/generated-image.png」にダウンロード保存
+
+          **重要な注意点**:
+          - Google URLの有効期限は約1時間のため、生成後すぐにダウンロード
+          - 必ずGoogle提供の認証済URLを使用
+          - 画像は必ず「$IMAGES_DIR」ディレクトリに保存
+          - ファイル名は「generated-image.png」とする
+          - **最重要**: 生成時のGoogle URLを「$FOLDER_NAME/google-image-url.txt」に保存し、次のジョブで参照できるようにする
+          - **両方を実行**: ①Google URLをテキストファイルに保存 ②Google URLから画像をダウンロードしてローカル保存
+          
+          **処理の流れ**:
+          1. 画像生成してGoogle URLを取得
+          2. Google URLを「$FOLDER_NAME/google-image-url.txt」に保存（動画生成用）
+          3. 同じGoogle URLから「$IMAGES_DIR/generated-image.png」にダウンロード（保存用）"
+          
+          echo "🚀 Starting Image Generation Agent Claude Code CLI..."
+          echo "📝 Prompt length: ${#PROMPT}"
+          
+          # Claude Code CLIの実行
+          npx @anthropic-ai/claude-code \
+            --mcp-config="$MCP_CONFIG_ABS_PATH" \
+            --allowedTools "mcp__t2i-fal-imagen4-ultra__imagen4_ultra_submit,mcp__t2i-fal-imagen4-ultra__imagen4_ultra_status,mcp__t2i-fal-imagen4-ultra__imagen4_ultra_result,Bash" \
+            --max-turns 25 \
+            --verbose \
+            --permission-mode "acceptEdits" \
+            -p "$PROMPT" || {
+              echo "::error::❌ Claude Code CLI execution failed"
+              exit 1
+            }
+          
+          # 生成された画像の確認
+          echo ""
+          echo "📸 Checking generated images..."
+          if [ -d "$IMAGES_DIR" ]; then
+            IMAGE_COUNT=$(find "$IMAGES_DIR" -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" | wc -l)
+            echo "::notice::📸 Generated $IMAGE_COUNT images"
+            if [ "$IMAGE_COUNT" -gt 0 ]; then
+              echo "Image files:"
+              FIRST_IMAGE=$(find "$IMAGES_DIR" -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" | head -1)
+              echo "First image: $FIRST_IMAGE"
+              
+              # Google URLを確認してGitHub Outputに設定
+              if [ -f "$FOLDER_NAME/google-image-url.txt" ]; then
+                GOOGLE_URL=$(cat "$FOLDER_NAME/google-image-url.txt")
+                echo "Google image URL: $GOOGLE_URL"
+                echo "google-image-url=$GOOGLE_URL" >> $GITHUB_OUTPUT
+              else
+                echo "::warning::⚠️ Google image URL not found in file"
+                echo "google-image-url=" >> $GITHUB_OUTPUT
+              fi
+            else
+              echo "::error::❌ No images were generated"
+              exit 1
+            fi
+          else
+            echo "::error::❌ Images directory not found"
+            exit 1
+          fi
+          
+          echo "completed=true" >> $GITHUB_OUTPUT
+          echo "::endgroup::"
+      
+      - name: Commit and push images
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ${{ needs.setup-branch.outputs.folder-name }}/
+          if git diff --cached --quiet; then
+            echo "No images to commit"
+          else
+            git commit -m "Add generated images: ${{ inputs.prompt }}"
+            git push origin ${{ needs.setup-branch.outputs.branch-name }}
+          fi
+
+  video-prompt-optimization:
+    runs-on: ubuntu-latest
+    needs: [setup-branch, planning, image-generation]
+    permissions:
+      contents: write
+    outputs:
+      optimization-completed: ${{ steps.optimization.outputs.completed }}
+      optimized-video-prompt: ${{ steps.optimization.outputs.optimized-video-prompt }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.setup-branch.outputs.branch-name }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install Claude Code SDK
+        run: npm install @anthropic-ai/claude-code
+      
+      - name: 動画プロンプト最適化エージェント
+        id: optimization
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          echo "::group::🎬 Video Prompt Optimization Agent Execution"
+          echo "Starting at: $(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)"
+          
+          # 設定
+          USER_PROMPT="${{ inputs.prompt }}"
+          VIDEO_CONCEPT="${{ needs.planning.outputs.video-concept }}"
+          GOOGLE_IMAGE_URL="${{ needs.image-generation.outputs.google-image-url }}"
+          FOLDER_NAME="${{ needs.setup-branch.outputs.folder-name }}"
+          IMAGES_DIR="$FOLDER_NAME/images"
+          OPTIMIZATION_DIR="$FOLDER_NAME/optimization"
+          
+          echo "User prompt: $USER_PROMPT"
+          echo "Video concept: $VIDEO_CONCEPT"
+          echo "Google image URL: $GOOGLE_IMAGE_URL"
+          echo "Optimization folder: $OPTIMIZATION_DIR"
+          
+          # 最適化フォルダを事前に作成
+          if [ ! -d "$OPTIMIZATION_DIR" ]; then
+            mkdir -p "$OPTIMIZATION_DIR"
+            echo "📁 Created optimization folder: $OPTIMIZATION_DIR"
+          fi
+          
+          # 生成された画像の確認
+          if [ ! -d "$IMAGES_DIR" ]; then
+            echo "::error::❌ Images directory not found: $IMAGES_DIR"
+            exit 1
+          fi
+          
+          GENERATED_IMAGE=$(find "$IMAGES_DIR" -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" | head -1)
+          if [ -z "$GENERATED_IMAGE" ]; then
+            echo "::error::❌ No generated images found"
+            exit 1
+          fi
+          
+          echo "Generated image file: $GENERATED_IMAGE"
+          
+          # プロンプトの構築
+          PROMPT="あなたは動画生成の専門家です。生成された画像を分析し、Vidu Q1での動画生成に最適なプロンプトを作成してください。
+
+          **元のユーザー指示**: $USER_PROMPT
+          **初期動画コンセプト**: $VIDEO_CONCEPT
+          **生成済み画像ファイル**: $GENERATED_IMAGE
+          **Google画像URL**: $GOOGLE_IMAGE_URL
+
+          **タスク**:
+          1. 生成された画像ファイルを読み込んで内容を分析
+          2. 画像の視覚的要素（色彩、構図、オブジェクト、スタイル）を詳細に把握
+          3. 初期動画コンセプトと画像内容を照合
+          4. Vidu Q1での動画生成に最適化されたプロンプトを作成
+          5. 最適化プロンプトを「$OPTIMIZATION_DIR/optimized-video-prompt.txt」に保存
+          6. 最適化プロンプトを「$OPTIMIZATION_DIR/optimized-video-prompt.md」に保存（ユーザー確認用）
+          7. 分析レポートを「$OPTIMIZATION_DIR/image-analysis.md」に保存
+
+          **動画プロンプト最適化のポイント**:
+          - 画像の具体的な内容に基づいた動画の動きを指定
+          - 生成された画像の雰囲気や色調を活かした動画表現
+          - Vidu Q1の特性を考慮したプロンプト最適化
+          - 自然で魅力的な動画のストーリーテリング
+          - 技術的制約を考慮した現実的な動画生成指示
+
+          **最適化プロンプトの要件**:
+          - 生成された画像を起点とした具体的な動画の動き
+          - 30-80語程度の適切な長さ
+          - Vidu Q1に適した表現とキーワード
+          - 画像の特徴を活かした動画コンセプト
+          - 時間軸を考慮した動きの指示
+
+          **重要**: 
+          1. 必ず生成された画像ファイルを読み込んで内容を分析してください
+          2. 画像の内容に基づいて動画プロンプトを最適化してください
+          3. txtファイルは機械処理用（1行テキスト）、mdファイルはユーザー確認用
+          4. 指定されたファイルパスに結果を保存してください"
+          
+          echo "🚀 Starting Video Prompt Optimization Agent Claude Code CLI..."
+          echo "📝 Prompt length: ${#PROMPT}"
+          
+          # Claude Code CLIの実行
+          npx @anthropic-ai/claude-code \
+            --allowedTools "Read,Write,Edit" \
+            --max-turns 10 \
+            --verbose \
+            --permission-mode "acceptEdits" \
+            -p "$PROMPT" || {
+              echo "::error::❌ Claude Code CLI execution failed"
+              exit 1
+            }
+          
+          # 最適化結果の確認
+          echo ""
+          echo "🎬 Checking optimized video prompt..."
+          
+          # 最適化プロンプトの確認
+          if [ -f "$OPTIMIZATION_DIR/optimized-video-prompt.txt" ]; then
+            OPTIMIZED_PROMPT=$(cat "$OPTIMIZATION_DIR/optimized-video-prompt.txt" | tr '\n' ' ')
+            echo "::notice::✅ Optimized video prompt generated"
+            echo "Optimized prompt: $OPTIMIZED_PROMPT"
+            echo "optimized-video-prompt=$OPTIMIZED_PROMPT" >> $GITHUB_OUTPUT
+          else
+            echo "::error::❌ Optimized video prompt file not found"
+            exit 1
+          fi
+          
+          # 最適化プロンプト（MD）の確認
+          if [ -f "$OPTIMIZATION_DIR/optimized-video-prompt.md" ]; then
+            echo "::notice::✅ Optimized video prompt (MD) generated"
+          else
+            echo "::warning::⚠️ Optimized video prompt (MD) not found"
+          fi
+          
+          # 分析レポートの確認
+          if [ -f "$OPTIMIZATION_DIR/image-analysis.md" ]; then
+            echo "::notice::✅ Image analysis report generated"
+            echo "First 10 lines of analysis:"
+            head -10 "$OPTIMIZATION_DIR/image-analysis.md"
+          else
+            echo "::warning::⚠️ Image analysis report not found"
+          fi
+          
+          echo "completed=true" >> $GITHUB_OUTPUT
+          echo "::endgroup::"
+      
+      - name: Commit and push optimization
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ${{ needs.setup-branch.outputs.folder-name }}/
+          if git diff --cached --quiet; then
+            echo "No optimization files to commit"
+          else
+            git commit -m "Add video prompt optimization: ${{ inputs.prompt }}"
+            git push origin ${{ needs.setup-branch.outputs.branch-name }}
+          fi
+
+  video-generation:
+    runs-on: ubuntu-latest
+    needs: [setup-branch, image-generation, video-prompt-optimization]
+    permissions:
+      contents: write
+    outputs:
+      video-completed: ${{ steps.video.outputs.completed }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.setup-branch.outputs.branch-name }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install Claude Code SDK
+        run: npm install @anthropic-ai/claude-code
+      
+      - name: 動画生成エージェント (Vidu Q1)
+        id: video
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          echo "::group::🎬 Video Generation Agent Execution (Vidu Q1)"
+          echo "Starting at: $(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)"
+          
+          # 設定
+          FOLDER_NAME="${{ needs.setup-branch.outputs.folder-name }}"
+          IMAGES_DIR="$FOLDER_NAME/images"
+          VIDEOS_DIR="$FOLDER_NAME/videos"
+          USER_PROMPT="${{ inputs.prompt }}"
+          OPTIMIZED_VIDEO_PROMPT="${{ needs.video-prompt-optimization.outputs.optimized-video-prompt }}"
+          GOOGLE_IMAGE_URL="${{ needs.image-generation.outputs.google-image-url }}"
+          
+          # 動画フォルダを事前に作成
+          if [ ! -d "$VIDEOS_DIR" ]; then
+            mkdir -p "$VIDEOS_DIR"
+            echo "📁 Created videos folder: $VIDEOS_DIR"
+          fi
+          
+          # Google画像URLの確認
+          if [ -z "$GOOGLE_IMAGE_URL" ]; then
+            echo "::error::❌ Google image URL not provided from previous job"
+            exit 1
+          fi
+          
+          echo "User prompt: $USER_PROMPT"
+          echo "Optimized video prompt: $OPTIMIZED_VIDEO_PROMPT"
+          echo "Using Google image URL: $GOOGLE_IMAGE_URL"
+          
+          # 生成された画像の存在確認（ローカル参照用）
+          if [ ! -d "$IMAGES_DIR" ]; then
+            echo "::warning::⚠️ Images directory not found: $IMAGES_DIR"
+          else
+            GENERATED_IMAGE=$(find "$IMAGES_DIR" -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" | head -1)
+            if [ -n "$GENERATED_IMAGE" ]; then
+              echo "Local image file: $GENERATED_IMAGE"
+            fi
+          fi
+          
+          # MCP設定の確認
+          MCP_CONFIG_PATH=".claude/mcp-kamuicode.json"
+          MCP_CONFIG_ABS_PATH="$(pwd)/$MCP_CONFIG_PATH"
+          
+          echo "📋 MCP Configuration Check:"
+          echo "Working directory: $(pwd)"
+          echo "MCP config path: $MCP_CONFIG_PATH"
+          echo "MCP config absolute path: $MCP_CONFIG_ABS_PATH"
+          echo "Allowed tools: mcp__r2v-fal-vidu-q1__vidu_q1_submit,mcp__r2v-fal-vidu-q1__vidu_q1_status,mcp__r2v-fal-vidu-q1__vidu_q1_result,Bash"
+          
+          # プロンプトの構築
+          # 最適化されたプロンプトを優先的に使用
+          if [ -n "$OPTIMIZED_VIDEO_PROMPT" ]; then
+            FINAL_VIDEO_PROMPT="$OPTIMIZED_VIDEO_PROMPT"
+          else
+            FINAL_VIDEO_PROMPT="$USER_PROMPT"
+          fi
+          
+          PROMPT="以下のGoogle画像URLを使用してVidu Q1で参照動画を生成してください。
+
+          **Google画像URL**: $GOOGLE_IMAGE_URL
+          **元のユーザー指示**: $USER_PROMPT
+          **画像認識による最適化プロンプト**: $FINAL_VIDEO_PROMPT
+
+          **実行手順**:
+          1. 提供されたGoogle画像URL（$GOOGLE_IMAGE_URL）を使用
+          2. **最適化された動画プロンプト**（$FINAL_VIDEO_PROMPT）を使用してVidu Q1で動画生成
+          3. \`mcp__r2v-fal-vidu-q1__vidu_q1_submit\`ツールで動画生成を開始（Google URLを直接指定）
+          4. \`mcp__r2v-fal-vidu-q1__vidu_q1_status\`でステータス確認（動画生成には時間がかかるため、適度な間隔を空けて確認）
+          5. Bashツールで \`sleep 60\` を実行してから再度ステータス確認（必要に応じて複数回）
+          6. \`mcp__r2v-fal-vidu-q1__vidu_q1_result\`で結果取得して動画URLを取得
+          7. **必須**: 取得した動画URLをBashツールで「$VIDEOS_DIR/generated-video.mp4」にダウンロード保存
+          8. **確認**: ダウンロードが成功したことを確認し、ファイルサイズを表示
+
+          **重要な注意点**:
+          - 提供されたGoogle URL（$GOOGLE_IMAGE_URL）をそのまま使用
+          - URLの有効期限は約1時間のため、生成後すぐにダウンロード
+          - **動画は必ず「$VIDEOS_DIR」ディレクトリに保存**
+          - **ファイル名は「generated-video.mp4」とする**
+          - ローカルファイルパスは使用禁止（Google URLのみ使用）
+          - **動画生成は時間がかかります**: ステータス確認の間に適度な待機時間（60秒程度）を入れてください
+          - **忍耐強く**: 生成完了まで複数回のステータス確認が必要な場合があります
+          - **ダウンロード必須**: 動画URLを取得したら必ずwgetやcurlでローカルファイルに保存
+          - **ファイル確認**: 保存後にls -lhでファイルサイズを確認し、0バイトでないことを確認
+          
+          **重要**: 
+          1. 画像のアップロードは不要です。前のジョブで生成されたGoogle URL（$GOOGLE_IMAGE_URL）を直接使用してください
+          2. 動画プロンプトは画像認識により最適化されたもの（$FINAL_VIDEO_PROMPT）を使用してください
+          3. **動画URLを取得したら必ずローカルファイルに保存してください。保存せずに終了するとワークフローが失敗します**
+          4. **保存先**: 「$VIDEOS_DIR/generated-video.mp4」
+          5. **保存確認**: ファイルサイズが0バイト以上であることを確認
+          
+          **動画生成の流れ**:
+          1. submit（最適化プロンプト使用） → 2. status確認 → 3. sleep 60 → 4. 再度status確認 → 5. 完了まで繰り返し → 6. result取得"
+          
+          echo "🚀 Starting Video Generation Agent Claude Code CLI..."
+          echo "📝 Prompt length: ${#PROMPT}"
+          
+          # Claude Code CLIの実行
+          npx @anthropic-ai/claude-code \
+            --mcp-config="$MCP_CONFIG_ABS_PATH" \
+            --allowedTools "mcp__r2v-fal-vidu-q1__vidu_q1_submit,mcp__r2v-fal-vidu-q1__vidu_q1_status,mcp__r2v-fal-vidu-q1__vidu_q1_result,Bash" \
+            --max-turns 25 \
+            --verbose \
+            --permission-mode "acceptEdits" \
+            -p "$PROMPT" || {
+              echo "::error::❌ Claude Code CLI execution failed"
+              exit 1
+            }
+          
+          # 生成された動画の確認
+          echo ""
+          echo "🎬 Checking generated videos..."
+          if [ -d "$VIDEOS_DIR" ]; then
+            VIDEO_COUNT=$(find "$VIDEOS_DIR" -name "*.mp4" -o -name "*.mov" -o -name "*.avi" | wc -l)
+            echo "::notice::🎬 Generated $VIDEO_COUNT videos"
+            if [ "$VIDEO_COUNT" -gt 0 ]; then
+              echo "Video files:"
+              find "$VIDEOS_DIR" -name "*.mp4" -o -name "*.mov" -o -name "*.avi" | head -3
+              
+              # 動画ファイルサイズの確認
+              for video_file in $(find "$VIDEOS_DIR" -name "*.mp4" -o -name "*.mov" -o -name "*.avi" | head -3); do
+                if [ -f "$video_file" ]; then
+                  VIDEO_SIZE=$(stat -c%s "$video_file" 2>/dev/null || stat -f%z "$video_file" 2>/dev/null || echo "0")
+                  echo "::notice::📹 Video file: $video_file (${VIDEO_SIZE} bytes)"
+                  if [ "$VIDEO_SIZE" -eq 0 ]; then
+                    echo "::error::❌ Video file is empty: $video_file"
+                    exit 1
+                  fi
+                fi
+              done
+            else
+              echo "::error::❌ No videos were generated - this is required for the workflow to succeed"
+              exit 1
+            fi
+          else
+            echo "::error::❌ Videos directory not found - video generation failed"
+            exit 1
+          fi
+          
+          echo "completed=true" >> $GITHUB_OUTPUT
+          echo "::endgroup::"
+      
+      - name: Commit and push videos
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ${{ needs.setup-branch.outputs.folder-name }}/
+          if git diff --cached --quiet; then
+            echo "No videos to commit"
+          else
+            git commit -m "Add generated videos: ${{ inputs.prompt }}"
+            git push origin ${{ needs.setup-branch.outputs.branch-name }}
+          fi
+
+  create-pr:
+    runs-on: ubuntu-latest
+    needs: [setup-branch, planning, image-generation, video-prompt-optimization, video-generation]
+    permissions:
+      contents: write
+      pull-requests: write
+      actions: read
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.setup-branch.outputs.branch-name }}
+      
+      - name: Create Pull Request
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          # ブランチ名を取得
+          BRANCH_NAME="${{ needs.setup-branch.outputs.branch-name }}"
+          
+          # 変更をコミット
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # 最終成果物の確認とコミット
+          FOLDER_NAME="${{ needs.setup-branch.outputs.folder-name }}"
+          echo "=== Final Video Generation Summary ==="
+          echo "Video folder: $FOLDER_NAME"
+          
+          IMAGES_COUNT=0
+          VIDEOS_COUNT=0
+          
+          if [ -d "$FOLDER_NAME" ]; then
+            echo "✅ Video folder exists: $FOLDER_NAME"
+            echo "Contents:"
+            ls -la "$FOLDER_NAME"
+            
+            # 画像ファイルの確認
+            if [ -d "$FOLDER_NAME/images" ]; then
+              IMAGES_COUNT=$(find "$FOLDER_NAME/images" -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" | wc -l)
+              echo "✅ Images directory exists with $IMAGES_COUNT files"
+              if [ "$IMAGES_COUNT" -gt 0 ]; then
+                echo "Image files:"
+                find "$FOLDER_NAME/images" -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" | head -3
+              fi
+            else
+              echo "❌ Images directory not found"
+            fi
+            
+            # 動画ファイルの確認
+            if [ -d "$FOLDER_NAME/videos" ]; then
+              VIDEOS_COUNT=$(find "$FOLDER_NAME/videos" -name "*.mp4" -o -name "*.mov" -o -name "*.avi" | wc -l)
+              echo "✅ Videos directory exists with $VIDEOS_COUNT files"
+              if [ "$VIDEOS_COUNT" -gt 0 ]; then
+                echo "Video files:"
+                find "$FOLDER_NAME/videos" -name "*.mp4" -o -name "*.mov" -o -name "*.avi" | head -3
+              fi
+            else
+              echo "❌ Videos directory not found"
+            fi
+          else
+            echo "❌ Video folder not found: $FOLDER_NAME"
+          fi
+          
+          # すべてのファイルをコミット
+          git add "$FOLDER_NAME/" 2>/dev/null || true
+          
+          # コミットメッセージを作成
+          COMMIT_MESSAGE="Add new AI-generated video: ${{ inputs.prompt }}
+          
+          プロンプト: ${{ inputs.prompt }}
+          生成日時: $(date -u +%Y-%m-%d\ %H:%M:%S)\ UTC
+          
+          📊 Generation Summary:
+          - Images: $IMAGES_COUNT files (Imagen4 Ultra)
+          - Videos: $VIDEOS_COUNT files (Vidu Q1)
+          
+          🤖 Generated with Claude Code SDK & kamuicode MCP
+          Co-Authored-By: Claude <noreply@anthropic.com>"
+          
+          # コミット
+          if git diff --cached --quiet; then
+            echo "Warning: No changes to commit"
+            git commit --allow-empty -m "$COMMIT_MESSAGE"
+          else
+            git commit -m "$COMMIT_MESSAGE"
+          fi
+          
+          # プッシュ
+          git push origin $BRANCH_NAME
+          
+          # 生成されたファイルのパス取得（サマリ用）
+          GENERATED_IMAGE_PATH=""
+          GENERATED_VIDEO_PATH=""
+          
+          if [ -d "$FOLDER_NAME/images" ] && [ "$IMAGES_COUNT" -gt 0 ]; then
+            GENERATED_IMAGE_PATH=$(find "$FOLDER_NAME/images" -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" | head -1)
+          fi
+          
+          if [ -d "$FOLDER_NAME/videos" ] && [ "$VIDEOS_COUNT" -gt 0 ]; then
+            GENERATED_VIDEO_PATH=$(find "$FOLDER_NAME/videos" -name "*.mp4" -o -name "*.mov" -o -name "*.avi" | head -1)
+          fi
+          
+          # GitHub Actions Summaryに結果を出力
+          echo "# 🎬 AI動画生成完了" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "## 📋 生成情報" >> $GITHUB_STEP_SUMMARY
+          echo "- **プロンプト**: ${{ inputs.prompt }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **生成日時**: $(date -u +%Y-%m-%d\ %H:%M:%S)\ UTC" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          echo "## 📊 生成結果" >> $GITHUB_STEP_SUMMARY
+          echo "- 📸 **画像**: $IMAGES_COUNT ファイル (Imagen4 Ultra)" >> $GITHUB_STEP_SUMMARY
+          echo "- 🎬 **動画**: $VIDEOS_COUNT ファイル (Vidu Q1)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          # 画像をサマリに表示
+          if [ -n "$GENERATED_IMAGE_PATH" ] && [ -f "$GENERATED_IMAGE_PATH" ]; then
+            # GitHubの生ファイルURL構築
+            GITHUB_IMAGE_URL="https://github.com/${{ github.repository }}/raw/$BRANCH_NAME/$GENERATED_IMAGE_PATH"
+            echo "## 🎨 生成された画像" >> $GITHUB_STEP_SUMMARY
+            echo "![Generated Image]($GITHUB_IMAGE_URL)" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          # 動画情報をサマリに表示（動画自体は表示できないため情報のみ）
+          if [ -n "$GENERATED_VIDEO_PATH" ] && [ -f "$GENERATED_VIDEO_PATH" ]; then
+            echo "## 🎬 生成された動画" >> $GITHUB_STEP_SUMMARY
+            echo "📁 **ファイル**: \`$GENERATED_VIDEO_PATH\`" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "⚠️ 動画はGitHub Actions Summaryでは再生できません。プルリクエストで確認してください。" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          echo "## 🔗 次のステップ" >> $GITHUB_STEP_SUMMARY
+          echo "1. プルリクエストで動画を確認" >> $GITHUB_STEP_SUMMARY
+          echo "2. 必要に応じてメインブランチにマージ" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          # プルリクエスト用のボディを作成（動画埋め込み対応）
+          PR_BODY="🤖 Claude Code SDK & kamuicode MCPを使用して自動生成された動画です."
+          PR_BODY="$PR_BODY"$'\n\n'"プロンプト: ${{ inputs.prompt }}"
+          PR_BODY="$PR_BODY"$'\n\n'"生成フロー:"
+          PR_BODY="$PR_BODY"$'\n'"1. 🎨 Imagen4 Ultra で高品質画像生成"
+          PR_BODY="$PR_BODY"$'\n'"2. 🎬 Vidu Q1 で参照動画生成"
+          PR_BODY="$PR_BODY"$'\n\n'"成果物:"
+          PR_BODY="$PR_BODY"$'\n'"- 画像: $IMAGES_COUNT ファイル"
+          PR_BODY="$PR_BODY"$'\n'"- 動画: $VIDEOS_COUNT ファイル"
+          
+          # 画像をプルリクに埋め込み
+          if [ -n "$GENERATED_IMAGE_PATH" ] && [ -f "$GENERATED_IMAGE_PATH" ]; then
+            # GitHubの生ファイルURL構築
+            GITHUB_IMAGE_URL="https://github.com/${{ github.repository }}/raw/$BRANCH_NAME/$GENERATED_IMAGE_PATH"
+            PR_BODY="$PR_BODY"$'\n\n'"## 🎨 生成された画像"
+            PR_BODY="$PR_BODY"$'\n'"![Generated Image]($GITHUB_IMAGE_URL)"
+          fi
+          
+          # 動画をプルリクに埋め込み（HTML5 video タグ使用）
+          if [ -n "$GENERATED_VIDEO_PATH" ] && [ -f "$GENERATED_VIDEO_PATH" ]; then
+            # GitHubの生ファイルURL構築
+            GITHUB_VIDEO_URL="https://github.com/${{ github.repository }}/raw/$BRANCH_NAME/$GENERATED_VIDEO_PATH"
+            PR_BODY="$PR_BODY"$'\n\n'"## 🎬 生成された動画"
+            PR_BODY="$PR_BODY"$'\n\n'"<video width=\"640\" height=\"480\" controls>"
+            PR_BODY="$PR_BODY"$'\n'"  <source src=\"$GITHUB_VIDEO_URL\" type=\"video/mp4\">"
+            PR_BODY="$PR_BODY"$'\n'"  お使いのブラウザは動画タグをサポートしていません。"
+            PR_BODY="$PR_BODY"$'\n'"  <a href=\"$GITHUB_VIDEO_URL\">動画をダウンロードして再生</a>"
+            PR_BODY="$PR_BODY"$'\n'"</video>"
+            PR_BODY="$PR_BODY"$'\n\n'"📁 **ファイルパス**: \`$GENERATED_VIDEO_PATH\`"
+          fi
+          
+          PR_BODY="$PR_BODY
+
+          ---
+          🤖 Generated with [Claude Code SDK & kamuicode MCP](https://github.com/AI-Summoner/ai-summoner)"
+          
+          # PR作成 (GH_TOKENを使用)
+          gh pr create \
+            --title "新しいAI生成動画: ${{ inputs.prompt }}" \
+            --body "$PR_BODY" \
+            --base main \
+            --head $BRANCH_NAME

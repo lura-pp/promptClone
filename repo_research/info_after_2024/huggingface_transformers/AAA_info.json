@@ -1,0 +1,16 @@
+{
+    "convert_llava_next_weights_to_hf.py": 2,
+    "tokenization_code_llama_fast.py": 1,
+    "tokenization_code_llama.py": 0,
+    "convert_emu3_weights_to_hf.py": 1,
+    "convert_chameleon_weights_to_hf.py": 1,
+    "modeling_chameleon.py": 0,
+    "tokenization_llama.py": 0,
+    "tokenization_llama_fast.py": 0,
+    "modular_vipllava.py": 0,
+    "modeling_vipllava.py": 0,
+    "tokenization_cohere_fast.py": 1,
+    "test_modeling_fuyu.py": 1,
+    "test_tokenization_cohere.py": 2,
+    "test_pipelines_automatic_speech_recognition.py": 2
+}

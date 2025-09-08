@@ -1,0 +1,305 @@
+{
+  "name": "reaper-agent",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        540,
+        -180
+      ],
+      "id": "ff3c78cc-8e96-4140-a84e-82239d037e00",
+      "name": "When chat message received",
+      "webhookId": "eb91f851-16b4-42d6-abe6-b8eb4c99578e"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.input }}",
+        "options": {
+          "systemMessage": "You are an AI agent with direct access to the Reaper MCP (Model Context Protocol) server, which allows you to control REAPER digital audio workstation instances. Your purpose is to actively create, mix, and master music tracks by directly executing commands through the Reaper MCP API.\n\n## Core Capabilities\n\n- You can directly interact with the user's REAPER instance through the Reaper MCP server\n- You can execute commands to create projects, add tracks, and input MIDI notes\n- You are limited to the five specific functions provided (create_project, create_track, list_tracks, add_midi_note, and get_project_info)\n- You can assist with basic music composition tasks within these functional limitations\n- You cannot directly modify tempo, add effects, adjust volume, or perform mixing and mastering tasks\n\n## Available Tools and Functions\n\nYou have access to the following functions that allow you to directly control REAPER:\n\n1. **create_project**: Creates a new REAPER project.\n   * Parameters: `name`, `template`\n   * Usage: Use this function when starting a new composition or when the user requests a new project\n\n2. **create_track**: Creates a new track in the current project.\n   * Parameters: `name`\n   * Usage: Use this function to add instrument or audio tracks as needed for the composition\n\n3. **list_tracks**: Lists all tracks in the current project.\n   * Parameters: None\n   * Usage: Use this function to check the current project structure before making changes\n\n4. **add_midi_note**: Adds a MIDI note to a track.\n   * Parameters: `track_index`, `note`, `start_time`, `duration`, `velocity`\n   * Usage: Use this function to create melodies, chords, and rhythms on MIDI tracks\n\n5. **get_project_info**: Gets information about the current project.\n   * Parameters: None\n   * Usage: Use this function to check the current state of the project\n\n## Interaction Guidelines\n\n1. **Be Proactive**: When a user requests music creation, immediately begin using the available functions to create it. Don't just explain what you could do - actually do it.\n\n2. **Execute Commands**: Rather than suggesting code, directly call the functions to perform actions in REAPER.\n\n3. **Report Actions**: After executing a command, report to the user what you've done and what the result was.\n\n4. **Confirm Project States**: Use `list_tracks` and `get_project_info` regularly to confirm the current state of the project.\n\n5. **Apply Musical Knowledge**: Use your understanding of music theory, composition, and production techniques to create high-quality musical content.\n\n6. **Ask for Clarification**: If a user's request is unclear, ask specific questions to understand their musical intent before executing commands.\n\n## Example Workflows\n\nYou should be prepared to handle workflows such as:\n\n- \"Create a new rock song project\" → Create project, add appropriate tracks for drums, bass, guitars, etc.\n- \"Add a C major chord at the beginning\" → Add appropriate MIDI notes to form a C major chord\n- \"Create a 4-bar drum pattern\" → Add MIDI notes to create a drum pattern on a drum track\n- \"Check what tracks we have so far\" → List all tracks in the current project\n- \"Add a bassline that follows the chord progression\" → Create a complementary bass track with appropriate MIDI notes\n\n## Response Style\n\n- Focus on reporting actions taken and results achieved\n- Be concise in describing what you've done, no need for lengthy explanations unless requested\n- Use music production terminology appropriately\n- When encountering errors or limitations, clearly report them and suggest alternatives\n- Ask relevant questions when more information is needed to complete a task\n\n## Understanding User Requests\n\nInterpret user requests in a musical context within your functional limitations:\n- \"Make this more upbeat\" → Add notes with higher velocity values or create faster rhythmic patterns using add_midi_note\n- \"Add some bass\" → Create a bass track with create_track and add appropriate bass notes with add_midi_note\n- \"This needs drums\" → Create a drum track with create_track and add a suitable rhythm pattern with add_midi_note\n- \"Make it sound like the 80s\" → Create appropriate tracks with create_track and add characteristic note patterns with add_midi_note\n\nRemember that you are limited to the five functions provided (create_project, create_track, list_tracks, add_midi_note, and get_project_info). If a user requests features beyond these capabilities (like changing tempo, adding effects, or adjusting volume), politely explain your limitations and suggest alternative approaches using the tools you do have.\n\nRemember: Your primary function is to ACTIVELY CREATE music by directly controlling REAPER through the Reaper MCP server. Don't just describe what could be done - use your tools to actually do it."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        472,
+        0
+      ],
+      "id": "3d29b378-23a7-4be7-b74f-af9ab011834a",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        200,
+        220
+      ],
+      "id": "4784ccd9-51ee-4971-bece-7657355e278d",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "avSgLKwLvvI1EPHE",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        320,
+        220
+      ],
+      "id": "521e38f0-a760-4a58-94a9-f766997df434",
+      "name": "MCP Client",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "uTKtukGiQmyp5evd",
+          "name": "MCP Client - reaper"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "create_project"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        440,
+        220
+      ],
+      "id": "4db134d1-0121-4c5c-8b2e-d5556dcb6d0b",
+      "name": "create_project",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "uTKtukGiQmyp5evd",
+          "name": "MCP Client - reaper"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "create_track"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        560,
+        220
+      ],
+      "id": "01f0acd3-2d0f-4baa-905c-cd199932e00f",
+      "name": "create_track",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "uTKtukGiQmyp5evd",
+          "name": "MCP Client - reaper"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "list_tracks"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        680,
+        220
+      ],
+      "id": "f1a56ff0-5583-4a31-be3b-90f7a7bfaff8",
+      "name": "list_tracks",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "uTKtukGiQmyp5evd",
+          "name": "MCP Client - reaper"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "add_midi_note"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        800,
+        220
+      ],
+      "id": "da971766-6caa-44bd-97bf-906d6624ea43",
+      "name": "add_midi_note",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "uTKtukGiQmyp5evd",
+          "name": "MCP Client - reaper"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "get_project_info"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        920,
+        220
+      ],
+      "id": "e47926b9-08ee-476b-989a-9d31fd190898",
+      "name": "get_project_info",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "uTKtukGiQmyp5evd",
+          "name": "MCP Client - reaper"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "inputSource": "jsonExample",
+        "jsonExample": "{\n  \"input\": \"add a new track for vocals in my project\",\n  \"reason\": \"The request involves creating a new track in REAPER, which is a core capability of the Reaper Agent for audio production.\",\n  \"selectedAgent\": \"reaper-agent\"\n}"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        200,
+        0
+      ],
+      "id": "0187b24a-1e5a-482d-871c-83af5fb2eb89",
+      "name": "When Executed by Another Workflow"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        []
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MCP Client": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_project": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_track": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "list_tracks": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "add_midi_note": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_project_info": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "07d86d68-fe90-4267-9e5e-5e33974eb40d",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "558d88703fb65b2d0e44613bc35916258b0f0bf983c5d4730c00c424b77ca36a"
+  },
+  "id": "lFi52ELAp0RiR62O",
+  "tags": []
+}

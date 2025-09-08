@@ -1,0 +1,27 @@
+{
+    "default": {
+      "success": "green",
+      "error": "red",
+      "warning": "yellow",
+      "info": "cyan",
+      "tip": "magenta",
+      "prompt": "green",
+      "welcome_message": "green",
+      "section_header": "yellow",
+      "dangerous_confirm": "yellow",
+      "command_text": "cyan"
+    },
+
+    "contrast": {
+      "success": "black",
+      "error": "white",
+      "warning": "orange",
+      "info": "blue",
+      "tip": "purple",
+      "prompt": "white",
+      "welcome_message": "white",
+      "section_header": "orange",
+      "dangerous_confirm": "orange",
+      "command_text": "blue"
+    }
+}

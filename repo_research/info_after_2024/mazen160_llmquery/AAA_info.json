@@ -1,0 +1,10 @@
+{
+    "google_gemini.py": 1,
+    "aws_bedrock.py": 0,
+    "ollama.py": 0,
+    "openai.py": 0,
+    "anthropic_claude.py": 0,
+    "deepseek.py": 0,
+    "query_parser.py": 1,
+    "llmquery.py": 0
+}

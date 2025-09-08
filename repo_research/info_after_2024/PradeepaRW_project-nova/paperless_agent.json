@@ -1,0 +1,529 @@
+{
+  "name": "paperless-agent",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        980,
+        -180
+      ],
+      "id": "4e03386f-11e0-4f9c-bfd0-a138941c662c",
+      "name": "When chat message received",
+      "webhookId": "64659486-cdba-4054-ac0b-342e5af9b9ff"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.input }}",
+        "options": {
+          "systemMessage": "You are an AI assistant with access to a Paperless-NGX document management system through the Paperless-NGX MCP server. Your primary purpose is to help users manage, search, and organize their digital documents efficiently.\n\n## Your Capabilities\n\nYou can help users with the following document management tasks:\n- Listing, searching, and retrieving documents\n- Creating and managing tags, correspondents, and document types\n- Uploading new documents\n- Performing bulk operations (merging, splitting, rotating, etc.)\n- Downloading documents\n\n## Available Tools\n\nYou have access to a set of tools for interacting with the Paperless-NGX system:\n\n### Document Operations\n- `list_documents`: Get a paginated list of all documents\n- `get_document`: Get a specific document by ID\n- `search_documents`: Full-text search across documents\n- `download_document`: Download a document file by ID\n- `bulk_edit_documents`: Perform bulk operations on multiple documents\n- `post_document`: Upload a new document to Paperless-NGX\n\n### Tag Operations\n- `list_tags`: Get all tags\n- `create_tag`: Create a new tag\n\n### Correspondent Operations\n- `list_correspondents`: Get all correspondents\n- `create_correspondent`: Create a new correspondent\n\n### Document Type Operations\n- `list_document_types`: Get all document types\n- `create_document_type`: Create a new document type\n\n## How to Respond to User Requests\n\n1. **Understand the request**: Carefully interpret what document management operation the user is trying to perform.\n\n2. **Choose the appropriate tool**: Select the most relevant Paperless-NGX tool based on the user's request.\n\n3. **Execute with proper parameters**: Use the correct parameters for each tool function.\n\n4. **Present results clearly**: Format and explain the results in an easy-to-understand manner.\n\n5. **Suggest follow-up actions**: When appropriate, suggest related operations that might be helpful.\n\n## Guidelines for Specific Operations\n\n### When searching documents:\n- Ask for specific search terms if the query is vague\n- Summarize the results in a clear, tabular format when possible\n- Offer to refine searches if too many results are returned\n\n### When creating new items:\n- Confirm details before execution (tag names, colors, correspondent details, etc.)\n- Explain the purpose of optional parameters (matching algorithms, etc.)\n- Confirm successful creation and show the newly created item details\n\n### When performing bulk operations:\n- Always confirm the operation before execution, especially for destructive operations\n- Clearly explain what will happen to the documents\n- Present the list of affected documents for user confirmation\n\n### When uploading documents:\n- Guide users on how to provide file content (usually base64 encoded)\n- Suggest appropriate tags, correspondents, and document types based on the filename or content description\n- Confirm successful uploads with document details\n\n## Error Handling\n\nIf errors occur:\n1. Explain the error in user-friendly terms\n2. Suggest possible solutions or workarounds\n3. Offer to try alternative approaches if appropriate\n\n## Privacy and Security Considerations\n\n- Never expose or request API tokens or sensitive credentials\n- Assume all documents may contain private information\n- Don't make assumptions about document contents without verification\n\n## Example Interactions\n\nWhen a user asks:\n- \"Show me all invoices\" → Use `search_documents` with appropriate query or `list_documents` with filtering\n- \"Create a new tag for receipts\" → Use `create_tag` after confirming details\n- \"Download document #123\" → Use `download_document` with the specified ID\n- \"Search for documents about taxes from 2023\" → Use `search_documents` with a relevant query\n\nRemember that your purpose is to make document management easier and more efficient for the user. Always be helpful, clear, and respectful of the user's document organization preferences."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        920,
+        0
+      ],
+      "id": "fb4c60bd-4c5c-4370-8c08-b525422f55cb",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        220,
+        220
+      ],
+      "id": "191f4384-41cc-40c5-9d02-c8ee5da82617",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "avSgLKwLvvI1EPHE",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        340,
+        220
+      ],
+      "id": "400a1d9f-ef48-49e3-9da6-6f7ddb18e819",
+      "name": "MCP Client",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "9CnkLIJXL2SJ9lLc",
+          "name": "MCP Client - paperless"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "bulk_edit_documents"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        460,
+        220
+      ],
+      "id": "e8dc7245-4bb0-4a11-ad63-eec2541c51b7",
+      "name": "bulk_edit_documents",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "9CnkLIJXL2SJ9lLc",
+          "name": "MCP Client - paperless"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "post_document"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        580,
+        220
+      ],
+      "id": "c36d9750-eba8-42ba-b82f-8a30d0d442fd",
+      "name": "post_document",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "9CnkLIJXL2SJ9lLc",
+          "name": "MCP Client - paperless"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "list_documents"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        700,
+        220
+      ],
+      "id": "b35403a5-1bbf-4da2-9b84-e38db575e8a4",
+      "name": "list_documents",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "9CnkLIJXL2SJ9lLc",
+          "name": "MCP Client - paperless"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "get_document"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        820,
+        220
+      ],
+      "id": "5c2e9c68-bb55-4ffd-abf0-93c97f5ab30f",
+      "name": "get_document",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "9CnkLIJXL2SJ9lLc",
+          "name": "MCP Client - paperless"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "search_documents"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        940,
+        220
+      ],
+      "id": "a3aaef13-6bd5-47c5-af78-54dad8cc42f7",
+      "name": "search_documents",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "9CnkLIJXL2SJ9lLc",
+          "name": "MCP Client - paperless"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "download_document"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1060,
+        220
+      ],
+      "id": "fe93fa17-6f44-40d2-bbe4-c726481d26db",
+      "name": "download_document",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "9CnkLIJXL2SJ9lLc",
+          "name": "MCP Client - paperless"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "list_tags"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1180,
+        220
+      ],
+      "id": "eeda0f3c-0504-4f7e-b1e4-6fc4752d3271",
+      "name": "list_tags",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "9CnkLIJXL2SJ9lLc",
+          "name": "MCP Client - paperless"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "create_tag"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1300,
+        220
+      ],
+      "id": "249de544-b40b-4ebd-811e-c9b441f5ac5a",
+      "name": "create_tag",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "9CnkLIJXL2SJ9lLc",
+          "name": "MCP Client - paperless"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "list_correspondents"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1420,
+        220
+      ],
+      "id": "e531569e-772a-4954-8200-904a1b82e657",
+      "name": "list_correspondents",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "9CnkLIJXL2SJ9lLc",
+          "name": "MCP Client - paperless"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "create_correspondent"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1540,
+        220
+      ],
+      "id": "ffafa4e8-a087-4d8e-8f86-3e81a971c274",
+      "name": "create_correspondent",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "9CnkLIJXL2SJ9lLc",
+          "name": "MCP Client - paperless"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "list_document_types"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1660,
+        220
+      ],
+      "id": "3fe738f0-92c7-4e86-9582-d7f87b4ba4f2",
+      "name": "list_document_types",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "9CnkLIJXL2SJ9lLc",
+          "name": "MCP Client - paperless"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "create_document_type"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1780,
+        220
+      ],
+      "id": "27fff0f7-23a2-4be2-9ecc-4c1df7f6d9dc",
+      "name": "create_document_type",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "9CnkLIJXL2SJ9lLc",
+          "name": "MCP Client - paperless"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "inputSource": "jsonExample",
+        "jsonExample": "{\n  \"input\": \"find all my tax documents from 2023\",\n  \"reason\": \"The request involves searching for specific document types within a document management system, which is exactly what the Paperless Agent is designed to handle.\",\n  \"selectedAgent\": \"paperless-agent\"\n}"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        600,
+        0
+      ],
+      "id": "416f2fb0-18eb-41f0-8f02-5183b4158bee",
+      "name": "When Executed by Another Workflow"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        []
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MCP Client": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "bulk_edit_documents": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "post_document": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "list_documents": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_document": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "search_documents": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "download_document": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "list_tags": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_tag": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "list_correspondents": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_correspondent": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "list_document_types": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_document_type": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "051cd6a3-d487-42a5-a8d9-8d80115163b8",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "558d88703fb65b2d0e44613bc35916258b0f0bf983c5d4730c00c424b77ca36a"
+  },
+  "id": "WmsDbrLVosfoJ0fz",
+  "tags": []
+}

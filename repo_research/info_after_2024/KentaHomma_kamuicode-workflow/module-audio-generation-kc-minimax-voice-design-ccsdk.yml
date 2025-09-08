@@ -1,0 +1,233 @@
+name: module-audio-generation-kc-minimax-voice-design-ccsdk
+
+on:
+  workflow_call:
+    inputs:
+      concept:
+        description: 'ユーザーのコンセプト'
+        required: true
+        type: string
+      text-prompt:
+        description: '音声生成用テキストプロンプト'
+        required: true
+        type: string
+      voice-character:
+        description: '音声キャラクター設定（自然言語形式）'
+        required: true
+        type: string
+      branch-name:
+        description: 'ワーキングブランチ名'
+        required: true
+        type: string
+      folder-name:
+        description: 'プロジェクトフォルダ名'
+        required: true
+        type: string
+      audio_index:
+        description: '音声インデックス'
+        required: false
+        type: string
+        default: '1'
+    outputs:
+      completed:
+        description: '完了ステータス'
+        value: ${{ jobs.audio-generation.outputs.completed }}
+      audio-url:
+        description: '音声URL'
+        value: ${{ jobs.audio-generation.outputs.audio-url }}
+    secrets:
+      anthropic_api_key:
+        description: 'Anthropic API Key'
+        required: true
+      github_pat:
+        description: 'GitHub Token'
+        required: true
+
+jobs:
+  audio-generation:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      completed: ${{ steps.audio.outputs.completed }}
+      audio-url: ${{ steps.audio.outputs.audio-url }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.branch-name }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install Claude Code SDK
+        run: npm install @anthropic-ai/claude-code
+      
+      - name: MiniMax Voice Design音声生成エージェント
+        id: audio
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.anthropic_api_key }}
+        run: |
+          echo "::group::🎤 MiniMax Voice Design Audio Generation Agent Execution"
+          echo "Starting at: $(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)"
+          
+          # 設定
+          USER_CONCEPT="${{ inputs.concept }}"
+          TEXT_PROMPT="${{ inputs.text-prompt }}"
+          VOICE_CHARACTER="${{ inputs.voice-character }}"
+          FOLDER_NAME="${{ inputs.folder-name }}"
+          AUDIO_INDEX="${{ inputs.audio_index }}"
+          AUDIO_DIR="$FOLDER_NAME/audio-${AUDIO_INDEX}"
+          
+          echo "User concept: $USER_CONCEPT"
+          echo "Text prompt: $TEXT_PROMPT"
+          echo "Voice character: $VOICE_CHARACTER"
+          echo "Audio index: $AUDIO_INDEX"
+          echo "Target folder: $AUDIO_DIR"
+          
+          # 音声フォルダを事前に作成
+          if [ ! -d "$AUDIO_DIR" ]; then
+            mkdir -p "$AUDIO_DIR"
+            echo "📁 Created audio folder: $AUDIO_DIR"
+          fi
+          
+          # MCP設定の確認
+          MCP_CONFIG_PATH=".claude/mcp-kamuicode.json"
+          MCP_CONFIG_ABS_PATH="$(pwd)/$MCP_CONFIG_PATH"
+          
+          # MCP設定ファイルの存在確認
+          if [ -f "$MCP_CONFIG_ABS_PATH" ]; then
+            echo "✅ MCP config file exists at: $MCP_CONFIG_ABS_PATH"
+          else
+            echo "❌ MCP config file not found at: $MCP_CONFIG_ABS_PATH"
+            exit 1
+          fi
+          
+          # プロンプトの構築
+          PROMPT="MiniMax Voice Designを使用して高品質な日本語音声を生成してください。
+
+          **元のユーザー指示**: $USER_CONCEPT
+          **音声生成テキスト**: $TEXT_PROMPT
+          **音声キャラクター設定**: $VOICE_CHARACTER
+
+          **実行手順**:
+          1. まず、\`.github/workflows/usage/kamuicode-usage.md\`ファイルを読み込んで、MiniMax Voice Designに対応するMCPツール名を確認してください
+          2. ファイルから以下の情報を抽出:
+             - submitツール名: mcp__v2v-fal-minimax-voice-design__voice_design_submit
+             - statusツール名: mcp__v2v-fal-minimax-voice-design__voice_design_status
+             - resultツール名: mcp__v2v-fal-minimax-voice-design__voice_design_result
+          3. **音声キャラクター設定**（\"$VOICE_CHARACTER\"）を使用してMiniMax Voice Designで音声生成:
+             - 音声キャラクター設定は自然言語形式で記述されています
+             - この設定をMiniMax Voice Designのパラメータとして適用してください
+             - 例: \"日本語に適した自然で魅力的な女性の声、感情豊かで親しみやすく温かみがある、リップシンクに最適化された明瞭で美しい発音、若々しくエネルギッシュで聞き手を惹きつける魅力的な声質\"
+          4. **音声生成テキスト**（\"$TEXT_PROMPT\"）を使用して音声を生成
+          5. submitツールで音声生成を開始
+          6. statusツールでステータス確認（適度な間隔で確認）
+          7. 必要に応じてBashツールで \`sleep 30\` を実行してから再度ステータス確認
+          8. resultツールで結果取得して音声URLを取得
+          9. **必須**: 取得した音声URLを「$AUDIO_DIR/audio-url.txt」ファイルに保存
+          10. **必須**: 取得した音声URLをBashツールで「$AUDIO_DIR/audio.mp3」にダウンロード保存
+
+          **重要な注意点**:
+          - MiniMax Voice Designは自然言語での音声キャラクター設定に対応
+          - 音声キャラクター設定を詳細にMCPツールに渡してください
+          - 音声生成は比較的高速ですが、ステータス確認は適度な間隔で行うこと
+          - Google URLの有効期限は約1時間のため、生成後すぐにダウンロード
+          - 必ずGoogle提供の認証済URLを使用
+          - 音声は必ず「$AUDIO_DIR」ディレクトリに保存
+          - ファイル名は「audio.mp3」とする
+          - **最重要**: 生成時の音声URLを「$AUDIO_DIR/audio-url.txt」に保存し、次のジョブで参照できるようにする
+          - **両方を実行**: ①音声URLをテキストファイルに保存 ②音声URLから音声をダウンロードしてローカル保存
+
+          **MiniMax Voice Design特有の機能**:
+          - 自然言語による音声キャラクター設定
+          - 日本語音声に最適化された高品質生成
+          - リップシンクに適した明瞭な発音
+          - 感情表現豊かな音声合成"
+          
+          echo "🚀 Starting MiniMax Voice Design Audio Generation Agent Claude Code CLI..."
+          echo "📝 Prompt length: ${#PROMPT}"
+          
+          # Claude Code CLIの実行（MiniMax Voice Design用ツール許可）
+          npx @anthropic-ai/claude-code \
+            --mcp-config="$MCP_CONFIG_ABS_PATH" \
+            --allowedTools "mcp__v2v-fal-minimax-voice-design__*,Read,Bash" \
+            --max-turns 40 \
+            --verbose \
+            --permission-mode "acceptEdits" \
+            -p "$PROMPT" || {
+              echo "::error::❌ Claude Code CLI execution failed"
+              exit 1
+            }
+          
+          # 生成された音声の確認
+          echo ""
+          echo "🎤 Checking generated audio..."
+          if [ -d "$AUDIO_DIR" ]; then
+            AUDIO_COUNT=$(find "$AUDIO_DIR" -name "*.mp3" -o -name "*.wav" -o -name "*.m4a" | wc -l)
+            echo "::notice::🎤 Generated $AUDIO_COUNT audio files using MiniMax Voice Design"
+            if [ "$AUDIO_COUNT" -gt 0 ]; then
+              # 音声ファイルサイズの確認
+              for audio_file in $(find "$AUDIO_DIR" -name "*.mp3" -o -name "*.wav" -o -name "*.m4a" | head -3); do
+                if [ -f "$audio_file" ]; then
+                  AUDIO_SIZE=$(stat -c%s "$audio_file" 2>/dev/null || stat -f%z "$audio_file" 2>/dev/null || echo "0")
+                  AUDIO_SIZE_MB=$(echo "scale=2; $AUDIO_SIZE / 1024 / 1024" | bc -l 2>/dev/null || echo "0")
+                  
+                  echo "::notice::📊 Audio file analysis: $audio_file"
+                  echo "::notice::📏 Size: ${AUDIO_SIZE_MB}MB"
+                  echo "::notice::💡 Audio duration will be verified during Pixverse lipsync processing"
+                fi
+              done
+              
+              # 音声URLを確認してGitHub Outputに設定
+              if [ -f "$AUDIO_DIR/audio-url.txt" ]; then
+                AUDIO_URL=$(cat "$AUDIO_DIR/audio-url.txt")
+                echo "Audio URL: $AUDIO_URL"
+                echo "audio-url=$AUDIO_URL" >> $GITHUB_OUTPUT
+              else
+                echo "::warning::⚠️ Audio URL not found in file"
+                echo "audio-url=" >> $GITHUB_OUTPUT
+              fi
+            else
+              echo "::error::❌ No audio files were generated"
+              exit 1
+            fi
+          else
+            echo "::error::❌ Audio directory not found"
+            exit 1
+          fi
+          
+          echo "completed=true" >> $GITHUB_OUTPUT
+          echo "::endgroup::"
+      
+      - name: Commit and push audio
+        env:
+          GH_TOKEN: ${{ secrets.github_pat }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ${{ inputs.folder-name }}/
+          if git diff --cached --quiet; then
+            echo "No audio to commit"
+          else
+            git commit -m "Add generated audio using MiniMax Voice Design: ${{ inputs.concept }}
+            
+            🤖 Generated with [Claude Code](https://claude.ai/code)
+            
+            Co-Authored-By: Claude <noreply@anthropic.com>"
+            # 並列実行での競合を回避するためのリトライ処理
+            for i in {1..3}; do
+              git pull --rebase origin ${{ inputs.branch-name }} || true
+              if git push origin ${{ inputs.branch-name }}; then
+                echo "✅ Push successful on attempt $i"
+                break
+              else
+                echo "⚠️ Push failed on attempt $i, retrying..."
+                # ランダムな待機時間（1-5秒）
+                sleep $((RANDOM % 5 + 1))
+              fi
+            done
+          fi

@@ -1,0 +1,395 @@
+{
+  "chat": {
+    "messages": {
+      "thinking": "Denken...",
+      "reading": "Lektüre",
+      "search_locally": "Lokal im Browser suchen…",
+      "thought_for_seconds": "Gedanke für {second} Sekunde | Gedanke für {second} Sekunden"
+    },
+    "quick_actions": {
+      "title": "Schnelle Aktionen"
+    },
+    "thinking_mode": {
+      "label": "Denken"
+    },
+    "input": {
+      "placeholder": {
+        "ask_anything": "Fragen Sie alles ...",
+        "ask_follow_up": "Fragen Sie nach Follow -up ..."
+      },
+      "attachment_selector": {
+        "all_tabs": "Alle öffnen Registerkarten",
+        "upload_from_computer": "Vom Computer hochladen",
+        "image_oversize": "Die Bildgröße muss kleiner als {size} sein",
+        "too_many_images": "Maximal {max} Bilddateien erlaubt",
+        "unsupported_image_type": "Nicht unterstütztes Bildformat. Bitte laden Sie JPEG- oder PNG-Dateien hoch.",
+        "unsupported_model": "Das Hochladen von Bildern erfordert ein sehfähiges Modell. Bitte wechseln Sie zu Gemma3 oder einem ähnlichen Vision-Modell.",
+        "pdf_oversize": "PDF-Dateigröße muss kleiner als {size} sein",
+        "pdf_text_extract_error": "Textextraktion fehlgeschlagen - diese PDF könnte gescannt oder bildbasiert sein.",
+        "too_many_pdfs": "Maximal {max} PDF-Datei erlaubt",
+        "pdf_page_count_exceeded": "PDF muss weniger als {max} Seiten haben",
+        "only_load_partial_pages": "Aufgrund der Dateigröße werden nur die ersten {max} Seiten geladen"
+      }
+    },
+    "prompt": {
+      "highlight_key_insights": {
+        "title": "Wichtige Erkenntnisse hervorheben"
+      },
+      "search_more": {
+        "title": "Suchen Sie nach weiteren Inhalten wie diesem"
+      },
+      "summarize_page_content": {
+        "title": "Seite zusammenfassen"
+      }
+    },
+    "tool_calls": {
+      "common": {
+        "reading": "Lesen",
+        "read_failed": "Lesen fehlgeschlagen: {error}",
+        "reading_success": "Lesen abgeschlossen"
+      },
+      "search_online": {
+        "searching": "Suche: \"{query}\"...",
+        "search_completed": "Suche abgeschlossen: \"{query}\"",
+        "search_failed": "Suche fehlgeschlagen: {query}"
+      },
+      "fetch_page": {
+        "error_no_content": "kein Inhalt gefunden"
+      },
+      "view_image": {
+        "analyzing": "Analysiere: {title}",
+        "analyze_failed": "Analyse fehlgeschlagen: {error}",
+        "analyze_success": "Analyse abgeschlossen: {title}",
+        "image_not_found": "Bild nicht gefunden"
+      },
+      "view_pdf": {
+        "pdf_not_found": "PDF nicht gefunden"
+      },
+      "view_tab": {
+        "tab_not_found": "Registerkarte nicht gefunden"
+      },
+      "page_click": {
+        "click": "Klicken Sie auf {content}",
+        "error_can_not_click": "Klicken und Springen zu {destination} nicht möglich",
+        "error_no_active_tab": "Kein aktiver Tab gefunden",
+        "error_unable_to_jump": "Klicken und Springen zu {destination} nicht möglich",
+        "redirected": "Weitergeleitet zu {destination}",
+        "error_click_before_view_tab": "Versuchen Sie, auf einen Seitenlink zu klicken, bevor Sie Seiten anzeigen",
+        "error_click_incorrect_link": "Versuchen Sie, auf den fehlerhaften Seitenlink zu klicken"
+      }
+    }
+  },
+  "chat_history": {
+    "delete_confirm": "Sind Sie sicher, dass Sie diese Unterhaltung löschen möchten? Diese Aktion kann nicht rückgängig gemacht werden.",
+    "delete": "Löschen",
+    "rename": "Umbenennen",
+    "unpin": "Lösen",
+    "pin": "Anheften",
+    "title": "Chat-Verlauf",
+    "pinned_section": "Angeheftete Chats",
+    "recent_section": "Kürzliche Chats",
+    "empty_state": "Noch keine Unterhaltungen",
+    "untitled_chat": "Unbenannter Chat",
+    "new_chat": "Neuer Chat",
+    "save": "Speichern",
+    "cancel": "Abbrechen"
+  },
+  "onboarding": {
+    "banner": {
+      "description": "Privat und sicher, mit leistungsstarken Funktionen, die vollständig in Ihrem Gerät ausgeführt werden.",
+      "title": "KI direkt auf Ihrem Gerät – nur für Sie entwickelt"
+    },
+    "guide": {
+      "already_installed": "Haben Sie Ollama bereits installiert und gestartet?",
+      "features": {
+        "1": "Führen Sie erweiterte Modelle wie gpt-oss, DeepSeek, Qwen, Llama aus",
+        "2": "Passen Sie die Modelle mit voller Steuerung an und wechseln Sie sie",
+        "3": "Ihre Daten bleiben privat auf Ihrem Gerät"
+      },
+      "follow_our_tutorial": "Folgen Sie unserem Installationshandbuch",
+      "get_ollama": "Holen Sie sich Ollama",
+      "install_desc": "Installieren Sie Ollama, um Ihre lokale KI einzurichten.",
+      "need_help": "Benötigen Sie Hilfe?",
+      "ollama_desc": "Mit Ollama die volle lokale KI -Macht freischalten.",
+      "setup": "Aufstellen",
+      "step1": "Schritt 1",
+      "download_model_to_begin": "Laden Sie ein Modell herunter, um zu beginnen.",
+      "select_model_to_start": "Wählen Sie ein Modell aus und laden Sie es herunter, um zu beginnen",
+      "download_and_install": "Herunterladen & Installieren",
+      "choose_model": "Modell auswählen",
+      "no_sure_which_one": "🤔 Nicht sicher, welches Sie wählen sollen?",
+      "learn_about_models": "Erfahren Sie mehr über Modelle",
+      "looking_for_more_options": "🔍 Suchen Sie nach weiteren Optionen?",
+      "browse_more_models": "Weitere Modelle durchsuchen"
+    },
+    "webllm_tutorial": {
+      "desc": "Verwenden Sie ein leichtes Modell (QWEN 0,6B) direkt in Ihrem Browser - kein Setup, kein Warten.",
+      "not_support_webllm": "Webllm wird auf Ihrem Gerät nicht unterstützt",
+      "start_with_webllm": "Beginnen Sie mit dem Webmodell",
+      "title": "Nicht bereit zu installieren? \nProbieren Sie es sofort aus."
+    },
+    "welcome_msg": {
+      "title": "👋 Willkommen bei **NativeMind**",
+      "body": "NATIVEMIND ist eine Datenschutz-AI-Browser-Erweiterung, die Ihnen hilft, zu chatten, zu suchen und zu übersetzen-alles mit Sprachmodellen für das Gerät.\n\n\nFolgendes können Sie mit Nativemind machen:\n\n\n\n- Chatten Sie über mehrere Registerkarten hinweg, um verschiedene Seiten im Auge zu behalten.\n\n- Durchsuchen Sie das Web direkt im Chat, um einen weiteren Kontext zu erhalten.\n\n- Klicken Sie mit der rechten Maustaste, um einen Teil der Seite sofort zu übersetzen.\n\n- Modelle jederzeit in Einstellungen wechseln oder herunterladen.\n\n\nSie können zunächst die schnellen Aktionen unten ausprobieren."
+    },
+    "ollama_is_running": "Ollama läuft"
+  },
+  "settings": {
+    "cache": {
+      "title": "Übersetzungs-Cache",
+      "enable": "Cache aktivieren",
+      "enabled": "Aktiviert",
+      "disabled": "Deaktiviert",
+      "max_size": "Maximale Größe",
+      "retention_days": "Aufbewahrungsdauer",
+      "days": "Tage"
+    },
+    "advanced": {
+      "title": "Fortschrittlich"
+    },
+    "choose_model": "Modell auswählen",
+    "download": "Herunterladen",
+    "feedback": {
+      "contact_msg": "📧 Fragen oder Feedback? Treten Sie unserem {discord} bei oder senden Sie uns eine E-Mail an {email}.",
+      "join_waitlist": "💼 Berufliche Nutzung gewünscht? {join_waitlist_link} für Unternehmens-Updates.",
+      "join_waitlist_link": "Der Warteliste beitreten",
+      "discord": "Discord"
+    },
+    "get_ollama": "Holen Sie sich Ollama",
+    "models": {
+      "title": "Modelle",
+      "discover_more": "Entdecken Sie weitere Modelle",
+      "no_model": "⚠️ Kein Modell",
+      "add_model_to_start": "Fügen Sie ein Modell hinzu, um zu beginnen"
+    },
+    "ollama": {
+      "already_installed": "Haben Sie Ollama bereits installiert und gestartet?",
+      "connected": "Verbunden",
+      "connection_error": "Verbindungsfehler",
+      "downloadable_model": "Herunterladbares Modell",
+      "follow_guide": "Folgen Sie unserem Installationshandbuch",
+      "learn_more_about_models": "Erfahren Sie mehr über Modelle",
+      "need_help": "Benötigen Sie Hilfe?",
+      "re_scan": "Neu scan",
+      "server_address": "Serveradresse",
+      "setup": "Aufstellen",
+      "unconnected": "Nicht miteinander verbunden",
+      "context_window_size": "Kontextfenstergröße",
+      "custom_context_window_size": "Benutzerdefinierte Kontextfenstergröße",
+      "context_window_size_desc": "Geben Sie die benutzerdefinierte Kontextfenstergröße in Token ein (Minimum: 512)",
+      "server_address_desc": "Ollama-Server-API-Endpunkt",
+      "context_window_size_error": "Die Kontextfenstergröße muss mindestens {min} Token betragen",
+      "unload": "Entladen",
+      "running": "Läuft",
+      "expires_in": "Läuft ab in {duration}",
+      "running_models": "Laufende Modelle"
+    },
+    "prompts": {
+      "chat_system_prompt": "Chat -System Eingabeaufforderung",
+      "title": "Prompt",
+      "translation_system_prompt": "Übersetzungs-System-Prompt"
+    },
+    "provider": {
+      "title": "Modellanbieter"
+    },
+    "provider_model": {
+      "title": "Anbieter"
+    },
+    "quick_actions": {
+      "description": "Richten Sie schnelle Aktionen ein, um Ihre bevorzugten Eingabeaufforderungen schneller auszuführen-aus dem neuen Chat oder dem Rechtsklickmenü.",
+      "edit": {
+        "cancel": "Stornieren",
+        "prompt": "Prompt",
+        "reset": "Zurücksetzen",
+        "save": "Speichern",
+        "show_in_context_menu": "In der rechten Maustaste anzeigen",
+        "title": "Titel"
+      },
+      "title": "Schnelle Aktionen anpassen"
+    },
+    "test": "Prüfen",
+    "translation": {
+      "title": "Übersetzungssprache auswählen",
+      "description": "Übersetzungsfunktionalität und Zielsprachen konfigurieren",
+      "basic_config": {
+        "target_language": "Zielsprache",
+        "target_language_desc": "Wählen Sie die Zielsprache für die Übersetzung",
+        "title": "Grundkonfiguration",
+        "translation_model": "Übersetzungsmodell",
+        "translation_model_desc": "Wählen Sie das KI-Modell für Übersetzungsaufgaben aus",
+        "translation_system_prompt": "Übersetzungs-System-Prompt",
+        "translation_system_prompt_desc": "Definiere KI-Verhalten und Ausgabeformat während der Übersetzung",
+        "translation_system_prompt_error": "Systemaufforderung muss {'{{LANGUAGE}}'} enthalten"
+      }
+    },
+    "webllm-desc": "Verwenden Sie WebLLM für einen schnellen Test. \nFür volle Modellunterstützung und bessere Leistung installieren Sie bitte Ollama.",
+    "general": {
+      "system_language": "Systemsprache",
+      "title": "Allgemeine Einstellungen",
+      "description": "Grundeinstellungen und Serververbindung konfigurieren",
+      "discover_more_models": "Entdecken Sie weitere Modelle",
+      "refresh_status": "Status aktualisieren",
+      "unload_model_confirm": "Sind Sie sicher, dass Sie das Modell \"{model}\" entladen möchten?",
+      "running_models": {
+        "vram": "{size} VRAM",
+        "params": "{size} Parameter",
+        "quant": "{level} Quant",
+        "thinking": "Denken",
+        "no_active_models": "Ollama verbunden, aber keine aktiven Modelle",
+        "not_connected_to_ollama": "Nicht mit Ollama verbunden"
+      }
+    },
+    "title": "Einstellungen",
+    "model_downloader": {
+      "could_not_connect_ollama": "Wir konnten keine Verbindung zu Ollama herstellen. Bitte stellen Sie sicher, dass Ollama läuft und versuchen Sie es erneut.",
+      "description": "Dieses Modell muss vor der Verwendung heruntergeladen werden. Der Download kann einige Minuten dauern.",
+      "download": "Herunterladen",
+      "download_model": "Lade \"{model}\" herunter",
+      "downloading": "Ihr Modell wird heruntergeladen. Bitte warten…",
+      "downloading_model": "Lade \"{model}\" herunter",
+      "retry": "Wiederholen",
+      "unable_to_download": "Download kann nicht gestartet werden"
+    },
+    "webllm_downloader": {
+      "description": "Um den lokalen Modus zu verwenden, müssen Sie das {model}-Modell ({size}) herunterladen. Möchten Sie es jetzt herunterladen?"
+    },
+    "writing_tools": {
+      "title": "Schreibwerkzeuge",
+      "basic_config": {
+        "enable": "Schreibwerkzeuge aktivieren",
+        "enable_desc": "Schreibhilfe-Optionen anzeigen, wenn Text ausgewählt ist",
+        "title": "Grundeinstellungen"
+      },
+      "description": "Verschiedene Schreibhilfefunktionen konfigurieren",
+      "tool_config": {
+        "at_least_one_tool_error": "Mindestens ein Schreibwerkzeug muss ausgewählt werden.",
+        "list": {
+          "description": "Inhalte in klare, organisierte Listen umwandeln",
+          "title": "Liste"
+        },
+        "proofread": {
+          "description": "Überprüfe Grammatik-, Rechtschreib- und Zeichensetzungsfehler",
+          "title": "Korrekturlesen"
+        },
+        "rewrite": {
+          "description": "Textklarheit und Fluss verbessern",
+          "title": "Umschreiben"
+        },
+        "sparkle": {
+          "description": "Emojis und visuelle Elemente hinzufügen",
+          "title": "Verschönern"
+        },
+        "title": "Werkzeugkonfiguration"
+      }
+    },
+    "chat": {
+      "title": "Chat",
+      "description": "Chat-Funktionalität und Schnellaktionen konfigurieren",
+      "basic_config": {
+        "title": "Grundkonfiguration",
+        "chat_model": "Chat-Modell",
+        "chat_model_description": "Wählen Sie das KI-Modell für Chat-Unterhaltungen",
+        "chat_system_prompt": "Chat-System-Eingabeaufforderung",
+        "chat_system_prompt_description": "Definiere KI-Verhalten und -Rolle während Chat-Gesprächen",
+        "thinking_visibility": "Denkprozess-Sichtbarkeit",
+        "thinking_visibility_description": "Wählen Sie, wie der Denkprozess während des LLM-Denkens angezeigt wird",
+        "thinking_visibility_hide": "Denkprozess verbergen",
+        "thinking_visibility_hide_description": "Nur Ladevorgang und endgültige Antwort anzeigen",
+        "thinking_visibility_preview": "Denkprozess-Vorschau",
+        "thinking_visibility_preview_description": "Zeige die letzten 2 Zeilen, erweiterbar",
+        "thinking_visibility_full": "Vollständigen Denkprozess anzeigen",
+        "thinking_visibility_full_description": "Standardmäßig alles anzeigen, zusammenklappbar"
+      },
+      "quick_actions": {
+        "title": "Schnellaktionen",
+        "reset_to_default": "Auf Standard zurücksetzen",
+        "reset_to_default_confirm": "Sind Sie sicher, dass Sie die Schnellaktionen auf die Standardwerte zurücksetzen möchten?"
+      }
+    },
+    "common": {
+      "saved": "Gespeichert"
+    },
+    "interface": {
+      "title": "Schnittstelle",
+      "interface_language": "Schnittstellensprache",
+      "interface_language_desc": "Wählen Sie die Anzeigesprache für die NativeMind-Benutzeroberfläche"
+    },
+    "header": {
+      "starts_on_github": "Sterne auf GitHub",
+      "goto_website": "Gehen Sie zur Website"
+    }
+  },
+  "context_menu": {
+    "quick_actions": {
+      "title": "Schnelle Aktionen"
+    },
+    "translation": {
+      "show_original": "Original anzeigen",
+      "translate_page_into": "Diese Seite ins {language} übersetzen",
+      "translate_selected_text": "Ausgewählten Text übersetzen"
+    },
+    "add_image": {
+      "title": "Bild zum Chat hinzufügen"
+    },
+    "settings": {
+      "title": "Einstellungen"
+    }
+  },
+  "errors": {
+    "model_not_found": "Ups! Etwas ist schiefgelaufen. Bitte überprüfen Sie Ihre Ollama-Verbindung in den Einstellungen und versuchen Sie es erneut.",
+    "model_request_error": "Ups! Etwas ist schiefgelaufen. Bitte überprüfen Sie Ihre Ollama-Verbindung in den Einstellungen und versuchen Sie es erneut.",
+    "model_request_timeout": "Anfrage-Timeout. Bitte überprüfen Sie Ihre Ollama-Verbindung oder starten Sie eine neue Sitzung, da lange Kontexte die Antwortzeiten beeinträchtigen können.",
+    "timeout_error": "Zeitüberschreitung bei der Operation: {message}",
+    "unknown_error": "Ein unerwarteter Fehler ist aufgetreten: {message}",
+    "webllm_not_supported": "WebLLM wird auf Ihrem Gerät nicht unterstützt.",
+    "max_characters_error": "Maximal {count} Zeichen erlaubt"
+  },
+  "popup": {
+    "reload_page": "Bitte laden Sie die Seite neu, um NativeMind zu verwenden.",
+    "page_not_supported": "Diese Seite wird von NativeMind nicht unterstützt.",
+    "local_pdf_file_not_supported": "Aufgrund von Browser-Berechtigungsbeschränkungen können wir nicht direkt auf lokale Dateien auf Ihrem Computer zugreifen. Bitte öffnen Sie das Plugin in einem anderen Browser-Tab und laden Sie die lokale PDF-Datei manuell hoch."
+  },
+  "writing_tools": {
+    "processing": "Verarbeitung...",
+    "rewrite_suggestion": "Umschreibungsvorschlag",
+    "sparkle_text": "Text Verschönern",
+    "key_points": "Kernpunkte",
+    "grammar_and_style": "Grammatik & Stil",
+    "proofread": "Korrekturlesen",
+    "list": "Liste",
+    "sparkle": "Verschönern",
+    "rewrite": "Umschreiben",
+    "apply": "Anwenden",
+    "dismiss": "Ablehnen"
+  },
+  "textarea": {
+    "reset_to_default": "Auf Standard zurücksetzen"
+  },
+  "common": {
+    "cancel": "Abbrechen",
+    "duration": {
+      "days": "{day} Tag | {day} Tage",
+      "seconds": "{second} Sekunde | {second} Sekunden",
+      "minutes": "{minute} Minute | {minute} Minuten",
+      "hours": "{hour} Stunde | {hour} Stunden",
+      "years": "{year} Jahr | {year} Jahre",
+      "months": "{month} Monat | {month} Monate"
+    },
+    "confirm": "Bestätigen"
+  },
+  "ollama": {
+    "sites": {
+      "add_to_nativemind": "Verwendung in NativeMind"
+    }
+  },
+  "tooltips": {
+    "clear_chat": "Chat löschen",
+    "settings": "Einstellungen",
+    "pin_sidebar": "Anheften",
+    "unpin_sidebar": "Anheftung aufheben",
+    "close": "Schließen",
+    "chat_history": "Geschichte",
+    "new_chat": "Neuer Chat",
+    "back": "Zurück"
+  }
+}

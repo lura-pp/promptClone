@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://bedrock-runtime.us-east-1.amazonaws.com/model/anthropic.claude-v2/invoke
+    body:
+      encoding: UTF-8
+      string: '{"prompt":"\n\nHuman: Give me a short list of steps for creating a
+        Ruby gem\n\nAssistant:","max_tokens_to_sample":300,"temperature":0.5,"top_k":250,"top_p":1,"stop_sequences":["\\n\\nHuman"],"anthropic_version":"bedrock-2023-05-31"}'
+    headers:
+      Accept-Encoding:
+      - ''
+      Content-Type:
+      - application/json
+      Accept:
+      - "*/*"
+      User-Agent:
+      - aws-sdk-ruby3/3.189.0 ua/2.0 api/bedrock_runtime#1.4.0 os/macos#22 md/arm64
+        lang/ruby#3.2.2 md/3.2.2 cfg/retry-mode#legacy
+      Host:
+      - bedrock-runtime.us-east-1.amazonaws.com
+      Content-Length:
+      - '232'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 06 Dec 2023 05:49:05 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '911'
+      Connection:
+      - keep-alive
+      X-Amzn-Requestid:
+      - 2dea4410-7f17-4618-beb6-d7b54686d777
+      X-Amzn-Bedrock-Invocation-Latency:
+      - '9777'
+      X-Amzn-Bedrock-Output-Token-Count:
+      - '201'
+      X-Amzn-Bedrock-Input-Token-Count:
+      - '21'
+    body:
+      encoding: UTF-8
+      string: '{"completion":" Here is a short list of steps for creating a Ruby gem:\n\n1.
+        Create a new Ruby project and add your code/files\n2. Create a gemspec file
+        to specify metadata like name, version, dependencies etc. Use `bundle gem
+        gemname` to generate a template.\n3. Add a README and LICENSE file \n4. Setup
+        version control like git and make an initial commit\n5. Build the gem with
+        `gem build gemname.gemspec`\n6. Publish the gem with `gem push gemname-version.gem`\n7.
+        Add tests and document code with comments\n8. Choose a hosting service like
+        GitHub and push your code\n9. Release new versions by updating gemspec, building
+        and pushing \n\nThe key steps are creating the gemspec, building the gem file,
+        and publishing it. Make sure to follow RubyGems best practices like semantic
+        versioning. Add quality documentation, tests and keep publishing improvements.","stop_reason":"stop_sequence","stop":"\n\nHuman:"}'
+  recorded_at: Wed, 06 Dec 2023 05:49:05 GMT
+recorded_with: VCR 6.2.0

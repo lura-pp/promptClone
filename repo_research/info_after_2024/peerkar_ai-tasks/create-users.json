@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "1.0",
+  "title_i18n": {
+    "en_US": "Create users"
+  },
+  "configuration": {
+    "trace": true,
+    "nodes": [
+      {
+        "uiConfiguration": {
+          "position": {
+            "x": -119.69001625539329,
+            "y": -253.73824519916695
+          }
+        },
+        "id": "whiteModestSkunk",
+        "label": "Input Trigger",
+        "type": "inputTrigger",
+        "parameters": {}
+      },
+      {
+        "uiConfiguration": {
+          "position": {
+            "x": 165.7667732879673,
+            "y": -284.1440843967136
+          }
+        },
+        "id": "salmonDifferentWeasel",
+        "label": "Create Users",
+        "type": "geminiChatModel",
+        "parameters": {
+          "topK": 3,
+          "systemMessage": "You are a helpful assistant who helps creating Liferay DXP users if user asks for that. If you should create a user, first ask for the first name, then for the last name and lastly the email. Create the user based on provided inputs.",
+          "memoryMaxMessages": "20",
+          "project": "env:GCLOUD_PROJECT_NAME",
+          "tools": {
+            "user": {}
+          },
+          "maxOutputTokens": 350,
+          "topP": 1,
+          "timeout": 20,
+          "outputParameterName": "text",
+          "modelName": "gemini-1.5-pro",
+          "temperature": "0.5",
+          "location": "us-central1",
+          "useChatMemory": true,
+          "promptTemplate": "{{input.text}}"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "ed0e4a37-9be0-4fa9-9893-94af13368522",
+        "source": "whiteModestSkunk",
+        "target": "salmonDifferentWeasel"
+      }
+    ]
+  },
+  "description_i18n": {
+    "en_US": "This sample task help in creating portal users"
+  },
+  "enabled": true,
+  "externalReferenceCode": "create-users"
+}

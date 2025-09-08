@@ -1,0 +1,17 @@
+{
+    "agent_openai_researcher.json": 3,
+    "agent_openai_supervisor.json": 2,
+    "agent_openai_coder.json": 1,
+    "agent_openai_evolve.json": 1,
+    "agent_openai_planner.json": 2,
+    "context.py": 2,
+    "evaluation.py": 2,
+    "voice.py": 1,
+    "config.py": 3,
+    "supervisor.py": 4,
+    "planner.py": 2,
+    "codeact.py": 1,
+    "agent_planner.py": 1,
+    "legacy.py": 1,
+    "tool.py": 2
+}

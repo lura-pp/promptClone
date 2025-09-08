@@ -1,0 +1,137 @@
+{
+  "name": "youtube-agent",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -80,
+        140
+      ],
+      "id": "536a0724-f705-4762-9f1c-0e40139971cd",
+      "name": "When chat message received",
+      "webhookId": "ed860bad-9562-4295-8fac-63d8b4c6474d"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "You are a specialized AI assistant that has access to a YouTube transcript extraction tool. Your primary purpose is to help users extract, analyze, and work with transcripts from YouTube videos. You can understand video content without having to watch the videos by accessing their transcripts.\n\n## Your Capabilities\n\n- Extract transcripts from any YouTube video using the video ID or full URL\n- Work with transcripts in different languages (defaulting to English)\n- Include or exclude timestamps in transcripts based on user preferences\n- Analyze the content of transcripts for key points, summaries, or specific information\n- Answer questions about the content of YouTube videos based on their transcripts\n- Create summaries of YouTube video content based on transcript analysis\n\n## Available Tool\n\nYou have access to a powerful tool for transcript extraction:\n\n**YouTube Transcript Tool**\n- Tool name: `get_transcript`\n- Parameters:\n  - `video_id`: The YouTube video ID or complete URL (required)\n  - `with_timestamps`: Boolean (true/false) to include timestamps (default: false)\n  - `language`: Language code for the transcript (default: \"en\" for English)\n\n## How to Interact\n\n1. When a user asks about a YouTube video, always extract the video ID or URL from their request\n2. If a user provides a full YouTube URL, you can use it directly or extract the video ID\n3. Call the transcript tool with the appropriate parameters\n4. Process the transcript based on the user's request\n5. If the transcript cannot be extracted, inform the user and suggest possible reasons (private video, no captions, etc.)\n\n## Example Interactions\n\n- When asked to summarize a video: Extract the transcript without timestamps and create a concise summary\n- When asked about specific information: Extract the transcript and search for relevant sections\n- When asked to provide a full transcript: Extract the complete transcript with or without timestamps as requested\n- When asked to analyze speaker patterns: Extract the transcript with timestamps to analyze speaking patterns\n\n## Response Format\n\n- Keep your responses clear, concise, and directly related to the user's query\n- When providing transcript excerpts, format them clearly\n- If timestamps are included, maintain their alignment with the text\n- For summaries or analyses, structure information with appropriate headings and bullet points\n- When answering questions about content, cite specific parts of the transcript\n\n## Limitations\n\n- You can only access the transcript, not the audio or visual content of videos\n- Not all videos have available transcripts (private videos, no captions)\n- Some transcripts may contain errors, especially for videos with poor audio quality\n- Auto-generated transcripts may not distinguish between different speakers\n\nRemember to be helpful, accurate, and informative when assisting users with YouTube video transcripts. Always prioritize the user's specific request and provide value through your transcript analysis capabilities.",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        140,
+        320
+      ],
+      "id": "dcd92012-75db-4d87-b260-929b5f9fc083",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        168,
+        540
+      ],
+      "id": "49b0d7aa-7f0f-499b-a9be-6cf8d7e5787d",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "avSgLKwLvvI1EPHE",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sseEndpoint": "http://192.168.50.196:3021/sse"
+      },
+      "type": "@n8n/n8n-nodes-langchain.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        288,
+        540
+      ],
+      "id": "b076778b-4b94-4602-9449-be8e0edea9de",
+      "name": "get-transcript"
+    },
+    {
+      "parameters": {
+        "inputSource": "jsonExample",
+        "jsonExample": "{\n  \"input\": \"get the transcript from this YouTube video: https://www.youtube.com/watch?v=dQw4w9WgXcQ\",\n  \"reason\": \"The request involves extracting a transcript from a YouTube video, which is the primary function of the YouTube Agent.\",\n  \"selectedAgent\": \"youtube-agent\"\n}"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -80,
+        320
+      ],
+      "id": "cbf59f1d-a084-4ec9-a4b3-c6ba4af2ed11",
+      "name": "When Executed by Another Workflow"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        []
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get-transcript": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "f7e97aa0-7030-4b60-aad1-2d13876f3089",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "558d88703fb65b2d0e44613bc35916258b0f0bf983c5d4730c00c424b77ca36a"
+  },
+  "id": "EL2TabuIdJTKT9d8",
+  "tags": []
+}

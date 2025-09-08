@@ -1,0 +1,15 @@
+{
+    "alfred.py": 1,
+    "pydantic_prompt.py": 1,
+    "_answer_relevance.py": 1,
+    "_domain_specific_rubrics.py": 1,
+    "_multi_modal_faithfulness.py": 1,
+    "_multi_modal_relevance.py": 1,
+    "_instance_specific_rubrics.py": 1,
+    "_goal_accuracy.py": 2,
+    "_factual_correctness.py": 1,
+    "_sql_semantic_equivalence.py": 1,
+    "_faithfulness.py": 2,
+    "_answer_correctness.py": 1,
+    "prompt.py": 2
+}

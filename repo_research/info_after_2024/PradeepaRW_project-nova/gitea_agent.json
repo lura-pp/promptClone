@@ -1,0 +1,1233 @@
+{
+  "name": "gitea-agent",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        2100,
+        -60
+      ],
+      "id": "9937c233-adf1-461d-a174-5abd373723cc",
+      "name": "When chat message received",
+      "webhookId": "3169f754-c305-4eda-bbeb-79b6d8f897a4"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.input }}",
+        "options": {
+          "systemMessage": "You are an AI assistant with specialized capabilities for interacting with Gitea repositories through the Gitea MCP Server integration. Your purpose is to help users manage their Gitea repositories, issues, pull requests, and other Git-related tasks through natural language conversation.\n\n## Capabilities\n\nYou have access to the Gitea MCP Server which allows you to perform the following actions:\n\n### User Management\n- Retrieve information about the authenticated user\n- Get organizations associated with the user\n- Search for users\n\n### Repository Management\n- Create new repositories\n- Fork existing repositories\n- List repositories owned by the user\n- Search for repositories\n\n### Branch Operations\n- Create new branches\n- Delete branches\n- List all branches in a repository\n\n### Release Management\n- Create, delete, and get releases\n- List all releases in a repository\n- Get the latest release\n\n### Tag Operations\n- Create, delete, and get tags\n- List all tags in a repository\n\n### Commit Operations\n- List all commits in a repository\n\n### File Operations\n- Get file content and metadata\n- Create new files\n- Update existing files\n- Delete files\n\n### Issue Management\n- Get issues by index\n- List all issues in a repository\n- Create new issues\n- Add comments to issues\n- Edit issues\n\n### Pull Request Operations\n- Get pull requests by index\n- List all pull requests\n- Create new pull requests\n\n### Organization Operations\n- Search for teams in an organization\n\n### Server Operations\n- Get the version of the Gitea MCP Server\n\n## Interaction Guidelines\n\n1. **Be helpful and informative**: Provide clear guidance on Gitea functionality and assist users in accomplishing their Git-related tasks efficiently.\n\n2. **Request necessary information**: When a user's request is missing crucial details (like repository name, file path, etc.), politely ask for the specific information needed to execute the command.\n\n3. **Explain actions**: Before performing any action that modifies repositories (creating/deleting files, branches, etc.), explain what will happen and confirm with the user if appropriate.\n\n4. **Use natural language understanding**: Interpret the user's intent from their natural language queries and translate them to the appropriate Gitea MCP Server commands.\n\n5. **Provide examples**: Offer examples of how to phrase requests for common Git operations when appropriate.\n\n6. **Maintain security**: Never attempt to access repositories or perform actions the authenticated user doesn't have permission for.\n\n7. **Educational role**: Provide context about Git/Gitea concepts when relevant to help users better understand the version control system.\n\n8. **Error handling**: If a Gitea operation fails, explain the possible reasons and suggest solutions or workarounds.\n\n## Response Format\n\nWhen executing Gitea operations:\n1. Acknowledge the user's request\n2. Explain what action you're taking\n3. Execute the appropriate Gitea MCP command\n4. Present the results in a clear, readable format\n5. Suggest next steps when appropriate\n\n## Examples of Commands\n\n- \"List all my repositories\"\n- \"Create a new repository named 'project-x'\"\n- \"Show me the open issues in repository 'my-app'\"\n- \"Create a new branch called 'feature/login' in 'my-website'\"\n- \"Get the content of file 'README.md' in my 'docs' repository\"\n- \"Create a pull request from branch 'fix/bug-123' to 'main' in 'my-project'\"\n\nRemember that your primary goal is to make Git repository management through Gitea as smooth and intuitive as possible for users of all technical skill levels."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        2232,
+        140
+      ],
+      "id": "e403472e-9c74-4961-98ae-0ed361451729",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        220,
+        360
+      ],
+      "id": "bdf496c1-5792-4b40-9adc-828b1734ebf7",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "avSgLKwLvvI1EPHE",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        340,
+        360
+      ],
+      "id": "1e5a2a9f-d355-4f22-a819-98693c6316cc",
+      "name": "MCP Client",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "eBtbYUUNExUD3iMv",
+          "name": "MCP Client - gitea-mcp-server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "create_branch"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        460,
+        360
+      ],
+      "id": "8819adcf-e927-420f-8181-bfbb791027a6",
+      "name": "create_branch",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "eBtbYUUNExUD3iMv",
+          "name": "MCP Client - gitea-mcp-server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "create_file"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        580,
+        360
+      ],
+      "id": "326e8eb8-4416-459d-aede-3305ee8c8e64",
+      "name": "create_file",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "eBtbYUUNExUD3iMv",
+          "name": "MCP Client - gitea-mcp-server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "create_issue"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        700,
+        360
+      ],
+      "id": "f59d4e6e-cf9e-4919-8d95-b19c17a3decc",
+      "name": "create_issue",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "eBtbYUUNExUD3iMv",
+          "name": "MCP Client - gitea-mcp-server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "create_issue_comment"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        820,
+        360
+      ],
+      "id": "d4a5ff8d-b2da-49f9-a669-6564e3b9cb6c",
+      "name": "create_issue_comment",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "eBtbYUUNExUD3iMv",
+          "name": "MCP Client - gitea-mcp-server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "create_pull_request"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        940,
+        360
+      ],
+      "id": "5b61e4b8-1506-44fe-a422-a58ed3eeb94a",
+      "name": "create_pull_request",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "eBtbYUUNExUD3iMv",
+          "name": "MCP Client - gitea-mcp-server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "create_release"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1060,
+        360
+      ],
+      "id": "909f0a00-bef8-405d-a931-5c8053e3586d",
+      "name": "create_release",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "eBtbYUUNExUD3iMv",
+          "name": "MCP Client - gitea-mcp-server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "create_repo"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1180,
+        360
+      ],
+      "id": "10c4830e-0245-4a31-9b9b-1ff26e87c631",
+      "name": "create_repo",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "eBtbYUUNExUD3iMv",
+          "name": "MCP Client - gitea-mcp-server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "create_tag"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1300,
+        360
+      ],
+      "id": "ff018134-2c2a-4343-9d16-d59d5d346325",
+      "name": "create_tag",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "eBtbYUUNExUD3iMv",
+          "name": "MCP Client - gitea-mcp-server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "delete_branch"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1420,
+        360
+      ],
+      "id": "3e5c4e26-e766-471d-9576-7c27c27693a9",
+      "name": "delete_branch",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "eBtbYUUNExUD3iMv",
+          "name": "MCP Client - gitea-mcp-server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "delete_file"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1540,
+        360
+      ],
+      "id": "1111d221-c67f-4eea-b30d-e57cc721c845",
+      "name": "delete_file",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "eBtbYUUNExUD3iMv",
+          "name": "MCP Client - gitea-mcp-server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "delete_release"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1660,
+        360
+      ],
+      "id": "1c7ba9af-5595-4dce-899e-ab6040369898",
+      "name": "delete_release",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "eBtbYUUNExUD3iMv",
+          "name": "MCP Client - gitea-mcp-server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "delete_tag"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1780,
+        360
+      ],
+      "id": "7d22e39b-1b1a-458d-8abf-03d4965eb036",
+      "name": "delete_tag",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "eBtbYUUNExUD3iMv",
+          "name": "MCP Client - gitea-mcp-server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "edit_issue"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1900,
+        360
+      ],
+      "id": "6a04ab56-b858-4cc1-89af-1213999e11a6",
+      "name": "edit_issue",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "eBtbYUUNExUD3iMv",
+          "name": "MCP Client - gitea-mcp-server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "fork_repo"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        2020,
+        360
+      ],
+      "id": "fd529999-5baa-45ee-822b-f6515915c786",
+      "name": "fork_repo",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "eBtbYUUNExUD3iMv",
+          "name": "MCP Client - gitea-mcp-server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "get_file_content"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        2140,
+        360
+      ],
+      "id": "77f4d08d-7828-40b5-ab63-303659553f16",
+      "name": "get_file_content",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "eBtbYUUNExUD3iMv",
+          "name": "MCP Client - gitea-mcp-server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "get_gitea_mcp_server_version"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        2260,
+        360
+      ],
+      "id": "04321ce9-b1a8-42c7-a4e1-fc2d20b5bb4c",
+      "name": "get_gitea_mcp_server_version",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "eBtbYUUNExUD3iMv",
+          "name": "MCP Client - gitea-mcp-server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "get_issue_by_index"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        2380,
+        360
+      ],
+      "id": "c698396b-5293-45b3-bcb6-02c90cc956d4",
+      "name": "get_issue_by_index",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "eBtbYUUNExUD3iMv",
+          "name": "MCP Client - gitea-mcp-server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "get_latest_release"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        2500,
+        360
+      ],
+      "id": "e31ccf99-4e6b-477d-9b5e-f1803db12174",
+      "name": "get_latest_release",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "eBtbYUUNExUD3iMv",
+          "name": "MCP Client - gitea-mcp-server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "get_my_user_info"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        2620,
+        360
+      ],
+      "id": "bd0248a0-c0ac-43c3-811b-6e2b8b593f04",
+      "name": "get_my_user_info",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "eBtbYUUNExUD3iMv",
+          "name": "MCP Client - gitea-mcp-server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "get_pull_request_by_index"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        2740,
+        360
+      ],
+      "id": "209a33ba-0916-416e-90af-65889725c628",
+      "name": "get_pull_request_by_index",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "eBtbYUUNExUD3iMv",
+          "name": "MCP Client - gitea-mcp-server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "get_release"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        2860,
+        360
+      ],
+      "id": "02eb8187-2089-40a8-a75a-86d23b62dfe9",
+      "name": "get_release",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "eBtbYUUNExUD3iMv",
+          "name": "MCP Client - gitea-mcp-server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "get_tag"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        2980,
+        360
+      ],
+      "id": "93a62071-8a59-475f-a274-376dffc9359f",
+      "name": "get_tag",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "eBtbYUUNExUD3iMv",
+          "name": "MCP Client - gitea-mcp-server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "get_user_orgs"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        3100,
+        360
+      ],
+      "id": "1fb2ad7e-e85a-4a0f-932f-bbecbfa09c1b",
+      "name": "get_user_orgs",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "eBtbYUUNExUD3iMv",
+          "name": "MCP Client - gitea-mcp-server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "list_branches"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        3220,
+        360
+      ],
+      "id": "487a90be-62a0-4b75-8c96-e2d3c23b3bab",
+      "name": "list_branches",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "eBtbYUUNExUD3iMv",
+          "name": "MCP Client - gitea-mcp-server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "list_my_repos"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        3340,
+        360
+      ],
+      "id": "b59f4607-13d7-48d3-a9bf-a12563e0b754",
+      "name": "list_my_repos",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "eBtbYUUNExUD3iMv",
+          "name": "MCP Client - gitea-mcp-server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "list_releases"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        3460,
+        360
+      ],
+      "id": "61ea34a1-a785-49c6-8299-6a07410deabd",
+      "name": "list_releases",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "eBtbYUUNExUD3iMv",
+          "name": "MCP Client - gitea-mcp-server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "list_repo_commits"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        3580,
+        360
+      ],
+      "id": "7769e98e-ad2c-4ee9-bf9c-b59af00aa624",
+      "name": "list_repo_commits",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "eBtbYUUNExUD3iMv",
+          "name": "MCP Client - gitea-mcp-server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "list_repo_issues"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        3700,
+        360
+      ],
+      "id": "36d3e005-d827-4d8b-9a3d-3656724bf338",
+      "name": "list_repo_issues",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "eBtbYUUNExUD3iMv",
+          "name": "MCP Client - gitea-mcp-server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "list_repo_pull_requests"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        3820,
+        360
+      ],
+      "id": "005dea61-49aa-42cb-be22-e114221ba043",
+      "name": "list_repo_pull_requests",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "eBtbYUUNExUD3iMv",
+          "name": "MCP Client - gitea-mcp-server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "list_tags"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        3940,
+        360
+      ],
+      "id": "6bd5b54c-df57-4f89-be52-7effbb509730",
+      "name": "list_tags",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "eBtbYUUNExUD3iMv",
+          "name": "MCP Client - gitea-mcp-server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "search_org_teams"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        4060,
+        360
+      ],
+      "id": "fee58cc7-328d-4ea3-95cb-2b57373e88b8",
+      "name": "search_org_teams",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "eBtbYUUNExUD3iMv",
+          "name": "MCP Client - gitea-mcp-server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "search_repos"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        4180,
+        360
+      ],
+      "id": "e4c2a6e0-ecb9-4cec-9dab-8d24f4fba016",
+      "name": "search_repos",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "eBtbYUUNExUD3iMv",
+          "name": "MCP Client - gitea-mcp-server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "search_users"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        4300,
+        360
+      ],
+      "id": "07c68891-9675-44a1-a6cd-d2e22c1335b6",
+      "name": "search_users",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "eBtbYUUNExUD3iMv",
+          "name": "MCP Client - gitea-mcp-server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "update_file"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        4420,
+        360
+      ],
+      "id": "14906156-50b8-442c-8ffe-8e6556bf39ff",
+      "name": "update_file",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "eBtbYUUNExUD3iMv",
+          "name": "MCP Client - gitea-mcp-server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "inputSource": "jsonExample",
+        "jsonExample": "{\n  \"input\": \"list all open pull requests in our gitea repo\",\n  \"reason\": \"The request involves managing Gitea repository pull requests, which is a primary capability of the Gitea Agent.\",\n  \"selectedAgent\": \"gitea-agent\"\n}"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        1880,
+        120
+      ],
+      "id": "34f27ecd-6bc5-4209-9351-7ef6b31ac3f2",
+      "name": "When Executed by Another Workflow"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        []
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MCP Client": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_branch": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_file": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_issue": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_issue_comment": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_pull_request": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_release": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_repo": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_tag": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "delete_branch": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "delete_file": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "delete_release": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "delete_tag": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "edit_issue": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "fork_repo": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_file_content": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_gitea_mcp_server_version": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_issue_by_index": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_latest_release": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_my_user_info": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_pull_request_by_index": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_release": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_tag": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_user_orgs": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "list_branches": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "list_my_repos": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "list_releases": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "list_repo_commits": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "list_repo_issues": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "list_repo_pull_requests": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "list_tags": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "search_org_teams": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "search_repos": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "search_users": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "update_file": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "2dc3e650-1f45-4e50-b589-ad731eb92e21",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "558d88703fb65b2d0e44613bc35916258b0f0bf983c5d4730c00c424b77ca36a"
+  },
+  "id": "JfoZIBPKeCFP11n2",
+  "tags": []
+}

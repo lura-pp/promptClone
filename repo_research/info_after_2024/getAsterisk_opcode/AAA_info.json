@@ -1,0 +1,5 @@
+{
+    "security-scanner.opcode.json": 1,
+    "unit-tests-bot.opcode.json": 1,
+    "git-commit-bot.opcode.json": 1
+}

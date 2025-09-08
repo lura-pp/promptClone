@@ -1,0 +1,7 @@
+{
+    "generate.json": 1,
+    "create-previews.py": 2,
+    "pipeline_hidream_image_editing.py": 1,
+    "instantid_model.py": 2,
+    "wan_t2v_pipeline.py": 2
+}

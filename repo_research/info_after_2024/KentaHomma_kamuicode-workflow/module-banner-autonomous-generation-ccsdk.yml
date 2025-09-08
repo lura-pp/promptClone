@@ -1,0 +1,518 @@
+name: module-banner-autonomous-generation-ccsdk
+
+on:
+  workflow_call:
+    inputs:
+      image-prompt:
+        description: 'プランニングで最適化された画像プロンプト'
+        required: true
+        type: string
+      concept:
+        description: '元のコンセプト（評価用）'
+        required: true
+        type: string
+      text-overlay-prompt:
+        description: 'テキストオーバーレイプロンプト'
+        required: true
+        type: string
+      text_content:
+        description: '画像に表示するテキスト'
+        required: true
+        type: string
+      banner_size:
+        description: 'バナーサイズ'
+        required: false
+        type: string
+        default: 'square_1_1'
+      input_mode:
+        description: '入力モード (prompt_only/with_image)'
+        required: false
+        type: string
+        default: 'prompt_only'
+      branch-name:
+        description: 'ワーキングブランチ名'
+        required: true
+        type: string
+      folder-name:
+        description: 'プロジェクトフォルダ名'
+        required: true
+        type: string
+    outputs:
+      completed:
+        description: '完了ステータス'
+        value: ${{ jobs.autonomous-generation.outputs.completed }}
+      image-url:
+        description: '生成されたバナー画像のURL'
+        value: ${{ jobs.autonomous-generation.outputs.image-url }}
+      image-prompt:
+        description: '最終的に使用された画像プロンプト'
+        value: ${{ jobs.autonomous-generation.outputs.image-prompt }}
+      text-overlay-prompt:
+        description: '最終的に使用されたテキストオーバーレイプロンプト'
+        value: ${{ jobs.autonomous-generation.outputs.text-overlay-prompt }}
+      iterations:
+        description: '改善イテレーション回数'
+        value: ${{ jobs.autonomous-generation.outputs.iterations }}
+      final-score:
+        description: '最終評価スコア'
+        value: ${{ jobs.autonomous-generation.outputs.final-score }}
+    secrets:
+      anthropic_api_key:
+        description: 'Anthropic API Key'
+        required: true
+      gemini_api_key:
+        description: 'Gemini API Key'
+        required: true
+      github_pat:
+        description: 'GitHub Token'
+        required: true
+
+jobs:
+  autonomous-generation:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      completed: ${{ steps.generate.outputs.completed }}
+      image-url: ${{ steps.generate.outputs.image-url }}
+      image-prompt: ${{ steps.generate.outputs.image-prompt }}
+      text-overlay-prompt: ${{ steps.generate.outputs.text-overlay-prompt }}
+      iterations: ${{ steps.generate.outputs.iterations }}
+      final-score: ${{ steps.generate.outputs.final-score }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.branch-name }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install Claude Code SDK
+        run: npm install @anthropic-ai/claude-code
+      
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      
+      - name: Install Python dependencies
+        run: |
+          pip install google-generativeai
+          pip install requests
+      
+      - name: Install ImageMagick
+        run: |
+          # GitHub Actions ubuntu-latest にImageMagickをインストール
+          sudo apt-get update
+          sudo apt-get install -y imagemagick
+      
+      - name: 🎯 自律修正バナー生成エージェント
+        id: generate
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.anthropic_api_key }}
+          GEMINI_API_KEY: ${{ secrets.gemini_api_key }}
+        run: |
+          echo "::group::🎯 Autonomous Banner Generation Agent Execution"
+          echo "Starting at: $(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)"
+          
+          # 設定
+          IMAGE_PROMPT='${{ inputs.image-prompt }}'
+          CONCEPT='${{ inputs.concept }}'
+          TEXT_OVERLAY_PROMPT='${{ inputs.text-overlay-prompt }}'
+          USER_TEXT_CONTENT='${{ inputs.text_content }}'
+          BANNER_SIZE='${{ inputs.banner_size }}'
+          INPUT_MODE='${{ inputs.input_mode }}'
+          FOLDER_NAME='${{ inputs.folder-name }}'
+          MAX_ITERATIONS="5"
+          
+          echo "✅ Planning results received:"
+          echo "Image prompt: $IMAGE_PROMPT"
+          echo "Concept: $CONCEPT"
+          echo "Text overlay prompt: $TEXT_OVERLAY_PROMPT"
+          echo "User text content: $USER_TEXT_CONTENT"
+          echo "Banner size: $BANNER_SIZE"
+          echo "Input mode: $INPUT_MODE"
+          echo "Project folder: $FOLDER_NAME"
+          
+          # 必要なディレクトリを事前に作成
+          mkdir -p "$FOLDER_NAME/config"
+          mkdir -p "$FOLDER_NAME/planning"
+          mkdir -p "$FOLDER_NAME/iterations"
+          mkdir -p "$FOLDER_NAME/final"
+          mkdir -p "$FOLDER_NAME/logs"
+          if [ "$INPUT_MODE" = "with_image" ]; then
+            mkdir -p "$FOLDER_NAME/input"
+          fi
+          
+          # MCP設定の確認
+          MCP_CONFIG_PATH=".claude/mcp-kamuicode.json"
+          MCP_CONFIG_ABS_PATH="$(pwd)/$MCP_CONFIG_PATH"
+          
+          if [ -f "$MCP_CONFIG_ABS_PATH" ]; then
+            echo "✅ MCP config file exists at: $MCP_CONFIG_ABS_PATH"
+          else
+            echo "❌ MCP config file not found at: $MCP_CONFIG_ABS_PATH"
+            exit 1
+          fi
+          
+          # CCSDKログパーサーのセットアップ
+          if [ -f "scripts/ccsdk-log-parser.sh" ]; then
+            chmod +x scripts/ccsdk-log-parser.sh
+            LOG_PARSER="| scripts/ccsdk-log-parser.sh"
+            echo "✅ CCSDK log parser enabled"
+          else
+            LOG_PARSER=""
+            echo "⚠️ CCSDK log parser not found, using standard output"
+          fi
+          
+          # プロンプトの構築
+          PROMPT="あなたは自律的バナー生成エージェントです。評価基準を満たすまで自動的に改善を繰り返してください。
+
+          基本情報:
+          - 入力モード: $INPUT_MODE
+          - コンセプト: $CONCEPT （評価・改善時の目標基準として参照）
+          - 初期画像プロンプト: $IMAGE_PROMPT
+          - 初期テキストオーバーレイプロンプト: $TEXT_OVERLAY_PROMPT
+          - 表示テキスト: '$USER_TEXT_CONTENT' （一字一句変更禁止）
+          - バナーサイズ: $BANNER_SIZE
+          - プロジェクトフォルダ: $FOLDER_NAME
+          - 最大イテレーション: $MAX_ITERATIONS
+
+          重要 - 利用可能ツール:
+          - Read/Write/Edit: ファイル操作
+          - Bash: コマンド実行（Gemini Vision API呼び出し含む）
+          - mcp__t2i-fal-imagen4-ultra__imagen4_ultra_submit/status/result: 画像生成
+          - mcp__i2i-fal-flux-kontext-max__flux_kontext_submit/status/result: テキスト合成
+          - ffmpeg: 画像の色調・明度・コントラスト・ガンマ補正・シャープネス・ノイズ除去（詳細は .github/workflows/usage/ffmpeg-usage.md 参照）
+          - ImageMagick (magick): 包括的な画像処理・加工（詳細は .github/workflows/usage/imagemagick-usage.md 参照）
+
+          実行手順:
+
+          1. 初期設定:
+             - 評価基準ファイルを読み込み: .github/workflows/docs/banner-evaluation-criteria.md
+             - 生成テンプレートファイルを作成: $FOLDER_NAME/config/banner-generation-templates.md
+             - ImageMagick使用方法を確認: .github/workflows/usage/imagemagick-usage.md を読み込む
+             - FFmpeg使用方法を確認: .github/workflows/usage/ffmpeg-usage.md を読み込む
+             - GitHub Actions Summaryの初期化
+
+          2. 入力モード別の処理:
+             ${INPUT_MODE}モードで評価基準とテンプレートに基づく自律修正ループで品質向上
+
+          3. 自律修正ループ (最大$MAX_ITERATIONS回):
+             各イテレーションで以下を実行:
+             
+             a) バナー生成:
+                - ベース画像生成（mcp__t2i-fal-imagen4-ultra__*）
+                - テキスト合成（mcp__i2i-fal-flux-kontext-max__*）
+                - 必要に応じて画像後処理（ffmpeg、ImageMagick併用）
+                - $FOLDER_NAME/iterations/banner-v{N}.png として保存
+             
+             b) Gemini Vision評価:
+                - curlコマンドでGemini Vision APIを直接呼び出し
+                - 画像をbase64エンコードして送信
+                - 評価基準に基づいて1-100点で採点
+                - 技術品質、デザイン品質、商用価値を詳細評価
+                - 改善提案も同時に生成
+                
+             c) 評価結果判定:
+                - 総合スコア70点以上で合格
+                - 各項目の最低基準もチェック
+             
+             d) GitHub Actions Summary更新:
+                - 各イテレーションの結果を記録
+                - 生成プロンプト、評価スコア、改善アクションを記載
+             
+             e) 未達成時の改善:
+                - 評価結果から問題点を特定
+                - **コンセプトとの整合性を必ず確認**
+                - 改善方法を選択：
+                  1) 画像プロンプト調整 → AI再生成
+                  2) テキストオーバーレイプロンプト調整 → AI再生成  
+                  3) 画像後処理調整 → ffmpeg/ImageMagick処理
+                - 改善されたプロンプトを使用して再生成
+                - 改善履歴を記録（どの方法でどう調整したか）
+
+          4. 最終処理:
+             - 最良のバナーを $FOLDER_NAME/final/banner.png にコピー
+             - 最終的に使用した画像プロンプトを $FOLDER_NAME/final/image-prompt.txt に保存
+             - 最終的に使用したテキストオーバーレイプロンプトを $FOLDER_NAME/final/text-overlay-prompt.txt に保存
+             - 評価履歴を $FOLDER_NAME/evaluation-history.md に保存
+             - GitHub Outputsに結果を設定（image-prompt、text-overlay-prompt含む）
+
+          評価システム:
+          - 評価基準ファイル（.github/workflows/docs/banner-evaluation-criteria.md）の詳細基準を使用
+          - Gemini Vision APIで1-100点の厳格な採点を実行
+          - 総合スコア70点以上で合格、未達成時は自動改善
+
+          **改善ポイント**:
+          1. **コンセプト遵守**: 改善時は必ずコンセプトに立ち戻り、本質から外れないよう注意
+          2. **画像プロンプト調整**: 色調、構図、雰囲気、背景デザインの改善
+          3. **テキストオーバーレイプロンプト調整**: フォント、配置、色、読みやすさの改善
+          4. **画像後処理調整**: AI生成だけで解決しない品質問題への対処
+          5. **両プロンプトの連携**: 画像とテキストが調和する総合的なデザインを目指す
+          6. **イテレーション記録**: 各回の改善理由と結果を詳細に記録
+          
+          **画像後処理の具体例**:
+          ImageMagickの詳細な使用方法は .github/workflows/usage/imagemagick-usage.md を参照してください。
+          FFmpegの詳細な使用方法は .github/workflows/usage/ffmpeg-usage.md を参照してください。
+          
+          ```bash
+          # ImageMagickインストール確認と自動インストール
+          if ! command -v magick &> /dev/null; then
+              echo \"ImageMagick not found, installing...\"
+              brew install imagemagick
+          fi
+          ```
+          
+          重要: 評価時は必ず評価基準ファイルの詳細項目に従って採点してください
+
+          Gemini Vision API呼び出し例:
+          以下のようなBashコードでGemini Vision APIを使用して画像を評価してください：
+
+          ```bash
+          # 画像をbase64エンコード
+          IMAGE_BASE64=\$(base64 -w 0 \${FOLDER_NAME}/iterations/banner-v1.png)
+          
+          # Gemini Vision API呼び出し
+          RESPONSE=\$(curl -s -X POST \\
+            \"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent\" \\
+            -H \"x-goog-api-key: \${GEMINI_API_KEY}\" \\
+            -H \"Content-Type: application/json\" \\
+            -d \"{
+              \\\"contents\\\": [
+                {
+                  \\\"parts\\\": [
+                    {\\\"text\\\": \\\"このバナー画像を評価基準に基づいて1-100点で採点してください。技術品質30点、デザイン品質40点、商用価値30点で評価し、改善提案も含めてください。\\\"},
+                    {\\\"inline_data\\\": {\\\"mime_type\\\": \\\"image/png\\\", \\\"data\\\": \\\"\$IMAGE_BASE64\\\"}}
+                  ]
+                }
+              ]
+            }\")
+          
+          # レスポンスから評価結果を抽出
+          EVALUATION=\$(echo \"\$RESPONSE\" | jq -r '.candidates[0].content.parts[0].text')
+          ```
+
+          - テキスト「$USER_TEXT_CONTENT」は絶対に変更しない
+          - 各イテレーションの結果を必ず保存
+          - 評価は厳格に行う（妥協しない）
+          - 全プロセスをGitHub Summaryで可視化
+          - Gemini API Keyは環境変数から取得: \$GEMINI_API_KEY"
+
+          echo "🚀 Starting Autonomous Banner Generation Agent..."
+          echo "📝 Prompt length: ${#PROMPT}"
+          
+          # Claude Code CLIの実行（ログパーサー付き）
+          if [ -n "$LOG_PARSER" ]; then
+            npx @anthropic-ai/claude-code \
+              --mcp-config="$MCP_CONFIG_ABS_PATH" \
+              --allowedTools "Read,Write,Edit,Bash,mcp__t2i-fal-imagen4-ultra__imagen4_ultra_submit,mcp__t2i-fal-imagen4-ultra__imagen4_ultra_status,mcp__t2i-fal-imagen4-ultra__imagen4_ultra_result,mcp__i2i-fal-flux-kontext-max__flux_kontext_submit,mcp__i2i-fal-flux-kontext-max__flux_kontext_status,mcp__i2i-fal-flux-kontext-max__flux_kontext_result" \
+              --max-turns 140 \
+              --verbose \
+              --output-format stream-json \
+              --permission-mode "acceptEdits" \
+              -p "$PROMPT" 2>&1 | scripts/ccsdk-log-parser.sh | tee "$FOLDER_NAME/logs/ccsdk-output.log"
+          else
+            npx @anthropic-ai/claude-code \
+              --mcp-config="$MCP_CONFIG_ABS_PATH" \
+              --allowedTools "Read,Write,Edit,Bash,mcp__t2i-fal-imagen4-ultra__imagen4_ultra_submit,mcp__t2i-fal-imagen4-ultra__imagen4_ultra_status,mcp__t2i-fal-imagen4-ultra__imagen4_ultra_result,mcp__i2i-fal-flux-kontext-max__flux_kontext_submit,mcp__i2i-fal-flux-kontext-max__flux_kontext_status,mcp__i2i-fal-flux-kontext-max__flux_kontext_result" \
+              --max-turns 140 \
+              --verbose \
+              --permission-mode "acceptEdits" \
+              -p "$PROMPT" || {
+                echo "::error::❌ Claude Code CLI execution failed"
+                exit 1
+              }
+          fi
+          
+          # 生成結果の確認とGitHub Outputsの設定
+          echo ""
+          echo "🎨 Checking generated banners..."
+          
+          # 最終バナーの確認
+          if [ -f "$FOLDER_NAME/final/banner.png" ]; then
+            echo "✅ Final banner generated successfully"
+            echo "image-url=$FOLDER_NAME/final/banner.png" >> $GITHUB_OUTPUT
+          else
+            echo "::warning::⚠️ Final banner not found, checking iterations..."
+            # イテレーションフォルダから最新のバナーを探す
+            LATEST_BANNER=$(ls -t "$FOLDER_NAME/iterations/banner-v"*.png 2>/dev/null | head -1)
+            if [ -n "$LATEST_BANNER" ]; then
+              cp "$LATEST_BANNER" "$FOLDER_NAME/final/banner.png"
+              echo "image-url=$FOLDER_NAME/final/banner.png" >> $GITHUB_OUTPUT
+            else
+              echo "::error::❌ No banner images were generated"
+              exit 1
+            fi
+          fi
+          
+          # イテレーション数の確認
+          ITERATION_COUNT=$(ls "$FOLDER_NAME/iterations/banner-v"*.png 2>/dev/null | wc -l)
+          echo "iterations=$ITERATION_COUNT" >> $GITHUB_OUTPUT
+          echo "::notice::📊 Total iterations: $ITERATION_COUNT"
+          
+          # 評価履歴から最終スコアを抽出（存在する場合）
+          if [ -f "$FOLDER_NAME/evaluation-history.md" ]; then
+            FINAL_SCORE=$(grep -oP "最終スコア.*?(\d+)" "$FOLDER_NAME/evaluation-history.md" | grep -oP "\d+" | tail -1)
+            if [ -n "$FINAL_SCORE" ]; then
+              echo "final-score=$FINAL_SCORE" >> $GITHUB_OUTPUT
+              echo "::notice::🎯 Final score: $FINAL_SCORE"
+            else
+              echo "final-score=N/A" >> $GITHUB_OUTPUT
+            fi
+          else
+            echo "final-score=N/A" >> $GITHUB_OUTPUT
+          fi
+          
+          # 最終的に使用されたimage-promptの確認
+          if [ -f "$FOLDER_NAME/final/image-prompt.txt" ]; then
+            FINAL_IMAGE_PROMPT=$(cat "$FOLDER_NAME/final/image-prompt.txt" | tr '\n' ' ')
+            echo "image-prompt=$FINAL_IMAGE_PROMPT" >> $GITHUB_OUTPUT
+            echo "::notice::🎯 Final image prompt: $FINAL_IMAGE_PROMPT"
+          else
+            echo "image-prompt=N/A" >> $GITHUB_OUTPUT
+            echo "::warning::⚠️ Final image prompt not found"
+          fi
+          
+          # 最終的に使用されたtext-overlay-promptの確認
+          if [ -f "$FOLDER_NAME/final/text-overlay-prompt.txt" ]; then
+            FINAL_TEXT_OVERLAY_PROMPT=$(cat "$FOLDER_NAME/final/text-overlay-prompt.txt" | tr '\n' ' ')
+            echo "text-overlay-prompt=$FINAL_TEXT_OVERLAY_PROMPT" >> $GITHUB_OUTPUT
+            echo "::notice::🎯 Final text overlay prompt: $FINAL_TEXT_OVERLAY_PROMPT"
+          else
+            echo "text-overlay-prompt=N/A" >> $GITHUB_OUTPUT
+            echo "::warning::⚠️ Final text overlay prompt not found"
+          fi
+          
+          # GitHub Actions Summary生成
+          echo "# 🎯 自律バナー生成結果" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "## 📊 生成パラメータ" >> $GITHUB_STEP_SUMMARY
+          echo "- **コンセプト**: $(echo "$CONCEPT" | cut -c1-100)..." >> $GITHUB_STEP_SUMMARY
+          echo "- **表示テキスト**: $USER_TEXT_CONTENT" >> $GITHUB_STEP_SUMMARY
+          echo "- **バナーサイズ**: $BANNER_SIZE" >> $GITHUB_STEP_SUMMARY
+          echo "- **最大イテレーション数**: $MAX_ITERATIONS" >> $GITHUB_STEP_SUMMARY
+          echo "- **実行イテレーション数**: $ITERATION_COUNT" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          echo "## 🎨 最終画像プロンプト" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          echo "$(echo "$IMAGE_PROMPT" | cut -c1-500)..." >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          echo "## 📝 テキストオーバーレイプロンプト" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          echo "$(echo "$TEXT_OVERLAY_PROMPT" | cut -c1-300)..." >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          # イテレーション結果表示（サイズ制限対応）
+          if [ -d "$FOLDER_NAME/iterations" ] && [ $ITERATION_COUNT -gt 0 ]; then
+            echo "## 🔄 生成イテレーション結果" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            
+            # 最大3つのイテレーションのみ表示（サイズ制限対策）
+            iteration_count=0
+            for banner_file in $(find "$FOLDER_NAME/iterations" -name "banner-v*.png" | sort -V); do
+              if [ -f "$banner_file" ] && [ $iteration_count -lt 3 ]; then
+                banner_name=$(basename "$banner_file")
+                iteration_num=$(echo "$banner_name" | grep -oP 'v\K\d+')
+                
+                echo "### 📸 Iteration $iteration_num" >> $GITHUB_STEP_SUMMARY
+                # 画像はファイルパスのみ表示（Base64エンコードを回避）
+                echo "**画像ファイル**: \`$banner_file\`" >> $GITHUB_STEP_SUMMARY
+                
+                # 評価結果があれば表示（簡潔版）
+                eval_file="$FOLDER_NAME/iterations/evaluation-v$iteration_num.md"
+                if [ -f "$eval_file" ]; then
+                  echo "**評価結果**:" >> $GITHUB_STEP_SUMMARY
+                  echo '```' >> $GITHUB_STEP_SUMMARY
+                  head -5 "$eval_file" >> $GITHUB_STEP_SUMMARY
+                  echo '```' >> $GITHUB_STEP_SUMMARY
+                fi
+                echo "" >> $GITHUB_STEP_SUMMARY
+                iteration_count=$((iteration_count + 1))
+              fi
+            done
+            
+            # 残りのイテレーションがある場合は数のみ表示
+            if [ $ITERATION_COUNT -gt 3 ]; then
+              remaining=$((ITERATION_COUNT - 3))
+              echo "**その他**: $remaining 個のイテレーションが追加で実行されました" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+            fi
+          fi
+          
+          # 最終結果
+          echo "## 🏆 最終結果" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ -f "$FOLDER_NAME/final/banner.png" ]; then
+            # 最終画像はファイルパスのみ表示（サイズ制限対策）
+            echo "**最終画像ファイル**: \`$FOLDER_NAME/final/banner.png\`" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            
+            # 最終スコア表示
+            if [ -n "$FINAL_SCORE" ] && [ "$FINAL_SCORE" != "N/A" ]; then
+              echo "**最終スコア**: $FINAL_SCORE/100点" >> $GITHUB_STEP_SUMMARY
+              if [ "$FINAL_SCORE" -ge 70 ]; then
+                echo "✅ **合格** (70点以上達成)" >> $GITHUB_STEP_SUMMARY
+              else
+                echo "❌ **要改善** (70点未満)" >> $GITHUB_STEP_SUMMARY
+              fi
+            else
+              echo "**最終スコア**: 評価中" >> $GITHUB_STEP_SUMMARY
+            fi
+            
+            # 最終プロンプト情報
+            if [ -f "$FOLDER_NAME/final/image-prompt.txt" ] && [ -f "$FOLDER_NAME/final/text-overlay-prompt.txt" ]; then
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo "### 📝 最終使用プロンプト" >> $GITHUB_STEP_SUMMARY
+              echo "**画像プロンプト**: $(head -1 "$FOLDER_NAME/final/image-prompt.txt" | cut -c1-100)..." >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo "**テキストオーバーレイプロンプト**: $(head -1 "$FOLDER_NAME/final/text-overlay-prompt.txt" | cut -c1-100)..." >> $GITHUB_STEP_SUMMARY
+            fi
+          else
+            echo "⚠️ 最終バナーが生成されませんでした" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          echo "completed=true" >> $GITHUB_OUTPUT
+          echo "::endgroup::"
+      
+      - name: Commit and push results
+        env:
+          GH_TOKEN: ${{ secrets.github_pat }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ${{ inputs.folder-name }}/
+          if git diff --cached --quiet; then
+            echo "No files to commit"
+          else
+            git commit -m "Add autonomous banner generation results: ${{ inputs.concept }}
+
+            Text: ${{ inputs.text_content }}
+            Mode: ${{ inputs.input_mode }}
+            Iterations: ${{ steps.generate.outputs.iterations }}
+            Final Score: ${{ steps.generate.outputs.final-score }}
+
+            🤖 Generated with [Claude Code](https://claude.ai/code)
+
+            Co-Authored-By: Claude <noreply@anthropic.com>"
+            # 並列実行での競合を回避するためのリトライ処理
+            for i in {1..3}; do
+              git pull --rebase origin ${{ inputs.branch-name }} || true
+              if git push origin ${{ inputs.branch-name }}; then
+                echo "✅ Push successful on attempt $i"
+                break
+              else
+                echo "⚠️ Push failed on attempt $i, retrying..."
+                # ランダムな待機時間（1-5秒）
+                sleep $((RANDOM % 5 + 1))
+              fi
+            done
+          fi

@@ -1,0 +1,8 @@
+{
+    "agent_config.py": 1,
+    "use_hetzner.py": 1,
+    "use_gcp.py": 1,
+    "use_azure.py": 1,
+    "use_memory.py": 1,
+    "use_docker.py": 1
+}

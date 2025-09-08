@@ -1,0 +1,11 @@
+{
+  "example": {
+    "file_name": "example.json",
+    "file_sha1": "",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  }
+}

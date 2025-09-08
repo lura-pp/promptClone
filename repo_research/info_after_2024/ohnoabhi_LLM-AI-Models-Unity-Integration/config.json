@@ -1,0 +1,6 @@
+{
+  "Role": "user",
+  "Content": "send an emoji",
+  "model": "gemma2-9b-it",
+  "systemInstruction": ""
+}

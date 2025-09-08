@@ -1,0 +1,295 @@
+name: module-video-concatenation-ffmpeg-ccsdk
+
+on:
+  workflow_call:
+    inputs:
+      concept:
+        description: 'ユーザーのコンセプト'
+        required: true
+        type: string
+      total_segments:
+        description: '結合する動画セグメント数'
+        required: true
+        type: string
+      branch-name:
+        description: 'ワーキングブランチ名'
+        required: true
+        type: string
+      folder-name:
+        description: 'プロジェクトフォルダ名'
+        required: true
+        type: string
+    outputs:
+      video-url:
+        description: '結合された動画のローカルパス'
+        value: ${{ jobs.video-concatenation.outputs.video-url }}
+      completed:
+        description: '処理完了フラグ'
+        value: ${{ jobs.video-concatenation.outputs.completed }}
+    secrets:
+      anthropic_api_key:
+        description: 'Anthropic API Key'
+        required: true
+      github_pat:
+        description: 'GitHub Token'
+        required: true
+
+jobs:
+  video-concatenation:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      video-url: ${{ steps.concat-complete.outputs.video-url }}
+      completed: ${{ steps.concat-complete.outputs.completed }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.branch-name }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install Claude Code SDK
+        run: npm install @anthropic-ai/claude-code
+      
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          
+          echo "✅ System dependencies installed successfully"
+          
+          # ffmpegのバージョン確認
+          echo "📋 FFmpeg version:"
+          ffmpeg -version | head -5
+      
+      - name: 🎬 動画結合エージェント (Claude Code SDK + ffmpeg)
+        id: concatenate-videos
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.anthropic_api_key }}
+        run: |
+          echo "::group::🎬 Video Concatenation Agent Execution"
+          echo "Starting at: $(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)"
+          
+          # 設定
+          USER_CONCEPT="${{ inputs.concept }}"
+          TOTAL_SEGMENTS="${{ inputs.total_segments }}"
+          FOLDER_NAME="${{ inputs.folder-name }}"
+          FINAL_VIDEO_DIR="$FOLDER_NAME/final-video"
+          
+          echo "User concept: $USER_CONCEPT"
+          echo "Total segments: $TOTAL_SEGMENTS"
+          echo "Folder name: $FOLDER_NAME"
+          echo "Final video dir: $FINAL_VIDEO_DIR"
+          
+          # 最終動画フォルダを事前に作成
+          if [ ! -d "$FINAL_VIDEO_DIR" ]; then
+            mkdir -p "$FINAL_VIDEO_DIR"
+            echo "📁 Created final video folder: $FINAL_VIDEO_DIR"
+          fi
+          
+          # プロンプトの構築
+          PROMPT="あなたは動画結合の専門エージェントです。複数のリップシンク動画を結合して最終的な動画を作成してください。
+
+          **入力情報**:
+          - **ユーザーコンセプト**: $USER_CONCEPT
+          - **動画セグメント数**: $TOTAL_SEGMENTS
+          - **プロジェクトフォルダ**: $FOLDER_NAME
+          - **最終動画出力ディレクトリ**: $FINAL_VIDEO_DIR
+
+          **実行手順**:
+
+          1. **入力動画ファイルの確認**:
+             \`\`\`bash
+             # 各セグメントのリップシンク動画を確認
+             for i in \$(seq 1 $TOTAL_SEGMENTS); do
+               LIPSYNC_DIR=\"$FOLDER_NAME/lipsync-\$i\"
+               if [ -d \"\$LIPSYNC_DIR\" ]; then
+                 echo \"✅ リップシンク動画ディレクトリ発見: \$LIPSYNC_DIR\"
+                 ls -la \"\$LIPSYNC_DIR\"
+                 
+                 # 動画ファイルを探す
+                 VIDEO_FILE=\$(find \"\$LIPSYNC_DIR\" -name \"*.mp4\" -o -name \"*.mov\" -o -name \"*.avi\" | head -1)
+                 if [ -f \"\$VIDEO_FILE\" ]; then
+                   echo \"✅ 動画ファイル発見: \$VIDEO_FILE\"
+                   echo \"\$VIDEO_FILE\" >> /tmp/video_list.txt
+                 else
+                   echo \"❌ 動画ファイルなし: \$LIPSYNC_DIR\"
+                 fi
+               else
+                 echo \"❌ ディレクトリなし: \$LIPSYNC_DIR\"
+               fi
+             done
+             \`\`\`
+
+          2. **ffmpeg用ファイルリスト作成**:
+             \`\`\`bash
+             # ffmpeg concatフィルター用のファイルリストを作成
+             echo \"# FFmpeg concat file list\" > \"$FINAL_VIDEO_DIR/concat_list.txt\"
+             if [ -f \"/tmp/video_list.txt\" ]; then
+               while read -r video_file; do
+                 if [ -f \"\$video_file\" ]; then
+                   echo \"file '\$(realpath \"\$video_file\")\'\" >> \"$FINAL_VIDEO_DIR/concat_list.txt\"
+                 fi
+               done < \"/tmp/video_list.txt\"
+             fi
+             
+             echo \"📋 Concat list created:\"
+             cat \"$FINAL_VIDEO_DIR/concat_list.txt\"
+             \`\`\`
+
+          3. **動画結合の実行**:
+             \`\`\`bash
+             # ffmpegで動画を結合
+             OUTPUT_VIDEO=\"$FINAL_VIDEO_DIR/concatenated-video.mp4\"
+             
+             ffmpeg -f concat -safe 0 -i \"$FINAL_VIDEO_DIR/concat_list.txt\" \\
+                    -c copy \\
+                    -avoid_negative_ts make_zero \\
+                    \"\$OUTPUT_VIDEO\" -y
+             
+             if [ -f \"\$OUTPUT_VIDEO\" ]; then
+               echo \"✅ 動画結合完了: \$OUTPUT_VIDEO\"
+               
+               # ファイルサイズの確認
+               OUTPUT_SIZE=\$(stat -c%s \"\$OUTPUT_VIDEO\" 2>/dev/null || stat -f%z \"\$OUTPUT_VIDEO\" 2>/dev/null || echo \"0\")
+               OUTPUT_SIZE_MB=\$(echo \"scale=2; \$OUTPUT_SIZE / 1024 / 1024\" | bc -l 2>/dev/null || echo \"0\")
+               echo \"📋 結合動画サイズ: \${OUTPUT_SIZE_MB}MB\"
+               
+               # 動画の長さを確認
+               if command -v ffprobe >/dev/null 2>&1; then
+                 VIDEO_DURATION=\$(ffprobe -v quiet -show_entries format=duration -of csv=p=0 \"\$OUTPUT_VIDEO\" 2>/dev/null || echo \"0\")
+                 echo \"📋 結合動画長さ: \${VIDEO_DURATION}秒\"
+               fi
+               
+               echo \"\$OUTPUT_VIDEO\" > \"$FINAL_VIDEO_DIR/final-video-path.txt\"
+             else
+               echo \"❌ 動画結合失敗\"
+               exit 1
+             fi
+             \`\`\`
+
+          4. **ログファイル作成**:
+             \`\`\`bash
+             # 結合ログを作成
+             echo \"# 動画結合ログ\" > \"$FINAL_VIDEO_DIR/concatenation-log.txt\"
+             echo \"## 結合対象動画\" >> \"$FINAL_VIDEO_DIR/concatenation-log.txt\"
+             cat /tmp/video_list.txt >> \"$FINAL_VIDEO_DIR/concatenation-log.txt\" 2>/dev/null || echo \"動画リストなし\" >> \"$FINAL_VIDEO_DIR/concatenation-log.txt\"
+             echo \"## 結合コマンド\" >> \"$FINAL_VIDEO_DIR/concatenation-log.txt\"
+             echo \"ffmpeg -f concat -safe 0 -i concat_list.txt -c copy -avoid_negative_ts make_zero concatenated-video.mp4\" >> \"$FINAL_VIDEO_DIR/concatenation-log.txt\"
+             echo \"## 結合日時\" >> \"$FINAL_VIDEO_DIR/concatenation-log.txt\"
+             date >> \"$FINAL_VIDEO_DIR/concatenation-log.txt\"
+             echo \"## 最終動画情報\" >> \"$FINAL_VIDEO_DIR/concatenation-log.txt\"
+             echo \"ファイル: concatenated-video.mp4\" >> \"$FINAL_VIDEO_DIR/concatenation-log.txt\"
+             echo \"サイズ: \${OUTPUT_SIZE_MB}MB\" >> \"$FINAL_VIDEO_DIR/concatenation-log.txt\"
+             echo \"長さ: \${VIDEO_DURATION}秒\" >> \"$FINAL_VIDEO_DIR/concatenation-log.txt\"
+             \`\`\`
+
+          **重要な技術ポイント**:
+          - ffmpeg concatフィルターを使用した高品質結合
+          - \`-c copy\`でエンコードなしの高速処理
+          - \`-avoid_negative_ts make_zero\`でタイムスタンプ問題を回避
+          - 各セグメントのフォーマット統一を確認
+          - エラーハンドリングとログ出力
+
+          **出力要求**:
+          1. 結合動画ファイル ($FINAL_VIDEO_DIR/concatenated-video.mp4)
+          2. 最終動画パスファイル ($FINAL_VIDEO_DIR/final-video-path.txt)  
+          3. 結合ログファイル ($FINAL_VIDEO_DIR/concatenation-log.txt)
+          4. ffmpeg用リストファイル ($FINAL_VIDEO_DIR/concat_list.txt)"
+          
+          echo "🚀 Starting Video Concatenation Agent Claude Code CLI..."
+          echo "📝 Prompt length: ${#PROMPT}"
+          
+          # Claude Code CLIの実行
+          npx @anthropic-ai/claude-code \
+            --allowedTools "Read,Bash,Write" \
+            --max-turns 30 \
+            --verbose \
+            --permission-mode "acceptEdits" \
+            -p "$PROMPT" || {
+              echo "::error::❌ Claude Code CLI execution failed"
+              exit 1
+            }
+          
+          echo "::endgroup::"
+
+      - name: Mark concatenation complete
+        id: concat-complete
+        run: |
+          FOLDER_NAME="${{ inputs.folder-name }}"
+          FINAL_VIDEO_DIR="$FOLDER_NAME/final-video"
+          FINAL_VIDEO_PATH_FILE="$FINAL_VIDEO_DIR/final-video-path.txt"
+          
+          # 結合された動画の確認
+          echo "📋 Checking concatenated video..."
+          echo "Final video dir: $FINAL_VIDEO_DIR"
+          echo "Final video path file: $FINAL_VIDEO_PATH_FILE"
+          
+          if [ -d "$FINAL_VIDEO_DIR" ]; then
+            echo "::notice::📁 Final video directory contents:"
+            ls -la "$FINAL_VIDEO_DIR"
+            
+            # 最終動画パスファイルの確認
+            if [ -f "$FINAL_VIDEO_PATH_FILE" ]; then
+              echo "✅ Found: final-video-path.txt"
+              FINAL_VIDEO_PATH=$(cat "$FINAL_VIDEO_PATH_FILE")
+              echo "📎 Final video path: $FINAL_VIDEO_PATH"
+              
+              if [ -f "$FINAL_VIDEO_PATH" ]; then
+                FINAL_SIZE=$(stat -c%s "$FINAL_VIDEO_PATH" 2>/dev/null || stat -f%z "$FINAL_VIDEO_PATH" 2>/dev/null || echo "0")
+                FINAL_SIZE_MB=$(echo "scale=2; $FINAL_SIZE / 1024 / 1024" | bc -l 2>/dev/null || echo "0")
+                echo "::notice::🎬 Final video created successfully: ${FINAL_SIZE_MB}MB"
+                echo "video-url=$FINAL_VIDEO_PATH" >> $GITHUB_OUTPUT
+                echo "completed=true" >> $GITHUB_OUTPUT
+              else
+                echo "::error::❌ Final video file not found: $FINAL_VIDEO_PATH"
+                echo "completed=false" >> $GITHUB_OUTPUT
+                exit 1
+              fi
+              
+            else
+              echo "::error::❌ Missing required file: final-video-path.txt"
+              echo "completed=false" >> $GITHUB_OUTPUT
+              exit 1
+            fi
+            
+          else
+            echo "::error::❌ Final video directory not found: $FINAL_VIDEO_DIR"
+            echo "completed=false" >> $GITHUB_OUTPUT
+            exit 1
+          fi
+          
+      - name: Commit concatenation results
+        env:
+          GH_TOKEN: ${{ secrets.github_pat }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ${{ inputs.folder-name }}/
+          if git diff --cached --quiet; then
+            echo "No concatenation files to commit"
+          else
+            git commit -m "🎬 Add concatenated video results: ${{ inputs.concept }}
+
+            🤖 Generated with [Claude Code](https://claude.ai/code)
+
+            Co-Authored-By: Claude <noreply@anthropic.com>"
+            # 並列実行での競合を回避するためのリトライ処理
+            for i in {1..3}; do
+              git pull --rebase origin ${{ inputs.branch-name }} || true
+              if git push origin ${{ inputs.branch-name }}; then
+                echo "✅ Push successful on attempt $i"
+                break
+              else
+                echo "⚠️ Push failed on attempt $i, retrying..."
+                # ランダムな待機時間（1-5秒）
+                sleep $((RANDOM % 5 + 1))
+              fi
+            done
+          fi

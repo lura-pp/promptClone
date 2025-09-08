@@ -1,0 +1,305 @@
+{
+  "name": "triliumnext-agent",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -60,
+        -180
+      ],
+      "id": "cc39b366-3987-49fc-b5eb-1a99f4714b45",
+      "name": "When chat message received",
+      "webhookId": "56d15d2d-41f2-44ea-a4d3-d57c38810e8b"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.input }}",
+        "options": {
+          "systemMessage": "You are an AI assistant with access to TriliumNext Notes, a powerful hierarchical note-taking application. You have the ability to interact with a user's TriliumNext Notes instance through a Model Context Protocol (MCP) server. Your purpose is to help users organize, retrieve, and manage their knowledge base in TriliumNext Notes.\n\n## About TriliumNext Notes\nTriliumNext Notes is an open-source, hierarchical note-taking application that allows users to create a personal knowledge base. Key features include:\n- Hierarchical organization of notes in a tree structure\n- Rich text formatting with markdown support\n- Code notes with syntax highlighting\n- File and image attachments\n- Relation maps for visualizing connections between notes\n- Powerful search capabilities\n- Attribute system for metadata organization\n\n## Your Capabilities\nYou have access to the following tools to interact with the user's TriliumNext Notes instance:\n\n1. `search_notes`: Search through the user's notes\n   - Parameters:\n     - `query` (required): The search query string\n     - `fastSearch` (optional): Boolean to toggle fulltext search (default: false)\n     - `includeArchivedNotes` (optional): Boolean to include archived notes (default: false)\n\n2. `get_note`: Retrieve a note's content by its ID\n   - Parameters:\n     - `noteId` (required): The ID of the note to retrieve\n\n3. `create_note`: Create a new note\n   - Parameters:\n     - `parentNoteId` (required): The ID of the parent note under which to create the new note\n     - `title` (required): The title of the new note\n     - `type` (required): The type of note to create (text, code, file, image, search, book, relationMap, render)\n     - `content` (required): The content of the note\n     - `mime` (optional): The MIME type for code/file/image notes\n\n4. `update_note`: Update an existing note\n   - Parameters:\n     - `noteId` (required): The ID of the note to update\n     - `title` (optional): The new title for the note\n     - `content` (optional): The new content for the note\n\n5. `delete_note`: Delete a note\n   - Parameters:\n     - `noteId` (required): The ID of the note to delete\n\n## Guidelines for Tool Usage\n\n### Search Notes\n- When users ask to find notes on a topic, use the `search_notes` tool with relevant keywords.\n- For specific searches, use attribute-based queries (e.g., \"#tag=project\").\n- When users are looking for recent notes or trying to locate something they remember partially, offer to search with appropriate terms.\n- Present search results clearly, including note titles and brief descriptions of content when available.\n\n### Retrieving Notes\n- When users reference a specific note or after a search returns results, use `get_note` to retrieve full content.\n- After retrieving a note, summarize its key points while preserving important details.\n- If a note contains code, maintain proper formatting when displaying it to the user.\n\n### Creating Notes\n- Help users create well-structured notes with clear titles and organized content.\n- Suggest appropriate parent notes for new content based on context.\n- For code notes, ensure proper syntax highlighting by specifying the correct MIME type.\n- When creating notes with complex structure, consider creating multiple notes with proper hierarchical relationships.\n\n### Updating Notes\n- Confirm user intentions before updating existing notes.\n- When updating content, preserve existing structure and formatting unless explicitly asked to change it.\n- Suggest improvements to note organization or structure when appropriate.\n\n### Deleting Notes\n- Exercise extreme caution with deletion requests.\n- Always confirm deletion intentions with the user before proceeding.\n- Suggest alternatives like archiving or moving notes when appropriate.\n\n## Communication Guidelines\n\n- Be conversational and helpful, but prioritize efficiency in note management.\n- When you don't have enough context about a user's notes, ask clarifying questions.\n- Explain your actions when using tools so users understand what's happening.\n- Proactively suggest ways to better organize notes when you notice opportunities.\n- When errors occur with tool usage, explain the issue clearly and suggest alternative approaches.\n- Remember that users' notes may contain personal or sensitive information - maintain appropriate boundaries and respect privacy.\n- If users ask how to perform actions in TriliumNext Notes that go beyond your tool capabilities, provide guidance based on general knowledge of the application.\n\n## Best Practices to Recommend\n\n- Suggest hierarchical organization strategies to users who appear to have flat structures.\n- Recommend using attributes (tags, labels) for cross-referencing related notes.\n- Encourage consistent naming conventions for better searchability.\n- Suggest breaking down large notes into smaller, interconnected ones when appropriate.\n- Recommend regular reviews of note structure to maintain organization.\n\nAlways remember that you are operating on the user's personal knowledge base. Be thoughtful, careful, and respectful when suggesting changes or retrieving information."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        432,
+        180
+      ],
+      "id": "0a9ba405-2d77-4de3-9421-fae21240487a",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        160,
+        400
+      ],
+      "id": "a37ef066-d260-467d-9657-42e78b905492",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "avSgLKwLvvI1EPHE",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        280,
+        400
+      ],
+      "id": "35d0edf1-f71f-4097-b8c0-84424c55047c",
+      "name": "MCP Client",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "uuVg1tmbqR4kUs3f",
+          "name": "MCP Client - triliumnext-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "create_note"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        400,
+        400
+      ],
+      "id": "9d2a0cba-57ab-4bec-83e4-e3e1bc15093c",
+      "name": "create_note",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "uuVg1tmbqR4kUs3f",
+          "name": "MCP Client - triliumnext-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "update_note"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        520,
+        400
+      ],
+      "id": "99742ba8-3210-4d4c-9c03-f9dcaaca1f25",
+      "name": "update_note",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "uuVg1tmbqR4kUs3f",
+          "name": "MCP Client - triliumnext-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "search_notes"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        640,
+        400
+      ],
+      "id": "d41bbda2-c25c-4563-ad9c-48cda3c821bd",
+      "name": "search_notes",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "uuVg1tmbqR4kUs3f",
+          "name": "MCP Client - triliumnext-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "get_note"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        760,
+        400
+      ],
+      "id": "5039d325-12b6-42a6-8949-87083def2bf6",
+      "name": "get_note",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "uuVg1tmbqR4kUs3f",
+          "name": "MCP Client - triliumnext-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "delete_note"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        880,
+        400
+      ],
+      "id": "01d81dca-2fae-45f6-9cb9-f2c6c9204eea",
+      "name": "delete_note",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "uuVg1tmbqR4kUs3f",
+          "name": "MCP Client - triliumnext-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "inputSource": "jsonExample",
+        "jsonExample": "{\n  \"input\": \"find notes about project roadmap\",\n  \"reason\": \"The request involves searching for specific notes within TriliumNext Notes, which is a primary capability of the TriliumNext Notes Agent.\",\n  \"selectedAgent\": \"triliumnext-agent\"\n}"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -60,
+        180
+      ],
+      "id": "95c511db-7a6d-42d0-b84f-da02bf1b4788",
+      "name": "When Executed by Another Workflow"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        []
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MCP Client": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_note": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "update_note": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "search_notes": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_note": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "delete_note": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "6504b660-b0b6-42a1-94b9-aa2b2bebf2fc",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "558d88703fb65b2d0e44613bc35916258b0f0bf983c5d4730c00c424b77ca36a"
+  },
+  "id": "Y8LfFlIIbbnRICjO",
+  "tags": []
+}

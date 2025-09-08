@@ -1,0 +1,129 @@
+{
+  "desc": {},
+  "dxt": {
+    "title": "Desktop Extension",
+    "name": "Name",
+    "version": "Version",
+    "description": "Description",
+    "author": {
+      "name": "Author Name",
+      "email": "E-mail",
+      "url": "URL"
+    },
+    "license": "License",
+    "url": "URL",
+    "type": "Type",
+    "user-config": "User Config",
+    "platform": "Platform",
+    "keywords": "Keywords",
+    "repository": "Repository",
+    "homepage": "Homepage",
+    "support": "Support",
+    "documentation": "Documentation",
+    "tools": "Tools",
+    "required": "Please provide the parameter",
+    "number-range": "Allowed value range is {min} ~ {max}"
+  },
+  "elicitation": {
+    "title": "Elicitation",
+    "accept": "Accept",
+    "decline": "Decline",
+    "string": {
+      "too-short": "Minimum allowed length is {min}",
+      "too-long": "Maximium allowed length is {max}"
+    }
+  },
+  "title": {
+    "main": "MCP Screen",
+    "chat": "Chat Screen",
+    "agent": "Agent Screen",
+    "setting": "Setting Screen",
+    "error": "Unknown Error"
+  },
+  "mcp": {
+    "file": "Archive File",
+    "init": "Init MCP Servers",
+    "read": "Read",
+    "minutes": "minutes",
+    "open": "Reveal in File Explorer",
+    "updated": "MCP Severs Updated"
+  },
+  "menu": {
+    "change-theme": "Change Theme",
+    "change-language": "Change Language",
+    "increase-count": "Count 1 increment",
+    "documentation": "Documentation",
+    "github": "Source Code",
+    "open-file": "Open a text file"
+  },
+  "locale": {
+    "title": "Language"
+  },
+  "chat": {
+    "wipe": "Wipe",
+    "reg": "Regenerate",
+    "select-model": "Select Model",
+    "select-agent": "Select Agent",
+    "delete": "Delete History",
+    "download": "Download History"
+  },
+  "prompt": {
+    "title": "Server Prompt",
+    "get": "Get"
+  },
+  "agent": {
+    "config": "Agent Config",
+    "prompt": "System Prompt",
+    "tools": "List of tools",
+    "no-tools": "No MCP servers with tools was connected.",
+    "all": "All tools",
+    "selected": "Selected Tools",
+    "cancel": "Cancel",
+    "save": "Save",
+    "add": "Add Agent",
+    "reset": "Reset Agent"
+  },
+  "sampling": {
+    "title": "Sampling",
+    "comp": "Start completions",
+    "reject": "Reject sampling",
+    "confirm": "Confirm completions",
+    "confirm-last": "Confirm completions with last sampling"
+  },
+  "setting": {
+    "title-api": "API Setting",
+    "title-model": "Model Configuration",
+    "name": "Name",
+    "apikey": "API Key",
+    "dialog": "CLI Execution",
+    "exec": "EXEC",
+    "url": "URL",
+    "path": "Path",
+    "model": "Model",
+    "advanced": "Advanced",
+    "method": "HTTP Method",
+    "stream": "Stream",
+    "mcp": "Tools",
+    "max-tokens-prefix": "Max Tokens Prefix",
+    "temperature": "Temperature",
+    "topP": "Top P",
+    "reasoning-effort": "Reasoning Effort",
+    "auth-header": "Auth Header",
+    "auth-prefix": "Auth Prefix",
+    "config-file": "Load Config File",
+    "add": "Add Config",
+    "reset": "Reset Config"
+  },
+  "validation": {
+    "invalid-number": "Should be a valid number",
+    "number-range": "Value range should between {min} and {max}"
+  },
+  "snackbar": {
+    "addnew": "New session Initiated.",
+    "addfail": "Already in a fresh session.",
+    "stopped": "Generating stopped.",
+    "parse-stream-fail": "Cannot read the stream.",
+    "parse-config-fail": "Cannot parse the config file.",
+    "copied": "Copied to clipboard."
+  }
+}

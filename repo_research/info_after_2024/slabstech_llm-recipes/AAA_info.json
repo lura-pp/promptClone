@@ -1,0 +1,15 @@
+{
+    "image_gen.py": 1,
+    "config.json": 2,
+    "text_sarvam_1.py": 1,
+    "pdf_parser.py": 1,
+    "script_prompts_en.json": 5,
+    "script_prompts_eu.json": 3,
+    "script_prompts_indic.json": 1,
+    "tts-workflow-torch.py": 1,
+    "rewriter_transcript.py": 1,
+    "transcript_writer.py": 1,
+    "runway_some.py": 1,
+    "ghost_vision.py": 0,
+    "main.py": 4
+}

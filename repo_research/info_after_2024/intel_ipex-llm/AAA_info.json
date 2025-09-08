@@ -1,0 +1,16 @@
+{
+    "test_transformers_api.py": 1,
+    "test_transformers_api_RMSNorm.py": 0,
+    "test_transformers_api_final_logits.py": 0,
+    "test_transformers_api_mlp.py": 0,
+    "test_transformers_api_attention.py": 0,
+    "generate.py": 7,
+    "vigogne.json": 0,
+    "alpaca.json": 1,
+    "alpaca_legacy.json": 1,
+    "generate_hybrid.py": 0,
+    "benchmark.py": 0,
+    "chat.py": 2,
+    "vllm_online_benchmark_multimodal.py": 2,
+    "vllm_online_benchmark.py": 2
+}

@@ -1,0 +1,7 @@
+{
+    "azure_gpt.py": 1,
+    "qwen2.py": 1,
+    "qwen2_vl.py": 0,
+    "openai_gpt.py": 1,
+    "input_interface.py": 1
+}

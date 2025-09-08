@@ -1,0 +1,10 @@
+{
+    "utility.py": 1,
+    "orchestrator_workers.py": 2,
+    "router.py": 1,
+    "evaluate_optimizer.py": 2,
+    "parallelization.py": 2,
+    "main.py": 0,
+    "image_gen.py": 1,
+    "image_editing.py": 1
+}

@@ -1,0 +1,183 @@
+{
+  "metadata": {
+    "id": "84bd1e6f-64a6-4b76-94f3-78187f1ba127",
+    "parent_id": "7aaf2bac-1cd7-4589-8311-ce0093582eae",
+    "author": "",
+    "author_tape_id": null,
+    "n_added_steps": 13,
+    "error": null,
+    "result": null
+  },
+  "context": "I am a text with some verbs like running, jumping, and swimming.",
+  "steps": [
+    {
+      "metadata": {
+        "id": "2e9bb2ff-5596-4680-b10c-d34109c87c3d",
+        "prompt_id": "61b41ece-9a66-4c18-8aa6-95de4f333a2b",
+        "node": "",
+        "agent": "Linguist",
+        "other": {}
+      },
+      "kind": "call",
+      "content": "",
+      "agent_name": "FindNouns"
+    },
+    {
+      "metadata": {
+        "id": "2e9bb2ff-5596-4680-b10c-d34109c87c3d",
+        "prompt_id": "350d609d-d2ef-4f37-a635-d36329a34391",
+        "node": "",
+        "agent": "Linguist/FindNouns",
+        "other": {}
+      },
+      "kind": "all_nouns",
+      "nouns": [
+        "text",
+        "verbs"
+      ]
+    },
+    {
+      "metadata": {
+        "id": "2e9bb2ff-5596-4680-b10c-d34109c87c3d",
+        "prompt_id": "350d609d-d2ef-4f37-a635-d36329a34391",
+        "node": "",
+        "agent": "Linguist/FindNouns",
+        "other": {}
+      },
+      "content": "",
+      "kind": "respond",
+      "copy_output": true
+    },
+    {
+      "metadata": {
+        "id": "2e9bb2ff-5596-4680-b10c-d34109c87c3d",
+        "prompt_id": "c83edbae-9be5-4ba6-99b4-53412d0887af",
+        "node": "",
+        "agent": "Linguist",
+        "other": {}
+      },
+      "kind": "call",
+      "content": "",
+      "agent_name": "FindIrregularVerbs"
+    },
+    {
+      "metadata": {
+        "id": "2e9bb2ff-5596-4680-b10c-d34109c87c3d",
+        "prompt_id": "1ecb5e71-c2a7-4837-8209-fea4b045b331",
+        "node": "",
+        "agent": "Linguist/FindIrregularVerbs",
+        "other": {}
+      },
+      "kind": "call",
+      "content": "",
+      "agent_name": "FindVerbs"
+    },
+    {
+      "metadata": {
+        "id": "2e9bb2ff-5596-4680-b10c-d34109c87c3d",
+        "prompt_id": "af024bd3-b6dd-4aec-996c-3b0185db1e4d",
+        "node": "",
+        "agent": "Linguist/FindIrregularVerbs/FindVerbs",
+        "other": {}
+      },
+      "kind": "all_verbs",
+      "verbs": [
+        "am",
+        "running",
+        "jumping",
+        "swimming"
+      ]
+    },
+    {
+      "metadata": {
+        "id": "2e9bb2ff-5596-4680-b10c-d34109c87c3d",
+        "prompt_id": "af024bd3-b6dd-4aec-996c-3b0185db1e4d",
+        "node": "",
+        "agent": "Linguist/FindIrregularVerbs/FindVerbs",
+        "other": {}
+      },
+      "content": "",
+      "kind": "respond",
+      "copy_output": true
+    },
+    {
+      "metadata": {
+        "id": "2e9bb2ff-5596-4680-b10c-d34109c87c3d",
+        "prompt_id": "ea5d7056-c0f3-4770-8e46-f8811122d98d",
+        "node": "",
+        "agent": "Linguist/FindIrregularVerbs",
+        "other": {}
+      },
+      "kind": "call",
+      "content": "",
+      "agent_name": "FilterIrregular"
+    },
+    {
+      "metadata": {
+        "id": "2e9bb2ff-5596-4680-b10c-d34109c87c3d",
+        "prompt_id": "ea5d7056-c0f3-4770-8e46-f8811122d98d",
+        "node": "",
+        "agent": "Linguist/FindIrregularVerbs",
+        "other": {}
+      },
+      "kind": "all_verbs",
+      "verbs": [
+        "am",
+        "running",
+        "jumping",
+        "swimming"
+      ]
+    },
+    {
+      "metadata": {
+        "id": "2e9bb2ff-5596-4680-b10c-d34109c87c3d",
+        "prompt_id": "4fb1049f-9c83-4197-a072-c677d0a1fb49",
+        "node": "",
+        "agent": "Linguist/FindIrregularVerbs/FilterIrregular",
+        "other": {}
+      },
+      "kind": "irregular_verbs",
+      "verbs": [
+        "be",
+        "run",
+        "jump",
+        "swim"
+      ]
+    },
+    {
+      "metadata": {
+        "id": "2e9bb2ff-5596-4680-b10c-d34109c87c3d",
+        "prompt_id": "4fb1049f-9c83-4197-a072-c677d0a1fb49",
+        "node": "",
+        "agent": "Linguist/FindIrregularVerbs/FilterIrregular",
+        "other": {}
+      },
+      "content": "",
+      "kind": "respond",
+      "copy_output": true
+    },
+    {
+      "metadata": {
+        "id": "2e9bb2ff-5596-4680-b10c-d34109c87c3d",
+        "prompt_id": "c516525f-fe04-4df0-a0fb-d74629f2e7f6",
+        "node": "",
+        "agent": "Linguist/FindIrregularVerbs",
+        "other": {}
+      },
+      "content": "",
+      "kind": "respond",
+      "copy_output": true
+    },
+    {
+      "metadata": {
+        "id": "2e9bb2ff-5596-4680-b10c-d34109c87c3d",
+        "prompt_id": "3cdd5743-a133-4615-86ff-3addb7a5b945",
+        "node": "",
+        "agent": "Linguist",
+        "other": {}
+      },
+      "kind": "present_results",
+      "content": "The text before us! A fascinating specimen of language, don't you think? As a linguist, I've had the pleasure of delving into its depths, and I must say, the findings are quite intriguing.\n\nOne of the first things that struck me was the prevalence of concrete, tangible nouns. The text is peppered with words like \"text\" itself, which suggests a focus on the written word, on the physical manifestation of language. This tells me that the author is likely concerned with the nuts and bolts of communication, with the way words are arranged on a page to convey meaning.\n\nBut what's equally interesting is the selection of irregular verbs that appear throughout the text. \"Be\", \"run\", \"jump\", and \"swim\" are all verbs that don't follow the usual patterns of conjugation, and this irregularity speaks to a certain playfulness, a willingness to break free from the constraints of traditional grammar. This suggests that the author is not afraid to take risks, to push the boundaries of language to create a unique voice.\n\nTogether, these elements paint a picture of an author who is both grounded and experimental, someone who values the building blocks of language while also seeking to subvert them. The result is a style that is at once accessible and innovative, a true delight to read and analyze."
+    }
+  ]
+}

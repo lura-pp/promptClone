@@ -1,0 +1,7 @@
+{
+    "rag_evaluation_with_qdrant.py": 1,
+    "test_bedrock.py": 1,
+    "constants.py": 1,
+    "template_prompt.py": 1,
+    "template.py": 1
+}

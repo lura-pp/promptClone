@@ -1,0 +1,356 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "willow",
+  "name": "Julep",
+  "colors": {
+    "primary": "#004E64",
+    "light": "#00A5CF",
+    "dark": "#25A18E"
+  },
+  "favicon": "/favicon.svg",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Home",
+        "anchors": [
+          {
+            "anchor": "Get Started",
+            "icon": "rocket",
+            "pages": [
+              "introduction/julep",
+              "introduction/install",
+              "introduction/quickstart",
+              "introduction/developer-orientation",
+              "FAQ"
+            ]
+          },
+          {
+            "anchor": "Julep CLI",
+            "icon": "terminal",
+            "pages": [
+              "julepcli/introduction",
+              "julepcli/commands"
+            ]
+          },
+          {
+            "anchor": "Core Concepts",
+            "icon": "cubes",
+            "pages": [
+              "concepts/projects",
+              "concepts/agents",
+              "concepts/tasks",
+              "concepts/sessions",
+              "concepts/tools",
+              "concepts/users",
+              "concepts/docs",
+              "concepts/files",
+              "concepts/execution",
+              "concepts/secrets" 
+            ]
+          },
+          {
+            "anchor": "Tutorials",
+            "icon": "graduation-cap",
+            "pages": [
+              "tutorials/trip-planning",
+              "tutorials/trip-planning-input",
+              "tutorials/trip-planning-tools",
+              "tutorials/trip-planning-workflow",
+              "tutorials/trip-planning-running",
+              "tutorials/browser-use",
+              "tutorials/rag-chatbot",
+              "tutorials/video-processing",
+              "tutorials/julep-assistant",
+              "tutorials/hacker-news-newsletter"
+            ]
+          },
+          {
+            "anchor": "Integrations",
+            "icon": "plug",
+            "pages": [
+              "integrations/supported-integrations",
+              "integrations/supported-models",
+              {
+                "group": "Communication & Data",
+                "pages": [
+                  "integrations/communicationdata/email",
+                  "integrations/communicationdata/weather"
+                ]
+              },
+              {
+                "group": "Media & File Processing",
+                "pages": [
+                  "integrations/mediafile/llamaparse",
+                  "integrations/mediafile/ffmpeg",
+                  "integrations/mediafile/cloudinary",
+                  "integrations/mediafile/unstructured"
+                ]
+              },
+              {
+                "group": "Search",
+                "pages": [
+                  "integrations/search/arxiv",
+                  "integrations/search/algolia",
+                  "integrations/search/brave",
+                  "integrations/search/wikipedia"
+                ]
+              },
+              {
+                "group": "Web & Browser Automation",
+                "pages": [
+                  "integrations/webbrowser/browserbase",
+                  "integrations/webbrowser/spider",
+                  "integrations/webbrowser/remote-browser"
+                ]
+              },
+              "integrations/contributing-integrations"
+            ]
+          },
+          {
+            "anchor": "Advanced Topics",
+            "icon": "flask",
+            "pages": [
+              "advanced/new-syntax",
+              "advanced/python-expression",
+              "advanced/types-of-task-steps",
+              "advanced/chat",
+              "advanced/render",
+              "advanced/system-templates",
+              "advanced/files",
+              "advanced/secrets-management",
+              "advanced/architecture-deep-dive",
+              "advanced/agentic-patterns",
+              "advanced/lifecycle",
+              "advanced/multi-agent-multi-user-sessions",
+              "advanced/localsetup"
+            ]
+          },
+          {
+            "anchor":"Open Responses API (Alpha)",
+            "icon": "message-dots",
+            "pages": [
+              "responses/quickstart",
+              "responses/concepts",
+              "responses/examples",
+              "responses/cli",
+              "responses/roadmap"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Guides",
+        "groups": [
+          {
+            "group": "Guides",
+            "pages": [
+              "guides/getting-started/chat-with-an-agent",
+              "guides/getting-started/create-and-execute-julep-task",
+              "guides/using-secrets",
+              "guides/adding-tool-integration",
+              "guides/modifying-agent-workflow",
+              {
+                "group": "Getting Started Examples",
+                "pages": [
+                  "guides/getting-started/tool-integration-demo"
+                ]
+              },
+              {
+                "group": "Use Case Examples",
+                "pages": [
+                  "guides/use-cases/customer-service",
+                  "guides/use-cases/research-assistant",
+                  "guides/use-cases/document-processing",
+                  "guides/use-cases/data-analysis"
+                ]
+              },
+              {
+                "group": "Advanced Examples",
+                "pages": [
+                  "guides/advanced/multi-agent-systems",
+                  "guides/advanced/complex-workflows",
+                  "guides/advanced/integration-patterns"
+                ]
+              },
+              {
+                "group": "Cookbooks",
+                "pages": [
+                  "guides/cookbooks/quick-solutions",
+                  "guides/cookbooks/industry-solutions",
+                  "guides/cookbooks/community-examples"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "SDK",
+        "groups": [
+          {
+            "group": "SDKs",
+            "pages": [
+              "sdks/index",
+              {
+                "group": "Python SDK",
+                "pages": [
+                  "sdks/python/installation",
+                  {
+                    "group": "Core Components",
+                    "pages": [
+                      "sdks/python/agents",
+                      "sdks/python/tasks",
+                      "sdks/python/sessions",
+                      "sdks/python/secrets"
+                    ]
+                  },
+                  "sdks/python/tools-integration",
+                  "sdks/python/advanced-usage",
+                  "sdks/python/reference"
+                ]
+              },
+              {
+                "group": "Node.js SDK",
+                "pages": [
+                  "sdks/nodejs/installation",
+                  {
+                    "group": "Core Components",
+                    "pages": [
+                      "sdks/nodejs/agents",
+                      "sdks/nodejs/tasks",
+                      "sdks/nodejs/sessions",
+                      "sdks/nodejs/secrets"
+                    ]
+                  },
+                  "sdks/nodejs/tools-integration",
+                  "sdks/nodejs/advanced-usage",
+                  "sdks/nodejs/reference"
+                ]
+              },
+              {
+                "group": "Common Patterns",
+                "pages": [
+                  "sdks/common/error-handling",
+                  "sdks/common/authentication",
+                  "sdks/common/testing",
+                  "sdks/common/secrets"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Supported Integrations",
+        "pages": [
+          "integrations/supported-integrations"
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "openapi": {
+          "source": "https://api.julep.ai/api/openapi.json",
+          "directory": "api-reference"
+        }
+      }
+    ]
+  },
+  "styling": {
+    "codeblocks": "dark"
+  },
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "api": {
+    "playground": {
+      "display": "interactive",
+      "proxy": true
+    },
+    "examples": {
+      "languages": [
+        "bash",
+        "python",
+        "javascript"
+      ]
+    },
+    "mdx": {
+      "server": [
+        "https://api.julep.ai/api",
+        "https://dev.julep.ai/api"
+      ],
+      "auth": {
+        "method": "bearer",
+        "name": "Authorization"
+      }
+    }
+  },
+  "appearance": {
+    "default": "system",
+    "strict": false
+  },
+  "background": {
+    "decoration": "grid",
+    "color": {
+      "light": "#F7FCF7"
+    }
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Community",
+        "href": "https://discord.gg/p4c7ehs4vD"
+      },
+      {
+        "label": "Changelog",
+        "href": "https://updates.julep.ai"
+      },
+      {
+        "label": "Support",
+        "href": "mailto:developers@julep.ai"
+      },
+      {
+        "label": "GitHub",
+        "href": "https://github.com/julep-ai/julep"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Get API Key",
+      "href": "https://dashboard.julep.ai"
+    }
+  },
+  "search": {
+    "prompt": "Search Julep docs"
+  },
+  "seo": {
+    "indexing": "navigable"
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/julepai",
+      "github": "https://github.com/julep-ai/julep",
+      "linkedin": "https://www.linkedin.com/company/julep-ai"
+    }
+  },
+  "integrations": {
+    "posthog": {
+      "apiKey": "phc_Hh489hJe61eRVjGqFwz8DfzbY2Rla4yXn7PXONt6yQX"
+    }
+  },
+  "banner": {
+    "content": "🚨 Open Responses API (Alpha). Learn more [here](/responses/quickstart)",
+    "dismissible": true
+  },
+  "fonts": {
+    "heading": {
+      "family": "Instrument Sans",
+      "weight": 500
+    },
+    "body": {
+      "family": "Figtree",
+      "weight": 500
+    }
+  },
+  "js": ["scripts/julep-chat-widget.js"]
+}

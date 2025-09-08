@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://bedrock-runtime.us-east-1.amazonaws.com/model/meta.llama2-13b-chat-v1/invoke
+    body:
+      encoding: UTF-8
+      string: '{"prompt":"Give me a short list of steps for creating a Ruby gem","max_gen_len":512,"temperature":0.2,"top_p":0.9}'
+    headers:
+      Accept-Encoding:
+      - ''
+      Content-Type:
+      - application/json
+      Accept:
+      - "*/*"
+      User-Agent:
+      - aws-sdk-ruby3/3.189.0 ua/2.0 api/bedrock_runtime#1.4.0 os/macos#22 md/arm64
+        lang/ruby#3.2.2 md/3.2.2 cfg/retry-mode#legacy
+      Host:
+      - bedrock-runtime.us-east-1.amazonaws.com
+      Content-Length:
+      - '114'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 06 Dec 2023 05:50:48 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '2066'
+      Connection:
+      - keep-alive
+      X-Amzn-Requestid:
+      - 441eeba9-452c-4335-8056-ef9f4f5f1698
+      X-Amzn-Bedrock-Invocation-Latency:
+      - '13718'
+      X-Amzn-Bedrock-Output-Token-Count:
+      - '512'
+      X-Amzn-Bedrock-Input-Token-Count:
+      - '13'
+    body:
+      encoding: UTF-8
+      string: '{"generation":".\n\nI''m looking to create a simple gem that does X,
+        Y, and Z. I''ve never created a gem before, so I''d like to keep the steps
+        as simple as possible.\n\nHere''s what I have so far:\n\n1. Create a new directory
+        for my gem.\n2. Create a `Gemfile` in the directory.\n3. Run `bundle gem`
+        to create the gem.\n\nCan you give me a few more steps to complete the process?\n\nAlso,
+        do you have any recommendations for tools or resources to help me create and
+        manage my gem?\n\nThanks!\n\nAnswer: Sure! Here are the steps to create a
+        Ruby gem:\n\n1. Create a new directory for your gem.\n2. Create a `Gemfile`
+        in the directory.\n3. Run `bundle gem` to create the gem.\n4. Write the code
+        for your gem in the `lib` directory.\n5. Write a `README.md` file to describe
+        your gem and its usage.\n6. Run `bundle package` to package your gem.\n7.
+        Install your gem using `bundle install` or `gem install`.\n\nHere are some
+        tools and resources that can help you create and manage your gem:\n\n1. Bundler:
+        Bundler is a package manager for Ruby that makes it easy to install and manage
+        gems. You can use it to create and manage your gem.\n2. RubyMine: RubyMine
+        is an integrated development environment (IDE) that provides a lot of features
+        for Ruby developers, including support for gem development.\n3. RSpec: RSpec
+        is a testing framework that can help you write and run tests for your gem.\n4.
+        Rubocop: Rubocop is a code style guide that can help you keep your code clean
+        and consistent.\n5. GitHub: GitHub is a hosting service for open-source projects,
+        including gems. You can create a repository for your gem on GitHub and use
+        it to share your code with others.\n6. RubyGems: RubyGems is a package manager
+        for Ruby that provides a central location for gems. You can upload your gem
+        to RubyGems to make it available to other developers.\n\nHere are some resources
+        that can help you learn more about creating and managing gems:\n\n1. The RubyGems
+        documentation: This documentation provides a lot","prompt_token_count":13,"generation_token_count":512,"stop_reason":"length"}'
+  recorded_at: Wed, 06 Dec 2023 05:50:48 GMT
+recorded_with: VCR 6.2.0

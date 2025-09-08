@@ -1,0 +1,250 @@
+{
+  "language": {
+    "enUS": "English",
+    "zhCN": "中文",
+    "esES": "Español",
+    "jaJP": "日本語",
+    "koKR": "한국어",
+    "arSA": "العربية",
+    "hiIN": "हिन्दी"
+  },
+  "metadata": {
+    "title": "声网对话式 AI 引擎",
+    "description": "声网对话式 AI 引擎"
+  },
+  "common": {
+    "language": "语言"
+  },
+  "homePage": {
+    "title": "声网对话式 AI 引擎"
+  },
+  "status": {
+    "unknown": "未知",
+    "connecting": "连接中...",
+    "connected": "已连接",
+    "disconnected": "未连接",
+    "reconnecting": "未连接",
+    "na": "--",
+    "good": "良好",
+    "medium": "一般",
+    "bad": "较差"
+  },
+  "roomInfo": {
+    "tooltip": "网络和channel信息",
+    "networkInfo": "网络信息",
+    "yourNetwork": "您的网络",
+    "networkLevel": {
+      "good": "良好",
+      "medium": "一般",
+      "bad": "较差",
+      "unknown": "未知"
+    },
+    "channelInfo": "频道信息",
+    "agentStatus": "智能体状态",
+    "roomStatus": "房间状态",
+    "roomId": "房间 ID",
+    "yourId": "您的 ID",
+    "agentId": "智能体 ID",
+    "unknown": "未知"
+  },
+  "moreInfo": {
+    "title": "更多信息",
+    "moreAction": "更多操作"
+  },
+  "settings": {
+    "tab": {
+      "agent": "智能体",
+      "settings": "设定"
+    },
+    "custom_agent": {
+      "title": "自定义智能体",
+      "description": "请联系声网员工获取自定义智能体ID",
+      "placeholder": "输入智能体ID获取",
+      "retrieve_button": "获取",
+      "message_success": "智能体获取成功",
+      "message_error": "智能体获取失败，当前数据库无此智能体",
+      "message_sunset": "智能体已被下线，请联系声网工作人员"
+    },
+    "save": "保存",
+    "options": {
+      "custom": "自定义",
+      "preset": "预设",
+      "error": "获取预设失败"
+    },
+    "asr": {
+      "language": "语言"
+    },
+    "custom_llm": {
+      "title": "自定义LLM",
+      "url": "自定义LLM URL",
+      "api_key": "自定义LLM Token",
+      "model": "自定义LLM Model",
+      "prompt": "自定义LLM Prompt",
+      "promptPlaceholder": "请输入提示词",
+      "style": "自定义LLM Style"
+    },
+    "advanced_features": {
+      "title": "高级设置",
+      "enable_bhvs": {
+        "title": "启用BHVS",
+        "description": "背景人声抑制，屏蔽背景人声干扰，保留对话人清晰人声"
+      },
+      "enable_aivad": {
+        "title": "优雅打断",
+        "description": "优雅打断是声网自研高阶打断功能，支持让智能体临时停下逻辑推理去做其他事情，返回后继续让智能体按照打断前的节点继续的技术"
+      }
+    },
+    "standard_avatar": {
+      "title": "数字人",
+      "close": "关闭",
+      "dialog": {
+        "title": "更换Preset需重新设置数字人",
+        "description": "Preset 和数字人的性别相关，更换 Preset 后请重新设置数字人",
+        "confirm": "确定变更",
+        "cancel": "取消",
+        "do-not-ask-again": "不再显示"
+      }
+    },
+    "transcription": {
+      "render-mode": "字幕渲染模式",
+      "word": {
+        "title": "Word 模式",
+        "description": "逐字渲染，字幕和语音同步"
+      },
+      "chunk": {
+        "title": "Text - 同步模式",
+        "description": "字幕和语音同步展示的 Text 模式"
+      },
+      "text": {
+        "title": "Text - 字幕先出模式",
+        "description": "字幕一次性渲染"
+      }
+    },
+    "voice-lock": {
+      "title": "声纹锁定",
+      "description": "声纹锁定 TODO"
+    }
+  },
+  "agent": {
+    "greeting": {
+      "hi": "你好，",
+      "greeting1": "人类",
+      "greeting2": "欢迎体验声网对话式 AI 引擎",
+      "greeting3": "秒应智答，零滞畅聊",
+      "connecting": "我在连接中...",
+      "connected": "我已加入",
+      "speakLoudly": "请你大声跟我说话，以便我更好地和你沟通",
+      "failed": "我加入失败，请晚点再试"
+    },
+    "getStart": "连接对话式 AI 引擎",
+    "subtitle": "字幕",
+    "enableSubtitle": "打开字幕",
+    "disableSubtitle": "关闭字幕",
+    "agentLabel": "Agent",
+    "userLabel": "你",
+    "hangUp": "退出 AI 对话",
+    "tooltip-mic-current-enable": "点击静音",
+    "tooltip-mic-current-disable": "取消静音",
+    "tooltip-mic-current-disallow": "浏览器的麦克风权限未获取",
+    "switchMic": "切换麦克风设备",
+    "agentConnected": "智能体已加入！",
+    "agentDisconnected": "智能体已离开！",
+    "agentConnectedTimeout": "智能体加入超时，请稍后重试。",
+    "agentAborted": "智能体状态异常，请退出重试。",
+    "agentReconnectedTimeout": "网络异常，请检查网络设置。",
+    "tmpDisconnected": "网络异常，请检查网络设置。",
+    "agentReconnected": "智能体已加入！",
+    "errorTitle": "智能体加入失败，请稍后重试。",
+    "reminder": {
+      "firstSpeaking": "请在对话初期大声、清晰地说话，提升智能体对您的声音锁定效果。"
+    },
+    "startAgentError": "连接失败。",
+    "interrupted": "被打断",
+    "loading": "加载中...",
+    "pleaseSepeak": "你可以开始说话",
+    "listening": "正在听...",
+    "muted": "已静音",
+    "interruptAgentTip": "说话或点击按钮打断智能体",
+    "clickAndInterruptAgent": "点击打断智能体"
+  },
+  "compatibility": {
+    "errorTitle": "兼容性检查",
+    "errorDescription": "请检查浏览器是否支持 WebRTC",
+    "errorHelper": "建议在最新版本的操作系统中使用浏览器的最新版本",
+    "errorButton": "我已知晓"
+  },
+  "devMode": {
+    "badge": "开发模式",
+    "endpoint": "Agent接入点",
+    "agentUrl": "Agent URL",
+    "unknown": "未知",
+    "title": "开发模式",
+    "description": "开发模式下，可以进行Agent的调试",
+    "userChatHistory": "用户消息历史",
+    "historyNumber": "{sum}条消息",
+    "userID": "用户ID",
+    "agentID": "AgentID",
+    "channelName": "频道名称",
+    "copy": "复制",
+    "copySuccess": "复制成功"
+  },
+  "userInfo": {
+    "logout": "退出"
+  },
+  "log": {
+    "label": "一键上报",
+    "uploadSuccess": "上报成功",
+    "uploadSuccessTip": "提交成功，感谢反馈",
+    "uploadErrorTip": "提交失败，请稍后重试"
+  },
+  "login": {
+    "title": "账号登录",
+    "buttonTip1": "请勾选协议",
+    "buttonTip2": "请勾选协议",
+    "panelTitle": "一键登录",
+    "panelDescription": "解锁∞免费畅聊",
+    "panelButton": "手机号登录",
+    "panelSignupButton": "免费注册",
+    "privacyPolicy": "我已阅读并同意<link>《用户协议》</link> 和 <policyLink>《隐私政策》</policyLink>",
+    "termsTip": "请勾选协议",
+    "unauthorizedError": "登录过期，请重新登录"
+  },
+  "conversationTimer": {
+    "tip": "体验对话限时{minutes}分钟",
+    "tipSmallScreen": "体验对话限时{minutes}分钟",
+    "title": "体验对话时间到！",
+    "description": "体验对话限时{minutes}分钟，本次对话时间已到。",
+    "button": "我知道了"
+  },
+  "dialog": {
+    "title": "提示",
+    "confirm": "确定",
+    "cancel": "取消",
+    "close": "关闭"
+  },
+  "agent-action": {
+    "max-image-size": "图片大小必须小于5MB",
+    "upload-image-failed": "上传图片失败，请重试",
+    "missing-image-url": "图片URL不可用，请上传新图片。",
+    "resend-image-error": "重发图片失败，请重试。",
+    "resend-image-success": "图片重发成功。",
+    "max-image-dimensions": "图片尺寸不得超过2048x2048像素。",
+    "upload-image-tooltip": "图片大小5M以内，尺寸小于2048x2048。支持JPG、PNG、WEBP、JPEG格式",
+    "avatar-busy-error": "所有数字人正忙，请稍后重试。"
+  },
+  "preset": {
+    "more": "更多+"
+  },
+  "mock": {
+    "preset": {
+      "title": "智能助手",
+      "description": "通用AI智能体，你可以跟她聊任何你想了解的",
+      "mock-1": "智能助手",
+      "mock-2": "智能客服-在线通话",
+      "mock-3": "英语陪练",
+      "mock-4": "情感陪伴-男生",
+      "mock-5": "情感陪伴-女生",
+      "mock-6": "更多+"
+    }
+  }
+}

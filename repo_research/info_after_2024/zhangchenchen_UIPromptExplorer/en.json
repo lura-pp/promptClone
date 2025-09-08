@@ -1,0 +1,79 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "themes": "Themes"
+  },
+  "hero": {
+    "title": "UI Prompt Explorer",
+    "subtitle": "A playful collection of UI theme prompts for your next design",
+    "explore": "Explore Themes"
+  },
+  "gallery": {
+    "title": "UI Prompt Gallery",
+    "byPurpose": "By Purpose",
+    "byStyle": "By UI Style"
+  },
+  "theme": {
+    "prompts": "Prompts",
+    "techStack": "Tech Stack",
+    "relatedThemes": "Related Themes",
+    "viewDetails": "View Details",
+    "preview": "Preview"
+  },
+  "filter": {
+    "all": "All",
+    "dashboard": "Dashboard",
+    "productivity": "Productivity",
+    "portfolio": "Portfolio",
+    "blog": "Blog",
+    "gallery": "Gallery",
+    "ecommerce": "E-commerce",
+    "social": "Social"
+  },
+  "style": {
+    "all": "All Styles",
+    "sketch": "Sketch",
+    "skeuomorphic": "Skeuomorphic",
+    "artistic": "Artistic",
+    "minimalist": "Minimalist"
+  },
+  "footer": {
+    "description": "UI Prompt Explorer - A playful collection of UI themes prompts",
+    "about": "About",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy"
+  },
+  "about": {
+    "title": "About UI Prompt Explorer",
+    "description": "UI Prompt Explorer is a collection of hand-drawn style UI design concepts that can inspire your next project.",
+    "welcome": "Welcome to the UI Prompt Explorer, a playful collection of hand-drawn user interface themes designed to inspire your next creative project.",
+    "purpose": "Each theme in our gallery represents a unique visual style that can be adapted for websites, mobile apps, or digital products. Browse through our collection to find inspiration or use the provided prompts to generate similar designs.",
+    "project": "This project was created as an exploration of creative design possibilities, showcasing how hand-drawn aesthetics can bring warmth and personality to digital interfaces.",
+    "howToUse": "How to Use",
+    "browseThemes": "Browse themes in our gallery",
+    "clickTheme": "Click on any theme for a preview",
+    "viewDetails": "View detailed information and prompts",
+    "usePrompts": "Use the prompts as inspiration for your designs",
+    "contact": "Contact",
+    "questions": "Have questions or suggestions?",
+    "email": "hello@uithemeexplorer.com"
+  },
+  "themeDetail": {
+    "backToGallery": "Back to gallery",
+    "themeNotFound": "Theme not found",
+    "returnToGallery": "Return to gallery",
+    "uiTheme": "UI Theme",
+    "generatedWith": "Generated with:",
+    "techStack": "Tech Stack:",
+    "themePrompt": "Suggested Prompt:",
+    "copyPrompt": "Copy prompt",
+    "relatedThemes": "Related Themes:",
+    "onlinePreview": "Online Preview"
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Oops! Page not found",
+    "returnHome": "Return to Home"
+  }
+} 

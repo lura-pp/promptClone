@@ -1,0 +1,1100 @@
+{
+  "name": "ableton-copilot",
+  "nodes": [
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.input }}",
+        "options": {
+          "systemMessage": "You are Ableton Copilot, an AI assistant specialized in helping music producers with Ableton Live production workflows. You have access to the ableton-copilot-mcp tool, which allows you to interact directly with Ableton Live sessions in real-time.\n\n## Your Capabilities\n\nYou can help music producers with:\n\n1. **Session Management**\n   - Get and modify song information (tempo, key, scale)\n   - Create, delete, and duplicate tracks\n   - Manage clips across the session\n\n2. **MIDI Operations**\n   - Create and modify MIDI clips\n   - Add, edit, and delete notes\n   - Humanize note properties (velocity, timing, etc.)\n   - Merge and organize notes across clips\n\n3. **Audio Operations**\n   - Create audio clips from samples\n   - Record track content based on time ranges\n   - Manage audio routing between tracks\n\n4. **Device Control**\n   - Load and configure audio effects and instruments\n   - Modify device parameters\n   - Help users find appropriate plugins and effects\n\n5. **Production Assistance**\n   - Suggest techniques based on genre or production goals\n   - Help troubleshoot common Ableton issues\n   - Offer creative suggestions for arrangement and sound design\n\n## Important Guidelines\n\n1. **Safety First**\n   - Always warn users before performing operations that might alter or delete their work\n   - Recommend creating snapshots before major changes\n   - Remind users about the limitations of the undo functionality for MIDI operations\n\n2. **Context Awareness**\n   - Begin by understanding the user's current session state using tools like `get_song_status` and `get_tracks`\n   - Consider the user's stated genre and production goals\n   - Take into account the user's skill level with Ableton\n\n3. **Clear Communication**\n   - Explain what operations you're performing and why\n   - When suggesting techniques, explain both how to implement them and their musical purpose\n   - Use appropriate music production terminology, but avoid jargon when working with beginners\n\n4. **Error Handling**\n   - If an operation fails, explain what went wrong and suggest alternatives\n   - Use the state management capabilities to help users recover from errors\n   - Suggest manual workarounds when automated solutions aren't possible\n\n## Using the MCP Tool\n\nWhen using the ableton-copilot-mcp tool, follow this workflow:\n\n1. **Assessment**: First, gather information about the current session state\n2. **Planning**: Consider the best approach to achieve the user's goal\n3. **Execution**: Perform the necessary operations, one step at a time\n4. **Verification**: Confirm that the changes were successful\n5. **Documentation**: Explain what was done and how it helps the user\n\n### Tool Authentication\n\nWhen first establishing a connection with Ableton Live:\n\n1. Ensure the user has properly installed the AbletonJS MIDI Remote Scripts\n2. Verify that the Control Surface is properly configured in Ableton's preferences\n3. If connection issues arise, suggest running the `init_ableton_js` command\n\n## Response Style\n\n1. **Be supportive and collaborative** - You are a co-producer, not just a tool\n2. **Balance technical accuracy with musical creativity** - Both aspects are important\n3. **Adapt your language to the user's experience level** - More technical with experts, more explanatory with beginners\n4. **Focus on musical outcomes** - Explain how technical changes affect the sound and feel of the music\n5. **Be patient with iteration** - Music production is an iterative process; support users through multiple attempts\n\n## Safety Measures\n\n1. Always use the state management capabilities to create snapshots before risky operations\n2. Warn users about operations that can't be undone using Ctrl+Z\n3. Remind users about the `rollback_notes` functionality for MIDI operations\n4. Suggest saving project versions at critical points in the workflow\n\nRemember that your goal is to enhance the music creation process by handling technical tasks and offering creative guidance, allowing the human producer to focus on their artistic vision."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        440,
+        -40
+      ],
+      "id": "4ab1015a-30c4-492e-bb50-59a99f220420",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        280,
+        160
+      ],
+      "id": "bd8d1f94-b18c-4e57-a167-f0842c729e8b",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "avSgLKwLvvI1EPHE",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        800,
+        220
+      ],
+      "id": "e68d9fd7-a66e-4125-b0fb-5231a7800524",
+      "name": "MCP Client",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "y3yd2ajaUqVZIP7C",
+          "name": "MCP Client - ableton-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "list_resources"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1000,
+        220
+      ],
+      "id": "899f376a-278a-4cad-bb32-db05f81aa52f",
+      "name": "list_resources",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "y3yd2ajaUqVZIP7C",
+          "name": "MCP Client - ableton-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "load_device"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        680,
+        240
+      ],
+      "id": "23fc214d-70f7-4640-933a-358828c9f3d9",
+      "name": "load_device",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "y3yd2ajaUqVZIP7C",
+          "name": "MCP Client - ableton-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "get_clip_properties"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1200,
+        220
+      ],
+      "id": "fa4e9277-ab55-4dc1-840d-3bd95b26447e",
+      "name": "get_clip_properties",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "y3yd2ajaUqVZIP7C",
+          "name": "MCP Client - ableton-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "remove_clip_notes"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1400,
+        220
+      ],
+      "id": "b0421e92-9d22-4e06-bd52-5479611c5b32",
+      "name": "remove_clip_notes",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "y3yd2ajaUqVZIP7C",
+          "name": "MCP Client - ableton-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "replace_all_notes_to_clip"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1800,
+        220
+      ],
+      "id": "76cf5e33-354e-4f2f-891d-935ac2568fe6",
+      "name": "replace_all_notes_to_clip",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "y3yd2ajaUqVZIP7C",
+          "name": "MCP Client - ableton-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "add_notes_to_clip"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1600,
+        220
+      ],
+      "id": "9e695ca4-37c4-49b9-8d9d-34ee46b4d6cf",
+      "name": "add_notes_to_clip",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "y3yd2ajaUqVZIP7C",
+          "name": "MCP Client - ableton-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "set_clips_property"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        2000,
+        220
+      ],
+      "id": "8e73dbf6-bcc0-4100-ab88-621a10f61114",
+      "name": "set_clips_property",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "y3yd2ajaUqVZIP7C",
+          "name": "MCP Client - ableton-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "crop_clip"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        2200,
+        220
+      ],
+      "id": "2f6ee685-3e2a-4f9c-ac8c-71f61fe9b7b4",
+      "name": "crop_clip",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "y3yd2ajaUqVZIP7C",
+          "name": "MCP Client - ableton-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "duplicate_clip_loop"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        2400,
+        220
+      ],
+      "id": "ddb5882e-58af-4ba5-9f59-19ef3294e8cf",
+      "name": "duplicate_clip_loop",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "y3yd2ajaUqVZIP7C",
+          "name": "MCP Client - ableton-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "duplicate_clip_region"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        2600,
+        220
+      ],
+      "id": "43f110d3-9214-489e-b43b-47ec9d309acb",
+      "name": "duplicate_clip_region",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "y3yd2ajaUqVZIP7C",
+          "name": "MCP Client - ableton-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "get_device_properties"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        2800,
+        220
+      ],
+      "id": "7f5cc4fb-2f8c-4a66-a72f-97c9ea0bab55",
+      "name": "get_device_properties",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "y3yd2ajaUqVZIP7C",
+          "name": "MCP Client - ableton-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "modify_device_parameter_value"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        3000,
+        220
+      ],
+      "id": "a7aa121a-2de1-4394-a537-f6dbce1c4a35",
+      "name": "modify_device_parameter_value",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "y3yd2ajaUqVZIP7C",
+          "name": "MCP Client - ableton-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "get_operation_histories"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        3200,
+        220
+      ],
+      "id": "f56047a2-31bb-4de7-834d-ad7518959f65",
+      "name": "get_operation_histories",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "y3yd2ajaUqVZIP7C",
+          "name": "MCP Client - ableton-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "get_snapshot_by_history_id"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        3400,
+        220
+      ],
+      "id": "b743849f-40bc-4479-ba13-a09cf3997da3",
+      "name": "get_snapshot_by_history_id",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "y3yd2ajaUqVZIP7C",
+          "name": "MCP Client - ableton-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "rollback_by_history_id"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        3600,
+        220
+      ],
+      "id": "95b9fd6d-54ba-4515-9332-d8a3f980450e",
+      "name": "rollback_by_history_id",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "y3yd2ajaUqVZIP7C",
+          "name": "MCP Client - ableton-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "get_song_properties"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        3800,
+        220
+      ],
+      "id": "e0260086-4d54-4a17-b7a1-844cc0b20cfa",
+      "name": "get_song_properties",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "y3yd2ajaUqVZIP7C",
+          "name": "MCP Client - ableton-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "get_song_view_properties"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        4000,
+        220
+      ],
+      "id": "da1da4b0-f9af-4416-ab42-d2a67b87abaa",
+      "name": "get_song_view_properties",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "y3yd2ajaUqVZIP7C",
+          "name": "MCP Client - ableton-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "set_song_property"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        4200,
+        220
+      ],
+      "id": "ecca1058-b810-4485-bbcb-8c35de2e57c2",
+      "name": "set_song_property",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "y3yd2ajaUqVZIP7C",
+          "name": "MCP Client - ableton-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "set_song_view_property"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        4400,
+        220
+      ],
+      "id": "b91877b4-52de-423f-bcee-91d1af87031a",
+      "name": "set_song_view_property",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "y3yd2ajaUqVZIP7C",
+          "name": "MCP Client - ableton-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "create_track"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        4600,
+        220
+      ],
+      "id": "3cbcfb2a-fb76-4889-99cd-4dffa0da2965",
+      "name": "create_track",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "y3yd2ajaUqVZIP7C",
+          "name": "MCP Client - ableton-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "delete_track"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        4800,
+        220
+      ],
+      "id": "05db7c46-3133-427f-97ac-b1f4c7fbafb4",
+      "name": "delete_track",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "y3yd2ajaUqVZIP7C",
+          "name": "MCP Client - ableton-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "duplicate_track"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        5000,
+        220
+      ],
+      "id": "cbac4be7-3ebe-4d8f-b45b-70600bed1ed2",
+      "name": "duplicate_track",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "y3yd2ajaUqVZIP7C",
+          "name": "MCP Client - ableton-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "record_by_time_range"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        5200,
+        220
+      ],
+      "id": "f770ed94-9dc6-490f-8a22-07ab34b5e246",
+      "name": "record_by_time_range",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "y3yd2ajaUqVZIP7C",
+          "name": "MCP Client - ableton-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "get_track_properties"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        5400,
+        220
+      ],
+      "id": "9fe94840-d14b-455e-b9f1-c9ea8993a759",
+      "name": "get_track_properties",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "y3yd2ajaUqVZIP7C",
+          "name": "MCP Client - ableton-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "create_empty_midi_clip"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        5600,
+        220
+      ],
+      "id": "841aa4c9-227e-42aa-a861-36f192652143",
+      "name": "create_empty_midi_clip",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "y3yd2ajaUqVZIP7C",
+          "name": "MCP Client - ableton-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "set_tracks_property"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        5800,
+        220
+      ],
+      "id": "6d5b3022-9f5f-4b2a-b5dc-16c2ef3c1063",
+      "name": "set_tracks_property",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "y3yd2ajaUqVZIP7C",
+          "name": "MCP Client - ableton-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "duplicate_clip_to_track"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        6000,
+        220
+      ],
+      "id": "debdf9d2-fb38-4031-a5ec-3a4673afc146",
+      "name": "duplicate_clip_to_track",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "y3yd2ajaUqVZIP7C",
+          "name": "MCP Client - ableton-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "delete_device"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        6200,
+        220
+      ],
+      "id": "638af853-bef1-485e-9898-9a8ae6e883e3",
+      "name": "delete_device",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "y3yd2ajaUqVZIP7C",
+          "name": "MCP Client - ableton-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "create_audio_clip"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        6400,
+        220
+      ],
+      "id": "081adc1c-332e-4924-a9f0-26215b131086",
+      "name": "create_audio_clip",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "y3yd2ajaUqVZIP7C",
+          "name": "MCP Client - ableton-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "connectionType": "sse",
+        "operation": "executeTool",
+        "toolName": "init_ableton_js"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        6600,
+        220
+      ],
+      "id": "c24b5fa4-ddb3-413e-9657-00ab3ff2c6e7",
+      "name": "init_ableton_js",
+      "credentials": {
+        "mcpClientSseApi": {
+          "id": "y3yd2ajaUqVZIP7C",
+          "name": "MCP Client - ableton-mcp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "inputSource": "jsonExample",
+        "jsonExample": "{\n  \"input\": \"Help me with Ableton Live production techniques\",\n  \"reason\": \"The request is about music production in Ableton Live, which matches the capabilities of this agent\",\n  \"originalMessage\": \"Help me with Ableton Live production techniques\",\n  \"selectedAgent\": \"ableton-copilot\",\n  \"aiResponse\": \"SELECTED AGENT: ableton-copilot\\nREASON: The request is about music production in Ableton Live...\"\n}"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -100,
+        80
+      ],
+      "id": "e6fcd8a4-0928-4ebb-bd07-34164d36d4f8",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -120,
+        300
+      ],
+      "id": "94cf893a-f7ec-4b40-b8bf-de366bf7670e",
+      "name": "When chat message received",
+      "webhookId": "6cf607a8-25ab-4321-b504-8b57386c56aa"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MCP Client": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "list_resources": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "load_device": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_clip_properties": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "remove_clip_notes": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "replace_all_notes_to_clip": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "add_notes_to_clip": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "set_clips_property": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "crop_clip": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "duplicate_clip_loop": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "duplicate_clip_region": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_device_properties": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "modify_device_parameter_value": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_operation_histories": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_snapshot_by_history_id": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "rollback_by_history_id": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_song_properties": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_song_view_properties": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "set_song_property": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "set_song_view_property": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_track": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "delete_track": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "duplicate_track": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "record_by_time_range": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_track_properties": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_empty_midi_clip": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "set_tracks_property": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "duplicate_clip_to_track": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "delete_device": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_audio_clip": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "init_ableton_js": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "f26af8ae-f723-464a-9751-a4c5e6425040",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "558d88703fb65b2d0e44613bc35916258b0f0bf983c5d4730c00c424b77ca36a"
+  },
+  "id": "U9kHToGdtVOOUQ8i",
+  "tags": []
+}

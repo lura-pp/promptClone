@@ -1,0 +1,815 @@
+{
+  "name": "產品影片自動化，n8n step by step 教學｜🔥 省力工具",
+  "nodes": [
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=商品:  {{ $json.product }}\n商品敘述: {{ $json.description }}\n",
+        "options": {
+          "systemMessage": "=# 概述\n你是一位世界級的行銷策略專家與文本到影像提示工程師，專精於為 AI 影像生成模型創建超寫實、高品質的商品影片生成提示。\n\n# 目標\n當給定商品描述時，你的任務是創建一個詳細且專業的影片生成提示，生成具有高真實感、乾淨且視覺震撼的商品影片，適合行銷素材、廣告宣傳或電商平台展示。\n\n# 要求\n## 超寫實影片質感：\n - 聚焦於專業級影像品質與真實感，營造高端、精緻的產品展示。\n - 使用寫實且自然的燈光效果，如「柔光燈箱」、「專業影棚燈光」、「自然柔和陰影」。\n - 呈現產品的紋理、色彩及細節，強化產品的質感與立體感。\n\n## 視覺風格：\n - 維持乾淨、極簡且優雅的視覺風格，避免背景過於繁瑣或搶眼。\n - 背景色調建議使用柔和漸層、淺色或純白，避免與產品顏色衝突。\n - 如果圖片中，有人類的手在商品上，必須移除\n - 請勿修改商品本身的材質與顏色\n\n## 影片特效與運鏡：\n - 影片呈現慢速360度轉盤旋轉展示，模擬產品緩慢旋轉，展現產品 各個角度。\n - 動作要連貫、平滑且優雅，避免任何突然的推拉、搖晃或快速變焦。\n - 產品需始終處於鏡頭中心，全程保持清晰可見，無遮擋或裁切。\n - 無需閃光效果、動態轉場或浮動字幕，僅專注於自然、穩定且高質感的產品旋轉展示。\n\n## 商業影像標準：\n- 強調產品的核心價值與定位，打造適合商業宣傳及品牌塑造的高端影片。\n- 根據產品特性，選用合適的場景點綴（如高檔廚房檯面展示高階攪拌機）。\n\n\n# 輸出格式\n- 生成單一文本提示，針對專業 AI 影像模型進行優化。\n- 採用直接且具描述性的文字，不使用多餘詞彙或無助提升影像質感的形容詞。\n- 提示需完整且準確，可直接輸入 AI 影像生成模型中使用。\n- 語氣：專業、精確、簡潔，目標在於實現最高寫實度與行銷衝擊力。\n\n\n# 範例輸入：\n商品描述：\n「高端無線藍牙音響，霧面黑色，圓柱形，現代設計。」\n\n# 範例輸出：\n「超寫實商品影片，高端霧面黑無線藍牙音響，圓柱形現代設計，乾淨白色影棚背景，柔光燈箱照明，自然陰影，產品緩慢360度旋轉，持續居中展示，無任何閃爍效果或切換轉場，專業廣告品質。」"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        340,
+        0
+      ],
+      "id": "14544392-762c-4686-b82a-684eeeedeeae",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4.1",
+          "mode": "list",
+          "cachedResultName": "gpt-4.1"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        320,
+        180
+      ],
+      "id": "c679c786-f803-4cf7-8b13-f45a5680a429",
+      "name": "OpenAI 4.1",
+      "credentials": {
+        "openAiApi": {
+          "id": "vo1Kz0pllXw8z5Cv",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -320,
+        140
+      ],
+      "id": "f2e5ff3c-911d-4b23-b378-e0f2f40d6441",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $('Config').item.json.image }}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        720,
+        140
+      ],
+      "id": "64b1d6aa-64f6-40f9-91bb-e1792f20b706",
+      "name": "Download Original",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "FOJsxE5vAvlfyH16",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "3a6865ee-96e2-459d-af59-2b38d71bb2f1",
+              "name": "product",
+              "value": "={{ $('On form submission').item.json.product || 咖啡保溫杯 }}",
+              "type": "string"
+            },
+            {
+              "id": "1579840e-b6f9-49a2-afab-30097ec5bfe6",
+              "name": "description",
+              "value": "={{ $('On form submission').item.json.description || mother-goose-咖啡保溫杯-黑色金屬外殼 }}",
+              "type": "string"
+            },
+            {
+              "id": "2fbfed7a-a6c9-47ed-a8e1-d71934ec3574",
+              "name": "image",
+              "value": "={{ $json.id || \"16lF8aHluOyIMwk7AfN4JDdxhTo9oToxo\"}}",
+              "type": "string"
+            },
+            {
+              "id": "6f0cf9b1-081b-401b-86f2-f9289ae12ab6",
+              "name": "email",
+              "value": "={{ $('On form submission').item.json.email || \"n8n-auto@gmail.com\" }}",
+              "type": "string"
+            },
+            {
+              "id": "13767f88-910b-4f0b-b2ea-2b3b28ed612f",
+              "name": "model",
+              "value": "gpt-image-1",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        100,
+        60
+      ],
+      "id": "4813587a-883f-490a-b532-a470ab37229a",
+      "name": "Config"
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "data[0].b64_json",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        1120,
+        140
+      ],
+      "id": "c5e9a056-3797-4715-af89-ebc8d46078d9",
+      "name": "Convert to File"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/images/edits",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "openAiApi",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "model",
+              "value": "={{ $('Config').item.json.model }}"
+            },
+            {
+              "name": "prompt",
+              "value": "={{ $json.output }}"
+            },
+            {
+              "parameterType": "formBinaryData",
+              "name": "image",
+              "inputDataFieldName": "data"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        920,
+        140
+      ],
+      "id": "23f80963-dbcd-4fc6-84ab-c05e87b06bd5",
+      "name": "gpt-image-1",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "YTi08zt9SSPHxDEj",
+          "name": "Google Gemini(PaLM) Api account"
+        },
+        "openAiApi": {
+          "id": "vo1Kz0pllXw8z5Cv",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "name": "=OpenAI-{{ $('Config').item.json.model }}-{{ $('Config').item.json.product }}-{{ $now}}.png",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "https://drive.google.com/drive/folders/1DYtUp6Tp37_FUp_gepLyFCjubV-6aVOn",
+          "mode": "url"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        1320,
+        140
+      ],
+      "id": "539c7eca-a980-4c84-b0c7-213db7e274df",
+      "name": "Upload Edit Image",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "FOJsxE5vAvlfyH16",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "d882119f-0e7f-448f-bdf6-c7ad81937427",
+              "leftValue": "={{ $json.status }}",
+              "rightValue": "SUCCEEDED",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1000,
+        480
+      ],
+      "id": "f07d5b43-e650-4d7a-a8f1-8a94109ec44d",
+      "name": "If"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1000,
+        700
+      ],
+      "id": "d99ed92c-a96d-4c72-9b2d-a5b136f1bd44",
+      "name": "5s",
+      "webhookId": "0b6fa6b0-7ff6-4af4-8ca4-8b5e8e20b1e5"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('Config').item.json.email }}",
+        "subject": "=產品影片自動化生成： {{ $('Config').item.json.product }}",
+        "emailType": "text",
+        "message": "=Hi!\n\n商品影片自動化完成\n\nphoto - {{ $('Upload Edit Image').item.json.webContentLink }}\nvideo - {{ $('check task - runway').item.json.output[0] }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        1620,
+        480
+      ],
+      "id": "5d654475-069a-4b72-8d19-93c690c06edc",
+      "name": "Gmail",
+      "webhookId": "d4f162ff-3aee-49a6-82c2-336b0f602344",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "xhKbueCrvtZ602Y6",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.dev.runwayml.com/v1/image_to_video",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-Runway-Version",
+              "value": "2024-11-06"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "promptImage",
+              "value": "={{ $json.webContentLink }}"
+            },
+            {
+              "name": "seed",
+              "value": "=4294967295"
+            },
+            {
+              "name": "model",
+              "value": "gen4_turbo"
+            },
+            {
+              "name": "promptText",
+              "value": "=## 商品影片生成提示詞：\n請根據提供的商品照片，製作一支高度專業的行銷影片。影片應模擬商品在 3D 轉盤上緩慢旋轉，營造出平滑、真實的 3D 轉動效果。\n\n## 動作要求：\n  * 旋轉速度應緩慢且均勻，每秒最多10度的旋轉，營造優雅流暢的視覺效果。\n  * 避免任何突然的鏡頭移動、晃動或快速切換。\n  * 鏡頭應始終保持穩定，確保商品始終居中且完整顯示在畫面中。\n  * 嚴禁拉近、放大或裁切，務必保留商品的完整性。\n\n##視覺風格：\n  * 強調**高級感、乾淨且現代**的美學設計，適合商業行銷用途。\n  * 不添加花俏效果、過度轉場或圖像覆蓋，僅保留細緻、真實的 3D 旋轉效果。\n  * 請確保商品在影片中呈現出**最精緻、最專業**的一面。\n\n此影片旨在完美呈現商品外觀，提升品牌形象及市場吸引力。\n"
+            },
+            {
+              "name": "duration",
+              "value": "5"
+            },
+            {
+              "name": "ratio",
+              "value": "960:960"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        360,
+        480
+      ],
+      "id": "032d27de-0e63-49e7-bfd9-d2efc02449a4",
+      "name": "generate video - runway",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "YTi08zt9SSPHxDEj",
+          "name": "Google Gemini(PaLM) Api account"
+        },
+        "openAiApi": {
+          "id": "vo1Kz0pllXw8z5Cv",
+          "name": "OpenAi account"
+        },
+        "httpHeaderAuth": {
+          "id": "2BHx3OmoJaWxhjg9",
+          "name": "Header Auth - Runway API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "=https://api.dev.runwayml.com/v1/tasks/{{ $('generate video - runway').item.json.id }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-Runway-Version",
+              "value": "2024-11-06"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        780,
+        480
+      ],
+      "id": "3c351573-6eb2-497e-813d-e0432cfcbe65",
+      "name": "check task - runway",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "YTi08zt9SSPHxDEj",
+          "name": "Google Gemini(PaLM) Api account"
+        },
+        "openAiApi": {
+          "id": "vo1Kz0pllXw8z5Cv",
+          "name": "OpenAi account"
+        },
+        "httpHeaderAuth": {
+          "id": "2BHx3OmoJaWxhjg9",
+          "name": "Header Auth - Runway API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.output[0] }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1620,
+        680
+      ],
+      "id": "17bdd53a-c0fc-4079-84e7-018f4822fc5b",
+      "name": "Get Video"
+    },
+    {
+      "parameters": {
+        "name": "={{ $('Config').item.json.product }}-商品影片-{{ $now }}.mp4\n",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "https://drive.google.com/drive/folders/17AqsiXLwrPeFsKvjPyD-DVGQKdJfvljf",
+          "mode": "url"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        1820,
+        680
+      ],
+      "id": "ef2db8c6-3e3b-4d35-9e96-943e17b96e61",
+      "name": "Upload Generated Video",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "FOJsxE5vAvlfyH16",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "formTitle": "產品影片",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "photo",
+              "fieldType": "file",
+              "multipleFiles": false,
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "product",
+              "placeholder": "產品名稱",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "description",
+              "placeholder": "產品敘述",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "email",
+              "placeholder": "電子郵件",
+              "requiredField": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.2,
+      "position": [
+        -320,
+        -40
+      ],
+      "id": "f901386a-1e82-4dc5-b3ef-b1cd0cb8df77",
+      "name": "On form submission",
+      "webhookId": "8663441d-de68-4bac-96ea-aa459b327d52"
+    },
+    {
+      "parameters": {
+        "inputDataFieldName": "photo",
+        "name": "={{ $json.product }}\n",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "https://drive.google.com/drive/folders/1ZI1teGx1WeEaV4oelueF6hMdUrwt3zDQ",
+          "mode": "url"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        -140,
+        -40
+      ],
+      "id": "1609edaa-e67f-4737-a424-866bc454bbcb",
+      "name": "Upload Product Image",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "FOJsxE5vAvlfyH16",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        580,
+        480
+      ],
+      "id": "8bc20339-be5a-41c9-840c-21f02e8188c9",
+      "name": "10s",
+      "webhookId": "f772d4b1-bfe4-42ba-84b1-a749e850e445"
+    },
+    {
+      "parameters": {
+        "content": "# 表單紀錄 - 上傳產品圖片、名稱與敘述\n\n",
+        "height": 420,
+        "width": 690
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -440,
+        -120
+      ],
+      "id": "60b40fb6-fe19-41e7-9340-a343f71f67bf",
+      "name": "Sticky Note6"
+    },
+    {
+      "parameters": {
+        "content": "# 修改產品圖片，產生新的產品渲染圖 -  GPT-Image-1 \n",
+        "height": 420,
+        "width": 1230,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        280,
+        -120
+      ],
+      "id": "955ac08e-1bc8-4f90-9ea7-a04165418bc2",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "# 產生新的產品展示影片 - Runway",
+        "height": 580,
+        "width": 1230,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        280,
+        340
+      ],
+      "id": "749276cc-b941-408a-9d4f-179ddad46855",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "# 紀錄生成結果，傳送Email，備份影片到 google drive\n\n",
+        "height": 580,
+        "width": 590,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1540,
+        340
+      ],
+      "id": "8a62f135-bcee-426b-8b28-622e70ef8cb6",
+      "name": "Sticky Note7"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "OpenAI 4.1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Config",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Download Original",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Config": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "gpt-image-1": {
+      "main": [
+        [
+          {
+            "node": "Convert to File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Original": {
+      "main": [
+        [
+          {
+            "node": "gpt-image-1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File": {
+      "main": [
+        [
+          {
+            "node": "Upload Edit Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload Edit Image": {
+      "main": [
+        [
+          {
+            "node": "generate video - runway",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Get Video",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Gmail",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "5s",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "5s": {
+      "main": [
+        [
+          {
+            "node": "check task - runway",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "generate video - runway": {
+      "main": [
+        [
+          {
+            "node": "10s",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "check task - runway": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Video": {
+      "main": [
+        [
+          {
+            "node": "Upload Generated Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "Upload Product Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload Product Image": {
+      "main": [
+        [
+          {
+            "node": "Config",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "10s": {
+      "main": [
+        [
+          {
+            "node": "check task - runway",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Asia/Taipei",
+    "callerPolicy": "workflowsFromSameOwner",
+    "executionTimeout": 600,
+    "errorWorkflow": "0fS0IZwY5xyvbexo"
+  },
+  "versionId": "cd1985da-cdde-457a-8543-446415cd5723",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "98fc6998a4fc974191a50fd1e28f3c93149311bffb0a029723a4889a4111c908"
+  },
+  "id": "T7nsRwiqhNfib902",
+  "tags": [
+    {
+      "createdAt": "2025-01-21T07:13:36.575Z",
+      "updatedAt": "2025-01-21T07:13:36.575Z",
+      "id": "yM2YsERN8eAqo2ZC",
+      "name": "ai-agent"
+    },
+    {
+      "createdAt": "2025-03-17T08:20:06.861Z",
+      "updatedAt": "2025-03-17T08:20:06.861Z",
+      "id": "pvRmfUcHdkTEgrk9",
+      "name": "yt"
+    },
+    {
+      "createdAt": "2025-05-07T00:43:53.439Z",
+      "updatedAt": "2025-05-07T00:43:53.439Z",
+      "id": "YFIujnUKMZ9zovIC",
+      "name": "image"
+    }
+  ]
+}

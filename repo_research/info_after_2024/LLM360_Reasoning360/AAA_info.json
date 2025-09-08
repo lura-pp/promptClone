@@ -1,0 +1,15 @@
+{
+    "run_sample_and_postprocess.py": 1,
+    "change_tokenizer_config.py": 1,
+    "reward_function.py": 1,
+    "test_custom_completion_callback.py": 1,
+    "codeio.py": 2,
+    "arcagi.py": 1,
+    "barc.py": 0,
+    "process_zebrapuzzle_dataset.py": 1,
+    "puzzle_generator.py": 1,
+    "finqa.py": 1,
+    "hitab.py": 1,
+    "multihier.py": 1,
+    "prompt.py": 2
+}

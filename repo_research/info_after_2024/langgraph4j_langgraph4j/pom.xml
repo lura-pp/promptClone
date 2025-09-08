@@ -1,0 +1,291 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.bsc.langgraph4j</groupId>
+  <artifactId>langgraph4j-parent</artifactId>
+  <version>1.6.2</version>
+  <packaging>pom</packaging>
+
+  <name>langgraph4j::parent</name>
+  <url>https://github.com/langgraph4j/langgraph4j</url>
+  <description>A library for building stateful, multi-agents applications with LLMs</description>
+  <licenses>
+    <license>
+      <name>MIT</name>
+      <url>https://opensource.org/license/mit</url>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <id>bsorrentino</id>
+      <name>Bartolomeo Sorrentino</name>
+      <email>bartolomeo.sorrentino@gmail.com</email>
+    </developer>
+    <developer>
+      <id>lambochen</id>
+      <name>lambochen</name>
+      <email>lambochen@yeah.net</email>
+    </developer>
+  </developers>
+  <scm>
+    <connection>scm:git: https://github.com/bsorrentino/langgraph4j.git </connection>
+    <developerConnection>scm:git: https://github.com/bsorrentino/langgraph4j.git </developerConnection>
+    <url> https://github.com/bsorrentino/langgraph4j</url>
+    <tag>HEAD</tag>
+  </scm>
+  <issueManagement>
+    <system>github</system>
+    <url> https://github.com/bsorrentino/langgraph4j/issues</url>
+  </issueManagement>
+
+  <properties>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <langchain4j.version>1.2.0</langchain4j.version>
+    <!--langchain4j.rc>1.1.0-rc1</langchain4j.rc -->
+    <langchain4j.beta>1.2.0-beta8</langchain4j.beta>
+    <spring-ai.version>1.0.1</spring-ai.version>
+    <flatten-maven-plugin.version>1.5.0</flatten-maven-plugin.version>
+  </properties>
+
+
+  <distributionManagement>
+<!-- 
+   <repository>
+      <id>${release.repo.id}</id>
+      <name>central</name>
+      <url>${release.repo.url}</url>
+    </repository>
+    <snapshotRepository>
+      <id>${snapshot.repo.id}</id>
+      <name>snapshots</name>
+      <url>${snapshot.repo.url}</url>
+    </snapshotRepository>
+ -->
+    <site>
+      <id>${project.artifactId}-site</id>
+      <url>${project.baseUri}</url>
+    </site>
+  </distributionManagement>
+
+
+  <dependencyManagement>
+    <dependencies>
+
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>2.0.9</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-jdk14</artifactId>
+        <version>2.0.9</version> <!-- Use the latest version -->
+      </dependency>
+
+      <dependency>
+        <groupId>org.junit</groupId>
+        <artifactId>junit-bom</artifactId>
+        <version>5.10.2</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.11.2</version>
+        <configuration>
+        </configuration>
+        <reportSets>
+          <reportSet>
+            <id>aggregate</id>
+            <inherited>false</inherited>
+            <reports>
+              <report>aggregate</report>
+            </reports>
+          </reportSet>
+          <reportSet>
+            <id>default</id>
+            <reports>
+              <report>javadoc</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+      </plugin>
+    </plugins>
+  </reporting>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.11.2</version>
+        <configuration>
+          <failOnWarnings>false</failOnWarnings>
+          <doclint>none</doclint>
+        </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>3.1.1</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.3.0</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>3.2.5</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.13.0</version>
+          <configuration>
+            <release>17</release>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>4.0.0-M14</version>
+
+          <dependencies>
+            <dependency>
+              <groupId>org.apache.maven.doxia</groupId>
+              <artifactId>doxia-module-markdown</artifactId>
+              <version>2.0.0</version>
+            </dependency>
+          </dependencies>
+
+        </plugin>
+
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>build-helper-maven-plugin</artifactId>
+          <version>3.0.0</version>
+        </plugin>
+      </plugins>
+
+    </pluginManagement>
+
+    <plugins>
+
+      <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-site-plugin</artifactId>
+      <version>4.0.0-M14</version>
+        <configuration>
+          <tempWebappDirectory>${project.build.directory}/staging</tempWebappDirectory>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.sonatype.central</groupId>
+        <artifactId>central-publishing-maven-plugin</artifactId>
+        <version>0.8.0</version>
+        <extensions>true</extensions>
+        <configuration>
+          <publishingServerId>sonatype-central</publishingServerId>
+          <autoPublish>true</autoPublish>
+          <waitUntil>published</waitUntil>
+        </configuration>
+      </plugin>
+
+    </plugins>
+ </build>
+
+  <modules>
+    <module>langgraph4j-core</module>
+    <module>langgraph4j-bom</module>
+
+    <!-- Integrating LangGraph4j with LangChain4j -->
+    <module>langchain4j/langchain4j-core</module>
+    <module>langchain4j/langchain4j-agent</module>
+
+    <!-- Integrating LangGraph4j with Spring AI -->
+    <module>spring-ai/spring-ai-core</module>
+    <module>spring-ai/spring-ai-agent</module>
+    <module>spring-ai/spring-ai-agent-archetype</module>
+
+    <!-- LangGraph4j studio and implementations-->
+    <module>studio/base</module>
+    <module>studio/jetty</module>
+    <module>studio/quarkus</module>
+    <module>studio/springboot</module>
+
+    <!-- LangGraph4j how-tos and examples, new examples repository: https://github.com/langgraph4j/langgraph4j-examples -->
+    <module>how-tos</module>
+    <module>langgraph4j-postgres-saver</module>
+  </modules>
+
+  <profiles>
+
+    <profile>
+      <id>release</id>
+      <build>
+        <plugins>
+          <!--
+          =====================================================================================================
+          mvn -Prelease source:jar javadoc:jar install central-publishing:publish -Dgpg.passphrase=thephrase
+          =====================================================================================================
+          -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <version>3.2.4</version>
+            <executions>
+              <execution>
+                <id>sign-artifacts</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+              </execution>
+            </executions>
+            <configuration>
+              <keyname>bartolomeo.sorrentino@gmail.com</keyname>
+              <gpgArguments>
+                <arg>--pinentry-mode</arg>
+                <arg>loopback</arg>
+              </gpgArguments>
+            </configuration>
+          </plugin>
+          <!--
+          <plugin>
+            <groupId>org.sonatype.plugins</groupId>
+            <artifactId>nexus-staging-maven-plugin</artifactId>
+            <version>1.7.0</version>
+            <extensions>true</extensions>
+            <configuration>
+              <serverId>sonatype-central</serverId>
+              <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+               <autoReleaseAfterClose>true</autoReleaseAfterClose>
+            </configuration>
+          </plugin>
+          -->
+        </plugins>
+      </build>
+    </profile>
+
+  </profiles>
+  
+</project>

@@ -1,0 +1,35 @@
+{
+  "id": "claude_20250809_224636",
+  "timestamp": "2025-08-09T22:46:36.754609",
+  "stage": "stage_03_context_awareness",
+  "ai_source": "claude",
+  "session_id": "claude_20250809_224636",
+  "original_prompt": "What are the best practices for context search implementation?",
+  "final_prompt": "What are the best practices for context search implementation?",
+  "content_hash": "cdbc2fe48c0de41120acef0ac96b25cb",
+  "keywords": [
+    "Context Search Implementation Best Practices"
+  ],
+  "summary": "The session initiated a discussion about best practices for implementing context search.",
+  "sections": [
+    {
+      "title": "Key Achievements",
+      "type": "list",
+      "items": []
+    },
+    {
+      "title": "Errors",
+      "type": "list",
+      "items": []
+    },
+    {
+      "title": "Configurations",
+      "type": "list",
+      "items": []
+    }
+  ],
+  "metadata": {
+    "processed_at": "2025-08-09T22:46:36.754685",
+    "content_length": 62
+  }
+}

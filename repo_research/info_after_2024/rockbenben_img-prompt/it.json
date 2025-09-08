@@ -1,0 +1,52 @@
+{
+  "Metadata": {
+    "title": "IMGPrompt - Generator Prompt Cerdas untuk Seni AI | Midjourney, Stable Diffusion, DALL·E, FLUX",
+    "description": "Sulit menemukan prompt seni AI? IMGPrompt membantu membuat prompt cerdas untuk Midjourney, Stable Diffusion, dan DALL·E, memberi Anda inspirasi tak terbatas.",
+    "keywords": "IMGPrompt, diffusione stabile, midjourney, DALL·E, FLUX, generazione di prompt di immagini, strumento di creatività visiva, prompt, IA, raccomandazione di prompt, prompt di traduzione, prompt di immagini"
+  },
+  "ToolPage": {
+    "section1": "Seleziona argomento",
+    "section2": "Affina categoria",
+    "section3": "Aggiungi tag",
+    "currentSelection": "Richieste selezionate",
+    "hierarchyTip": "Sequenza delle operazioni: Seleziona argomento → Affina categoria → Aggiungi tag"
+  },
+  "ResultSection": {
+    "tooltip-light": "Applicare il modello di illuminazione per ritratti (inclusa l'illuminazione cinematografica, i raggi del crepuscolo e altri)",
+    "prompt-light": "Illuminazione ritratto",
+    "tooltip-polish": "Carica i parametri di ottimizzazione dell'immagine (miglioramento della risoluzione/miglioramento dello stile artistico)",
+    "prompt-polish": "Ottimizzazione della qualità",
+    "insertSuccess": "Sono stati aggiunti parametri di ottimizzazione al prompt",
+    "tooltip-negative": "Copiare le richieste negative più comuni (per evitare difetti comuni)",
+    "prompt-negative": "Richiesta negativa",
+    "prompt": "Richiesta",
+    "button-copy": "Copia",
+    "clearSuccess": "I prompt sono stati cancellati",
+    "button-clear": "Chiaro",
+    "tooltip-translate": "Inserisci il testo in qualsiasi lingua da tradurre in inglese",
+    "button-translate": "Tradurre",
+    "translateSuccess": "Traduzione riuscita e aggiunta al prompt",
+    "translateEmptyError": "Inserisci il contenuto da tradurre",
+    "translateFailError": "Traduzione fallita, riprova.",
+    "title-other": "Funzionalità avanzate:",
+    "tooltip-randomColor": "Richiesta di modifica casuale del colore",
+    "button-randomcolor": "Colore casuale"
+  },
+  "CopyToClipboard": {
+    "empty": "Il contenuto è vuoto, niente da copiare",
+    "unsupported": "Il tuo browser non supporta le operazioni negli appunti, prova a copiare manualmente o usa un altro browser",
+    "success": "Copiato correttamente, puoi incollarlo nello strumento di pittura AI",
+    "failure": "Copia non riuscita, si prega di copiare manualmente"
+  },
+  "feedback": {
+    "feedback1": "Feedback e suggerimenti",
+    "feedback2": "Se riscontri problemi durante l'uso o hai suggerimenti e idee, non esitare a farmelo sapere! Il tuo feedback influenzerà direttamente lo sviluppo e il miglioramento delle funzionalità future, aiutandoci a creare uno strumento che soddisfi meglio le esigenze di tutti.",
+    "feedback3": "Descrivi in dettaglio il tuo caso d'uso o il problema riscontrato, oppure condividi le tue idee creative. Valuterò attentamente ogni feedback e apporterò modifiche e ottimizzazioni il prima possibile.",
+    "reaction0": "Su",
+    "reaction1": "Supporto",
+    "reaction2": "Freddo",
+    "reaction3": "Che cosa?",
+    "reaction4": "Puzzle",
+    "placeholder": "Lascia un messaggio, non è necessario effettuare l'accesso (inserisci la tua email per ricevere le notifiche di risposta)"
+  }
+}

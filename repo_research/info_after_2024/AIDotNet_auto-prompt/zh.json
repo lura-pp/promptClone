@@ -1,0 +1,999 @@
+{
+  "nav": {
+    "home": "首页",
+    "dashboard": "提示词广场",
+    "prompts": "提示词管理",
+    "workbench": "工作台",
+    "evaluation": "模型评估",
+    "image": "图片生成",
+    "code": "代码生成",
+    "documentation": "文档",
+    "settings": "设置",
+    "apikeys": "API Key 管理",
+    "scores": "模型评分"
+  },
+  "common": {
+    "generate": "生成",
+    "save": "保存",
+    "cancel": "取消",
+    "confirm": "确认",
+    "delete": "删除",
+    "edit": "编辑",
+    "search": "搜索",
+    "filter": "筛选",
+    "export": "导出",
+    "import": "导入",
+    "loading": "加载中...",
+    "retry": "重试",
+    "close": "关闭",
+    "language": "语言",
+    "chinese": "中文",
+    "english": "English",
+    "switchToDark": "切换到暗黑主题",
+    "switchToLight": "切换到明亮主题"
+  },
+  "auth": {
+    "login": "登录",
+    "logout": "退出登录",
+    "username": "用户名",
+    "password": "密码",
+    "loginSuccess": "登录成功",
+    "loginFailed": "登录失败",
+    "pleaseLogin": "请先登录"
+  },
+  "apiConfig": {
+    "title": {
+      "loginRequired": "需要登录",
+      "configApiKey": "配置API密钥",
+      "modifyApiSettings": "修改API设置"
+    },
+    "description": {
+      "loginRequired": "您需要先登录才能使用AI功能。请选择登录方式。",
+      "apiKeyRequired": "您需要配置API密钥才能使用AI功能。您的API密钥将安全地存储在本地浏览器中，如果是本地Ollama访问，密钥需要随便填写。"
+    },
+    "buttons": {
+      "cancel": "取消",
+      "thorLogin": "使用 Thor 平台登录",
+      "passwordLogin": "使用账户密码登录",
+      "saveConfig": "保存配置"
+    },
+    "form": {
+      "apiKeyLabel": "API 密钥",
+      "apiKeyPlaceholder": "sk-...",
+      "apiKeyDescription": "您的API API密钥，以 sk- 开头。",
+      "getApiKeyLink": "获取API密钥"
+    },
+    "errors": {
+      "apiKeyRequired": "请输入API密钥",
+      "apiKeyTooShort": "API密钥长度不能少于10个字符",
+      "saveFailed": "保存配置失败"
+    },
+    "messages": {
+      "configSaved": "API配置已保存",
+      "loginExplanation": "登录后您将能够使用所有AI功能，包括提示词优化、图片生成等。",
+      "privacyProtection": "您的API密钥仅存储在本地浏览器中，我们不会收集或存储您的API密钥信息。"
+    },
+    "alerts": {
+      "loginRequired": {
+        "title": "需要登录",
+        "description": "您需要先登录才能使用AI功能。请选择登录方式。"
+      },
+      "loginExplanation": {
+        "title": "登录说明",
+        "description": "登录后您将能够使用所有AI功能，包括提示词优化、图片生成等。"
+      },
+      "apiConfigInfo": {
+        "title": "API配置说明",
+        "description": "您需要配置API密钥才能使用AI功能。您的API密钥将安全地存储在本地浏览器中，如果是本地Ollama访问，密钥需要随便填写。"
+      },
+      "privacyProtection": {
+        "title": "隐私保护",
+        "description": "您的API密钥仅存储在本地浏览器中，我们不会收集或存储您的API密钥信息。"
+      }
+    }
+  },
+  "workbench": {
+    "title": "提示词优化平台",
+    "run": "运行",
+    "model": "模型",
+    "loadingModels": "加载模型中...",
+    "searchOrSelectModel": "搜索或选择模型",
+    "selectModel": "选择模型",
+    "systemPrompt": "系统提示词",
+    "systemPromptPlaceholder": "输入您的系统提示词",
+    "addUserMessage": "添加用户消息",
+    "addAssistantMessage": "添加助手消息",
+    "userMessageDefault": "输入你的问题",
+    "assistantMessageDefault": "输入你的回答",
+    "thinking": "思考中...",
+    "reasoningProcess": "推理过程",
+    "addToConversation": "添加到会话",
+    "fetchModelsError": "获取模型列表失败，使用默认模型",
+    "inputPrompt": "输入提示词",
+    "promptPlaceholder": "请输入需要优化的提示词...",
+    "requirements": "优化需求",
+    "requirementsPlaceholder": "描述您的具体需求和期望效果...",
+    "deepReasoning": "深度推理",
+    "enableDeepReasoning": "启用深度推理模式",
+    "optimizePrompt": "优化提示词",
+    "originalPrompt": "原始提示词",
+    "optimizedPrompt": "优化后提示词",
+    "saveAsTemplate": "保存为模板",
+    "templateName": "模板名称",
+    "templateDescription": "模板描述",
+    "templateTags": "标签",
+    "tour": {
+      "welcome": {
+        "title": "欢迎使用工作台！",
+        "description": "这里是您的AI助手工作区，让我们来了解一下各个功能区域的作用。"
+      },
+      "modelSelector": {
+        "title": "选择AI模型",
+        "description": "在这里选择您要使用的AI模型。不同模型有着不同的特点和能力，您可以根据需要进行选择。"
+      },
+      "promptOptimization": {
+        "title": "提示词优化",
+        "description": "点击这个按钮可以优化您的提示词，让AI更好地理解您的需求并给出更准确的回答。"
+      },
+      "functionCalling": {
+        "title": "Function Calling优化",
+        "description": "点击这个按钮可以优化您的Function Calling提示词，让AI能够更准确地调用函数和工具。"
+      },
+      "systemPrompt": {
+        "title": "系统提示词",
+        "description": "这里是系统提示词输入区，用于设定AI的角色、行为规范和对话风格。它就像给AI设定一个基本的\"人设\"。"
+      },
+      "messages": {
+        "title": "对话消息管理",
+        "description": "在这个区域可以添加和编辑对话消息，包括用户消息和AI回复。您可以构建完整的对话上下文。"
+      },
+      "addMessages": {
+        "title": "添加消息按钮",
+        "description": "点击这些按钮可以快速添加用户消息或助手消息到对话中。用户消息是您的输入，助手消息是AI的回复。"
+      },
+      "testSection": {
+        "title": "测试与运行区域",
+        "description": "这里显示AI的回复结果。配置好左侧的内容后，点击运行按钮即可开始与AI对话。"
+      },
+      "runButton": {
+        "title": "运行按钮",
+        "description": "点击这个按钮开始运行您配置的对话。AI将基于您的设置给出回复。"
+      },
+      "complete": {
+        "title": "引导完成！",
+        "description": "现在您已经了解了工作台的主要功能。开始使用这些强大的功能来优化您的AI体验吧！"
+      }
+    }
+  },
+  "messageCard": {
+    "user": "用户",
+    "assistant": "助手",
+    "system": "系统",
+    "placeholder": "请输入内容...",
+    "parameterSettings": "参数设置",
+    "cancel": "取消",
+    "apply": "应用",
+    "enterValueFor": "请输入{{key}}的值"
+  },
+  "generatePrompt": {
+    "optimizePrompt": "优化提示词",
+    "optimizeFunctionCalling": "优化Function Calling",
+    "title": "优化提示词",
+    "functionCallingTitle": "优化Function Calling提示词",
+    "description": "请描述您的需求，我们将为您生成更有效的提示词。",
+    "functionCallingDescription": "请描述您的需求，我们将为您生成更有效的Function Calling提示词。",
+    "inputPromptLabel": "需要优化的提示词：",
+    "requirementsLabel": "提示词要求：",
+    "enableDeepReasoning": "启用深度推理",
+    "deepReasoningDescription": "(更深层次的分析和优化)",
+    "cancel": "取消",
+    "generate": "生成",
+    "deepReasoningTitle": "深度推理中...",
+    "deepReasoningDescription2": "AI正在深入分析您的需求，进行多维度思考...",
+    "reasoningProcess": "推理过程：",
+    "deepReasoningInProgress": "正在深度分析中...",
+    "optimizingTitle": "正在优化提示词...",
+    "optimizingDescription": "AI正在为您生成更优质的提示词，请稍候...",
+    "optimizingWithReasoning": "AI已完成深度分析，正在生成优化后的提示词...",
+    "deepAnalysisComplete": "深度分析已完成 ✓",
+    "generatingProgress": "生成进度：",
+    "generating": "正在生成中...",
+    "deepReasoningProcessTitle": "深度推理过程",
+    "optimizationComplete": "优化完成",
+    "deepReasoningProcessDescription": "AI的深度思考和分析过程：",
+    "optimizedPromptDescription": "以下是为您优化后的提示词：",
+    "optimizedPromptLabel": "优化后的提示词：",
+    "viewReasoningProcess": "查看深度推理过程",
+    "backToPrompt": "返回查看提示词",
+    "regenerate": "重新生成",
+    "saveAsTemplate": "保存为模板",
+    "copyPrompt": "复制提示词",
+    "saveTemplateTitle": "保存为提示词模板",
+    "templateTitle": "模板标题",
+    "templateTitlePlaceholder": "为这个提示词模板起个名字",
+    "templateDescription": "模板描述",
+    "templateDescriptionPlaceholder": "简要描述这个模板的用途和特点",
+    "templateContent": "提示词内容",
+    "templateContentPlaceholder": "提示词内容",
+    "templateTags": "标签",
+    "templateTagsPlaceholder": "输入标签，用逗号分隔，如：优化,AI生成,工作",
+    "saveTemplate": "保存模板",
+    "promptRequired": "需要优化的提示词不能为空",
+    "generateFailed": "生成提示词失败，请重试",
+    "templateTitleRequired": "请输入模板标题",
+    "templateDescriptionRequired": "请输入模板描述",
+    "templateContentRequired": "提示词内容不能为空",
+    "templateSaveSuccess": "模板保存成功！",
+    "templateSaveFailed": "保存模板失败，请重试",
+    "copyReasoning": "复制推理过程",
+    "copyReasoningSuccess": "已复制推理过程到剪贴板",
+    "copyPromptSuccess": "已复制提示词到剪贴板",
+    "deepReasoningProcess": "深度推理过程",
+    "result": "生成结果",
+    "hideDeepReasoning": "隐藏深度推理",
+    "showDeepReasoning": "显示深度推理",
+    "copied": "已复制到剪贴板",
+    "usePrompt": "使用提示词",
+    "evaluatingTitle": "正在评估提示词...",
+    "evaluatingDescription": "AI正在分析提示词的质量和效果，请稍候...",
+    "evaluatingProgress": "评估进度：",
+    "evaluating": "正在评估中...",
+    "threePanelDescription": "以下展示了完整的优化结果对比和详细评估：",
+    "originalPrompt": "原始提示词",
+    "evaluationResult": "提示词评估",
+    "noEvaluation": "暂无评估结果",
+    "waitingForEvaluation": "等待评估...",
+    "reasoningInProgress": "推理进行中...",
+    "cannotCloseWhileGenerating": "生成过程中不能关闭窗口"
+  },
+  "prompts": {
+    "title": "提示词管理",
+    "pageTitle": "提示词管理",
+    "pageDescription": "创建、管理和使用您的AI提示词模板，提高工作效率",
+    "searchPlaceholder": "搜索提示词...",
+    "refresh": "刷新",
+    "createPrompt": "创建提示词",
+    "editPrompt": "编辑提示词",
+    "deletePrompt": "删除提示词",
+    "toggleFavorite": "切换收藏",
+    "addFavorite": "添加收藏",
+    "removeFavorite": "取消收藏",
+    "shareToSquare": "分享到广场",
+    "cancelShare": "取消分享",
+    "copyContent": "复制内容",
+    "viewDetail": "查看详情",
+    "noPrompts": "暂无提示词，点击上方按钮创建第一个提示词",
+    "noSearchResults": "没有找到匹配的提示词",
+    "usageStats": "使用 {{count}} 次",
+    "createTime": "{{date}}",
+    "paginationText": "第 {{start}}-{{end}} 条，共 {{total}} 条",
+    "modal": {
+      "createTitle": "创建提示词",
+      "editTitle": "编辑提示词",
+      "titleLabel": "标题",
+      "titlePlaceholder": "输入提示词标题",
+      "titleRequired": "请输入提示词标题",
+      "descriptionLabel": "描述",
+      "descriptionPlaceholder": "简要描述这个提示词的用途",
+      "descriptionRequired": "请输入提示词描述",
+      "contentLabel": "提示词内容",
+      "contentPlaceholder": "输入提示词内容，可以使用 {变量名} 来定义变量",
+      "contentRequired": "请输入提示词内容",
+      "generateParameters": "生成参数",
+      "generateParametersTooltip": "根据提示词内容自动生成标题、描述和标签",
+      "generatingParameters": "正在生成参数...",
+      "generateParametersSuccess": "参数生成成功",
+      "generateParametersFailed": "参数生成失败，请重试",
+      "tagsLabel": "标签",
+      "tagsPlaceholder": "输入标签，用逗号分隔",
+      "createButton": "创建",
+      "updateButton": "更新"
+    },
+    "deleteConfirm": {
+      "title": "确认删除",
+      "content": "确定要删除提示词\"{{title}}\"吗？此操作不可恢复。",
+      "okText": "删除",
+      "cancelText": "取消"
+    },
+    "messages": {
+      "createSuccess": "提示词创建成功",
+      "createFailed": "创建失败",
+      "updateSuccess": "提示词更新成功",
+      "updateFailed": "更新失败",
+      "deleteSuccess": "删除成功",
+      "deleteFailed": "删除失败，请重试",
+      "copySuccess": "已复制到剪贴板",
+      "copyFailed": "复制失败",
+      "loadFailed": "加载失败，请检查网络连接",
+      "operationFailed": "操作失败，请重试",
+      "shareFailed": "操作失败",
+      "shareSuccess": "操作成功",
+      "saveFailed": "保存失败，请重试"
+    },
+    "myPrompts": "我的提示词",
+    "communityPrompts": "社区提示词",
+    "createTemplate": "创建模板",
+    "editTemplate": "编辑模板",
+    "templateTitle": "模板标题",
+    "templateContent": "模板内容",
+    "templateDescription": "模板描述",
+    "templateTags": "标签",
+    "popularity": "热度",
+    "createdAt": "创建时间",
+    "updatedAt": "更新时间",
+    "favorite": "收藏",
+    "unfavorite": "取消收藏",
+    "share": "分享",
+    "copy": "复制",
+    "copySuccess": "复制成功",
+    "filter": {
+      "all": "全部",
+      "favorite": "收藏",
+      "shared": "已分享"
+    },
+    "sort": {
+      "createTime": "创建时间",
+      "usage": "使用次数",
+      "title": "标题"
+    },
+    "detail": {
+      "title": "详情"
+    },
+    "tags": "标签",
+    "sharedAt": "分享于"
+  },
+  "dashboard": {
+    "title": "提示词广场",
+    "overview": "概览",
+    "statistics": "统计数据",
+    "totalPrompts": "总提示词数",
+    "optimizations": "优化次数",
+    "templates": "模板数量",
+    "recentActivity": "最近活动",
+    "popularTemplates": "热门模板"
+  },
+  "promptSquare": {
+    "title": "提示词广场",
+    "description": "发现和使用社区分享的优质提示词模板，按热度排名展示",
+    "searchPlaceholder": "搜索提示词标题、描述、标签或创建者...",
+    "sortBy": "排序：",
+    "sortOptions": {
+      "viewCount": "查看数",
+      "likeCount": "点赞数",
+      "shareTime": "分享时间",
+      "createdTime": "创建时间"
+    },
+    "sortOrder": {
+      "desc": "降序",
+      "asc": "升序"
+    },
+    "refresh": "刷新",
+    "hotBadge": "HOT",
+    "empty": "暂无分享的提示词模板",
+    "stats": {
+      "views": "{{count}} 次查看",
+      "likes": "{{count}} 次点赞",
+      "usage": "使用 {{count}} 次"
+    },
+    "actions": {
+      "copy": "复制内容",
+      "like": "点赞",
+      "unlike": "取消点赞",
+      "favorite": "收藏",
+      "unfavorite": "取消收藏",
+      "view": "查看详情"
+    },
+    "pagination": "第 {{start}}-{{end}} 条，共 {{total}} 条",
+    "messages": {
+      "loadFailed": "加载失败，请检查网络连接",
+      "copySuccess": "提示词内容已复制到剪贴板",
+      "copyFailed": "复制失败，请重试",
+      "operationFailed": "操作失败，请重试",
+      "likeSuccess": "点赞成功",
+      "unlikeSuccess": "取消点赞成功",
+      "favoriteSuccess": "收藏成功",
+      "unfavoriteSuccess": "取消收藏成功",
+      "commentSuccess": "评论成功",
+      "deleteSuccess": "删除成功"
+    },
+    "tags": {
+      "more": "+{{count}}"
+    },
+    "sharedAt": "分享时间"
+  },
+  "home": {
+    "title": "AI 提示词优化平台",
+    "subtitle": "专业的AI提示词优化、调试和分享平台",
+    "getStarted": "开始使用",
+    "features": {
+      "title": "核心功能",
+      "subtitle": "为您提供全方位的提示词优化解决方案",
+      "optimization": {
+        "title": "智能优化",
+        "description": "基于先进的AI算法，自动分析和优化提示词结构"
+      },
+      "reasoning": {
+        "title": "深度推理",
+        "description": "提供多维度思考分析，深入理解用户需求"
+      },
+      "community": {
+        "title": "社区分享",
+        "description": "发现和分享优质提示词模板，与社区用户交流经验"
+      },
+      "debugging": {
+        "title": "可视化调试",
+        "description": "强大的调试环境，实时预览提示词效果"
+      }
+    },
+    "advantages": {
+      "title": "平台优势",
+      "subtitle": "简单易用的界面，强大的功能，为您提供最佳的使用体验",
+      "items": {
+        "easyToUse": {
+          "title": "简单易用",
+          "description": "直观的用户界面，快速上手使用"
+        },
+        "fastOptimization": {
+          "title": "快速优化",
+          "description": "智能算法快速分析和优化提示词"
+        },
+        "communitySharing": {
+          "title": "社区分享",
+          "description": "与其他用户分享和交流提示词经验"
+        },
+        "continuousImprovement": {
+          "title": "持续改进",
+          "description": "基于用户反馈不断优化平台功能"
+        }
+      }
+    },
+    "testimonials": {
+      "title": "用户评价",
+      "subtitle": "听听用户们怎么说，真实反馈见证产品价值",
+      "items": {
+        "zhang": {
+          "name": "张明",
+          "role": "内容创作者",
+          "company": "自媒体工作室",
+          "content": "这个平台帮助我优化了很多提示词，写作效率提升了不少，调试功能特别实用。"
+        },
+        "li": {
+          "name": "李小雨",
+          "role": "AI爱好者",
+          "company": "个人用户",
+          "content": "分享平台里有很多优质的提示词模板，帮助我快速找到了适合的提示词，非常方便。"
+        },
+        "wang": {
+          "name": "王开发",
+          "role": "程序员",
+          "company": "科技公司",
+          "content": "调试工具的可视化界面让优化过程变得直观易懂，大大提升了我的工作效率。"
+        }
+      }
+    },
+    "cta": {
+      "title": "准备开始优化您的提示词？",
+      "subtitle": "立即体验强大的提示词优化功能，让AI为您的工作赋能",
+      "startOptimizing": "开始优化",
+      "explorePlatform": "探索平台"
+    },
+    "footer": {
+      "brandTitle": "AI 提示词工作台",
+      "brandDescription": "让AI对话更智能，让创作更高效",
+      "links": {
+        "promptOptimization": "提示词优化",
+        "promptDebugging": "提示词调试",
+        "sharingPlatform": "分享平台"
+      },
+      "copyright": "© 2024 AI 提示词工作台. 保留所有权利."
+    },
+    "stats": {
+      "activeUsers": "活跃用户",
+      "optimizations": "优化次数",
+      "sharedTemplates": "分享模板",
+      "satisfaction": "满意度"
+    }
+  },
+  "promptDetail": {
+    "title": "提示词详情",
+    "anonymousUser": "匿名用户",
+    "sharedAt": "分享于",
+    "viewCount": "查看次数",
+    "likeCount": "点赞数",
+    "commentCount": "评论数",
+    "usageCount": "使用次数",
+    "liked": "已点赞",
+    "like": "点赞",
+    "favorite": "收藏",
+    "favorited": "已收藏",
+    "copyContent": "复制内容",
+    "promptContent": "提示词内容",
+    "copyTooltips": {
+      "copy": "复制",
+      "copied": "已复制"
+    },
+    "likeSuccess": "点赞成功",
+    "unlikeSuccess": "取消点赞成功",
+    "copySuccess": "已复制到剪贴板",
+    "copyFailed": "复制失败",
+    "operationFailed": "操作失败",
+    "loadDetailFailed": "获取详情失败",
+    "notFound": "未找到提示词详情",
+    "comments": "评论",
+    "commentPlaceholder": "写下你的评论...",
+    "replyPlaceholder": "写下你的回复...",
+    "submitComment": "发表评论",
+    "cancelReply": "取消回复",
+    "noComments": "暂无评论",
+    "deleteComment": "删除"
+  },
+  "errors": {
+    "networkError": "网络错误，请检查网络连接",
+    "serverError": "服务器错误，请稍后重试",
+    "invalidInput": "输入内容无效",
+    "operationFailed": "操作失败，请重试"
+  },
+  "imageGeneration": {
+    "title": "AI 图片生成工具",
+    "generateMode": "文字生成图片",
+    "editMode": "图片编辑",
+    "generateModeTag": "生成模式",
+    "editModeTag": "编辑模式",
+    "description": {
+      "generate": "使用文字描述生成图片，支持多种模型和参数调节",
+      "edit": "基于上传的图片进行编辑，支持蒙版绘制指定编辑区域"
+    },
+    "upload": {
+      "title": "上传图片",
+      "switchToGenerate": "切换到文字生成",
+      "uploadText": "上传图片开启编辑模式",
+      "supportedFormats": "支持 PNG、JPEG、WebP 格式"
+    },
+    "mask": {
+      "title": "蒙版编辑工具",
+      "drawMode": "绘制",
+      "eraseMode": "擦除",
+      "brushSize": "画笔",
+      "clear": "清空",
+      "show": "显示",
+      "hide": "隐藏",
+      "description": "在图片上绘制红色区域标记需要编辑的部分。AI将根据你的描述重新生成被标记的区域。",
+      "warning": "⚠️ 注意：gpt-image-1模型使用软蒙版技术，可能会对整张图片进行重新渲染以保持一致性。建议在提示词中明确指出只编辑蒙版区域，保持其他部分不变。"
+    },
+    "prompt": {
+      "generateLabel": "图片描述",
+      "editLabel": "编辑描述",
+      "generatePlaceholder": "详细描述你想要生成的图片，例如：一只可爱的橙色小猫坐在窗台上，阳光透过窗户洒在它身上，背景是模糊的花园",
+      "editPlaceholder": "描述你想要在蒙版区域生成的内容。建议格式：「只编辑蒙版标记的区域，将其替换为[具体内容]，保持图片其他部分完全不变」",
+      "optimize": "优化",
+      "optimizing": "优化中"
+    },
+    "model": {
+      "label": "模型",
+      "placeholder": "选择图片生成模型"
+    },
+    "parameters": {
+      "size": "尺寸",
+      "quantity": "生成数量",
+      "quality": "质量",
+      "style": "风格",
+      "standard": "标准",
+      "hd": "高清",
+      "vivid": "生动",
+      "natural": "自然"
+    },
+    "buttons": {
+      "generateImage": "生成图片",
+      "editImage": "编辑图片",
+      "optimizePrompt": "优化提示词",
+      "useForEdit": "用于编辑",
+      "favorite": "收藏",
+      "unfavorite": "取消收藏",
+      "download": "下载",
+      "delete": "删除",
+      "refresh": "刷新"
+    },
+    "results": {
+      "title": "生成结果",
+      "historyLoaded": "已加载历史记录",
+      "loadingHistory": "正在加载历史记录...",
+      "generating": "正在生成图片...",
+      "editing": "正在编辑图片...",
+      "preview": "预览",
+      "generateTag": "生成",
+      "editTag": "编辑",
+      "historyTag": "历史",
+      "noImages": "还没有生成的图片",
+      "noImagesGenerate": "输入描述文字开始生成图片",
+      "noImagesEdit": "上传图片并描述编辑需求"
+    },
+    "optimize": {
+      "modalTitle": "优化提示词",
+      "originalPrompt": "原始提示词：",
+      "optimizedResult": "优化结果：",
+      "requirement": "优化要求",
+      "requirementOptional": "（可选）",
+      "requirementPlaceholder": "描述你希望如何优化这个提示词，例如：让描述更加生动详细，添加光线和色彩描述...",
+      "currentPrompt": "当前提示词：",
+      "noInput": "（未输入）",
+      "startOptimize": "开始优化",
+      "optimizing": "优化中...",
+      "insertResult": "插入优化结果",
+      "realTimeResult": "实时生成结果：",
+      "checkResult": "检查优化结果是否符合要求，点击插入优化结果将替换当前提示词。"
+    },
+    "messages": {
+      "configRequired": "请先配置API设置或登录",
+      "promptRequired": "请输入描述",
+      "imageRequired": "请先上传要编辑的图片",
+      "generateSuccess": "成功生成 {{count}} 张图片",
+      "editSuccess": "成功编辑生成 {{count}} 张图片",
+      "generateFailed": "操作失败",
+      "imageLoaded": "图片已加载到编辑模式，请绘制蒙版指定编辑区域",
+      "loadImageFailed": "加载图片失败",
+      "favoriteSuccess": "已收藏",
+      "unfavoriteSuccess": "已取消收藏",
+      "operationFailed": "操作失败",
+      "imageDeleted": "图片已删除",
+      "optimizePromptFirst": "请先输入提示词",
+      "optimizeComplete": "提示词优化完成",
+      "optimizeEmpty": "优化结果为空，请检查输入",
+      "optimizeFailed": "优化失败",
+      "optimizeInserted": "已插入优化后的提示词",
+      "optimizeCanceled": "已取消优化",
+      "historyLoadSuccess": "成功加载 {{count}} 张历史图片",
+      "historyLoadFailed": "加载历史图片失败",
+      "saveCloudFailed": "部分图片因文件过大未能保存到云端，但仍可正常使用",
+      "modelsLoadFailed": "模型列表获取失败，使用默认模型"
+    }
+  },
+  "apiKeys": {
+    "title": "API Key 管理",
+    "pageTitle": "API Key 管理",
+    "pageDescription": "管理您的API密钥，控制访问权限和使用情况",
+    "createApiKey": "创建 API Key",
+    "searchPlaceholder": "搜索名称或描述",
+    "statusFilter": "状态筛选",
+    "expiredFilter": "过期筛选",
+    "enabled": "已启用",
+    "disabled": "已禁用",
+    "expired": "已过期",
+    "notExpired": "未过期",
+    "reset": "重置",
+    "table": {
+      "name": "名称",
+      "apiKey": "API Key",
+      "status": "状态",
+      "usageCount": "使用次数",
+      "lastUsedTime": "最后使用",
+      "createdTime": "创建时间",
+      "actions": "操作",
+      "noData": "-"
+    },
+    "actions": {
+      "edit": "编辑",
+      "enable": "启用",
+      "disable": "禁用",
+      "regenerate": "重新生成",
+      "delete": "删除",
+      "copy": "复制",
+      "showKey": "显示密钥",
+      "hideKey": "隐藏密钥"
+    },
+    "modal": {
+      "createTitle": "创建 API Key",
+      "editTitle": "编辑 API Key",
+      "nameLabel": "名称",
+      "namePlaceholder": "请输入API Key名称",
+      "nameRequired": "请输入名称",
+      "nameMaxLength": "名称长度不能超过100个字符",
+      "openAiApiKeyLabel": "OpenAI API Key",
+      "openAiApiKeyPlaceholder": "请输入要绑定的OpenAI API Key",
+      "openAiApiKeyRequired": "请输入OpenAI API Key",
+      "openAiApiKeyMaxLength": "API Key长度不能超过200个字符",
+      "descriptionLabel": "描述",
+      "descriptionPlaceholder": "请输入描述信息（可选）",
+      "descriptionMaxLength": "描述长度不能超过500个字符",
+      "isEnabledLabel": "启用状态",
+      "enabledText": "启用",
+      "disabledText": "禁用",
+      "expiresAtLabel": "过期时间",
+      "expiresAtPlaceholder": "选择过期时间（可选）",
+      "create": "创建",
+      "save": "保存",
+      "cancel": "取消"
+    },
+    "viewModal": {
+      "title": "API Key 创建成功",
+      "securityWarning": "请妥善保存您的API Key",
+      "securityDescription": "出于安全考虑，此API Key只会显示一次，请立即复制并妥善保存。",
+      "nameLabel": "名称：",
+      "apiKeyLabel": "API Key：",
+      "descriptionLabel": "描述：",
+      "copyApiKey": "复制 API Key",
+      "close": "关闭"
+    },
+    "confirm": {
+      "regenerateTitle": "确定要重新生成此API Key吗？",
+      "regenerateDescription": "重新生成后，原有的API Key将无法使用。",
+      "deleteTitle": "确定要删除此API Key吗？",
+      "deleteDescription": "删除后无法恢复，请谨慎操作。",
+      "ok": "确定",
+      "cancel": "取消"
+    },
+    "messages": {
+      "createSuccess": "创建成功",
+      "createFailed": "创建失败",
+      "updateSuccess": "更新成功",
+      "updateFailed": "更新失败",
+      "deleteSuccess": "删除成功",
+      "deleteFailed": "删除失败",
+      "operationSuccess": "操作成功",
+      "operationFailed": "操作失败",
+      "regenerateSuccess": "重新生成成功",
+      "regenerateFailed": "重新生成失败",
+      "copySuccess": "已复制到剪贴板",
+      "copyFailed": "复制失败",
+      "loadFailed": "加载失败"
+    },
+    "pagination": {
+      "total": "共 {{total}} 条"
+    }
+  },
+  "modelEvaluation": {
+    "tour": {
+      "welcome": {
+        "title": "欢迎使用模型评估工作台！",
+        "description": "这里是专业的AI模型评估平台，可以帮您对比不同模型的性能表现。让我们来了解一下各个功能区域的作用。"
+      },
+      "exampleSelector": {
+        "title": "选择示例模板",
+        "description": "这里提供了多种评估场景的示例模板，包括文案策划、编程开发、创意写作等。选择合适的示例可以快速开始评估。"
+      },
+      "modelSelector": {
+        "title": "选择评估模型",
+        "description": "在这里选择您要评估的AI模型。支持同时选择多个模型进行对比，建议不超过10个以确保最佳性能。"
+      },
+      "basePrompt": {
+        "title": "基础提示词",
+        "description": "输入您的提示词模板，这是将要被评估和优化的原始提示词。系统会基于这个提示词进行优化对比。"
+      },
+      "testTask": {
+        "title": "测试任务",
+        "description": "输入具体的测试任务或问题，用于验证提示词的效果。系统会使用这个任务来测试原始提示词和优化后提示词的差异。"
+      },
+      "evaluationConfig": {
+        "title": "评估配置",
+        "description": "配置评估参数，包括执行次数和是否启用提示词优化。多次执行可以获得更准确的平均分数。"
+      },
+      "startButton": {
+        "title": "开始评估",
+        "description": "配置完成后，点击这个按钮开始模型评估。系统会自动运行测试并给出详细的评分和分析报告。"
+      },
+      "resultsArea": {
+        "title": "评估结果区域",
+        "description": "这里显示详细的评估结果。包括每个模型的得分、评估描述、提示词对比和输出结果等信息。"
+      },
+      "tabsNavigation": {
+        "title": "功能导航",
+        "description": "通过这些标签页可以查看不同的功能：模型评估、数据图表分析、历史记录管理等。"
+      },
+      "complete": {
+        "title": "引导完成！",
+        "description": "🎉 您已经了解了模型评估工作台的主要功能！现在可以开始使用这个强大的工具来评估和优化您的AI提示词了。"
+      }
+    },
+    "workbench": "模型评估工作台",
+    "configuration": "配置区域",
+    "exampleTemplate": "选择示例模板",
+    "exampleType": "示例类型",
+    "exampleCount": "共有 {{count}} 个示例可选",
+    "selectExamplePlaceholder": "请选择示例类型",
+    "loadingExamples": "正在加载示例...",
+    "currentExample": "当前选择的示例信息",
+    "selectedExample": "已选择示例：{{title}}",
+    "modelSelection": "选择评估模型",
+    "modelSelectionRequired": "选择评估模型",
+    "modelSelectionExtra": "已选择 {{selected}} 个模型 | 共 {{total}} 个可用模型",
+    "modelSelectionPlaceholder": "请选择要评估的模型",
+    "loadingModels": "正在加载模型列表...",
+    "modelLimit": "建议同时评估的模型数量不超过10个，以确保最佳性能",
+    "basicPrompt": "基础提示词",
+    "basicPromptPlaceholder": "请输入您的提示词模板...",
+    "basicPromptExtra": "用于模型评估的基础提示词模板",
+    "basicPromptRequired": "请输入基础提示词",
+    "basicPromptTooltip": "这是将要被优化的原始提示词",
+    "testTask": "测试任务",
+    "testTaskPlaceholder": "请输入具体的测试任务...",
+    "testTaskExtra": "这个任务将用于测试原始提示词和优化后提示词的效果差异",
+    "testTaskRequired": "请输入测试任务",
+    "testTaskTooltip": "具体的测试请求，用于验证提示词效果",
+    "evaluationConfig": "评估配置",
+    "executionCount": "执行次数",
+    "executionCountExtra": "设置每个模型执行评估的次数",
+    "executionCountTooltip": "每个模型执行测试的次数，多次执行将计算平均分",
+    "executionCountUnit": "次",
+    "promptOptimization": "提示词优化",
+    "promptOptimizationExtra": "启用后将对比优化前后的效果",
+    "promptOptimizationTooltip": "是否启用提示词自动优化功能",
+    "promptOptimizationEnabled": "启用",
+    "promptOptimizationDisabled": "禁用",
+    "optimizationRequirements": "优化需求",
+    "optimizationRequirementsPlaceholder": "例如：提高回答的专业性，增加创意元素，使语言更加生动有趣...",
+    "optimizationRequirementsExtra": "可选：描述您希望提示词优化的方向和具体需求",
+    "optimizationRequirementsTooltip": "可选参数，用于指导提示词优化的具体需求和方向",
+    "titles": {
+      "workbench": "模型评估工作台",
+      "selectExampleTemplate": "选择示例模板",
+      "evaluationConfig": "评估配置",
+      "evaluationResults": "评估结果"
+    },
+    "labels": {
+      "exampleType": "示例类型",
+      "selectModels": "选择评估模型",
+      "basePrompt": "基础提示词",
+      "testTask": "测试任务",
+      "executionCount": "执行次数",
+      "promptOptimization": "提示词优化",
+      "optimizationRequirements": "优化需求",
+      "enable": "启用",
+      "disable": "禁用",
+      "times": "次",
+      "completionProgress": "完成进度",
+      "averageScore": "平均得分",
+      "points": "分",
+      "optimizationEnabled": "已启用优化",
+      "optimizationDisabled": "未启用优化",
+      "totalTime": "总耗时",
+      "seconds": "秒",
+      "allCompleted": "全部完成",
+      "inProgress": "进行中",
+      "evaluationDescription": "评估描述",
+      "promptCategories": "提示词分类",
+      "more": "个",
+      "detailedEvaluation": "详细评价",
+      "viewPromptsAndOutputs": "查看提示词对比和输出结果",
+      "executions": "次执行",
+      "viewExecutionResults": "查看执行结果",
+      "averageResults": "平均结果",
+      "execution": "第",
+      "result": "次执行结果",
+      "executionTags": "本次执行标签",
+      "originalPrompt": "原始提示词",
+      "optimizedPrompt": "优化提示词",
+      "originalPromptUnoptimized": "原始提示词 (未优化)",
+      "output": "输出",
+      "none": "无"
+    },
+    "placeholders": {
+      "loadingExamples": "正在加载示例...",
+      "selectExample": "请选择示例类型",
+      "loadingModels": "正在加载模型列表...",
+      "selectModels": "请选择要评估的模型",
+      "enterPromptTemplate": "请输入您的提示词模板...",
+      "enterTestTask": "请输入具体的测试任务...",
+      "optimizationRequirementsExample": "例如：提高回答的专业性，增加创意元素，使语言更加生动有趣..."
+    },
+    "tooltips": {
+      "selectMultipleModels": "支持同时评估多个模型，建议不超过10个",
+      "basePrompt": "这是将要被优化的原始提示词",
+      "testTask": "具体的测试请求，用于验证提示词效果",
+      "executionCount": "每个模型执行测试的次数，多次执行将计算平均分",
+      "promptOptimization": "是否启用提示词自动优化功能",
+      "optimizationRequirements": "可选参数，用于指导提示词优化的具体需求和方向"
+    },
+    "buttons": {
+      "startEvaluation": "开始评估",
+      "stopEvaluation": "停止评估",
+      "reset": "重置",
+      "expand": "展开",
+      "collapse": "收起"
+    },
+    "progress": {
+      "completedProgress": "完成进度",
+      "averageScore": "平均得分",
+      "executionInfo": "执行次数: {{count}}次",
+      "optimizationEnabled": "已启用优化",
+      "optimizationDisabled": "未启用优化",
+      "totalTime": "总耗时: {{seconds}}秒"
+    },
+    "status": {
+      "pending": "等待开始",
+      "processing": "进行中",
+      "completed": "已完成",
+      "error": "评估失败",
+      "allCompleted": "全部完成",
+      "optimizingPrompt": "🔧 优化提示词",
+      "optimizationComplete": "✅ 提示词优化完成",
+      "executingOriginal": "🚀 执行原始提示词",
+      "executingOptimized": "⚡ 执行优化提示词",
+      "scoring": "📊 智能评分中",
+      "evaluationComplete": "🎉 评估完成",
+      "evaluationFailed": "❌ 评估失败",
+      "executingOriginalWithCount": "🚀 执行原始提示词 (第{{count}}次)",
+      "executingOptimizedWithCount": "⚡ 执行优化提示词 (第{{count}}次)",
+      "scoringWithCount": "📊 智能评分中 (第{{count}}次)",
+      "evaluationCompleteWithCount": "🎉 评估完成 ({{count}}次执行)"
+    },
+    "scores": {
+      "excellent": "优秀",
+      "good": "良好",
+      "average": "中等",
+      "passed": "及格",
+      "needsImprovement": "待提升"
+    },
+    "results": {
+      "emptyState": "请配置评估参数并开始模型评估",
+      "emptyStateDescription": "左侧配置完成后点击\"开始评估\"按钮",
+      "evaluationDescription": "评估描述",
+      "promptCategory": "提示词分类:",
+      "detailedEvaluation": "详细评价",
+      "viewPromptAndOutput": "查看提示词对比和输出结果",
+      "multiExecution": "{{count}}次执行",
+      "executionSelector": "查看执行结果:",
+      "averageResult": "平均结果",
+      "executionResult": "第{{index}}次执行",
+      "executionInfo": "第{{index}}次执行结果",
+      "executionTags": "本次执行标签:",
+      "originalPrompt": "原始提示词",
+      "optimizedPrompt": "优化提示词",
+      "notOptimized": "原始提示词 (未优化)",
+      "outputResult": "输出结果:",
+      "noOutput": "无输出",
+      "none": "无",
+      "expand": "展开",
+      "collapse": "收起",
+      "showMore": "+{{count}}个",
+      "evaluationSummary": "📊 评估总结",
+      "participatingModels": "参与模型",
+      "successfullyCompleted": "成功完成",
+      "averageScoreTitle": "平均得分",
+      "totalTimeTitle": "总耗时",
+      "tagStatistics": "🏷️ 提示词分类统计",
+      "modelCount": "个",
+      "seconds": "秒"
+    },
+    "messages": {
+      "totalExamples": "共有 {{count}} 个示例可选",
+      "selectedModels": "已选择 {{count}} 个模型",
+      "totalModels": "共 {{total}} 个可用模型",
+      "enterBasePrompt": "请输入基础提示词",
+      "basePromptTemplate": "用于模型评估的基础提示词模板",
+      "enterTestTask": "请输入测试任务",
+      "testTaskDescription": "这个任务将用于测试原始提示词和优化后提示词的效果差异",
+      "setExecutionCount": "设置每个模型执行评估的次数",
+      "enableOptimization": "启用后将对比优化前后的效果",
+      "optimizationRequirementsDescription": "可选：描述您希望提示词优化的方向和具体需求",
+      "configureEvaluation": "请配置评估参数并开始模型评估",
+      "clickStartAfterConfiguration": "左侧配置完成后点击\"开始评估\"按钮",
+      "selectAtLeastOneModel": "请至少选择一个模型进行评估",
+      "noModelsSelected": "请选择至少一个模型进行评估",
+      "apiKeyRequired": "请先填写API Key",
+      "evaluationStopped": "评估已停止",
+      "evaluationReset": "已重置评估状态",
+      "allEvaluationComplete": "🎊 所有模型评估完成！",
+      "evaluationRecordSaved": "评估记录已自动保存",
+      "loadHistoryFailed": "评估完成，但重新加载历史记录失败",
+      "loadModelsError": "加载模型列表失败，请检查网络连接",
+      "loadExamplesError": "加载示例数据失败，请检查网络连接",
+      "validationError": "请检查输入内容是否完整",
+      "evaluationError": "评估失败: {{message}}"
+    },
+    "tabs": {
+      "evaluation": "模型评估",
+      "charts": "数据图表",
+      "history": "评估历史"
+    },
+    "categories": {
+      "copywriting": "文案策划",
+      "programming": "编程开发",
+      "creative": "创意写作",
+      "business": "商业分析",
+      "education": "教育培训",
+      "service": "客户服务",
+      "technical": "技术写作",
+      "lifestyle": "生活服务",
+      "general": "通用"
+    }
+  }
+} 

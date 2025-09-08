@@ -1,0 +1,9 @@
+{
+    "ir_model.py": 1,
+    "generate_prompts.py": 18,
+    "teacher_prompts.py": 2,
+    "get_prompts.py": 6,
+    "data.py": 1,
+    "layerwise.py": 0,
+    "base.py": 0
+}

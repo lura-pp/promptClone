@@ -1,0 +1,10 @@
+{
+  "promptTemplateSystemPrefix": "### System Prompt\n",
+  "promptTemplateSystemSuffix": "\n",
+  "promptTemplateUserPrefix": "### User Message\n",
+  "promptTemplateUserSuffix": "\n",
+  "promptTemplateAssistantPrefix": "### Assistant\n",
+  "promptTemplateAssistantSuffix": "",
+  "promptTemplateEndToken": "</s>",
+  "promptTemplateGenSeparator": "</s>"
+}

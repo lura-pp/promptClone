@@ -1,0 +1,908 @@
+{
+  "app": {
+    "title": "Folda-Scan",
+    "description": "Local Code Project Scanner & Monitor"
+  },
+  "github": {
+    "title": "Download from GitHub",
+    "description": "Download and analyze repositories directly from GitHub",
+    "username": "Username/Organization",
+    "repository": "Repository Name",
+    "branch": "Branch Name",
+    "defaultBranch": "Default: main",
+    "download": "Download",
+    "downloading": "Downloading...",
+    "cancel": "Cancel Download",
+    "success": "Repository downloaded successfully",
+    "error": "Failed to download repository",
+    "networkError": "Network error, please try again",
+    "invalidRepo": "Please enter valid username and repository name",
+    "progress": "Download progress: {percent}%",
+    "placeholder": {
+      "username": "Enter GitHub username or organization",
+      "repository": "Enter repository name",
+      "branch": "Enter branch name (default: main)"
+    }
+  },
+  "nav": {
+    "statistics": "Statistics"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "about": "About",
+    "theme": "Theme",
+    "darkMode": "Dark Mode",
+    "lightMode": "Light Mode",
+    "close": "Close",
+    "back": "Back",
+    "backToHome": "Back to Home",
+    "languageDescription": "Choose the display language for the application",
+    "themeDescription": "Choose a theme that works best for you",
+    "lightModeDescription": "Best for well-lit environments",
+    "darkModeDescription": "Reduces eye strain, good for nighttime use",
+    "pwaInstall": "Install as App",
+    "pwaInstallDescription": "Install this app on your device for offline use and better experience",
+    "save": "Save"
+  },
+  "pwa": {
+    "install": "Install App",
+    "installSuccess": "App installed successfully",
+    "installFailed": "App installation failed",
+    "alreadyInstalled": "App is already installed",
+    "offline": "You are currently offline"
+  },
+  "about": {
+    "title": "About Folda-Scan",
+    "description": "Folda-Scan is a local folder scanning tool that can monitor changes in your project folder in real-time. It supports .gitignore rules and provides project structure reporting and version management features.",
+    "version": "Version",
+    "developer": "Developer",
+    "copyright": "© 2024 Folda-Scan Team. All rights reserved."
+  },
+  "changelog": {
+    "title": "Changelog",
+    "description": "Track the latest updates and improvements to Folda-Scan",
+    "date": "Date",
+    "version": "Version",
+    "changes": "Changes",
+    "backToHome": "Back to Home",
+    "latestUpdates": "Latest Updates",
+    "olderUpdates": "Older Updates",
+    "noUpdates": "No updates available",
+    "refresh": "Refresh",
+    "refreshing": "Refreshing...",
+    "multiThreadSupport": {
+      "supported": "Your browser supports multi-threaded indexing. Indexing will be faster!",
+      "notSupported": "Your browser doesn't support multi-threaded indexing. Indexing will be slower, please be patient :)"
+    }
+  },
+  "incrementalScan": {
+    "supported": "Your browser supports FileSystemObserver API for incremental indexing. File changes will be detected in real-time!",
+    "notSupported": "Your browser doesn't support FileSystemObserver API. Each index will be a full index which may be slower. We recommend using Chrome or Edge for better performance."
+  },
+  "folderPicker": {
+    "selectFolder": "Select Folder",
+    "selecting": "Selecting...",
+    "noPermission": "Failed to get folder access permission",
+    "gitignoreFound": ".gitignore file found",
+    "gitignoreNotFound": "No .gitignore file found",
+    "viewRules": "View Rules",
+    "welcomeTitle": "Welcome to Folda-Scan",
+    "welcomeDescription": "Please select a project folder to start scanning and monitoring",
+    "privacyNote": "All operations are performed locally, your files will not be uploaded",
+    "changeFolder": "Change Folder",
+    "selectedFolder": "Selected folder",
+    "ready": "Ready",
+    "errorTitle": "Error",
+    "dismiss": "Dismiss",
+    "gitignoreRules": ".gitignore Rules",
+    "ignoreRules": "Ignore Rules",
+    "wildcardRule": "Wildcard Rule",
+    "excludeRule": "Exclude Rule",
+    "directoryRule": "Directory Rule",
+    "fileRule": "File Rule",
+    "comments": "Comments",
+    "gitignoreEmpty": ".gitignore file is empty",
+    "gitignoreUnreadable": "Unable to read .gitignore rules"
+  },
+  "homePage": {
+    "quickStart": "Quick Start",
+    "openKnowledgeBase": "Open Knowledge Base",
+    "manageKnowledge": "Manage and query project knowledge",
+    "viewChangelog": "View Changelog",
+    "learnUpdates": "Learn about latest features and improvements"
+  },
+  "copy": {
+    "copy": "Copy",
+    "copied": "Copied"
+  },
+  "requirementGenerator": {
+    "title": "Requirement Generator",
+    "generate": "Generate Requirements",
+    "generating": "Generating requirements based on the conversation, please wait...",
+    "generated": "The following requirements have been generated based on the conversation. You can copy and paste them into code assistants like Cursor or GitHub Copilot:",
+    "error": "Error generating requirements, please try again",
+    "copy": "Copy Requirements",
+    "copied": "Copied",
+    "close": "Close",
+    "footer": "Requirements description for code assistants"
+  },
+  "scanControls": {
+    "startScan": "Start Index",
+    "stopScan": "Stop Index",
+    "startMonitoring": "Start Index",
+    "stopMonitoring": "Stop Index",
+    "scanning": "Indexing...",
+    "monitorInterval": "Index Interval",
+    "seconds": "seconds",
+    "showAllFiles": "Show All Files",
+    "download": "Download Report",
+    "vectorize": "Dialogue",
+    "monitoring": "Monitoring...",
+    "usingObserver": "Using real-time FileSystemObserver",
+    "usingPolling": "Automatic indexing every",
+    "observerFallback": "Note: FileSystemObserver available but not enabled, falling back to polling",
+    "lastScanTime": "Last index time",
+    "changeDetected": "File changes detected",
+    "downloading": "Downloading...",
+    "preparingReport": "Preparing report..."
+  },
+  "versionManager": {
+    "title": "Versions",
+    "createBackup": "Create Backup",
+    "backupInfo": "Describe the changes in this version, e.g. 'Completed login module'",
+    "backingUp": "Backing up...",
+    "backupCurrentVersion": "Backup",
+    "versionHistory": "Version History",
+    "restore": "Restore",
+    "confirmRestore": "Are you sure you want to restore this version? Current unbacked changes will be lost.",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "restoring": "Restoring..."
+  },
+  "resultDisplay": {
+    "waitingForScan": "Scanning, please wait...",
+    "selectFolderPrompt": "Please select a folder and click the 'Start Scan' button",
+    "structure": "Structure",
+    "changes": "Changes",
+    "details": "Details",
+    "files": "Files",
+    "noChanges": "No changes detected",
+    "addedFiles": "Added",
+    "deletedFiles": "Deleted",
+    "modifiedFiles": "Modified",
+    "filesAndFoldersCount": "Found {count} items",
+    "directoryType": "Directory",
+    "fileType": "File",
+    "noContent": "No content to display",
+    "directoryContent": "Directory",
+    "view": "View",
+    "cancel": "Cancel"
+  },
+  "statistics": {
+    "title": "Project Statistics",
+    "rescan": "Rescan",
+    "scanning": "Scanning...",
+    "showComments": "Show Comments",
+    "hideComments": "Hide Comments",
+    "overallStatistics": "Overall Statistics",
+    "fileStatistics": "Files",
+    "codeFiles": "Code Files",
+    "totalFiles": "Total Files",
+    "lineStatistics": "Lines",
+    "codeLines": "Code Lines",
+    "totalLines": "Total Lines",
+    "commentStatistics": "Comment Lines",
+    "commentPercentage": "Comment Ratio",
+    "fileTypeStatistics": "Statistics by File Type",
+    "extension": "Extension",
+    "fileCount": "File Count",
+    "totalLineCount": "Total Lines",
+    "codeLineCount": "Code Lines",
+    "commentLineCount": "Comment Lines",
+    "blankLineCount": "Blank Lines",
+    "commentRatio": "Comment Ratio",
+    "projectComments": "Project Comments",
+    "commentsHelp": "Shows all comments in the project to help you understand code documentation",
+    "noComments": "No comments found in the project",
+    "blockComment": "Block Comment",
+    "lineComment": "Line Comment",
+    "noFolder": "Please select a project folder first",
+    "startScan": "Click the \"Rescan\" button to start analyzing the project",
+    "search_comments": "Search Comments",
+    "search_code": "Search Code",
+    "no_results": "No results found",
+    "show_context": "Show Context",
+    "hide_context": "Hide Context"
+  },
+  "presetPrompts": {
+    "title": "Preset Prompts",
+    "description": "Select a prompt category and choose a prompt to quickly understand the project",
+    "button": "Prompts",
+    "close": "Close",
+    "categories": {
+      "coreProcesses": {
+        "name": "Core Processes",
+        "prompts": {
+          "mainFlow": "Please describe the typical processing steps and key function call sequence from frontend to backend when a user performs a main operation.",
+          "inputValidation": "For user inputs (such as URL parameters, form fields, HTTP headers), how does the system process and filter them? Are there any unvalidated or insufficiently sanitized input points that could lead to injection vulnerabilities (such as XSS, SQL injection, command injection)?",
+          "authMechanism": "How are the system's authentication and authorization mechanisms implemented? Are there potential risk points for bypassing authentication, privilege escalation, or unauthorized access (IDOR)?",
+          "sessionManagement": "How are sessions managed? Are there risks of session fixation, session hijacking, or cross-site request forgery (CSRF)?",
+          "dependencySecurity": "Do third-party libraries or components used in the project have known public vulnerabilities (CVEs)? How are these dependencies checked and updated?",
+          "sensitiveInfoExposure": "Are there hardcoded credentials, API keys, or other sensitive information in the code, configuration files, or logs? Do error messages reveal too much system detail?",
+          "fileUploadHandling": "If the project supports file uploads, how are the type, size, and content of uploaded files validated? Is there a risk of uploading arbitrary files or path traversal?",
+          "apiSecurity": "Do the project's API interfaces have access control? Are there risks of data leakage, unauthorized access, or abuse (such as unlimited retries, data traversal)?",
+          "businessLogicVulnerabilities": "In core business processes, are there logical defects that could be maliciously exploited, such as bypassing payment, order fraud, or data tampering?",
+          "configSecurity": "Are there security vulnerabilities in server, database, or middleware configurations, such as default credentials, unnecessary open ports, or insecure default settings?",
+          "passwordPolicy": "How are user passwords stored (e.g., are they salted and hashed)? Are there weaknesses in password complexity, reset, and recovery mechanisms?",
+          "clickjackingRisk": "Have front-end pages taken measures to prevent clickjacking (such as X-Frame-Options header)?",
+          "ssrfRisk": "Are there functionality points in the system that allow users to control requests sent to internal or other servers, potentially leading to Server-Side Request Forgery (SSRF) vulnerabilities?",
+          "xxeRisk": "If the project processes XML data, is the XML parser configured securely to prevent XML External Entity (XXE) attacks?",
+          "deserializationVulnerabilities": "If the project uses object serialization and deserialization, is the input data trustworthy? Is there a risk of executing arbitrary code through deserialization?",
+          "debuggingFunctions": "Are there debugging functions, interfaces, or backdoors in the production environment that should not exist?",
+          "httpSecurityHeaders": "Does the web application use recommended HTTP security headers, such as CSP (Content Security Policy), HSTS (HTTP Strict Transport Security), etc.?",
+          "rateLimiting": "Are there appropriate rate limits for sensitive operations such as login attempts and API calls to prevent brute force attacks or resource exhaustion attacks?",
+          "unsafeRedirects": "Can URL redirection or request forwarding functions in the system be controlled by malicious users, leading to phishing or directing users to malicious sites?",
+          "errorHandling": "How does the system handle errors or exceptions? Does it expose too many internal implementation details or stack trace information to users?",
+          "securityAuditing": "Does the system record sufficient security-related logs (such as login attempts, permission changes, key operations) for post-event auditing and tracking suspicious behavior?"
+        }
+      },
+      "components": {
+        "name": "Components & Responsibilities",
+        "prompts": {
+          "overview": "What are the main modules or components that make up this project? Please briefly describe the main function of each part and how they collaborate."
+        }
+      },
+      "dataFlow": {
+        "name": "Data Flow Paths",
+        "prompts": {
+          "tracking": "Track a key piece of data (such as user input or a business entity) and explain how it is generated, which functions process/transform it, and where it ultimately flows."
+        }
+      },
+      "implementation": {
+        "name": "Clever Implementations",
+        "prompts": {
+          "clever": "What clever implementations does the project have?"
+        }
+      },
+      "startup": {
+        "name": "Startup & Initialization",
+        "prompts": {
+          "process": "How is the system started and initialized? Please point out the key scripts or functions that are executed first and what preparation work they mainly complete."
+        }
+      },
+      "errorHandling": {
+        "name": "Error Handling",
+        "prompts": {
+          "mechanisms": "When errors or exceptions occur, how does the system typically capture and handle them? Please describe the general error handling process or key error handling functions."
+        }
+      },
+      "specificFeature": {
+        "name": "Specific Feature Deep Dive",
+        "prompts": {
+          "deepDive": "For a specific feature in the project [e.g.: user authentication/order processing/data analysis], explain the key logic of its implementation and the main function call chain."
+        }
+      },
+      "configuration": {
+        "name": "Configuration & Environment",
+        "prompts": {
+          "loading": "How is the project's configuration information loaded and used? Which key parameters affect its runtime behavior?"
+        }
+      },
+      "codeStructure": {
+        "name": "Code Structure & Navigation",
+        "prompts": {
+          "overview": "Describe the main code directory structure of this project, and where to typically find implementations of core business logic or specific features."
+        }
+      },
+      "configManagement": {
+        "name": "Configuration Management",
+        "prompts": {
+          "keyConfig": "How are the project's key configuration information (such as database connections, API keys, etc.) managed? Where can they be found and modified?"
+        }
+      },
+      "async": {
+        "name": "Async & Concurrency",
+        "prompts": {
+          "handling": "If there are asynchronous operations or concurrent requests in the project, how are they implemented? What are the key patterns or technical points?"
+        }
+      },
+      "dataModels": {
+        "name": "Core Data Models",
+        "prompts": {
+          "main": "What are the most important data entities or models in the project? What are the key relationships between them?"
+        }
+      },
+      "dependencies": {
+        "name": "External Dependencies",
+        "prompts": {
+          "overview": "What important third-party libraries, frameworks, or external services does this project depend on? What roles do they each play in the project?"
+        }
+      },
+      "logging": {
+        "name": "Logging & Monitoring",
+        "prompts": {
+          "entry": "When troubleshooting problems, which log files or monitoring metrics should I focus on? How does the system record key events?"
+        }
+      },
+      "moduleDeepDive": {
+        "name": "Specific Module Deep Dive",
+        "prompts": {
+          "clever": "Select a module in the project that you think is cleverly designed or has complex logic, and briefly describe its design approach and main workflow."
+        }
+      },
+      "security": {
+        "name": "Security Considerations",
+        "prompts": {
+          "measures": "At the code level, what common security measures has the project taken to prevent potential risks (such as input validation, permission control, etc.)?"
+        }
+      },
+      "abstractions": {
+        "name": "Key Abstractions & Patterns",
+        "prompts": {
+          "patterns": "Are there any core abstract designs or repeatedly used design patterns in the project? How do they help organize the code?"
+        }
+      },
+      "stateManagement": {
+        "name": "State Management",
+        "prompts": {
+          "mechanisms": "How does the system manage and synchronize state? What are the key storage or update mechanisms?"
+        }
+      },
+      "entryPoints": {
+        "name": "Main Entry Points",
+        "prompts": {
+          "analysis": "Besides user interface operations, what other execution entry points does the system have (such as scheduled tasks, API calls, message queue consumers, etc.)? How are they triggered and processed?"
+        }
+      },
+      "testing": {
+        "name": "Testing Strategy",
+        "prompts": {
+          "coverage": "How is the project tested? Which modules are the main types of tests (unit, integration, etc.) concentrated on?"
+        }
+      },
+      "performance": {
+        "name": "Performance",
+        "prompts": {
+          "bottleneckIdentification": "Which parts or operations in the project are most likely to become performance bottlenecks? What methods or tools are typically used to locate them?",
+          "keyPerformanceIndicators": "What key performance indicators (KPIs) does the project focus on (such as response time, throughput, concurrent users)? What are the target values for these indicators?",
+          "databasePerformance": "How efficient are database queries? Are there slow queries, unreasonable indexes, or excessive database interactions affecting performance?",
+          "memoryUsage": "How is the application's memory usage? Are there memory leaks, unreasonable memory allocations, or frequent garbage collection (GC) issues?",
+          "cpuUsageAnalysis": "Which types of calculations or operations consume the most CPU resources? Are there specific optimizations to reduce CPU load?",
+          "networkIO": "How do network requests (such as API calls, resource loading) latency and throughput affect overall performance? Are there optimization measures (such as compression, CDN)?",
+          "cachingStrategies": "What caching strategies (such as data caching, page caching, CDN caching) are used in the project to improve performance? How are cache hit rates and update mechanisms implemented?",
+          "asyncConcurrentProcessing": "How are asynchronous processing and concurrency mechanisms (such as thread pools, coroutines, message queues) used to optimize response speed and improve system throughput?",
+          "algorithmEfficiency": "Are there inefficient algorithms or data structures in the code that could become performance bottlenecks?",
+          "frontendOptimization": "In terms of frontend performance, such as page loading speed (FCP, LCP), rendering efficiency, resource size, and user interaction response, what are the main optimization approaches and focus areas?",
+          "codeLevelOptimization": "At the code writing level, has the project adopted some common performance optimization techniques (such as reducing loop nesting, avoiding unnecessary calculations, lazy loading)?",
+          "performanceTesting": "How does the project conduct performance testing (such as stress testing, load testing, benchmark testing)? How do test results guide optimization?",
+          "scalabilityDesign": "How does the current architecture perform and scale horizontally/vertically when load increases?",
+          "resourceManagement": "Is the management of key system resources (such as database connection pools, thread pools) efficient to avoid resource exhaustion or contention?",
+          "thirdPartyDependencies": "How do external API calls or third-party libraries' performance affect overall system performance? Are there monitoring and response strategies?",
+          "startupTime": "How does the application's startup time and initialization process affect user-perceived performance or system availability? Is there room for optimization?",
+          "loggingImpact": "Do the level and method of logging significantly affect performance? Does the performance monitoring system itself introduce non-negligible overhead?",
+          "specificScenarioTuning": "Has specialized performance tuning been done for specific high-concurrency or large data volume scenarios in the project?",
+          "performanceRegression": "Are there mechanisms to prevent regression of optimized performance points? How are potential performance issues detected early in the development process?",
+          "configurationImpact": "In the project's configuration files, which parameters have direct or indirect important impacts on performance (such as thread count, cache size, timeout settings)?"
+        }
+      },
+      "codeReuse": {
+        "name": "Code Reuse & Sharing",
+        "prompts": {
+          "common": "What common utility functions, shared libraries, or services are reused across multiple modules in the project? What common capabilities do they provide?"
+        }
+      },
+      "domainSpecific": {
+        "name": "Domain-Specific Language",
+        "prompts": {
+          "terms": "Are there any project-specific terms, naming conventions, or internal 'jargon' in the code that need to be understood in order to better understand the code?"
+        }
+      },
+      "deployment": {
+        "name": "Deployment & Build Overview",
+        "prompts": {
+          "process": "Briefly describe how the project is built and deployed to the runtime environment. What are the key steps or scripts?"
+        }
+      },
+      "userScenarios": {
+        "name": "User Scenario Mapping",
+        "prompts": {
+          "codeMapping": "How are the main user scenarios or use cases reflected in the code? Which core modules do they usually involve?"
+        }
+      },
+      "scalability": {
+        "name": "Scalability Design",
+        "prompts": {
+          "considerations": "What considerations in the code design are to support future scalability or higher loads?"
+        }
+      },
+      "internalAPIs": {
+        "name": "Internal API Communication",
+        "prompts": {
+          "patterns": "How do internal modules within the project communicate via APIs or interfaces? What characteristics do these interface designs have?"
+        }
+      },
+      "database": {
+        "name": "Database Interaction",
+        "prompts": {
+          "patterns": "When interacting with databases, what patterns does the project mainly use (such as ORM, direct SQL queries)? How is transaction management handled?"
+        }
+      },
+      "backgroundTasks": {
+        "name": "Background Tasks",
+        "prompts": {
+          "scheduling": "If the project has background tasks or scheduled jobs, how are they scheduled and executed? What main logic do they handle?"
+        }
+      },
+      "frontendSeparation": {
+        "name": "Frontend Logic Separation",
+        "prompts": {
+          "patterns": "How does the frontend code separate presentation logic and business logic? What are the key boundaries or patterns?"
+        }
+      },
+      "resourceManagement": {
+        "name": "Key Resource Management",
+        "prompts": {
+          "handling": "How are key resources (such as database connections, file handles) managed and released to avoid leaks?"
+        }
+      },
+      "pluginArchitecture": {
+        "name": "Plugin Architecture",
+        "prompts": {
+          "extensionPoints": "How is the project designed to support future feature extension or plugin integration? What are the reserved extension points?"
+        }
+      },
+      "codeReadability": {
+        "name": "Code Readability",
+        "prompts": {
+          "factors": "To what extent do the code's comments, naming conventions, and overall structure help understand its functionality?"
+        }
+      },
+      "designDecisions": {
+        "name": "Design Decision Origins",
+        "prompts": {
+          "reasons": "Do the code or comments in certain key modules or algorithms reveal the reasons for their design decisions?"
+        }
+      },
+      "securityEnhancement": {
+        "name": "Security Enhancement",
+        "prompts": {
+          "specific": "In addition to general security measures, in which specific aspects (such as user input processing, API authorization) has the project strengthened security?"
+        }
+      },
+      "externalIntegration": {
+        "name": "External Integration Details",
+        "prompts": {
+          "errorHandling": "When integrating with external APIs or services, what are the common error handling and retry mechanisms?"
+        }
+      },
+      "bottleneckAnalysis": {
+        "name": "Potential Bottleneck Analysis",
+        "prompts": {
+          "identification": "Based on the code structure, which parts do you think are most likely to become potential performance bottlenecks or maintenance difficulties?"
+        }
+      },
+      "dataValidation": {
+        "name": "Data Validation & Cleaning",
+        "prompts": {
+          "processes": "How is data validated and cleaned when entering the system or being passed between modules?"
+        }
+      },
+      "concurrencyControl": {
+        "name": "Concurrency Control",
+        "prompts": {
+          "strategies": "When handling shared resources or concurrent operations, what locking mechanisms or concurrency control strategies does the project employ?"
+        }
+      },
+      "loggingLevels": {
+        "name": "Logging Levels & Usage",
+        "prompts": {
+          "details": "How detailed is the logging? Can it be filtered and analyzed by different levels (debug, info, error)?"
+        }
+      },
+      "configHardcoding": {
+        "name": "Configuration vs Hardcoding",
+        "prompts": {
+          "balance": "Which behaviors are controlled through configuration files, and which are hardcoded in the code? What is the basis for this division?"
+        }
+      },
+      "eventDriven": {
+        "name": "Event-Driven Mechanisms",
+        "prompts": {
+          "implementation": "Are there event-driven mechanisms in the project? How are events published, subscribed to, and handled?"
+        }
+      },
+      "codeStyle": {
+        "name": "Code Style & Consistency",
+        "prompts": {
+          "consistency": "Is the overall code style of the project consistent? Are there unified coding standards being followed?"
+        }
+      },
+      "dependencyInjection": {
+        "name": "Dependency Injection & IoC",
+        "prompts": {
+          "usage": "If the project uses dependency injection (DI) or inversion of control (IoC), how is it implemented? What benefits does it bring?"
+        }
+      },
+      "configFiles": {
+        "name": "Configuration File Locations",
+        "prompts": {
+          "formats": "Where are the project's main configuration files typically located? What formats do they use (e.g., JSON, YAML, .env, TOML)?"
+        }
+      },
+      "configLoading": {
+        "name": "Configuration Loading",
+        "prompts": {
+          "mechanisms": "How does the application load and parse its configuration at startup or runtime?"
+        }
+      },
+      "configUsage": {
+        "name": "Configuration Usage in Code",
+        "prompts": {
+          "access": "How are configuration values typically accessed and used in the codebase?"
+        }
+      },
+      "multiEnvConfig": {
+        "name": "Multi-Environment Configuration",
+        "prompts": {
+          "strategy": "How does the project manage configuration differences between different environments (such as development, testing, production)?"
+        }
+      },
+      "sensitiveInfo": {
+        "name": "Sensitive Information Management",
+        "prompts": {
+          "handling": "How is sensitive configuration information like API keys or database credentials securely managed?"
+        }
+      },
+      "configOverride": {
+        "name": "Configuration Override Logic",
+        "prompts": {
+          "mechanism": "Is there a configuration override mechanism, such as local settings overriding default settings or specific environment files overriding common settings?"
+        }
+      },
+      "manifestConfig": {
+        "name": "Project Manifest Configuration",
+        "prompts": {
+          "role": "What role do the project's manifest files (such as package.json, pyproject.toml, Cargo.toml, pubspec.yaml) play in configuration or build settings?"
+        }
+      },
+      "containerConfig": {
+        "name": "Container Configuration",
+        "prompts": {
+          "key": "For containerized deployment (e.g., Docker), what are the key configuration points in Dockerfile or compose files?"
+        }
+      },
+      "configValidation": {
+        "name": "Configuration Validation",
+        "prompts": {
+          "handling": "Are configuration values validated when loaded? What happens if required configuration is missing or invalid?"
+        }
+      },
+      "dynamicConfigUpdate": {
+        "name": "Dynamic Configuration Updates",
+        "prompts": {
+          "capability": "Can some configurations be dynamically updated without restarting the application?"
+        }
+      },
+      "buildRuntime": {
+        "name": "Build vs Runtime Configuration",
+        "prompts": {
+          "distinction": "How does the project distinguish between build-time configuration and runtime configuration?"
+        }
+      },
+      "configNaming": {
+        "name": "Configuration Naming Conventions",
+        "prompts": {
+          "patterns": "What are the common naming conventions for configuration variables or keys in this project?"
+        }
+      },
+      "cliEnvOverride": {
+        "name": "CLI/Environment Variable Overrides",
+        "prompts": {
+          "mechanism": "Is there a mechanism to directly override file configuration through command line arguments or environment variables?"
+        }
+      },
+      "frameworkConfig": {
+        "name": "Framework Configuration Impact",
+        "prompts": {
+          "influence": "If the project uses a specific framework, how does that framework influence or manage the project's configuration approach?"
+        }
+      },
+      "defaultConfig": {
+        "name": "Default Configuration Values",
+        "prompts": {
+          "sources": "If not explicitly set, how are the project's default configuration values established?"
+        }
+      },
+      "addingConfig": {
+        "name": "Adding New Configuration Parameters",
+        "prompts": {
+          "process": "What steps are typically needed to add a new configurable parameter to the system?"
+        }
+      },
+      "configTools": {
+        "name": "Configuration Management Tools",
+        "prompts": {
+          "usage": "Are there specific tools or scripts used to manage or generate configuration files?"
+        }
+      },
+      "i18nConfig": {
+        "name": "Internationalization & Configuration",
+        "prompts": {
+          "support": "If applicable, how does the project's configuration scheme support internationalization (i18n) or localization (l10n)?"
+        }
+      },
+      "microserviceConfig": {
+        "name": "Microservice Configuration",
+        "prompts": {
+          "management": "In a microservice architecture, how are shared configuration or service discovery details managed?"
+        }
+      },
+      "productionConfigUpdates": {
+        "name": "Production Configuration Updates",
+        "prompts": {
+          "process": "What is the typical process for updating configuration in deployed environments?"
+        }
+      }
+    }
+  },
+  "codeStructure": {
+    "noStructuresFound": "No code structures found. Please ensure your project contains supported code files.",
+    "totalStructures": "Total Structures",
+    "classes": "Classes",
+    "interfaces": "Interfaces",
+    "structs": "Structs",
+    "enums": "Enums",
+    "members": "Members",
+    "methods": "Methods",
+    "avgPerStructure": "Avg per Structure",
+    "structureComposition": "Structure Composition",
+    "visualization": "Code Structure Visualization",
+    "visualizationHelp": "Drag nodes to adjust positions. Shows relationships between code structures."
+  },
+  "projectConfig": {
+    "title": "Project Architecture Diagram",
+    "description": "This diagram shows the project's configuration files and overall architecture",
+    "showConfig": "Show Project Architecture",
+    "hideConfig": "Hide Project Architecture",
+    "configFiles": "Configuration Files",
+    "projectStructure": "Project Structure",
+    "pages": "Pages",
+    "components": "Components",
+    "libraries": "Libraries",
+    "staticAssets": "Static Assets",
+    "apis": "APIs",
+    "noConfigFiles": "No configuration files found",
+    "dragHelp": "You can drag nodes, zoom the view, and click on config file nodes to view their content"
+  },
+  "docker": {
+    "title": "Docker",
+    "selectProject": "Please select a project folder first",
+    "noDockerfile": "No Dockerfile detected in the current project",
+    "content": "Dockerfile Content",
+    "analysis": "Analysis Result",
+    "baseInfo": "Basic Information",
+    "baseImage": "Base Image",
+    "stages": "Build Stages",
+    "workdir": "Working Directory",
+    "ports": "Exposed Ports",
+    "cmd": "Command",
+    "environment": "Environment Variables",
+    "errors": "Error Messages",
+    "buildStages": "Multi-stage Build",
+    "instructions": "Instructions",
+    "loading": "Loading...",
+    "loadingAnalysis": "Analyzing Dockerfile...",
+    "fix": "Fix Issues",
+    "fixing": "Fixing...",
+    "hasErrors": "Has Issues",
+    "valid": "Valid Syntax"
+  },
+  "dockerCompose": {
+    "title": "Docker Compose",
+    "noDockerCompose": "No Docker Compose file detected in the current project",
+    "content": "Docker Compose Content",
+    "serviceDetails": "Service Details",
+    "version": "Version",
+    "serviceCount": "Service Count",
+    "image": "Image",
+    "build": "Build",
+    "ports": "Ports",
+    "environment": "Environment Variables",
+    "envFiles": "Environment Files",
+    "dependsOn": "Depends On",
+    "volumes": "Volumes",
+    "networks": "Networks",
+    "selectService": "Select a service to view details",
+    "hasErrors": "Has Issues",
+    "valid": "Valid Configuration"
+  },
+  "envFile": {
+    "title": "Environment Variables",
+    "selectProject": "Please select a project folder first",
+    "noEnvFile": "No environment files (.env) detected in the current project",
+    "content": "File Content",
+    "variables": "Variables",
+    "key": "Key",
+    "value": "Value",
+    "line": "Line",
+    "type": "Type",
+    "normalType": "Normal",
+    "sensitiveType": "Sensitive",
+    "commentType": "Comment",
+    "comment": "Comment",
+    "errors": "Error Messages",
+    "loading": "Loading...",
+    "loadingAnalysis": "Analyzing environment file...",
+    "fix": "Fix Format",
+    "fixing": "Fixing...",
+    "hasErrors": "Has Issues",
+    "valid": "Valid Format",
+    "showSensitive": "Show Sensitive",
+    "hideSensitive": "Hide Sensitive"
+  },
+  "codeAnalysis": {
+    "title": "Project Code Analysis Chart",
+    "description": "This chart shows the relationships between all functions, methods, and types in the project, supporting multiple programming languages",
+    "showAnalysis": "Show Code Analysis Chart",
+    "hideAnalysis": "Hide Code Analysis Chart",
+    "languageFilter": "Language Filter",
+    "typeFilter": "Type Filter",
+    "displayOptions": "Display Options",
+    "showRelationLabels": "Show Relation Labels",
+    "dragHelp": "You can use the left panel to filter different languages and code structure types",
+    "fileCount": "File Count",
+    "type": "Type",
+    "language": "Language",
+    "inheritance": "Inheritance",
+    "implementation": "Implementation",
+    "static": "Static",
+    "instance": "Instance",
+    "visibility": "Visibility",
+    "parameters": "Parameters",
+    "returnType": "Return Type",
+    "memberCount": "Member Count",
+    "methodCount": "Method Count",
+    "noAnalysisData": "No analyzable code structures found"
+  },
+  "vectorReport": {
+    "title": "Vectorize Report",
+    "description": "Get project information through natural language questions",
+    "placeholder": "Enter your query, e.g.: 'Project architecture analysis', 'Find authentication module', or 'Locate API implementation'",
+    "submit": "Vectorize",
+    "processing": "Processing...",
+    "result": "Vectorization Result",
+    "close": "Close",
+    "noResult": "No results yet, please submit a question first",
+    "error": "Processing error, please try again",
+    "scanningInProgress": "Scanning is in progress, please wait for the scan to complete before vectorizing",
+    "waitForScan": "Wait for scan",
+    "scanningTip": "You can enter your prompt now, but you'll need to wait for the scan to complete before vectorizing",
+    "enableContentMatching": "Enable precise Mode (may increase processing time) @Deprecated",
+    "copyPrompt": "Copy Prompt",
+    "resultCopied": "",
+    "resultPreview": "Result Preview",
+    "markdownFormat": "Markdown format",
+    "resultDescription": "Structured Markdown text containing query, related file list, file contents, and optimization statistics",
+    "copyInstructions": "Click the button above to copy the result, which can be directly pasted into large language models",
+    "testPrompt": "Dialogue with code library",
+    "testingPrompt": "Preparing...",
+    "testResult": "AI Response",
+    "testInstructions": "Test how this prompt performs with the AI model",
+    "testPlaceholder": "AI response will appear here...",
+    "testComplete": "The test has completed all 60 conversation rounds. Test complete. To continue, please restart the test.",
+    "processingPhases": {
+      "initializing": "Initializing vectorization engine",
+      "collecting": "Collecting project file data",
+      "analyzing": "Analyzing file content features",
+      "computing": "Performing semantic vector calculation",
+      "parsing": "Parsing vector matching results",
+      "extracting": "Extracting relevant resource content",
+      "generating": "Generating optimized data structure"
+    },
+    "optimization": {
+      "title": "Smart Vector Optimization",
+      "description": "Through semantic vector analysis, {relevantCount} relevant resources have been precisely located from {totalCount} project files, estimated to save approximately {tokenCount} tokens for large models, improving processing efficiency by about {efficiencyFactor}x."
+    },
+    "toolCard": {
+      "title": "Tool Call",
+      "params": "Params",
+      "result": "Result",
+      "simulation": "AI Simulation"
+    },
+    "aiDialog": {
+      "title": "Code Library Dialogue",
+      "terminate": "Terminate Dialogue",
+      "round": "Round {current}/{max}",
+      "initializing": "Initializing dialogue...",
+      "optionsTitle": "Select next action:",
+      "customInputPlaceholder": "Enter your question...press Ctrl+Enter to send",
+      "send": "Send",
+      "thinking": "AI is thinking..."
+    },
+    "knowledgeResults": "Related Knowledge Entries ({count})",
+    "knowledgeEntries": "Knowledge Entries",
+    "knowledgeContent": "Knowledge Entry Content"
+  },
+  "knowledgeModal": {
+    "title": "Knowledge Base",
+    "description": "Manage your knowledge entries, add, edit, and delete knowledge content.",
+    "createNew": "New",
+    "uploadMd": "Upload MD",
+    "uploadZip": "Upload ZIP",
+    "importLib": "Import Library",
+    "exportLib": "Export Library",
+    "lastScanTime": "Last Scan Time",
+    "privateNotice": "Your knowledge data will only be stored locally in your browser, change device please re-import",
+    "dataSecurityPromise": "Your knowledge data will only be stored locally in your browser, change device please re-import",
+    "titlePlaceholder": "Enter knowledge entry title...",
+    "contentPlaceholder": "Enter content in Markdown format...",
+    "titleImportant": "Critical for vector retrieval, ensure the title accurately summarizes the core content",
+    "searchPlaceholder": "Search knowledge entries...",
+    "emptyMessage": "Knowledge base is empty, start adding your first knowledge entry",
+    "noMatchMessage": "No matching knowledge entries found",
+    "importSuccess": "Successfully imported {total} entries (Added: {added}, Updated: {updated})",
+    "importFailed": "Import failed: {message}",
+    "exportFailed": "Export failed: {message}",
+    "deletionConfirm": "Are you sure you want to delete this knowledge entry?",
+    "deletionFailed": "Deletion failed: {message}",
+    "saveFailed": "Save failed: {message}",
+    "titleRequired": "Title cannot be empty",
+    "importing": "Importing...",
+    "edit": "Edit",
+    "newEntry": "New Entry",
+    "titleLabel": "Title",
+    "contentLabel": "Content (Markdown format)",
+    "selectOrCreateMessage": "Select or create a knowledge entry to view content",
+    "processingZip": "Processing ZIP file...",
+    "zipImportSuccess": "Successfully imported {total} Markdown files from ZIP",
+    "searchGenerate": "Generate",
+    "generateFailed": "Generation failed: {message}"
+  },
+  "rssFeed": {
+    "title": "Tech News",
+    "loading": "Loading...",
+    "readMore": "Read More",
+    "author": "Author",
+    "uncategorized": "Technology",
+    "error": "Failed to fetch RSS feed",
+    "refresh": "Refresh news"
+  },
+  "aiagent": {
+    "title": "Agent",
+    "user": "User",
+    "agent": "Agent",
+    "inputPlaceholder": "Enter your question...press Ctrl+Enter to send",
+    "permissionTitle": "Permission Required",
+    "permissionDescription": "The agent needs permission to modify files in order to continue.",
+    "permissionWarning": "Warning: The agent will be able to modify, delete, and create project files. Make sure you trust this operation.",
+    "indexingReminder": "Note: Please ensure the 'Start Index' feature is enabled for the agent to access the latest code information.",
+    "grantPermission": "Grant Permission",
+    "cancel": "Cancel",
+    "modifyFile": "Modify File",
+    "deleteFile": "Delete File",
+    "createFile": "Create File",
+    "filePath": "File Path",
+    "lineRange": "Line Range",
+    "lines": "Lines",
+    "changes": "Changes",
+    "newContent": "New Content",
+    "approve": "Approve",
+    "reject": "Reject",
+    "pendingOperations": "Pending Operations",
+    "fileOperations": "File Operations",
+    "thinking": "Thinking...",
+    "indexing": "Indexing relevant files...",
+    "processing": "Processing file operations...",
+    "complete": "Agent task completed",
+    "autoMode": "Auto Mode",
+    "taskCompleted": "Completed",
+    "taskExecuting": "Executing",
+    "taskPlanning": "Planning",
+    "taskWaiting": "Waiting",
+    "execute": "Execute",
+    "eta": "ETA {seconds}s",
+    "suggestion": "It is recommended to complete only one task per conversation",
+    "defaultExecutePrompt": "Based on the plan above, please proceed."
+  }
+}

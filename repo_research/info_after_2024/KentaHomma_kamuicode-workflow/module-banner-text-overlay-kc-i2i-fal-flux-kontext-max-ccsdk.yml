@@ -1,0 +1,237 @@
+name: module-banner-text-overlay-kc-i2i-fal-flux-kontext-max-ccsdk
+
+on:
+  workflow_call:
+    inputs:
+      concept:
+        description: 'バナーのコンセプト'
+        required: true
+        type: string
+      text_content:
+        description: '画像に表示するテキスト（変更禁止）'
+        required: true
+        type: string
+      image-url:
+        description: 'ベース画像のGoogle URL'
+        required: true
+        type: string
+      text-overlay-prompt:
+        description: 'テキストオーバーレイプロンプト'
+        required: true
+        type: string
+      branch-name:
+        description: 'ワーキングブランチ名'
+        required: true
+        type: string
+      folder-name:
+        description: 'プロジェクトフォルダ名'
+        required: true
+        type: string
+      banner_index:
+        description: 'バナーインデックス'
+        required: false
+        type: string
+        default: '1'
+    outputs:
+      completed:
+        description: '完了ステータス'
+        value: ${{ jobs.text-overlay.outputs.completed }}
+      image-url:
+        description: '完成したバナー画像のURL'
+        value: ${{ jobs.text-overlay.outputs.image-url }}
+    secrets:
+      anthropic_api_key:
+        description: 'Anthropic API Key'
+        required: true
+      github_pat:
+        description: 'GitHub Token'
+        required: true
+
+jobs:
+  text-overlay:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      completed: ${{ steps.overlay.outputs.completed }}
+      image-url: ${{ steps.overlay.outputs.image-url }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.branch-name }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install Claude Code SDK
+        run: npm install @anthropic-ai/claude-code
+      
+      - name: バナーテキスト合成エージェント (Flux Kontext Max)
+        id: overlay
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.anthropic_api_key }}
+        run: |
+          echo "::group::🎨 Banner Text Overlay Agent Execution (Flux Kontext Max)"
+          echo "Starting at: $(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)"
+          
+          # 設定
+          USER_CONCEPT="${{ inputs.concept }}"
+          USER_TEXT_CONTENT="${{ inputs.text_content }}"
+          BASE_IMAGE_URL="${{ inputs.image-url }}"
+          TEXT_OVERLAY_PROMPT="${{ inputs.text-overlay-prompt }}"
+          FOLDER_NAME="${{ inputs.folder-name }}"
+          BANNER_INDEX="${{ inputs.banner_index }}"
+          BANNERS_DIR="$FOLDER_NAME/banners-${BANNER_INDEX}"
+          
+          echo "User concept: $USER_CONCEPT"
+          echo "User text content: $USER_TEXT_CONTENT"
+          echo "Base image URL: $BASE_IMAGE_URL"
+          echo "Text overlay prompt: $TEXT_OVERLAY_PROMPT"
+          echo "Banner index: $BANNER_INDEX"
+          echo "Target folder: $BANNERS_DIR"
+          
+          # バナーフォルダを事前に作成
+          if [ ! -d "$BANNERS_DIR" ]; then
+            mkdir -p "$BANNERS_DIR"
+            echo "📁 Created banners folder: $BANNERS_DIR"
+          fi
+          
+          # MCP設定の確認
+          MCP_CONFIG_PATH=".claude/mcp-kamuicode.json"
+          MCP_CONFIG_ABS_PATH="$(pwd)/$MCP_CONFIG_PATH"
+          
+          # MCP設定ファイルの存在確認
+          if [ -f "$MCP_CONFIG_ABS_PATH" ]; then
+            echo "✅ MCP config file exists at: $MCP_CONFIG_ABS_PATH"
+          else
+            echo "❌ MCP config file not found at: $MCP_CONFIG_ABS_PATH"
+            exit 1
+          fi
+          
+          # プロンプトの構築
+          PROMPT="以下の指定テキストを一字一句変更せずにベース画像に合成してください。
+
+          **重要 - 利用可能ツール**:
+          - mcp__i2i-fal-flux-kontext-max__flux_kontext_submit
+          - mcp__i2i-fal-flux-kontext-max__flux_kontext_status
+          - mcp__i2i-fal-flux-kontext-max__flux_kontext_result
+
+          **絶対に変更禁止のテキスト**: '$USER_TEXT_CONTENT'
+          **ベース画像URL**: $BASE_IMAGE_URL
+          **バナーコンセプト**: $USER_CONCEPT
+          **テキストオーバーレイプロンプト**: $TEXT_OVERLAY_PROMPT
+
+          **最重要制約**:
+          - テキスト内容「$USER_TEXT_CONTENT」は絶対に変更禁止
+          - スペル修正・翻訳・意訳・文字追加・削除は一切禁止
+          - 文字の大文字小文字変換も禁止
+          - 句読点・記号の変更も禁止
+          - レイアウト・フォント・色・サイズ・位置のみ調整可能
+
+          **実行手順**:
+          1. mcp__i2i-fal-flux-kontext-max__flux_kontext_submit ツールでテキスト合成を開始
+             - input_image_url: $BASE_IMAGE_URL
+             - prompt: 「テキスト '$USER_TEXT_CONTENT' を画像に合成してください。テキスト内容は一切変更せず、レイアウトとデザインのみ最適化してください。$TEXT_OVERLAY_PROMPT」
+          2. mcp__i2i-fal-flux-kontext-max__flux_kontext_status でステータス確認
+          3. mcp__i2i-fal-flux-kontext-max__flux_kontext_result で結果取得してGoogle URLを取得
+          4. **重要**: 生成時に取得したGoogle URLを「$BANNERS_DIR/image-url.txt」ファイルに保存
+          5. 取得したGoogle URLをBashツールで「$BANNERS_DIR/image.png」にダウンロード保存
+
+          **テキスト合成の詳細指示**:
+          - テキスト「$USER_TEXT_CONTENT」の内容は絶対に変更しない
+          - $TEXT_OVERLAY_PROMPT に基づいて配置・スタイルを決定
+          - 読みやすさを最大化するフォント選択
+          - 背景との対比を考慮した色選択
+          - バナー広告として効果的な視覚インパクト
+
+          **品質要件**:
+          - 商用利用可能な高品質バナー
+          - テキストの視認性確保
+          - ブランドイメージとの調和
+          - 指定されたバナーサイズに最適化
+
+          **重要な注意点**:
+          - Google URLの有効期限は約1時間のため、生成後すぐにダウンロード
+          - 必ずGoogle提供の認証済URLを使用
+          - バナー画像は必ず「$BANNERS_DIR」ディレクトリに保存
+          - ファイル名は「image.png」とする
+          - **最重要**: 生成時のGoogle URLを「$BANNERS_DIR/image-url.txt」に保存し、次のジョブで参照できるようにする
+          - **両方を実行**: ①Google URLをテキストファイルに保存 ②Google URLから画像をダウンロードしてローカル保存"
+          
+          echo "🚀 Starting Banner Text Overlay Agent Claude Code CLI..."
+          echo "📝 Prompt length: ${#PROMPT}"
+          
+          # Claude Code CLIの実行
+          npx @anthropic-ai/claude-code \
+            --mcp-config="$MCP_CONFIG_ABS_PATH" \
+            --allowedTools "mcp__i2i-fal-flux-kontext-max__flux_kontext_submit,mcp__i2i-fal-flux-kontext-max__flux_kontext_status,mcp__i2i-fal-flux-kontext-max__flux_kontext_result,Bash" \
+            --max-turns 40 \
+            --verbose \
+            --permission-mode "acceptEdits" \
+            -p "$PROMPT" || {
+              echo "::error::❌ Claude Code CLI execution failed"
+              exit 1
+            }
+          
+          # 生成されたバナーの確認
+          echo ""
+          echo "🎨 Checking generated banner..."
+          if [ -d "$BANNERS_DIR" ]; then
+            BANNER_COUNT=$(find "$BANNERS_DIR" -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" | wc -l)
+            echo "::notice::🎨 Generated $BANNER_COUNT banner images"
+            if [ "$BANNER_COUNT" -gt 0 ]; then
+              # Google URLを確認してGitHub Outputに設定
+              if [ -f "$BANNERS_DIR/image-url.txt" ]; then
+                GOOGLE_IMAGE_URL=$(cat "$BANNERS_DIR/image-url.txt")
+                echo "Google image URL: $GOOGLE_IMAGE_URL"
+                echo "image-url=$GOOGLE_IMAGE_URL" >> $GITHUB_OUTPUT
+              else
+                echo "::warning::⚠️ Google image URL not found in file"
+                echo "image-url=" >> $GITHUB_OUTPUT
+              fi
+            else
+              echo "::error::❌ No banner images were generated"
+              exit 1
+            fi
+          else
+            echo "::error::❌ Banners directory not found"
+            exit 1
+          fi
+          
+          echo "completed=true" >> $GITHUB_OUTPUT
+          echo "::endgroup::"
+      
+      - name: Commit and push banner
+        env:
+          GH_TOKEN: ${{ secrets.github_pat }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ${{ inputs.folder-name }}/
+          if git diff --cached --quiet; then
+            echo "No banner files to commit"
+          else
+            git commit -m "Add generated banner with text overlay: ${{ inputs.concept }}
+
+            Text: ${{ inputs.text_content }}
+
+            🤖 Generated with [Claude Code](https://claude.ai/code)
+
+            Co-Authored-By: Claude <noreply@anthropic.com>"
+            # 並列実行での競合を回避するためのリトライ処理
+            for i in {1..3}; do
+              git pull --rebase origin ${{ inputs.branch-name }} || true
+              if git push origin ${{ inputs.branch-name }}; then
+                echo "✅ Push successful on attempt $i"
+                break
+              else
+                echo "⚠️ Push failed on attempt $i, retrying..."
+                # ランダムな待機時間（1-5秒）
+                sleep $((RANDOM % 5 + 1))
+              fi
+            done
+          fi

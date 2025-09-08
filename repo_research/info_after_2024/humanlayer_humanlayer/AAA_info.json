@@ -1,0 +1,16 @@
+{
+    "crewai_mistral.py": 1,
+    "04-linkedin-anthropic.py": 1,
+    "app-syncpoll.py": 1,
+    "app-statehooks.py": 1,
+    "02-customer_email.py": 2,
+    "crewai_onboarding_agent.py": 0,
+    "crewai_onboarding_agent_human_as_tool.py": 1,
+    "04-human_as_tool_linkedin.py": 1,
+    "07-grocery-slack-blocks.py": 1,
+    "04-human_as_tool_onboarding.py": 1,
+    "08-email-channel.py": 1,
+    "04-linkedin-experimental-slack-blocks.py": 1,
+    "05-approvals_and_humans_composite.py": 1,
+    "04-human_as_tool_linkedin_frustration.py": 1
+}

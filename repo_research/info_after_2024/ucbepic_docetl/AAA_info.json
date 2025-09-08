@@ -1,0 +1,20 @@
+{
+    "logical_fallacy_extraction.py": 1,
+    "test_eugene.py": 4,
+    "test_api.py": 2,
+    "test_synth_gather.py": 1,
+    "test_reduce_scale.py": 3,
+    "test_resolve_auto_batch.py": 0,
+    "test_output_modes.py": 3,
+    "test_basic_reduce_resolve.py": 1,
+    "test_cluster_and_sample.py": 1,
+    "test_basic_map.py": 1,
+    "test_basic_filter_split_gather.py": 1,
+    "test_rank_budget.py": 4,
+    "test_rank.py": 2,
+    "extract.py": 2,
+    "reduce_optimizer.py": 1,
+    "plan_generators.py": 4,
+    "prompt_generators.py": 2,
+    "evaluator.py": 1
+}

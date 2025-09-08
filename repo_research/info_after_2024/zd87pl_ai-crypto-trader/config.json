@@ -1,0 +1,899 @@
+{
+    "trading_params": {
+        "min_volume_usdc": 50000,
+        "min_price_change_pct": 0.5,
+        "position_size": 0.4,
+        "max_positions": 5,
+        "stop_loss_pct": 2.0,
+        "take_profit_pct": 4.0,
+        "min_trade_amount": 40,
+        "ai_analysis_interval": 60,
+        "ai_confidence_threshold": 0.7,
+        "price_precision": 4,
+        "quantity_precision": 6,
+        "candle_interval": "1m"
+    },
+    "risk_management": {
+        "max_portfolio_var": 0.05,
+        "confidence_level": 0.95,
+        "var_lookback_days": 30,
+        "max_portfolio_allocation": 0.25,
+        "correlation_threshold": 0.7,
+        "min_volatility_factor": 0.5,
+        "max_volatility_factor": 2.0,
+        "volatility_lookback_days": 14,
+        "max_drawdown_limit": 0.15,
+        "position_sizing_method": "equal_risk",
+        "core_position_limit": 0.5,
+        "satellite_position_limit": 0.2,
+        "portfolio_var_breach_action": "reduce_risk",
+        "adaptive_stop_loss_enabled": true,
+        "trailing_stop_loss_enabled": true,
+        "trailing_stop_settings": {
+            "activation_threshold_pct": 1.0,
+            "trail_percent": 0.8,
+            "step_size": 0.2,
+            "max_adjustment_frequency_seconds": 30,
+            "strategy": "percent_based",
+            "min_price_movement_pct": 0.5,
+            "strategies": {
+                "percent_based": {
+                    "trail_percent": 0.8,
+                    "min_trail_distance": 0.5
+                },
+                "atr_based": {
+                    "atr_multiplier": 2.0,
+                    "min_periods": 14
+                },
+                "volatility_based": {
+                    "volatility_multiplier": 1.5,
+                    "lookback_periods": 20
+                },
+                "fixed_amount": {
+                    "trail_amount_usdc": 5.0,
+                    "min_adjustment_pct": 0.2
+                }
+            }
+        },
+        "social_risk_adjustment": {
+            "enabled": true,
+            "position_size_impact": 0.3,
+            "stop_loss_impact": 0.2,
+            "take_profit_impact": 0.4,
+            "correlation_impact": 0.25,
+            "sentiment_weights": {
+                "twitter_sentiment": 0.35,
+                "reddit_sentiment": 0.30,
+                "news_sentiment": 0.25,
+                "overall_sentiment": 0.10
+            },
+            "risk_factor_weights": {
+                "sentiment_score": 0.45,
+                "social_volume": 0.20,
+                "social_engagement": 0.25,
+                "social_contributors": 0.10
+            },
+            "volatility_modifier": 0.15,
+            "news_impact_factor": 0.35,
+            "sentiment_half_life": 6,
+            "min_data_quality": 0.5,
+            "bullish_threshold": 0.65,
+            "bearish_threshold": 0.35,
+            "max_adjustment_percent": 0.5,
+            "update_interval_seconds": 60
+        },
+        "monte_carlo": {
+            "enabled": true,
+            "num_simulations": 1000,
+            "time_horizon_days": 30,
+            "confidence_level": 0.95,
+            "lookback_days": 60,
+            "return_method": "log",
+            "simulation_method": "geometric_brownian_motion",
+            "plot_chart": true,
+            "generate_reports": true,
+            "report_frequency": "daily",
+            "store_all_paths": false,
+            "scenarios": {
+                "base": {},
+                "bull": {"drift_factor": 1.5, "volatility_factor": 0.8},
+                "bear": {"drift_factor": 0.5, "volatility_factor": 1.2},
+                "volatile": {"drift_factor": 1.0, "volatility_factor": 2.0},
+                "crab": {"drift_factor": 0.2, "volatility_factor": 0.5}
+            },
+            "position_sizing_impact": true,
+            "risk_assessment_thresholds": {
+                "high_risk_var": 15.0,
+                "medium_risk_var": 10.0,
+                "low_risk_var": 5.0
+            }
+        }
+    },
+    "openai": {
+        "model": "gpt-4o",
+        "temperature": 0.7,
+        "max_tokens": 2000,
+        "analysis_prompt": "As a cryptocurrency trading expert, analyze the market conditions for {symbol} with:\n\nPrice Action:\nPrice: ${price:.8f}\n24h Volume: ${volume:.2f}\n1m Change: {price_change_1m:.2f}%\n3m Change: {price_change_3m:.2f}%\n5m Change: {price_change_5m:.2f}%\n15m Change: {price_change_15m:.2f}%\n\nTechnical Indicators:\n- RSI: {rsi:.2f}\n- Stochastic K: {stoch:.2f}\n- MACD: {macd:.8f}\n- Williams %R: {williams_r:.2f}\n- Bollinger Band Position: {bb_position:.4f}\n\nMarket Trend:\n- Direction: {trend}\n- Strength: {trend_strength:.4f}\n\nCombined Indicators:\n{combined_indicators[summary]}\n\nSocial Metrics:\n- Volume: {social_volume}\n- Engagement: {social_engagement}\n- Contributors: {social_contributors}\n- Sentiment: {social_sentiment}\n\nNews Analysis:\n{recent_news}\n\nMarket Context:\n{market_context}\n\nProvide a trading decision based on:\n1. Price action and momentum indicators\n2. Trend analysis and technical indicators\n3. Combined indicator signals\n4. Social sentiment and news impact\n5. Volume analysis\n6. Risk assessment\n7. News sentiment and key topics\n\nRespond with a JSON object containing:\n- decision: 'BUY', 'SELL', or 'HOLD'\n- confidence: value between 0 and 1\n- reasoning: detailed explanation of the analysis\n- risk_level: 'LOW', 'MEDIUM', or 'HIGH'\n- key_indicators: list of most influential indicators for this decision",
+        "explainable_analysis_prompt": "As a cryptocurrency trading expert, analyze the market conditions for {symbol} with:\n\nPrice Action:\nPrice: ${price:.8f}\n24h Volume: ${volume:.2f}\n1m Change: {price_change_1m:.2f}%\n3m Change: {price_change_3m:.2f}%\n5m Change: {price_change_5m:.2f}%\n15m Change: {price_change_15m:.2f}%\n\nTechnical Indicators:\n- RSI: {rsi:.2f}\n- Stochastic K: {stoch:.2f}\n- MACD: {macd:.8f}\n- Williams %R: {williams_r:.2f}\n- Bollinger Band Position: {bb_position:.4f}\n\nMarket Trend:\n- Direction: {trend}\n- Strength: {trend_strength:.4f}\n\nCombined Indicators:\n{combined_indicators[summary]}\n\nSocial Metrics:\n- Volume: {social_volume}\n- Engagement: {social_engagement}\n- Contributors: {social_contributors}\n- Sentiment: {social_sentiment}\n\nNews Analysis:\n{recent_news}\n\nMarket Context:\n{market_context}\n\nProvide a detailed trading analysis based on:\n1. Price action and momentum indicators\n2. Trend analysis and technical indicators\n3. Combined indicator signals\n4. Social sentiment and news impact\n5. Volume analysis\n6. Risk assessment\n7. News sentiment and topics\n\nRespond with a JSON object containing:\n- decision: 'BUY', 'SELL', or 'HOLD'\n- confidence: value between 0 and 1\n- reasoning: detailed explanation of the analysis\n- risk_level: 'LOW', 'MEDIUM', or 'HIGH'\n- key_indicators: list of most influential indicators for this decision\n- explanation: {\n  \"summary\": \"concise explanation of the decision\",\n  \"technical_factors\": \"detailed explanation of technical analysis factors\",\n  \"social_factors\": \"detailed explanation of social metrics impact\",\n  \"news_analysis\": \"detailed explanation of news and its impact\",\n  \"key_indicators\": [\"list of key indicators that influenced the decision\"],\n  \"risk_assessment\": \"detailed risk assessment\"\n}\n- factor_weights: {\n  \"technical_indicators\": {\n    \"rsi\": value between 0 and 1,\n    \"macd\": value between 0 and 1,\n    \"bollinger_bands\": value between 0 and 1,\n    \"price_action\": value between 0 and 1,\n    \"other\": value between 0 and 1\n  },\n  \"price_action\": {\n    \"momentum\": value between 0 and 1,\n    \"volatility\": value between 0 and 1,\n    \"volume\": value between 0 and 1\n  },\n  \"social_metrics\": {\n    \"sentiment\": value between 0 and 1,\n    \"volume\": value between 0 and 1,\n    \"engagement\": value between 0 and 1\n  },\n  \"news_analysis\": {\n    \"sentiment\": value between 0 and 1,\n    \"relevance\": value between 0 and 1,\n    \"recency\": value between 0 and 1\n  },\n  \"market_context\": value between 0 and 1\n}",
+        "risk_prompt": "Analyze risk and position sizing for {symbol} trade with:\n\nAvailable Capital: ${capital:.2f}\nVolatility: {volatility:.2f}\nCurrent Price: ${price:.8f}\nTrend Strength: {trend_strength:.4f}\n\nProvide a JSON response with:\n- position_size: recommended position size as a decimal (0-1)\n- stop_loss_pct: recommended stop loss percentage\n- take_profit_pct: recommended take profit percentage\n- reasoning: detailed explanation of the recommendations",
+        "market_prompt": "Analyze overall market conditions based on the following data:\n\n{market_data}\n\nProvide a JSON response with:\n- market_sentiment: 'BULLISH', 'BEARISH', or 'NEUTRAL'\n- top_opportunities: list of symbols with highest potential\n- risks: list of current market risks\n- reasoning: detailed explanation of the analysis",
+        "explainable_market_prompt": "Analyze overall market conditions based on the following data:\n\n{market_data}\n\nProvide a comprehensive analysis with the following JSON structure:\n- market_sentiment: 'BULLISH', 'BEARISH', or 'NEUTRAL'\n- top_opportunities: list of symbols with highest potential\n- risks: list of current market risks\n- reasoning: detailed explanation of the analysis\n- explanation: {\n  \"summary\": \"concise summary of market conditions\",\n  \"market_factors\": \"detailed explanation of key market factors\",\n  \"key_trends\": [\"list of important market trends\"],\n  \"risk_factors\": [\"list of risk factors to watch\"],\n  \"sentiment_indicators\": [\"key sentiment indicators influencing the market\"],\n  \"recommendation_rationale\": \"rationale for the top opportunities\"\n}\n- factor_weights: {\n  \"price_action\": value between 0 and 1,\n  \"technical_indicators\": value between 0 and 1,\n  \"volume_analysis\": value between 0 and 1,\n  \"social_sentiment\": value between 0 and 1,\n  \"market_trends\": value between 0 and 1\n}"
+    },
+    "lunarcrush": {
+        "api_key": "",
+        "base_url": "https://lunarcrush.com/api/v4",
+        "endpoints": {
+            "assets": "/assets",
+            "market": "/market",
+            "feeds": "/feeds"
+        },
+        "update_interval": 300,
+        "metrics": {
+            "required": [
+                "social_volume",
+                "social_engagement",
+                "social_contributors",
+                "social_sentiment"
+            ],
+            "optional": [
+                "twitter_volume",
+                "reddit_volume",
+                "news_volume",
+                "search_volume"
+            ]
+        },
+        "sentiment_weights": {
+            "social_volume": 0.2,
+            "social_engagement": 0.3,
+            "social_contributors": 0.2,
+            "social_sentiment": 0.3
+        },
+        "cache_duration": 300,
+        "max_news_age": 3600,
+        "min_engagement": 1000
+    },
+    "enhanced_social_metrics": {
+        "enabled": true,
+        "update_interval": 300,
+        "anomaly_detection": {
+            "enabled": true,
+            "contamination": 0.05,
+            "threshold": 3.0,
+            "min_training_samples": 10,
+            "model_update_interval": 86400
+        },
+        "sentiment_analysis": {
+            "time_weighting": {
+                "enabled": true,
+                "decay_mode": "medium",
+                "half_life_hours": 4
+            },
+            "source_weights": {
+                "twitter": 0.35,
+                "reddit": 0.30,
+                "news": 0.25,
+                "telegram": 0.10
+            },
+            "adaptive_weights": {
+                "enabled": true,
+                "update_interval": 43200,
+                "min_direction_accuracy": 0.55
+            }
+        },
+        "lead_lag_analysis": {
+            "enabled": true,
+            "max_lag_hours": 24,
+            "min_correlation": 0.2,
+            "update_interval": 86400,
+            "lookback_days": 30
+        },
+        "accuracy_assessment": {
+            "enabled": true,
+            "update_interval": 43200,
+            "metrics": [
+                "direction_accuracy",
+                "correlation",
+                "r2",
+                "information_coefficient"
+            ],
+            "max_symbols": 10
+        },
+        "performance_monitoring": {
+            "enabled": true,
+            "report_interval": 300,
+            "max_processing_time": 5.0
+        }
+    },
+    "evolution": {
+        "min_sharpe_ratio": 1.2,
+        "max_drawdown": 15.0,
+        "min_win_rate": 0.52,
+        "min_profit_factor": 1.2,
+        "improvement_threshold": 0.1,
+        "max_iterations": 10,
+        "convergence_criteria": 0.02,
+        "strategy_types": [
+            "momentum",
+            "breakout",
+            "scalping"
+        ],
+        "timeframes": [
+            "1m",
+            "3m",
+            "5m"
+        ],
+        "worker_templates": {
+            "base": {
+                "memory_limit": "128MB",
+                "cpu_limit": "10ms",
+                "timeout": 10000
+            },
+            "backtest": {
+                "memory_limit": "256MB",
+                "cpu_limit": "50ms",
+                "timeout": 30000
+            }
+        },
+        "strategy_prompt_template": {
+            "system": "You are an expert algorithmic trader specializing in cryptocurrency markets. Create a complete trading strategy that maximizes profit while managing risk effectively.",
+            "strategy_requirements": [
+                "Must include proper risk management",
+                "Must handle error conditions gracefully",
+                "Must include position sizing logic",
+                "Must implement stop-loss and take-profit mechanisms",
+                "Must include performance monitoring"
+            ],
+            "code_requirements": [
+                "Must be compatible with Cloudflare Workers",
+                "Must be memory efficient",
+                "Must handle API rate limits",
+                "Must include proper error handling",
+                "Must be stateless"
+            ]
+        },
+        "performance_metrics": {
+            "required": [
+                "sharpe_ratio",
+                "sortino_ratio",
+                "max_drawdown",
+                "win_rate",
+                "profit_factor",
+                "average_trade",
+                "total_trades",
+                "profit_loss"
+            ],
+            "optional": [
+                "calmar_ratio",
+                "omega_ratio",
+                "recovery_factor",
+                "risk_reward_ratio",
+                "expectancy"
+            ]
+        },
+        "risk_management": {
+            "max_position_size": 0.4,
+            "max_open_positions": 5,
+            "max_daily_drawdown": 0.06,
+            "max_correlation": 0.7,
+            "min_liquidity": 50000
+        },
+        "optimization_goals": {
+            "primary": "sharpe_ratio",
+            "secondary": [
+                "max_drawdown",
+                "win_rate",
+                "profit_factor"
+            ],
+            "constraints": {
+                "min_trades_per_day": 20,
+                "max_trades_per_day": 50,
+                "min_holding_period": "1m",
+                "max_holding_period": "15m"
+            }
+        }
+    },
+    "worker_defaults": {
+        "routes": {
+            "strategy": "/api/strategy/*",
+            "monitor": "/api/monitor/*",
+            "backtest": "/api/backtest/*"
+        },
+        "headers": {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+            "Access-Control-Allow-Headers": "Content-Type"
+        },
+        "caching": {
+            "browser_ttl": 0,
+            "edge_ttl": 30
+        }
+    },
+    "feature_importance": {
+        "enabled": true,
+        "analysis_interval": 86400,
+        "min_data_points": 1000,
+        "n_permutations": 30,
+        "test_size": 0.3,
+        "random_state": 42,
+        "n_estimators": 100,
+        "max_depth": null,
+        "service_port": 8007,
+        "feature_pruning_threshold": 0.25,
+        "min_importance_threshold": 0.01,
+        "save_visualizations": true,
+        "report_retention_days": 30,
+        "auto_optimize_model": true,
+        "recalibration_triggers": {
+            "significant_market_shift": true,
+            "performance_degradation": true,
+            "new_feature_addition": true,
+            "periodic_schedule": true
+        },
+        "notification_channels": ["redis", "file"],
+        "weight_update_enabled": true
+    },
+    "market_regime": {
+        "enabled": true,
+        "check_interval": 1800,
+        "detection_method": "hybrid",
+        "ml_method": "kmeans",
+        "lookback_periods": {
+            "short": 24,
+            "medium": 72,
+            "long": 168
+        },
+        "thresholds": {
+            "bull": {
+                "trend_strength": 0.6,
+                "price_change": 5.0,
+                "volatility": 0.5
+            },
+            "bear": {
+                "trend_strength": 0.6,
+                "price_change": -5.0,
+                "volatility": 0.5
+            },
+            "volatile": {
+                "volatility": 1.5
+            },
+            "ranging": {
+                "trend_strength": 0.3,
+                "price_range": 3.0
+            }
+        },
+        "ml_config": {
+            "window_size": 30,
+            "n_regimes": 4,
+            "features": [
+                "return",
+                "volatility",
+                "trend_strength",
+                "rsi",
+                "macd",
+                "bb_width",
+                "adx",
+                "cci"
+            ]
+        },
+        "training_interval": 86400,
+        "min_training_samples": 100,
+        "visualization_enabled": true,
+        "primary_symbol": "BTCUSDC",
+        "primary_timeframe": "1h",
+        "service_port": 8005
+    },
+    "volume_profile": {
+        "enabled": true,
+        "num_bins": 20,
+        "value_area_pct": 0.7,
+        "update_interval": 300,
+        "delta_enabled": true,
+        "anomaly_detection": true,
+        "anomaly_params": {
+            "window": 20,
+            "std_threshold": 2.0
+        },
+        "analysis_timeframe": "5m",
+        "visualization_enabled": true,
+        "min_volume_for_analysis": 10000,
+        "store_historical_profiles": true,
+        "history_retention_days": 7,
+        "enable_historical_comparison": true
+    },
+    "neural_network": {
+        "enabled": true,
+        "model_type": "lstm",
+        "ensemble_enabled": false,
+        "prediction_intervals": ["1h", "4h", "24h"],
+        "symbols": ["BTCUSDC", "ETHUSDC", "BNBUSDC"],
+        "training_lookback_days": 60,
+        "sequence_length": 60,
+        "batch_size": 32,
+        "epochs": 100,
+        "learning_rate": 0.001,
+        "dropout_rate": 0.2,
+        "model_checkpoint_interval": 86400,
+        "features": [
+            "close", 
+            "volume", 
+            "rsi", 
+            "macd", 
+            "bb_position", 
+            "stoch_k", 
+            "williams_r", 
+            "ema_12", 
+            "ema_26"
+        ],
+        "loss_function": "mean_squared_error",
+        "optimizer": "adam",
+        "prediction_confidence_threshold": 0.6,
+        "service_port": 8010,
+        "visualization_enabled": true,
+        "auto_optimize": true,
+        "optuna_trials": 20,
+        "optimization_interval": 604800,
+        "enable_shap": true,
+        "integrate_with_regime": true,
+        "advanced_models": {
+            "transformer": {
+                "enabled": true,
+                "num_heads": 4,
+                "key_dim": 16,
+                "ff_dim": 64
+            },
+            "multitask": {
+                "enabled": true,
+                "shared_layers": 2,
+                "task_specific_layers": 1
+            },
+            "probabilistic": {
+                "enabled": true,
+                "distribution_type": "normal"
+            }
+        },
+        "model_architectures": {
+            "lstm": {
+                "layers": [64, 32],
+                "units_per_layer": [64, 32]
+            },
+            "gru": {
+                "layers": [64, 32],
+                "units_per_layer": [64, 32]
+            },
+            "bidirectional": {
+                "layers": [64, 32],
+                "units_per_layer": [64, 32]
+            },
+            "cnn_lstm": {
+                "cnn_filters": [64, 32],
+                "lstm_units": 32
+            },
+            "attention": {
+                "num_heads": 2,
+                "key_dim": 32,
+                "lstm_units": 64
+            }
+        },
+        "integration": {
+            "strategy_weight": 0.6,
+            "risk_assessment_weight": 0.4,
+            "combine_with_other_signals": true,
+            "trigger_alerts": true,
+            "market_regime_adaptation": true,
+            "feature_importance_feedback": true
+        },
+        "model_evaluation": {
+            "rolling_window_size": 30,
+            "performance_metrics": [
+                "mae",
+                "rmse",
+                "mape",
+                "r2",
+                "direction_accuracy"
+            ],
+            "threshold_metrics": {
+                "min_direction_accuracy": 0.55,
+                "max_mae_percent": 2.0
+            },
+            "evaluation_interval": 43200
+        }
+    },
+    "pattern_recognition": {
+        "enabled": true,
+        "model_type": "cnn_lstm",
+        "sequence_length": 60,
+        "analysis_interval": 300,
+        "confidence_threshold": 0.6,
+        "create_visualizations": true,
+        "service_port": 8011,
+        "pattern_detection_threshold": 0.5,
+        "integration": {
+            "trade_signal_weight": 0.4,
+            "integrate_with_other_signals": true,
+            "volume_confirmation_required": true,
+            "trigger_alerts": true
+        },
+        "supported_patterns": [
+            "head_and_shoulders",
+            "inverse_head_and_shoulders",
+            "double_top",
+            "double_bottom",
+            "ascending_triangle",
+            "descending_triangle",
+            "symmetric_triangle",
+            "rectangle",
+            "flag_bull",
+            "flag_bear",
+            "pennant",
+            "cup_and_handle",
+            "rising_wedge",
+            "falling_wedge"
+        ],
+        "model_architectures": {
+            "cnn": {
+                "num_conv_layers": 3,
+                "filters": [32, 64, 128],
+                "kernel_size": 3
+            },
+            "lstm": {
+                "num_units": 64,
+                "num_layers": 2,
+                "bidirectional": false
+            },
+            "cnn_lstm": {
+                "cnn_filters": [32, 64],
+                "kernel_size": 3,
+                "lstm_units": 64,
+                "lstm_layers": 2
+            }
+        },
+        "training": {
+            "batch_size": 32,
+            "epochs": 100,
+            "learning_rate": 0.001,
+            "early_stopping_patience": 10,
+            "validation_split": 0.2
+        }
+    },
+    "news_analysis": {
+        "enabled": true,
+        "update_interval": 300,
+        "service_port": 8012,
+        "max_news_age_hours": 24,
+        "sentiment_analysis": {
+            "vader_enabled": true,
+            "transformer_enabled": true,
+            "transformer_model": "finiteautomata/bertweet-base-sentiment-analysis",
+            "fallback_to_vader": true,
+            "sentiment_thresholds": {
+                "bullish": 0.65,
+                "bearish": 0.35
+            }
+        },
+        "entity_extraction": {
+            "enabled": true,
+            "min_entity_frequency": 2,
+            "max_entities_per_asset": 10
+        },
+        "topic_extraction": {
+            "enabled": true,
+            "num_topics": 5,
+            "min_topic_coherence": 0.3,
+            "max_topics_per_asset": 3
+        },
+        "news_sources": {
+            "cryptopanic": {
+                "enabled": true,
+                "api_key": "",
+                "endpoint": "https://cryptopanic.com/api/v1/posts/",
+                "max_results": 50,
+                "min_score": 0
+            },
+            "lunarcrush": {
+                "enabled": true,
+                "use_existing_client": true,
+                "max_news_items": 30
+            },
+            "coindesk": {
+                "enabled": true,
+                "rss_feed": "https://www.coindesk.com/arc/outboundfeeds/rss/"
+            },
+            "cointelegraph": {
+                "enabled": true,
+                "rss_feed": "https://cointelegraph.com/rss"
+            }
+        },
+        "summarization": {
+            "enabled": true,
+            "max_summary_length": 200,
+            "method": "extractive",
+            "top_n_sentences": 3
+        },
+        "market_impact": {
+            "relevance_weight": 0.3,
+            "recency_weight": 0.3,
+            "sentiment_weight": 0.4,
+            "source_weights": {
+                "cryptopanic": 0.3,
+                "lunarcrush": 0.3,
+                "coindesk": 0.2,
+                "cointelegraph": 0.2
+            },
+            "default_impact_half_life_hours": 6
+        },
+        "visualization": {
+            "enabled": true,
+            "max_datapoints": 100,
+            "chart_types": ["sentiment_timeline", "entity_network", "topic_heatmap"]
+        },
+        "monitored_symbols": ["BTC", "ETH", "BNB", "XRP", "SOL", "ADA"],
+        "advanced_features": {
+            "relevance_scoring": true,
+            "trend_detection": true,
+            "anomaly_detection": true,
+            "entity_relation_mapping": true
+        }
+    },
+    "order_book_analysis": {
+        "enabled": true,
+        "symbols": ["BTCUSDC", "ETHUSDC", "BNBUSDC", "XRPUSDC", "SOLUSDC", "ADAUSDC"],
+        "analysis_interval": 60,
+        "service_port": 8013,
+        "max_depth": 20,
+        "max_history_size": 100,
+        "aggregation_enabled": true,
+        "aggregation_interval": 300,
+        "create_visualizations": true,
+        "max_levels": 20,
+        "significant_level_threshold": 2.0,
+        "clustering_enabled": true,
+        "n_clusters": 3,
+        "smoothing_window": 3,
+        "impact_price_levels": 5,
+        "support_resistance_window": 5,
+        "min_order_size": 1000.0,
+        "imbalance_threshold": 0.2,
+        "near_threshold": 1.0,
+        "far_threshold": 5.0,
+        "large_order_multiplier": 5.0,
+        "iceberg_repeat_threshold": 3,
+        "trade_sizes": [10000, 50000, 100000, 500000, 1000000],
+        "liquidity_signal_threshold": 0.2,
+        "pressure_signal_threshold": 0.15,
+        "level_proximity_threshold": 1.0,
+        "impact_signal_threshold": 1.5,
+        "overall_signal_threshold": 0.2,
+        "integration": {
+            "trading_signal_weight": 0.4,
+            "correlation_with_price": true,
+            "integrate_with_ai_analysis": true,
+            "calibration_interval": 86400
+        },
+        "alerts": {
+            "enabled": true,
+            "liquidity_imbalance_threshold": 0.4,
+            "wall_detection_threshold": 3.0,
+            "spoofing_detection": true,
+            "signal_confidence_threshold": 0.7
+        },
+        "feature_importance": {
+            "track_predictive_power": true,
+            "metrics": ["price_movement_accuracy", "correlation", "signal_quality"],
+            "update_interval": 86400
+        },
+        "visualization_settings": {
+            "bid_color": "green",
+            "ask_color": "red",
+            "support_color": "lightgreen",
+            "resistance_color": "lightcoral",
+            "chart_height": 800,
+            "chart_width": 1200
+        }
+    },
+    "grid_trading": {
+        "enabled": true,
+        "simulation_mode": true,
+        "service_port": 8014,
+        "update_interval": 60,
+        "symbols": ["BTCUSDC", "ETHUSDC", "BNBUSDC"],
+        "grid_type": "arithmetic",
+        "num_grids": 10,
+        "grid_spread": 0.5,
+        "auto_boundaries": true,
+        "lower_boundary_pct": 5.0,
+        "upper_boundary_pct": 5.0,
+        "quantity_per_grid": 0.01,
+        "max_active_grids": 6,
+        "order_size_type": "fixed",
+        "max_total_investment": 0.2,
+        "stop_loss_enabled": true,
+        "stop_loss_pct": 10.0,
+        "volatility_lookback": 14,
+        "auto_adjust_period": 86400,
+        "adapt_to_market_regime": true,
+        "rebalance_frequency": 3600,
+        "notify_on_trade": true,
+        "ranging_num_grids": 15,
+        "ranging_lower_boundary_pct": 3.0,
+        "ranging_upper_boundary_pct": 3.0,
+        "trending_num_grids": 8,
+        "trending_lower_boundary_pct": 8.0,
+        "trending_upper_boundary_pct": 8.0,
+        "volatile_num_grids": 12,
+        "volatile_lower_boundary_pct": 6.0,
+        "volatile_upper_boundary_pct": 6.0,
+        "symbol_settings": [
+            {
+                "symbol": "BTCUSDC",
+                "quantity_per_grid": 0.001,
+                "lower_boundary_pct": 4.0,
+                "upper_boundary_pct": 4.0
+            },
+            {
+                "symbol": "ETHUSDC",
+                "quantity_per_grid": 0.01,
+                "lower_boundary_pct": 5.0,
+                "upper_boundary_pct": 5.0
+            },
+            {
+                "symbol": "BNBUSDC",
+                "quantity_per_grid": 0.1,
+                "lower_boundary_pct": 6.0,
+                "upper_boundary_pct": 6.0
+            }
+        ]
+    },
+    "arbitrage_detection": {
+        "enabled": true,
+        "simulation_mode": true,
+        "service_port": 8016,
+        "update_interval": 10,
+        "min_profit_pct": 0.5,
+        "trade_enabled": false,
+        "min_notional_usdc": 100,
+        "max_notional_usdc": 10000,
+        "min_depth_ratio": 2.0,
+        "auto_adjust_notional": true,
+        "symbol_blacklist": [],
+        "exchanges": [
+            {
+                "name": "binance",
+                "enabled": true,
+                "maker_fee": 0.001,
+                "taker_fee": 0.001,
+                "min_order_size": 10
+            }
+        ],
+        "triangle_arbitrage": {
+            "enabled": true,
+            "base_currencies": ["USDC", "USDT", "BUSD", "BTC", "ETH"],
+            "min_profit_pct": 0.3,
+            "max_exchange_steps": 3,
+            "check_balance": true,
+            "max_order_book_age_ms": 1000,
+            "min_volume_filter": 1000
+        },
+        "cross_exchange_arbitrage": {
+            "enabled": false,
+            "base_currencies": ["USDC", "USDT", "BTC"],
+            "min_profit_pct": 1.0,
+            "transfer_time_buffer_s": 60,
+            "fee_buffer_pct": 0.2,
+            "withdraw_fee_buffer": 1.1
+        },
+        "notification": {
+            "enabled": true,
+            "profit_threshold_pct": 0.5,
+            "interval_minutes": 5,
+            "summary_enabled": true,
+            "detail_level": "medium"
+        },
+        "reporting": {
+            "enabled": true,
+            "history_days": 30,
+            "opportunity_logging": true,
+            "min_log_profit_pct": 0.2,
+            "include_details": true,
+            "graph_visualization": true
+        }
+    },
+    "dca_strategy": {
+        "enabled": true,
+        "simulation_mode": true,
+        "service_port": 8015,
+        "update_interval": 60,
+        "symbols": ["BTCUSDC", "ETHUSDC", "BNBUSDC"],
+        "schedule_type": "fixed",
+        "interval_hours": 24,
+        "total_investment_period_months": 12,
+        "total_allocation": 0.3,
+        "base_order_size_usdc": 100,
+        "auto_adjust_order_size": true,
+        "min_order_size_usdc": 20,
+        "max_order_size_usdc": 500,
+        "volatility_adjustment_enabled": true,
+        "sentiment_adjustment_enabled": true,
+        "max_sentiment_impact": 0.3,
+        "price_dip_detection": true,
+        "dip_threshold_pct": 5.0,
+        "additional_dip_allocation": 0.5,
+        "max_dip_frequency_days": 7,
+        "take_profit_enabled": false,
+        "take_profit_pct": 20.0,
+        "stop_loss_enabled": false,
+        "stop_loss_pct": 30.0,
+        "weekly_dca_day": 1,
+        "monthly_dca_day": 1,
+        "adaptive_scheduling": true,
+        "scheduling_strategies": {
+            "fixed": {},
+            "market_regime_based": {
+                "bull_interval_hours": 48,
+                "bear_interval_hours": 12,
+                "crab_interval_hours": 24,
+                "volatile_interval_hours": 6
+            },
+            "value_averaging": {
+                "enabled": true,
+                "target_value_increase_pct": 5.0
+            },
+            "weighted_scheduling": {
+                "enabled": true,
+                "weight_factors": {
+                    "day_of_week": 0.3,
+                    "market_volatility": 0.4,
+                    "social_sentiment": 0.3
+                }
+            }
+        },
+        "notify_on_purchase": true,
+        "symbol_settings": [
+            {
+                "symbol": "BTCUSDC",
+                "allocation": 0.6,
+                "interval_hours": 24,
+                "base_order_size_usdc": 150
+            },
+            {
+                "symbol": "ETHUSDC",
+                "allocation": 0.3,
+                "interval_hours": 48,
+                "base_order_size_usdc": 80
+            },
+            {
+                "symbol": "BNBUSDC",
+                "allocation": 0.1,
+                "interval_hours": 72,
+                "base_order_size_usdc": 50
+            }
+        ],
+        "periodic_rebalancing": {
+            "enabled": true,
+            "rebalance_interval_days": 30,
+            "max_deviation_pct": 5.0
+        },
+        "market_condition_rules": {
+            "skip_in_extreme_volatility": true,
+            "extreme_volatility_threshold": 4.0,
+            "increase_in_bear_market": true,
+            "bear_market_adjustment": 1.5,
+            "bear_market_threshold": -20.0,
+            "reduce_in_extreme_greed": true,
+            "extreme_greed_threshold": 80
+        },
+        "reporting": {
+            "track_performance": true,
+            "performance_metrics": [
+                "total_invested",
+                "average_price",
+                "current_value",
+                "total_return",
+                "return_percentage"
+            ],
+            "detail_level": "high",
+            "include_charts": true,
+            "daily_summary": true,
+            "benchmark_index": "BTCUSDC"
+        }
+    }
+}

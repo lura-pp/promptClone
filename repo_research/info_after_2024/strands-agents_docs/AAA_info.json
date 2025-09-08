@@ -1,0 +1,15 @@
+{
+    "app.py": 1,
+    "agent_handler.py": 1,
+    "meta_tooling.py": 1,
+    "file_operations.py": 1,
+    "mcp_calculator.py": 1,
+    "weather_forecaster.py": 0,
+    "knowledge_base_agent.py": 2,
+    "math_assistant.py": 1,
+    "english_assistant.py": 1,
+    "teachers_assistant.py": 1,
+    "language_assistant.py": 1,
+    "computer_science_assistant.py": 1,
+    "no_expertise.py": 1
+}

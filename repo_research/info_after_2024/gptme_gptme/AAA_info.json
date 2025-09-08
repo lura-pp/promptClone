@@ -1,0 +1,21 @@
+{
+    "wut.py": 1,
+    "prompts.py": 2,
+    "llm_anthropic.py": 1,
+    "init_projects.py": 2,
+    "tasks.py": 1,
+    "todo.py": 2,
+    "rag.py": 1,
+    "choice.py": 1,
+    "tmux.py": 1,
+    "morph.py": 1,
+    "save.py": 1,
+    "computer.py": 1,
+    "python.py": 1,
+    "subagent.py": 1,
+    "_browser_perplexity.py": 1,
+    "patch.py": 1,
+    "action.yml": 1,
+    "gpt_todoer.py": 1,
+    "test_tools_patch.py": 1
+}

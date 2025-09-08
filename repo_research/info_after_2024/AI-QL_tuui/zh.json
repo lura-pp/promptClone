@@ -1,0 +1,129 @@
+{
+  "desc": {},
+  "dxt": {
+    "title": "桌面扩展包",
+    "name": "名称",
+    "version": "版本",
+    "description": "介绍",
+    "author": {
+      "name": "作者",
+      "email": "邮件",
+      "url": "URL"
+    },
+    "License": "许可类型",
+    "url": "主页",
+    "type": "类型",
+    "user-config": "用户配置",
+    "platform": "平台",
+    "keywords": "关键词",
+    "repository": "仓库",
+    "homepage": "主页",
+    "support": "支持",
+    "documentation": "文档",
+    "tools": "工具列表",
+    "required": "请提供必需的参数",
+    "number-range": "允许的取值范围为 {min} ~ {max}"
+  },
+  "elicitation": {
+    "title": "征询",
+    "accept": "确认",
+    "decline": "拒绝",
+    "string": {
+      "too-short": "允许的最小长度为{min}",
+      "too-long": "允许的最大长度为{max}"
+    }
+  },
+  "title": {
+    "main": "MCP 界面",
+    "chat": "聊天界面",
+    "agent": "智能体界面",
+    "setting": "设置界面",
+    "error": "未知错误"
+  },
+  "mcp": {
+    "file": "文件压缩包",
+    "init": "初始化 MCP 服务端",
+    "read": "阅读",
+    "minutes": "分钟",
+    "open": "在文件管理器中打开",
+    "updated": "MCP 服务端已更新"
+  },
+  "menu": {
+    "change-theme": "改变主题",
+    "change-language": "改变语言",
+    "increase-count": "计数 1 个增量",
+    "documentation": "文档",
+    "github": "源代码",
+    "open-file": "打开文本文件"
+  },
+  "locale": {
+    "title": "语言设置"
+  },
+  "chat": {
+    "wipe": "清理对话",
+    "reg": "重新生成",
+    "select-model": "选择模型",
+    "select-agent": "选择智能体",
+    "delete": "删除聊天历史",
+    "download": "下载聊天历史"
+  },
+  "agent": {
+    "config": "智能体配置",
+    "prompt": "提示指令",
+    "tools": "工具列表",
+    "no-tools": "尚未连接包含工具的 MCP 服务端",
+    "all": "全部工具",
+    "selected": "已选择工具",
+    "cancel": "取消",
+    "save": "保存",
+    "add": "新增智能体",
+    "reset": "重置智能体"
+  },
+  "prompt": {
+    "title": "服务端提示模板",
+    "get": "获取"
+  },
+  "sampling": {
+    "title": "采样",
+    "comp": "开始采样",
+    "reject": "拒绝采样",
+    "confirm": "确认使用采样",
+    "confirm-last": "确认使用最新采样"
+  },
+  "setting": {
+    "title-api": "API 设置",
+    "title-model": "模型参数",
+    "name": "名称",
+    "apikey": "API 密钥",
+    "dialog": "命令行调用",
+    "exec": "执行",
+    "url": "URL",
+    "path": "Path",
+    "model": "模型",
+    "advanced": "Advanced",
+    "method": "HTTP Method",
+    "stream": "Stream",
+    "mcp": "MCP工具",
+    "max-tokens-prefix": "Max Tokens Prefix",
+    "temperature": "温度",
+    "topP": "核采样",
+    "reasoning-effort": "推理负荷",
+    "auth-header": "鉴权头",
+    "auth-prefix": "鉴权前缀",
+    "config-file": "加载配置文件",
+    "add": "新增配置",
+    "reset": "重置配置"
+  },
+  "validation": {
+    "invalid-number": "必须为有效数字",
+    "number-range": "数值必须在 {min} 到 {max} 之间"
+  },
+  "snackbar": {
+    "addnew": "开始新会话",
+    "addfail": "已处于最新会话",
+    "stopped": "停止生成",
+    "parse-stream-fail": "无法解析数据流",
+    "parse-config-fail": "无法解析配置文件",
+    "copied": "已复制到剪切板"
+  }
+}

@@ -1,0 +1,15 @@
+{
+    "eli5_default.json": 1,
+    "eli5_closedbook_refusal.json": 1,
+    "expertqa_default.json": 0,
+    "eli5_refusal.json": 1,
+    "asqa_refusal.json": 0,
+    "asqa_closedbook_refusal.json": 0,
+    "qampari_default.json": 1,
+    "expertqa_refusal.json": 0,
+    "qampari_closedbook_default.json": 1,
+    "asqa_default.json": 0,
+    "qampari_closedbook_refusal.json": 1,
+    "qampari_refusal.json": 1,
+    "collect_pipeline.py": 1
+}

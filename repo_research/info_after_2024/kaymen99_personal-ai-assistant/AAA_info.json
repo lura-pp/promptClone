@@ -1,0 +1,9 @@
+{
+    "slack_agent.py": 1,
+    "calendar_agent.py": 1,
+    "researcher_agent.py": 1,
+    "notion_agent.py": 1,
+    "email_agent.py": 1,
+    "manager_agent.py": 1,
+    "search_linkedin.py": 2
+}

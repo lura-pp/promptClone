@@ -1,0 +1,129 @@
+{
+    "llm": [
+        {
+            "title": "OpenAI",
+            "llmConfig": {
+                "llmType": "openai",
+                "model": "gpt-4o",
+                "apiKey": null,
+                "baseUrl": null,
+                "apiVersion": null,
+                "asyncMode": null,
+                "embedModel": null
+            }
+        },
+        {
+            "title": "AWS Bedrock",
+            "llmConfig": {
+                "llmType": "aws_bedrock",
+                "model": "anthropic.claude-3-5-haiku-20241022-v1:0",
+                "apiKey": null,
+                "baseUrl": null,
+                "apiVersion": null,
+                "asyncMode": null,
+                "embedModel": null
+            }
+        }
+    ],
+    "handlerConfig": [
+        {
+            "title": "SQL",
+            "handlerName": "SQLHandler",
+            "attributes": {
+                "llm": "\"OpenAI\""
+            },
+            "srcPath": "superagentx_handlers.sql"
+        },
+        {
+            "title": "Csv",
+            "handlerName": "CsvHandler",
+            "attributes": null,
+            "srcPath": "superagentx_handlers.csv_cli"
+        }
+    ],
+    "engineConfig": [
+        {
+            "title": "Engine-1",
+            "handler": "SQL",
+            "llm": "OpenAI",
+            "promptTemplate": "default_prompt",
+            "tools": null,
+            "outputParser": null
+        },
+        {
+            "title": "Engine-2",
+            "handler": "Csv",
+            "llm": "AWS Bedrock",
+            "promptTemplate": "default_prompt",
+            "tools": null,
+            "outputParser": null
+        }
+    ],
+    "agentConfig": [
+        {
+            "title": "My Demo AI Agent",
+            "goal": "You're an AI Advisor",
+            "role": "Agentic AI Expert",
+            "llm": "OpenAI",
+            "promptTemplate": "default_prompt",
+            "agentId": null,
+            "name": "My Demo AI Agent",
+            "description": "",
+            "engines": [
+                "Engine-1"
+            ],
+            "outputFormat": "json",
+            "maxRetry": 0
+        },
+        {
+            "title": "CSV Writer",
+            "goal": "TO write a formatted CSV",
+            "role": "CSV Writer",
+            "llm": "AWS Bedrock",
+            "promptTemplate": "default_prompt",
+            "agentId": null,
+            "name": "CSV Writer",
+            "description": "",
+            "engines": [
+                "Engine-2"
+            ],
+            "outputFormat": "json",
+            "maxRetry": 0
+        }
+    ],
+    "pipeConfig": [
+        {
+            "title": "Pipe-1",
+            "pipeId": null,
+            "name": "superagentx pipe",
+            "description": "",
+            "agents": [
+                "My Demo AI Agent",
+                "CSV Writer"
+            ],
+            "memory": "Memory-1",
+            "stopIfGoalIsNotSatisfied": true,
+            "authToken": ""
+        }
+    ],
+    "promptTemplateConfig": [
+        {
+            "title": "default_prompt",
+            "promptType": null,
+            "systemMessage": null
+        }
+    ],
+    "appAuthToken": null,
+    "appName": "My Demo App",
+    "appType": "all",
+    "memory": [
+        {
+            "title": "Memory-1",
+            "memoryConfig": {
+                "llmClient": "OpenAI",
+                "vectorStore": null,
+                "dbPath": null
+            }
+        }
+    ]
+}

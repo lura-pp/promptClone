@@ -1,0 +1,509 @@
+name: module-planning-pixverse-lipsync-ccsdk
+
+on:
+  workflow_call:
+    inputs:
+      concept:
+        description: 'ユーザーのコンセプト'
+        required: true
+        type: string
+      branch-name:
+        description: 'ワーキングブランチ名'
+        required: true
+        type: string
+      folder-name:
+        description: 'プロジェクトフォルダ名'
+        required: true
+        type: string
+      video-model:
+        description: 'I2V動画生成モデル'
+        required: false
+        type: string
+        default: 'i2v-fal-hailuo-02-pro'
+      audio-model:
+        description: '音声生成モデル'
+        required: false
+        type: string
+        default: 't2s-fal-minimax-speech-02-turbo'
+    outputs:
+      planning-completed:
+        description: '企画完了ステータス'
+        value: ${{ jobs.planning.outputs.planning-completed }}
+      segment-matrix:
+        description: 'マトリックス戦略用セグメント配列'
+        value: ${{ jobs.planning.outputs.segment-matrix }}
+      total-segments:
+        description: 'プランニングで決定されたセグメント数'
+        value: ${{ jobs.planning.outputs.total-segments }}
+      # セグメント用出力（最大8セグメントまで対応）
+      image-prompt-1:
+        description: 'セグメント1用画像生成プロンプト'
+        value: ${{ jobs.planning.outputs.image-prompt-1 }}
+      image-prompt-2:
+        description: 'セグメント2用画像生成プロンプト'
+        value: ${{ jobs.planning.outputs.image-prompt-2 }}
+      image-prompt-3:
+        description: 'セグメント3用画像生成プロンプト'
+        value: ${{ jobs.planning.outputs.image-prompt-3 }}
+      image-prompt-4:
+        description: 'セグメント4用画像生成プロンプト'
+        value: ${{ jobs.planning.outputs.image-prompt-4 }}
+      image-prompt-5:
+        description: 'セグメント5用画像生成プロンプト'
+        value: ${{ jobs.planning.outputs.image-prompt-5 }}
+      image-prompt-6:
+        description: 'セグメント6用画像生成プロンプト'
+        value: ${{ jobs.planning.outputs.image-prompt-6 }}
+      image-prompt-7:
+        description: 'セグメント7用画像生成プロンプト'
+        value: ${{ jobs.planning.outputs.image-prompt-7 }}
+      image-prompt-8:
+        description: 'セグメント8用画像生成プロンプト'
+        value: ${{ jobs.planning.outputs.image-prompt-8 }}
+      video-concept-1:
+        description: 'セグメント1用動画コンセプト'
+        value: ${{ jobs.planning.outputs.video-concept-1 }}
+      video-concept-2:
+        description: 'セグメント2用動画コンセプト'
+        value: ${{ jobs.planning.outputs.video-concept-2 }}
+      video-concept-3:
+        description: 'セグメント3用動画コンセプト'
+        value: ${{ jobs.planning.outputs.video-concept-3 }}
+      video-concept-4:
+        description: 'セグメント4用動画コンセプト'
+        value: ${{ jobs.planning.outputs.video-concept-4 }}
+      video-concept-5:
+        description: 'セグメント5用動画コンセプト'
+        value: ${{ jobs.planning.outputs.video-concept-5 }}
+      video-concept-6:
+        description: 'セグメント6用動画コンセプト'
+        value: ${{ jobs.planning.outputs.video-concept-6 }}
+      video-concept-7:
+        description: 'セグメント7用動画コンセプト'
+        value: ${{ jobs.planning.outputs.video-concept-7 }}
+      video-concept-8:
+        description: 'セグメント8用動画コンセプト'
+        value: ${{ jobs.planning.outputs.video-concept-8 }}
+      audio-script-1:
+        description: 'セグメント1用音声スクリプト'
+        value: ${{ jobs.planning.outputs.audio-script-1 }}
+      audio-script-2:
+        description: 'セグメント2用音声スクリプト'
+        value: ${{ jobs.planning.outputs.audio-script-2 }}
+      audio-script-3:
+        description: 'セグメント3用音声スクリプト'
+        value: ${{ jobs.planning.outputs.audio-script-3 }}
+      audio-script-4:
+        description: 'セグメント4用音声スクリプト'
+        value: ${{ jobs.planning.outputs.audio-script-4 }}
+      audio-script-5:
+        description: 'セグメント5用音声スクリプト'
+        value: ${{ jobs.planning.outputs.audio-script-5 }}
+      audio-script-6:
+        description: 'セグメント6用音声スクリプト'
+        value: ${{ jobs.planning.outputs.audio-script-6 }}
+      audio-script-7:
+        description: 'セグメント7用音声スクリプト'
+        value: ${{ jobs.planning.outputs.audio-script-7 }}
+      audio-script-8:
+        description: 'セグメント8用音声スクリプト'
+        value: ${{ jobs.planning.outputs.audio-script-8 }}
+      # 音声キャラクター設定（MiniMax Voice Design用）
+      voice-character-1:
+        description: 'セグメント1用音声キャラクター設定'
+        value: ${{ jobs.planning.outputs.voice-character-1 }}
+      voice-character-2:
+        description: 'セグメント2用音声キャラクター設定'
+        value: ${{ jobs.planning.outputs.voice-character-2 }}
+      voice-character-3:
+        description: 'セグメント3用音声キャラクター設定'
+        value: ${{ jobs.planning.outputs.voice-character-3 }}
+      voice-character-4:
+        description: 'セグメント4用音声キャラクター設定'
+        value: ${{ jobs.planning.outputs.voice-character-4 }}
+      voice-character-5:
+        description: 'セグメント5用音声キャラクター設定'
+        value: ${{ jobs.planning.outputs.voice-character-5 }}
+      voice-character-6:
+        description: 'セグメント6用音声キャラクター設定'
+        value: ${{ jobs.planning.outputs.voice-character-6 }}
+      voice-character-7:
+        description: 'セグメント7用音声キャラクター設定'
+        value: ${{ jobs.planning.outputs.voice-character-7 }}
+      voice-character-8:
+        description: 'セグメント8用音声キャラクター設定'
+        value: ${{ jobs.planning.outputs.voice-character-8 }}
+    secrets:
+      anthropic_api_key:
+        description: 'Anthropic API Key'
+        required: true
+      github_pat:
+        description: 'GitHub Token'
+        required: true
+
+jobs:
+  planning:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      planning-completed: ${{ steps.planning.outputs.completed }}
+      segment-matrix: ${{ steps.planning.outputs.segment-matrix }}
+      total-segments: ${{ steps.planning.outputs.total-segments }}
+      # セグメント用出力（最大8セグメントまで対応）
+      image-prompt-1: ${{ steps.planning.outputs.image-prompt-1 }}
+      image-prompt-2: ${{ steps.planning.outputs.image-prompt-2 }}
+      image-prompt-3: ${{ steps.planning.outputs.image-prompt-3 }}
+      image-prompt-4: ${{ steps.planning.outputs.image-prompt-4 }}
+      image-prompt-5: ${{ steps.planning.outputs.image-prompt-5 }}
+      image-prompt-6: ${{ steps.planning.outputs.image-prompt-6 }}
+      image-prompt-7: ${{ steps.planning.outputs.image-prompt-7 }}
+      image-prompt-8: ${{ steps.planning.outputs.image-prompt-8 }}
+      video-concept-1: ${{ steps.planning.outputs.video-concept-1 }}
+      video-concept-2: ${{ steps.planning.outputs.video-concept-2 }}
+      video-concept-3: ${{ steps.planning.outputs.video-concept-3 }}
+      video-concept-4: ${{ steps.planning.outputs.video-concept-4 }}
+      video-concept-5: ${{ steps.planning.outputs.video-concept-5 }}
+      video-concept-6: ${{ steps.planning.outputs.video-concept-6 }}
+      video-concept-7: ${{ steps.planning.outputs.video-concept-7 }}
+      video-concept-8: ${{ steps.planning.outputs.video-concept-8 }}
+      audio-script-1: ${{ steps.planning.outputs.audio-script-1 }}
+      audio-script-2: ${{ steps.planning.outputs.audio-script-2 }}
+      audio-script-3: ${{ steps.planning.outputs.audio-script-3 }}
+      audio-script-4: ${{ steps.planning.outputs.audio-script-4 }}
+      audio-script-5: ${{ steps.planning.outputs.audio-script-5 }}
+      audio-script-6: ${{ steps.planning.outputs.audio-script-6 }}
+      audio-script-7: ${{ steps.planning.outputs.audio-script-7 }}
+      audio-script-8: ${{ steps.planning.outputs.audio-script-8 }}
+      # 音声キャラクター設定（MiniMax Voice Design用）
+      voice-character-1: ${{ steps.planning.outputs.voice-character-1 }}
+      voice-character-2: ${{ steps.planning.outputs.voice-character-2 }}
+      voice-character-3: ${{ steps.planning.outputs.voice-character-3 }}
+      voice-character-4: ${{ steps.planning.outputs.voice-character-4 }}
+      voice-character-5: ${{ steps.planning.outputs.voice-character-5 }}
+      voice-character-6: ${{ steps.planning.outputs.voice-character-6 }}
+      voice-character-7: ${{ steps.planning.outputs.voice-character-7 }}
+      voice-character-8: ${{ steps.planning.outputs.voice-character-8 }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.branch-name }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install Claude Code SDK
+        run: npm install @anthropic-ai/claude-code
+      
+      - name: Pixverseリップシンク制作計画エージェント
+        id: planning
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.anthropic_api_key }}
+        run: |
+          echo "::group::🎬 Pixverse Lipsync Planning Agent Execution"
+          echo "Starting at: $(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)"
+          
+          # 設定
+          USER_CONCEPT="${{ inputs.concept }}"
+          FOLDER_NAME="${{ inputs.folder-name }}"
+          PLANNING_DIR="$FOLDER_NAME/planning"
+          VIDEO_MODEL="${{ inputs.video-model }}"
+          AUDIO_MODEL="${{ inputs.audio-model }}"
+          
+          echo "User concept: $USER_CONCEPT"
+          echo "Planning folder: $PLANNING_DIR"
+          echo "Video model: $VIDEO_MODEL"
+          echo "Audio model: $AUDIO_MODEL"
+          
+          # 企画フォルダを事前に作成
+          if [ ! -d "$PLANNING_DIR" ]; then
+            mkdir -p "$PLANNING_DIR"
+            echo "📁 Created planning folder: $PLANNING_DIR"
+          fi
+          
+          # プロンプトの構築
+          PROMPT="あなたはPixverseリップシンク動画制作の専門企画者です。Pixverseの技術制限（動画5MB以下、音声30秒以内）を考慮して、効果的なマルチセグメント構成を企画してください。
+
+          **ユーザーの要求**: $USER_CONCEPT
+          **技術仕様**:
+          - **動画生成モデル**: $VIDEO_MODEL
+          - **音声生成モデル**: $AUDIO_MODEL
+          - **Pixverse制限**: 
+            - 動画: 5MB以下（約10-15秒の短時間動画推奨）
+            - 音声: 30秒以内（セグメントあたり20-25秒推奨）
+
+          **重要な企画タスク**:
+          1. **セグメント数の固定**:
+             - **セグメント数は1個に固定**（シンプル実装）
+             - ユーザーのコンセプト全体を1つの高品質動画として表現
+             - Pixverse制限内で最高品質を実現
+
+          2. **企画設計方針**:
+             - ユーザーのコンセプトを1つの完結した動画として企画
+             - 制限内で最大の表現力を発揮する構成
+             - シンプルで洗練された高品質コンテンツ
+
+          3. **制限内最適化**:
+             - 各動画セグメント: 10-15秒程度（5MB制限対応）
+             - 各音声セグメント: 20-25秒程度（30秒制限対応）
+             - 高画質維持のため短時間集約
+
+          4. **リップシンク品質向上**:
+             - 明瞭な発話内容と口の動きの同期を重視
+             - 音声の明瞭性とタイミングを考慮したスクリプト
+             - 顔がはっきり見える構図の動画コンセプト
+
+          **具体的タスク**:
+
+          **STEP 1: セグメント数の固定設定**:
+          セグメント数を1個に固定して企画してください：
+          
+          **厳格な制限遵守ルール**:
+          - **動画制限**: 最大5MB（安全マージンで4.5MB以下を目標）
+          - **音声制限**: 最大30秒（安全マージンで25秒以下を目標）
+          - **動画長**: 10-12秒の動画を推奨（短すぎず、制限内確実）
+          - **音声長**: 20-22秒の音声を推奨（自然な発話速度で制限内確実）
+          
+          **セグメント数固定設定**:
+          1. **TOTAL_SEGMENTS=1**に固定
+          2. ユーザーコンセプト全体を1つの動画として表現
+          3. 制限内で最高品質を実現する内容に集約
+          4. **重要**: シンプルで洗練された1本の完成度の高い動画を目指す
+
+          **STEP 2: 全体構成計画書の作成**:
+             \`\`\`bash
+             # メイン企画書を作成
+             echo \"# Pixverseリップシンク動画制作企画\" > \"$PLANNING_DIR/pixverse-lipsync-plan.md\"
+             echo \"## 全体コンセプト\" >> \"$PLANNING_DIR/pixverse-lipsync-plan.md\"
+             echo \"$USER_CONCEPT\" >> \"$PLANNING_DIR/pixverse-lipsync-plan.md\"
+             echo \"## セグメント数: 1個（シングル実装）\" >> \"$PLANNING_DIR/pixverse-lipsync-plan.md\"
+             echo \"[ユーザーコンセプト全体を1つの高品質動画として表現]\" >> \"$PLANNING_DIR/pixverse-lipsync-plan.md\"
+             echo \"## 技術制約対応\" >> \"$PLANNING_DIR/pixverse-lipsync-plan.md\"
+             echo \"- 動画制限: 5MB以下（10-12秒推奨）\" >> \"$PLANNING_DIR/pixverse-lipsync-plan.md\"
+             echo \"- 音声制限: 30秒以内（20-22秒推奨）\" >> \"$PLANNING_DIR/pixverse-lipsync-plan.md\"
+             echo \"- リップシンク最適化: 顔が明確に見える構図\" >> \"$PLANNING_DIR/pixverse-lipsync-plan.md\"
+             echo \"## 最終動画の想定長さ\" >> \"$PLANNING_DIR/pixverse-lipsync-plan.md\"
+             echo \"10-12秒の高品質動画1本\" >> \"$PLANNING_DIR/pixverse-lipsync-plan.md\"
+             
+             # セグメント数を1に固定
+             TOTAL_SEGMENTS=1
+             echo \"1\" > \"$PLANNING_DIR/total-segments.txt\"
+             \`\`\`
+
+          **STEP 3: 各セグメントの画像生成プロンプト作成**:
+             決定されたセグメント数（\$TOTAL_SEGMENTS）に基づいて、高品質な画像生成プロンプトを作成：
+             \`\`\`bash
+             # 動的にセグメント数分の画像生成プロンプトを作成
+             for i in \$(seq 1 \$TOTAL_SEGMENTS); do
+               echo \"[セグメント\$i: High-quality portrait for video generation, clear facial features, professional lighting, suitable for I2V animation]\" > \"$PLANNING_DIR/image-prompt-\$i.txt\"
+             done
+             \`\`\`
+
+          **STEP 4: 各セグメントの動画コンセプト作成**:
+             決定されたセグメント数（\$TOTAL_SEGMENTS）に基づいて、制限遵守を保証する動画コンセプトを作成：
+             \`\`\`bash
+             # 動的にセグメント数分のファイルを作成（制限遵守保証）
+             for i in \$(seq 1 \$TOTAL_SEGMENTS); do
+               echo \"[セグメント\$i: 10-12秒以内で完結する動画コンセプト、シンプルで高品質、顔がクリアに見える構図、5MB制限確実遵守]\" > \"$PLANNING_DIR/video-concept-\$i.txt\"
+             done
+             \`\`\`
+
+          **STEP 5: 各セグメントの音声スクリプト作成**:
+             決定されたセグメント数（\$TOTAL_SEGMENTS）に基づいて、制限遵守を保証する音声スクリプトを作成：
+             \`\`\`bash
+             # 動的にセグメント数分のファイルを作成（制限遵守保証）
+             for i in \$(seq 1 \$TOTAL_SEGMENTS); do
+               echo \"[セグメント\$i: 20-22秒以内（標準読み上げ速度）で読める日本語スクリプト、30秒制限確実遵守、リップシンク最適化]\" > \"$PLANNING_DIR/audio-script-\$i.txt\"
+             done
+             \`\`\`
+
+          **STEP 5.5: 各セグメントの音声キャラクター設定作成（MiniMax Voice Design用）**:
+             決定されたセグメント数（\$TOTAL_SEGMENTS）に基づいて、自然言語形式の音声キャラクター設定を作成：
+             \`\`\`bash
+             # 動的にセグメント数分の音声キャラクター設定ファイルを作成
+             for i in \$(seq 1 \$TOTAL_SEGMENTS); do
+               echo \"[セグメント\$i用音声キャラクター: 日本語に適した自然で魅力的な女性の声、感情豊かで親しみやすく温かみがある、リップシンクに最適化された明瞭で美しい発音、若々しくエネルギッシュで聞き手を惹きつける魅力的な声質]\" > \"$PLANNING_DIR/voice-character-\$i.txt\"
+             done
+             \`\`\`
+
+          **STEP 6: 制限遵守検証**:
+             \`\`\`bash
+             # 制限遵守チェックリストを作成
+             echo \"# Pixverse制限遵守チェックリスト\" > \"$PLANNING_DIR/constraint-verification.md\"
+             echo \"## 各セグメントの制限チェック\" >> \"$PLANNING_DIR/constraint-verification.md\"
+             for i in \$(seq 1 \$TOTAL_SEGMENTS); do
+               echo \"### セグメント\$i\" >> \"$PLANNING_DIR/constraint-verification.md\"
+               echo \"- [ ] 動画長: 10-12秒（5MB制限内確実）\" >> \"$PLANNING_DIR/constraint-verification.md\"
+               echo \"- [ ] 音声長: 20-22秒（30秒制限内確実）\" >> \"$PLANNING_DIR/constraint-verification.md\"
+               echo \"- [ ] コンテンツ: シンプルで高品質\" >> \"$PLANNING_DIR/constraint-verification.md\"
+               echo \"\" >> \"$PLANNING_DIR/constraint-verification.md\"
+             done
+             echo \"## 全体検証\" >> \"$PLANNING_DIR/constraint-verification.md\"
+             echo \"- [ ] 全セグメントがPixverse制限内\" >> \"$PLANNING_DIR/constraint-verification.md\"
+             echo \"- [ ] 安全マージン確保（動画4.5MB以下、音声25秒以下目標）\" >> \"$PLANNING_DIR/constraint-verification.md\"
+             \`\`\`
+
+          **厳格な品質基準**:
+          - **動画コンセプト**: 10-12秒で完結（5MB制限確実遵守）、シンプル構図、顔表情重視
+          - **音声スクリプト**: 20-22秒で読み切り（30秒制限確実遵守）、自然な日本語、明瞭発音
+          - **制限遵守**: 全セグメントで安全マージン確保（動画4.5MB以下、音声25秒以下目標）
+          - **リップシンク適性**: 口の動きと音声の完璧同期を最優先
+
+          **絶対遵守事項**:
+          - **必須**: Pixverse制限を絶対に超えない（動画5MB、音声30秒）
+          - **推奨**: 安全マージンを必ず確保（動画4.5MB以下、音声25秒以下）
+          - **原則**: 迷った場合は制限遵守を最優先（品質より制約優先）
+          - **検証**: 各セグメントの制限チェックを必ず実施
+
+          **必須出力ファイル**:
+          1. pixverse-lipsync-plan.md - 全体企画書（制限遵守計画含む）
+          2. total-segments.txt - 決定されたセグメント数
+          3. image-prompt-[1-N].txt - 各セグメントの画像生成プロンプト（英語、高品質）
+          4. video-concept-[1-N].txt - 各セグメントの動画コンセプト（制限遵守保証）
+          5. audio-script-[1-N].txt - 各セグメントの音声スクリプト（制限遵守保証）
+          6. voice-character-[1-N].txt - 各セグメントの音声キャラクター設定（MiniMax Voice Design用、自然言語形式）
+          7. constraint-verification.md - 制限遵守検証チェックリスト
+
+          **制限遵守保証プロセス**: 
+          1. **分析**: コンセプトを詳細分析し、Pixverse制限内で実現可能なセグメント数を決定
+          2. **設計**: 各セグメントが確実に制限内に収まるよう安全マージン付きで設計
+          3. **検証**: 制限遵守チェックリストで全セグメントを検証
+          4. **出力**: 制限遵守を保証した企画ファイルをGitHub Outputsに出力
+
+          **T2I画像生成要件**:
+          - 各セグメント用の高品質画像生成プロンプトを作成
+          - 英語プロンプトで詳細な視覚的描写を記述
+          - リップシンク動画に適した人物の顔がクリアに見える画像を生成
+          - I2V動画生成に最適化された構図とライティングを指定
+          
+          **最重要**: Pixverse制限（動画5MB、音声30秒）を絶対に超えないことを最優先として企画してください。"
+          
+          echo "🚀 Starting Pixverse Lipsync Planning Agent Claude Code CLI..."
+          echo "📝 Prompt length: ${#PROMPT}"
+          
+          # Claude Code CLIの実行
+          npx @anthropic-ai/claude-code \
+            --allowedTools "Read,Write,Edit,Bash" \
+            --max-turns 30 \
+            --verbose \
+            --permission-mode "acceptEdits" \
+            -p "$PROMPT" || {
+              echo "::error::❌ Claude Code CLI execution failed"
+              exit 1
+            }
+          
+          # 生成された企画の確認と出力設定
+          echo ""
+          echo "📋 Checking generated planning files..."
+          if [ -d "$PLANNING_DIR" ]; then
+            echo "::notice::📁 Planning directory contents:"
+            ls -la "$PLANNING_DIR"
+            
+            # 決定されたセグメント数を読み取り
+            if [ -f "$PLANNING_DIR/total-segments.txt" ]; then
+              TOTAL_SEGMENTS=$(cat "$PLANNING_DIR/total-segments.txt")
+              echo "::notice::📊 Determined total segments: $TOTAL_SEGMENTS"
+              echo "total-segments=$TOTAL_SEGMENTS" >> $GITHUB_OUTPUT
+            else
+              echo "::error::❌ total-segments.txt not found"
+              exit 1
+            fi
+            
+            # 各セグメントの出力を設定
+            for i in $(seq 1 $TOTAL_SEGMENTS); do
+              IMAGE_PROMPT_FILE="$PLANNING_DIR/image-prompt-${i}.txt"
+              VIDEO_CONCEPT_FILE="$PLANNING_DIR/video-concept-${i}.txt"
+              AUDIO_SCRIPT_FILE="$PLANNING_DIR/audio-script-${i}.txt"
+              
+              if [ -f "$IMAGE_PROMPT_FILE" ]; then
+                IMAGE_PROMPT=$(cat "$IMAGE_PROMPT_FILE" | tr '\n' ' ')
+                echo "::notice::🎨 Image prompt $i: ${IMAGE_PROMPT:0:100}..."
+                echo "image-prompt-${i}=$IMAGE_PROMPT" >> $GITHUB_OUTPUT
+              else
+                echo "::warning::⚠️ Image prompt file not found: $IMAGE_PROMPT_FILE"
+                echo "image-prompt-${i}=" >> $GITHUB_OUTPUT
+              fi
+              
+              if [ -f "$VIDEO_CONCEPT_FILE" ]; then
+                VIDEO_CONCEPT=$(cat "$VIDEO_CONCEPT_FILE" | tr '\n' ' ')
+                echo "::notice::🎬 Video concept $i: ${VIDEO_CONCEPT:0:100}..."
+                echo "video-concept-${i}=$VIDEO_CONCEPT" >> $GITHUB_OUTPUT
+              else
+                echo "::warning::⚠️ Video concept file not found: $VIDEO_CONCEPT_FILE"
+                echo "video-concept-${i}=" >> $GITHUB_OUTPUT
+              fi
+              
+              if [ -f "$AUDIO_SCRIPT_FILE" ]; then
+                AUDIO_SCRIPT=$(cat "$AUDIO_SCRIPT_FILE" | tr '\n' ' ')
+                echo "::notice::🎤 Audio script $i: ${AUDIO_SCRIPT:0:100}..."
+                echo "audio-script-${i}=$AUDIO_SCRIPT" >> $GITHUB_OUTPUT
+              else
+                echo "::warning::⚠️ Audio script file not found: $AUDIO_SCRIPT_FILE"
+                echo "audio-script-${i}=" >> $GITHUB_OUTPUT
+              fi
+              
+              VOICE_CHARACTER_FILE="$PLANNING_DIR/voice-character-${i}.txt"
+              if [ -f "$VOICE_CHARACTER_FILE" ]; then
+                VOICE_CHARACTER=$(cat "$VOICE_CHARACTER_FILE" | tr '\n' ' ')
+                echo "::notice::🎭 Voice character $i: ${VOICE_CHARACTER:0:100}..."
+                echo "voice-character-${i}=$VOICE_CHARACTER" >> $GITHUB_OUTPUT
+              else
+                echo "::warning::⚠️ Voice character file not found: $VOICE_CHARACTER_FILE"
+                echo "voice-character-${i}=" >> $GITHUB_OUTPUT
+              fi
+            done
+            
+            # マトリックス戦略用のセグメント配列を作成
+            SEGMENTS_ARRAY="["
+            for i in $(seq 1 $TOTAL_SEGMENTS); do
+              if [ $i -gt 1 ]; then
+                SEGMENTS_ARRAY="${SEGMENTS_ARRAY},"
+              fi
+              SEGMENTS_ARRAY="${SEGMENTS_ARRAY}${i}"
+            done
+            SEGMENTS_ARRAY="${SEGMENTS_ARRAY}]"
+            echo "::notice::📊 Matrix segments: $SEGMENTS_ARRAY"
+            echo "segment-matrix=$SEGMENTS_ARRAY" >> $GITHUB_OUTPUT
+            
+            echo "completed=true" >> $GITHUB_OUTPUT
+            
+          else
+            echo "::error::❌ Planning directory not found"
+            echo "completed=false" >> $GITHUB_OUTPUT
+            exit 1
+          fi
+          
+          echo "::endgroup::"
+      
+      - name: Commit and push planning
+        env:
+          GH_TOKEN: ${{ secrets.github_pat }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ${{ inputs.folder-name }}/
+          if git diff --cached --quiet; then
+            echo "No planning to commit"
+          else
+            git commit -m "Add Pixverse lipsync planning: ${{ inputs.concept }}
+            
+            🤖 Generated with [Claude Code](https://claude.ai/code)
+            
+            Co-Authored-By: Claude <noreply@anthropic.com>"
+            # 並列実行での競合を回避するためのリトライ処理
+            for i in {1..3}; do
+              git pull --rebase origin ${{ inputs.branch-name }} || true
+              if git push origin ${{ inputs.branch-name }}; then
+                echo "✅ Push successful on attempt $i"
+                break
+              else
+                echo "⚠️ Push failed on attempt $i, retrying..."
+                # ランダムな待機時間（1-5秒）
+                sleep $((RANDOM % 5 + 1))
+              fi
+            done
+          fi

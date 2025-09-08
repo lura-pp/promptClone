@@ -1,0 +1,10 @@
+{
+    "03_browser_agent_loop.py": 2,
+    "claude.py": 1,
+    "openai.py": 1,
+    "base.py": 1,
+    "response_agent.py": 1,
+    "server.py": 2,
+    "test_task.json": 1,
+    "2048_taskconfigs.json": 10
+}

@@ -1,0 +1,1493 @@
+{
+  "country": {
+    "name": "United States",
+    "code": "US"
+  },
+  "t": {
+    "metadata": {
+      "title": "Decentralized Search for Everyone",
+      "description": "Search on multiple Web sources and AI agents simultaneously."
+    },
+    "feedback": {
+      "title": "Send feedback",
+      "url": "https://forms.gle/US69JvUT1qxYkiF58"
+    },
+    "welcome": {
+      "goodMorning": "Good morning",
+      "goodEvening": "Good afternoon",
+      "goodNight": "Good evening"
+    },
+    "voice": {
+      "voice": "Voice",
+      "speak": "Speak",
+      "allow": "Waiting..."
+    },
+    "widgetProtection": {
+      "title": "Protection",
+      "description": "You can check the reputation of the selected search source.",
+      "source": "Source",
+      "carbon": "Carbon",
+      "security": "Security",
+      "privacy": "Privacy"
+    },
+    "copyright": "Open Source Software made by",
+    "about": "About",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "donate": "Donate",
+    "accept": "Accept",
+    "learnMore": "Meet Findto",
+    "viewNearbyPlaces": "View nearby places",
+    "openApp": "Try Findto",
+    "placeholder": "Search on",
+    "search": "Search",
+    "clear": "Clear",
+    "powered": "Powered by",
+    "settings": "Settings",
+    "theme": "Theme",
+    "language": "Language",
+    "contribute": "Contribute",
+    "explore": "Explore",
+    "trends": "Trending",
+    "stories": "Stories",
+    "categories": "Modes",
+    "category": "Mode",
+    "warnings": {
+      "cookies": "Findto uses cookies. We respect your privacy and do not store personal information.",
+      "torrent": "Warning: The Torrent protocol is legal and used for sharing files. However, downloading copyrighted content without permission may violate the DMCA law of the United States of America. Avoid legal consequences. Follow the laws.",
+      "darknet": "Warning: The Darknet is legal and used by researchers, journalists, and people in censored regions or under mass surveillance. Access it responsibly. Avoid scams, phishing, and illegal activities. Use a special browser, like Tor Browser, to open .onion protocol sites."
+    }
+  },
+  "categories": [
+    {
+      "name": "Home",
+      "active": true,
+      "data": [
+        {
+          "name": "Google",
+          "action": "https://www.google.com/search?q="
+        },
+        {
+          "name": "Bing",
+          "action": "https://www.bing.com/search?q="
+        },
+        {
+          "name": "DuckDuckGo",
+          "action": "https://duckduckgo.com/?q="
+        },
+        {
+          "name": "ChatGPT",
+          "action": "https://chatgpt.com/?q="
+        },
+        {
+          "name": "Copilot",
+          "action": "https://copilot.microsoft.com/?q="
+        },
+        {
+          "name": "Perplexity",
+          "action": "https://www.perplexity.ai/?q="
+        },
+        {
+          "name": "YouTube",
+          "action": "https://www.youtube.com/results?search_query="
+        },
+        {
+          "name": "Reddit",
+          "action": "https://www.reddit.com/search?q="
+        },
+        {
+          "name": "X",
+          "action": "https://x.com/search?src=typed_query&q="
+        },
+        {
+          "name": "TikTok",
+          "action": "https://www.tiktok.com/search?q="
+        },
+        {
+          "name": "Instagram",
+          "action": "https://www.instagram.com/explore/tags/"
+        },
+        {
+          "name": "LinkedIn",
+          "action": "https://www.linkedin.com/search/results/index/?keywords="
+        },
+        {
+          "name": "Pinterest",
+          "action": "https://br.pinterest.com/search/pins/?q="
+        },
+        {
+          "name": "Amazon",
+          "action": "https://www.amazon.com.br/s?k=",
+          "additional": "&tag=lucasmdev0d-20"
+        },
+        {
+          "name": "Temu",
+          "action": "https://www.temu.com/search_result.html?search_key="
+        },
+        {
+          "name": "Walmart",
+          "action": "https://www.walmart.com/search/?query="
+        },
+        {
+          "name": "Ebay",
+          "action": "https://www.ebay.com/sch/i.html?_nkw="
+        },
+        {
+          "name": "CNN",
+          "action": "https://edition.cnn.com/search?q="
+        },
+        {
+          "name": "NY Times",
+          "action": "https://www.nytimes.com/search?query="
+        },
+        {
+          "name": "USA.GOV",
+          "action": "https://search.usa.gov/search?query=",
+          "additional": "&affiliate=usagov_all_gov"
+        }
+      ]
+    },
+    {
+      "name": "AI",
+      "active": true,
+      "description": "Search across AI tools like ChatGPT, Copilot, Grok, Perplexity, DeepSeek, Claude, and more.",
+      "data": [
+        {
+          "name": "ChatGPT",
+          "action": "https://chatgpt.com/?q="
+        },
+        {
+          "name": "Copilot",
+          "action": "https://copilot.microsoft.com/?q="
+        },
+        {
+          "name": "Perplexity",
+          "action": "https://www.perplexity.ai/?q="
+        },
+        {
+          "name": "Grok",
+          "action": "https://grok.com/?q="
+        },
+        {
+          "name": "Claude",
+          "action": "https://claude.ai/new?q="
+        },
+        {
+          "name": "You",
+          "action": "https://you.com/search?fromSearchBar=true&tbm=youchat&q="
+        },
+        {
+          "name": "Mistral",
+          "action": "https://chat.mistral.ai/chat?q="
+        },
+        {
+          "name": "DeepSeek",
+          "action": "https://chat.deepseek.com/?q="
+        },
+        {
+          "name": "Gemini",
+          "action": "https://gemini.google.com/app?q="
+        },
+        {
+          "name": "Meta AI",
+          "action": "https://www.meta.ai/?q="
+        },
+        {
+          "name": "Phind",
+          "action": "https://www.phind.com/agent?q="
+        },
+        {
+          "name": "iAsk",
+          "action": "https://iask.ai/?mode=question&q="
+        },
+        {
+          "name": "Adobe Firefly",
+          "action": "https://firefly.adobe.com/generate/images?prompt="
+        },
+        {
+          "name": "Qwen",
+          "action": "https://chat.qwenlm.ai/?q="
+        },
+        {
+          "name": "Cohere",
+          "action": "https://coral.cohere.com/?q="
+        },
+        {
+          "name": "Falcon",
+          "action": "https://chat.falconllm.tii.ae/?q="
+        },
+        {
+          "name": "LibreChat",
+          "action": "https://librechat-librechat.hf.space/c/new?q="
+        }
+      ]
+    },
+    {
+      "name": "Web",
+      "active": true,
+      "description": "Search across web search engines like Google, Bing, DuckDuckGo, Brave, Yahoo, and more.",
+      "data": [
+        {
+          "name": "Google",
+          "action": "https://www.google.com/search?q="
+        },
+        {
+          "name": "Bing",
+          "action": "https://www.bing.com/search?q="
+        },
+        {
+          "name": "DuckDuckGo",
+          "action": "https://duckduckgo.com/?q="
+        },
+        {
+          "name": "Brave",
+          "action": "https://search.brave.com/search?q="
+        },
+        {
+          "name": "Startpage",
+          "action": "https://www.startpage.com/do/asearch?query="
+        },
+        {
+          "name": "Yahoo",
+          "action": "https://br.search.yahoo.com/search?p="
+        },
+        {
+          "name": "Qwant",
+          "action": "https://www.qwant.com/search?q="
+        },
+        {
+          "name": "Yandex",
+          "action": "https://www.yandex.com/search/?text="
+        },
+        {
+          "name": "Baidu",
+          "action": "https://www.baidu.com/s?wd="
+        },
+        {
+          "name": "You",
+          "action": "https://you.com/search?q="
+        },
+        {
+          "name": "Ecosia",
+          "action": "https://www.ecosia.org/search?q="
+        },
+        {
+          "name": "SearXNG",
+          "action": "https://opnxng.com/search?q="
+        },
+        {
+          "name": "Info",
+          "action": "https://www.info.com/serp?q="
+        },
+        {
+          "name": "Swisscows",
+          "action": "https://swisscows.com/web?query="
+        },
+        {
+          "name": "Mojeek",
+          "action": "https://www.mojeek.com/search?q="
+        },
+        {
+          "name": "Gibiru",
+          "action": "https://gibiru.com/results.html?q="
+        },
+        {
+          "name": "Presearch",
+          "action": "https://presearch.com/search?q="
+        },
+        {
+          "name": "Yep",
+          "action": "https://yep.com/web?q="
+        }
+      ]
+    },
+    {
+      "name": "Social",
+      "active": true,
+      "description": "Search on social media platforms like X, Reddit, TikTok, Instagram, Facebook, LinkedIn, and more.",
+      "data": [
+        {
+          "name": "X",
+          "action": "https://x.com/search?src=typed_query&q="
+        },
+        {
+          "name": "Reddit",
+          "action": "https://www.reddit.com/search?q="
+        },
+        {
+          "name": "TikTok",
+          "action": "https://www.tiktok.com/search?q="
+        },
+        {
+          "name": "Instagram",
+          "action": "https://www.instagram.com/explore/tags/"
+        },
+        {
+          "name": "Facebook",
+          "action": "https://www.facebook.com/public?query="
+        },
+        {
+          "name": "LinkedIn",
+          "action": "https://www.linkedin.com/search/results/index/?keywords="
+        },
+        {
+          "name": "Medium",
+          "action": "https://medium.com/search?q="
+        },
+        {
+          "name": "Threads",
+          "action": "https://www.threads.net/search/?q="
+        },
+        {
+          "name": "Twitch",
+          "action": "https://www.twitch.tv/search?term="
+        },
+        {
+          "name": "Bluesky",
+          "action": "https://bsky.app/search?q="
+        },
+        {
+          "name": "Discord",
+          "action": "https://discord.com/guild-discovery?query="
+        },
+        {
+          "name": "Snapchat",
+          "action": "https://story.snapchat.com/search?q="
+        },
+        {
+          "name": "Quora",
+          "action": "https://www.quora.com/search?q="
+        },
+        {
+          "name": "Tumblr",
+          "action": "https://www.tumblr.com/search/"
+        },
+        {
+          "name": "Mastodon",
+          "action": "https://mastodon.social/search?q="
+        },
+        {
+          "name": "Meetup",
+          "action": "https://www.meetup.com/find/?keywords="
+        },
+        {
+          "name": "Substack",
+          "action": "https://substack.com/search/"
+        },
+        {
+          "name": "VK",
+          "action": "https://vk.com/search?q="
+        },
+        {
+          "name": "Myspace",
+          "action": "https://myspace.com/search?q="
+        }
+      ]
+    },
+    {
+      "name": "News",
+      "active": true,
+      "description": "Search news on CNN, NY Times, Reuters, BBC, The Guardian, Forbes, Time, CNBC, and more.",
+      "data": [
+        {
+          "name": "Google News",
+          "action": "https://news.google.com/search?q="
+        },
+        {
+          "name": "CNN",
+          "action": "https://edition.cnn.com/search?q="
+        },
+        {
+          "name": "NY Times",
+          "action": "https://www.nytimes.com/search?query="
+        },
+        {
+          "name": "BBC",
+          "action": "https://www.bbc.co.uk/search?q="
+        },
+        {
+          "name": "Reuters",
+          "action": "https://www.reuters.com/site-search/?query="
+        },
+        {
+          "name": "WSJ",
+          "action": "https://www.wsj.com/search?query="
+        },
+        {
+          "name": "Bloomberg",
+          "action": "https://www.bloomberg.com/search?query="
+        },
+        {
+          "name": "CNBC",
+          "action": "https://www.cnbc.com/search/?query="
+        },
+        {
+          "name": "The Guardian",
+          "action": "https://www.google.co.uk/search?as_sitesearch=www.theguardian.com&q="
+        },
+        {
+          "name": "AP",
+          "action": "https://www.ap.org/?s="
+        },
+        {
+          "name": "Forbes",
+          "action": "https://www.forbes.com/search/?q="
+        },
+        {
+          "name": "Financial Times",
+          "action": "https://www.ft.com/search?q="
+        },
+        {
+          "name": "Economist",
+          "action": "https://www.economist.com/search?q="
+        },
+        {
+          "name": "Washington Post",
+          "action": "https://www.washingtonpost.com/search/?query="
+        },
+        {
+          "name": "Time",
+          "action": "https://time.com/search/?q="
+        },
+        {
+          "name": "Newsweek",
+          "action": "https://search.newsweek.com/?q="
+        },
+        {
+          "name": "Vox",
+          "action": "https://www.vox.com/search?q="
+        },
+        {
+          "name": "Aljazeera",
+          "action": "https://www.aljazeera.com/search/?q="
+        },
+        {
+          "name": "AFP",
+          "action": "https://factcheck.afp.com/fact-checking-search-results?search_api_fulltext="
+        },
+        {
+          "name": "DW",
+          "action": "https://www.dw.com/search/?item="
+        },
+        {
+          "name": "Feedly",
+          "action": "https://feedly.com/i/search/"
+        },
+        {
+          "name": "Flipboard",
+          "action": "https://flipboard.com/search/"
+        }
+      ],
+      "youtube_channels": [
+        {
+          "id": "UCupvZG-5ko_eiXAupbDfxWw",
+          "title": "CNN"
+        },
+        {
+          "id": "UCqnbDFdCpuN8CMEg0VuEBqA",
+          "title": "nytimes"
+        },
+        {
+          "id": "UCQXHTFnQYFTqN0MqmNh9EIA",
+          "title": "BBCWorldService"
+        },
+        {
+          "id": "UCUMZ7gohGI9HcU9VNsr2FJQ",
+          "title": "business"
+        },
+        {
+          "id": "UC8Su5vZCXWRag13H53zWVwA",
+          "title": "TIME"
+        },
+        {
+          "id": "UChqUTb7kYRX8-EiaN3XFrSQ",
+          "title": "Reuters"
+        },
+        {
+          "id": "UC2a35q7eyzkfoIusBzdH4Hw",
+          "title": "NewsweekMag"
+        },
+        {
+          "id": "UCLXo7UDZvByw2ixzpQCufnA",
+          "title": "Vox"
+        },
+        {
+          "id": "UCHpw8xwDNhU9gdohEcJu4aA",
+          "title": "theGuardian"
+        },
+        {
+          "id": "UCIALMKvObZNtJ6AmdCLP7Lg",
+          "title": "markets"
+        },
+        {
+          "id": "UCvJJ_dzjViJCoLf5uKUTwoA",
+          "title": "CNBC"
+        },
+        {
+          "id": "UCBi2mrWuNuyYy4gbM6fU18Q",
+          "title": "ABCNews"
+        },
+        {
+          "id": "UCeY0bbntWzzVIaj2z3QigXg",
+          "title": "NBCNews"
+        },
+        {
+          "id": "UC52X5wxOL_s5yw0dQk7NtgA",
+          "title": "AssociatedPress"
+        },
+        {
+          "id": "UCNye-wNBqNL5ZzHSJj3l8Bg",
+          "title": "aljazeeraenglish"
+        },
+        {
+          "id": "UCSrZ3UV4jOidv8ppoVuvW9Q",
+          "title": "euronews"
+        }
+      ]
+    },
+    {
+      "name": "Videos",
+      "active": true,
+      "description": "Search videos on YouTube, Twitch, IMDb, Netflix, Prime Video, Disney+, HBO Max, and more.",
+      "data": [
+        {
+          "name": "YouTube",
+          "action": "https://www.youtube.com/results?search_query="
+        },
+        {
+          "name": "JustWatch",
+          "action": "https://www.justwatch.com/us/search?q="
+        },
+        {
+          "name": "Netflix",
+          "action": "https://www.netflix.com/search?q="
+        },
+        {
+          "name": "Prime Video",
+          "action": "https://www.primevideo.com/region/na/search/?phrase="
+        },
+        {
+          "name": "Disney+",
+          "action": "https://disneyplus.com/?q="
+        },
+        {
+          "name": "HBO Max",
+          "action": "https://play.hbomax.com/search?q="
+        },
+        {
+          "name": "Apple TV+",
+          "action": "https://tv.apple.com/search?term="
+        },
+        {
+          "name": "MUBI",
+          "action": "https://mubi.com/search/films?query="
+        },
+        {
+          "name": "Hulu",
+          "action": "https://www.hulu.com/search?q="
+        },
+        {
+          "name": "Paramount+",
+          "action": "https://www.paramountplus.com/search?q="
+        },
+        {
+          "name": "Crunchyroll",
+          "action": "https://www.crunchyroll.com/pt-br/search?q="
+        },
+        {
+          "name": "Plex",
+          "action": "https://app.plex.tv/desktop#!/search?query="
+        },
+        {
+          "name": "Letterboxd",
+          "action": "https://letterboxd.com/search/"
+        },
+        {
+          "name": "IMDb",
+          "action": "https://www.imdb.com/find/?q="
+        },
+        {
+          "name": "TMDB",
+          "action": "https://www.themoviedb.org/search?query="
+        },
+        {
+          "name": "Dailymotion",
+          "action": "https://www.dailymotion.com/search/"
+        },
+        {
+          "name": "Vimeo",
+          "action": "https://vimeo.com/search?q="
+        },
+        {
+          "name": "TED",
+          "action": "https://www.ted.com/search?q="
+        }
+      ],
+      "youtube_channels": [
+        {
+          "id": "UCMawOL0n6QekxpuVanT_KRA",
+          "title": "Fandango"
+        },
+        {
+          "id": "UC_vz6SvmIkYs1_H3Wv2SKlg",
+          "title": "imdb"
+        },
+        {
+          "id": "UCi8e0iOVk1fEOogdfu4YgfA",
+          "title": "RottenTomatoesTRAILERS"
+        },
+        {
+          "id": "UCgRQHK8Ttr1j9xCEpCAlgbQ",
+          "title": "variety"
+        },
+        {
+          "id": "UCWOA1ZGywLbqmigxE4Qlvuw",
+          "title": "Netflix"
+        },
+        {
+          "id": "UCQJWtTnAHhEG5w4uN0udnUQ",
+          "title": "PrimeVideo"
+        },
+        {
+          "id": "UCIrgJInjLS2BhlHOMDW7v0g",
+          "title": "disneyplus"
+        },
+        {
+          "id": "UC1Myj674wRVXB9I4c6Hm5zA",
+          "title": "AppleTV"
+        },
+        {
+          "id": "UCx-KWLTKlB83hDI6UKECtJQ",
+          "title": "StreamOnMax"
+        },
+        {
+          "id": "UCn8zNIfYAQNdrFRrr8oibKw",
+          "title": "VICE"
+        }
+      ]
+    },
+    {
+      "name": "Image",
+      "active": true,
+      "description": "Search images on Pinterest, Unsplash, GIPHY, Flickr, Pexels, and more.",
+      "data": [
+        {
+          "name": "Pinterest",
+          "action": "https://pinterest.com/search/pins/?q="
+        },
+        {
+          "name": "Unsplash",
+          "action": "https://unsplash.com/s/photos/"
+        },
+        {
+          "name": "GIPHY",
+          "action": "https://giphy.com/search/"
+        },
+        {
+          "name": "Flickr",
+          "action": "https://www.flickr.com/search/?text="
+        },
+        {
+          "name": "Pexels",
+          "action": "https://www.pexels.com/search/"
+        },
+        {
+          "name": "Openverse",
+          "action": "https://openverse.org/search/?q="
+        },
+        {
+          "name": "Freepik",
+          "action": "https://www.freepik.com/search?query="
+        },
+        {
+          "name": "Pixabay",
+          "action": "https://pixabay.com/photos/search/"
+        },
+        {
+          "name": "Adobe Stock",
+          "action": "https://stock.adobe.com/search?k="
+        },
+        {
+          "name": "Getty Images",
+          "action": "https://www.gettyimages.com/photos/"
+        },
+        {
+          "name": "Shutterstock",
+          "action": "https://www.shutterstock.com/search/"
+        },
+        {
+          "name": "500px",
+          "action": "https://500px.com/search?q="
+        },
+        {
+          "name": "Imgur",
+          "action": "https://imgur.com/search?q="
+        },
+        {
+          "name": "DeviantArt",
+          "action": "https://www.deviantart.com/?q="
+        },
+        {
+          "name": "Dribbble",
+          "action": "https://dribbble.com/search?q="
+        },
+        {
+          "name": "Behance",
+          "action": "https://www.behance.net/search?search="
+        }
+      ]
+    },
+    {
+      "name": "Music",
+      "active": true,
+      "description": "Search across music platforms like Spotify, Apple Music, SoundCloud, YouTube Music, Amazon Music, Deezer, and more.",
+      "data": [
+        {
+          "name": "Spotify",
+          "action": "https://open.spotify.com/search/"
+        },
+        {
+          "name": "Apple Music",
+          "action": "https://music.apple.com/search?term="
+        },
+        {
+          "name": "SoundCloud",
+          "action": "https://soundcloud.com/search?q="
+        },
+        {
+          "name": "YouTube Music",
+          "action": "https://music.youtube.com/search?q="
+        },
+        {
+          "name": "Amazon Music",
+          "action": "https://music.amazon.com/search/"
+        },
+        {
+          "name": "Deezer",
+          "action": "https://www.deezer.com/search/"
+        },
+        {
+          "name": "TIDAL",
+          "action": "https://listen.tidal.com/search?q="
+        },
+        {
+          "name": "Pandora",
+          "action": "https://www.pandora.com/search/"
+        },
+        {
+          "name": "iHeart",
+          "action": "https://www.iheart.com/search/?q="
+        },
+        {
+          "name": "TuneIn",
+          "action": "https://tunein.com/search/?query="
+        },
+        {
+          "name": "Lastfm",
+          "action": "https://www.last.fm/search?q="
+        },
+        {
+          "name": "Discogs",
+          "action": "https://www.discogs.com/search/?q="
+        },
+        {
+          "name": "Genius",
+          "action": "https://genius.com/search?q="
+        },
+        {
+          "name": "Musixmatch",
+          "action": "https://www.musixmatch.com/search?query="
+        },
+        {
+          "name": "Bandcamp",
+          "action": "https://bandcamp.com/search?q="
+        },
+        {
+          "name": "Hype Machine",
+          "action": "http://hypem.com/search/"
+        },
+        {
+          "name": "Audius",
+          "action": "https://audius.co/search/?q="
+        }
+      ],
+      "youtube_channels": [
+        {
+          "id": "UC7kI8WjpCfFoMSNDuRh_4lA",
+          "title": "pitchfork"
+        },
+        {
+          "id": "UC4eYXhJI4-7wSWc8UNRwD4A",
+          "title": "nprmusic"
+        },
+        {
+          "id": "UCRMqQWxCWE0VMvtUElm-rEA",
+          "title": "Spotify"
+        },
+        {
+          "id": "UCBv7HEHuVlNAELGi5XJd85Q",
+          "title": "AppleMusic"
+        },
+        {
+          "id": "UCwaAZDbtjUxxo_38V_dG7Bg",
+          "title": "deezerglobal"
+        },
+        {
+          "id": "UC-JblcinswY50lrUdSaRNEg",
+          "title": "rollingstone"
+        },
+        {
+          "id": "UCZtDUmC3W7j25XHZWFT_XgQ",
+          "title": "BBCMusic"
+        },
+        {
+          "id": "UCyFZMEnm1il5Wv3a6tPscbA",
+          "title": "genius"
+        },
+        {
+          "id": "UCH_TWswNlSRz9LtnpWOmA2Q",
+          "title": "altpress"
+        },
+        {
+          "id": "UCsVcseUYbYjldc-XgcsiEbg",
+          "title": "Billboard"
+        }
+      ]
+    },
+    {
+      "name": "Shopping",
+      "active": true,
+      "description": "Search products on Amazon, eBay, Walmart, Best Buy, Etsy,Temu, and more.",
+      "data": [
+        {
+          "name": "Amazon",
+          "action": "https://www.amazon.com/s?k=",
+          "additional": "&tag=lucasmdev0d-20"
+        },
+        {
+          "name": "Ebay",
+          "action": "https://www.ebay.com/sch/i.html?_nkw="
+        },
+        {
+          "name": "Walmart",
+          "action": "https://www.walmart.com/search/?query="
+        },
+        {
+          "name": "Best Buy",
+          "action": "https://www.bestbuy.com/site/searchpage.jsp?st="
+        },
+        {
+          "name": "Etsy",
+          "action": "https://www.etsy.com/search?q="
+        },
+        {
+          "name": "Homedepot",
+          "action": "https://www.homedepot.com/s/"
+        },
+        {
+          "name": "Costco",
+          "action": "https://www.costco.com/s?keyword="
+        },
+        {
+          "name": "Target",
+          "action": "https://www.target.com/s?searchTerm="
+        },
+        {
+          "name": "Macys",
+          "action": "https://www.macys.com/shop/featured/"
+        },
+        {
+          "name": "Temu",
+          "action": "https://www.temu.com/search_result.html?search_key="
+        },
+        {
+          "name": "SHEIN",
+          "action": "https://shein.com/pdsearch/"
+        },
+        {
+          "name": "AliExpress",
+          "action": "https://www.aliexpress.com/wholesale?SearchText="
+        },
+        {
+          "name": "Craigslist",
+          "action": "https://craigslist.org/search/sss?query="
+        },
+        {
+          "name": "Groupon",
+          "action": "https://www.groupon.com/search?query="
+        }
+      ]
+    },
+    {
+      "name": "Local",
+      "active": true,
+      "description": "Search local places and services on Google Maps, Apple Maps, Airbnb, Tripadvisor, Booking, and more.",
+      "data": [
+        {
+          "name": "Google Maps",
+          "action": "https://google.com/maps/search/"
+        },
+        {
+          "name": "Apple Maps",
+          "action": "http://maps.apple.com/?q="
+        },
+        {
+          "name": "Airbnb",
+          "action": "https://www.airbnb.com/s/"
+        },
+        {
+          "name": "Tripadvisor",
+          "action": "https://www.tripadvisor.com/Search?q="
+        },
+        {
+          "name": "Booking",
+          "action": "https://www.booking.com/searchresults.html?ss="
+        },
+        {
+          "name": "Kayak",
+          "action": "https://www.kayak.com/explore/"
+        },
+        {
+          "name": "Skyscanner",
+          "action": "https://www.skyscanner.com/"
+        },
+        {
+          "name": "Fandango",
+          "action": "https://www.fandango.com/search/results?q="
+        },
+        {
+          "name": "Eventbrite",
+          "action": "https://www.eventbrite.com/d/"
+        },
+        {
+          "name": "Yelp",
+          "action": "https://www.yelp.com/search?find_desc="
+        },
+        {
+          "name": "Bing Maps",
+          "action": "https://www.bing.com/maps?q="
+        },
+        {
+          "name": "Mapquest",
+          "action": "https://www.mapquest.com/search/"
+        },
+        {
+          "name": "HERE WeGo",
+          "action": "https://wego.here.com/search/"
+        },
+        {
+          "name": "Moovit",
+          "action": "https://moovitapp.com/?from="
+        },
+        {
+          "name": "Uber",
+          "action": "https://uber.com/?q="
+        },
+        {
+          "name": "Waze",
+          "action": "https://www.waze.com/live-map/directions/"
+        }
+      ]
+    },
+    {
+      "name": "Academic",
+      "active": true,
+      "description": "Search academic resources on Google Scholar, Wikipedia, ResearchGate, JSTOR, CORE, PLOS ONE, arXiv, and more.",
+      "data": [
+        {
+          "name": "Google Scholar",
+          "action": "https://scholar.google.com/scholar?q="
+        },
+        {
+          "name": "Wikipedia",
+          "action": "https://wikipedia.org/w/index.php?search="
+        },
+        {
+          "name": "ResearchGate",
+          "action": "https://www.researchgate.net/search?q="
+        },
+        {
+          "name": "JSTOR",
+          "action": "https://www.jstor.org/action/doBasicSearch?Query="
+        },
+        {
+          "name": "CORE",
+          "action": "https://core.ac.uk/search?q="
+        },
+        {
+          "name": "PLOS ONE",
+          "action": "https://journals.plos.org/plosone/search?q="
+        },
+        {
+          "name": "arXiv",
+          "action": "https://arxiv.org/search/?searchtype=all&query="
+        },
+        {
+          "name": "ScienceDirect",
+          "action": "https://www.sciencedirect.com/search?qs="
+        },
+        {
+          "name": "Springer",
+          "action": "https://link.springer.com/search?query="
+        },
+        {
+          "name": "BASE",
+          "action": "https://www.base-search.net/Search/Results?lookfor="
+        },
+        {
+          "name": "Mendeley",
+          "action": "https://www.mendeley.com/search/?query="
+        },
+        {
+          "name": "Scopus",
+          "action": "https://www.scopus.com/results/authorNamesList.uri?s=AUTHLASTNAME&st1="
+        },
+        {
+          "name": "ORCID",
+          "action": "https://orcid.org/orcid-search/search?searchQuery="
+        },
+        {
+          "name": "WolframAlpha",
+          "action": "https://www.wolframalpha.com/input?i="
+        },
+        {
+          "name": "Academia",
+          "action": "https://www.academia.edu/search?q="
+        },
+        {
+          "name": "Brainly",
+          "action": "https://brainly.com/app/ask?q="
+        },
+        {
+          "name": "Internet Archive",
+          "action": "https://archive.org/search.php?query="
+        }
+      ],
+      "youtube_channels": [
+        {
+          "id": "UC7c8mE90qCtu11z47U0KErg",
+          "title": "NatureVideoChannel"
+        },
+        {
+          "id": "UCt5OA3LingpZBeEyPYmputQ",
+          "title": "NewScientist"
+        },
+        {
+          "id": "UC_xYMXx_-mAzheKyEtwtCAQ",
+          "title": "scientificamerican"
+        },
+        {
+          "id": "UCLA_DiR1FfKNvjuUpBHmylQ",
+          "title": "NASA"
+        },
+        {
+          "id": "UCYeF244yNGuFefuFKqxIAXw",
+          "title": "TheRoyalInstitution"
+        },
+        {
+          "id": "UCTpmmkp1E4nmZqWPS-dl5bg",
+          "title": "QuantaScienceChannel"
+        },
+        {
+          "id": "UCvQECJukTDE2i6aCoMnS-Vg",
+          "title": "bigthink"
+        },
+        {
+          "id": "UCsXVk37bltHxD1rDPwtNM8Q",
+          "title": "kurzgesagt"
+        },
+        {
+          "id": "UCHnyfMqiRRG1u-2MsSQLbXA",
+          "title": "veritasium"
+        },
+        {
+          "id": "UCv0aU2eKry3kdSTnFa8QAWA",
+          "title": "ScienceMagazine"
+        }
+      ]
+    },
+    {
+      "name": "Job",
+      "active": true,
+      "description": "Search job listings on LinkedIn, Indeed, Glassdoor, Upwork, Fiverr, and more.",
+      "data": [
+        {
+          "name": "LinkedIn",
+          "action": "https://www.linkedin.com/jobs/search/?keywords="
+        },
+        {
+          "name": "Indeed",
+          "action": "https://www.indeed.com/jobs?q="
+        },
+        {
+          "name": "Glassdoor",
+          "action": "https://www.glassdoor.com/Job/jobs.htm?sc.keyword="
+        },
+        {
+          "name": "Upwork",
+          "action": "https://www.upwork.com/search/profiles/?q="
+        },
+        {
+          "name": "Fiverr",
+          "action": "https://www.fiverr.com/search/gigs?query="
+        },
+        {
+          "name": "Remote",
+          "action": "https://remote.com/jobs/all?query="
+        },
+        {
+          "name": "Freelancer",
+          "action": "https://www.freelancer.com/jobs/?keyword="
+        },
+        {
+          "name": "Monster",
+          "action": "https://www.monster.com/jobs/search/?q="
+        },
+        {
+          "name": "ZipRecruiter",
+          "action": "https://www.ziprecruiter.com/candidate/search?search="
+        },
+        {
+          "name": "Dice",
+          "action": "https://www.dice.com/jobs?q="
+        },
+        {
+          "name": "CareerBuilder",
+          "action": "https://www.careerbuilder.com/jobs?keywords="
+        },
+        {
+          "name": "SimplyHired",
+          "action": "https://www.simplyhired.com/search?q="
+        }
+      ]
+    },
+    {
+      "name": "Code",
+      "active": true,
+      "description": "Search code on GitHub, Stack Overflow, Sourcegraph, CodePen, Glitch, and more.",
+      "data": [
+        {
+          "name": "GitHub",
+          "action": "https://github.com/search?q="
+        },
+        {
+          "name": "Stack Overflow",
+          "action": "https://pt.stackoverflow.com/search?q="
+        },
+        {
+          "name": "Sourcegraph",
+          "action": "https://sourcegraph.com/search?q="
+        },
+        {
+          "name": "CodePen",
+          "action": "https://codepen.io/search/pens?q="
+        },
+        {
+          "name": "Glitch",
+          "action": "https://glitch.com/search?q="
+        },
+        {
+          "name": "searchcode",
+          "action": "https://searchcode.com/?q="
+        },
+        {
+          "name": "GitLab",
+          "action": "https://gitlab.com/public?name="
+        },
+        {
+          "name": "Bitbucket",
+          "action": "https://bitbucket.org/repo/all/?name="
+        },
+        {
+          "name": "Docker Hub",
+          "action": "https://hub.docker.com/search?q="
+        },
+        {
+          "name": "npm",
+          "action": "https://www.npmjs.com/search?q="
+        },
+        {
+          "name": "Yarn",
+          "action": "https://yarnpkg.com/?q="
+        },
+        {
+          "name": "PyPI",
+          "action": "https://pypi.org/search/?q="
+        },
+        {
+          "name": "NuGet",
+          "action": "https://www.nuget.org/packages?q="
+        },
+        {
+          "name": "Packagist",
+          "action": "https://packagist.org/?query="
+        },
+        {
+          "name": "RubyGems",
+          "action": "https://rubygems.org/search?query="
+        },
+        {
+          "name": "Crates",
+          "action": "https://crates.io/search?q="
+        },
+        {
+          "name": "Go",
+          "action": "https://pkg.go.dev/search?q="
+        },
+        {
+          "name": "Pub.dev",
+          "action": "https://pub.dev/packages?q="
+        },
+        {
+          "name": "Rapid API",
+          "action": "https://rapidapi.com/search?term="
+        },
+        {
+          "name": "Apify",
+          "action": "https://apify.com/store/categories?search="
+        },
+        {
+          "name": "Kaggle",
+          "action": "https://www.kaggle.com/search?q="
+        },
+        {
+          "name": "Tensorflow",
+          "action": "https://www.tensorflow.org/s/results?hl=pt-br&q="
+        }
+      ],
+      "youtube_channels": [
+        {
+          "id": "UC8ENHE5xdFSwx71u3fDH5Xw",
+          "title": "ThePrimeagen"
+        },
+        {
+          "id": "UCsBjURrPoezykLs9EqgamOA",
+          "title": "Fireship"
+        },
+        {
+          "id": "UC8butISFwT-Wl7EV0hUK0BQ",
+          "title": "freecodecamp"
+        },
+        {
+          "id": "UCsMica-v34Irf9KVTh6xx-g",
+          "title": "MicrosoftDeveloper"
+        },
+        {
+          "id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+          "title": "GoogleDevelopers"
+        },
+        {
+          "id": "UCwrVwiJllwhJUKXKmjLcckQ",
+          "title": "AppleDeveloper"
+        },
+        {
+          "id": "UC29ju8bIPH5as8OGnQzwJyA",
+          "title": "TraversyMedia"
+        }
+      ]
+    },
+    {
+      "name": "Apps",
+      "active": true,
+      "description": "Search apps on Google Play, App Store, Microsoft Store, Chrome Web Store, Meta Quest, Apple Vision Pro, and more.",
+      "data": [
+        {
+          "name": "AlternativeTo",
+          "action": "https://alternativeto.net/browse/search/?q="
+        },
+        {
+          "name": "Google Play",
+          "action": "https://play.google.com/store/search?q="
+        },
+        {
+          "name": "App Store",
+          "action": "https://www.apple.com/search/",
+          "additional": "?src=globalnav"
+        },
+        {
+          "name": "Microsoft Store",
+          "action": "https://apps.microsoft.com/store/search/"
+        },
+        {
+          "name": "Chrome Web Store",
+          "action": "https://chromewebstore.google.com/search/"
+        },
+        {
+          "name": "Firefox Addons",
+          "action": "https://addons.mozilla.org/en-US/firefox/search/?q="
+        },
+        {
+          "name": "Meta Quest",
+          "action": "https://www.meta.com/experiences/search/?q="
+        },
+        {
+          "name": "Apple Vision Pro",
+          "action": "https://apps.apple.com/vision/search?term="
+        },
+        {
+          "name": "Flathub",
+          "action": "https://flathub.org/apps/search?q="
+        },
+        {
+          "name": "Snap Store",
+          "action": "https://snapcraft.io/search?q="
+        },
+        {
+          "name": "SourceForge",
+          "action": "https://sourceforge.net/directory/?q="
+        },
+        {
+          "name": "Softonic",
+          "action": "https://www.softonic.com/s/"
+        },
+        {
+          "name": "Galaxy Store",
+          "action": "https://galaxystore.samsung.com/search?q="
+        },
+        {
+          "name": "Huawei AppGallery",
+          "action": "https://appgallery.huawei.com/#/search/"
+        },
+        {
+          "name": "Product Hunt",
+          "action": "https://www.producthunt.com/search?q="
+        },
+        {
+          "name": "Kickstarter",
+          "action": "https://www.kickstarter.com/discover/advanced?term="
+        },
+        {
+          "name": "Indiegogo",
+          "action": "https://www.indiegogo.com/explore/all?q="
+        }
+      ],
+      "youtube_channels": [
+        {
+          "id": "UCddiUEpeqJcYeBxX1IVBKvQ",
+          "title": "TheVerge"
+        },
+        {
+          "id": "UCBJycsmduvYEL83R_U4JriQ",
+          "title": "mkbhd"
+        },
+        {
+          "id": "UCOmcA3f_RrH6b9NmcNa4tdg",
+          "title": "CNET"
+        },
+        {
+          "id": "UCeeFfhMcJa1kjtfZAGskOCA",
+          "title": "techlinked"
+        },
+        {
+          "id": "UCftwRNsjfRo08xYE31tkiyw",
+          "title": "WIRED"
+        },
+        {
+          "id": "UCCsREoj8rSRkEvxWqxr74rQ",
+          "title": "cybernews"
+        },
+        {
+          "id": "UCey_c7U86mJGz1VJWH5CYPA",
+          "title": "iJustine"
+        }
+      ]
+    },
+    {
+      "name": "Finance",
+      "active": false,
+      "data": [
+        {
+          "name": "Google Finance",
+          "action": "https://google.com/finance/quote/"
+        },
+        {
+          "name": "finviz",
+          "action": "https://finviz.com/search.ashx?p="
+        }
+      ]
+    },
+    {
+      "name": "Torrent",
+      "active": true,
+      "data": [
+        {
+          "name": "The Pirate Bay",
+          "action": "https://thepiratebay.org/search.php?q="
+        },
+        {
+          "name": "Torrends",
+          "action": "https://search.torrends.to/"
+        },
+        {
+          "name": "1337x",
+          "action": "https://1337x.to/search/",
+          "additional": "/1/"
+        },
+        {
+          "name": "YTS",
+          "action": "https://yts.mx/browse-movies/"
+        },
+        {
+          "name": "RARBG",
+          "action": "https://rargb.to/search/?search="
+        },
+        {
+          "name": "Project Gutenberg",
+          "action": "https://www.gutenberg.org/ebooks/search/?query="
+        },
+        {
+          "name": "TorrentGalaxy",
+          "action": "https://torrentgalaxy.to/torrents.php?search="
+        },
+        {
+          "name": "EZTV",
+          "action": "https://eztv.re/search/"
+        },
+
+        {
+          "name": "TorrentDownloads",
+          "action": "https://www.torrentdownloads.pro/search/?search="
+        },
+        {
+          "name": "Torlock",
+          "action": "https://www.torlock.com/all/torrents/"
+        }
+      ]
+    },
+    {
+      "name": "Darknet",
+      "active": true,
+      "description": "Search on the dark web using various onion search engines.",
+      "data": [
+        {
+          "name": "DuckDuckGo",
+          "action": "https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/"
+        },
+        {
+          "name": "Ahmia",
+          "action": "http://juhanurmihxlp77nkq76byazcldy2hlmovfu2epvl5ankdibsot4csyd.onion/search/?q="
+        },
+        {
+          "name": "haystak",
+          "action": "http://haystak5njsmn2hqkewecpaxetahtwhsbsa64jom2k22z5afxhnpxfid.onion/?q="
+        },
+        {
+          "name": "Torch",
+          "action": "http://torchdeedp3i2jigzjdmfpn5ttjhthh5wbmda2rr3jvqjg5p77c54dqd.onion/?q="
+        },
+        {
+          "name": "Onion Engine",
+          "action": "https://onionengine.com/"
+        },
+        {
+          "name": "Deep Search",
+          "action": "http://search7tdrcvri22rieiwgi5g46qnwsesvnubqav2xakhezv4hjzkkad.onion/result.php?url=search7tdrcvri22rieiwgi5g46qnwsesvnubqav2xakhezv4hjzkkad.onion&search="
+        },
+        {
+          "name": "The Hidden Wiki",
+          "action": "http://zqktlwiuavvvqqt4ybvgvi7tyo4hjl5xgfuvpdf6otjiycgwqbym2qad.onion/wiki/index.php?title=Special%3ASearch&search="
+        }
+      ]
+    }
+  ]
+}
